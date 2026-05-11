@@ -1,30 +1,28 @@
 import os
 
 
+def _fix_db_uri(uri):
+    """Railway Postgres URLs use postgres:// which SQLAlchemy rejects."""
+    if uri and uri.startswith('postgres://'):
+        return uri.replace('postgres://', 'postgresql://', 1)
+    return uri
+
+
 class Config:
     SECRET_KEY = os.environ.get('SECRET_KEY', 'dev-secret-key-change-me')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
+    SQLALCHEMY_DATABASE_URI = _fix_db_uri(
+        os.environ.get('DATABASE_URL', 'postgresql://postgres:password@localhost:5432/coachprash')
+    )
     WTF_CSRF_ENABLED = True
 
 
 class DevelopmentConfig(Config):
     DEBUG = True
-    SQLALCHEMY_DATABASE_URI = os.environ.get(
-        'DATABASE_URL', 'postgresql://postgres:password@localhost:5432/coachprash'
-    )
 
 
 class ProductionConfig(Config):
     DEBUG = False
-    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL', '')
-
-    @staticmethod
-    def init_app(app):
-        uri = app.config.get('SQLALCHEMY_DATABASE_URI', '')
-        if uri.startswith('postgres://'):
-            app.config['SQLALCHEMY_DATABASE_URI'] = uri.replace(
-                'postgres://', 'postgresql://', 1
-            )
 
 
 class TestingConfig(Config):
