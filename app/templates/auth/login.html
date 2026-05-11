@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}Login — CoachPrash{% endblock %}
+
+{% block content %}
+<section class="section">
+    <div class="container">
+        <div class="auth-container">
+            <h1>Welcome Back</h1>
+            <p class="auth-subtitle">Log in to access your practice and progress.</p>
+            <form method="POST" action="{{ url_for('auth.login') }}">
+                {{ form.hidden_tag() }}
+                <div class="form-group">
+                    {{ form.email.label }}
+                    {{ form.email(class="form-control", placeholder="your@email.com") }}
+                    {% for error in form.email.errors %}
+                    <span class="form-error">{{ error }}</span>
+                    {% endfor %}
+                </div>
+                <div class="form-group">
+                    {{ form.password.label }}
+                    {{ form.password(class="form-control", placeholder="Your password") }}
+                    {% for error in form.password.errors %}
+                    <span class="form-error">{{ error }}</span>
+                    {% endfor %}
+                </div>
+                <div class="form-group form-check">
+                    {{ form.remember_me() }}
+                    {{ form.remember_me.label }}
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Log In</button>
+            </form>
+            <p class="auth-footer">Don't have an account? <a href="{{ url_for('auth.register') }}">Sign up free</a></p>
+        </div>
+    </div>
+</section>
+{% endblock %}

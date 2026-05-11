@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title %}{% if topic %}{{ topic.name }} | {% endif %}Coming Soon — CoachPrash{% endblock %}
+
+{% block content %}
+<section class="page-header">
+    <div class="container">
+        {% if subject and topic %}
+        <div class="breadcrumb">
+            <a href="{{ url_for('subjects.catalog') }}">Subjects</a> &rsaquo;
+            <a href="{{ url_for('subjects.topic_list', slug=subject.slug) }}">{{ subject.name }}</a> &rsaquo;
+            <span>{{ topic.name }}</span>
+        </div>
+        <h1>{{ topic.name }}</h1>
+        <p>{{ topic.description }}</p>
+        {% else %}
+        <h1>Coming Soon</h1>
+        {% endif %}
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="coming-soon-box">
+            <div class="coming-soon-icon">🚀</div>
+            <h2>Self-Study Content Coming Soon</h2>
+            <p>We're building interactive lessons, practice problems with instant feedback, step-by-step solutions, and progress tracking for this topic.</p>
+            {% if concepts %}
+            <div class="planned-content">
+                <h3>Planned Concepts:</h3>
+                <ul>
+                    {% for concept in concepts %}
+                    <li>{{ concept.title }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+            <a href="{{ url_for('subjects.catalog') }}" class="btn btn-primary">Explore All Subjects</a>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}{{ subject.name }} Topics | CoachPrash{% endblock %}
+
+{% block content %}
+<section class="page-header">
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="{{ url_for('subjects.catalog') }}">Subjects</a> &rsaquo;
+            <span>{{ subject.name }}</span>
+        </div>
+        <h1>{{ subject.name }}</h1>
+        <p>{{ subject.description }}</p>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        {% if topics %}
+        <div class="card-grid">
+            {% for topic in topics %}
+            <a href="{{ url_for('subjects.topic_detail', subject_slug=subject.slug, topic_slug=topic.slug) }}" class="card topic-card">
+                <h3>{{ topic.name }}</h3>
+                <p>{{ topic.description[:120] }}{% if topic.description|length > 120 %}...{% endif %}</p>
+                <div class="topic-meta">
+                    <span class="badge badge-{{ topic.difficulty_level }}">{{ topic.difficulty_level.replace('_', ' ').title() }}</span>
+                    <span class="badge">{{ topic.concepts.filter_by(is_active=True).count() }} concepts</span>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+        {% else %}
+        <div class="empty-state">
+            <p>Topics for {{ subject.name }} are coming soon. Check back later!</p>
+        </div>
+        {% endif %}
+    </div>
+</section>
+{% endblock %}

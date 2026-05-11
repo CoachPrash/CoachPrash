@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Message from {{ message.name }} — Admin{% endblock %}
+
+{% block content %}
+<section class="section">
+    <div class="container">
+        <div class="admin-form-container">
+            <h1>Message from {{ message.name }}</h1>
+            <div class="message-detail">
+                <div class="message-meta">
+                    <p><strong>From:</strong> {{ message.name }} ({{ message.email }})</p>
+                    <p><strong>Subject:</strong> {{ message.subject }}</p>
+                    <p><strong>Date:</strong> {{ message.created_at.strftime('%B %d, %Y at %H:%M') if message.created_at else '' }}</p>
+                </div>
+                <div class="message-body">
+                    <p>{{ message.message }}</p>
+                </div>
+            </div>
+            <a href="{{ url_for('admin_panel.manage_messages') }}" class="btn btn-outline">&larr; Back to Messages</a>
+        </div>
+    </div>
+</section>
+{% endblock %}

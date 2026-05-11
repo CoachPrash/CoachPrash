@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}CoachPrash — STEM Tutoring & Practice{% endblock %}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    {% block head %}{% endblock %}
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="{{ url_for('main.home') }}" class="nav-logo">CoachPrash</a>
+            <button class="nav-toggle" aria-label="Toggle navigation" onclick="toggleNav()">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="{{ url_for('main.home') }}">Home</a></li>
+                <li><a href="{{ url_for('subjects.catalog') }}">Subjects</a></li>
+                <li><a href="{{ url_for('main.about') }}">About</a></li>
+                <li><a href="{{ url_for('blog.list_posts') }}">Resources</a></li>
+                <li><a href="{{ url_for('main.testimonials') }}">Testimonials</a></li>
+                <li><a href="{{ url_for('main.contact') }}">Contact</a></li>
+                {% if current_user.is_authenticated %}
+                    {% if current_user.is_admin %}
+                        <li><a href="{{ url_for('admin_panel.dashboard') }}" class="nav-admin">Admin</a></li>
+                    {% else %}
+                        <li><a href="{{ url_for('study.progress_dashboard') }}">My Progress</a></li>
+                    {% endif %}
+                    <li class="nav-user-menu">
+                        <a href="#" class="nav-user-btn" onclick="toggleUserMenu(event)">{{ current_user.username }}</a>
+                        <div class="nav-dropdown" id="userDropdown">
+                            <a href="{{ url_for('auth.logout') }}">Logout</a>
+                        </div>
+                    </li>
+                {% else %}
+                    <li><a href="{{ url_for('auth.login') }}" class="btn btn-sm btn-primary">Login</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div class="flash-container">
+                {% for category, message in messages %}
+                    <div class="flash flash-{{ category }}">
+                        {{ message }}
+                        <button class="flash-close" onclick="this.parentElement.remove()">&times;</button>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="{{ url_for('main.home') }}">Home</a></li>
+                        <li><a href="{{ url_for('main.about') }}">About</a></li>
+                        <li><a href="{{ url_for('subjects.catalog') }}">Subjects</a></li>
+                        <li><a href="{{ url_for('blog.list_posts') }}">Resources</a></li>
+                        <li><a href="{{ url_for('main.contact') }}">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Subjects</h4>
+                    <ul>
+                        <li><a href="{{ url_for('subjects.topic_list', slug='mathematics') }}">Mathematics</a></li>
+                        <li><a href="{{ url_for('subjects.topic_list', slug='physics') }}">Physics</a></li>
+                        <li><a href="{{ url_for('subjects.topic_list', slug='chemistry') }}">Chemistry</a></li>
+                        <li><a href="{{ url_for('subjects.topic_list', slug='computer-science') }}">Computer Science</a></li>
+                        <li><a href="{{ url_for('subjects.topic_list', slug='test-prep') }}">Test Prep</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li>contact@coachprash.com</li>
+                        <li>Follow us on social media</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 CoachPrash. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+        onload="renderMathInElement(document.body, {delimiters: [{left: '\\\\(', right: '\\\\)', display: false},{left: '\\\\[', right: '\\\\]', display: true}]});"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    {% block scripts %}{% endblock %}
+</body>
+</html>

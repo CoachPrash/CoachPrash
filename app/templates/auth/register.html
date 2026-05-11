@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block title %}Sign Up — CoachPrash{% endblock %}
+
+{% block content %}
+<section class="section">
+    <div class="container">
+        <div class="auth-container">
+            <h1>Create Your Account</h1>
+            <p class="auth-subtitle">Start practicing STEM for free. Enter an access code for premium features.</p>
+            <form method="POST" action="{{ url_for('auth.register') }}">
+                {{ form.hidden_tag() }}
+                <div class="form-group">
+                    {{ form.username.label }}
+                    {{ form.username(class="form-control", placeholder="Choose a username") }}
+                    {% for error in form.username.errors %}
+                    <span class="form-error">{{ error }}</span>
+                    {% endfor %}
+                </div>
+                <div class="form-group">
+                    {{ form.email.label }}
+                    {{ form.email(class="form-control", placeholder="your@email.com") }}
+                    {% for error in form.email.errors %}
+                    <span class="form-error">{{ error }}</span>
+                    {% endfor %}
+                </div>
+                <div class="form-group">
+                    {{ form.password.label }}
+                    {{ form.password(class="form-control", placeholder="Minimum 8 characters") }}
+                    {% for error in form.password.errors %}
+                    <span class="form-error">{{ error }}</span>
+                    {% endfor %}
+                </div>
+                <div class="form-group">
+                    {{ form.confirm_password.label }}
+                    {{ form.confirm_password(class="form-control", placeholder="Confirm your password") }}
+                    {% for error in form.confirm_password.errors %}
+                    <span class="form-error">{{ error }}</span>
+                    {% endfor %}
+                </div>
+                <div class="form-group">
+                    {{ form.access_code.label }}
+                    {{ form.access_code(class="form-control", placeholder="Optional — enter if you have one") }}
+                    {% for error in form.access_code.errors %}
+                    <span class="form-error">{{ error }}</span>
+                    {% endfor %}
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Create Account</button>
+            </form>
+            <p class="auth-footer">Already have an account? <a href="{{ url_for('auth.login') }}">Log in</a></p>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% block title %}CoachPrash — Expert STEM Tutoring & Interactive Practice{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <div class="container">
+        <h1>Master STEM with Confidence</h1>
+        <p class="hero-subtitle">Personalized coaching and self-study tools for students from elementary through college</p>
+        <div class="hero-cta">
+            <a href="{{ url_for('subjects.catalog') }}" class="btn btn-primary btn-lg">Explore Subjects</a>
+            <a href="{{ url_for('auth.register') }}" class="btn btn-outline btn-lg">Start Practicing Free</a>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">What We Teach</h2>
+        <div class="card-grid">
+            {% for subject in subjects[:5] %}
+            <a href="{{ url_for('subjects.topic_list', slug=subject.slug) }}" class="card subject-card">
+                <div class="subject-icon">{{ subject.icon or '📚' }}</div>
+                <h3>{{ subject.name }}</h3>
+                <p>{{ subject.description[:100] }}{% if subject.description|length > 100 %}...{% endif %}</p>
+                <span class="card-link">View Topics &rarr;</span>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="section section-alt">
+    <div class="container">
+        <h2 class="section-title">Why CoachPrash</h2>
+        <div class="features-grid">
+            <div class="feature">
+                <div class="feature-icon">🎓</div>
+                <h3>Expert Instruction</h3>
+                <p>Years of experience coaching students across all STEM subjects, from foundational arithmetic to college-level mathematics and physics.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">💡</div>
+                <h3>Interactive Practice</h3>
+                <p>Self-study tools with instant feedback, hints, and step-by-step solutions to help you master concepts at your own pace.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🏆</div>
+                <h3>Proven Results</h3>
+                <p>Students consistently improve their grades, earn top scores on AP exams, and build lasting confidence in STEM subjects.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% if testimonials %}
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">What Students Say</h2>
+        <div class="testimonial-grid">
+            {% for t in testimonials %}
+            <div class="card testimonial-card">
+                <div class="testimonial-stars">
+                    {% for i in range(t.rating) %}★{% endfor %}{% for i in range(5 - t.rating) %}☆{% endfor %}
+                </div>
+                <p class="testimonial-text">"{{ t.content }}"</p>
+                <div class="testimonial-author">
+                    <strong>{{ t.student_name }}</strong>
+                    {% if t.student_grade %}<span>{{ t.student_grade }}</span>{% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endif %}
+
+<section class="cta-banner">
+    <div class="container">
+        <h2>Ready to Excel?</h2>
+        <p>Start your free practice today and build confidence in STEM.</p>
+        <a href="{{ url_for('auth.register') }}" class="btn btn-accent btn-lg">Get Started Free</a>
+    </div>
+</section>
+{% endblock %}

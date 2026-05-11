@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}{{ post.title }} | CoachPrash Resources{% endblock %}
+
+{% block content %}
+<section class="section">
+    <div class="container">
+        <div class="blog-post">
+            <div class="breadcrumb">
+                <a href="{{ url_for('blog.list_posts') }}">Resources</a> &rsaquo;
+                <span>{{ post.title }}</span>
+            </div>
+            <h1>{{ post.title }}</h1>
+            <div class="blog-post-meta">
+                <span>By {{ post.author.username }}</span>
+                <span>{{ post.published_at.strftime('%B %d, %Y') if post.published_at else '' }}</span>
+            </div>
+            <div class="blog-post-content">
+                {{ post.content_html|safe }}
+            </div>
+            <div class="blog-post-footer">
+                <a href="{{ url_for('blog.list_posts') }}" class="btn btn-outline">&larr; Back to Resources</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

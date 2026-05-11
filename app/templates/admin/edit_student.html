@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Edit Student: {{ student.username }} — Admin{% endblock %}
+
+{% block content %}
+<section class="section">
+    <div class="container">
+        <div class="auth-container">
+            <h1>Edit Student: {{ student.username }}</h1>
+            <p>{{ student.email }}</p>
+            <form method="POST">
+                {{ form.hidden_tag() }}
+                <div class="form-group">
+                    {{ form.tier.label }}
+                    {{ form.tier(class="form-control") }}
+                </div>
+                <div class="form-group form-check">
+                    {{ form.is_active() }}
+                    {{ form.is_active.label }}
+                </div>
+                <button type="submit" class="btn btn-primary">Save Changes</button>
+                <a href="{{ url_for('admin_panel.manage_students') }}" class="btn btn-outline">Cancel</a>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block title %}Access Codes — Admin{% endblock %}
+
+{% block content %}
+<section class="section">
+    <div class="container">
+        <div class="admin-header">
+            <h1>Access Codes</h1>
+            <a href="{{ url_for('admin_panel.new_code') }}" class="btn btn-primary">+ New Code</a>
+        </div>
+
+        {% if codes %}
+        <table class="admin-table">
+            <thead>
+                <tr><th>Code</th><th>Tier</th><th>Uses</th><th>Max Uses</th><th>Expires</th><th>Active</th><th>Actions</th></tr>
+            </thead>
+            <tbody>
+                {% for code in codes %}
+                <tr>
+                    <td><code>{{ code.code }}</code></td>
+                    <td><span class="badge badge-{{ code.tier }}">{{ code.tier }}</span></td>
+                    <td>{{ code.current_uses }}</td>
+                    <td>{{ code.max_uses if code.max_uses else 'Unlimited' }}</td>
+                    <td>{{ code.expires_at.strftime('%Y-%m-%d') if code.expires_at else 'Never' }}</td>
+                    <td>{{ '✓ Active' if code.is_active else '✗ Inactive' }}</td>
+                    <td>
+                        <form method="POST" action="{{ url_for('admin_panel.deactivate_code', code_id=code.id) }}" class="inline-form">
+                            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                            <button type="submit" class="btn btn-sm btn-outline">
+                                {{ 'Deactivate' if code.is_active else 'Activate' }}
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <p class="empty-state">No access codes yet.</p>
+        {% endif %}
+
+        <a href="{{ url_for('admin_panel.dashboard') }}" class="btn btn-outline">&larr; Back to Dashboard</a>
+    </div>
+</section>
+{% endblock %}

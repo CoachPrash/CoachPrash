@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block title %}{{ title }} — Admin{% endblock %}
+
+{% block content %}
+<section class="section">
+    <div class="container">
+        <div class="admin-form-container">
+            <h1>{{ title }}</h1>
+            <form method="POST">
+                {{ form.hidden_tag() }}
+                {% for field in form %}
+                    {% if field.type not in ('HiddenField', 'CSRFTokenField') %}
+                    <div class="form-group">
+                        {% if field.type == 'BooleanField' %}
+                        <div class="form-check">
+                            {{ field() }}
+                            {{ field.label }}
+                        </div>
+                        {% elif field.type == 'TextAreaField' %}
+                        {{ field.label }}
+                        {{ field(class="form-control form-textarea", rows="8") }}
+                        {% if has_preview is defined and has_preview and 'content' in field.name %}
+                        <button type="button" class="btn btn-sm btn-outline preview-btn" onclick="previewKaTeX(this)">Preview</button>
+                        <div class="preview-pane" style="display:none;"></div>
+                        {% endif %}
+                        {% else %}
+                        {{ field.label }}
+                        {{ field(class="form-control") }}
+                        {% endif %}
+                        {% for error in field.errors %}
+                        <span class="form-error">{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                {% endfor %}
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Save</button>
+                    <a href="javascript:history.back()" class="btn btn-outline">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock %}

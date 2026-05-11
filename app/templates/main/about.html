@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% block title %}About CoachPrash — Your Dedicated STEM Tutor{% endblock %}
+
+{% block content %}
+<section class="page-header">
+    <div class="container">
+        <h1>About CoachPrash</h1>
+        <p>Dedicated to helping students excel in STEM, one concept at a time.</p>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="about-grid">
+            <div class="about-photo">
+                <div class="photo-placeholder">
+                    <span>CP</span>
+                </div>
+            </div>
+            <div class="about-bio">
+                <h2>Meet Your Coach</h2>
+                <p>Coach Prash is a passionate STEM educator with extensive experience coaching students from elementary school through college. With a deep understanding of mathematics, physics, chemistry, and computer science, Coach Prash brings clarity to complex concepts and makes learning both effective and enjoyable.</p>
+                <p>Whether you're working through basic arithmetic, tackling AP Calculus BC, preparing for the SAT, or diving into data structures in Java, Coach Prash tailors each session to your unique learning style and goals.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section section-alt">
+    <div class="container">
+        <h2 class="section-title">Teaching Philosophy</h2>
+        <div class="philosophy-grid">
+            <div class="philosophy-item">
+                <h3>Build Understanding, Not Just Answers</h3>
+                <p>Every student can master STEM. The key is understanding the "why" behind every concept, not just memorizing procedures. When you truly understand a concept, you can apply it to any problem.</p>
+            </div>
+            <div class="philosophy-item">
+                <h3>Practice Makes Permanent</h3>
+                <p>Consistent, deliberate practice with immediate feedback is the fastest path to mastery. That's why we offer interactive practice tools alongside personalized coaching.</p>
+            </div>
+            <div class="philosophy-item">
+                <h3>Meet Students Where They Are</h3>
+                <p>Every student starts from a different place. Whether you need to strengthen foundations or push into advanced material, the coaching adapts to your current level and goals.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">Subjects & Levels</h2>
+        <div class="subjects-summary">
+            {% for subject in subjects %}
+            <div class="subject-summary-card">
+                <h3>{{ subject.icon or '📚' }} {{ subject.name }}</h3>
+                <ul>
+                    {% for topic in subject.topics.filter_by(is_active=True).order_by('display_order').all() %}
+                    <li>{{ topic.name }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}

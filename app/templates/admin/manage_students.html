@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}Manage Students — Admin{% endblock %}
+
+{% block content %}
+<section class="section">
+    <div class="container">
+        <h1>Manage Students</h1>
+
+        <form method="GET" class="search-form">
+            <input type="text" name="search" value="{{ search }}" placeholder="Search by username or email..." class="form-control">
+            <button type="submit" class="btn btn-primary">Search</button>
+            {% if search %}
+            <a href="{{ url_for('admin_panel.manage_students') }}" class="btn btn-outline">Clear</a>
+            {% endif %}
+        </form>
+
+        {% if students %}
+        <table class="admin-table">
+            <thead>
+                <tr><th>Username</th><th>Email</th><th>Tier</th><th>Active</th><th>Joined</th><th>Actions</th></tr>
+            </thead>
+            <tbody>
+                {% for s in students %}
+                <tr>
+                    <td>{{ s.username }}</td>
+                    <td>{{ s.email }}</td>
+                    <td><span class="badge badge-{{ s.tier }}">{{ s.tier }}</span></td>
+                    <td>{{ '✓' if s.is_active else '✗' }}</td>
+                    <td>{{ s.created_at.strftime('%Y-%m-%d') if s.created_at else '' }}</td>
+                    <td><a href="{{ url_for('admin_panel.edit_student', user_id=s.id) }}" class="btn btn-sm btn-outline">Edit</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <p class="empty-state">No students found.</p>
+        {% endif %}
+
+        <a href="{{ url_for('admin_panel.dashboard') }}" class="btn btn-outline">&larr; Back to Dashboard</a>
+    </div>
+</section>
+{% endblock %}

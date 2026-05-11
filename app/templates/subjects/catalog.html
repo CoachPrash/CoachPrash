@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}STEM Subjects — Math, Physics, Chemistry, CS, Test Prep | CoachPrash{% endblock %}
+
+{% block content %}
+<section class="page-header">
+    <div class="container">
+        <h1>Explore Our Subjects</h1>
+        <p>From elementary arithmetic to college-level mathematics, physics, and computer science.</p>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="card-grid">
+            {% for subject in subjects %}
+            <a href="{{ url_for('subjects.topic_list', slug=subject.slug) }}" class="card subject-card">
+                <div class="subject-icon">{{ subject.icon or '📚' }}</div>
+                <h3>{{ subject.name }}</h3>
+                <p>{{ subject.description }}</p>
+                <div class="subject-meta">
+                    <span class="badge">{{ subject.topics.filter_by(is_active=True).count() }} topics</span>
+                </div>
+                <span class="card-link">View Topics &rarr;</span>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}

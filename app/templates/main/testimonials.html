@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title %}Student Testimonials — CoachPrash{% endblock %}
+
+{% block content %}
+<section class="page-header">
+    <div class="container">
+        <h1>Student Testimonials</h1>
+        <p>Hear from students who have improved their grades and confidence with CoachPrash.</p>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        {% if testimonials %}
+        <div class="testimonial-grid testimonial-grid-full">
+            {% for t in testimonials %}
+            <div class="card testimonial-card">
+                <div class="testimonial-stars">
+                    {% for i in range(t.rating) %}★{% endfor %}{% for i in range(5 - t.rating) %}☆{% endfor %}
+                </div>
+                <p class="testimonial-text">"{{ t.content }}"</p>
+                <div class="testimonial-author">
+                    <strong>{{ t.student_name }}</strong>
+                    {% if t.student_grade %}<span>{{ t.student_grade }}</span>{% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <p class="empty-state">Testimonials coming soon.</p>
+        {% endif %}
+    </div>
+</section>
+{% endblock %}

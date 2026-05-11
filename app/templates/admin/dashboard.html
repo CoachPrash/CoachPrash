@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+{% block title %}Admin Dashboard — CoachPrash{% endblock %}
+
+{% block content %}
+<section class="section">
+    <div class="container">
+        <h1>Admin Dashboard</h1>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">{{ total_students }}</div>
+                <div class="stat-label">Total Students</div>
+            </div>
+            <div class="stat-card stat-card-accent">
+                <div class="stat-number">{{ total_premium }}</div>
+                <div class="stat-label">Premium Students</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">{{ total_concepts }}</div>
+                <div class="stat-label">Published Concepts</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">{{ total_problems }}</div>
+                <div class="stat-label">Total Problems</div>
+            </div>
+        </div>
+
+        <div class="admin-grid">
+            <div class="admin-section">
+                <h2>Quick Links</h2>
+                <div class="admin-links">
+                    <a href="{{ url_for('admin_panel.manage_students') }}" class="admin-link-card">👥 Manage Students</a>
+                    <a href="{{ url_for('admin_panel.manage_content') }}" class="admin-link-card">📝 Manage Content</a>
+                    <a href="{{ url_for('admin_panel.manage_codes') }}" class="admin-link-card">🔑 Access Codes</a>
+                    <a href="{{ url_for('admin_panel.manage_blog') }}" class="admin-link-card">📰 Blog Posts</a>
+                    <a href="{{ url_for('admin_panel.manage_testimonials') }}" class="admin-link-card">⭐ Testimonials</a>
+                    <a href="{{ url_for('admin_panel.manage_messages') }}" class="admin-link-card">✉️ Messages</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="admin-grid">
+            <div class="admin-section">
+                <h2>Recent Registrations</h2>
+                {% if recent_students %}
+                <table class="admin-table">
+                    <thead>
+                        <tr><th>Username</th><th>Email</th><th>Tier</th><th>Joined</th></tr>
+                    </thead>
+                    <tbody>
+                        {% for s in recent_students %}
+                        <tr>
+                            <td>{{ s.username }}</td>
+                            <td>{{ s.email }}</td>
+                            <td><span class="badge badge-{{ s.tier }}">{{ s.tier }}</span></td>
+                            <td>{{ s.created_at.strftime('%Y-%m-%d') if s.created_at else '' }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                {% else %}
+                <p class="empty-state">No students registered yet.</p>
+                {% endif %}
+            </div>
+
+            <div class="admin-section">
+                <h2>Recent Messages</h2>
+                {% if recent_messages %}
+                <table class="admin-table">
+                    <thead>
+                        <tr><th>From</th><th>Subject</th><th>Date</th><th>Status</th></tr>
+                    </thead>
+                    <tbody>
+                        {% for m in recent_messages %}
+                        <tr class="{{ 'unread' if not m.is_read else '' }}">
+                            <td><a href="{{ url_for('admin_panel.view_message', message_id=m.id) }}">{{ m.name }}</a></td>
+                            <td>{{ m.subject }}</td>
+                            <td>{{ m.created_at.strftime('%Y-%m-%d') if m.created_at else '' }}</td>
+                            <td>{{ '📩 New' if not m.is_read else '✓ Read' }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                {% else %}
+                <p class="empty-state">No messages yet.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title %}Manage Blog — Admin{% endblock %}
+
+{% block content %}
+<section class="section">
+    <div class="container">
+        <div class="admin-header">
+            <h1>Blog Posts</h1>
+            <a href="{{ url_for('admin_panel.new_blog_post') }}" class="btn btn-primary">+ New Post</a>
+        </div>
+
+        {% if posts %}
+        <table class="admin-table">
+            <thead>
+                <tr><th>Title</th><th>Status</th><th>Published</th><th>Actions</th></tr>
+            </thead>
+            <tbody>
+                {% for post in posts %}
+                <tr>
+                    <td>{{ post.title }}</td>
+                    <td><span class="badge badge-{{ 'published' if post.is_published else 'draft' }}">{{ 'Published' if post.is_published else 'Draft' }}</span></td>
+                    <td>{{ post.published_at.strftime('%Y-%m-%d') if post.published_at else '—' }}</td>
+                    <td>
+                        <a href="{{ url_for('admin_panel.edit_blog_post', post_id=post.id) }}" class="btn btn-sm btn-outline">Edit</a>
+                        <form method="POST" action="{{ url_for('admin_panel.delete_blog_post', post_id=post.id) }}" class="inline-form" onsubmit="return confirm('Delete this post?')">
+                            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                            <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <p class="empty-state">No blog posts yet.</p>
+        {% endif %}
+
+        <a href="{{ url_for('admin_panel.dashboard') }}" class="btn btn-outline">&larr; Back to Dashboard</a>
+    </div>
+</section>
+{% endblock %}

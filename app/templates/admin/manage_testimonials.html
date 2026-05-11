@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block title %}Manage Testimonials — Admin{% endblock %}
+
+{% block content %}
+<section class="section">
+    <div class="container">
+        <div class="admin-header">
+            <h1>Testimonials</h1>
+            <a href="{{ url_for('admin_panel.new_testimonial') }}" class="btn btn-primary">+ New Testimonial</a>
+        </div>
+
+        {% if testimonials %}
+        <table class="admin-table">
+            <thead>
+                <tr><th>Student</th><th>Grade</th><th>Rating</th><th>Featured</th><th>Active</th><th>Actions</th></tr>
+            </thead>
+            <tbody>
+                {% for t in testimonials %}
+                <tr>
+                    <td>{{ t.student_name }}</td>
+                    <td>{{ t.student_grade or '—' }}</td>
+                    <td>{% for i in range(t.rating) %}★{% endfor %}</td>
+                    <td>{{ '⭐' if t.is_featured else '—' }}</td>
+                    <td>{{ '✓' if t.is_active else '✗' }}</td>
+                    <td>
+                        <a href="{{ url_for('admin_panel.edit_testimonial', testimonial_id=t.id) }}" class="btn btn-sm btn-outline">Edit</a>
+                        <form method="POST" action="{{ url_for('admin_panel.delete_testimonial', testimonial_id=t.id) }}" class="inline-form" onsubmit="return confirm('Delete this testimonial?')">
+                            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                            <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <p class="empty-state">No testimonials yet.</p>
+        {% endif %}
+
+        <a href="{{ url_for('admin_panel.dashboard') }}" class="btn btn-outline">&larr; Back to Dashboard</a>
+    </div>
+</section>
+{% endblock %}

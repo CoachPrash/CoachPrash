@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% block title %}Manage Content — Admin{% endblock %}
+
+{% block content %}
+<section class="section">
+    <div class="container">
+        <div class="admin-header">
+            <h1>Manage Content</h1>
+            <a href="{{ url_for('admin_panel.new_subject') }}" class="btn btn-primary">+ New Subject</a>
+        </div>
+
+        {% for subject in subjects %}
+        <div class="content-tree">
+            <div class="tree-header">
+                <h2>{{ subject.icon or '📚' }} {{ subject.name }}
+                    {% if not subject.is_active %}<span class="badge badge-inactive">Inactive</span>{% endif %}
+                </h2>
+                <div class="tree-actions">
+                    <a href="{{ url_for('admin_panel.new_topic', subject_id=subject.id) }}" class="btn btn-sm btn-outline">+ Topic</a>
+                    <a href="{{ url_for('admin_panel.edit_subject', subject_id=subject.id) }}" class="btn btn-sm btn-outline">Edit</a>
+                    <form method="POST" action="{{ url_for('admin_panel.delete_subject', subject_id=subject.id) }}" class="inline-form" onsubmit="return confirm('Delete this subject and all its content?')">
+                        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                        <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                    </form>
+                </div>
+            </div>
+
+            {% for topic in subject.topics.order_by('display_order').all() %}
+            <div class="tree-item tree-level-1">
+                <div class="tree-item-header">
+                    <h3>{{ topic.name }}
+                        <span class="badge badge-{{ topic.difficulty_level }}">{{ topic.difficulty_level.replace('_', ' ').title() }}</span>
+                        {% if not topic.is_active %}<span class="badge badge-inactive">Inactive</span>{% endif %}
+                    </h3>
+                    <div class="tree-actions">
+                        <a href="{{ url_for('admin_panel.new_concept', topic_id=topic.id) }}" class="btn btn-sm btn-outline">+ Concept</a>
+                        <a href="{{ url_for('admin_panel.edit_topic', topic_id=topic.id) }}" class="btn btn-sm btn-outline">Edit</a>
+                        <form method="POST" action="{{ url_for('admin_panel.delete_topic', topic_id=topic.id) }}" class="inline-form" onsubmit="return confirm('Delete this topic?')">
+                            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                            <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                        </form>
+                    </div>
+                </div>
+
+                {% for concept in topic.concepts.order_by('display_order').all() %}
+                <div class="tree-item tree-level-2">
+                    <span>{{ concept.title }}
+                        <span class="badge badge-{{ concept.access_tier }}">{{ concept.access_tier }}</span>
+                        <span class="badge">~{{ concept.estimated_minutes }} min</span>
+                    </span>
+                    <div class="tree-actions">
+                        <a href="{{ url_for('admin_panel.edit_concept', concept_id=concept.id) }}" class="btn btn-sm btn-outline">Edit</a>
+                        <form method="POST" action="{{ url_for('admin_panel.delete_concept', concept_id=concept.id) }}" class="inline-form" onsubmit="return confirm('Delete this concept?')">
+                            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                            <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                        </form>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            {% endfor %}
+        </div>
+        {% endfor %}
+
+        <a href="{{ url_for('admin_panel.dashboard') }}" class="btn btn-outline">&larr; Back to Dashboard</a>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}Messages — Admin{% endblock %}
+
+{% block content %}
+<section class="section">
+    <div class="container">
+        <h1>Contact Messages</h1>
+
+        {% if messages %}
+        <table class="admin-table">
+            <thead>
+                <tr><th>From</th><th>Email</th><th>Subject</th><th>Date</th><th>Status</th></tr>
+            </thead>
+            <tbody>
+                {% for m in messages %}
+                <tr class="{{ 'unread' if not m.is_read else '' }}">
+                    <td><a href="{{ url_for('admin_panel.view_message', message_id=m.id) }}">{{ m.name }}</a></td>
+                    <td>{{ m.email }}</td>
+                    <td>{{ m.subject }}</td>
+                    <td>{{ m.created_at.strftime('%Y-%m-%d %H:%M') if m.created_at else '' }}</td>
+                    <td>{{ '📩 Unread' if not m.is_read else '✓ Read' }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <p class="empty-state">No messages yet.</p>
+        {% endif %}
+
+        <a href="{{ url_for('admin_panel.dashboard') }}" class="btn btn-outline">&larr; Back to Dashboard</a>
+    </div>
+</section>
+{% endblock %}
