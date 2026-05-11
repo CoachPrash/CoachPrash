@@ -550,6 +550,43 @@ img { max-width: 100%; height: auto; }
 .auth-subtitle { text-align: center; color: var(--text-secondary); margin-bottom: 1.5rem; }
 .auth-footer { text-align: center; margin-top: 1.5rem; color: var(--text-secondary); font-size: 0.9rem; }
 
+.auth-divider {
+    display: flex;
+    align-items: center;
+    margin: 1.5rem 0;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+}
+.auth-divider::before, .auth-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+}
+.auth-divider span { padding: 0 1rem; }
+
+.btn-google {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1.5rem;
+    background: #fff;
+    color: #3c4043;
+    border: 1px solid #dadce0;
+    border-radius: var(--radius);
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background var(--transition), box-shadow var(--transition);
+}
+.btn-google:hover {
+    background: #f7f8f8;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+}
+.google-icon { flex-shrink: 0; }
+
 /* --- Blog --- */
 .blog-grid {
     display: grid;

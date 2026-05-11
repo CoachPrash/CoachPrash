@@ -15,6 +15,8 @@ class Config:
         os.environ.get('DATABASE_URL', 'postgresql://postgres:password@localhost:5432/coachprash')
     )
     WTF_CSRF_ENABLED = True
+    GOOGLE_CLIENT_ID = os.environ.get('GOOGLE_CLIENT_ID')
+    GOOGLE_CLIENT_SECRET = os.environ.get('GOOGLE_CLIENT_SECRET')
 
 
 class DevelopmentConfig(Config):

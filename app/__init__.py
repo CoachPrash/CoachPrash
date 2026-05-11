@@ -18,11 +18,18 @@ def create_app(config_name=None):
     if hasattr(config_class, 'init_app'):
         config_class.init_app(flask_app)
 
-    from app.extensions import db, migrate, login_manager, csrf
+    from app.extensions import db, migrate, login_manager, csrf, oauth
     db.init_app(flask_app)
     migrate.init_app(flask_app, db)
     login_manager.init_app(flask_app)
     csrf.init_app(flask_app)
+    oauth.init_app(flask_app)
+
+    oauth.register(
+        name='google',
+        server_metadata_url='https://accounts.google.com/.well-known/openid-configuration',
+        client_kwargs={'scope': 'openid email profile'},
+    )
 
     from app.models import (  # noqa: F401 — ensure models are registered
         User, Subject, Topic, Concept, ProblemSet, Problem, Choice, Hint,

@@ -11,8 +11,10 @@ class User(UserMixin, db.Model):
     id = db.Column(db.String(36), primary_key=True, default=lambda: str(uuid.uuid4()))
     email = db.Column(db.String(255), unique=True, nullable=False, index=True)
     username = db.Column(db.String(80), unique=True, nullable=False)
-    password_hash = db.Column(db.String(256), nullable=False)
+    password_hash = db.Column(db.String(256), nullable=True)
     role = db.Column(db.String(20), nullable=False, default='student')
+    auth_provider = db.Column(db.String(20), nullable=False, default='local')
+    google_id = db.Column(db.String(255), unique=True, nullable=True, index=True)
     is_active = db.Column(db.Boolean, default=True)
     tier = db.Column(db.String(20), nullable=False, default='free')
     created_at = db.Column(db.DateTime, default=lambda: datetime.now(timezone.utc))
@@ -31,6 +33,8 @@ class User(UserMixin, db.Model):
         self.password_hash = generate_password_hash(password)
 
     def check_password(self, password):
+        if not self.password_hash:
+            return False
         return check_password_hash(self.password_hash, password)
 
     @property
