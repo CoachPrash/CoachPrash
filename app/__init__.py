@@ -55,8 +55,7 @@ def create_app(config_name=None):
     from app.blueprints.admin_panel import admin_bp
     flask_app.register_blueprint(admin_bp, url_prefix='/admin')
 
-    with flask_app.app_context():
-        db.create_all()
+    # db.create_all() removed — use Flask-Migrate (flask db upgrade) instead
 
     _register_cli(flask_app)
 
