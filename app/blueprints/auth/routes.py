@@ -14,7 +14,7 @@ def login():
 
     form = LoginForm()
     if form.validate_on_submit():
-        user = User.query.filter_by(email=form.email.data).first()
+        user = User.query.filter(User.email.ilike(form.email.data)).first()
         if user and user.check_password(form.password.data):
             if not user.is_active:
                 flash('Your account has been deactivated. Please contact support.', 'danger')
@@ -47,7 +47,7 @@ def register():
 
         user = User(
             username=form.username.data,
-            email=form.email.data,
+            email=form.email.data.lower(),
             tier=tier,
         )
         user.set_password(form.password.data)
@@ -79,7 +79,7 @@ def google_callback():
         return redirect(url_for('auth.login'))
 
     google_id = userinfo['sub']
-    email = userinfo['email']
+    email = userinfo['email'].lower()
     name = userinfo.get('name', email.split('@')[0])
 
     # 1) Already linked — just log in
@@ -92,8 +92,8 @@ def google_callback():
         flash(f'Welcome back, {user.username}!', 'success')
         return redirect(url_for('main.home'))
 
-    # 2) Same email exists — merge accounts
-    user = User.query.filter_by(email=email).first()
+    # 2) Same email exists — merge accounts (case-insensitive)
+    user = User.query.filter(User.email.ilike(email)).first()
     if user:
         user.google_id = google_id
         if user.auth_provider == 'local':
