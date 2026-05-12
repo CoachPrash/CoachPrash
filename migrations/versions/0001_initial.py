@@ -1,4 +1,4 @@
-"""baseline schema
+"""initial schema
 
 Revision ID: 0001
 Revises:
@@ -20,7 +20,7 @@ def upgrade():
         sa.Column('email', sa.String(255), nullable=False),
         sa.Column('subject', sa.String(200), nullable=False),
         sa.Column('message', sa.Text(), nullable=False),
-        sa.Column('is_read', sa.Boolean(), default=False),
+        sa.Column('is_read', sa.Boolean(), server_default='false'),
         sa.Column('created_at', sa.DateTime()),
     )
 
@@ -31,7 +31,7 @@ def upgrade():
         sa.Column('description', sa.Text(), nullable=False, server_default=''),
         sa.Column('icon', sa.String(50), nullable=False, server_default=''),
         sa.Column('display_order', sa.Integer(), nullable=False, server_default='0'),
-        sa.Column('is_active', sa.Boolean(), default=True),
+        sa.Column('is_active', sa.Boolean(), server_default='true'),
         sa.Column('created_at', sa.DateTime()),
         sa.Column('updated_at', sa.DateTime()),
     )
@@ -42,8 +42,8 @@ def upgrade():
         sa.Column('student_grade', sa.String(50)),
         sa.Column('content', sa.Text(), nullable=False),
         sa.Column('rating', sa.Integer(), nullable=False, server_default='5'),
-        sa.Column('is_featured', sa.Boolean(), default=False),
-        sa.Column('is_active', sa.Boolean(), default=True),
+        sa.Column('is_featured', sa.Boolean(), server_default='false'),
+        sa.Column('is_active', sa.Boolean(), server_default='true'),
         sa.Column('created_at', sa.DateTime()),
     )
 
@@ -51,14 +51,17 @@ def upgrade():
         sa.Column('id', sa.String(36), primary_key=True),
         sa.Column('email', sa.String(255), unique=True, nullable=False),
         sa.Column('username', sa.String(80), unique=True, nullable=False),
-        sa.Column('password_hash', sa.String(256), nullable=False),
+        sa.Column('password_hash', sa.String(256), nullable=True),
         sa.Column('role', sa.String(20), nullable=False, server_default='student'),
-        sa.Column('is_active', sa.Boolean(), default=True),
+        sa.Column('auth_provider', sa.String(20), nullable=False, server_default='local'),
+        sa.Column('google_id', sa.String(255), unique=True),
+        sa.Column('is_active', sa.Boolean(), server_default='true'),
         sa.Column('tier', sa.String(20), nullable=False, server_default='free'),
         sa.Column('created_at', sa.DateTime()),
         sa.Column('updated_at', sa.DateTime()),
     )
     op.create_index('ix_users_email', 'users', ['email'])
+    op.create_index('ix_users_google_id', 'users', ['google_id'])
 
     op.create_table('access_codes',
         sa.Column('id', sa.String(36), primary_key=True),
@@ -68,7 +71,7 @@ def upgrade():
         sa.Column('current_uses', sa.Integer(), nullable=False, server_default='0'),
         sa.Column('expires_at', sa.DateTime()),
         sa.Column('created_by', sa.String(36), sa.ForeignKey('users.id')),
-        sa.Column('is_active', sa.Boolean(), default=True),
+        sa.Column('is_active', sa.Boolean(), server_default='true'),
         sa.Column('created_at', sa.DateTime()),
         sa.Column('updated_at', sa.DateTime()),
     )
@@ -82,7 +85,7 @@ def upgrade():
         sa.Column('content_html', sa.Text(), nullable=False, server_default=''),
         sa.Column('content_raw', sa.Text(), nullable=False, server_default=''),
         sa.Column('excerpt', sa.String(500), nullable=False, server_default=''),
-        sa.Column('is_published', sa.Boolean(), default=False),
+        sa.Column('is_published', sa.Boolean(), server_default='false'),
         sa.Column('published_at', sa.DateTime()),
         sa.Column('created_at', sa.DateTime()),
         sa.Column('updated_at', sa.DateTime()),
@@ -96,7 +99,7 @@ def upgrade():
         sa.Column('description', sa.Text(), nullable=False, server_default=''),
         sa.Column('difficulty_level', sa.String(30), nullable=False, server_default='high_school'),
         sa.Column('display_order', sa.Integer(), nullable=False, server_default='0'),
-        sa.Column('is_active', sa.Boolean(), default=True),
+        sa.Column('is_active', sa.Boolean(), server_default='true'),
         sa.Column('created_at', sa.DateTime()),
         sa.Column('updated_at', sa.DateTime()),
         sa.UniqueConstraint('subject_id', 'slug', name='uq_topic_subject_slug'),
@@ -112,7 +115,7 @@ def upgrade():
         sa.Column('estimated_minutes', sa.Integer(), nullable=False, server_default='5'),
         sa.Column('access_tier', sa.String(20), nullable=False, server_default='free'),
         sa.Column('display_order', sa.Integer(), nullable=False, server_default='0'),
-        sa.Column('is_active', sa.Boolean(), default=True),
+        sa.Column('is_active', sa.Boolean(), server_default='true'),
         sa.Column('created_at', sa.DateTime()),
         sa.Column('updated_at', sa.DateTime()),
     )
@@ -123,7 +126,7 @@ def upgrade():
         sa.Column('title', sa.String(200), nullable=False),
         sa.Column('access_tier', sa.String(20), nullable=False, server_default='free'),
         sa.Column('display_order', sa.Integer(), nullable=False, server_default='0'),
-        sa.Column('is_active', sa.Boolean(), default=True),
+        sa.Column('is_active', sa.Boolean(), server_default='true'),
         sa.Column('created_at', sa.DateTime()),
         sa.Column('updated_at', sa.DateTime()),
     )
@@ -169,7 +172,7 @@ def upgrade():
         sa.Column('id', sa.String(36), primary_key=True),
         sa.Column('problem_id', sa.String(36), sa.ForeignKey('problems.id'), nullable=False),
         sa.Column('choice_text', sa.String(500), nullable=False),
-        sa.Column('is_correct', sa.Boolean(), default=False),
+        sa.Column('is_correct', sa.Boolean(), server_default='false'),
         sa.Column('display_order', sa.Integer(), nullable=False, server_default='0'),
     )
 
@@ -202,6 +205,7 @@ def downgrade():
     op.drop_table('blog_posts')
     op.drop_index('ix_access_codes_code', 'access_codes')
     op.drop_table('access_codes')
+    op.drop_index('ix_users_google_id', 'users')
     op.drop_index('ix_users_email', 'users')
     op.drop_table('users')
     op.drop_table('testimonials')
