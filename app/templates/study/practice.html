@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+
+{% block title %}Practice: {{ concept.title }} — CoachPrash{% endblock %}
+
+{% block content %}
+<section class="section">
+    <div class="container">
+        <nav class="breadcrumb">
+            <a href="{{ url_for('subjects.catalog') }}">Subjects</a>
+            <span class="breadcrumb-sep">/</span>
+            <a href="{{ url_for('subjects.topic_list', slug=subject.slug) }}">{{ subject.name }}</a>
+            <span class="breadcrumb-sep">/</span>
+            <a href="{{ url_for('subjects.topic_detail', subject_slug=subject.slug, topic_slug=topic.slug) }}">{{ topic.name }}</a>
+            <span class="breadcrumb-sep">/</span>
+            <a href="{{ url_for('subjects.concept_detail', subject_slug=subject.slug, topic_slug=topic.slug, concept_slug=concept.slug) }}">{{ concept.title }}</a>
+            <span class="breadcrumb-sep">/</span>
+            <span class="breadcrumb-current">Practice</span>
+        </nav>
+
+        {% if not problem_set %}
+            <div class="empty-state">
+                <h2>No Practice Problems Yet</h2>
+                <p>Practice problems for this concept are coming soon!</p>
+                <a href="{{ url_for('subjects.concept_detail', subject_slug=subject.slug, topic_slug=topic.slug, concept_slug=concept.slug) }}" class="btn btn-primary">Back to Concept</a>
+            </div>
+        {% else %}
+            <div class="quiz-container" id="quizContainer">
+                <div class="quiz-header">
+                    <h2>{{ problem_set.title }}</h2>
+                    <div class="quiz-meta">
+                        <span class="quiz-counter" id="quizCounter">Problem 1 of {{ total_problems }}</span>
+                        <span class="quiz-timer" id="quizTimer">0:00</span>
+                    </div>
+                    <div class="quiz-progress">
+                        <div class="quiz-progress-fill" id="quizProgressFill" style="width: 0%"></div>
+                    </div>
+                </div>
+
+                <div class="quiz-body" id="quizBody">
+                    <div class="quiz-problem" id="problemDisplay"></div>
+                    <div class="quiz-choices" id="choicesArea"></div>
+                    <div class="quiz-actions" id="actionsArea">
+                        <button class="btn btn-primary" id="submitBtn" disabled>Submit Answer</button>
+                        <button class="btn btn-outline" id="hintBtn" style="display:none">Show Hint</button>
+                        <button class="btn btn-outline" id="solutionBtn" style="display:none">Show Solution</button>
+                    </div>
+                    <div class="quiz-feedback" id="feedbackArea" style="display:none"></div>
+                    <div class="quiz-hints" id="hintsArea"></div>
+                    <div class="quiz-solution" id="solutionArea"></div>
+                    <button class="btn btn-primary" id="nextBtn" style="display:none">Next Problem</button>
+                </div>
+
+                {% if not is_premium and total_available is defined and total_available > total_problems %}
+                    <div class="quiz-premium-notice">
+                        <span class="lock-icon">&#128274;</span>
+                        {{ total_available - total_problems }} more problems available with Premium
+                    </div>
+                {% endif %}
+            </div>
+
+            <div class="quiz-results" id="quizResults" style="display:none">
+                <div class="results-card">
+                    <h2>Practice Complete!</h2>
+                    <div class="results-score">
+                        <span class="results-score-num" id="resultsScore">0</span>
+                        <span class="results-score-label">out of <span id="resultsTotal">0</span> correct</span>
+                    </div>
+                    <div class="results-stats">
+                        <div class="results-stat">
+                            <span class="results-stat-value" id="resultsAccuracy">0%</span>
+                            <span class="results-stat-label">Accuracy</span>
+                        </div>
+                        <div class="results-stat">
+                            <span class="results-stat-value" id="resultsTime">0:00</span>
+                            <span class="results-stat-label">Time Spent</span>
+                        </div>
+                    </div>
+                    <div class="results-actions">
+                        <button class="btn btn-primary" id="retryBtn">Try Again</button>
+                        <a href="{{ url_for('subjects.concept_detail', subject_slug=subject.slug, topic_slug=topic.slug, concept_slug=concept.slug) }}" class="btn btn-outline">Back to Concept</a>
+                    </div>
+                </div>
+            </div>
+
+            {% if not current_user.is_authenticated %}
+                <div class="quiz-signup-prompt" id="signupPrompt" style="display:none">
+                    <p>Create a free account to save your progress!</p>
+                    <a href="{{ url_for('auth.register') }}" class="btn btn-sm btn-primary">Sign Up</a>
+                </div>
+            {% endif %}
+        {% endif %}
+    </div>
+</section>
+
+<script type="application/json" id="quiz-data">{{ problems_json | safe }}</script>
+<script type="application/json" id="quiz-meta">{"concept_id": "{{ concept.id }}"}</script>
+<div id="confetti-container"></div>
+{% endblock %}
+
+{% block scripts %}
+{% if problem_set %}
+<script src="{{ url_for('static', filename='js/practice.js') }}"></script>
+{% endif %}
+{% endblock %}

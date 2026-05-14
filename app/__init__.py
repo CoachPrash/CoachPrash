@@ -59,6 +59,9 @@ def create_app(config_name=None):
 
     # db.create_all() removed — use Flask-Migrate (flask db upgrade) instead
 
+    from app.utils.access import register_access_helpers
+    register_access_helpers(flask_app)
+
     _register_cli(flask_app)
 
     return flask_app

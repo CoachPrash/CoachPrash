@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+
+{% block title %}{{ concept.title }} — {{ topic.name }} — CoachPrash{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="reading-progress-bar" id="readingProgressBar"></div>
+
+<section class="section">
+    <div class="container">
+        <nav class="breadcrumb">
+            <a href="{{ url_for('subjects.catalog') }}">Subjects</a>
+            <span class="breadcrumb-sep">/</span>
+            <a href="{{ url_for('subjects.topic_list', slug=subject.slug) }}">{{ subject.name }}</a>
+            <span class="breadcrumb-sep">/</span>
+            <a href="{{ url_for('subjects.topic_detail', subject_slug=subject.slug, topic_slug=topic.slug) }}">{{ topic.name }}</a>
+            <span class="breadcrumb-sep">/</span>
+            <span class="breadcrumb-current">{{ concept.title }}</span>
+        </nav>
+
+        <div class="concept-header">
+            <h1>{{ concept.title }}</h1>
+            <div class="concept-meta">
+                <span class="reading-time-badge">~{{ concept.estimated_minutes }} min read</span>
+                {% if concept.access_tier == 'premium' %}
+                    <span class="tier-badge tier-premium">Premium</span>
+                {% endif %}
+            </div>
+        </div>
+
+        {% if show_teaser %}
+            <div class="concept-content-preview">
+                <div class="concept-content blurred-content">
+                    {{ concept.content_html | truncate(400, True) | safe }}
+                </div>
+                {% include "study/premium_teaser.html" %}
+            </div>
+        {% else %}
+            <div class="concept-content" id="conceptContent">
+                {{ concept.content_html | safe }}
+            </div>
+
+            <div class="concept-actions">
+                {% if has_practice %}
+                    <a href="{{ url_for('subjects.practice_page', subject_slug=subject.slug, topic_slug=topic.slug, concept_slug=concept.slug) }}" class="btn btn-primary btn-lg">
+                        Practice This Concept
+                    </a>
+                {% endif %}
+            </div>
+
+            <nav class="concept-nav">
+                {% if prev_concept %}
+                    <a href="{{ url_for('subjects.concept_detail', subject_slug=subject.slug, topic_slug=topic.slug, concept_slug=prev_concept.slug) }}" class="concept-nav-link concept-nav-prev">
+                        <span class="concept-nav-label">&larr; Previous</span>
+                        <span class="concept-nav-title">{{ prev_concept.title }}</span>
+                    </a>
+                {% else %}
+                    <div></div>
+                {% endif %}
+                {% if next_concept %}
+                    <a href="{{ url_for('subjects.concept_detail', subject_slug=subject.slug, topic_slug=topic.slug, concept_slug=next_concept.slug) }}" class="concept-nav-link concept-nav-next">
+                        <span class="concept-nav-label">Next &rarr;</span>
+                        <span class="concept-nav-title">{{ next_concept.title }}</span>
+                    </a>
+                {% endif %}
+            </nav>
+        {% endif %}
+    </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+{% if not show_teaser %}
+<script src="{{ url_for('static', filename='js/reading-progress.js') }}"></script>
+{% endif %}
+{% endblock %}

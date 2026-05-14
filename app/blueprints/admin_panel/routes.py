@@ -1,5 +1,6 @@
+import json
 from functools import wraps
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 from flask import render_template, flash, redirect, url_for, request, abort
 from flask_login import login_required, current_user
 from app.blueprints.admin_panel import admin_bp
@@ -13,6 +14,7 @@ from app.models import (
 from app.models.user import User
 from app.models.content import Subject, Topic, Concept
 from app.models.practice import ProblemSet, Problem, Choice, Hint, StepByStepSolution
+from app.models.progress import AttemptLog
 from app.models.access import AccessCode
 from app.extensions import db
 
@@ -40,6 +42,38 @@ def dashboard():
     recent_messages = ContactMessage.query.order_by(
         ContactMessage.created_at.desc()
     ).limit(5).all()
+
+    # Practice analytics
+    now = datetime.now(timezone.utc)
+    today_start = now.replace(hour=0, minute=0, second=0, microsecond=0)
+    week_start = today_start - timedelta(days=today_start.weekday())
+
+    attempts_today = AttemptLog.query.filter(AttemptLog.attempted_at >= today_start).count()
+    attempts_week = AttemptLog.query.filter(AttemptLog.attempted_at >= week_start).count()
+    total_attempts = AttemptLog.query.count()
+    correct_attempts = AttemptLog.query.filter_by(is_correct=True).count()
+    overall_accuracy = round(correct_attempts / total_attempts * 100, 1) if total_attempts > 0 else 0
+
+    # Most attempted problems (top 5)
+    most_attempted = db.session.query(
+        Problem.id, Problem.question_html,
+        db.func.count(AttemptLog.id).label('attempt_count')
+    ).join(AttemptLog, AttemptLog.problem_id == Problem.id
+    ).group_by(Problem.id, Problem.question_html
+    ).order_by(db.text('attempt_count DESC')
+    ).limit(5).all()
+
+    # Hardest problems (lowest accuracy, min 5 attempts)
+    hardest = db.session.query(
+        Problem.id, Problem.question_html,
+        db.func.count(AttemptLog.id).label('attempt_count'),
+        db.func.sum(db.case((AttemptLog.is_correct == True, 1), else_=0)).label('correct_count')  # noqa: E712
+    ).join(AttemptLog, AttemptLog.problem_id == Problem.id
+    ).group_by(Problem.id, Problem.question_html
+    ).having(db.func.count(AttemptLog.id) >= 5
+    ).all()
+    hardest = sorted(hardest, key=lambda r: r.correct_count / r.attempt_count if r.attempt_count else 1)[:5]
+
     return render_template(
         'admin/dashboard.html',
         total_students=total_students,
@@ -48,6 +82,12 @@ def dashboard():
         total_problems=total_problems,
         recent_students=recent_students,
         recent_messages=recent_messages,
+        attempts_today=attempts_today,
+        attempts_week=attempts_week,
+        total_attempts=total_attempts,
+        overall_accuracy=overall_accuracy,
+        most_attempted=most_attempted,
+        hardest=hardest,
     )
 
 
@@ -462,3 +502,159 @@ def view_message(message_id):
         message.is_read = True
         db.session.commit()
     return render_template('admin/view_message.html', message=message)
+
+
+# --- Bulk Import ---
+
+@admin_bp.route('/content/import', methods=['GET', 'POST'])
+@admin_required
+def bulk_import():
+    if request.method == 'GET':
+        return render_template('admin/bulk_import.html')
+
+    # Handle JSON from textarea or file upload
+    raw = ''
+    if request.files.get('json_file') and request.files['json_file'].filename:
+        raw = request.files['json_file'].read().decode('utf-8')
+    elif request.form.get('json_data'):
+        raw = request.form['json_data']
+
+    if not raw.strip():
+        flash('No JSON data provided.', 'danger')
+        return render_template('admin/bulk_import.html')
+
+    try:
+        data = json.loads(raw)
+    except json.JSONDecodeError as e:
+        flash(f'Invalid JSON: {e}', 'danger')
+        return render_template('admin/bulk_import.html')
+
+    # Validate structure
+    subject_slug = data.get('subject_slug')
+    topic_slug = data.get('topic_slug')
+    if not subject_slug or not topic_slug:
+        flash('JSON must include subject_slug and topic_slug.', 'danger')
+        return render_template('admin/bulk_import.html')
+
+    subject = Subject.query.filter_by(slug=subject_slug).first()
+    if not subject:
+        flash(f'Subject "{subject_slug}" not found.', 'danger')
+        return render_template('admin/bulk_import.html')
+
+    topic = Topic.query.filter_by(subject_id=subject.id, slug=topic_slug).first()
+    if not topic:
+        flash(f'Topic "{topic_slug}" not found in {subject.name}.', 'danger')
+        return render_template('admin/bulk_import.html')
+
+    concepts_data = data.get('concepts', [])
+    if not concepts_data:
+        flash('No concepts found in JSON.', 'danger')
+        return render_template('admin/bulk_import.html')
+
+    # Import within a transaction
+    counts = {'concepts': 0, 'problem_sets': 0, 'problems': 0, 'choices': 0, 'hints': 0, 'solutions': 0}
+    try:
+        for ci, cdata in enumerate(concepts_data):
+            concept = Concept(
+                topic_id=topic.id,
+                title=cdata.get('title', f'Concept {ci + 1}'),
+                slug=cdata.get('slug', cdata.get('title', f'concept-{ci + 1}').lower().replace(' ', '-')),
+                content_html=cdata.get('content_html', cdata.get('content_raw', '')),
+                content_raw=cdata.get('content_raw', ''),
+                estimated_minutes=cdata.get('estimated_minutes', 5),
+                access_tier=cdata.get('access_tier', 'free'),
+                display_order=cdata.get('display_order', ci),
+                is_active=True,
+            )
+            db.session.add(concept)
+            db.session.flush()
+            counts['concepts'] += 1
+
+            for psi, psdata in enumerate(cdata.get('problem_sets', [])):
+                ps = ProblemSet(
+                    concept_id=concept.id,
+                    title=psdata.get('title', f'Problem Set {psi + 1}'),
+                    access_tier=psdata.get('access_tier', 'free'),
+                    display_order=psdata.get('display_order', psi),
+                    is_active=True,
+                )
+                db.session.add(ps)
+                db.session.flush()
+                counts['problem_sets'] += 1
+
+                for pi, pdata in enumerate(psdata.get('problems', [])):
+                    problem = Problem(
+                        problem_set_id=ps.id,
+                        question_html=pdata.get('question_html', pdata.get('question_raw', '')),
+                        question_raw=pdata.get('question_raw', ''),
+                        problem_type=pdata.get('problem_type', 'mcq'),
+                        correct_answer=pdata.get('correct_answer', ''),
+                        difficulty=pdata.get('difficulty', 'medium'),
+                        points=pdata.get('points', 1),
+                        display_order=pdata.get('display_order', pi),
+                    )
+                    db.session.add(problem)
+                    db.session.flush()
+                    counts['problems'] += 1
+
+                    for chi, chdata in enumerate(pdata.get('choices', [])):
+                        choice = Choice(
+                            problem_id=problem.id,
+                            choice_text=chdata.get('text', chdata.get('choice_text', '')),
+                            is_correct=chdata.get('is_correct', False),
+                            display_order=chi,
+                        )
+                        db.session.add(choice)
+                        counts['choices'] += 1
+
+                    for hi, hdata in enumerate(pdata.get('hints', [])):
+                        hint_text = hdata if isinstance(hdata, str) else hdata.get('hint_text', '')
+                        cost = 0 if isinstance(hdata, str) else hdata.get('cost_points', 0)
+                        hint = Hint(
+                            problem_id=problem.id,
+                            hint_text=hint_text,
+                            display_order=hi,
+                            cost_points=cost,
+                        )
+                        db.session.add(hint)
+                        counts['hints'] += 1
+
+                    solution_data = pdata.get('solution_steps', pdata.get('solution'))
+                    if solution_data:
+                        if isinstance(solution_data, list):
+                            steps = [{'step_number': i + 1, 'text_html': s} if isinstance(s, str) else s
+                                     for i, s in enumerate(solution_data)]
+                        elif isinstance(solution_data, dict):
+                            steps = solution_data.get('steps_json', [])
+                        else:
+                            steps = []
+                        if steps:
+                            sol = StepByStepSolution(
+                                problem_id=problem.id,
+                                steps_json=steps,
+                                access_tier=pdata.get('solution', {}).get('access_tier', 'premium')
+                                if isinstance(pdata.get('solution'), dict) else 'premium',
+                            )
+                            db.session.add(sol)
+                            counts['solutions'] += 1
+
+        db.session.commit()
+        flash(
+            f"Import successful: {counts['concepts']} concepts, {counts['problem_sets']} problem sets, "
+            f"{counts['problems']} problems, {counts['choices']} choices, {counts['hints']} hints, "
+            f"{counts['solutions']} solutions.",
+            'success'
+        )
+    except Exception as e:
+        db.session.rollback()
+        flash(f'Import failed: {e}', 'danger')
+
+    return redirect(url_for('admin_panel.bulk_import'))
+
+
+# --- What's New (Changelog) ---
+
+@admin_bp.route('/changelog')
+@admin_required
+def changelog():
+    return render_template('admin/changelog.html')

@@ -1,0 +1,179 @@
+{% extends "base.html" %}
+{% block title %}What's New — Admin — CoachPrash{% endblock %}
+
+{% block content %}
+<section class="section">
+    <div class="container">
+        <h1>What's New</h1>
+        <p class="changelog-subtitle">Development changelog for CoachPrash.com</p>
+
+        <div class="changelog-timeline">
+
+            <div class="changelog-entry">
+                <div class="changelog-date">
+                    <span class="changelog-date-day">13</span>
+                    <span class="changelog-date-month">May 2026</span>
+                    <span class="changelog-phase-badge">Phase 2</span>
+                </div>
+                <div class="changelog-body">
+                    <h2>Self-Study Engine</h2>
+                    <p class="changelog-summary">Interactive learning system with concept explainers, practice quizzes, progress tracking, and freemium gating.</p>
+
+                    <div class="changelog-section">
+                        <h3>Concept Explainers</h3>
+                        <ul>
+                            <li>Topic overview page showing all concepts with progress indicators and access tier badges</li>
+                            <li>Full concept detail pages with KaTeX math rendering</li>
+                            <li>Reading progress bar that fills as you scroll through a concept</li>
+                            <li>Previous / Next concept navigation</li>
+                            <li>Estimated reading time badges</li>
+                        </ul>
+                    </div>
+
+                    <div class="changelog-section">
+                        <h3>Practice Quiz Engine</h3>
+                        <ul>
+                            <li>Interactive quizzes with multiple choice (MCQ) and fill-in-the-blank problems</li>
+                            <li>AJAX-based answer checking &mdash; no page reloads, answers validated server-side only</li>
+                            <li>Confetti animation on correct answers</li>
+                            <li>Progressive hint system with slide-down reveal</li>
+                            <li>Step-by-step solution accordion (premium only)</li>
+                            <li>Built-in timer tracking time spent per problem</li>
+                            <li>Results screen with score, accuracy, and time summary</li>
+                            <li>Retry option to redo the same problem set</li>
+                        </ul>
+                    </div>
+
+                    <div class="changelog-section">
+                        <h3>Freemium Content Gating</h3>
+                        <ul>
+                            <li>Server-side access control &mdash; not just UI hiding</li>
+                            <li>Free tier: free-tier concepts, first 3 problems per set, first hint only</li>
+                            <li>Premium tier: all concepts, all problems, all hints, step-by-step solutions, progress tracking</li>
+                            <li>Premium teaser overlay with blur effect on gated content</li>
+                            <li>Gentle sign-up prompts for unauthenticated users</li>
+                        </ul>
+                    </div>
+
+                    <div class="changelog-section">
+                        <h3>Student Progress Dashboard</h3>
+                        <ul>
+                            <li>Stats cards: concepts completed, in progress, problems attempted, accuracy, study streak</li>
+                            <li>Per-subject progress bars showing completion percentage</li>
+                            <li>Recent activity timeline with correct/incorrect indicators</li>
+                            <li>Automatic progress tracking when viewing concepts and completing quizzes</li>
+                        </ul>
+                    </div>
+
+                    <div class="changelog-section">
+                        <h3>Admin Enhancements</h3>
+                        <ul>
+                            <li>Bulk JSON import for concepts, problem sets, problems, choices, hints, and solutions</li>
+                            <li>Practice analytics on dashboard: daily/weekly attempts, overall accuracy</li>
+                            <li>Most attempted and hardest problems tables</li>
+                            <li>This changelog page</li>
+                        </ul>
+                    </div>
+
+                    <div class="changelog-section">
+                        <h3>Bug Fixes</h3>
+                        <ul>
+                            <li>Fixed quiz completion not updating StudentProgress &mdash; added /api/practice/complete endpoint so mastery scores and completion status are recorded after finishing a quiz</li>
+                            <li>Upgraded Flask-Login from 0.6.2 to 0.6.3 to fix Werkzeug 3.1 compatibility (url_decode import error)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="changelog-entry">
+                <div class="changelog-date">
+                    <span class="changelog-date-day">11</span>
+                    <span class="changelog-date-month">May 2026</span>
+                    <span class="changelog-phase-badge phase-1">Phase 1</span>
+                </div>
+                <div class="changelog-body">
+                    <h2>Foundation</h2>
+                    <p class="changelog-summary">Complete project scaffolding, database schema, authentication, admin panel, all public pages, and Railway deployment.</p>
+
+                    <div class="changelog-section">
+                        <h3>Project Architecture</h3>
+                        <ul>
+                            <li>Flask app factory with Blueprint-based architecture</li>
+                            <li>PostgreSQL database with 15 tables (UUID primary keys, timestamps)</li>
+                            <li>SQLAlchemy ORM with Flask-Migrate for schema management</li>
+                            <li>Single clean initial migration covering the complete schema</li>
+                            <li>Custom CSS design system &mdash; Bold &amp; Academic theme (navy, crimson, gold)</li>
+                            <li>Google Fonts: Playfair Display (headings), Inter (body), JetBrains Mono (code)</li>
+                            <li>KaTeX CDN integration for LaTeX math rendering</li>
+                            <li>Vanilla JavaScript &mdash; no frameworks</li>
+                        </ul>
+                    </div>
+
+                    <div class="changelog-section">
+                        <h3>Authentication</h3>
+                        <ul>
+                            <li>Email/password registration and login with Flask-Login</li>
+                            <li>Google OAuth sign-in via Authlib (OpenID Connect)</li>
+                            <li>Automatic account merging when Google email matches existing account</li>
+                            <li>Access code system for tier upgrades (free/premium)</li>
+                            <li>Case-insensitive email handling throughout</li>
+                        </ul>
+                    </div>
+
+                    <div class="changelog-section">
+                        <h3>Public Pages</h3>
+                        <ul>
+                            <li>Home page with hero section, subject cards, testimonials, and CTAs</li>
+                            <li>About page with coach bio and teaching philosophy</li>
+                            <li>Subjects catalog with topic browsing</li>
+                            <li>Contact form with database storage</li>
+                            <li>Testimonials page with star ratings</li>
+                            <li>Blog/Resources section with published/draft support</li>
+                            <li>Responsive navigation with mobile toggle</li>
+                            <li>Flash message system</li>
+                        </ul>
+                    </div>
+
+                    <div class="changelog-section">
+                        <h3>Admin Panel</h3>
+                        <ul>
+                            <li>Dashboard with student count, premium count, concept count, problem count</li>
+                            <li>Student management with search, tier editing, activation/deactivation</li>
+                            <li>Full content CRUD: subjects, topics, concepts</li>
+                            <li>Access code management with generation, activation, deactivation</li>
+                            <li>Blog post management with publish/draft workflow</li>
+                            <li>Testimonial management with featured flag</li>
+                            <li>Contact message inbox with read/unread status</li>
+                        </ul>
+                    </div>
+
+                    <div class="changelog-section">
+                        <h3>Deployment</h3>
+                        <ul>
+                            <li>Railway deployment with Gunicorn (2 workers)</li>
+                            <li>Health check endpoint at /health</li>
+                            <li>ProxyFix middleware for correct HTTPS URL generation behind load balancer</li>
+                            <li>Custom domain: coachprash.com via Cloudflare (CNAME flattening)</li>
+                            <li>www &rarr; root 301 redirect</li>
+                            <li>Database seed script with subjects, topics, testimonials, blog posts, access codes</li>
+                            <li>DB reset endpoint for development (/run-drop-all)</li>
+                        </ul>
+                    </div>
+
+                    <div class="changelog-section">
+                        <h3>Seed Data</h3>
+                        <ul>
+                            <li>5 subjects: Mathematics, Physics, Chemistry, Computer Science, Test Prep</li>
+                            <li>26 topics across all subjects</li>
+                            <li>5 student testimonials</li>
+                            <li>2 blog posts (AP Calculus tips, SAT prep strategies)</li>
+                            <li>3 access codes: FREEACCS (free unlimited), PREM2026 (premium 10 uses), EXPIRED1 (expired)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+{% endblock %}

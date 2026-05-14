@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% block title %}Bulk Import — Admin — CoachPrash{% endblock %}
+
+{% block content %}
+<section class="section">
+    <div class="container">
+        <h1>Bulk Content Import</h1>
+        <p>Import concepts, problem sets, problems, hints, and solutions from JSON.</p>
+
+        <form method="POST" enctype="multipart/form-data" class="admin-form">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+
+            <div class="form-group">
+                <label for="json_data">Paste JSON</label>
+                <textarea name="json_data" id="json_data" rows="20" class="form-control form-textarea"
+                    placeholder='Paste your JSON here...'></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="json_file">Or upload a JSON file</label>
+                <input type="file" name="json_file" id="json_file" accept=".json" class="form-control">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Import</button>
+            <a href="{{ url_for('admin_panel.dashboard') }}" class="btn btn-outline">Cancel</a>
+        </form>
+
+        <div class="import-format-docs">
+            <h3>Expected JSON Format</h3>
+            <pre class="code-block">{
+  "subject_slug": "mathematics",
+  "topic_slug": "algebra-1",
+  "concepts": [
+    {
+      "title": "Solving Linear Equations",
+      "slug": "solving-linear-equations",
+      "content_html": "&lt;p&gt;Content with \\( LaTeX \\) math...&lt;/p&gt;",
+      "content_raw": "Content with LaTeX math...",
+      "estimated_minutes": 5,
+      "access_tier": "free",
+      "problem_sets": [
+        {
+          "title": "Practice Set 1",
+          "problems": [
+            {
+              "question_html": "&lt;p&gt;Solve: \\( 2x + 3 = 7 \\)&lt;/p&gt;",
+              "question_raw": "Solve: 2x + 3 = 7",
+              "problem_type": "mcq",
+              "difficulty": "easy",
+              "choices": [
+                {"text": "\\( x = 1 \\)", "is_correct": false},
+                {"text": "\\( x = 2 \\)", "is_correct": true},
+                {"text": "\\( x = 3 \\)", "is_correct": false},
+                {"text": "\\( x = 4 \\)", "is_correct": false}
+              ],
+              "hints": ["Try subtracting 3 from both sides", "Then divide by 2"],
+              "solution_steps": [
+                "Subtract 3: \\( 2x = 4 \\)",
+                "Divide by 2: \\( x = 2 \\)"
+              ]
+            },
+            {
+              "question_html": "&lt;p&gt;Solve: \\( 3x - 1 = 8 \\)&lt;/p&gt;",
+              "problem_type": "fill_in_blank",
+              "correct_answer": "3||x=3||x = 3",
+              "difficulty": "easy",
+              "hints": ["Add 1 to both sides"],
+              "solution_steps": ["Add 1: \\( 3x = 9 \\)", "Divide by 3: \\( x = 3 \\)"]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}</pre>
+        </div>
+    </div>
+</section>
+{% endblock %}

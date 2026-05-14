@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% block title %}{{ topic.name }} — {{ subject.name }} — CoachPrash{% endblock %}
+
+{% block content %}
+<section class="section">
+    <div class="container">
+        <nav class="breadcrumb">
+            <a href="{{ url_for('subjects.catalog') }}">Subjects</a>
+            <span class="breadcrumb-sep">/</span>
+            <a href="{{ url_for('subjects.topic_list', slug=subject.slug) }}">{{ subject.name }}</a>
+            <span class="breadcrumb-sep">/</span>
+            <span class="breadcrumb-current">{{ topic.name }}</span>
+        </nav>
+
+        <div class="topic-header">
+            <h1>{{ topic.name }}</h1>
+            {% if topic.description %}
+                <p class="topic-description">{{ topic.description }}</p>
+            {% endif %}
+            <span class="difficulty-badge difficulty-{{ topic.difficulty_level }}">{{ topic.difficulty_level | replace('_', ' ') | title }}</span>
+        </div>
+
+        {% if concepts %}
+            <div class="concept-list">
+                {% for concept in concepts %}
+                    {% set progress = progress_map.get(concept.id) %}
+                    <a href="{{ url_for('subjects.concept_detail', subject_slug=subject.slug, topic_slug=topic.slug, concept_slug=concept.slug) }}" class="concept-card">
+                        <div class="concept-card-left">
+                            <span class="concept-number">{{ loop.index }}</span>
+                            {% if progress %}
+                                {% if progress.status == 'completed' or progress.status == 'mastered' %}
+                                    <span class="progress-dot progress-completed" title="Completed">&#10003;</span>
+                                {% elif progress.status == 'in_progress' %}
+                                    <span class="progress-dot progress-in-progress" title="In Progress"></span>
+                                {% else %}
+                                    <span class="progress-dot progress-not-started" title="Not Started"></span>
+                                {% endif %}
+                            {% endif %}
+                        </div>
+                        <div class="concept-card-body">
+                            <h3 class="concept-card-title">{{ concept.title }}</h3>
+                            <div class="concept-card-meta">
+                                <span class="reading-time">~{{ concept.estimated_minutes }} min</span>
+                                {% if concept.access_tier == 'premium' %}
+                                    <span class="tier-badge tier-premium">Premium</span>
+                                {% else %}
+                                    <span class="tier-badge tier-free">Free</span>
+                                {% endif %}
+                                {% if progress and progress.mastery_score is not none %}
+                                    <span class="mastery-badge">{{ (progress.mastery_score * 100) | int }}% mastery</span>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class="concept-card-arrow">
+                            {% if concept.access_tier == 'premium' and not can_access_concept(current_user, concept) %}
+                                <span class="lock-icon" title="Premium content">&#128274;</span>
+                            {% else %}
+                                &rarr;
+                            {% endif %}
+                        </div>
+                    </a>
+                {% endfor %}
+            </div>
+        {% else %}
+            <div class="empty-state">
+                <h3>No concepts yet</h3>
+                <p>Content for this topic is coming soon. Check back later!</p>
+            </div>
+        {% endif %}
+    </div>
+</section>
+{% endblock %}

@@ -35,6 +35,8 @@
                     <a href="{{ url_for('admin_panel.manage_blog') }}" class="admin-link-card">📰 Blog Posts</a>
                     <a href="{{ url_for('admin_panel.manage_testimonials') }}" class="admin-link-card">⭐ Testimonials</a>
                     <a href="{{ url_for('admin_panel.manage_messages') }}" class="admin-link-card">✉️ Messages</a>
+                    <a href="{{ url_for('admin_panel.bulk_import') }}" class="admin-link-card">📥 Bulk Import</a>
+                    <a href="{{ url_for('admin_panel.changelog') }}" class="admin-link-card">📋 What's New</a>
                 </div>
             </div>
         </div>
@@ -60,6 +62,53 @@
                 </table>
                 {% else %}
                 <p class="empty-state">No students registered yet.</p>
+                {% endif %}
+            </div>
+
+            <div class="admin-section">
+                <h2>Practice Analytics</h2>
+                <div class="stats-grid stats-grid-sm">
+                    <div class="stat-card">
+                        <div class="stat-number">{{ attempts_today }}</div>
+                        <div class="stat-label">Attempts Today</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">{{ attempts_week }}</div>
+                        <div class="stat-label">This Week</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">{{ overall_accuracy }}%</div>
+                        <div class="stat-label">Overall Accuracy</div>
+                    </div>
+                </div>
+                {% if most_attempted %}
+                <h3>Most Attempted Problems</h3>
+                <table class="admin-table">
+                    <thead><tr><th>Problem</th><th>Attempts</th></tr></thead>
+                    <tbody>
+                        {% for p in most_attempted %}
+                        <tr>
+                            <td>{{ p.question_html | truncate(80) | safe }}</td>
+                            <td>{{ p.attempt_count }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                {% endif %}
+                {% if hardest %}
+                <h3>Hardest Problems</h3>
+                <table class="admin-table">
+                    <thead><tr><th>Problem</th><th>Accuracy</th><th>Attempts</th></tr></thead>
+                    <tbody>
+                        {% for p in hardest %}
+                        <tr>
+                            <td>{{ p.question_html | truncate(80) | safe }}</td>
+                            <td>{{ (p.correct_count / p.attempt_count * 100) | round(1) }}%</td>
+                            <td>{{ p.attempt_count }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
                 {% endif %}
             </div>
 
