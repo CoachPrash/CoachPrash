@@ -4,6 +4,7 @@ from flask_login import current_user
 from app.blueprints.subjects import subjects_bp
 from app.models.content import Subject, Topic, Concept
 from app.models.practice import ProblemSet, Problem
+from app.models.resource import Resource
 from app.models.progress import StudentProgress
 from app.utils.access import can_access_concept
 from app.extensions import db
@@ -31,6 +32,7 @@ def topic_detail(subject_slug, topic_slug):
         subject_id=subject.id, slug=topic_slug, is_active=True
     ).first_or_404()
     concepts = topic.concepts.filter_by(is_active=True).order_by('display_order').all()
+    resources = topic.resources.filter_by(is_active=True).order_by(Resource.display_order).all()
 
     # Build progress map for authenticated premium users
     progress_map = {}
@@ -48,6 +50,7 @@ def topic_detail(subject_slug, topic_slug):
         subject=subject,
         topic=topic,
         concepts=concepts,
+        resources=resources,
         progress_map=progress_map,
     )
 

@@ -78,6 +78,7 @@ document.addEventListener('DOMContentLoaded', function () {
         nextBtn.style.display = 'none';
         submitBtn.disabled = true;
         submitBtn.style.display = '';
+        submitBtn.textContent = 'Submit Answer';
         hintBtn.style.display = p.hint_count > 0 ? '' : 'none';
         hintBtn.textContent = 'Show Hint';
         solutionBtn.style.display = 'none';
@@ -99,6 +100,17 @@ document.addEventListener('DOMContentLoaded', function () {
                 });
                 choicesArea.appendChild(btn);
             });
+        } else if (p.problem_type === 'frq') {
+            var textarea = document.createElement('textarea');
+            textarea.className = 'frq-textarea';
+            textarea.placeholder = 'Write your answer here...';
+            textarea.rows = 6;
+            textarea.addEventListener('input', function () {
+                selectedAnswer = textarea.value.trim();
+                submitBtn.disabled = !selectedAnswer;
+            });
+            choicesArea.appendChild(textarea);
+            submitBtn.textContent = 'Submit Response';
         } else {
             var input = document.createElement('input');
             input.type = 'text';
@@ -146,7 +158,41 @@ document.addEventListener('DOMContentLoaded', function () {
         .then(function (data) {
             answers[p.id] = data.correct;
 
-            if (data.correct) {
+            if (data.correct === null) {
+                // FRQ: show model answer then ask student to self-grade
+                feedbackArea.innerHTML = '<strong>Response submitted.</strong>';
+                feedbackArea.className = 'quiz-feedback feedback-frq';
+                if (data.model_answer) {
+                    feedbackArea.innerHTML += '<div class="frq-model-answer"><strong>Model Answer:</strong><div class="frq-model-answer-content">' + data.model_answer + '</div></div>';
+                }
+                feedbackArea.innerHTML += '<div class="frq-self-grade"><p>Compare your answer to the model answer. Did you get it right?</p>'
+                    + '<button class="btn btn-sm btn-success frq-grade-btn" data-grade="yes">Yes, I got it right</button> '
+                    + '<button class="btn btn-sm btn-danger frq-grade-btn" data-grade="no">No, I got it wrong</button></div>';
+
+                // Hide Next button until student self-grades
+                nextBtn.style.display = 'none';
+
+                feedbackArea.querySelectorAll('.frq-grade-btn').forEach(function (btn) {
+                    btn.addEventListener('click', function () {
+                        var gotIt = btn.getAttribute('data-grade') === 'yes';
+                        if (gotIt) {
+                            score++;
+                            answers[p.id] = true;
+                        } else {
+                            answers[p.id] = false;
+                        }
+                        // Replace self-grade buttons with result
+                        var gradeDiv = feedbackArea.querySelector('.frq-self-grade');
+                        if (gotIt) {
+                            gradeDiv.innerHTML = '<p class="frq-grade-result frq-grade-correct">Marked as correct!</p>';
+                            showConfetti();
+                        } else {
+                            gradeDiv.innerHTML = '<p class="frq-grade-result frq-grade-incorrect">Marked as incorrect. Review the model answer above.</p>';
+                        }
+                        nextBtn.style.display = '';
+                    });
+                });
+            } else if (data.correct) {
                 score++;
                 feedbackArea.innerHTML = '<strong>Correct!</strong>';
                 feedbackArea.className = 'quiz-feedback feedback-correct';
@@ -164,16 +210,15 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (p.problem_type === 'mcq') {
                     var sel = choicesArea.querySelector('.choice-btn.selected');
                     if (sel) sel.classList.add('incorrect');
-                    // Highlight correct choice
-                    choicesArea.querySelectorAll('.choice-btn').forEach(function (btn) {
-                        // We don't know which is correct from client data, rely on visual feedback
-                    });
                 }
             }
 
             feedbackArea.style.display = 'block';
             submitBtn.style.display = 'none';
-            nextBtn.style.display = '';
+            // For FRQ, Next button is shown after self-grading (handled above)
+            if (data.correct !== null) {
+                nextBtn.style.display = '';
+            }
 
             // Show solution button after answering
             if (p.has_solution) {
@@ -186,6 +231,8 @@ document.addEventListener('DOMContentLoaded', function () {
             });
             var fillInput = choicesArea.querySelector('.fill-blank-input');
             if (fillInput) fillInput.disabled = true;
+            var frqTextarea = choicesArea.querySelector('.frq-textarea');
+            if (frqTextarea) frqTextarea.disabled = true;
 
             renderKaTeX(feedbackArea);
 

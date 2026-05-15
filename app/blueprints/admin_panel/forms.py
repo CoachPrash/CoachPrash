@@ -64,7 +64,7 @@ class ProblemSetForm(FlaskForm):
 class ProblemForm(FlaskForm):
     question_raw = TextAreaField('Question (supports LaTeX)', validators=[DataRequired()])
     problem_type = SelectField(
-        'Type', choices=[('mcq', 'Multiple Choice'), ('fill_in_blank', 'Fill in the Blank')]
+        'Type', choices=[('mcq', 'Multiple Choice'), ('fill_in_blank', 'Fill in the Blank'), ('frq', 'Free Response (FRQ)')]
     )
     correct_answer = StringField('Correct Answer (for fill-in-blank)', validators=[Optional()])
     difficulty = SelectField(
@@ -87,6 +87,27 @@ class BlogPostForm(FlaskForm):
     content_raw = TextAreaField('Content (Markdown + LaTeX)', validators=[Optional()])
     excerpt = StringField('Excerpt', validators=[Optional(), Length(max=500)])
     is_published = BooleanField('Published')
+
+
+class ResourceForm(FlaskForm):
+    title = StringField('Title', validators=[DataRequired(), Length(max=200)])
+    resource_type = SelectField(
+        'Type',
+        choices=[
+            ('google_slides', 'Google Slides'),
+            ('google_docs', 'Google Docs'),
+            ('video_link', 'Video Link'),
+            ('pdf_link', 'PDF Link'),
+            ('external_link', 'External Link'),
+        ],
+    )
+    url = StringField('Sharing URL', validators=[DataRequired()])
+    description = TextAreaField('Description', validators=[Optional()])
+    access_tier = SelectField(
+        'Access Tier', choices=[('free', 'Free'), ('premium', 'Premium')]
+    )
+    display_order = IntegerField('Display Order', default=0)
+    is_active = BooleanField('Active', default=True)
 
 
 class TestimonialForm(FlaskForm):

@@ -32,6 +32,13 @@ def can_track_progress(user):
     return user.is_authenticated and user.is_premium
 
 
+def can_access_resource(user, resource):
+    """Check if user can access a resource based on tier."""
+    if resource.access_tier == 'free':
+        return True
+    return user.is_authenticated and user.is_premium
+
+
 def register_access_helpers(app):
     """Register freemium access helpers as Jinja2 context processors."""
     @app.context_processor
@@ -42,4 +49,5 @@ def register_access_helpers(app):
             can_access_hint=can_access_hint,
             can_access_solution=can_access_solution,
             can_track_progress=can_track_progress,
+            can_access_resource=can_access_resource,
         )

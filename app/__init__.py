@@ -36,7 +36,7 @@ def create_app(config_name=None):
     from app.models import (  # noqa: F401 — ensure models are registered
         User, Subject, Topic, Concept, ProblemSet, Problem, Choice, Hint,
         StepByStepSolution, StudentProgress, AttemptLog, AccessCode,
-        Testimonial, BlogPost, ContactMessage,
+        Testimonial, BlogPost, ContactMessage, Resource,
     )
 
     from app.blueprints.main import main_bp
@@ -61,6 +61,9 @@ def create_app(config_name=None):
 
     from app.utils.access import register_access_helpers
     register_access_helpers(flask_app)
+
+    from app.utils.bucket_filter import register_bucket_filter
+    register_bucket_filter(flask_app)
 
     _register_cli(flask_app)
 

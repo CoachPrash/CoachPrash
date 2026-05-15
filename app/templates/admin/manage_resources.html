@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block title %}Manage Resources — Admin — CoachPrash{% endblock %}
+
+{% block content %}
+<section class="section">
+    <div class="container">
+        <div class="page-header-row">
+            <h1>Manage Resources</h1>
+            <a href="{{ url_for('admin_panel.new_resource') }}" class="btn btn-primary">+ New Resource</a>
+        </div>
+
+        {% if resources %}
+        <table class="admin-table">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Type</th>
+                    <th>Attached To</th>
+                    <th>Tier</th>
+                    <th>Order</th>
+                    <th>Active</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for r in resources %}
+                <tr>
+                    <td>{{ r.title }}</td>
+                    <td>{{ r.resource_type | replace('_', ' ') | title }}</td>
+                    <td>
+                        {% if r.topic %}
+                            {{ r.topic.subject.name }} &rarr; {{ r.topic.name }}
+                        {% elif r.subject %}
+                            {{ r.subject.name }} (subject-level)
+                        {% endif %}
+                    </td>
+                    <td><span class="badge badge-{{ r.access_tier }}">{{ r.access_tier }}</span></td>
+                    <td>{{ r.display_order }}</td>
+                    <td>{{ '✓' if r.is_active else '✗' }}</td>
+                    <td>
+                        <a href="{{ url_for('admin_panel.edit_resource', resource_id=r.id) }}" class="btn btn-sm btn-outline">Edit</a>
+                        <form method="POST" action="{{ url_for('admin_panel.delete_resource', resource_id=r.id) }}" style="display:inline">
+                            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                            <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Delete this resource?')">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <div class="empty-state">
+            <h3>No resources yet</h3>
+            <p>Add Google Slides, documents, video links, or other teaching materials.</p>
+        </div>
+        {% endif %}
+    </div>
+</section>
+{% endblock %}

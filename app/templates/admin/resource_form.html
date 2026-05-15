@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% block title %}{{ title }} — Admin — CoachPrash{% endblock %}
+
+{% block content %}
+<section class="section">
+    <div class="container">
+        <h1>{{ title }}</h1>
+
+        <form method="POST" class="admin-form">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+
+            <div class="form-group">
+                <label for="title">Title</label>
+                {{ form.title(class="form-control", placeholder="e.g. Algebra 1 — Systems of Equations Slides") }}
+            </div>
+
+            <div class="form-group">
+                <label for="resource_type">Type</label>
+                {{ form.resource_type(class="form-control") }}
+            </div>
+
+            <div class="form-group">
+                <label for="url">Sharing URL</label>
+                {{ form.url(class="form-control", placeholder="https://docs.google.com/presentation/d/.../edit?usp=sharing") }}
+                <small class="form-help">For Google Slides/Docs, paste the sharing link. The embed URL will be auto-generated.</small>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group form-group-half">
+                    <label for="subject_id">Subject (optional)</label>
+                    <select name="subject_id" class="form-control">
+                        <option value="">— None —</option>
+                        {% for s in subjects %}
+                            <option value="{{ s.id }}" {% if resource is defined and resource and resource.subject_id == s.id %}selected{% endif %}>{{ s.name }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="form-group form-group-half">
+                    <label for="topic_id">Topic (optional)</label>
+                    <select name="topic_id" class="form-control">
+                        <option value="">— None —</option>
+                        {% for t in topics %}
+                            <option value="{{ t.id }}" {% if resource is defined and resource and resource.topic_id == t.id %}selected{% endif %}>{{ t.subject.name }} &rarr; {{ t.name }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+            <small class="form-help">At least one of Subject or Topic must be selected.</small>
+
+            <div class="form-group">
+                <label for="description">Description</label>
+                {{ form.description(class="form-control form-textarea", rows="3", placeholder="Brief description of this resource...") }}
+            </div>
+
+            <div class="form-row">
+                <div class="form-group form-group-half">
+                    <label for="access_tier">Access Tier</label>
+                    {{ form.access_tier(class="form-control") }}
+                </div>
+                <div class="form-group form-group-half">
+                    <label for="display_order">Display Order</label>
+                    {{ form.display_order(class="form-control") }}
+                </div>
+            </div>
+
+            <div class="form-group">
+                {{ form.is_active() }} <label for="is_active" class="form-check-label">Active</label>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Save Resource</button>
+            <a href="{{ url_for('admin_panel.manage_resources') }}" class="btn btn-outline">Cancel</a>
+        </form>
+    </div>
+</section>
+{% endblock %}

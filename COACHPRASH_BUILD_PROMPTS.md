@@ -1019,6 +1019,92 @@ Create a parent/guardian portal. Parents register with an access code linked to 
 
 ---
 
+## CONTENT GENERATION — qhsJSON Prompt Template for Claude
+
+Copy the template below into Claude to generate qhsJSON content for any concept. Review the output before importing via the admin bulk import page.
+
+---
+
+```
+Generate original educational content in CoachPrash qhsJSON format.
+
+SUBJECT: [e.g., Mathematics]
+TOPIC: [e.g., Algebra 1]
+CONCEPT: [e.g., Solving Systems of Equations by Substitution]
+GRADE LEVEL: [e.g., 9th-10th grade]
+DIFFICULTY MIX: [e.g., 3 easy, 4 medium, 3 hard]
+PROBLEM TYPES: [e.g., 7 MCQ, 2 fill-in-blank, 1 frq]
+ACCESS TIER: [free or premium]
+
+LEARNING OBJECTIVES:
+1. [e.g., Students can solve a 2-variable system using substitution]
+2. [e.g., Students can identify when substitution is most efficient]
+3. [e.g., Students can verify solutions by plugging into both equations]
+
+REQUIREMENTS:
+- All content must be 100% ORIGINAL — no copying from any source
+- Use \( ... \) for inline LaTeX, \[ ... \] for display LaTeX
+- Include 2 progressive hints per problem (general → specific)
+- Hints can include cost_points: first hint 0, second hint 1
+- Include step-by-step solutions for every problem
+- Concept explanation should be ~5 minutes reading time
+- 4 choices per MCQ, exactly 1 correct
+- For fill_in_blank, use || separator for multiple accepted answers (e.g., "3||x=3||x = 3")
+- For frq, correct_answer is a model answer shown after submission (no auto-grading)
+- If images are needed, use: <img data-bucket-key='images/{subject}/{topic}/{filename}' alt='description' />
+  (upload the actual images separately via the admin image upload page)
+
+OUTPUT FORMAT:
+Return ONLY valid JSON matching this structure (no markdown fencing, no commentary):
+
+{
+  "subject_slug": "...",
+  "topic_slug": "...",
+  "concepts": [
+    {
+      "title": "...",
+      "slug": "...",
+      "content_html": "<p>Concept explanation with \\( LaTeX \\) math...</p>",
+      "content_raw": "Plain text version...",
+      "estimated_minutes": 5,
+      "access_tier": "free",
+      "problem_sets": [
+        {
+          "title": "Practice: ...",
+          "access_tier": "free",
+          "problems": [
+            {
+              "question_html": "<p>Question with \\( LaTeX \\)...</p>",
+              "question_raw": "Plain text question...",
+              "problem_type": "mcq",
+              "difficulty": "easy",
+              "points": 1,
+              "choices": [
+                {"text": "\\( x = 1 \\)", "is_correct": false},
+                {"text": "\\( x = 2 \\)", "is_correct": true},
+                {"text": "\\( x = 3 \\)", "is_correct": false},
+                {"text": "\\( x = 4 \\)", "is_correct": false}
+              ],
+              "hints": [
+                {"text": "General hint...", "cost_points": 0},
+                {"text": "More specific hint...", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "Step 1 explanation with \\( LaTeX \\)..."},
+                {"text": "Step 2..."},
+                {"text": "Step 3..."}
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+```
+
+---
+
 ## How to Use This Document
 
 1. **Phase 1**: Copy the Phase 1 prompt above and paste it into Claude Pro. Execute it. Deploy to Railway. Verify the site works.

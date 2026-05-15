@@ -3,6 +3,7 @@ from app.models.content import Subject, Topic, Concept
 from app.models.practice import ProblemSet, Problem, Choice, Hint, StepByStepSolution
 from app.models.progress import StudentProgress, AttemptLog
 from app.models.access import AccessCode
+from app.models.resource import Resource
 
 from app.extensions import db
 

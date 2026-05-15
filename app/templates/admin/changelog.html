@@ -11,6 +11,72 @@
 
             <div class="changelog-entry">
                 <div class="changelog-date">
+                    <span class="changelog-date-day">15</span>
+                    <span class="changelog-date-month">May 2026</span>
+                    <span class="changelog-phase-badge">Phase 2A</span>
+                </div>
+                <div class="changelog-body">
+                    <h2>Hardening &amp; Content Pipeline</h2>
+                    <p class="changelog-summary">Resource model for teaching materials, image hosting via Railway Storage Bucket, qhsJSON standard, FRQ support, and content generation pipeline.</p>
+
+                    <div class="changelog-section">
+                        <h3>Teaching Resources</h3>
+                        <ul>
+                            <li>New Resource model for Google Slides, Docs, video links, PDFs, and external links</li>
+                            <li>Resources attach at Topic or Subject level with freemium gating</li>
+                            <li>Google Slides/Docs auto-converted to embed URLs and rendered as iframes</li>
+                            <li>Admin CRUD for managing resources</li>
+                            <li>Embedded slides section on topic overview page</li>
+                        </ul>
+                    </div>
+
+                    <div class="changelog-section">
+                        <h3>Image Hosting</h3>
+                        <ul>
+                            <li>Railway Storage Bucket integration (S3-compatible, included in Hobby Plan)</li>
+                            <li>Admin image upload page with bucket key display for qhsJSON</li>
+                            <li>Template filter converts <code>data-bucket-key</code> attributes to presigned URLs at render time</li>
+                            <li>Presigned URLs (1hr expiry) provide freemium gating &mdash; premium images only accessible to authorized users</li>
+                        </ul>
+                    </div>
+
+                    <div class="changelog-section">
+                        <h3>qhsJSON Standard</h3>
+                        <ul>
+                            <li>Defined CoachPrash qhsJSON format &mdash; custom JSON for questions, hints, and solutions</li>
+                            <li>Supports MCQ, fill-in-blank, and free response (FRQ) problem types</li>
+                            <li>Images supported in questions, hints, AND solutions via <code>data-bucket-key</code></li>
+                            <li>Hints support <code>cost_points</code> for point deduction on reveal</li>
+                            <li>JSON validation button on bulk import page (AJAX pre-check)</li>
+                            <li>Updated format documentation on import page</li>
+                        </ul>
+                    </div>
+
+                    <div class="changelog-section">
+                        <h3>Free Response Questions (FRQ)</h3>
+                        <ul>
+                            <li>New <code>frq</code> problem type</li>
+                            <li>Students write answers in a textarea</li>
+                            <li>Model answer displayed after submission</li>
+                            <li>Honor-system self-grading: student marks their own answer as correct/incorrect</li>
+                            <li>Self-grade counts toward quiz score (3/3 possible if FRQ marked correct)</li>
+                            <li>Attempts logged for coach review</li>
+                        </ul>
+                    </div>
+
+                    <div class="changelog-section">
+                        <h3>Admin Enhancements</h3>
+                        <ul>
+                            <li>Resources management page linked from admin dashboard</li>
+                            <li>Image upload page linked from admin dashboard</li>
+                            <li>Prompt template for Claude content generation (COACHPRASH_BUILD_PROMPTS.md)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="changelog-entry">
+                <div class="changelog-date">
                     <span class="changelog-date-day">13</span>
                     <span class="changelog-date-month">May 2026</span>
                     <span class="changelog-phase-badge">Phase 2</span>

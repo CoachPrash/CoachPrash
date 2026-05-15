@@ -32,6 +32,10 @@ def check_answer():
         if correct_choice:
             is_correct = (submitted == correct_choice.id)
             correct_display = correct_choice.choice_text
+    elif problem.problem_type == 'frq':
+        # FRQ: no auto-grading — always accept the submission
+        is_correct = None
+        correct_display = problem.correct_answer or ''
     else:
         # Fill-in-blank: case-insensitive, supports multiple answers separated by ||
         accepted = [a.strip().lower() for a in (problem.correct_answer or '').split('||')]
@@ -44,7 +48,7 @@ def check_answer():
             student_id=current_user.id,
             problem_id=problem.id,
             submitted_answer=submitted,
-            is_correct=is_correct,
+            is_correct=bool(is_correct) if is_correct is not None else False,
             hints_used=data.get('hints_used', 0),
             time_spent_seconds=data.get('time_spent_seconds'),
         )
@@ -52,7 +56,10 @@ def check_answer():
         db.session.commit()
 
     result = {'correct': is_correct}
-    if not is_correct:
+    if is_correct is None:
+        # FRQ: return model answer for display
+        result['model_answer'] = correct_display
+    elif not is_correct:
         result['correct_answer'] = correct_display
     return jsonify(result)
 

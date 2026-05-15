@@ -1,15 +1,16 @@
 import json
 from functools import wraps
 from datetime import datetime, timezone, timedelta
-from flask import render_template, flash, redirect, url_for, request, abort
+from flask import render_template, flash, redirect, url_for, request, abort, jsonify
 from flask_login import login_required, current_user
 from app.blueprints.admin_panel import admin_bp
 from app.blueprints.admin_panel.forms import (
     StudentEditForm, SubjectForm, TopicForm, ConceptForm,
     ProblemSetForm, ProblemForm, AccessCodeForm, BlogPostForm, TestimonialForm,
+    ResourceForm,
 )
 from app.models import (
-    Testimonial, BlogPost, ContactMessage,
+    Testimonial, BlogPost, ContactMessage, Resource,
 )
 from app.models.user import User
 from app.models.content import Subject, Topic, Concept
@@ -504,7 +505,214 @@ def view_message(message_id):
     return render_template('admin/view_message.html', message=message)
 
 
+# --- Resources ---
+
+@admin_bp.route('/resources')
+@admin_required
+def manage_resources():
+    resources = Resource.query.order_by(Resource.display_order).all()
+    subjects = Subject.query.order_by(Subject.display_order).all()
+    topics = Topic.query.order_by(Topic.display_order).all()
+    return render_template(
+        'admin/manage_resources.html',
+        resources=resources, subjects=subjects, topics=topics,
+    )
+
+
+@admin_bp.route('/resources/new', methods=['GET', 'POST'])
+@admin_required
+def new_resource():
+    form = ResourceForm()
+    subjects = Subject.query.order_by(Subject.display_order).all()
+    topics = Topic.query.order_by(Topic.display_order).all()
+
+    if form.validate_on_submit():
+        topic_id = request.form.get('topic_id') or None
+        subject_id = request.form.get('subject_id') or None
+        if not topic_id and not subject_id:
+            flash('Select a topic or subject to attach this resource to.', 'danger')
+            return render_template(
+                'admin/resource_form.html', form=form, title='New Resource',
+                subjects=subjects, topics=topics,
+            )
+
+        embed_url = Resource.to_embed_url(form.url.data)
+        resource = Resource(
+            topic_id=topic_id,
+            subject_id=subject_id,
+            title=form.title.data,
+            resource_type=form.resource_type.data,
+            url=form.url.data,
+            embed_url=embed_url,
+            description=form.description.data or '',
+            access_tier=form.access_tier.data,
+            display_order=form.display_order.data,
+            is_active=form.is_active.data,
+        )
+        db.session.add(resource)
+        db.session.commit()
+        flash(f'Resource "{resource.title}" created.', 'success')
+        return redirect(url_for('admin_panel.manage_resources'))
+
+    return render_template(
+        'admin/resource_form.html', form=form, title='New Resource',
+        subjects=subjects, topics=topics,
+    )
+
+
+@admin_bp.route('/resources/<resource_id>/edit', methods=['GET', 'POST'])
+@admin_required
+def edit_resource(resource_id):
+    resource = db.session.get(Resource, resource_id)
+    if not resource:
+        abort(404)
+    form = ResourceForm(obj=resource)
+    subjects = Subject.query.order_by(Subject.display_order).all()
+    topics = Topic.query.order_by(Topic.display_order).all()
+
+    if form.validate_on_submit():
+        topic_id = request.form.get('topic_id') or None
+        subject_id = request.form.get('subject_id') or None
+        if not topic_id and not subject_id:
+            flash('Select a topic or subject to attach this resource to.', 'danger')
+            return render_template(
+                'admin/resource_form.html', form=form, title=f'Edit Resource: {resource.title}',
+                subjects=subjects, topics=topics, resource=resource,
+            )
+
+        resource.topic_id = topic_id
+        resource.subject_id = subject_id
+        resource.title = form.title.data
+        resource.resource_type = form.resource_type.data
+        resource.url = form.url.data
+        resource.embed_url = Resource.to_embed_url(form.url.data)
+        resource.description = form.description.data or ''
+        resource.access_tier = form.access_tier.data
+        resource.display_order = form.display_order.data
+        resource.is_active = form.is_active.data
+        db.session.commit()
+        flash(f'Resource "{resource.title}" updated.', 'success')
+        return redirect(url_for('admin_panel.manage_resources'))
+
+    return render_template(
+        'admin/resource_form.html', form=form, title=f'Edit Resource: {resource.title}',
+        subjects=subjects, topics=topics, resource=resource,
+    )
+
+
+@admin_bp.route('/resources/<resource_id>/delete', methods=['POST'])
+@admin_required
+def delete_resource(resource_id):
+    resource = db.session.get(Resource, resource_id)
+    if not resource:
+        abort(404)
+    db.session.delete(resource)
+    db.session.commit()
+    flash('Resource deleted.', 'success')
+    return redirect(url_for('admin_panel.manage_resources'))
+
+
+# --- Image Upload ---
+
+@admin_bp.route('/images', methods=['GET', 'POST'])
+@admin_required
+def upload_image():
+    from app.utils.storage import upload_file, list_files
+
+    uploaded_key = None
+    error = None
+
+    if request.method == 'POST':
+        file = request.files.get('image')
+        if not file or not file.filename:
+            error = 'No file selected.'
+        else:
+            subject_slug = request.form.get('subject_slug', 'general')
+            topic_slug = request.form.get('topic_slug', 'general')
+            filename = file.filename.replace(' ', '-')
+            bucket_key = f'images/{subject_slug}/{topic_slug}/{filename}'
+            try:
+                upload_file(file, bucket_key, content_type=file.content_type)
+                uploaded_key = bucket_key
+                flash(f'Image uploaded. Bucket key: {bucket_key}', 'success')
+            except Exception as e:
+                error = f'Upload failed: {e}'
+
+    # List existing images
+    images = []
+    try:
+        images = list_files(prefix='images/')
+    except Exception:
+        pass
+
+    subjects = Subject.query.order_by(Subject.display_order).all()
+    topics = Topic.query.order_by(Topic.display_order).all()
+
+    return render_template(
+        'admin/upload_image.html',
+        uploaded_key=uploaded_key, error=error, images=images,
+        subjects=subjects, topics=topics,
+    )
+
+
 # --- Bulk Import ---
+
+@admin_bp.route('/content/validate-json', methods=['POST'])
+@admin_required
+def validate_json():
+    """AJAX endpoint to validate qhsJSON before import."""
+    raw = request.form.get('json_data', '')
+    if not raw.strip():
+        return jsonify({'valid': False, 'error': 'No JSON data provided.'})
+
+    try:
+        data = json.loads(raw)
+    except json.JSONDecodeError as e:
+        return jsonify({'valid': False, 'error': f'Invalid JSON: {e}'})
+
+    errors = []
+    if not data.get('subject_slug'):
+        errors.append('Missing subject_slug')
+    if not data.get('topic_slug'):
+        errors.append('Missing topic_slug')
+
+    concepts = data.get('concepts', [])
+    if not concepts:
+        errors.append('No concepts found')
+
+    for ci, c in enumerate(concepts):
+        if not c.get('title'):
+            errors.append(f'Concept {ci + 1}: missing title')
+        for psi, ps in enumerate(c.get('problem_sets', [])):
+            for pi, p in enumerate(ps.get('problems', [])):
+                ptype = p.get('problem_type', 'mcq')
+                if ptype not in ('mcq', 'fill_in_blank', 'frq'):
+                    errors.append(f'Concept {ci + 1}, Problem Set {psi + 1}, Problem {pi + 1}: invalid problem_type "{ptype}"')
+                if ptype == 'mcq' and not p.get('choices'):
+                    errors.append(f'Concept {ci + 1}, PS {psi + 1}, Problem {pi + 1}: MCQ missing choices')
+                if ptype == 'fill_in_blank' and not p.get('correct_answer'):
+                    errors.append(f'Concept {ci + 1}, PS {psi + 1}, Problem {pi + 1}: fill_in_blank missing correct_answer')
+
+    if errors:
+        return jsonify({'valid': False, 'errors': errors})
+
+    # Check subject/topic exist
+    subject = Subject.query.filter_by(slug=data['subject_slug']).first()
+    if not subject:
+        return jsonify({'valid': False, 'error': f'Subject "{data["subject_slug"]}" not found in DB.'})
+    topic = Topic.query.filter_by(subject_id=subject.id, slug=data['topic_slug']).first()
+    if not topic:
+        return jsonify({'valid': False, 'error': f'Topic "{data["topic_slug"]}" not found in {subject.name}.'})
+
+    summary = f'{len(concepts)} concept(s)'
+    total_problems = sum(
+        len(ps.get('problems', []))
+        for c in concepts
+        for ps in c.get('problem_sets', [])
+    )
+    summary += f', {total_problems} problem(s)'
+    return jsonify({'valid': True, 'summary': summary, 'subject': subject.name, 'topic': topic.name})
+
 
 @admin_bp.route('/content/import', methods=['GET', 'POST'])
 @admin_required
@@ -608,7 +816,7 @@ def bulk_import():
                         counts['choices'] += 1
 
                     for hi, hdata in enumerate(pdata.get('hints', [])):
-                        hint_text = hdata if isinstance(hdata, str) else hdata.get('hint_text', '')
+                        hint_text = hdata if isinstance(hdata, str) else hdata.get('text', hdata.get('hint_text', ''))
                         cost = 0 if isinstance(hdata, str) else hdata.get('cost_points', 0)
                         hint = Hint(
                             problem_id=problem.id,
@@ -622,8 +830,15 @@ def bulk_import():
                     solution_data = pdata.get('solution_steps', pdata.get('solution'))
                     if solution_data:
                         if isinstance(solution_data, list):
-                            steps = [{'step_number': i + 1, 'text_html': s} if isinstance(s, str) else s
-                                     for i, s in enumerate(solution_data)]
+                            steps = []
+                            for i, s in enumerate(solution_data):
+                                if isinstance(s, str):
+                                    steps.append({'step_number': i + 1, 'text_html': s})
+                                else:
+                                    steps.append({
+                                        'step_number': s.get('step_number', i + 1),
+                                        'text_html': s.get('text', s.get('text_html', '')),
+                                    })
                         elif isinstance(solution_data, dict):
                             steps = solution_data.get('steps_json', [])
                         else:
