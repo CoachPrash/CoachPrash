@@ -1,5 +1,5 @@
 from datetime import datetime, timezone
-from flask import render_template
+from flask import render_template, url_for
 from flask_login import current_user
 from app.blueprints.subjects import subjects_bp
 from app.models.content import Subject, Topic, Concept
@@ -184,3 +184,18 @@ def practice_page(subject_slug, topic_slug, concept_slug):
         total_available=total_available,
         is_premium=is_premium,
     )
+
+
+@subjects_bp.route('/<slug>/topics-json')
+def topics_json(slug):
+    subject = Subject.query.filter_by(slug=slug, is_active=True).first_or_404()
+    topics = Topic.query.filter_by(
+        subject_id=subject.id, is_active=True
+    ).order_by(Topic.display_order).all()
+    return {
+        'topics': [
+            {'name': t.name, 'slug': t.slug,
+             'url': url_for('subjects.topic_detail', subject_slug=slug, topic_slug=t.slug)}
+            for t in topics
+        ]
+    }

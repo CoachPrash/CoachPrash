@@ -13,91 +13,193 @@
     {% block head %}{% endblock %}
 </head>
 <body>
-    <nav class="navbar">
-        <div class="container nav-container">
-            <a href="{{ url_for('main.home') }}" class="nav-logo">CoachPrash</a>
-            <button class="nav-toggle" aria-label="Toggle navigation" onclick="toggleNav()">
-                <span></span><span></span><span></span>
+    <!-- Mobile top bar (hidden on desktop) -->
+    <div class="mobile-topbar">
+        <button class="sidebar-toggle-btn" aria-label="Open menu" onclick="openSidebar()">
+            <span></span><span></span><span></span>
+        </button>
+        <a href="{{ url_for('main.home') }}" class="nav-logo">CoachPrash</a>
+        {% if current_user.is_authenticated %}
+            <span class="mobile-user">{{ current_user.username }}</span>
+        {% else %}
+            <a href="{{ url_for('auth.login') }}" class="btn btn-sm btn-primary">Login</a>
+        {% endif %}
+    </div>
+
+    <!-- Sidebar overlay for mobile -->
+    <div class="sidebar-overlay" onclick="closeSidebar()"></div>
+
+    <!-- Left Sidebar -->
+    <aside class="sidebar" id="sidebar" role="navigation" aria-label="Main navigation">
+        <div class="sidebar-header">
+            <a href="{{ url_for('main.home') }}" class="nav-logo sidebar-logo-full">CoachPrash</a>
+            <a href="{{ url_for('main.home') }}" class="nav-logo sidebar-logo-icon">CP</a>
+            <button class="sidebar-collapse-btn" aria-label="Collapse sidebar" onclick="toggleSidebar()">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                    <path d="M10.3 12.3a1 1 0 0 1-1.4 0l-4-4a1 1 0 0 1 0-1.4l4-4a1 1 0 0 1 1.4 1.4L7 8l3.3 3.3a1 1 0 0 1 0 1.4z"/>
+                </svg>
             </button>
-            <ul class="nav-links">
-                <li><a href="{{ url_for('main.home') }}">Home</a></li>
-                <li><a href="{{ url_for('subjects.catalog') }}">Subjects</a></li>
-                <li><a href="{{ url_for('main.about') }}">About</a></li>
-                <li><a href="{{ url_for('blog.list_posts') }}">Resources</a></li>
-                <li><a href="{{ url_for('main.testimonials') }}">Testimonials</a></li>
-                <li><a href="{{ url_for('main.contact') }}">Contact</a></li>
+        </div>
+
+        <nav class="sidebar-nav">
+            <ul class="sidebar-links">
+                <li>
+                    <a href="{{ url_for('main.home') }}" title="Home"
+                       class="{% if request.endpoint == 'main.home' %}active{% endif %}">
+                        <span class="sidebar-icon">&#x1F3E0;</span>
+                        <span class="sidebar-link-text">Home</span>
+                    </a>
+                </li>
+
+                <li class="sidebar-expandable{% if request.endpoint and request.endpoint.startswith('subjects.') %} open{% endif %}">
+                    <button class="sidebar-expand-btn" title="Subjects">
+                        <span class="sidebar-icon">&#x1F4DA;</span>
+                        <span class="sidebar-link-text">Subjects</span>
+                        <span class="expand-chevron">&#x25B6;</span>
+                    </button>
+                    <ul class="sidebar-submenu">
+                        {% for subj in sidebar_subjects %}
+                        <li class="sidebar-expandable">
+                            <a href="{{ url_for('subjects.topic_list', slug=subj.slug) }}" title="{{ subj.name }}"
+                               class="sidebar-subject-link{% if request.view_args and request.view_args.get('slug') == subj.slug or request.view_args and request.view_args.get('subject_slug') == subj.slug %} active{% endif %}">
+                                <span class="sidebar-link-text">{{ subj.name }}</span>
+                                <span class="expand-chevron expand-chevron-topic" data-subject-slug="{{ subj.slug }}">&#x25B6;</span>
+                            </a>
+                            <ul class="sidebar-submenu sidebar-topics" data-subject="{{ subj.slug }}">
+                                <!-- Topics loaded via AJAX on first expand -->
+                            </ul>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="{{ url_for('main.about') }}" title="About"
+                       class="{% if request.endpoint == 'main.about' %}active{% endif %}">
+                        <span class="sidebar-icon">&#x1F464;</span>
+                        <span class="sidebar-link-text">About</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{{ url_for('blog.list_posts') }}" title="Resources"
+                       class="{% if request.endpoint and request.endpoint.startswith('blog.') %}active{% endif %}">
+                        <span class="sidebar-icon">&#x1F4D6;</span>
+                        <span class="sidebar-link-text">Resources</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{{ url_for('main.testimonials') }}" title="Testimonials"
+                       class="{% if request.endpoint == 'main.testimonials' %}active{% endif %}">
+                        <span class="sidebar-icon">&#x2B50;</span>
+                        <span class="sidebar-link-text">Testimonials</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{{ url_for('main.contact') }}" title="Contact"
+                       class="{% if request.endpoint == 'main.contact' %}active{% endif %}">
+                        <span class="sidebar-icon">&#x2709;</span>
+                        <span class="sidebar-link-text">Contact</span>
+                    </a>
+                </li>
+
                 {% if current_user.is_authenticated %}
                     {% if current_user.is_admin %}
-                        <li><a href="{{ url_for('admin_panel.dashboard') }}" class="nav-admin">Admin</a></li>
-                    {% else %}
-                        <li><a href="{{ url_for('study.progress_dashboard') }}">My Progress</a></li>
-                    {% endif %}
-                    <li class="nav-user-menu">
-                        <a href="#" class="nav-user-btn" onclick="toggleUserMenu(event)">{{ current_user.username }}</a>
-                        <div class="nav-dropdown" id="userDropdown">
-                            <a href="{{ url_for('auth.logout') }}">Logout</a>
-                        </div>
+                    <li>
+                        <a href="{{ url_for('admin_panel.dashboard') }}" title="Admin"
+                           class="nav-admin{% if request.endpoint and request.endpoint.startswith('admin_panel.') %} active{% endif %}">
+                            <span class="sidebar-icon">&#x2699;</span>
+                            <span class="sidebar-link-text">Admin</span>
+                        </a>
                     </li>
-                {% else %}
-                    <li><a href="{{ url_for('auth.login') }}" class="btn btn-sm btn-primary">Login</a></li>
+                    {% else %}
+                    <li>
+                        <a href="{{ url_for('study.progress_dashboard') }}" title="My Progress"
+                           class="{% if request.endpoint == 'study.progress_dashboard' %}active{% endif %}">
+                            <span class="sidebar-icon">&#x1F4CA;</span>
+                            <span class="sidebar-link-text">My Progress</span>
+                        </a>
+                    </li>
+                    {% endif %}
                 {% endif %}
             </ul>
-        </div>
-    </nav>
+        </nav>
 
-    {% with messages = get_flashed_messages(with_categories=true) %}
-        {% if messages %}
-            <div class="flash-container">
-                {% for category, message in messages %}
-                    <div class="flash flash-{{ category }}">
-                        {{ message }}
-                        <button class="flash-close" onclick="this.parentElement.remove()">&times;</button>
+        <div class="sidebar-footer">
+            {% if current_user.is_authenticated %}
+                <div class="sidebar-user-info">
+                    <span class="sidebar-icon">&#x1F464;</span>
+                    <span class="sidebar-link-text">{{ current_user.username }}</span>
+                </div>
+                <a href="{{ url_for('auth.logout') }}" class="sidebar-logout" title="Logout">
+                    <span class="sidebar-icon">&#x23FB;</span>
+                    <span class="sidebar-link-text">Logout</span>
+                </a>
+            {% else %}
+                <a href="{{ url_for('auth.login') }}" class="sidebar-login-btn" title="Login">
+                    <span class="sidebar-icon">&#x2192;</span>
+                    <span class="sidebar-link-text">Login</span>
+                </a>
+            {% endif %}
+        </div>
+    </aside>
+
+    <!-- Main content wrapper -->
+    <div class="main-wrapper" id="mainWrapper">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <div class="flash-container">
+                    {% for category, message in messages %}
+                        <div class="flash flash-{{ category }}">
+                            {{ message }}
+                            <button class="flash-close" onclick="this.parentElement.remove()">&times;</button>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+
+        <main>
+            {% block content %}{% endblock %}
+        </main>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-col">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="{{ url_for('main.home') }}">Home</a></li>
+                            <li><a href="{{ url_for('main.about') }}">About</a></li>
+                            <li><a href="{{ url_for('subjects.catalog') }}">Subjects</a></li>
+                            <li><a href="{{ url_for('blog.list_posts') }}">Resources</a></li>
+                            <li><a href="{{ url_for('main.contact') }}">Contact</a></li>
+                        </ul>
                     </div>
-                {% endfor %}
-            </div>
-        {% endif %}
-    {% endwith %}
-
-    <main>
-        {% block content %}{% endblock %}
-    </main>
-
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="{{ url_for('main.home') }}">Home</a></li>
-                        <li><a href="{{ url_for('main.about') }}">About</a></li>
-                        <li><a href="{{ url_for('subjects.catalog') }}">Subjects</a></li>
-                        <li><a href="{{ url_for('blog.list_posts') }}">Resources</a></li>
-                        <li><a href="{{ url_for('main.contact') }}">Contact</a></li>
-                    </ul>
+                    <div class="footer-col">
+                        <h4>Subjects</h4>
+                        <ul>
+                            {% for subj in sidebar_subjects %}
+                            <li><a href="{{ url_for('subjects.topic_list', slug=subj.slug) }}">{{ subj.name }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Connect</h4>
+                        <ul>
+                            <li>contact@coachprash.com</li>
+                            <li>Follow us on social media</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="footer-col">
-                    <h4>Subjects</h4>
-                    <ul>
-                        <li><a href="{{ url_for('subjects.topic_list', slug='mathematics') }}">Mathematics</a></li>
-                        <li><a href="{{ url_for('subjects.topic_list', slug='physics') }}">Physics</a></li>
-                        <li><a href="{{ url_for('subjects.topic_list', slug='chemistry') }}">Chemistry</a></li>
-                        <li><a href="{{ url_for('subjects.topic_list', slug='computer-science') }}">Computer Science</a></li>
-                        <li><a href="{{ url_for('subjects.topic_list', slug='test-prep') }}">Test Prep</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Connect</h4>
-                    <ul>
-                        <li>contact@coachprash.com</li>
-                        <li>Follow us on social media</li>
-                    </ul>
+                <div class="footer-bottom">
+                    <p>&copy; 2026 CoachPrash. All rights reserved.</p>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 CoachPrash. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+        </footer>
+    </div>
 
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"

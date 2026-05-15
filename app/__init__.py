@@ -65,6 +65,12 @@ def create_app(config_name=None):
     from app.utils.bucket_filter import register_bucket_filter
     register_bucket_filter(flask_app)
 
+    @flask_app.context_processor
+    def inject_sidebar_subjects():
+        from app.models.content import Subject
+        subjects = Subject.query.filter_by(is_active=True).order_by(Subject.display_order).all()
+        return dict(sidebar_subjects=subjects)
+
     _register_cli(flask_app)
 
     return flask_app
