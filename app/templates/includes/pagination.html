@@ -1,0 +1,27 @@
+{% if pagination and pagination.pages > 1 %}
+<nav class="pagination" aria-label="Page navigation">
+    {% if pagination.has_prev %}
+        <a href="{{ url_for(request.endpoint, page=pagination.prev_num, **kwargs) }}" class="pagination-link">&laquo; Prev</a>
+    {% else %}
+        <span class="pagination-link pagination-disabled">&laquo; Prev</span>
+    {% endif %}
+
+    {% for page_num in pagination.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
+        {% if page_num %}
+            {% if page_num == pagination.page %}
+                <span class="pagination-link pagination-current">{{ page_num }}</span>
+            {% else %}
+                <a href="{{ url_for(request.endpoint, page=page_num, **kwargs) }}" class="pagination-link">{{ page_num }}</a>
+            {% endif %}
+        {% else %}
+            <span class="pagination-ellipsis">&hellip;</span>
+        {% endif %}
+    {% endfor %}
+
+    {% if pagination.has_next %}
+        <a href="{{ url_for(request.endpoint, page=pagination.next_num, **kwargs) }}" class="pagination-link">Next &raquo;</a>
+    {% else %}
+        <span class="pagination-link pagination-disabled">Next &raquo;</span>
+    {% endif %}
+</nav>
+{% endif %}

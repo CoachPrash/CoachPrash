@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Access Denied | CoachPrash{% endblock %}
+
+{% block content %}
+<div class="container" style="text-align: center; padding: 4rem 1rem;">
+    <h1 style="font-size: 5rem; color: var(--secondary); margin-bottom: 0.5rem;">403</h1>
+    <h2 style="margin-bottom: 1rem;">Access Denied</h2>
+    <p style="color: var(--text-light); margin-bottom: 2rem; max-width: 500px; margin-left: auto; margin-right: auto;">
+        You don't have permission to access this page. If you believe this is a mistake, please contact us.
+    </p>
+    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <a href="{{ url_for('main.home') }}" class="btn btn-primary">Go Home</a>
+        <a href="{{ url_for('main.contact') }}" class="btn btn-outline">Contact Us</a>
+    </div>
+</div>
+{% endblock %}

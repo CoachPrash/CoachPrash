@@ -1,0 +1,593 @@
+{
+  "subject_slug": "mathematics",
+  "topic_slug": "algebra-1",
+  "concepts": [
+    {
+      "title": "What is a Linear Equation?",
+      "slug": "what-is-a-linear-equation",
+      "content_html": "<h2>Understanding Linear Equations</h2><p>A <strong>linear equation</strong> is an equation where the highest power of the variable is 1. In other words, the variable (usually \\(x\\)) is never squared, cubed, or under a radical.</p><p>The most common forms of linear equations are:</p><ul><li><strong>Slope-Intercept Form:</strong> \\(y = mx + b\\), where \\(m\\) is the slope and \\(b\\) is the y-intercept</li><li><strong>Standard Form:</strong> \\(Ax + By = C\\), where \\(A\\), \\(B\\), and \\(C\\) are integers</li><li><strong>Point-Slope Form:</strong> \\(y - y_1 = m(x - x_1)\\), useful when you know a point and the slope</li></ul><h3>Why Do Linear Equations Matter?</h3><p>Linear equations appear everywhere in real life! For example:</p><ul><li>Calculating the cost of a taxi ride: \\(\\text{Cost} = 2.50 + 1.75 \\times \\text{miles}\\)</li><li>Converting temperatures: \\(F = \\frac{9}{5}C + 32\\)</li><li>Predicting savings: \\(\\text{Total} = 500 + 50 \\times \\text{weeks}\\)</li></ul><h3>How to Recognize a Linear Equation</h3><p>An equation is linear if:</p><ul><li>The variable has an exponent of 1 (or no exponent shown)</li><li>There are no products of variables (like \\(xy\\))</li><li>There are no variables in the denominator</li><li>There are no square roots of variables</li></ul><div class=\"callout-key\"><strong>Key Takeaway:</strong> A linear equation produces a straight line when graphed. If you can write it in the form \\(y = mx + b\\), it's linear!</div><div class=\"callout-warning\"><strong>Common Mistake:</strong> Don't confuse \\(2x + 3 = 7\\) (linear) with \\(2x^2 + 3 = 7\\) (quadratic). The exponent on \\(x\\) makes all the difference!</div>",
+      "content_raw": "Understanding Linear Equations",
+      "estimated_minutes": 6,
+      "access_tier": "free",
+      "display_order": 0,
+      "problem_sets": [
+        {
+          "title": "Practice: Identifying Linear Equations",
+          "access_tier": "free",
+          "display_order": 0,
+          "problems": [
+            {
+              "question_html": "<p>Which of the following is a linear equation?</p>",
+              "question_raw": "Which of the following is a linear equation?",
+              "problem_type": "mcq",
+              "difficulty": "easy",
+              "points": 1,
+              "choices": [
+                {"text": "\\(x^2 + 3x = 10\\)", "is_correct": false},
+                {"text": "\\(2x + 5 = 11\\)", "is_correct": true},
+                {"text": "\\(\\sqrt{x} = 4\\)", "is_correct": false},
+                {"text": "\\(\\frac{1}{x} + 2 = 5\\)", "is_correct": false}
+              ],
+              "hints": [
+                {"text": "A linear equation has the variable raised to the first power only \u2014 no squares, no roots, no variables in the denominator.", "cost_points": 0},
+                {"text": "Look for the equation where \\(x\\) appears with an exponent of exactly 1.", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "A linear equation has the variable to the first power only."},
+                {"text": "\\(x^2 + 3x = 10\\) has \\(x^2\\), so it's quadratic \u2014 not linear."},
+                {"text": "\\(\\sqrt{x} = 4\\) has \\(x^{1/2}\\), and \\(\\frac{1}{x} + 2 = 5\\) has \\(x^{-1}\\) \u2014 neither is linear."},
+                {"text": "\\(2x + 5 = 11\\) has \\(x\\) to the first power, so it is linear."}
+              ]
+            },
+            {
+              "question_html": "<p>Which form of a linear equation is \\(y = 3x - 7\\)?</p>",
+              "question_raw": "Which form of a linear equation is y = 3x - 7?",
+              "problem_type": "mcq",
+              "difficulty": "easy",
+              "points": 1,
+              "choices": [
+                {"text": "Standard Form", "is_correct": false},
+                {"text": "Slope-Intercept Form", "is_correct": true},
+                {"text": "Point-Slope Form", "is_correct": false},
+                {"text": "Factored Form", "is_correct": false}
+              ],
+              "hints": [
+                {"text": "Think about which form looks like \\(y = mx + b\\).", "cost_points": 0},
+                {"text": "In this form, \\(m\\) is the slope and \\(b\\) is the y-intercept. Does \\(y = 3x - 7\\) match?", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "The equation \\(y = 3x - 7\\) is already solved for \\(y\\)."},
+                {"text": "Compare with \\(y = mx + b\\): here \\(m = 3\\) and \\(b = -7\\)."},
+                {"text": "This matches the Slope-Intercept Form."}
+              ]
+            },
+            {
+              "question_html": "<p>Convert \\(y = 2x + 1\\) to Standard Form \\(Ax + By = C\\).</p>",
+              "question_raw": "Convert y = 2x + 1 to Standard Form.",
+              "problem_type": "mcq",
+              "difficulty": "medium",
+              "points": 1,
+              "choices": [
+                {"text": "\\(2x - y = -1\\)", "is_correct": true},
+                {"text": "\\(2x + y = 1\\)", "is_correct": false},
+                {"text": "\\(-2x + y = 1\\)", "is_correct": false},
+                {"text": "\\(2x - y = 1\\)", "is_correct": false}
+              ],
+              "hints": [
+                {"text": "To convert to Standard Form, move all variable terms to one side and the constant to the other.", "cost_points": 0},
+                {"text": "Start with \\(y = 2x + 1\\). Subtract \\(2x\\) from both sides to get \\(-2x + y = 1\\), then multiply by \\(-1\\).", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "Start with \\(y = 2x + 1\\)."},
+                {"text": "Subtract \\(2x\\) from both sides: \\(-2x + y = 1\\)."},
+                {"text": "Multiply both sides by \\(-1\\) to make \\(A\\) positive: \\(2x - y = -1\\)."},
+                {"text": "This is Standard Form with \\(A = 2\\), \\(B = -1\\), \\(C = -1\\)."}
+              ]
+            },
+            {
+              "question_html": "<p>What is the slope of the line \\(y = -4x + 9\\)?</p>",
+              "question_raw": "What is the slope of the line y = -4x + 9?",
+              "problem_type": "fill_in_blank",
+              "difficulty": "easy",
+              "points": 1,
+              "correct_answer": "-4",
+              "choices": [],
+              "hints": [
+                {"text": "In slope-intercept form \\(y = mx + b\\), the coefficient of \\(x\\) is the slope.", "cost_points": 0},
+                {"text": "Compare \\(y = -4x + 9\\) with \\(y = mx + b\\). What is \\(m\\)?", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "The equation is already in slope-intercept form: \\(y = mx + b\\)."},
+                {"text": "The slope \\(m\\) is the coefficient of \\(x\\), which is \\(-4\\)."},
+                {"text": "The slope is \\(-4\\)."}
+              ]
+            },
+            {
+              "question_html": "<p>What is the y-intercept of the line \\(3x + y = 12\\)?</p>",
+              "question_raw": "What is the y-intercept of the line 3x + y = 12?",
+              "problem_type": "fill_in_blank",
+              "difficulty": "medium",
+              "points": 1,
+              "correct_answer": "12||(0, 12)||b = 12",
+              "choices": [],
+              "hints": [
+                {"text": "The y-intercept occurs when \\(x = 0\\). Substitute \\(x = 0\\) into the equation.", "cost_points": 0},
+                {"text": "Alternatively, solve for \\(y\\) to get slope-intercept form and read off \\(b\\).", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "Solve for \\(y\\): subtract \\(3x\\) from both sides to get \\(y = -3x + 12\\)."},
+                {"text": "In slope-intercept form \\(y = mx + b\\), the y-intercept \\(b = 12\\)."},
+                {"text": "The y-intercept is \\(12\\)."}
+              ]
+            },
+            {
+              "question_html": "<p>Is the equation \\(xy = 6\\) a linear equation? Answer \"yes\" or \"no\".</p>",
+              "question_raw": "Is the equation xy = 6 a linear equation?",
+              "problem_type": "fill_in_blank",
+              "difficulty": "medium",
+              "points": 1,
+              "correct_answer": "no||No||NO",
+              "choices": [],
+              "hints": [
+                {"text": "A linear equation cannot have a product of two variables.", "cost_points": 0},
+                {"text": "In \\(xy = 6\\), the variables \\(x\\) and \\(y\\) are multiplied together. Is that allowed in a linear equation?", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "A linear equation has each variable raised to the first power, with no products of variables."},
+                {"text": "The equation \\(xy = 6\\) contains the product \\(xy\\), which makes it non-linear (it's actually a hyperbola)."},
+                {"text": "The answer is no."}
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Solving One-Step Equations",
+      "slug": "solving-one-step-equations",
+      "content_html": "<h2>Solving One-Step Equations</h2><p>A <strong>one-step equation</strong> is a linear equation that can be solved in a single step using inverse operations.</p><h3>The Golden Rule of Equations</h3><p>Whatever you do to one side, you must do to the other side. This keeps the equation balanced, like a scale.</p><h3>Addition and Subtraction</h3><p>If the equation has addition, use subtraction to undo it (and vice versa):</p><p>\\[x + 5 = 12\\]</p><p>Subtract 5 from both sides:</p><p>\\[x = 12 - 5 = 7\\]</p><h3>Multiplication and Division</h3><p>If the equation has multiplication, use division to undo it (and vice versa):</p><p>\\[3x = 21\\]</p><p>Divide both sides by 3:</p><p>\\[x = \\frac{21}{3} = 7\\]</p><h3>Working with Fractions</h3><p>If the variable is divided, multiply both sides:</p><p>\\[\\frac{x}{4} = 3\\]</p><p>Multiply both sides by 4:</p><p>\\[x = 3 \\times 4 = 12\\]</p><div class=\"callout-key\"><strong>Key Takeaway:</strong> To solve a one-step equation, identify the operation being done to the variable and use the inverse operation to isolate it.</div><div class=\"callout-warning\"><strong>Common Mistake:</strong> When dividing by a negative number, don't forget to keep track of the sign! For example, \\(-2x = 10\\) gives \\(x = -5\\), not \\(x = 5\\).</div>",
+      "content_raw": "Solving One-Step Equations",
+      "estimated_minutes": 5,
+      "access_tier": "premium",
+      "display_order": 1,
+      "problem_sets": [
+        {
+          "title": "Practice: One-Step Equations",
+          "access_tier": "premium",
+          "display_order": 0,
+          "problems": [
+            {
+              "question_html": "<p>Solve for \\(x\\): \\(x + 8 = 15\\)</p>",
+              "question_raw": "Solve for x: x + 8 = 15",
+              "problem_type": "fill_in_blank",
+              "difficulty": "easy",
+              "points": 1,
+              "correct_answer": "7||x = 7||x=7",
+              "choices": [],
+              "hints": [
+                {"text": "To isolate \\(x\\), you need to undo the addition of 8.", "cost_points": 0},
+                {"text": "Subtract 8 from both sides: \\(x = 15 - 8\\).", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "Start with \\(x + 8 = 15\\)."},
+                {"text": "Subtract 8 from both sides: \\(x + 8 - 8 = 15 - 8\\)."},
+                {"text": "Simplify: \\(x = 7\\)."}
+              ]
+            },
+            {
+              "question_html": "<p>Solve for \\(x\\): \\(x - 12 = -3\\)</p>",
+              "question_raw": "Solve for x: x - 12 = -3",
+              "problem_type": "fill_in_blank",
+              "difficulty": "easy",
+              "points": 1,
+              "correct_answer": "9||x = 9||x=9",
+              "choices": [],
+              "hints": [
+                {"text": "The variable has 12 subtracted from it. What's the inverse of subtraction?", "cost_points": 0},
+                {"text": "Add 12 to both sides: \\(x = -3 + 12\\).", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "Start with \\(x - 12 = -3\\)."},
+                {"text": "Add 12 to both sides: \\(x = -3 + 12\\)."},
+                {"text": "Simplify: \\(x = 9\\)."}
+              ]
+            },
+            {
+              "question_html": "<p>Solve for \\(x\\): \\(5x = 35\\)</p>",
+              "question_raw": "Solve for x: 5x = 35",
+              "problem_type": "fill_in_blank",
+              "difficulty": "easy",
+              "points": 1,
+              "correct_answer": "7||x = 7||x=7",
+              "choices": [],
+              "hints": [
+                {"text": "The variable is being multiplied by 5. What operation undoes multiplication?", "cost_points": 0},
+                {"text": "Divide both sides by 5: \\(x = \\frac{35}{5}\\).", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "Start with \\(5x = 35\\)."},
+                {"text": "Divide both sides by 5: \\(x = \\frac{35}{5}\\)."},
+                {"text": "Simplify: \\(x = 7\\)."}
+              ]
+            },
+            {
+              "question_html": "<p>Solve for \\(x\\): \\(-4x = 20\\)</p>",
+              "question_raw": "Solve for x: -4x = 20",
+              "problem_type": "fill_in_blank",
+              "difficulty": "medium",
+              "points": 1,
+              "correct_answer": "-5||x = -5||x=-5",
+              "choices": [],
+              "hints": [
+                {"text": "Divide both sides by \\(-4\\). Pay attention to the sign!", "cost_points": 0},
+                {"text": "A positive number divided by a negative number gives a negative result: \\(x = \\frac{20}{-4}\\).", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "Start with \\(-4x = 20\\)."},
+                {"text": "Divide both sides by \\(-4\\): \\(x = \\frac{20}{-4}\\)."},
+                {"text": "Simplify: \\(x = -5\\)."}
+              ]
+            },
+            {
+              "question_html": "<p>Solve for \\(x\\): \\(\\frac{x}{3} = 9\\)</p>",
+              "question_raw": "Solve for x: x/3 = 9",
+              "problem_type": "fill_in_blank",
+              "difficulty": "easy",
+              "points": 1,
+              "correct_answer": "27||x = 27||x=27",
+              "choices": [],
+              "hints": [
+                {"text": "The variable is being divided by 3. Multiply both sides by 3 to undo it.", "cost_points": 0},
+                {"text": "\\(x = 9 \\times 3\\).", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "Start with \\(\\frac{x}{3} = 9\\)."},
+                {"text": "Multiply both sides by 3: \\(x = 9 \\times 3\\)."},
+                {"text": "Simplify: \\(x = 27\\)."}
+              ]
+            },
+            {
+              "question_html": "<p>What is the first step to solve \\(x - 7 = 4\\)?</p>",
+              "question_raw": "What is the first step to solve x - 7 = 4?",
+              "problem_type": "mcq",
+              "difficulty": "easy",
+              "points": 1,
+              "choices": [
+                {"text": "Subtract 7 from both sides", "is_correct": false},
+                {"text": "Add 7 to both sides", "is_correct": true},
+                {"text": "Multiply both sides by 7", "is_correct": false},
+                {"text": "Divide both sides by 7", "is_correct": false}
+              ],
+              "hints": [
+                {"text": "Identify the operation being done to \\(x\\). Here, 7 is being subtracted.", "cost_points": 0},
+                {"text": "The inverse of subtraction is addition. So add 7 to both sides.", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "In \\(x - 7 = 4\\), the number 7 is subtracted from \\(x\\)."},
+                {"text": "The inverse of subtraction is addition."},
+                {"text": "So the first step is to add 7 to both sides: \\(x - 7 + 7 = 4 + 7\\), giving \\(x = 11\\)."}
+              ]
+            },
+            {
+              "question_html": "<p>Solve for \\(n\\): \\(-\\frac{n}{5} = 6\\)</p>",
+              "question_raw": "Solve for n: -n/5 = 6",
+              "problem_type": "fill_in_blank",
+              "difficulty": "hard",
+              "points": 1,
+              "correct_answer": "-30||n = -30||n=-30",
+              "choices": [],
+              "hints": [
+                {"text": "First, multiply both sides by \\(-5\\) to undo both the division and the negative sign.", "cost_points": 0},
+                {"text": "\\(n = 6 \\times (-5) = -30\\).", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "Start with \\(-\\frac{n}{5} = 6\\), which is the same as \\(\\frac{n}{-5} = 6\\)."},
+                {"text": "Multiply both sides by \\(-5\\): \\(n = 6 \\times (-5)\\)."},
+                {"text": "Simplify: \\(n = -30\\)."}
+              ]
+            },
+            {
+              "question_html": "<p>Solve for \\(y\\): \\(0.5y = 4\\)</p>",
+              "question_raw": "Solve for y: 0.5y = 4",
+              "problem_type": "fill_in_blank",
+              "difficulty": "medium",
+              "points": 1,
+              "correct_answer": "8||y = 8||y=8",
+              "choices": [],
+              "hints": [
+                {"text": "Dividing by 0.5 is the same as multiplying by 2.", "cost_points": 0},
+                {"text": "\\(y = \\frac{4}{0.5} = 8\\).", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "Start with \\(0.5y = 4\\)."},
+                {"text": "Divide both sides by 0.5: \\(y = \\frac{4}{0.5}\\)."},
+                {"text": "Simplify: \\(y = 8\\)."}
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Solving Multi-Step Equations",
+      "slug": "solving-multi-step-equations",
+      "content_html": "<h2>Solving Multi-Step Equations</h2><p>Many real-world problems lead to equations that require more than one step to solve. Let's build on our one-step skills and tackle these!</p><h3>The Strategy</h3><p>When solving multi-step equations, follow this order:</p><ol><li><strong>Simplify</strong> each side (distribute and combine like terms)</li><li><strong>Move variable terms</strong> to one side (usually the left)</li><li><strong>Move constant terms</strong> to the other side</li><li><strong>Isolate the variable</strong> (divide or multiply)</li></ol><h3>Example 1: Two Steps</h3><p>Solve \\(3x + 5 = 20\\):</p><p>\\[3x + 5 = 20\\]</p><p>\\[3x = 20 - 5 = 15\\]</p><p>\\[x = \\frac{15}{3} = 5\\]</p><h3>Example 2: Distributing First</h3><p>Solve \\(2(x + 3) = 14\\):</p><p>\\[2x + 6 = 14\\]</p><p>\\[2x = 14 - 6 = 8\\]</p><p>\\[x = \\frac{8}{2} = 4\\]</p><h3>Example 3: Variables on Both Sides</h3><p>Solve \\(5x - 3 = 2x + 9\\):</p><p>\\[5x - 2x = 9 + 3\\]</p><p>\\[3x = 12\\]</p><p>\\[x = 4\\]</p><div class=\"callout-key\"><strong>Key Takeaway:</strong> Always simplify first, then move terms around, and finally isolate the variable. Think \"simplify, move, solve.\"</div><div class=\"callout-warning\"><strong>Common Mistake:</strong> When distributing a negative sign, remember to distribute to ALL terms inside the parentheses. For example, \\(-(2x + 5) = -2x - 5\\), not \\(-2x + 5\\).</div>",
+      "content_raw": "Solving Multi-Step Equations",
+      "estimated_minutes": 7,
+      "access_tier": "premium",
+      "display_order": 2,
+      "problem_sets": [
+        {
+          "title": "Practice: Multi-Step Equations",
+          "access_tier": "premium",
+          "display_order": 0,
+          "problems": [
+            {
+              "question_html": "<p>Solve for \\(x\\): \\(2x + 7 = 19\\)</p>",
+              "question_raw": "Solve for x: 2x + 7 = 19",
+              "problem_type": "fill_in_blank",
+              "difficulty": "easy",
+              "points": 1,
+              "correct_answer": "6||x = 6||x=6",
+              "choices": [],
+              "hints": [
+                {"text": "First subtract 7 from both sides, then divide by 2.", "cost_points": 0},
+                {"text": "\\(2x = 19 - 7 = 12\\), then \\(x = \\frac{12}{2}\\).", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "Start with \\(2x + 7 = 19\\)."},
+                {"text": "Subtract 7 from both sides: \\(2x = 12\\)."},
+                {"text": "Divide both sides by 2: \\(x = 6\\)."}
+              ]
+            },
+            {
+              "question_html": "<p>Solve for \\(x\\): \\(4x - 3 = 17\\)</p>",
+              "question_raw": "Solve for x: 4x - 3 = 17",
+              "problem_type": "fill_in_blank",
+              "difficulty": "easy",
+              "points": 1,
+              "correct_answer": "5||x = 5||x=5",
+              "choices": [],
+              "hints": [
+                {"text": "Add 3 to both sides first, then divide.", "cost_points": 0},
+                {"text": "\\(4x = 17 + 3 = 20\\), then \\(x = \\frac{20}{4}\\).", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "Start with \\(4x - 3 = 17\\)."},
+                {"text": "Add 3 to both sides: \\(4x = 20\\)."},
+                {"text": "Divide both sides by 4: \\(x = 5\\)."}
+              ]
+            },
+            {
+              "question_html": "<p>Solve for \\(x\\): \\(3(x - 2) = 15\\)</p>",
+              "question_raw": "Solve for x: 3(x - 2) = 15",
+              "problem_type": "fill_in_blank",
+              "difficulty": "medium",
+              "points": 1,
+              "correct_answer": "7||x = 7||x=7",
+              "choices": [],
+              "hints": [
+                {"text": "Distribute the 3 first: \\(3 \\cdot x - 3 \\cdot 2\\).", "cost_points": 0},
+                {"text": "After distributing: \\(3x - 6 = 15\\). Now add 6, then divide by 3.", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "Distribute: \\(3x - 6 = 15\\)."},
+                {"text": "Add 6 to both sides: \\(3x = 21\\)."},
+                {"text": "Divide by 3: \\(x = 7\\)."}
+              ]
+            },
+            {
+              "question_html": "<p>Solve for \\(x\\): \\(5x + 2 = 3x + 10\\)</p>",
+              "question_raw": "Solve for x: 5x + 2 = 3x + 10",
+              "problem_type": "fill_in_blank",
+              "difficulty": "medium",
+              "points": 1,
+              "correct_answer": "4||x = 4||x=4",
+              "choices": [],
+              "hints": [
+                {"text": "Move all \\(x\\) terms to one side by subtracting \\(3x\\) from both sides.", "cost_points": 0},
+                {"text": "\\(2x + 2 = 10\\), then \\(2x = 8\\), then \\(x = 4\\).", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "Subtract \\(3x\\) from both sides: \\(2x + 2 = 10\\)."},
+                {"text": "Subtract 2 from both sides: \\(2x = 8\\)."},
+                {"text": "Divide by 2: \\(x = 4\\)."}
+              ]
+            },
+            {
+              "question_html": "<p>Solve for \\(x\\): \\(-(x + 4) + 2x = 7\\)</p>",
+              "question_raw": "Solve for x: -(x + 4) + 2x = 7",
+              "problem_type": "fill_in_blank",
+              "difficulty": "hard",
+              "points": 1,
+              "correct_answer": "11||x = 11||x=11",
+              "choices": [],
+              "hints": [
+                {"text": "Distribute the negative sign first: \\(-(x + 4) = -x - 4\\).", "cost_points": 0},
+                {"text": "Combine like terms: \\(-x + 2x - 4 = 7\\) becomes \\(x - 4 = 7\\).", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "Distribute: \\(-x - 4 + 2x = 7\\)."},
+                {"text": "Combine like terms: \\(x - 4 = 7\\)."},
+                {"text": "Add 4 to both sides: \\(x = 11\\)."}
+              ]
+            },
+            {
+              "question_html": "<p>Solve for \\(x\\): \\(7x - 2(x + 3) = 14\\)</p>",
+              "question_raw": "Solve for x: 7x - 2(x + 3) = 14",
+              "problem_type": "fill_in_blank",
+              "difficulty": "hard",
+              "points": 1,
+              "correct_answer": "4||x = 4||x=4",
+              "choices": [],
+              "hints": [
+                {"text": "Distribute \\(-2\\) to both terms inside the parentheses first.", "cost_points": 0},
+                {"text": "\\(7x - 2x - 6 = 14\\), so \\(5x - 6 = 14\\). Now solve the two-step equation.", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "Distribute: \\(7x - 2x - 6 = 14\\)."},
+                {"text": "Combine like terms: \\(5x - 6 = 14\\)."},
+                {"text": "Add 6: \\(5x = 20\\)."},
+                {"text": "Divide by 5: \\(x = 4\\)."}
+              ]
+            },
+            {
+              "question_html": "<p>What is the solution to \\(\\frac{2x + 6}{2} = 10\\)?</p>",
+              "question_raw": "What is the solution to (2x + 6)/2 = 10?",
+              "problem_type": "mcq",
+              "difficulty": "medium",
+              "points": 1,
+              "choices": [
+                {"text": "\\(x = 5\\)", "is_correct": false},
+                {"text": "\\(x = 7\\)", "is_correct": true},
+                {"text": "\\(x = 8\\)", "is_correct": false},
+                {"text": "\\(x = 14\\)", "is_correct": false}
+              ],
+              "hints": [
+                {"text": "Multiply both sides by 2 first to eliminate the fraction.", "cost_points": 0},
+                {"text": "\\(2x + 6 = 20\\), then \\(2x = 14\\), then \\(x = 7\\).", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "Multiply both sides by 2: \\(2x + 6 = 20\\)."},
+                {"text": "Subtract 6: \\(2x = 14\\)."},
+                {"text": "Divide by 2: \\(x = 7\\)."}
+              ]
+            },
+            {
+              "question_html": "<p>Solve for \\(x\\): \\(3(2x - 1) = 4x + 5\\)</p>",
+              "question_raw": "Solve for x: 3(2x - 1) = 4x + 5",
+              "problem_type": "fill_in_blank",
+              "difficulty": "hard",
+              "points": 1,
+              "correct_answer": "4||x = 4||x=4",
+              "choices": [],
+              "hints": [
+                {"text": "Distribute the 3 on the left side, then move \\(x\\) terms to one side.", "cost_points": 0},
+                {"text": "\\(6x - 3 = 4x + 5\\). Subtract \\(4x\\): \\(2x - 3 = 5\\). Add 3: \\(2x = 8\\).", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "Distribute: \\(6x - 3 = 4x + 5\\)."},
+                {"text": "Subtract \\(4x\\) from both sides: \\(2x - 3 = 5\\)."},
+                {"text": "Add 3 to both sides: \\(2x = 8\\)."},
+                {"text": "Divide by 2: \\(x = 4\\)."}
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Word Problems with Linear Equations",
+      "slug": "word-problems-linear-equations",
+      "content_html": "<h2>Word Problems with Linear Equations</h2><p>One of the most powerful uses of algebra is translating real-world situations into equations and solving them.</p><h3>The Problem-Solving Process</h3><ol><li><strong>Read</strong> the problem carefully (at least twice!)</li><li><strong>Define</strong> your variable: \"Let \\(x\\) = ...\"</li><li><strong>Translate</strong> the English into an equation</li><li><strong>Solve</strong> the equation</li><li><strong>Check</strong> your answer in the original problem (not just the equation)</li></ol><h3>Common Translations</h3><table><thead><tr><th>English</th><th>Math</th></tr></thead><tbody><tr><td>\"is\", \"equals\", \"was\"</td><td>\\(=\\)</td></tr><tr><td>\"more than\", \"increased by\"</td><td>\\(+\\)</td></tr><tr><td>\"less than\", \"decreased by\"</td><td>\\(-\\)</td></tr><tr><td>\"times\", \"of\", \"product\"</td><td>\\(\\times\\)</td></tr><tr><td>\"per\", \"each\", \"divided by\"</td><td>\\(\\div\\)</td></tr></tbody></table><h3>Example</h3><p><em>A phone plan charges $30 per month plus $0.05 per text. If last month's bill was $42.50, how many texts were sent?</em></p><p>Let \\(t\\) = number of texts.</p><p>\\[30 + 0.05t = 42.50\\]</p><p>\\[0.05t = 12.50\\]</p><p>\\[t = 250 \\text{ texts}\\]</p><div class=\"callout-key\"><strong>Key Takeaway:</strong> The hardest part of word problems is translating English to math. Once you have the equation, solving it is the same skills you already know!</div><div class=\"callout-tip\"><strong>Pro Tip:</strong> Always define your variable explicitly (write \"Let \\(x\\) = ...\") before setting up the equation. This prevents confusion about what you're actually solving for.</div>",
+      "content_raw": "Word Problems with Linear Equations",
+      "estimated_minutes": 7,
+      "access_tier": "premium",
+      "display_order": 3,
+      "problem_sets": [
+        {
+          "title": "Practice: Word Problems",
+          "access_tier": "premium",
+          "display_order": 0,
+          "problems": [
+            {
+              "question_html": "<p>A gym charges a $25 membership fee plus $10 per month. If Alex has paid a total of $85, how many months has he been a member?</p>",
+              "question_raw": "A gym charges a $25 membership fee plus $10 per month. If Alex has paid a total of $85, how many months has he been a member?",
+              "problem_type": "fill_in_blank",
+              "difficulty": "easy",
+              "points": 1,
+              "correct_answer": "6||6 months",
+              "choices": [],
+              "hints": [
+                {"text": "Set up the equation: membership fee + monthly cost \u00d7 months = total paid.", "cost_points": 0},
+                {"text": "\\(25 + 10m = 85\\). Subtract 25, then divide by 10.", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "Let \\(m\\) = number of months."},
+                {"text": "Write the equation: \\(25 + 10m = 85\\)."},
+                {"text": "Subtract 25: \\(10m = 60\\)."},
+                {"text": "Divide by 10: \\(m = 6\\) months."}
+              ]
+            },
+            {
+              "question_html": "<p>Three consecutive integers have a sum of 72. What is the smallest integer?</p>",
+              "question_raw": "Three consecutive integers have a sum of 72. What is the smallest integer?",
+              "problem_type": "fill_in_blank",
+              "difficulty": "medium",
+              "points": 1,
+              "correct_answer": "23",
+              "choices": [],
+              "hints": [
+                {"text": "Let the three consecutive integers be \\(n\\), \\(n+1\\), and \\(n+2\\).", "cost_points": 0},
+                {"text": "Their sum is \\(n + (n+1) + (n+2) = 72\\), which simplifies to \\(3n + 3 = 72\\).", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "Let the integers be \\(n\\), \\(n+1\\), \\(n+2\\)."},
+                {"text": "Sum: \\(n + (n+1) + (n+2) = 72\\)."},
+                {"text": "Simplify: \\(3n + 3 = 72\\), so \\(3n = 69\\)."},
+                {"text": "Divide: \\(n = 23\\). The integers are 23, 24, and 25."}
+              ]
+            },
+            {
+              "question_html": "<p>Sarah earns twice as much as Tom. Together they earn $600 per week. How much does Tom earn per week?</p>",
+              "question_raw": "Sarah earns twice as much as Tom. Together they earn $600 per week. How much does Tom earn per week?",
+              "problem_type": "fill_in_blank",
+              "difficulty": "medium",
+              "points": 1,
+              "correct_answer": "200||$200||200 dollars",
+              "choices": [],
+              "hints": [
+                {"text": "Let \\(t\\) = Tom's earnings. Then Sarah earns \\(2t\\).", "cost_points": 0},
+                {"text": "Together: \\(t + 2t = 600\\), so \\(3t = 600\\).", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "Let \\(t\\) = Tom's weekly earnings. Sarah earns \\(2t\\)."},
+                {"text": "Together: \\(t + 2t = 600\\)."},
+                {"text": "Simplify: \\(3t = 600\\)."},
+                {"text": "Divide by 3: \\(t = 200\\). Tom earns $200 per week."}
+              ]
+            },
+            {
+              "question_html": "<p>A rectangle's length is 5 cm more than its width. If the perimeter is 46 cm, what is the width?</p>",
+              "question_raw": "A rectangle's length is 5 cm more than its width. If the perimeter is 46 cm, what is the width?",
+              "problem_type": "fill_in_blank",
+              "difficulty": "medium",
+              "points": 1,
+              "correct_answer": "9||9 cm",
+              "choices": [],
+              "hints": [
+                {"text": "Perimeter = \\(2(\\text{length} + \\text{width})\\). Let \\(w\\) = width, so length = \\(w + 5\\).", "cost_points": 0},
+                {"text": "\\(2(w + w + 5) = 46\\). Simplify: \\(2(2w + 5) = 46\\).", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "Let \\(w\\) = width. Length = \\(w + 5\\)."},
+                {"text": "Perimeter: \\(2(w + w + 5) = 46\\)."},
+                {"text": "Simplify: \\(2(2w + 5) = 46\\), so \\(4w + 10 = 46\\)."},
+                {"text": "Subtract 10: \\(4w = 36\\). Divide by 4: \\(w = 9\\) cm."}
+              ]
+            },
+            {
+              "question_html": "<p>A taxi charges $2.50 for the first mile and $1.50 for each additional mile. If the total fare was $14.50, how many total miles was the trip?</p>",
+              "question_raw": "A taxi charges $2.50 for the first mile and $1.50 for each additional mile. If the total fare was $14.50, how many total miles was the trip?",
+              "problem_type": "fill_in_blank",
+              "difficulty": "hard",
+              "points": 1,
+              "correct_answer": "9||9 miles",
+              "choices": [],
+              "hints": [
+                {"text": "The fare for the first mile is $2.50. Additional miles cost $1.50 each. Let \\(m\\) = additional miles.", "cost_points": 0},
+                {"text": "\\(2.50 + 1.50m = 14.50\\). Solve for \\(m\\), then remember to add the first mile for total miles.", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "Let \\(m\\) = number of additional miles (after the first)."},
+                {"text": "Equation: \\(2.50 + 1.50m = 14.50\\)."},
+                {"text": "Subtract 2.50: \\(1.50m = 12.00\\). Divide by 1.50: \\(m = 8\\)."},
+                {"text": "Total miles = 1 (first mile) + 8 (additional) = 9 miles."}
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

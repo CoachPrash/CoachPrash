@@ -4,10 +4,11 @@ from app.blueprints.auth import auth_bp
 from app.blueprints.auth.forms import LoginForm, RegisterForm
 from app.models.user import User
 from app.models.access import AccessCode
-from app.extensions import db, oauth
+from app.extensions import db, oauth, limiter
 
 
 @auth_bp.route('/login', methods=['GET', 'POST'])
+@limiter.limit('5/minute', methods=['POST'])
 def login():
     if current_user.is_authenticated:
         return redirect(url_for('main.home'))
@@ -29,6 +30,7 @@ def login():
 
 
 @auth_bp.route('/register', methods=['GET', 'POST'])
+@limiter.limit('3/minute', methods=['POST'])
 def register():
     if current_user.is_authenticated:
         return redirect(url_for('main.home'))

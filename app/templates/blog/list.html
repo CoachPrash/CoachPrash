@@ -24,8 +24,12 @@
             </a>
             {% endfor %}
         </div>
+        {% with kwargs={} %}
+            {% include 'includes/pagination.html' %}
+        {% endwith %}
         {% else %}
         <div class="empty-state">
+            <h3>Coming Soon</h3>
             <p>Check back soon for study tips and educational resources.</p>
         </div>
         {% endif %}

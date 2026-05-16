@@ -1,3 +1,15 @@
+// === KaTeX Auto-Render ===
+document.addEventListener('DOMContentLoaded', function () {
+    if (typeof renderMathInElement === 'function') {
+        renderMathInElement(document.body, {
+            delimiters: [
+                {left: '\\(', right: '\\)', display: false},
+                {left: '\\[', right: '\\]', display: true}
+            ]
+        });
+    }
+});
+
 // === Sidebar ===
 (function () {
     var STORAGE_KEY = 'coachprash_sidebar_collapsed';

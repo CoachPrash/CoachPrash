@@ -1,0 +1,550 @@
+{
+  "subject_slug": "computer-science",
+  "topic_slug": "ap-cs-a-java",
+  "concepts": [
+    {
+      "title": "Introduction to Arrays",
+      "slug": "introduction-to-arrays",
+      "content_html": "<h2>Arrays in Java</h2><p>An <strong>array</strong> is a fixed-size collection of elements of the same data type, stored in contiguous memory. Arrays let you store multiple values in a single variable.</p><h3>Declaring and Initializing Arrays</h3><pre><code class=\"language-java\">// Declaration and initialization\nint[] numbers = new int[5];          // 5 elements, all default to 0\nString[] names = {\"Alice\", \"Bob\", \"Charlie\"}; // 3 elements\ndouble[] grades = new double[]{95.5, 87.3, 92.1};</code></pre><h3>Accessing Elements</h3><p>Array elements are accessed by their <strong>index</strong>, starting at 0:</p><pre><code class=\"language-java\">int[] arr = {10, 20, 30, 40, 50};\nSystem.out.println(arr[0]); // 10 (first element)\nSystem.out.println(arr[4]); // 50 (last element)\narr[2] = 99;                // Change third element to 99</code></pre><h3>Array Length</h3><p>Use <code>.length</code> (no parentheses!) to get the size of an array:</p><pre><code class=\"language-java\">int[] data = {1, 2, 3, 4};\nSystem.out.println(data.length); // 4</code></pre><h3>Traversing an Array</h3><pre><code class=\"language-java\">// Standard for loop\nfor (int i = 0; i < arr.length; i++) {\n    System.out.println(arr[i]);\n}\n\n// Enhanced for loop (for-each)\nfor (int value : arr) {\n    System.out.println(value);\n}</code></pre><div class=\"callout-key\"><strong>Key Takeaway:</strong> Arrays are zero-indexed (first element is at index 0) and fixed in size once created. Use <code>.length</code> to avoid going out of bounds.</div><div class=\"callout-warning\"><strong>Common Mistake:</strong> Accessing <code>arr[arr.length]</code> causes an <code>ArrayIndexOutOfBoundsException</code>! The last valid index is <code>arr.length - 1</code>.</div>",
+      "content_raw": "Introduction to Arrays",
+      "estimated_minutes": 7,
+      "access_tier": "free",
+      "display_order": 0,
+      "problem_sets": [
+        {
+          "title": "Practice: Array Basics",
+          "access_tier": "free",
+          "display_order": 0,
+          "problems": [
+            {
+              "question_html": "<p>What is the output of the following code?</p><pre><code class=\"language-java\">int[] arr = {5, 10, 15, 20};\nSystem.out.println(arr[2]);</code></pre>",
+              "question_raw": "What does arr[2] print when arr = {5, 10, 15, 20}?",
+              "problem_type": "fill_in_blank",
+              "difficulty": "easy",
+              "points": 1,
+              "correct_answer": "15",
+              "choices": [],
+              "hints": [
+                {"text": "Arrays are zero-indexed. Index 0 is the first element.", "cost_points": 0},
+                {"text": "arr[0]=5, arr[1]=10, arr[2]=15, arr[3]=20.", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "Array indices: arr[0]=5, arr[1]=10, arr[2]=15, arr[3]=20."},
+                {"text": "arr[2] is the third element, which is 15."},
+                {"text": "Output: 15"}
+              ]
+            },
+            {
+              "question_html": "<p>What is the output of the following code?</p><pre><code class=\"language-java\">int[] nums = new int[3];\nSystem.out.println(nums[0]);</code></pre>",
+              "question_raw": "What prints when you access nums[0] of a new int[3]?",
+              "problem_type": "mcq",
+              "difficulty": "easy",
+              "points": 1,
+              "choices": [
+                {"text": "null", "is_correct": false},
+                {"text": "0", "is_correct": true},
+                {"text": "An error occurs", "is_correct": false},
+                {"text": "3", "is_correct": false}
+              ],
+              "hints": [
+                {"text": "When you create an array with <code>new int[3]</code>, what are the default values for int?", "cost_points": 0},
+                {"text": "In Java, numeric arrays are initialized to 0 by default.", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "When an int array is created with <code>new int[3]</code>, all elements default to 0."},
+                {"text": "nums[0] is 0."},
+                {"text": "Output: 0"}
+              ]
+            },
+            {
+              "question_html": "<p>What happens when you run this code?</p><pre><code class=\"language-java\">int[] arr = {1, 2, 3};\nSystem.out.println(arr[3]);</code></pre>",
+              "question_raw": "What happens with arr[3] when arr has 3 elements?",
+              "problem_type": "mcq",
+              "difficulty": "easy",
+              "points": 1,
+              "choices": [
+                {"text": "Prints 3", "is_correct": false},
+                {"text": "Prints 0", "is_correct": false},
+                {"text": "Throws ArrayIndexOutOfBoundsException", "is_correct": true},
+                {"text": "Prints null", "is_correct": false}
+              ],
+              "hints": [
+                {"text": "The array has indices 0, 1, and 2. What happens when you access index 3?", "cost_points": 0},
+                {"text": "Accessing an index beyond arr.length - 1 causes an exception.", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "The array has 3 elements at indices 0, 1, 2."},
+                {"text": "Index 3 is out of bounds (valid range is 0 to arr.length-1 = 2)."},
+                {"text": "Java throws an ArrayIndexOutOfBoundsException at runtime."}
+              ]
+            },
+            {
+              "question_html": "<p>What is the output?</p><pre><code class=\"language-java\">int[] arr = {3, 7, 1, 9, 4};\nSystem.out.println(arr.length);</code></pre>",
+              "question_raw": "What does arr.length print for {3, 7, 1, 9, 4}?",
+              "problem_type": "fill_in_blank",
+              "difficulty": "easy",
+              "points": 1,
+              "correct_answer": "5",
+              "choices": [],
+              "hints": [
+                {"text": "<code>.length</code> returns the number of elements in the array.", "cost_points": 0},
+                {"text": "Count the elements: 3, 7, 1, 9, 4 = five elements.", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "The array has 5 elements: {3, 7, 1, 9, 4}."},
+                {"text": "arr.length returns 5."},
+                {"text": "Output: 5"}
+              ]
+            },
+            {
+              "question_html": "<p>What is the output?</p><pre><code class=\"language-java\">int[] arr = {2, 4, 6, 8};\nint sum = 0;\nfor (int val : arr) {\n    sum += val;\n}\nSystem.out.println(sum);</code></pre>",
+              "question_raw": "What is the sum of {2, 4, 6, 8} using a for-each loop?",
+              "problem_type": "fill_in_blank",
+              "difficulty": "medium",
+              "points": 1,
+              "correct_answer": "20",
+              "choices": [],
+              "hints": [
+                {"text": "The for-each loop visits each element: 2, 4, 6, 8. Add them all up.", "cost_points": 0},
+                {"text": "2 + 4 + 6 + 8 = ?", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "The loop adds each element to sum: 0+2=2, 2+4=6, 6+6=12, 12+8=20."},
+                {"text": "Final sum = 20."},
+                {"text": "Output: 20"}
+              ]
+            },
+            {
+              "question_html": "<p>Which of the following correctly declares an array of 10 Strings in Java?</p>",
+              "question_raw": "Which correctly declares an array of 10 Strings?",
+              "problem_type": "mcq",
+              "difficulty": "easy",
+              "points": 1,
+              "choices": [
+                {"text": "<code>String names = new String[10];</code>", "is_correct": false},
+                {"text": "<code>String[] names = new String[10];</code>", "is_correct": true},
+                {"text": "<code>String[10] names = new String;</code>", "is_correct": false},
+                {"text": "<code>String names[] = new String(10);</code>", "is_correct": false}
+              ],
+              "hints": [
+                {"text": "The syntax is: <code>Type[] name = new Type[size];</code>", "cost_points": 0},
+                {"text": "Square brackets go after the type (or variable name), and <code>new Type[size]</code> uses square brackets.", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "Java array declaration syntax: <code>Type[] varName = new Type[size];</code>"},
+                {"text": "<code>String[] names = new String[10];</code> is the correct syntax."},
+                {"text": "The other options have syntax errors (missing brackets, wrong placement, parentheses instead of brackets)."}
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Array Algorithms",
+      "slug": "array-algorithms",
+      "content_html": "<h2>Common Array Algorithms</h2><p>These algorithms appear frequently on the AP CS A exam and in real programming. Master them!</p><h3>Linear Search</h3><p>Search through an array one element at a time:</p><pre><code class=\"language-java\">public static int linearSearch(int[] arr, int target) {\n    for (int i = 0; i < arr.length; i++) {\n        if (arr[i] == target) {\n            return i; // Found at index i\n        }\n    }\n    return -1; // Not found\n}</code></pre><h3>Finding Maximum and Minimum</h3><pre><code class=\"language-java\">public static int findMax(int[] arr) {\n    int max = arr[0];\n    for (int i = 1; i < arr.length; i++) {\n        if (arr[i] > max) {\n            max = arr[i];\n        }\n    }\n    return max;\n}</code></pre><h3>Computing Sum and Average</h3><pre><code class=\"language-java\">int sum = 0;\nfor (int val : arr) {\n    sum += val;\n}\ndouble average = (double) sum / arr.length;</code></pre><h3>Reversing an Array</h3><pre><code class=\"language-java\">for (int i = 0; i < arr.length / 2; i++) {\n    int temp = arr[i];\n    arr[i] = arr[arr.length - 1 - i];\n    arr[arr.length - 1 - i] = temp;\n}</code></pre><div class=\"callout-key\"><strong>Key Takeaway:</strong> These algorithms form the building blocks of more complex programs. Practice tracing through them by hand with sample arrays.</div><div class=\"callout-tip\"><strong>Pro Tip:</strong> When finding max/min, initialize with the first element of the array (not 0 or Integer.MAX_VALUE) to handle arrays with all negative numbers.</div>",
+      "content_raw": "Array Algorithms",
+      "estimated_minutes": 8,
+      "access_tier": "premium",
+      "display_order": 1,
+      "problem_sets": [
+        {
+          "title": "Practice: Array Algorithms",
+          "access_tier": "premium",
+          "display_order": 0,
+          "problems": [
+            {
+              "question_html": "<p>What does the following method return when called with <code>linearSearch({5, 3, 8, 1, 9}, 8)</code>?</p><pre><code class=\"language-java\">public static int linearSearch(int[] arr, int target) {\n    for (int i = 0; i < arr.length; i++) {\n        if (arr[i] == target) return i;\n    }\n    return -1;\n}</code></pre>",
+              "question_raw": "What does linearSearch({5,3,8,1,9}, 8) return?",
+              "problem_type": "fill_in_blank",
+              "difficulty": "easy",
+              "points": 1,
+              "correct_answer": "2",
+              "choices": [],
+              "hints": [
+                {"text": "The method returns the index where the target is found.", "cost_points": 0},
+                {"text": "Walk through: i=0 (5!=8), i=1 (3!=8), i=2 (8==8) \u2014 return 2.", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "i=0: arr[0]=5, not equal to 8."},
+                {"text": "i=1: arr[1]=3, not equal to 8."},
+                {"text": "i=2: arr[2]=8, equals target. Return 2."}
+              ]
+            },
+            {
+              "question_html": "<p>What is the output?</p><pre><code class=\"language-java\">int[] arr = {4, 7, 2, 9, 1};\nint max = arr[0];\nfor (int i = 1; i < arr.length; i++) {\n    if (arr[i] > max) {\n        max = arr[i];\n    }\n}\nSystem.out.println(max);</code></pre>",
+              "question_raw": "What is the max of {4, 7, 2, 9, 1}?",
+              "problem_type": "fill_in_blank",
+              "difficulty": "easy",
+              "points": 1,
+              "correct_answer": "9",
+              "choices": [],
+              "hints": [
+                {"text": "Trace through: max starts at 4, then gets updated whenever a larger value is found.", "cost_points": 0},
+                {"text": "max=4, then 7>4 so max=7, 2<7, 9>7 so max=9, 1<9.", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "max = arr[0] = 4."},
+                {"text": "i=1: 7 > 4, max = 7. i=2: 2 < 7. i=3: 9 > 7, max = 9. i=4: 1 < 9."},
+                {"text": "Output: 9"}
+              ]
+            },
+            {
+              "question_html": "<p>What is the output?</p><pre><code class=\"language-java\">int[] arr = {10, 20, 30};\nint sum = 0;\nfor (int i = 0; i < arr.length; i++) {\n    sum += arr[i];\n}\nSystem.out.println((double) sum / arr.length);</code></pre>",
+              "question_raw": "What is the average of {10, 20, 30}?",
+              "problem_type": "fill_in_blank",
+              "difficulty": "medium",
+              "points": 1,
+              "correct_answer": "20.0",
+              "choices": [],
+              "hints": [
+                {"text": "Sum = 10+20+30 = 60. Then divide by arr.length = 3.", "cost_points": 0},
+                {"text": "The cast to double makes this 60.0/3 = 20.0 (not integer division).", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "sum = 10 + 20 + 30 = 60."},
+                {"text": "(double) sum / arr.length = 60.0 / 3 = 20.0."},
+                {"text": "Output: 20.0"}
+              ]
+            },
+            {
+              "question_html": "<p>After running the following code, what is <code>arr[0]</code>?</p><pre><code class=\"language-java\">int[] arr = {1, 2, 3, 4, 5};\nfor (int i = 0; i < arr.length / 2; i++) {\n    int temp = arr[i];\n    arr[i] = arr[arr.length - 1 - i];\n    arr[arr.length - 1 - i] = temp;\n}</code></pre>",
+              "question_raw": "After reversing {1,2,3,4,5}, what is arr[0]?",
+              "problem_type": "fill_in_blank",
+              "difficulty": "medium",
+              "points": 1,
+              "correct_answer": "5",
+              "choices": [],
+              "hints": [
+                {"text": "This code reverses the array by swapping elements from both ends toward the middle.", "cost_points": 0},
+                {"text": "After reversal, {1,2,3,4,5} becomes {5,4,3,2,1}. What is arr[0]?", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "The loop swaps arr[0] with arr[4], then arr[1] with arr[3]."},
+                {"text": "After: arr = {5, 4, 3, 2, 1}."},
+                {"text": "arr[0] = 5."}
+              ]
+            },
+            {
+              "question_html": "<p>What is the output?</p><pre><code class=\"language-java\">int[] arr = {3, 1, 4, 1, 5};\nint count = 0;\nfor (int val : arr) {\n    if (val > 2) count++;\n}\nSystem.out.println(count);</code></pre>",
+              "question_raw": "How many elements in {3,1,4,1,5} are greater than 2?",
+              "problem_type": "fill_in_blank",
+              "difficulty": "medium",
+              "points": 1,
+              "correct_answer": "3",
+              "choices": [],
+              "hints": [
+                {"text": "Count elements where val > 2: check each element against 2.", "cost_points": 0},
+                {"text": "3>2 (yes), 1>2 (no), 4>2 (yes), 1>2 (no), 5>2 (yes). Count = 3.", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "Check each: 3>2 (count=1), 1 (no), 4>2 (count=2), 1 (no), 5>2 (count=3)."},
+                {"text": "Output: 3"}
+              ]
+            },
+            {
+              "question_html": "<p>What does <code>linearSearch({5, 3, 8, 1}, 6)</code> return?</p>",
+              "question_raw": "What does linearSearch return when target is not in array?",
+              "problem_type": "fill_in_blank",
+              "difficulty": "easy",
+              "points": 1,
+              "correct_answer": "-1",
+              "choices": [],
+              "hints": [
+                {"text": "What does the linear search method return when the target is not found?", "cost_points": 0},
+                {"text": "The loop checks all elements without finding 6, so it returns -1.", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "The method checks each element: 5, 3, 8, 1. None equals 6."},
+                {"text": "The loop finishes without returning, so it reaches <code>return -1</code>."},
+                {"text": "Output: -1"}
+              ]
+            },
+            {
+              "question_html": "<p>What is the output?</p><pre><code class=\"language-java\">int[] arr = {2, 4, 6, 8, 10};\nfor (int i = 0; i < arr.length; i++) {\n    arr[i] = arr[i] * 2;\n}\nSystem.out.println(arr[3]);</code></pre>",
+              "question_raw": "After doubling all elements of {2,4,6,8,10}, what is arr[3]?",
+              "problem_type": "fill_in_blank",
+              "difficulty": "medium",
+              "points": 1,
+              "correct_answer": "16",
+              "choices": [],
+              "hints": [
+                {"text": "Each element is doubled. What was arr[3] before doubling?", "cost_points": 0},
+                {"text": "arr[3] was 8. After doubling: 8 * 2 = 16.", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "Original arr[3] = 8."},
+                {"text": "After arr[i] = arr[i] * 2: arr[3] = 8 * 2 = 16."},
+                {"text": "Output: 16"}
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ArrayLists",
+      "slug": "arraylists",
+      "content_html": "<h2>ArrayList: Dynamic Arrays in Java</h2><p>An <strong>ArrayList</strong> is a resizable array implementation from <code>java.util</code>. Unlike arrays, ArrayLists can grow and shrink dynamically.</p><h3>Creating an ArrayList</h3><pre><code class=\"language-java\">import java.util.ArrayList;\n\nArrayList&lt;String&gt; names = new ArrayList&lt;String&gt;();\nArrayList&lt;Integer&gt; numbers = new ArrayList&lt;&gt;(); // Diamond operator</code></pre><p>Note: ArrayLists can only store objects, not primitives. Use wrapper classes: <code>Integer</code> for <code>int</code>, <code>Double</code> for <code>double</code>, etc.</p><h3>Key Methods</h3><pre><code class=\"language-java\">ArrayList&lt;String&gt; list = new ArrayList&lt;&gt;();\nlist.add(\"Alice\");       // Add to end\nlist.add(0, \"Bob\");      // Insert at index 0\nlist.get(1);             // Get element at index 1\nlist.set(0, \"Charlie\");  // Replace element at index 0\nlist.remove(0);          // Remove element at index 0\nlist.size();             // Number of elements</code></pre><h3>Traversal</h3><pre><code class=\"language-java\">// Standard for loop\nfor (int i = 0; i < list.size(); i++) {\n    System.out.println(list.get(i));\n}\n\n// Enhanced for loop\nfor (String name : list) {\n    System.out.println(name);\n}</code></pre><h3>Arrays vs. ArrayLists</h3><table><thead><tr><th>Feature</th><th>Array</th><th>ArrayList</th></tr></thead><tbody><tr><td>Size</td><td>Fixed</td><td>Dynamic</td></tr><tr><td>Syntax for size</td><td><code>.length</code></td><td><code>.size()</code></td></tr><tr><td>Access</td><td><code>arr[i]</code></td><td><code>list.get(i)</code></td></tr><tr><td>Types</td><td>Primitives + objects</td><td>Objects only</td></tr></tbody></table><div class=\"callout-key\"><strong>Key Takeaway:</strong> Use ArrayLists when you need a collection that can grow or shrink. Use arrays when the size is fixed and you need primitives or maximum performance.</div><div class=\"callout-warning\"><strong>Common Mistake:</strong> <code>list.size()</code> uses parentheses (it's a method). <code>arr.length</code> does NOT (it's a field). Mixing these up is a very common AP exam error!</div>",
+      "content_raw": "ArrayLists",
+      "estimated_minutes": 7,
+      "access_tier": "premium",
+      "display_order": 2,
+      "problem_sets": [
+        {
+          "title": "Practice: ArrayLists",
+          "access_tier": "premium",
+          "display_order": 0,
+          "problems": [
+            {
+              "question_html": "<p>What is the output?</p><pre><code class=\"language-java\">ArrayList&lt;String&gt; list = new ArrayList&lt;&gt;();\nlist.add(\"A\");\nlist.add(\"B\");\nlist.add(\"C\");\nSystem.out.println(list.size());</code></pre>",
+              "question_raw": "What is the size after adding A, B, C?",
+              "problem_type": "fill_in_blank",
+              "difficulty": "easy",
+              "points": 1,
+              "correct_answer": "3",
+              "choices": [],
+              "hints": [
+                {"text": "<code>.size()</code> returns the number of elements in the ArrayList.", "cost_points": 0},
+                {"text": "Three elements were added: A, B, C.", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "Three elements added: \"A\", \"B\", \"C\"."},
+                {"text": "list.size() returns 3."},
+                {"text": "Output: 3"}
+              ]
+            },
+            {
+              "question_html": "<p>What is the output?</p><pre><code class=\"language-java\">ArrayList&lt;Integer&gt; nums = new ArrayList&lt;&gt;();\nnums.add(10);\nnums.add(20);\nnums.add(30);\nnums.remove(1);\nSystem.out.println(nums.get(1));</code></pre>",
+              "question_raw": "After removing index 1 from [10,20,30], what is get(1)?",
+              "problem_type": "fill_in_blank",
+              "difficulty": "medium",
+              "points": 1,
+              "correct_answer": "30",
+              "choices": [],
+              "hints": [
+                {"text": "<code>remove(1)</code> removes the element at index 1 (which is 20). Elements after it shift left.", "cost_points": 0},
+                {"text": "After removal, the list is [10, 30]. get(1) returns 30.", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "Before remove: [10, 20, 30]."},
+                {"text": "remove(1) removes element at index 1 (value 20). List becomes [10, 30]."},
+                {"text": "get(1) returns 30."}
+              ]
+            },
+            {
+              "question_html": "<p>What is the output?</p><pre><code class=\"language-java\">ArrayList&lt;String&gt; list = new ArrayList&lt;&gt;();\nlist.add(\"X\");\nlist.add(\"Y\");\nlist.add(0, \"Z\");\nSystem.out.println(list.get(0));</code></pre>",
+              "question_raw": "After add(0, 'Z') to [X, Y], what is get(0)?",
+              "problem_type": "fill_in_blank",
+              "difficulty": "easy",
+              "points": 1,
+              "correct_answer": "Z",
+              "choices": [],
+              "hints": [
+                {"text": "<code>add(0, \"Z\")</code> inserts \"Z\" at index 0, shifting everything else right.", "cost_points": 0},
+                {"text": "List becomes [Z, X, Y]. get(0) returns Z.", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "After add(\"X\") and add(\"Y\"): [X, Y]."},
+                {"text": "add(0, \"Z\") inserts at index 0: [Z, X, Y]."},
+                {"text": "get(0) returns \"Z\"."}
+              ]
+            },
+            {
+              "question_html": "<p>Which statement correctly replaces the element at index 2 with the value 99?</p>",
+              "question_raw": "How to replace element at index 2 with 99?",
+              "problem_type": "mcq",
+              "difficulty": "easy",
+              "points": 1,
+              "choices": [
+                {"text": "<code>list.add(2, 99);</code>", "is_correct": false},
+                {"text": "<code>list.set(2, 99);</code>", "is_correct": true},
+                {"text": "<code>list.replace(2, 99);</code>", "is_correct": false},
+                {"text": "<code>list[2] = 99;</code>", "is_correct": false}
+              ],
+              "hints": [
+                {"text": "<code>add(index, value)</code> inserts; it doesn't replace. What method replaces?", "cost_points": 0},
+                {"text": "<code>set(index, value)</code> replaces the element at the given index.", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "<code>list.set(2, 99)</code> replaces the element at index 2 with 99."},
+                {"text": "<code>add(2, 99)</code> would insert, not replace. <code>list[2]</code> uses array syntax, not ArrayList."},
+                {"text": "The correct answer is <code>list.set(2, 99)</code>."}
+              ]
+            },
+            {
+              "question_html": "<p>What is the output?</p><pre><code class=\"language-java\">ArrayList&lt;Integer&gt; list = new ArrayList&lt;&gt;();\nlist.add(5);\nlist.add(10);\nlist.add(15);\nlist.set(1, 99);\nfor (int n : list) {\n    System.out.print(n + \" \");\n}</code></pre>",
+              "question_raw": "Output after set(1, 99) on [5, 10, 15]?",
+              "problem_type": "mcq",
+              "difficulty": "medium",
+              "points": 1,
+              "choices": [
+                {"text": "5 99 15 ", "is_correct": true},
+                {"text": "5 10 99 15 ", "is_correct": false},
+                {"text": "99 10 15 ", "is_correct": false},
+                {"text": "5 10 15 99 ", "is_correct": false}
+              ],
+              "hints": [
+                {"text": "<code>set(1, 99)</code> replaces the value at index 1 (which was 10) with 99.", "cost_points": 0},
+                {"text": "List becomes [5, 99, 15]. The loop prints each element followed by a space.", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "Initial list: [5, 10, 15]."},
+                {"text": "set(1, 99) replaces index 1: [5, 99, 15]."},
+                {"text": "Output: 5 99 15 "}
+              ]
+            },
+            {
+              "question_html": "<p>Why can't you create an <code>ArrayList&lt;int&gt;</code> in Java?</p>",
+              "question_raw": "Why can't you use ArrayList<int>?",
+              "problem_type": "mcq",
+              "difficulty": "medium",
+              "points": 1,
+              "choices": [
+                {"text": "int is not a valid data type in Java", "is_correct": false},
+                {"text": "ArrayLists can only store objects, not primitives", "is_correct": true},
+                {"text": "You need to use int[] instead", "is_correct": false},
+                {"text": "The syntax should be ArrayList(int)", "is_correct": false}
+              ],
+              "hints": [
+                {"text": "Java generics (the angle brackets) only work with reference types (objects), not primitive types.", "cost_points": 0},
+                {"text": "Use <code>Integer</code> (the wrapper class) instead of <code>int</code>.", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "Java generics only accept reference types (objects), not primitives."},
+                {"text": "<code>int</code> is a primitive type. <code>Integer</code> is its wrapper class."},
+                {"text": "Use <code>ArrayList&lt;Integer&gt;</code> instead. Java autoboxing handles the conversion automatically."}
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Common Array/ArrayList Patterns",
+      "slug": "common-array-arraylist-patterns",
+      "content_html": "<h2>Important Patterns for the AP Exam</h2><p>These patterns appear frequently on the AP CS A exam. Understanding them will help you tackle free-response questions with confidence.</p><h3>Removing Elements During Traversal</h3><p>When removing elements from an ArrayList during traversal, be careful! If you use a forward loop, you'll skip elements after each removal.</p><pre><code class=\"language-java\">// WRONG: Skips elements after removal\nfor (int i = 0; i < list.size(); i++) {\n    if (list.get(i) &lt; 0) {\n        list.remove(i); // Next element shifts to index i, but i increments!\n    }\n}\n\n// CORRECT: Traverse backward\nfor (int i = list.size() - 1; i >= 0; i--) {\n    if (list.get(i) &lt; 0) {\n        list.remove(i); // Removal doesn't affect indices we haven't visited\n    }\n}</code></pre><h3>Shifting Elements</h3><p>When inserting or removing from the middle of an array, elements must shift:</p><pre><code class=\"language-java\">// Remove element at index k (shift left)\nfor (int i = k; i < arr.length - 1; i++) {\n    arr[i] = arr[i + 1];\n}\n// Clear the last position\narr[arr.length - 1] = 0;</code></pre><h3>Parallel Arrays</h3><p>Sometimes you use two arrays where the same index refers to related data:</p><pre><code class=\"language-java\">String[] names = {\"Alice\", \"Bob\", \"Charlie\"};\nint[] scores = {95, 87, 92};\n// names[i] corresponds to scores[i]</code></pre><div class=\"callout-key\"><strong>Key Takeaway:</strong> When removing elements from an ArrayList in a loop, traverse backward to avoid skipping elements. This is one of the most commonly tested patterns on the AP exam.</div><div class=\"callout-warning\"><strong>Common Mistake:</strong> Using a for-each loop to remove elements causes a <code>ConcurrentModificationException</code>. Always use a standard for loop (preferably backward) when removing.</div>",
+      "content_raw": "Common Array/ArrayList Patterns",
+      "estimated_minutes": 7,
+      "access_tier": "premium",
+      "display_order": 3,
+      "problem_sets": [
+        {
+          "title": "Practice: Array Patterns",
+          "access_tier": "premium",
+          "display_order": 0,
+          "problems": [
+            {
+              "question_html": "<p>What is the output?</p><pre><code class=\"language-java\">ArrayList&lt;Integer&gt; list = new ArrayList&lt;&gt;();\nlist.add(1); list.add(-2); list.add(3); list.add(-4); list.add(5);\nfor (int i = list.size() - 1; i >= 0; i--) {\n    if (list.get(i) &lt; 0) {\n        list.remove(i);\n    }\n}\nSystem.out.println(list);</code></pre>",
+              "question_raw": "Remove negatives from [1,-2,3,-4,5] traversing backward. Output?",
+              "problem_type": "mcq",
+              "difficulty": "medium",
+              "points": 1,
+              "choices": [
+                {"text": "[1, 3, 5]", "is_correct": true},
+                {"text": "[1, -2, 3, 5]", "is_correct": false},
+                {"text": "[1, 3, -4, 5]", "is_correct": false},
+                {"text": "ConcurrentModificationException", "is_correct": false}
+              ],
+              "hints": [
+                {"text": "Backward traversal: check i=4 (5, keep), i=3 (-4, remove), i=2 (3, keep), i=1 (-2, remove), i=0 (1, keep).", "cost_points": 0},
+                {"text": "Both negative values are removed because backward traversal doesn't skip elements.", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "i=4: list.get(4)=5, not negative, keep."},
+                {"text": "i=3: list.get(3)=-4, negative, remove. List: [1, -2, 3, 5]."},
+                {"text": "i=2: list.get(2)=3, keep. i=1: list.get(1)=-2, remove. List: [1, 3, 5]. i=0: keep 1."},
+                {"text": "Output: [1, 3, 5]"}
+              ]
+            },
+            {
+              "question_html": "<p>Why does this code fail to remove all negative numbers?</p><pre><code class=\"language-java\">ArrayList&lt;Integer&gt; list = new ArrayList&lt;&gt;();\nlist.add(-1); list.add(-2); list.add(3);\nfor (int i = 0; i &lt; list.size(); i++) {\n    if (list.get(i) &lt; 0) {\n        list.remove(i);\n    }\n}\n// list is [-2, 3] instead of [3]</code></pre>",
+              "question_raw": "Why does forward removal fail to remove all negatives?",
+              "problem_type": "mcq",
+              "difficulty": "hard",
+              "points": 1,
+              "choices": [
+                {"text": "The remove method doesn't work on negative numbers", "is_correct": false},
+                {"text": "After removing index 0, index 1 shifts to index 0, but i increments to 1, skipping it", "is_correct": true},
+                {"text": "The loop should use &lt;= instead of &lt;", "is_correct": false},
+                {"text": "You need to use removeAll() instead", "is_correct": false}
+              ],
+              "hints": [
+                {"text": "Think about what happens to the indices after you remove an element.", "cost_points": 0},
+                {"text": "After removing -1 at index 0, -2 shifts to index 0. But i becomes 1, so -2 is skipped.", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "Initial: [-1, -2, 3]. i=0: -1 < 0, remove. List becomes [-2, 3]."},
+                {"text": "i increments to 1. list.get(1) = 3. -2 at index 0 was skipped!"},
+                {"text": "This is why backward traversal is the correct approach for removal during iteration."}
+              ]
+            },
+            {
+              "question_html": "<p>Given parallel arrays, what does this code print?</p><pre><code class=\"language-java\">String[] names = {\"Alice\", \"Bob\", \"Charlie\", \"Diana\"};\nint[] scores = {85, 92, 78, 96};\nint maxIdx = 0;\nfor (int i = 1; i &lt; scores.length; i++) {\n    if (scores[i] > scores[maxIdx]) {\n        maxIdx = i;\n    }\n}\nSystem.out.println(names[maxIdx]);</code></pre>",
+              "question_raw": "Who has the highest score using parallel arrays?",
+              "problem_type": "fill_in_blank",
+              "difficulty": "medium",
+              "points": 1,
+              "correct_answer": "Diana",
+              "choices": [],
+              "hints": [
+                {"text": "This finds the index of the maximum score, then uses that index to look up the name.", "cost_points": 0},
+                {"text": "Scores: 85, 92, 78, 96. Max is 96 at index 3. names[3] = ?", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "Finding max score: 85 (idx 0), 92>85 (idx 1), 78<92, 96>92 (idx 3)."},
+                {"text": "maxIdx = 3."},
+                {"text": "names[3] = \"Diana\"."}
+              ]
+            },
+            {
+              "question_html": "<p>What is the output?</p><pre><code class=\"language-java\">int[] arr = {10, 20, 30, 40, 50};\nint k = 2;\nfor (int i = k; i &lt; arr.length - 1; i++) {\n    arr[i] = arr[i + 1];\n}\narr[arr.length - 1] = 0;\nSystem.out.println(arr[2] + \" \" + arr[4]);</code></pre>",
+              "question_raw": "After shifting left from index 2, what are arr[2] and arr[4]?",
+              "problem_type": "mcq",
+              "difficulty": "hard",
+              "points": 1,
+              "choices": [
+                {"text": "40 0", "is_correct": true},
+                {"text": "30 50", "is_correct": false},
+                {"text": "40 50", "is_correct": false},
+                {"text": "30 0", "is_correct": false}
+              ],
+              "hints": [
+                {"text": "This code removes element at index 2 by shifting elements left.", "cost_points": 0},
+                {"text": "After shift: arr = {10, 20, 40, 50, 0}. arr[2]=40, arr[4]=0.", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "Original: {10, 20, 30, 40, 50}. Removing at k=2 by shifting left."},
+                {"text": "i=2: arr[2]=arr[3]=40. i=3: arr[3]=arr[4]=50. Then arr[4]=0."},
+                {"text": "Result: {10, 20, 40, 50, 0}. arr[2]=40, arr[4]=0. Output: 40 0"}
+              ]
+            },
+            {
+              "question_html": "<p>What exception is thrown by this code?</p><pre><code class=\"language-java\">ArrayList&lt;String&gt; list = new ArrayList&lt;&gt;();\nlist.add(\"A\"); list.add(\"B\"); list.add(\"C\");\nfor (String s : list) {\n    if (s.equals(\"B\")) {\n        list.remove(s);\n    }\n}</code></pre>",
+              "question_raw": "What exception from removing in a for-each loop?",
+              "problem_type": "mcq",
+              "difficulty": "medium",
+              "points": 1,
+              "choices": [
+                {"text": "ArrayIndexOutOfBoundsException", "is_correct": false},
+                {"text": "NullPointerException", "is_correct": false},
+                {"text": "ConcurrentModificationException", "is_correct": true},
+                {"text": "No exception is thrown", "is_correct": false}
+              ],
+              "hints": [
+                {"text": "Modifying an ArrayList while iterating with a for-each loop is not allowed.", "cost_points": 0},
+                {"text": "Java detects the structural modification and throws a ConcurrentModificationException.", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "The for-each loop uses an Iterator internally."},
+                {"text": "Calling list.remove() during iteration modifies the list, invalidating the iterator."},
+                {"text": "Java throws ConcurrentModificationException. Use a standard backward for loop instead."}
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,513 @@
+{
+  "subject_slug": "test-prep",
+  "topic_slug": "sat-mathematics",
+  "concepts": [
+    {
+      "title": "Linear Equations and Inequalities",
+      "slug": "linear-equations-and-inequalities",
+      "content_html": "<h2>Linear Equations and Inequalities on the SAT</h2><p>The SAT Math section tests your ability to solve linear equations and inequalities quickly and accurately. These questions make up a large portion of the <strong>Heart of Algebra</strong> domain \u2014 roughly 8 out of 58 math questions.</p><div class=\"callout-key\"><strong>Key Concept</strong><br>A linear equation is any equation that can be written in the form \\(ax + b = c\\), where \\(a\\), \\(b\\), and \\(c\\) are constants and \\(x\\) is the variable.</div><h3>SAT Strategy: Translate Words into Math</h3><p>Many SAT linear equation problems are <strong>word problems</strong>. The key skill is translating English into algebra:</p><ul><li><em>\"is\"</em> or <em>\"equals\"</em> \u2192 \\(=\\)</li><li><em>\"more than\"</em> or <em>\"increased by\"</em> \u2192 \\(+\\)</li><li><em>\"less than\"</em> or <em>\"decreased by\"</em> \u2192 \\(-\\)</li><li><em>\"times\"</em> or <em>\"product of\"</em> \u2192 \\(\\times\\)</li><li><em>\"per\"</em> or <em>\"for each\"</em> \u2192 division or multiplication depending on context</li></ul><h3>Solving Linear Inequalities</h3><p>Linear inequalities follow the same rules as equations with one critical difference:</p><div class=\"callout-warning\"><strong>Watch Out!</strong><br>When you multiply or divide both sides of an inequality by a <strong>negative number</strong>, you must <strong>flip the inequality sign</strong>.<br>Example: \\(-2x > 6\\) becomes \\(x < -3\\) after dividing by \\(-2\\).</div><h3>Absolute Value Equations</h3><p>The SAT occasionally tests absolute value equations. Remember:</p><p>If \\(|ax + b| = c\\) where \\(c > 0\\), then:</p><p>\\[ax + b = c \\quad \\text{or} \\quad ax + b = -c\\]</p><div class=\"callout-tip\"><strong>SAT Tip</strong><br>Always check your answers by plugging them back into the original equation. On the SAT, wrong answer choices are designed to match common calculation errors \u2014 substitution catches these mistakes.</div><h3>No-Solution and Infinite-Solution Equations</h3><p>The SAT loves testing whether an equation has no solution, one solution, or infinitely many solutions:</p><ul><li><strong>No solution:</strong> simplifying leads to a false statement like \\(5 = 3\\)</li><li><strong>One solution:</strong> simplifying leads to \\(x = \\text{some number}\\)</li><li><strong>Infinitely many solutions:</strong> simplifying leads to a true identity like \\(0 = 0\\)</li></ul>",
+      "content_raw": "Linear Equations and Inequalities on the SAT",
+      "estimated_minutes": 8,
+      "access_tier": "free",
+      "display_order": 0,
+      "problem_sets": [
+        {
+          "title": "Practice: Linear Equations and Inequalities",
+          "access_tier": "free",
+          "display_order": 0,
+          "problems": [
+            {
+              "question_html": "<p>A gym charges a one-time registration fee of $25 plus $40 per month. If Marcus has budgeted $345 for gym expenses, which equation can be used to find the maximum number of months, \\(m\\), he can afford?</p>",
+              "question_raw": "A gym charges a one-time registration fee of $25 plus $40 per month. If Marcus has budgeted $345 for gym expenses, which equation can be used to find the maximum number of months, m, he can afford?",
+              "problem_type": "mcq",
+              "difficulty": "easy",
+              "points": 1,
+              "choices": [
+                {"text": "\\(40m = 345\\)", "is_correct": false},
+                {"text": "\\(25m + 40 = 345\\)", "is_correct": false},
+                {"text": "\\(40m + 25 = 345\\)", "is_correct": true},
+                {"text": "\\(40m - 25 = 345\\)", "is_correct": false}
+              ],
+              "hints": [
+                {"text": "Identify the <strong>fixed cost</strong> (one-time fee) and the <strong>variable cost</strong> (monthly charge). The total budget equals the sum of both.", "cost_points": 0},
+                {"text": "The total cost is: registration fee + (monthly fee \u00d7 number of months) = $345. That's \\(25 + 40m = 345\\).", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "The one-time registration fee is $25 (constant term)."},
+                {"text": "The monthly fee is $40 per month, so for \\(m\\) months the variable cost is \\(40m\\)."},
+                {"text": "Total budget: \\(40m + 25 = 345\\)."},
+                {"text": "The answer is <strong>C</strong>: \\(40m + 25 = 345\\)."}
+              ]
+            },
+            {
+              "question_html": "<p>If \\(3(2x - 5) = 4x + 7\\), what is the value of \\(x\\)?</p>",
+              "question_raw": "If 3(2x - 5) = 4x + 7, what is the value of x?",
+              "problem_type": "mcq",
+              "difficulty": "medium",
+              "points": 1,
+              "choices": [
+                {"text": "\\(4\\)", "is_correct": false},
+                {"text": "\\(7\\)", "is_correct": false},
+                {"text": "\\(11\\)", "is_correct": true},
+                {"text": "\\(22\\)", "is_correct": false}
+              ],
+              "hints": [
+                {"text": "Start by distributing the 3 on the left side: \\(3 \\cdot 2x - 3 \\cdot 5\\).", "cost_points": 0},
+                {"text": "After distributing: \\(6x - 15 = 4x + 7\\). Now isolate \\(x\\) by subtracting \\(4x\\) from both sides.", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "Distribute: \\(6x - 15 = 4x + 7\\)."},
+                {"text": "Subtract \\(4x\\) from both sides: \\(2x - 15 = 7\\)."},
+                {"text": "Add 15 to both sides: \\(2x = 22\\)."},
+                {"text": "Divide by 2: \\(x = 11\\)."}
+              ]
+            },
+            {
+              "question_html": "<p>Which of the following values of \\(x\\) satisfies the inequality \\(-3x + 7 > 19\\)?</p>",
+              "question_raw": "Which of the following values of x satisfies the inequality -3x + 7 > 19?",
+              "problem_type": "mcq",
+              "difficulty": "medium",
+              "points": 1,
+              "choices": [
+                {"text": "\\(-5\\)", "is_correct": true},
+                {"text": "\\(-3\\)", "is_correct": false},
+                {"text": "\\(0\\)", "is_correct": false},
+                {"text": "\\(4\\)", "is_correct": false}
+              ],
+              "hints": [
+                {"text": "Solve the inequality step by step. Remember: when you divide by a negative number, <strong>flip the inequality sign</strong>.", "cost_points": 0},
+                {"text": "\\(-3x + 7 > 19\\) \u2192 \\(-3x > 12\\) \u2192 \\(x < -4\\). Which answer choice is less than \\(-4\\)?", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "Subtract 7 from both sides: \\(-3x > 12\\)."},
+                {"text": "Divide both sides by \\(-3\\) and <strong>flip the sign</strong>: \\(x < -4\\)."},
+                {"text": "Check the answer choices: only \\(-5 < -4\\)."},
+                {"text": "The answer is <strong>A</strong>: \\(-5\\)."}
+              ]
+            },
+            {
+              "question_html": "<p>For what value of \\(a\\) does the equation \\(a(x + 3) = 4x + 12\\) have infinitely many solutions?</p>",
+              "question_raw": "For what value of a does the equation a(x + 3) = 4x + 12 have infinitely many solutions?",
+              "problem_type": "mcq",
+              "difficulty": "hard",
+              "points": 1,
+              "choices": [
+                {"text": "\\(3\\)", "is_correct": false},
+                {"text": "\\(4\\)", "is_correct": true},
+                {"text": "\\(6\\)", "is_correct": false},
+                {"text": "\\(12\\)", "is_correct": false}
+              ],
+              "hints": [
+                {"text": "For infinitely many solutions, both sides must be <strong>identical</strong> after simplifying. Distribute \\(a\\) on the left side and compare coefficients.", "cost_points": 0},
+                {"text": "Left side: \\(ax + 3a\\). Right side: \\(4x + 12\\). For these to be identical: \\(a = 4\\) and \\(3a = 12\\). Both give \\(a = 4\\).", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "Distribute on the left: \\(ax + 3a = 4x + 12\\)."},
+                {"text": "For infinitely many solutions, coefficients must match: \\(a = 4\\) (from the \\(x\\) terms)."},
+                {"text": "Verify with constants: \\(3(4) = 12\\) \u2713."},
+                {"text": "The answer is <strong>B</strong>: \\(a = 4\\)."}
+              ]
+            },
+            {
+              "question_html": "<p>If \\(|2x - 5| = 11\\), what is the sum of all possible values of \\(x\\)?</p>",
+              "question_raw": "If |2x - 5| = 11, what is the sum of all possible values of x?",
+              "problem_type": "mcq",
+              "difficulty": "medium",
+              "points": 1,
+              "choices": [
+                {"text": "\\(3\\)", "is_correct": false},
+                {"text": "\\(5\\)", "is_correct": true},
+                {"text": "\\(8\\)", "is_correct": false},
+                {"text": "\\(13\\)", "is_correct": false}
+              ],
+              "hints": [
+                {"text": "An absolute value equation \\(|A| = B\\) splits into two cases: \\(A = B\\) or \\(A = -B\\).", "cost_points": 0},
+                {"text": "Case 1: \\(2x - 5 = 11 \\Rightarrow x = 8\\). Case 2: \\(2x - 5 = -11 \\Rightarrow x = -3\\). Find the sum.", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "Case 1: \\(2x - 5 = 11\\) \u2192 \\(2x = 16\\) \u2192 \\(x = 8\\)."},
+                {"text": "Case 2: \\(2x - 5 = -11\\) \u2192 \\(2x = -6\\) \u2192 \\(x = -3\\)."},
+                {"text": "Sum: \\(8 + (-3) = 5\\)."},
+                {"text": "The answer is <strong>B</strong>: \\(5\\)."}
+              ]
+            },
+            {
+              "question_html": "<p>A phone plan charges $0.10 per text message and $0.05 per minute of talk time. Last month, Priya sent 3 times as many text messages as minutes she talked. If her total bill was $17.50, how many text messages did she send?</p>",
+              "question_raw": "A phone plan charges $0.10 per text message and $0.05 per minute of talk time. Last month, Priya sent 3 times as many text messages as minutes she talked. If her total bill was $17.50, how many text messages did she send?",
+              "problem_type": "mcq",
+              "difficulty": "hard",
+              "points": 1,
+              "choices": [
+                {"text": "\\(50\\)", "is_correct": false},
+                {"text": "\\(100\\)", "is_correct": false},
+                {"text": "\\(150\\)", "is_correct": true},
+                {"text": "\\(200\\)", "is_correct": false}
+              ],
+              "hints": [
+                {"text": "Let \\(t\\) = minutes talked. Then text messages = \\(3t\\). Write the cost equation: \\(0.10(3t) + 0.05(t) = 17.50\\).", "cost_points": 0},
+                {"text": "Simplify: \\(0.30t + 0.05t = 17.50\\) \u2192 \\(0.35t = 17.50\\) \u2192 \\(t = 50\\). Texts = \\(3(50)\\).", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "Let \\(t\\) = minutes talked. Texts = \\(3t\\)."},
+                {"text": "Cost equation: \\(0.10(3t) + 0.05(t) = 17.50\\)."},
+                {"text": "Simplify: \\(0.35t = 17.50\\), so \\(t = 50\\)."},
+                {"text": "Text messages: \\(3 \\times 50 = 150\\)."},
+                {"text": "The answer is <strong>C</strong>: \\(150\\)."}
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Systems of Linear Equations",
+      "slug": "systems-of-linear-equations",
+      "content_html": "<h2>Systems of Linear Equations on the SAT</h2><p>A <strong>system of linear equations</strong> consists of two or more equations with two or more unknowns. The SAT frequently tests your ability to solve these systems and interpret the solutions in real-world contexts.</p><div class=\"callout-key\"><strong>Key Concept</strong><br>A system of two linear equations in two variables can have:<br>\u2022 <strong>One solution</strong> \u2014 the lines intersect at exactly one point<br>\u2022 <strong>No solution</strong> \u2014 the lines are parallel (same slope, different intercepts)<br>\u2022 <strong>Infinitely many solutions</strong> \u2014 the lines are the same (identical equations)</div><h3>Method 1: Substitution</h3><p>Best when one variable is already isolated or has a coefficient of 1:</p><ol><li>Solve one equation for one variable</li><li>Substitute that expression into the other equation</li><li>Solve and back-substitute</li></ol><h3>Method 2: Elimination (Combination)</h3><p>Best when both equations are in standard form \\(ax + by = c\\):</p><ol><li>Multiply one or both equations so that one variable's coefficients are opposites</li><li>Add the equations to eliminate that variable</li><li>Solve and back-substitute</li></ol><div class=\"callout-tip\"><strong>SAT Tip</strong><br>The SAT often asks for an <strong>expression</strong> like \\(x + y\\) or \\(2x - y\\) rather than individual values. Before solving for each variable separately, check whether adding or subtracting the given equations directly yields the desired expression \u2014 this can save significant time.</div><h3>No Solution vs. Infinitely Many</h3><p>For the system \\(a_1x + b_1y = c_1\\) and \\(a_2x + b_2y = c_2\\):</p><ul><li><strong>No solution:</strong> \\(\\dfrac{a_1}{a_2} = \\dfrac{b_1}{b_2} \\neq \\dfrac{c_1}{c_2}\\) (parallel lines)</li><li><strong>Infinitely many:</strong> \\(\\dfrac{a_1}{a_2} = \\dfrac{b_1}{b_2} = \\dfrac{c_1}{c_2}\\) (same line)</li></ul><div class=\"callout-warning\"><strong>Watch Out!</strong><br>When the SAT asks \"for what value of \\(k\\) does the system have no solution,\" you're being asked to make the lines parallel. Set the slope ratio equal but the constant ratio different.</div>",
+      "content_raw": "Systems of Linear Equations on the SAT",
+      "estimated_minutes": 10,
+      "access_tier": "premium",
+      "display_order": 1,
+      "problem_sets": [
+        {
+          "title": "Practice: Systems of Linear Equations",
+          "access_tier": "premium",
+          "display_order": 0,
+          "problems": [
+            {
+              "question_html": "<p>If \\(x + y = 10\\) and \\(3x - y = 14\\), what is the value of \\(x\\)?</p>",
+              "question_raw": "If x + y = 10 and 3x - y = 14, what is the value of x?",
+              "problem_type": "mcq",
+              "difficulty": "easy",
+              "points": 1,
+              "choices": [
+                {"text": "\\(4\\)", "is_correct": false},
+                {"text": "\\(6\\)", "is_correct": true},
+                {"text": "\\(8\\)", "is_correct": false},
+                {"text": "\\(10\\)", "is_correct": false}
+              ],
+              "hints": [
+                {"text": "Try the <strong>elimination method</strong>: adding the two equations will eliminate \\(y\\).", "cost_points": 0},
+                {"text": "Adding: \\((x + y) + (3x - y) = 10 + 14\\) \u2192 \\(4x = 24\\) \u2192 \\(x = 6\\).", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "Add the two equations: \\(x + y + 3x - y = 10 + 14\\)."},
+                {"text": "Simplify: \\(4x = 24\\)."},
+                {"text": "Divide: \\(x = 6\\)."},
+                {"text": "The answer is <strong>B</strong>: \\(6\\)."}
+              ]
+            },
+            {
+              "question_html": "<p>A coffee shop sells lattes for $5 and cappuccinos for $4. On Monday, the shop sold a total of 80 drinks and earned $350. How many lattes were sold?</p>",
+              "question_raw": "A coffee shop sells lattes for $5 and cappuccinos for $4. On Monday, the shop sold a total of 80 drinks and earned $350. How many lattes were sold?",
+              "problem_type": "mcq",
+              "difficulty": "medium",
+              "points": 1,
+              "choices": [
+                {"text": "\\(30\\)", "is_correct": true},
+                {"text": "\\(40\\)", "is_correct": false},
+                {"text": "\\(50\\)", "is_correct": false},
+                {"text": "\\(60\\)", "is_correct": false}
+              ],
+              "hints": [
+                {"text": "Set up two equations. Let \\(L\\) = lattes and \\(C\\) = cappuccinos. Use the total drinks and total revenue.", "cost_points": 0},
+                {"text": "System: \\(L + C = 80\\) and \\(5L + 4C = 350\\). Solve the first for \\(C = 80 - L\\) and substitute.", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "Let \\(L\\) = lattes, \\(C\\) = cappuccinos."},
+                {"text": "Equation 1: \\(L + C = 80\\). Equation 2: \\(5L + 4C = 350\\)."},
+                {"text": "From Eq 1: \\(C = 80 - L\\). Substitute: \\(5L + 4(80 - L) = 350\\)."},
+                {"text": "Simplify: \\(5L + 320 - 4L = 350\\) \u2192 \\(L = 30\\)."},
+                {"text": "Verify: \\(C = 50\\), revenue = \\(5(30) + 4(50) = 350\\) \u2713."}
+              ]
+            },
+            {
+              "question_html": "<p>For what value of \\(k\\) does the following system have no solution?</p><p>\\[3x + 6y = 12\\]</p><p>\\[kx + 2y = 5\\]</p>",
+              "question_raw": "For what value of k does the system 3x + 6y = 12 and kx + 2y = 5 have no solution?",
+              "problem_type": "mcq",
+              "difficulty": "hard",
+              "points": 1,
+              "choices": [
+                {"text": "\\(1\\)", "is_correct": true},
+                {"text": "\\(2\\)", "is_correct": false},
+                {"text": "\\(3\\)", "is_correct": false},
+                {"text": "\\(6\\)", "is_correct": false}
+              ],
+              "hints": [
+                {"text": "For no solution, the lines must be <strong>parallel</strong>: same slope but different y-intercepts. Compare the ratios of the coefficients.", "cost_points": 0},
+                {"text": "Rewrite the first equation: divide by 3 \u2192 \\(x + 2y = 4\\). For parallel lines, we need \\(k = 1\\) so both have the form \\(x + 2y = \\text{something}\\), but \\(4 \\neq 5\\).", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "For no solution, the ratio of coefficients must be equal but the constant ratio must differ."},
+                {"text": "\\(\\dfrac{3}{k} = \\dfrac{6}{2}\\) \u2192 \\(\\dfrac{3}{k} = 3\\) \u2192 \\(k = 1\\)."},
+                {"text": "Check constants: \\(\\dfrac{12}{5} \\neq 3\\) \u2713 (so no solution, not infinitely many)."},
+                {"text": "The answer is <strong>A</strong>: \\(k = 1\\)."}
+              ]
+            },
+            {
+              "question_html": "<p>If \\(2x + 3y = 12\\) and \\(4x - 3y = 6\\), what is the value of \\(x + y\\)?</p>",
+              "question_raw": "If 2x + 3y = 12 and 4x - 3y = 6, what is the value of x + y?",
+              "problem_type": "mcq",
+              "difficulty": "medium",
+              "points": 1,
+              "choices": [
+                {"text": "\\(3\\)", "is_correct": false},
+                {"text": "\\(4\\)", "is_correct": false},
+                {"text": "\\(5\\)", "is_correct": true},
+                {"text": "\\(6\\)", "is_correct": false}
+              ],
+              "hints": [
+                {"text": "Before solving for \\(x\\) and \\(y\\) individually, try adding the equations. Does either operation give you \\(x + y\\) directly?", "cost_points": 0},
+                {"text": "Adding the equations: \\(6x = 18\\) \u2192 \\(x = 3\\). Then \\(2(3) + 3y = 12\\) \u2192 \\(y = 2\\). So \\(x + y = 5\\).", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "Add the equations: \\(2x + 3y + 4x - 3y = 12 + 6\\)."},
+                {"text": "Simplify: \\(6x = 18\\) \u2192 \\(x = 3\\)."},
+                {"text": "Substitute into equation 1: \\(6 + 3y = 12\\) \u2192 \\(3y = 6\\) \u2192 \\(y = 2\\)."},
+                {"text": "Therefore \\(x + y = 3 + 2 = 5\\)."}
+              ]
+            },
+            {
+              "question_html": "<p>Tickets to a school play cost $8 for adults and $5 for students. A total of 200 tickets were sold, and the revenue was $1,180. How many student tickets were sold?</p>",
+              "question_raw": "Tickets to a school play cost $8 for adults and $5 for students. A total of 200 tickets were sold, and the revenue was $1,180. How many student tickets were sold?",
+              "problem_type": "mcq",
+              "difficulty": "medium",
+              "points": 1,
+              "choices": [
+                {"text": "\\(60\\)", "is_correct": false},
+                {"text": "\\(80\\)", "is_correct": false},
+                {"text": "\\(120\\)", "is_correct": false},
+                {"text": "\\(140\\)", "is_correct": true}
+              ],
+              "hints": [
+                {"text": "Let \\(a\\) = adult tickets and \\(s\\) = student tickets. Write two equations: one for total tickets, one for revenue.", "cost_points": 0},
+                {"text": "\\(a + s = 200\\) and \\(8a + 5s = 1180\\). From the first: \\(a = 200 - s\\). Substitute into the second.", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "\\(a + s = 200\\) and \\(8a + 5s = 1180\\)."},
+                {"text": "Substitute \\(a = 200 - s\\): \\(8(200 - s) + 5s = 1180\\)."},
+                {"text": "\\(1600 - 8s + 5s = 1180\\) \u2192 \\(-3s = -420\\) \u2192 \\(s = 140\\)."},
+                {"text": "Verify: \\(a = 60\\), revenue = \\(8(60) + 5(140) = 480 + 700 = 1180\\) \u2713."}
+              ]
+            },
+            {
+              "question_html": "<p>The system of equations below has infinitely many solutions. What is the value of \\(b\\)?</p><p>\\[4x - 2y = 10\\]</p><p>\\[-6x + 3y = b\\]</p>",
+              "question_raw": "The system 4x - 2y = 10 and -6x + 3y = b has infinitely many solutions. What is the value of b?",
+              "problem_type": "mcq",
+              "difficulty": "hard",
+              "points": 1,
+              "choices": [
+                {"text": "\\(-15\\)", "is_correct": true},
+                {"text": "\\(-10\\)", "is_correct": false},
+                {"text": "\\(10\\)", "is_correct": false},
+                {"text": "\\(15\\)", "is_correct": false}
+              ],
+              "hints": [
+                {"text": "For infinitely many solutions, one equation must be a <strong>scalar multiple</strong> of the other. What do you multiply the first equation by to match the second?", "cost_points": 0},
+                {"text": "Multiply equation 1 by \\(-\\frac{3}{2}\\): \\(4 \\cdot (-\\frac{3}{2}) = -6\\) \u2713 and \\(-2 \\cdot (-\\frac{3}{2}) = 3\\) \u2713. So \\(b = 10 \\cdot (-\\frac{3}{2}) = -15\\).", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "For infinitely many solutions, the second equation must be a multiple of the first."},
+                {"text": "Compare \\(x\\) coefficients: \\(\\dfrac{-6}{4} = -\\dfrac{3}{2}\\)."},
+                {"text": "Check \\(y\\) coefficients: \\(\\dfrac{3}{-2} = -\\dfrac{3}{2}\\) \u2713."},
+                {"text": "Apply to constants: \\(b = 10 \\times \\left(-\\dfrac{3}{2}\\right) = -15\\)."}
+              ]
+            },
+            {
+              "question_html": "<p>At a farmers' market, Elena buys 3 pounds of apples and 2 pounds of oranges for $11.50. Raj buys 1 pound of apples and 4 pounds of oranges for $10.50. What is the price per pound of apples?</p>",
+              "question_raw": "Elena buys 3 pounds of apples and 2 pounds of oranges for $11.50. Raj buys 1 pound of apples and 4 pounds of oranges for $10.50. What is the price per pound of apples?",
+              "problem_type": "mcq",
+              "difficulty": "medium",
+              "points": 1,
+              "choices": [
+                {"text": "$1.50", "is_correct": false},
+                {"text": "$2.00", "is_correct": false},
+                {"text": "$2.50", "is_correct": true},
+                {"text": "$3.00", "is_correct": false}
+              ],
+              "hints": [
+                {"text": "Set up the system: \\(3a + 2o = 11.50\\) and \\(a + 4o = 10.50\\). Use elimination \u2014 multiply the second equation to eliminate \\(a\\).", "cost_points": 0},
+                {"text": "Multiply equation 2 by 3: \\(3a + 12o = 31.50\\). Subtract equation 1: \\(10o = 20\\) \u2192 \\(o = 2\\). Then \\(a + 8 = 10.50\\) \u2192 \\(a = 2.50\\).", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "System: \\(3a + 2o = 11.50\\) and \\(a + 4o = 10.50\\)."},
+                {"text": "Multiply equation 2 by 3: \\(3a + 12o = 31.50\\)."},
+                {"text": "Subtract equation 1: \\(10o = 20\\) \u2192 \\(o = 2.00\\)."},
+                {"text": "Substitute back: \\(a + 4(2) = 10.50\\) \u2192 \\(a = 2.50\\)."},
+                {"text": "The answer is <strong>C</strong>: $2.50 per pound."}
+              ]
+            },
+            {
+              "question_html": "<p>If \\(x - 2y = 5\\) and \\(3x + 2y = 19\\), what is the value of \\(2x - y\\)?</p>",
+              "question_raw": "If x - 2y = 5 and 3x + 2y = 19, what is the value of 2x - y?",
+              "problem_type": "fill_in_blank",
+              "correct_answer": "11.5",
+              "difficulty": "hard",
+              "points": 1,
+              "choices": [],
+              "hints": [
+                {"text": "First solve the system by adding the equations (the \\(y\\) terms cancel). Then compute \\(2x - y\\).", "cost_points": 0},
+                {"text": "Adding: \\(4x = 24\\) \u2192 \\(x = 6\\). Then \\(6 - 2y = 5\\) \u2192 \\(y = \\frac{1}{2}\\). So \\(2(6) - \\frac{1}{2} = 11.5\\).", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "Add the equations: \\(4x = 24\\) \u2192 \\(x = 6\\)."},
+                {"text": "Substitute: \\(6 - 2y = 5\\) \u2192 \\(y = \\frac{1}{2}\\)."},
+                {"text": "Compute: \\(2x - y = 12 - 0.5 = 11.5\\)."}
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Linear Functions and Graphs",
+      "slug": "linear-functions-and-graphs",
+      "content_html": "<h2>Linear Functions and Graphs on the SAT</h2><p>The SAT tests your understanding of linear functions \u2014 their equations, graphs, and real-world interpretations. You need to move fluently between tables, equations, graphs, and word descriptions.</p><div class=\"callout-key\"><strong>Key Concept</strong><br>The slope-intercept form of a linear function is \\(f(x) = mx + b\\), where:<br>\u2022 \\(m\\) = <strong>slope</strong> (rate of change) \u2014 how much \\(y\\) changes for each unit increase in \\(x\\)<br>\u2022 \\(b\\) = <strong>y-intercept</strong> \u2014 the value of \\(f(x)\\) when \\(x = 0\\) (the starting value)</div><h3>Slope Formula</h3><p>The slope between two points \\((x_1, y_1)\\) and \\((x_2, y_2)\\) is:</p><p>\\[m = \\frac{y_2 - y_1}{x_2 - x_1}\\]</p><h3>Interpreting Slope and Intercept in Context</h3><p>The SAT frequently asks you to interpret slope and y-intercept in real-world scenarios:</p><ul><li><strong>Slope</strong> = the rate of change \u2014 \"for each additional [unit of x], the [quantity y] increases/decreases by [m]\"</li><li><strong>y-intercept</strong> = the initial value \u2014 \"when [x] is zero, the [quantity y] is [b]\"</li></ul><div class=\"callout-tip\"><strong>SAT Tip</strong><br>When asked to interpret slope or y-intercept, always include the <strong>units</strong> and <strong>context</strong>. For example: \"The slope of 15 means the cost increases by $15 <em>per hour</em>.\" Wrong answers often have correct numbers but wrong units or wrong direction (increase vs. decrease).</div><h3>Parallel and Perpendicular Lines</h3><ul><li><strong>Parallel lines:</strong> same slope, different y-intercepts (\\(m_1 = m_2\\))</li><li><strong>Perpendicular lines:</strong> slopes are negative reciprocals (\\(m_1 \\cdot m_2 = -1\\))</li></ul><h3>Finding the Equation of a Line</h3><p>Given a point \\((x_1, y_1)\\) and slope \\(m\\), use <strong>point-slope form</strong>:</p><p>\\[y - y_1 = m(x - x_1)\\]</p><div class=\"callout-warning\"><strong>Watch Out!</strong><br>Don't confuse <strong>rate of change</strong> (slope) with <strong>total change</strong>. If a question says \"increased by $120 over 8 hours,\" the slope is \\(\\frac{120}{8} = 15\\) per hour, not 120.</div>",
+      "content_raw": "Linear Functions and Graphs on the SAT",
+      "estimated_minutes": 8,
+      "access_tier": "premium",
+      "display_order": 2,
+      "problem_sets": [
+        {
+          "title": "Practice: Linear Functions and Graphs",
+          "access_tier": "premium",
+          "display_order": 0,
+          "problems": [
+            {
+              "question_html": "<p>A plumber charges a flat service fee of $75 plus $50 per hour of labor. Which function \\(C(h)\\) represents the total cost for \\(h\\) hours of labor?</p>",
+              "question_raw": "A plumber charges a flat service fee of $75 plus $50 per hour. Which function C(h) represents the total cost for h hours?",
+              "problem_type": "mcq",
+              "difficulty": "easy",
+              "points": 1,
+              "choices": [
+                {"text": "\\(C(h) = 75h + 50\\)", "is_correct": false},
+                {"text": "\\(C(h) = 50h + 75\\)", "is_correct": true},
+                {"text": "\\(C(h) = 125h\\)", "is_correct": false},
+                {"text": "\\(C(h) = 50h - 75\\)", "is_correct": false}
+              ],
+              "hints": [
+                {"text": "In \\(C(h) = mh + b\\), what is the <strong>rate</strong> (per hour) and what is the <strong>starting value</strong> (flat fee)?", "cost_points": 0},
+                {"text": "Rate = $50/hour \u2192 coefficient of \\(h\\). Flat fee = $75 \u2192 constant. So \\(C(h) = 50h + 75\\).", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "The flat fee ($75) is the y-intercept \u2014 it doesn't depend on hours."},
+                {"text": "The hourly rate ($50) is the slope \u2014 it multiplies \\(h\\)."},
+                {"text": "\\(C(h) = 50h + 75\\). The answer is <strong>B</strong>."}
+              ]
+            },
+            {
+              "question_html": "<p>The equation \\(y = -2x + 100\\) models the number of pages remaining in a book after \\(x\\) minutes of reading. What does the slope \\(-2\\) represent in this context?</p>",
+              "question_raw": "The equation y = -2x + 100 models pages remaining after x minutes. What does the slope -2 represent?",
+              "problem_type": "mcq",
+              "difficulty": "medium",
+              "points": 1,
+              "choices": [
+                {"text": "The book has 100 pages", "is_correct": false},
+                {"text": "The reader finishes 2 pages per minute", "is_correct": true},
+                {"text": "The reader has read 2 pages total", "is_correct": false},
+                {"text": "The book will be finished in 2 minutes", "is_correct": false}
+              ],
+              "hints": [
+                {"text": "The slope represents the <strong>rate of change</strong>. The negative sign tells you the pages remaining are <em>decreasing</em>.", "cost_points": 0},
+                {"text": "Slope = \\(-2\\) means for each additional minute (\\(x\\)), the pages remaining (\\(y\\)) decrease by 2. The reader finishes 2 pages per minute.", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "The slope \\(m = -2\\) represents the rate of change of \\(y\\) with respect to \\(x\\)."},
+                {"text": "For each 1-minute increase in reading time, the number of remaining pages decreases by 2."},
+                {"text": "In context: the reader finishes 2 pages per minute. The answer is <strong>B</strong>."}
+              ]
+            },
+            {
+              "question_html": "<p>Line \\(\\ell\\) passes through the points \\((2, 5)\\) and \\((6, 13)\\). Which of the following is the equation of a line parallel to \\(\\ell\\)?</p>",
+              "question_raw": "Line l passes through (2, 5) and (6, 13). Which equation is parallel to l?",
+              "problem_type": "mcq",
+              "difficulty": "medium",
+              "points": 1,
+              "choices": [
+                {"text": "\\(y = -2x + 1\\)", "is_correct": false},
+                {"text": "\\(y = 2x + 1\\)", "is_correct": true},
+                {"text": "\\(y = \\frac{1}{2}x + 1\\)", "is_correct": false},
+                {"text": "\\(y = -\\frac{1}{2}x + 1\\)", "is_correct": false}
+              ],
+              "hints": [
+                {"text": "First find the slope of line \\(\\ell\\). Parallel lines have the <strong>same slope</strong>.", "cost_points": 0},
+                {"text": "Slope of \\(\\ell\\): \\(\\frac{13-5}{6-2} = \\frac{8}{4} = 2\\). A parallel line also has slope 2.", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "Slope of \\(\\ell\\): \\(m = \\frac{13 - 5}{6 - 2} = \\frac{8}{4} = 2\\)."},
+                {"text": "Parallel lines have identical slopes, so we need slope = 2."},
+                {"text": "Only \\(y = 2x + 1\\) has slope 2. The answer is <strong>B</strong>."}
+              ]
+            },
+            {
+              "question_html": "<p>The table below shows the relationship between hours worked and total earnings:</p><table><thead><tr><th>Hours (\\(h\\))</th><th>Earnings ($)</th></tr></thead><tbody><tr><td>0</td><td>20</td></tr><tr><td>3</td><td>56</td></tr><tr><td>5</td><td>80</td></tr><tr><td>8</td><td>116</td></tr></tbody></table><p>What does the value 20 represent in this relationship?</p>",
+              "question_raw": "A table shows Hours: 0,3,5,8 and Earnings: $20,$56,$80,$116. What does the value 20 represent?",
+              "problem_type": "mcq",
+              "difficulty": "medium",
+              "points": 1,
+              "choices": [
+                {"text": "The hourly wage", "is_correct": false},
+                {"text": "A signing bonus or base pay", "is_correct": true},
+                {"text": "The total pay for 20 hours", "is_correct": false},
+                {"text": "The number of hours worked for free", "is_correct": false}
+              ],
+              "hints": [
+                {"text": "When \\(h = 0\\), earnings = $20. What does it mean to earn money before working any hours?", "cost_points": 0},
+                {"text": "The y-intercept (value at \\(h = 0\\)) represents a fixed amount earned regardless of hours \u2014 like a signing bonus or base pay.", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "At \\(h = 0\\), earnings = $20. This is the y-intercept."},
+                {"text": "The y-intercept represents the starting value \u2014 earnings before any hours are worked."},
+                {"text": "This is a fixed payment like a signing bonus or base pay. The answer is <strong>B</strong>."}
+              ]
+            },
+            {
+              "question_html": "<p>Line \\(p\\) has the equation \\(y = 3x - 7\\). Line \\(q\\) is perpendicular to line \\(p\\) and passes through the point \\((6, 1)\\). What is the y-intercept of line \\(q\\)?</p>",
+              "question_raw": "Line p: y = 3x - 7. Line q is perpendicular to p and passes through (6, 1). What is the y-intercept of q?",
+              "problem_type": "mcq",
+              "difficulty": "hard",
+              "points": 1,
+              "choices": [
+                {"text": "\\(-1\\)", "is_correct": false},
+                {"text": "\\(1\\)", "is_correct": false},
+                {"text": "\\(3\\)", "is_correct": true},
+                {"text": "\\(7\\)", "is_correct": false}
+              ],
+              "hints": [
+                {"text": "Perpendicular lines have slopes that are <strong>negative reciprocals</strong>. If line \\(p\\) has slope 3, what is the slope of line \\(q\\)?", "cost_points": 0},
+                {"text": "Slope of \\(q\\) = \\(-\\frac{1}{3}\\). Use point-slope with \\((6, 1)\\): \\(y - 1 = -\\frac{1}{3}(x - 6)\\). Simplify to find the y-intercept.", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "Slope of \\(p\\) is 3, so slope of \\(q\\) is \\(-\\frac{1}{3}\\) (negative reciprocal)."},
+                {"text": "Point-slope form: \\(y - 1 = -\\frac{1}{3}(x - 6)\\)."},
+                {"text": "Distribute: \\(y - 1 = -\\frac{1}{3}x + 2\\)."},
+                {"text": "Solve for \\(y\\): \\(y = -\\frac{1}{3}x + 3\\). The y-intercept is 3."}
+              ]
+            },
+            {
+              "question_html": "<p>A scatterplot shows a linear trend. The line of best fit passes through approximately \\((10, 40)\\) and \\((30, 120)\\). Based on this line, what is the predicted value of \\(y\\) when \\(x = 20\\)?</p>",
+              "question_raw": "A line of best fit passes through (10, 40) and (30, 120). What is the predicted y when x = 20?",
+              "problem_type": "mcq",
+              "difficulty": "easy",
+              "points": 1,
+              "choices": [
+                {"text": "\\(60\\)", "is_correct": false},
+                {"text": "\\(70\\)", "is_correct": false},
+                {"text": "\\(80\\)", "is_correct": true},
+                {"text": "\\(90\\)", "is_correct": false}
+              ],
+              "hints": [
+                {"text": "Find the slope using the two given points. Notice that \\(x = 20\\) is exactly the midpoint of \\(x = 10\\) and \\(x = 30\\).", "cost_points": 0},
+                {"text": "Since \\(x = 20\\) is the midpoint, \\(y\\) is the average of the \\(y\\)-values: \\(\\frac{40 + 120}{2} = 80\\).", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "Slope: \\(m = \\frac{120 - 40}{30 - 10} = \\frac{80}{20} = 4\\)."},
+                {"text": "Since \\(x = 20\\) is the midpoint of 10 and 30, the predicted \\(y\\) is the midpoint of 40 and 120."},
+                {"text": "\\(y = \\frac{40 + 120}{2} = 80\\). The answer is <strong>C</strong>."}
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

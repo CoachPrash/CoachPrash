@@ -6,12 +6,13 @@ from app.models.practice import Problem, Choice, Hint, StepByStepSolution
 from app.models.progress import StudentProgress, AttemptLog
 from app.models.content import Subject, Topic, Concept
 from app.utils.access import can_access_hint, can_access_solution, can_track_progress
-from app.extensions import db
+from app.extensions import db, limiter
 
 
 # --- Practice API Endpoints ---
 
 @study_bp.route('/api/practice/check', methods=['POST'])
+@limiter.limit('60/minute')
 def check_answer():
     data = request.get_json()
     if not data or 'problem_id' not in data or 'submitted_answer' not in data:
@@ -65,6 +66,7 @@ def check_answer():
 
 
 @study_bp.route('/api/practice/hint', methods=['POST'])
+@limiter.limit('60/minute')
 def get_hint():
     data = request.get_json()
     if not data or 'problem_id' not in data:
@@ -97,6 +99,7 @@ def get_hint():
 
 
 @study_bp.route('/api/practice/solution', methods=['POST'])
+@limiter.limit('60/minute')
 def get_solution():
     data = request.get_json()
     if not data or 'problem_id' not in data:
@@ -116,6 +119,7 @@ def get_solution():
 
 
 @study_bp.route('/api/practice/complete', methods=['POST'])
+@limiter.limit('60/minute')
 def complete_quiz():
     """Called by JS when a quiz is finished. Updates StudentProgress."""
     if not current_user.is_authenticated:

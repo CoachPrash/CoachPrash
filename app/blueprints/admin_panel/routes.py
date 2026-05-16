@@ -18,6 +18,7 @@ from app.models.practice import ProblemSet, Problem, Choice, Hint, StepByStepSol
 from app.models.progress import AttemptLog
 from app.models.access import AccessCode
 from app.extensions import db
+from app.utils.sanitize import sanitize_html
 
 
 def admin_required(f):
@@ -258,7 +259,7 @@ def new_concept(topic_id):
             title=form.title.data,
             slug=form.slug.data,
             content_raw=form.content_raw.data or '',
-            content_html=form.content_raw.data or '',
+            content_html=sanitize_html(form.content_raw.data or ''),
             estimated_minutes=form.estimated_minutes.data,
             access_tier=form.access_tier.data,
             display_order=form.display_order.data,
@@ -284,7 +285,7 @@ def edit_concept(concept_id):
         concept.title = form.title.data
         concept.slug = form.slug.data
         concept.content_raw = form.content_raw.data or ''
-        concept.content_html = form.content_raw.data or ''
+        concept.content_html = sanitize_html(form.content_raw.data or '')
         concept.estimated_minutes = form.estimated_minutes.data
         concept.access_tier = form.access_tier.data
         concept.display_order = form.display_order.data
@@ -370,7 +371,7 @@ def new_blog_post():
             title=form.title.data,
             slug=form.slug.data,
             content_raw=form.content_raw.data or '',
-            content_html=form.content_raw.data or '',
+            content_html=sanitize_html(form.content_raw.data or ''),
             excerpt=form.excerpt.data or '',
             is_published=form.is_published.data,
             published_at=datetime.now(timezone.utc) if form.is_published.data else None,
@@ -393,7 +394,7 @@ def edit_blog_post(post_id):
         post.title = form.title.data
         post.slug = form.slug.data
         post.content_raw = form.content_raw.data or ''
-        post.content_html = form.content_raw.data or ''
+        post.content_html = sanitize_html(form.content_raw.data or '')
         post.excerpt = form.excerpt.data or ''
         was_published = post.is_published
         post.is_published = form.is_published.data
@@ -767,7 +768,7 @@ def bulk_import():
                 topic_id=topic.id,
                 title=cdata.get('title', f'Concept {ci + 1}'),
                 slug=cdata.get('slug', cdata.get('title', f'concept-{ci + 1}').lower().replace(' ', '-')),
-                content_html=cdata.get('content_html', cdata.get('content_raw', '')),
+                content_html=sanitize_html(cdata.get('content_html', cdata.get('content_raw', ''))),
                 content_raw=cdata.get('content_raw', ''),
                 estimated_minutes=cdata.get('estimated_minutes', 5),
                 access_tier=cdata.get('access_tier', 'free'),
@@ -793,7 +794,7 @@ def bulk_import():
                 for pi, pdata in enumerate(psdata.get('problems', [])):
                     problem = Problem(
                         problem_set_id=ps.id,
-                        question_html=pdata.get('question_html', pdata.get('question_raw', '')),
+                        question_html=sanitize_html(pdata.get('question_html', pdata.get('question_raw', ''))),
                         question_raw=pdata.get('question_raw', ''),
                         problem_type=pdata.get('problem_type', 'mcq'),
                         correct_answer=pdata.get('correct_answer', ''),

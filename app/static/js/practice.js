@@ -136,6 +136,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (answered || !selectedAnswer) return;
         answered = true;
         submitBtn.disabled = true;
+        submitBtn.innerHTML = '<span class="spinner"></span>Checking...';
 
         var p = problems[currentIndex];
         var timeSpent = Math.floor((Date.now() - problemStartTime) / 1000);
@@ -296,6 +297,8 @@ document.addEventListener('DOMContentLoaded', function () {
     function requestHint() {
         var p = problems[currentIndex];
         var hintIndex = hintsRevealed[p.id] || 0;
+        hintBtn.disabled = true;
+        hintBtn.innerHTML = '<span class="spinner"></span>Loading...';
 
         fetch('/api/practice/hint', {
             method: 'POST',
@@ -310,6 +313,7 @@ document.addEventListener('DOMContentLoaded', function () {
         })
         .then(function (r) { return r.json(); })
         .then(function (data) {
+            hintBtn.disabled = false;
             if (data.blocked) {
                 var div = document.createElement('div');
                 div.className = 'hint-box hint-blocked';
@@ -336,12 +340,15 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         })
         .catch(function () {
-            // Silently fail
+            hintBtn.disabled = false;
+            hintBtn.textContent = 'Get Hint';
         });
     }
 
     function requestSolution() {
         var p = problems[currentIndex];
+        solutionBtn.disabled = true;
+        solutionBtn.innerHTML = '<span class="spinner"></span>Loading...';
 
         fetch('/api/practice/solution', {
             method: 'POST',
@@ -365,7 +372,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     var stepText = typeof step === 'string' ? step : (step.text_html || step.text || '');
                     var stepNum = typeof step === 'object' && step.step_number ? step.step_number : (i + 1);
                     html += '<div class="solution-step">';
-                    html += '<button class="solution-step-toggle" onclick="this.parentElement.classList.toggle(\'open\')">';
+                    html += '<button class="solution-step-toggle">';
                     html += 'Step ' + stepNum;
                     html += '</button>';
                     html += '<div class="solution-step-content">' + stepText + '</div>';
@@ -374,11 +381,17 @@ document.addEventListener('DOMContentLoaded', function () {
             }
             html += '</div>';
             solutionArea.innerHTML = html;
+            solutionArea.querySelectorAll('.solution-step-toggle').forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    this.parentElement.classList.toggle('open');
+                });
+            });
             solutionBtn.style.display = 'none';
             renderKaTeX(solutionArea);
         })
         .catch(function () {
-            // Silently fail
+            solutionBtn.disabled = false;
+            solutionBtn.textContent = 'View Solution';
         });
     }
 

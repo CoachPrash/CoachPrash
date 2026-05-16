@@ -1,0 +1,569 @@
+{
+  "subject_slug": "physics",
+  "topic_slug": "honors-physics",
+  "concepts": [
+    {
+      "title": "Newton's First Law: Inertia",
+      "slug": "newtons-first-law-inertia",
+      "content_html": "<h2>Newton's First Law of Motion</h2><p>Newton's First Law, also called the <strong>Law of Inertia</strong>, states:</p><blockquote><p>An object at rest stays at rest, and an object in motion stays in motion with the same speed and direction, unless acted upon by an unbalanced external force.</p></blockquote><h3>What is Inertia?</h3><p><strong>Inertia</strong> is the tendency of an object to resist changes in its state of motion. The more mass an object has, the more inertia it has.</p><ul><li>A bowling ball has more inertia than a tennis ball</li><li>It takes more force to stop a moving truck than a bicycle</li></ul><h3>Net Force and Equilibrium</h3><p>An object is in <strong>equilibrium</strong> when the net force on it is zero:</p><p>\\[\\vec{F}_{\\text{net}} = \\sum \\vec{F} = 0\\]</p><p>This means either:</p><ul><li>The object is at rest (static equilibrium)</li><li>The object is moving at constant velocity (dynamic equilibrium)</li></ul><h3>Everyday Examples</h3><ul><li>A book on a table stays put until you push it</li><li>Passengers lurch forward when a car brakes suddenly (your body wants to keep moving)</li><li>A hockey puck slides across ice for a long time because friction is minimal</li></ul><div class=\"callout-key\"><strong>Key Takeaway:</strong> No net force means no change in motion. An object doesn't need a force to keep moving \u2014 it needs a force to change its motion.</div><div class=\"callout-warning\"><strong>Common Mistake:</strong> Many students think a force is needed to keep an object moving. In reality, forces cause changes in motion (acceleration), not motion itself.</div>",
+      "content_raw": "Newton's First Law: Inertia",
+      "estimated_minutes": 6,
+      "access_tier": "free",
+      "display_order": 0,
+      "problem_sets": [
+        {
+          "title": "Practice: Newton's First Law",
+          "access_tier": "free",
+          "display_order": 0,
+          "problems": [
+            {
+              "question_html": "<p>A ball rolls across a smooth floor and gradually slows down. What causes it to slow down?</p>",
+              "question_raw": "A ball rolls across a smooth floor and gradually slows down. What causes it to slow down?",
+              "problem_type": "mcq",
+              "difficulty": "easy",
+              "points": 1,
+              "choices": [
+                {"text": "The ball naturally wants to stop", "is_correct": false},
+                {"text": "Friction acts as an unbalanced force", "is_correct": true},
+                {"text": "The ball runs out of energy", "is_correct": false},
+                {"text": "Gravity pulls it backward", "is_correct": false}
+              ],
+              "hints": [
+                {"text": "According to Newton's First Law, an object in motion stays in motion unless acted on by an external force.", "cost_points": 0},
+                {"text": "What force opposes the motion of the ball along the floor?", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "Newton's First Law says an object in motion stays in motion unless acted on by an unbalanced force."},
+                {"text": "The ball would keep rolling forever if no force acted on it."},
+                {"text": "Friction between the ball and the floor is an unbalanced force that slows it down."}
+              ]
+            },
+            {
+              "question_html": "<p>A 2000 kg car and a 200 kg motorcycle are both traveling at 30 m/s. Which has more inertia?</p>",
+              "question_raw": "A 2000 kg car and a 200 kg motorcycle are both traveling at 30 m/s. Which has more inertia?",
+              "problem_type": "mcq",
+              "difficulty": "easy",
+              "points": 1,
+              "choices": [
+                {"text": "The motorcycle, because it's faster", "is_correct": false},
+                {"text": "They have the same inertia since they travel at the same speed", "is_correct": false},
+                {"text": "The car, because it has more mass", "is_correct": true},
+                {"text": "Neither, inertia only applies to objects at rest", "is_correct": false}
+              ],
+              "hints": [
+                {"text": "Inertia depends on mass, not speed.", "cost_points": 0},
+                {"text": "Which object has greater mass? That object has more inertia.", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "Inertia is the resistance to changes in motion and depends only on mass."},
+                {"text": "The car has a mass of 2000 kg vs. the motorcycle's 200 kg."},
+                {"text": "The car has more inertia because it has more mass."}
+              ]
+            },
+            {
+              "question_html": "<p>An astronaut floating in space throws a ball. What happens to the ball after it leaves the astronaut's hand? (Assume no nearby objects exert gravitational force.)</p>",
+              "question_raw": "An astronaut floating in space throws a ball. What happens to the ball?",
+              "problem_type": "mcq",
+              "difficulty": "medium",
+              "points": 1,
+              "choices": [
+                {"text": "It slows down and eventually stops", "is_correct": false},
+                {"text": "It speeds up as it gets farther away", "is_correct": false},
+                {"text": "It continues at constant velocity forever", "is_correct": true},
+                {"text": "It curves in a circle and comes back", "is_correct": false}
+              ],
+              "hints": [
+                {"text": "In space, there is essentially no friction or air resistance.", "cost_points": 0},
+                {"text": "With no unbalanced forces acting on it, what does Newton's First Law predict?", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "After the ball leaves the astronaut's hand, no forces act on it (no air resistance, no friction)."},
+                {"text": "According to Newton's First Law, an object in motion stays in motion at constant velocity when no net force acts."},
+                {"text": "The ball continues at constant velocity forever (in the absence of forces)."}
+              ]
+            },
+            {
+              "question_html": "<p>A person is standing in a bus that suddenly starts moving forward. The person stumbles backward. Which of Newton's Laws best explains this?</p>",
+              "question_raw": "A person standing in a bus stumbles backward when the bus starts. Which law explains this?",
+              "problem_type": "mcq",
+              "difficulty": "easy",
+              "points": 1,
+              "choices": [
+                {"text": "Newton's First Law (Inertia)", "is_correct": true},
+                {"text": "Newton's Second Law (\\(F = ma\\))", "is_correct": false},
+                {"text": "Newton's Third Law (Action-Reaction)", "is_correct": false},
+                {"text": "Law of Conservation of Energy", "is_correct": false}
+              ],
+              "hints": [
+                {"text": "The person's body was at rest. What happens to a body at rest when the surface beneath it moves?", "cost_points": 0},
+                {"text": "Inertia means the person's body wants to stay at rest while the bus moves forward.", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "The person was at rest relative to the ground."},
+                {"text": "When the bus accelerates forward, the person's body tends to remain at rest (inertia)."},
+                {"text": "This is Newton's First Law: an object at rest tends to stay at rest."}
+              ]
+            },
+            {
+              "question_html": "<p>A skydiver has reached terminal velocity and is falling at a constant 55 m/s. What is the net force on the skydiver?</p>",
+              "question_raw": "A skydiver at terminal velocity falls at constant 55 m/s. What is the net force?",
+              "problem_type": "mcq",
+              "difficulty": "medium",
+              "points": 1,
+              "choices": [
+                {"text": "Equal to the skydiver's weight", "is_correct": false},
+                {"text": "Greater than the skydiver's weight", "is_correct": false},
+                {"text": "Zero", "is_correct": true},
+                {"text": "Cannot be determined", "is_correct": false}
+              ],
+              "hints": [
+                {"text": "At terminal velocity, the skydiver moves at constant velocity. What does Newton's First Law say about constant velocity?", "cost_points": 0},
+                {"text": "Constant velocity means no acceleration, which means \\(\\vec{F}_{\\text{net}} = 0\\).", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "At terminal velocity, the skydiver falls at constant velocity (no acceleration)."},
+                {"text": "By Newton's First Law, constant velocity means the net force is zero."},
+                {"text": "Air resistance (upward) exactly balances gravity (downward): \\(F_{\\text{net}} = 0\\)."}
+              ]
+            },
+            {
+              "question_html": "<p>True or False: An object can be in equilibrium while moving. Answer \"true\" or \"false\".</p>",
+              "question_raw": "True or False: An object can be in equilibrium while moving.",
+              "problem_type": "fill_in_blank",
+              "difficulty": "medium",
+              "points": 1,
+              "correct_answer": "true||True||TRUE",
+              "choices": [],
+              "hints": [
+                {"text": "Equilibrium means the net force is zero. Does zero net force require the object to be at rest?", "cost_points": 0},
+                {"text": "Think about dynamic equilibrium \u2014 constant velocity with \\(F_{\\text{net}} = 0\\).", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "Equilibrium means \\(\\vec{F}_{\\text{net}} = 0\\), not that the object is at rest."},
+                {"text": "An object moving at constant velocity has zero net force \u2014 this is called dynamic equilibrium."},
+                {"text": "The statement is true."}
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Newton's Second Law: F = ma",
+      "slug": "newtons-second-law-f-equals-ma",
+      "content_html": "<h2>Newton's Second Law of Motion</h2><p>Newton's Second Law gives us the quantitative relationship between force, mass, and acceleration:</p><p>\\[\\vec{F}_{\\text{net}} = m\\vec{a}\\]</p><p>This tells us:</p><ul><li>The acceleration of an object is <strong>directly proportional</strong> to the net force applied</li><li>The acceleration is <strong>inversely proportional</strong> to the object's mass</li><li>Acceleration is in the <strong>same direction</strong> as the net force</li></ul><h3>Units</h3><p>The SI unit of force is the <strong>Newton (N)</strong>:</p><p>\\[1 \\text{ N} = 1 \\text{ kg} \\cdot \\text{m/s}^2\\]</p><h3>Rearranging the Formula</h3><p>You can rearrange \\(F = ma\\) to solve for any variable:</p><ul><li>Force: \\(F = ma\\)</li><li>Mass: \\(m = \\frac{F}{a}\\)</li><li>Acceleration: \\(a = \\frac{F}{m}\\)</li></ul><h3>Free Body Diagrams</h3><p>A <strong>free body diagram (FBD)</strong> shows all forces acting on an object as arrows. The net force is the vector sum of all forces. Always draw an FBD before solving a problem!</p><div class=\"callout-key\"><strong>Key Takeaway:</strong> \\(F = ma\\) is the most important equation in mechanics. More force means more acceleration; more mass means less acceleration for the same force.</div><div class=\"callout-warning\"><strong>Common Mistake:</strong> Remember that \\(F\\) in \\(F = ma\\) is the NET force \u2014 the sum of ALL forces. If multiple forces act, add them as vectors first!</div>",
+      "content_raw": "Newton's Second Law: F = ma",
+      "estimated_minutes": 7,
+      "access_tier": "premium",
+      "display_order": 1,
+      "problem_sets": [
+        {
+          "title": "Practice: F = ma Calculations",
+          "access_tier": "premium",
+          "display_order": 0,
+          "problems": [
+            {
+              "question_html": "<p>A 5 kg box is pushed with a net force of 20 N. What is its acceleration?</p>",
+              "question_raw": "A 5 kg box is pushed with a net force of 20 N. What is its acceleration?",
+              "problem_type": "fill_in_blank",
+              "difficulty": "easy",
+              "points": 1,
+              "correct_answer": "4||4 m/s^2||4 m/s2",
+              "choices": [],
+              "hints": [
+                {"text": "Use \\(a = \\frac{F}{m}\\).", "cost_points": 0},
+                {"text": "\\(a = \\frac{20}{5}\\).", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "Use Newton's Second Law: \\(a = \\frac{F}{m}\\)."},
+                {"text": "Substitute: \\(a = \\frac{20 \\text{ N}}{5 \\text{ kg}}\\)."},
+                {"text": "\\(a = 4 \\text{ m/s}^2\\)."}
+              ]
+            },
+            {
+              "question_html": "<p>What net force is needed to accelerate a 1200 kg car at \\(3 \\text{ m/s}^2\\)?</p>",
+              "question_raw": "What net force is needed to accelerate a 1200 kg car at 3 m/s^2?",
+              "problem_type": "fill_in_blank",
+              "difficulty": "easy",
+              "points": 1,
+              "correct_answer": "3600||3600 N||3600N",
+              "choices": [],
+              "hints": [
+                {"text": "Use \\(F = ma\\).", "cost_points": 0},
+                {"text": "\\(F = 1200 \\times 3\\).", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "Use \\(F = ma\\)."},
+                {"text": "\\(F = 1200 \\text{ kg} \\times 3 \\text{ m/s}^2\\)."},
+                {"text": "\\(F = 3600 \\text{ N}\\)."}
+              ]
+            },
+            {
+              "question_html": "<p>A force of 50 N accelerates an object at \\(10 \\text{ m/s}^2\\). What is the mass of the object?</p>",
+              "question_raw": "A force of 50 N accelerates an object at 10 m/s^2. What is the mass?",
+              "problem_type": "fill_in_blank",
+              "difficulty": "easy",
+              "points": 1,
+              "correct_answer": "5||5 kg||5kg",
+              "choices": [],
+              "hints": [
+                {"text": "Use \\(m = \\frac{F}{a}\\).", "cost_points": 0},
+                {"text": "\\(m = \\frac{50}{10}\\).", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "Rearrange: \\(m = \\frac{F}{a}\\)."},
+                {"text": "\\(m = \\frac{50 \\text{ N}}{10 \\text{ m/s}^2}\\)."},
+                {"text": "\\(m = 5 \\text{ kg}\\)."}
+              ]
+            },
+            {
+              "question_html": "<p>Two forces act on a 4 kg block: 30 N to the right and 10 N to the left. What is the acceleration?</p>",
+              "question_raw": "Two forces on a 4 kg block: 30 N right and 10 N left. What is the acceleration?",
+              "problem_type": "fill_in_blank",
+              "difficulty": "medium",
+              "points": 1,
+              "correct_answer": "5||5 m/s^2||5 m/s2",
+              "choices": [],
+              "hints": [
+                {"text": "Find the net force first: \\(F_{\\text{net}} = 30 - 10\\).", "cost_points": 0},
+                {"text": "Then use \\(a = \\frac{F_{\\text{net}}}{m} = \\frac{20}{4}\\).", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "Net force: \\(F_{\\text{net}} = 30 - 10 = 20 \\text{ N}\\) to the right."},
+                {"text": "\\(a = \\frac{F_{\\text{net}}}{m} = \\frac{20}{4}\\)."},
+                {"text": "\\(a = 5 \\text{ m/s}^2\\) to the right."}
+              ]
+            },
+            {
+              "question_html": "<p>If the same force is applied to two objects, one with mass \\(m\\) and another with mass \\(2m\\), how do their accelerations compare?</p>",
+              "question_raw": "Same force on mass m and mass 2m. How do accelerations compare?",
+              "problem_type": "mcq",
+              "difficulty": "medium",
+              "points": 1,
+              "choices": [
+                {"text": "Both have the same acceleration", "is_correct": false},
+                {"text": "The heavier object has twice the acceleration", "is_correct": false},
+                {"text": "The lighter object has twice the acceleration", "is_correct": true},
+                {"text": "The heavier object has half the acceleration", "is_correct": false}
+              ],
+              "hints": [
+                {"text": "Acceleration is inversely proportional to mass: \\(a = \\frac{F}{m}\\).", "cost_points": 0},
+                {"text": "If mass doubles, what happens to acceleration for the same force?", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "For mass \\(m\\): \\(a_1 = \\frac{F}{m}\\)."},
+                {"text": "For mass \\(2m\\): \\(a_2 = \\frac{F}{2m} = \\frac{a_1}{2}\\)."},
+                {"text": "The lighter object has twice the acceleration (or equivalently, the heavier has half). Both C and D are essentially correct, but C directly answers the question."}
+              ]
+            },
+            {
+              "question_html": "<p>A 0.5 kg ball is dropped from rest. Ignoring air resistance, what is the net force on the ball? (Use \\(g = 10 \\text{ m/s}^2\\))</p>",
+              "question_raw": "A 0.5 kg ball is dropped. What is the net force? (g = 10 m/s^2)",
+              "problem_type": "fill_in_blank",
+              "difficulty": "medium",
+              "points": 1,
+              "correct_answer": "5||5 N||5N",
+              "choices": [],
+              "hints": [
+                {"text": "The only force is gravity (we're ignoring air resistance). Weight = \\(mg\\).", "cost_points": 0},
+                {"text": "\\(F = 0.5 \\times 10\\).", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "With no air resistance, the net force equals the weight."},
+                {"text": "\\(F_{\\text{net}} = mg = 0.5 \\times 10\\)."},
+                {"text": "\\(F_{\\text{net}} = 5 \\text{ N}\\) downward."}
+              ]
+            },
+            {
+              "question_html": "<p>A 10 kg object accelerates from rest to \\(20 \\text{ m/s}\\) in 5 seconds. What net force was applied?</p>",
+              "question_raw": "A 10 kg object goes from rest to 20 m/s in 5 seconds. What net force?",
+              "problem_type": "fill_in_blank",
+              "difficulty": "hard",
+              "points": 1,
+              "correct_answer": "40||40 N||40N",
+              "choices": [],
+              "hints": [
+                {"text": "First find acceleration using \\(a = \\frac{\\Delta v}{\\Delta t}\\), then use \\(F = ma\\).", "cost_points": 0},
+                {"text": "\\(a = \\frac{20 - 0}{5} = 4 \\text{ m/s}^2\\). Then \\(F = 10 \\times 4\\).", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "Find acceleration: \\(a = \\frac{\\Delta v}{\\Delta t} = \\frac{20 - 0}{5} = 4 \\text{ m/s}^2\\)."},
+                {"text": "Apply Newton's Second Law: \\(F = ma = 10 \\times 4\\)."},
+                {"text": "\\(F = 40 \\text{ N}\\)."}
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Newton's Third Law: Action-Reaction",
+      "slug": "newtons-third-law-action-reaction",
+      "content_html": "<h2>Newton's Third Law of Motion</h2><p>Newton's Third Law states:</p><blockquote><p>For every action, there is an equal and opposite reaction.</p></blockquote><p>More precisely: when object A exerts a force on object B, object B exerts an <strong>equal and opposite</strong> force on object A.</p><p>\\[\\vec{F}_{A \\text{ on } B} = -\\vec{F}_{B \\text{ on } A}\\]</p><h3>Key Properties of Action-Reaction Pairs</h3><ul><li>They are <strong>equal in magnitude</strong> and <strong>opposite in direction</strong></li><li>They act on <strong>different objects</strong> (this is crucial!)</li><li>They are the <strong>same type</strong> of force (both gravitational, both contact, etc.)</li><li>They exist <strong>simultaneously</strong></li></ul><h3>Examples</h3><ul><li><strong>Walking:</strong> Your foot pushes backward on the ground; the ground pushes forward on you</li><li><strong>Swimming:</strong> Your hands push water backward; the water pushes you forward</li><li><strong>Rocket:</strong> Hot gas is pushed downward; the rocket is pushed upward</li></ul><div class=\"callout-key\"><strong>Key Takeaway:</strong> Action-reaction pairs ALWAYS act on different objects. If both forces acted on the same object, nothing would ever accelerate!</div><div class=\"callout-warning\"><strong>Common Mistake:</strong> \"The book on the table: gravity pulls it down, the table pushes it up\" \u2014 these are NOT an action-reaction pair! They act on the same object (the book). The reaction to gravity on the book is the book pulling the Earth upward.</div>",
+      "content_raw": "Newton's Third Law: Action-Reaction",
+      "estimated_minutes": 5,
+      "access_tier": "premium",
+      "display_order": 2,
+      "problem_sets": [
+        {
+          "title": "Practice: Action-Reaction Pairs",
+          "access_tier": "premium",
+          "display_order": 0,
+          "problems": [
+            {
+              "question_html": "<p>When you push against a wall with 50 N of force, the wall pushes back on you with:</p>",
+              "question_raw": "When you push a wall with 50 N, the wall pushes back with what force?",
+              "problem_type": "mcq",
+              "difficulty": "easy",
+              "points": 1,
+              "choices": [
+                {"text": "0 N, because the wall doesn't move", "is_correct": false},
+                {"text": "50 N in the opposite direction", "is_correct": true},
+                {"text": "50 N in the same direction", "is_correct": false},
+                {"text": "More than 50 N, since the wall is stronger", "is_correct": false}
+              ],
+              "hints": [
+                {"text": "Newton's Third Law: for every action, there is an equal and opposite reaction.", "cost_points": 0},
+                {"text": "The wall exerts the same magnitude of force but in the opposite direction, regardless of whether anything moves.", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "By Newton's Third Law, when you push the wall with 50 N, the wall pushes you with 50 N in the opposite direction."},
+                {"text": "The forces are equal and opposite."},
+                {"text": "The wall not moving is explained by the net force on the wall being zero (the wall is attached to the building), not by the Third Law."}
+              ]
+            },
+            {
+              "question_html": "<p>A hammer hits a nail with a force of 500 N. What force does the nail exert on the hammer?</p>",
+              "question_raw": "A hammer hits a nail with 500 N. What force does the nail exert on the hammer?",
+              "problem_type": "fill_in_blank",
+              "difficulty": "easy",
+              "points": 1,
+              "correct_answer": "500||500 N||500N",
+              "choices": [],
+              "hints": [
+                {"text": "Third Law: equal and opposite forces between interacting objects.", "cost_points": 0},
+                {"text": "The nail exerts the same magnitude of force on the hammer, just in the opposite direction.", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "By Newton's Third Law, the nail exerts 500 N on the hammer in the opposite direction."},
+                {"text": "The hammer decelerates (it had more mass and was moving), while the nail accelerates (less mass)."},
+                {"text": "The force is 500 N."}
+              ]
+            },
+            {
+              "question_html": "<p>Which of the following is a correct action-reaction pair?</p>",
+              "question_raw": "Which is a correct action-reaction pair?",
+              "problem_type": "mcq",
+              "difficulty": "medium",
+              "points": 1,
+              "choices": [
+                {"text": "The weight of a book and the normal force of the table on the book", "is_correct": false},
+                {"text": "Earth pulling on the Moon and the Moon pulling on Earth", "is_correct": true},
+                {"text": "A car's engine force and the friction that stops it", "is_correct": false},
+                {"text": "Gravity pulling a ball down and air resistance pushing it up", "is_correct": false}
+              ],
+              "hints": [
+                {"text": "Action-reaction pairs must act on DIFFERENT objects and be the same type of force.", "cost_points": 0},
+                {"text": "Eliminate pairs that act on the same object or are different types of forces.", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "Action-reaction pairs: same type of force, different objects, equal and opposite."},
+                {"text": "Weight and normal force on the book: both act on the book \u2014 not a pair."},
+                {"text": "Earth pulling Moon / Moon pulling Earth: gravitational forces on different objects \u2014 this is a valid pair."}
+              ]
+            },
+            {
+              "question_html": "<p>If action-reaction forces are always equal and opposite, why does a horse pulling a cart cause the cart to move?</p>",
+              "question_raw": "If action-reaction forces are equal, why does the horse-cart system move?",
+              "problem_type": "mcq",
+              "difficulty": "hard",
+              "points": 1,
+              "choices": [
+                {"text": "The horse pulls with more force than the cart pulls back", "is_correct": false},
+                {"text": "The action-reaction forces act on different objects, so we must analyze each object separately", "is_correct": true},
+                {"text": "Newton's Third Law doesn't apply to this situation", "is_correct": false},
+                {"text": "The horse is heavier, so it wins", "is_correct": false}
+              ],
+              "hints": [
+                {"text": "The key is that action-reaction pairs act on DIFFERENT objects.", "cost_points": 0},
+                {"text": "For the cart: the forward pull from the horse exceeds friction on the cart, so the cart accelerates. The reaction force acts on the horse, not on the cart.", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "The horse pulls the cart forward. The cart pulls the horse backward. These are the Third Law pair."},
+                {"text": "To determine if the cart moves, look at all forces on the cart: the horse's pull forward vs. friction backward."},
+                {"text": "If the horse's pull exceeds friction, the cart accelerates. The reaction force acts on the horse, not on the cart, so it doesn't cancel out."}
+              ]
+            },
+            {
+              "question_html": "<p>A person weighing 700 N stands on the floor. Identify the reaction force to the gravitational force Earth exerts on the person.</p>",
+              "question_raw": "Identify the reaction force to Earth's gravity on a 700 N person.",
+              "problem_type": "mcq",
+              "difficulty": "hard",
+              "points": 1,
+              "choices": [
+                {"text": "The normal force of the floor on the person (700 N upward)", "is_correct": false},
+                {"text": "The person pulling Earth upward with 700 N", "is_correct": true},
+                {"text": "The person pushing the floor downward with 700 N", "is_correct": false},
+                {"text": "Air pressure pushing down on the person", "is_correct": false}
+              ],
+              "hints": [
+                {"text": "The action-reaction pair must be the same type of force and act on different objects.", "cost_points": 0},
+                {"text": "Earth pulls the person down with gravity. The reaction must be the person pulling Earth up with gravity.", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "Action: Earth pulls the person downward with 700 N (gravitational force)."},
+                {"text": "Reaction: The person pulls Earth upward with 700 N (gravitational force)."},
+                {"text": "The normal force is a separate force \u2014 it's the reaction to the person pushing down on the floor (contact force), not the reaction to gravity."}
+              ]
+            },
+            {
+              "question_html": "<p>A rocket propels itself by pushing exhaust gases downward. Using Newton's Third Law, explain why the rocket moves upward. This is a self-graded question \u2014 compare your answer to the model answer.</p>",
+              "question_raw": "Explain why a rocket moves upward using Newton's Third Law.",
+              "problem_type": "frq",
+              "difficulty": "medium",
+              "points": 2,
+              "correct_answer": "The rocket pushes exhaust gases downward (action). By Newton's Third Law, the gases push the rocket upward with an equal and opposite force (reaction). If this upward force exceeds the rocket's weight, the rocket accelerates upward.",
+              "choices": [],
+              "hints": [
+                {"text": "Think about what the rocket pushes on and what pushes back on the rocket.", "cost_points": 0},
+                {"text": "The rocket pushes gases down. The gases push the rocket up. These are the Third Law pair.", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "The rocket engine pushes exhaust gases downward with a large force (action)."},
+                {"text": "By Newton's Third Law, the exhaust gases push the rocket upward with an equal force (reaction)."},
+                {"text": "If this upward thrust exceeds the rocket's weight (\\(mg\\)), the net force is upward and the rocket accelerates upward."}
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Applying Newton's Laws",
+      "slug": "applying-newtons-laws",
+      "content_html": "<h2>Applying Newton's Laws to Real Problems</h2><p>Now let's put all three laws together to solve more complex problems involving multiple forces.</p><h3>Problem-Solving Strategy</h3><ol><li><strong>Draw a free body diagram (FBD)</strong> showing all forces on the object</li><li><strong>Choose a coordinate system</strong> (usually: x-axis along the direction of motion)</li><li><strong>Apply Newton's Second Law</strong> in each direction: \\(\\sum F_x = ma_x\\) and \\(\\sum F_y = ma_y\\)</li><li><strong>Solve</strong> the equations</li></ol><h3>Common Forces</h3><ul><li><strong>Weight (gravity):</strong> \\(W = mg\\), always points downward</li><li><strong>Normal force (\\(N\\)):</strong> perpendicular to the contact surface</li><li><strong>Friction:</strong> \\(f = \\mu N\\), opposes motion along the surface</li><li><strong>Tension (\\(T\\)):</strong> pulls along a rope or string</li><li><strong>Applied force (\\(F_a\\)):</strong> a push or pull from an external agent</li></ul><h3>Inclined Planes</h3><p>On an incline at angle \\(\\theta\\):</p><ul><li>Component of gravity along the incline: \\(mg\\sin\\theta\\)</li><li>Component of gravity perpendicular to incline: \\(mg\\cos\\theta\\)</li><li>Normal force: \\(N = mg\\cos\\theta\\) (when no acceleration perpendicular to surface)</li></ul><div class=\"callout-key\"><strong>Key Takeaway:</strong> Always start with a free body diagram. If you can draw the forces correctly, the math follows naturally from \\(F = ma\\).</div><div class=\"callout-tip\"><strong>Pro Tip:</strong> On an inclined plane, tilt your coordinate axes to align with the incline. This makes the math much simpler because acceleration is along one axis only.</div>",
+      "content_raw": "Applying Newton's Laws",
+      "estimated_minutes": 8,
+      "access_tier": "premium",
+      "display_order": 3,
+      "problem_sets": [
+        {
+          "title": "Practice: Applying Newton's Laws",
+          "access_tier": "premium",
+          "display_order": 0,
+          "problems": [
+            {
+              "question_html": "<p>A 10 kg box is pushed across a frictionless floor with a horizontal force of 40 N. What is the acceleration of the box?</p>",
+              "question_raw": "A 10 kg box on a frictionless floor is pushed with 40 N. Acceleration?",
+              "problem_type": "fill_in_blank",
+              "difficulty": "easy",
+              "points": 1,
+              "correct_answer": "4||4 m/s^2||4 m/s2",
+              "choices": [],
+              "hints": [
+                {"text": "On a frictionless floor with a horizontal force, the net force equals the applied force.", "cost_points": 0},
+                {"text": "\\(a = \\frac{F}{m} = \\frac{40}{10}\\).", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "Since the floor is frictionless and the force is horizontal, \\(F_{\\text{net}} = 40 \\text{ N}\\)."},
+                {"text": "\\(a = \\frac{F_{\\text{net}}}{m} = \\frac{40}{10}\\)."},
+                {"text": "\\(a = 4 \\text{ m/s}^2\\)."}
+              ]
+            },
+            {
+              "question_html": "<p>A 50 kg crate is on a floor with coefficient of kinetic friction \\(\\mu_k = 0.3\\). What force is needed to push it at constant velocity? (Use \\(g = 10 \\text{ m/s}^2\\))</p>",
+              "question_raw": "50 kg crate, mu_k = 0.3. Force for constant velocity? (g = 10)",
+              "problem_type": "fill_in_blank",
+              "difficulty": "medium",
+              "points": 1,
+              "correct_answer": "150||150 N||150N",
+              "choices": [],
+              "hints": [
+                {"text": "Constant velocity means \\(a = 0\\), so the applied force must equal friction.", "cost_points": 0},
+                {"text": "Friction \\(= \\mu_k \\times N = \\mu_k \\times mg = 0.3 \\times 50 \\times 10\\).", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "Constant velocity means \\(F_{\\text{net}} = 0\\), so applied force = friction."},
+                {"text": "Normal force: \\(N = mg = 50 \\times 10 = 500 \\text{ N}\\)."},
+                {"text": "Friction: \\(f = \\mu_k N = 0.3 \\times 500 = 150 \\text{ N}\\)."},
+                {"text": "Applied force needed = 150 N."}
+              ]
+            },
+            {
+              "question_html": "<p>Two blocks are connected by a rope. Block A (3 kg) is on a frictionless table, and Block B (2 kg) hangs off the edge. What is the acceleration of the system? (Use \\(g = 10 \\text{ m/s}^2\\))</p>",
+              "question_raw": "Block A (3 kg) on table, Block B (2 kg) hanging. Acceleration? (g = 10)",
+              "problem_type": "fill_in_blank",
+              "difficulty": "hard",
+              "points": 1,
+              "correct_answer": "4||4 m/s^2||4 m/s2",
+              "choices": [],
+              "hints": [
+                {"text": "The driving force is the weight of Block B. The total mass being accelerated is \\(m_A + m_B\\).", "cost_points": 0},
+                {"text": "\\(a = \\frac{m_B g}{m_A + m_B} = \\frac{2 \\times 10}{3 + 2}\\).", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "The force pulling the system is Block B's weight: \\(F = m_B g = 2 \\times 10 = 20 \\text{ N}\\)."},
+                {"text": "Total mass: \\(m_A + m_B = 3 + 2 = 5 \\text{ kg}\\)."},
+                {"text": "\\(a = \\frac{20}{5} = 4 \\text{ m/s}^2\\)."}
+              ]
+            },
+            {
+              "question_html": "<p>What is the tension in the rope in the previous problem (Block A = 3 kg, Block B = 2 kg, frictionless table)?</p>",
+              "question_raw": "What is the tension in the rope? (Block A = 3 kg, Block B = 2 kg)",
+              "problem_type": "fill_in_blank",
+              "difficulty": "hard",
+              "points": 1,
+              "correct_answer": "12||12 N||12N",
+              "choices": [],
+              "hints": [
+                {"text": "Use the FBD for Block A: the only horizontal force is the tension, and \\(T = m_A \\times a\\).", "cost_points": 0},
+                {"text": "We found \\(a = 4 \\text{ m/s}^2\\). So \\(T = 3 \\times 4 = 12 \\text{ N}\\).", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "For Block A (on the table): \\(T = m_A a = 3 \\times 4 = 12 \\text{ N}\\)."},
+                {"text": "We can verify with Block B: \\(m_B g - T = m_B a\\), so \\(20 - T = 2 \\times 4 = 8\\), giving \\(T = 12 \\text{ N}\\). Consistent!"},
+                {"text": "The tension is 12 N."}
+              ]
+            },
+            {
+              "question_html": "<p>A 5 kg block sits on a frictionless incline at \\(30\u00b0\\). What is its acceleration down the incline? (Use \\(g = 10 \\text{ m/s}^2\\))</p>",
+              "question_raw": "5 kg block on frictionless 30 degree incline. Acceleration? (g = 10)",
+              "problem_type": "fill_in_blank",
+              "difficulty": "hard",
+              "points": 1,
+              "correct_answer": "5||5 m/s^2||5 m/s2",
+              "choices": [],
+              "hints": [
+                {"text": "On a frictionless incline, the acceleration is \\(g \\sin\\theta\\).", "cost_points": 0},
+                {"text": "\\(a = 10 \\times \\sin 30\u00b0 = 10 \\times 0.5\\).", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "The component of gravity along the incline: \\(mg\\sin\\theta\\)."},
+                {"text": "By Newton's Second Law: \\(ma = mg\\sin\\theta\\), so \\(a = g\\sin\\theta\\)."},
+                {"text": "\\(a = 10 \\times \\sin 30\u00b0 = 10 \\times 0.5 = 5 \\text{ m/s}^2\\)."}
+              ]
+            },
+            {
+              "question_html": "<p>An elevator carries a 60 kg person upward with an acceleration of \\(2 \\text{ m/s}^2\\). What does the scale under the person read? (Use \\(g = 10 \\text{ m/s}^2\\))</p>",
+              "question_raw": "60 kg person in elevator accelerating up at 2 m/s^2. Scale reading? (g=10)",
+              "problem_type": "fill_in_blank",
+              "difficulty": "hard",
+              "points": 1,
+              "correct_answer": "720||720 N||720N",
+              "choices": [],
+              "hints": [
+                {"text": "The scale reads the normal force. Apply \\(F_{\\text{net}} = ma\\) in the vertical direction.", "cost_points": 0},
+                {"text": "\\(N - mg = ma\\), so \\(N = m(g + a) = 60(10 + 2)\\).", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "Forces on the person: Normal force \\(N\\) up, weight \\(mg\\) down."},
+                {"text": "Net force upward: \\(N - mg = ma\\)."},
+                {"text": "\\(N = m(g + a) = 60(10 + 2) = 60 \\times 12 = 720 \\text{ N}\\)."}
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

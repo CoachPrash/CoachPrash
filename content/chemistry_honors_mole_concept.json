@@ -1,0 +1,436 @@
+{
+  "subject_slug": "chemistry",
+  "topic_slug": "honors-chemistry",
+  "concepts": [
+    {
+      "title": "What is a Mole?",
+      "slug": "what-is-a-mole",
+      "content_html": "<h2>The Mole: Chemistry's Counting Unit</h2><p>In chemistry, atoms and molecules are far too small to count individually. Instead, we use a special unit called the <strong>mole</strong> (abbreviated mol).</p><h3>Avogadro's Number</h3><p>One mole of anything contains exactly:</p><p>\\[6.022 \\times 10^{23} \\text{ particles}\\]</p><p>This number is called <strong>Avogadro's number</strong> (\\(N_A\\)). Just as a \"dozen\" means 12, a \"mole\" means \\(6.022 \\times 10^{23}\\).</p><h3>Why Such a Big Number?</h3><p>Atoms are incredibly tiny. One mole of carbon-12 atoms has a mass of exactly 12 grams \u2014 a quantity you can hold in your hand. But it contains 602,200,000,000,000,000,000,000 atoms!</p><h3>Molar Mass</h3><p>The <strong>molar mass</strong> of an element is the mass of one mole of its atoms, measured in grams per mole (g/mol). It equals the atomic mass from the periodic table with the unit changed from amu to g/mol.</p><ul><li>Carbon: 12.01 g/mol</li><li>Oxygen: 16.00 g/mol</li><li>Hydrogen: 1.008 g/mol</li><li>Water (\\(\\text{H}_2\\text{O}\\)): \\(2(1.008) + 16.00 = 18.02\\) g/mol</li></ul><h3>The Mole Triangle</h3><p>Three key conversions connect moles, grams, and particles:</p><ul><li><strong>Moles to grams:</strong> multiply by molar mass</li><li><strong>Grams to moles:</strong> divide by molar mass</li><li><strong>Moles to particles:</strong> multiply by \\(6.022 \\times 10^{23}\\)</li><li><strong>Particles to moles:</strong> divide by \\(6.022 \\times 10^{23}\\)</li></ul><div class=\"callout-key\"><strong>Key Takeaway:</strong> The mole is a bridge between the atomic world (atoms, molecules) and the measurable world (grams). Molar mass is the conversion factor between moles and grams.</div><div class=\"callout-warning\"><strong>Common Mistake:</strong> Don't confuse molar mass with atomic mass. Atomic mass is in amu (for one atom); molar mass is in g/mol (for one mole of atoms). The numbers are the same, but the units and scale are different!</div>",
+      "content_raw": "What is a Mole?",
+      "estimated_minutes": 7,
+      "access_tier": "free",
+      "display_order": 0,
+      "problem_sets": [
+        {
+          "title": "Practice: Mole Basics",
+          "access_tier": "free",
+          "display_order": 0,
+          "problems": [
+            {
+              "question_html": "<p>How many atoms are in 2 moles of carbon?</p>",
+              "question_raw": "How many atoms are in 2 moles of carbon?",
+              "problem_type": "mcq",
+              "difficulty": "easy",
+              "points": 1,
+              "choices": [
+                {"text": "\\(6.022 \\times 10^{23}\\)", "is_correct": false},
+                {"text": "\\(1.204 \\times 10^{24}\\)", "is_correct": true},
+                {"text": "\\(3.011 \\times 10^{23}\\)", "is_correct": false},
+                {"text": "\\(1.806 \\times 10^{24}\\)", "is_correct": false}
+              ],
+              "hints": [
+                {"text": "One mole contains \\(6.022 \\times 10^{23}\\) particles. How many particles are in 2 moles?", "cost_points": 0},
+                {"text": "Multiply: \\(2 \\times 6.022 \\times 10^{23} = 1.204 \\times 10^{24}\\).", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "One mole = \\(6.022 \\times 10^{23}\\) atoms."},
+                {"text": "Two moles = \\(2 \\times 6.022 \\times 10^{23} = 1.204 \\times 10^{24}\\) atoms."},
+                {"text": "The answer is \\(1.204 \\times 10^{24}\\) atoms."}
+              ]
+            },
+            {
+              "question_html": "<p>What is the molar mass of water (\\(\\text{H}_2\\text{O}\\))? Use H = 1.008 g/mol, O = 16.00 g/mol.</p>",
+              "question_raw": "What is the molar mass of water (H2O)?",
+              "problem_type": "fill_in_blank",
+              "difficulty": "easy",
+              "points": 1,
+              "correct_answer": "18.02||18.016||18.02 g/mol",
+              "choices": [],
+              "hints": [
+                {"text": "Water has 2 hydrogen atoms and 1 oxygen atom. Add up their molar masses.", "cost_points": 0},
+                {"text": "\\(2(1.008) + 16.00 = 2.016 + 16.00\\).", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "Water is \\(\\text{H}_2\\text{O}\\): 2 hydrogens and 1 oxygen."},
+                {"text": "Molar mass = \\(2(1.008) + 1(16.00) = 2.016 + 16.00 = 18.016\\) g/mol."},
+                {"text": "Rounded: 18.02 g/mol."}
+              ]
+            },
+            {
+              "question_html": "<p>How many grams are in 3 moles of carbon? (Molar mass of C = 12.01 g/mol)</p>",
+              "question_raw": "How many grams are in 3 moles of carbon?",
+              "problem_type": "fill_in_blank",
+              "difficulty": "easy",
+              "points": 1,
+              "correct_answer": "36.03||36||36.03 g",
+              "choices": [],
+              "hints": [
+                {"text": "To convert moles to grams, multiply by the molar mass.", "cost_points": 0},
+                {"text": "\\(3 \\text{ mol} \\times 12.01 \\text{ g/mol}\\).", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "Use the formula: grams = moles \\(\\times\\) molar mass."},
+                {"text": "Grams = \\(3 \\times 12.01 = 36.03\\) g."},
+                {"text": "3 moles of carbon = 36.03 grams."}
+              ]
+            },
+            {
+              "question_html": "<p>How many moles are in 44 grams of \\(\\text{CO}_2\\)? (Molar mass of \\(\\text{CO}_2\\) = 44.01 g/mol)</p>",
+              "question_raw": "How many moles are in 44 grams of CO2?",
+              "problem_type": "fill_in_blank",
+              "difficulty": "medium",
+              "points": 1,
+              "correct_answer": "1||1.00||1 mol||1.0",
+              "choices": [],
+              "hints": [
+                {"text": "To convert grams to moles, divide by the molar mass.", "cost_points": 0},
+                {"text": "\\(\\frac{44}{44.01} \\approx 1.00\\) mol.", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "Use: moles = \\(\\frac{\\text{grams}}{\\text{molar mass}}\\)."},
+                {"text": "Moles = \\(\\frac{44}{44.01} \\approx 1.00\\) mol."},
+                {"text": "44 grams of \\(\\text{CO}_2\\) is approximately 1 mole."}
+              ]
+            },
+            {
+              "question_html": "<p>How many molecules are in 0.5 moles of \\(\\text{H}_2\\text{O}\\)?</p>",
+              "question_raw": "How many molecules are in 0.5 moles of H2O?",
+              "problem_type": "mcq",
+              "difficulty": "medium",
+              "points": 1,
+              "choices": [
+                {"text": "\\(6.022 \\times 10^{23}\\)", "is_correct": false},
+                {"text": "\\(3.011 \\times 10^{23}\\)", "is_correct": true},
+                {"text": "\\(1.204 \\times 10^{24}\\)", "is_correct": false},
+                {"text": "\\(1.506 \\times 10^{23}\\)", "is_correct": false}
+              ],
+              "hints": [
+                {"text": "Multiply moles by Avogadro's number to get the number of molecules.", "cost_points": 0},
+                {"text": "\\(0.5 \\times 6.022 \\times 10^{23}\\).", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "Molecules = moles \\(\\times\\) Avogadro's number."},
+                {"text": "\\(0.5 \\times 6.022 \\times 10^{23} = 3.011 \\times 10^{23}\\) molecules."},
+                {"text": "The answer is \\(3.011 \\times 10^{23}\\) molecules."}
+              ]
+            },
+            {
+              "question_html": "<p>A sample contains \\(1.806 \\times 10^{24}\\) atoms of iron. How many moles of iron is this?</p>",
+              "question_raw": "1.806 x 10^24 atoms of iron = how many moles?",
+              "problem_type": "fill_in_blank",
+              "difficulty": "medium",
+              "points": 1,
+              "correct_answer": "3||3.0||3.00||3 mol",
+              "choices": [],
+              "hints": [
+                {"text": "Divide the number of atoms by Avogadro's number to get moles.", "cost_points": 0},
+                {"text": "\\(\\frac{1.806 \\times 10^{24}}{6.022 \\times 10^{23}}\\).", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "Moles = \\(\\frac{\\text{atoms}}{N_A}\\)."},
+                {"text": "\\(\\frac{1.806 \\times 10^{24}}{6.022 \\times 10^{23}} = 3.00\\) mol."},
+                {"text": "This is 3 moles of iron."}
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Molar Mass Calculations",
+      "slug": "molar-mass-calculations",
+      "content_html": "<h2>Calculating Molar Mass of Compounds</h2><p>The molar mass of a compound is the sum of the molar masses of all atoms in its formula.</p><h3>Step-by-Step Process</h3><ol><li>Write the chemical formula</li><li>Count the number of each type of atom</li><li>Multiply each atom count by its atomic mass (from the periodic table)</li><li>Add all the values together</li></ol><h3>Example: Glucose (\\(\\text{C}_6\\text{H}_{12}\\text{O}_6\\))</h3><p>\\[6(12.01) + 12(1.008) + 6(16.00)\\]</p><p>\\[= 72.06 + 12.10 + 96.00\\]</p><p>\\[= 180.16 \\text{ g/mol}\\]</p><h3>Compounds with Polyatomic Ions</h3><p>For compounds like \\(\\text{Ca(OH)}_2\\), the subscript outside the parentheses multiplies everything inside:</p><p>\\[\\text{Ca(OH)}_2: 1 \\text{ Ca} + 2 \\text{ O} + 2 \\text{ H}\\]</p><p>\\[= 40.08 + 2(16.00) + 2(1.008) = 40.08 + 32.00 + 2.016 = 74.10 \\text{ g/mol}\\]</p><div class=\"callout-key\"><strong>Key Takeaway:</strong> Always count atoms carefully, especially with parentheses and subscripts. The molar mass is your key to converting between grams and moles.</div><div class=\"callout-warning\"><strong>Common Mistake:</strong> In \\(\\text{Ca(OH)}_2\\), there are 2 oxygen atoms and 2 hydrogen atoms (the subscript 2 applies to everything inside the parentheses). Don't forget to multiply!</div>",
+      "content_raw": "Molar Mass Calculations",
+      "estimated_minutes": 6,
+      "access_tier": "premium",
+      "display_order": 1,
+      "problem_sets": [
+        {
+          "title": "Practice: Molar Mass",
+          "access_tier": "premium",
+          "display_order": 0,
+          "problems": [
+            {
+              "question_html": "<p>Calculate the molar mass of \\(\\text{NaCl}\\). (Na = 22.99, Cl = 35.45)</p>",
+              "question_raw": "Molar mass of NaCl?",
+              "problem_type": "fill_in_blank",
+              "difficulty": "easy",
+              "points": 1,
+              "correct_answer": "58.44||58.44 g/mol",
+              "choices": [],
+              "hints": [
+                {"text": "NaCl has 1 sodium atom and 1 chlorine atom. Add their molar masses.", "cost_points": 0},
+                {"text": "\\(22.99 + 35.45\\).", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "NaCl: 1 Na + 1 Cl."},
+                {"text": "Molar mass = 22.99 + 35.45 = 58.44 g/mol."},
+                {"text": "The molar mass of NaCl is 58.44 g/mol."}
+              ]
+            },
+            {
+              "question_html": "<p>Calculate the molar mass of sulfuric acid \\(\\text{H}_2\\text{SO}_4\\). (H = 1.008, S = 32.07, O = 16.00)</p>",
+              "question_raw": "Molar mass of H2SO4?",
+              "problem_type": "fill_in_blank",
+              "difficulty": "medium",
+              "points": 1,
+              "correct_answer": "98.09||98.086||98.09 g/mol",
+              "choices": [],
+              "hints": [
+                {"text": "Count atoms: 2 H, 1 S, 4 O. Multiply each by its molar mass and add.", "cost_points": 0},
+                {"text": "\\(2(1.008) + 32.07 + 4(16.00)\\).", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "\\(\\text{H}_2\\text{SO}_4\\): 2 H + 1 S + 4 O."},
+                {"text": "\\(2(1.008) + 32.07 + 4(16.00) = 2.016 + 32.07 + 64.00\\)."},
+                {"text": "Molar mass = 98.09 g/mol."}
+              ]
+            },
+            {
+              "question_html": "<p>What is the molar mass of calcium hydroxide \\(\\text{Ca(OH)}_2\\)? (Ca = 40.08, O = 16.00, H = 1.008)</p>",
+              "question_raw": "Molar mass of Ca(OH)2?",
+              "problem_type": "fill_in_blank",
+              "difficulty": "medium",
+              "points": 1,
+              "correct_answer": "74.10||74.096||74.1||74.10 g/mol",
+              "choices": [],
+              "hints": [
+                {"text": "The subscript 2 outside the parentheses multiplies both O and H: 1 Ca + 2 O + 2 H.", "cost_points": 0},
+                {"text": "\\(40.08 + 2(16.00) + 2(1.008)\\).", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "\\(\\text{Ca(OH)}_2\\): 1 Ca + 2 O + 2 H."},
+                {"text": "\\(40.08 + 2(16.00) + 2(1.008) = 40.08 + 32.00 + 2.016\\)."},
+                {"text": "Molar mass = 74.10 g/mol."}
+              ]
+            },
+            {
+              "question_html": "<p>How many grams are in 2.5 moles of \\(\\text{NaCl}\\)? (Molar mass = 58.44 g/mol)</p>",
+              "question_raw": "How many grams in 2.5 moles of NaCl?",
+              "problem_type": "fill_in_blank",
+              "difficulty": "easy",
+              "points": 1,
+              "correct_answer": "146.1||146.10||146.1 g",
+              "choices": [],
+              "hints": [
+                {"text": "Grams = moles \\(\\times\\) molar mass.", "cost_points": 0},
+                {"text": "\\(2.5 \\times 58.44\\).", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "Grams = moles \\(\\times\\) molar mass."},
+                {"text": "\\(2.5 \\times 58.44 = 146.10\\) g."},
+                {"text": "2.5 moles of NaCl = 146.10 grams."}
+              ]
+            },
+            {
+              "question_html": "<p>How many moles are in 90 grams of water? (Molar mass of \\(\\text{H}_2\\text{O}\\) = 18.02 g/mol)</p>",
+              "question_raw": "How many moles in 90 grams of water?",
+              "problem_type": "fill_in_blank",
+              "difficulty": "medium",
+              "points": 1,
+              "correct_answer": "5||4.99||5.0||5.00",
+              "choices": [],
+              "hints": [
+                {"text": "Moles = grams / molar mass.", "cost_points": 0},
+                {"text": "\\(\\frac{90}{18.02}\\).", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "Moles = \\(\\frac{\\text{grams}}{\\text{molar mass}}\\)."},
+                {"text": "\\(\\frac{90}{18.02} \\approx 5.00\\) mol."},
+                {"text": "90 grams of water is approximately 5 moles."}
+              ]
+            },
+            {
+              "question_html": "<p>Which compound has a greater molar mass: \\(\\text{CO}_2\\) or \\(\\text{H}_2\\text{O}\\)?</p>",
+              "question_raw": "Which has greater molar mass: CO2 or H2O?",
+              "problem_type": "mcq",
+              "difficulty": "easy",
+              "points": 1,
+              "choices": [
+                {"text": "\\(\\text{H}_2\\text{O}\\) (18.02 g/mol)", "is_correct": false},
+                {"text": "\\(\\text{CO}_2\\) (44.01 g/mol)", "is_correct": true},
+                {"text": "They are the same", "is_correct": false},
+                {"text": "Cannot be determined", "is_correct": false}
+              ],
+              "hints": [
+                {"text": "Calculate or recall the molar mass of each compound.", "cost_points": 0},
+                {"text": "\\(\\text{CO}_2\\) = 12.01 + 2(16.00) = 44.01. \\(\\text{H}_2\\text{O}\\) = 18.02.", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "\\(\\text{CO}_2\\): 12.01 + 2(16.00) = 44.01 g/mol."},
+                {"text": "\\(\\text{H}_2\\text{O}\\): 2(1.008) + 16.00 = 18.02 g/mol."},
+                {"text": "\\(\\text{CO}_2\\) has the greater molar mass (44.01 > 18.02)."}
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Stoichiometry Basics",
+      "slug": "stoichiometry-basics",
+      "content_html": "<h2>Introduction to Stoichiometry</h2><p><strong>Stoichiometry</strong> is the study of the quantitative relationships between reactants and products in a chemical reaction. It lets you predict how much product you'll make or how much reactant you'll need.</p><h3>Mole Ratios from Balanced Equations</h3><p>A balanced chemical equation gives you the <strong>mole ratio</strong> between all species. For example:</p><p>\\[2\\text{H}_2 + \\text{O}_2 \\rightarrow 2\\text{H}_2\\text{O}\\]</p><p>This tells us:</p><ul><li>2 moles of \\(\\text{H}_2\\) react with 1 mole of \\(\\text{O}_2\\)</li><li>2 moles of \\(\\text{H}_2\\) produce 2 moles of \\(\\text{H}_2\\text{O}\\)</li><li>1 mole of \\(\\text{O}_2\\) produces 2 moles of \\(\\text{H}_2\\text{O}\\)</li></ul><h3>Mole-to-Mole Conversions</h3><p>To convert between moles of different substances, use the mole ratio from the balanced equation as a conversion factor.</p><p><strong>Example:</strong> How many moles of \\(\\text{H}_2\\text{O}\\) are produced from 5 moles of \\(\\text{H}_2\\)?</p><p>\\[5 \\text{ mol H}_2 \\times \\frac{2 \\text{ mol H}_2\\text{O}}{2 \\text{ mol H}_2} = 5 \\text{ mol H}_2\\text{O}\\]</p><h3>The Stoichiometry Process</h3><ol><li>Write and balance the chemical equation</li><li>Convert given quantity to moles (if not already in moles)</li><li>Use the mole ratio to convert to moles of the desired substance</li><li>Convert to the desired unit (grams, particles, liters, etc.)</li></ol><div class=\"callout-key\"><strong>Key Takeaway:</strong> The coefficients in a balanced equation give you the mole ratio. This ratio is the bridge that lets you convert between any two substances in the reaction.</div><div class=\"callout-warning\"><strong>Common Mistake:</strong> Make sure the equation is balanced before using mole ratios! An unbalanced equation will give you wrong answers.</div>",
+      "content_raw": "Stoichiometry Basics",
+      "estimated_minutes": 8,
+      "access_tier": "premium",
+      "display_order": 2,
+      "problem_sets": [
+        {
+          "title": "Practice: Stoichiometry",
+          "access_tier": "premium",
+          "display_order": 0,
+          "problems": [
+            {
+              "question_html": "<p>Given: \\(2\\text{H}_2 + \\text{O}_2 \\rightarrow 2\\text{H}_2\\text{O}\\)</p><p>How many moles of \\(\\text{O}_2\\) are needed to react with 6 moles of \\(\\text{H}_2\\)?</p>",
+              "question_raw": "How many moles of O2 needed for 6 moles of H2?",
+              "problem_type": "fill_in_blank",
+              "difficulty": "easy",
+              "points": 1,
+              "correct_answer": "3||3 mol||3.0",
+              "choices": [],
+              "hints": [
+                {"text": "The mole ratio of \\(\\text{H}_2\\) to \\(\\text{O}_2\\) is 2:1.", "cost_points": 0},
+                {"text": "\\(6 \\times \\frac{1}{2} = 3\\) moles of \\(\\text{O}_2\\).", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "From the equation: 2 mol \\(\\text{H}_2\\) : 1 mol \\(\\text{O}_2\\)."},
+                {"text": "\\(6 \\text{ mol H}_2 \\times \\frac{1 \\text{ mol O}_2}{2 \\text{ mol H}_2} = 3 \\text{ mol O}_2\\)."},
+                {"text": "3 moles of \\(\\text{O}_2\\) are needed."}
+              ]
+            },
+            {
+              "question_html": "<p>Given: \\(\\text{N}_2 + 3\\text{H}_2 \\rightarrow 2\\text{NH}_3\\)</p><p>How many moles of \\(\\text{NH}_3\\) are produced from 4 moles of \\(\\text{N}_2\\)?</p>",
+              "question_raw": "How many moles of NH3 from 4 moles of N2?",
+              "problem_type": "fill_in_blank",
+              "difficulty": "easy",
+              "points": 1,
+              "correct_answer": "8||8 mol||8.0",
+              "choices": [],
+              "hints": [
+                {"text": "The ratio of \\(\\text{N}_2\\) to \\(\\text{NH}_3\\) is 1:2.", "cost_points": 0},
+                {"text": "\\(4 \\times 2 = 8\\) moles of \\(\\text{NH}_3\\).", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "Ratio: 1 mol \\(\\text{N}_2\\) produces 2 mol \\(\\text{NH}_3\\)."},
+                {"text": "\\(4 \\times \\frac{2}{1} = 8\\) mol \\(\\text{NH}_3\\)."},
+                {"text": "8 moles of ammonia are produced."}
+              ]
+            },
+            {
+              "question_html": "<p>Given: \\(2\\text{Mg} + \\text{O}_2 \\rightarrow 2\\text{MgO}\\)</p><p>If 3 moles of \\(\\text{MgO}\\) are produced, how many moles of \\(\\text{Mg}\\) were used?</p>",
+              "question_raw": "3 moles of MgO produced. How many moles of Mg used?",
+              "problem_type": "fill_in_blank",
+              "difficulty": "easy",
+              "points": 1,
+              "correct_answer": "3||3 mol||3.0",
+              "choices": [],
+              "hints": [
+                {"text": "The mole ratio of Mg to MgO is 2:2, which simplifies to 1:1.", "cost_points": 0},
+                {"text": "If 3 moles of MgO are produced, 3 moles of Mg were used.", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "Ratio: 2 mol Mg produces 2 mol MgO, or 1:1."},
+                {"text": "\\(3 \\text{ mol MgO} \\times \\frac{2 \\text{ mol Mg}}{2 \\text{ mol MgO}} = 3 \\text{ mol Mg}\\)."},
+                {"text": "3 moles of Mg were used."}
+              ]
+            },
+            {
+              "question_html": "<p>Given: \\(\\text{CH}_4 + 2\\text{O}_2 \\rightarrow \\text{CO}_2 + 2\\text{H}_2\\text{O}\\)</p><p>How many moles of \\(\\text{H}_2\\text{O}\\) are produced when 5 moles of \\(\\text{CH}_4\\) are burned?</p>",
+              "question_raw": "Moles of H2O from 5 moles of CH4?",
+              "problem_type": "fill_in_blank",
+              "difficulty": "medium",
+              "points": 1,
+              "correct_answer": "10||10 mol||10.0",
+              "choices": [],
+              "hints": [
+                {"text": "The ratio of \\(\\text{CH}_4\\) to \\(\\text{H}_2\\text{O}\\) is 1:2.", "cost_points": 0},
+                {"text": "\\(5 \\times 2 = 10\\) moles of water.", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "Ratio: 1 mol \\(\\text{CH}_4\\) : 2 mol \\(\\text{H}_2\\text{O}\\)."},
+                {"text": "\\(5 \\times 2 = 10\\) mol \\(\\text{H}_2\\text{O}\\)."},
+                {"text": "10 moles of water are produced."}
+              ]
+            },
+            {
+              "question_html": "<p>Given: \\(\\text{N}_2 + 3\\text{H}_2 \\rightarrow 2\\text{NH}_3\\)</p><p>How many moles of \\(\\text{H}_2\\) are needed to produce 10 moles of \\(\\text{NH}_3\\)?</p>",
+              "question_raw": "How many moles of H2 to produce 10 moles of NH3?",
+              "problem_type": "fill_in_blank",
+              "difficulty": "medium",
+              "points": 1,
+              "correct_answer": "15||15 mol||15.0",
+              "choices": [],
+              "hints": [
+                {"text": "The ratio of \\(\\text{H}_2\\) to \\(\\text{NH}_3\\) is 3:2.", "cost_points": 0},
+                {"text": "\\(10 \\times \\frac{3}{2} = 15\\) moles of \\(\\text{H}_2\\).", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "Ratio: 3 mol \\(\\text{H}_2\\) : 2 mol \\(\\text{NH}_3\\)."},
+                {"text": "\\(10 \\text{ mol NH}_3 \\times \\frac{3 \\text{ mol H}_2}{2 \\text{ mol NH}_3} = 15 \\text{ mol H}_2\\)."},
+                {"text": "15 moles of \\(\\text{H}_2\\) are needed."}
+              ]
+            },
+            {
+              "question_html": "<p>Given: \\(4\\text{Fe} + 3\\text{O}_2 \\rightarrow 2\\text{Fe}_2\\text{O}_3\\)</p><p>What is the mole ratio of iron to iron(III) oxide?</p>",
+              "question_raw": "Mole ratio of Fe to Fe2O3?",
+              "problem_type": "mcq",
+              "difficulty": "medium",
+              "points": 1,
+              "choices": [
+                {"text": "4:3", "is_correct": false},
+                {"text": "4:2 (or 2:1)", "is_correct": true},
+                {"text": "1:2", "is_correct": false},
+                {"text": "3:2", "is_correct": false}
+              ],
+              "hints": [
+                {"text": "Read the coefficients directly from the balanced equation.", "cost_points": 0},
+                {"text": "Fe has a coefficient of 4, \\(\\text{Fe}_2\\text{O}_3\\) has a coefficient of 2. The ratio is 4:2.", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "From the equation: 4 mol Fe produces 2 mol \\(\\text{Fe}_2\\text{O}_3\\)."},
+                {"text": "The mole ratio is 4:2, which simplifies to 2:1."},
+                {"text": "For every 2 moles of Fe, 1 mole of \\(\\text{Fe}_2\\text{O}_3\\) is produced."}
+              ]
+            },
+            {
+              "question_html": "<p>Given: \\(2\\text{KClO}_3 \\rightarrow 2\\text{KCl} + 3\\text{O}_2\\)</p><p>If 0.5 moles of \\(\\text{KClO}_3\\) decompose, how many moles of \\(\\text{O}_2\\) are produced?</p>",
+              "question_raw": "0.5 mol KClO3 decompose. Moles of O2 produced?",
+              "problem_type": "fill_in_blank",
+              "difficulty": "medium",
+              "points": 1,
+              "correct_answer": "0.75||0.75 mol",
+              "choices": [],
+              "hints": [
+                {"text": "The ratio of \\(\\text{KClO}_3\\) to \\(\\text{O}_2\\) is 2:3.", "cost_points": 0},
+                {"text": "\\(0.5 \\times \\frac{3}{2} = 0.75\\) mol \\(\\text{O}_2\\).", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "Ratio: 2 mol \\(\\text{KClO}_3\\) : 3 mol \\(\\text{O}_2\\)."},
+                {"text": "\\(0.5 \\times \\frac{3}{2} = 0.75\\) mol \\(\\text{O}_2\\)."},
+                {"text": "0.75 moles of oxygen gas are produced."}
+              ]
+            },
+            {
+              "question_html": "<p>Given: \\(\\text{CaCO}_3 \\rightarrow \\text{CaO} + \\text{CO}_2\\)</p><p>How many grams of \\(\\text{CO}_2\\) are produced from 2 moles of \\(\\text{CaCO}_3\\)? (Molar mass of \\(\\text{CO}_2\\) = 44.01 g/mol)</p>",
+              "question_raw": "Grams of CO2 from 2 moles of CaCO3?",
+              "problem_type": "fill_in_blank",
+              "difficulty": "hard",
+              "points": 1,
+              "correct_answer": "88.02||88||88.02 g",
+              "choices": [],
+              "hints": [
+                {"text": "First find moles of \\(\\text{CO}_2\\) using the mole ratio (1:1), then convert to grams.", "cost_points": 0},
+                {"text": "2 mol \\(\\text{CaCO}_3\\) gives 2 mol \\(\\text{CO}_2\\). Then \\(2 \\times 44.01 = 88.02\\) g.", "cost_points": 1}
+              ],
+              "solution_steps": [
+                {"text": "Ratio: 1 mol \\(\\text{CaCO}_3\\) : 1 mol \\(\\text{CO}_2\\). So 2 mol produces 2 mol \\(\\text{CO}_2\\)."},
+                {"text": "Convert to grams: \\(2 \\times 44.01 = 88.02\\) g."},
+                {"text": "88.02 grams of \\(\\text{CO}_2\\) are produced."}
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

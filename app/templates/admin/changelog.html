@@ -13,6 +13,81 @@
                 <div class="changelog-date">
                     <span class="changelog-date-day">15</span>
                     <span class="changelog-date-month">May 2026</span>
+                    <span class="changelog-phase-badge">Phase 3</span>
+                </div>
+                <div class="changelog-body">
+                    <h2>Content, SEO, Security &amp; Launch Polish</h2>
+                    <p class="changelog-summary">Demo content for 5 subjects, security hardening, SEO infrastructure, UI polish, and performance improvements.</p>
+
+                    <div class="changelog-section">
+                        <h3>Security</h3>
+                        <ul>
+                            <li>Flask-Limiter rate limiting on login (5/min), register (3/min), contact (2/min), and API endpoints (60/min)</li>
+                            <li>HTML sanitization via nh3 on all admin content inputs</li>
+                            <li>Security headers: CSP, X-Frame-Options, X-Content-Type-Options, X-XSS-Protection, Referrer-Policy</li>
+                            <li>Custom error pages for 404, 403, and 500 errors</li>
+                            <li>Context processor wrapped in try/except for 500 page resilience</li>
+                        </ul>
+                    </div>
+
+                    <div class="changelog-section">
+                        <h3>Demo Content (5 Subjects)</h3>
+                        <ul>
+                            <li>Mathematics &mdash; Algebra 1: Linear Equations (4 concepts, 27 problems)</li>
+                            <li>Physics &mdash; Honors Physics: Newton's Laws (4 concepts, 25 problems)</li>
+                            <li>Chemistry &mdash; Honors Chemistry: The Mole Concept (3 concepts, 20 problems)</li>
+                            <li>Computer Science &mdash; AP CS A: Arrays &amp; ArrayLists (4 concepts, 24 problems)</li>
+                            <li>Test Prep &mdash; SAT Math: Heart of Algebra (3 concepts, 20 problems)</li>
+                            <li>All content follows qhsJSON format with hints, solutions, and callout boxes</li>
+                            <li>Content auto-loaded during seed via content_loader utility</li>
+                        </ul>
+                    </div>
+
+                    <div class="changelog-section">
+                        <h3>SEO</h3>
+                        <ul>
+                            <li>Dynamic robots.txt with sitemap reference</li>
+                            <li>Auto-generated sitemap.xml covering all subjects, topics, free concepts, and blog posts</li>
+                            <li>Meta description, Open Graph tags, and canonical URLs on every page</li>
+                            <li>SVG favicon (CP monogram)</li>
+                        </ul>
+                    </div>
+
+                    <div class="changelog-section">
+                        <h3>UI Polish</h3>
+                        <ul>
+                            <li>Callout box styling: key (green), warning (red), tip (blue)</li>
+                            <li>Loading spinners on quiz submit, hint, and solution buttons</li>
+                            <li>Empty state messages for progress dashboard and blog</li>
+                            <li>Card hover lift animations</li>
+                        </ul>
+                    </div>
+
+                    <div class="changelog-section">
+                        <h3>Performance</h3>
+                        <ul>
+                            <li>Blog pagination (20 per page) with reusable pagination partial</li>
+                            <li>Static asset cache-busting via <code>?v=</code> query parameter</li>
+                            <li>Cache-Control headers for static files (1 year max-age)</li>
+                            <li>Database indexes on slug, FK, and is_active columns</li>
+                        </ul>
+                    </div>
+
+                    <div class="changelog-section">
+                        <h3>Seed Data Updates</h3>
+                        <ul>
+                            <li>8 testimonials (up from 5) with varied subjects and grades</li>
+                            <li>4 blog posts (up from 2): AP Calc, SAT prep, physics problem-solving, why CS matters</li>
+                            <li>2 demo students: demo.student@example.com (premium) and demo.free@example.com (free)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="changelog-entry">
+                <div class="changelog-date">
+                    <span class="changelog-date-day">15</span>
+                    <span class="changelog-date-month">May 2026</span>
                     <span class="changelog-phase-badge">Phase 2B</span>
                 </div>
                 <div class="changelog-body">

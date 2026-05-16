@@ -99,6 +99,6 @@
 
 {% block scripts %}
 {% if problem_set %}
-<script src="{{ url_for('static', filename='js/practice.js') }}"></script>
+<script src="{{ url_for('static', filename='js/practice.js') }}?v={{ config.ASSET_VERSION }}"></script>
 {% endif %}
 {% endblock %}

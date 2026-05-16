@@ -1,5 +1,5 @@
 import os
-from flask import Flask
+from flask import Flask, render_template, request
 from werkzeug.middleware.proxy_fix import ProxyFix
 from dotenv import load_dotenv
 
@@ -20,12 +20,13 @@ def create_app(config_name=None):
     if hasattr(config_class, 'init_app'):
         config_class.init_app(flask_app)
 
-    from app.extensions import db, migrate, login_manager, csrf, oauth
+    from app.extensions import db, migrate, login_manager, csrf, oauth, limiter
     db.init_app(flask_app)
     migrate.init_app(flask_app, db)
     login_manager.init_app(flask_app)
     csrf.init_app(flask_app)
     oauth.init_app(flask_app)
+    limiter.init_app(flask_app)
 
     oauth.register(
         name='google',
@@ -67,9 +68,47 @@ def create_app(config_name=None):
 
     @flask_app.context_processor
     def inject_sidebar_subjects():
-        from app.models.content import Subject
-        subjects = Subject.query.filter_by(is_active=True).order_by(Subject.display_order).all()
-        return dict(sidebar_subjects=subjects)
+        try:
+            from app.models.content import Subject
+            subjects = Subject.query.filter_by(is_active=True).order_by(Subject.display_order).all()
+            return dict(sidebar_subjects=subjects)
+        except Exception:
+            return dict(sidebar_subjects=[])
+
+    # --- Error handlers ---
+    @flask_app.errorhandler(404)
+    def page_not_found(e):
+        return render_template('errors/404.html'), 404
+
+    @flask_app.errorhandler(403)
+    def forbidden(e):
+        return render_template('errors/403.html'), 403
+
+    @flask_app.errorhandler(500)
+    def internal_error(e):
+        db.session.rollback()
+        return render_template('errors/500.html'), 500
+
+    # --- Security headers ---
+    @flask_app.after_request
+    def set_security_headers(response):
+        response.headers['X-Content-Type-Options'] = 'nosniff'
+        response.headers['X-Frame-Options'] = 'SAMEORIGIN'
+        response.headers['X-XSS-Protection'] = '1; mode=block'
+        response.headers['Referrer-Policy'] = 'strict-origin-when-cross-origin'
+        response.headers['Content-Security-Policy'] = (
+            "default-src 'self'; "
+            "script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; "
+            "style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://fonts.googleapis.com; "
+            "font-src 'self' https://fonts.gstatic.com; "
+            "img-src 'self' data: https://*.railway.app; "
+            "connect-src 'self'; "
+            "frame-src 'self' https://docs.google.com;"
+        )
+        # Cache-Control for static assets
+        if request.path.startswith('/static/'):
+            response.headers['Cache-Control'] = 'public, max-age=31536000'
+        return response
 
     _register_cli(flask_app)
 

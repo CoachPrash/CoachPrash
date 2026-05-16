@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Page Not Found | CoachPrash{% endblock %}
+
+{% block content %}
+<div class="container" style="text-align: center; padding: 4rem 1rem;">
+    <h1 style="font-size: 5rem; color: var(--primary); margin-bottom: 0.5rem;">404</h1>
+    <h2 style="margin-bottom: 1rem;">Page Not Found</h2>
+    <p style="color: var(--text-light); margin-bottom: 2rem; max-width: 500px; margin-left: auto; margin-right: auto;">
+        Oops! We couldn't find what you're looking for. The page may have been moved or no longer exists.
+    </p>
+    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <a href="{{ url_for('main.home') }}" class="btn btn-primary">Go Home</a>
+        <a href="{{ url_for('subjects.catalog') }}" class="btn btn-outline">Browse Subjects</a>
+    </div>
+</div>
+{% endblock %}

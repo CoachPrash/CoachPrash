@@ -39,8 +39,8 @@
             </div>
         </div>
 
+        <h2 class="section-heading">Subject Progress</h2>
         {% if subject_progress %}
-            <h2 class="section-heading">Subject Progress</h2>
             <div class="subject-progress-list">
                 {% for sp in subject_progress %}
                     <div class="subject-progress-item">
@@ -53,6 +53,11 @@
                         </div>
                     </div>
                 {% endfor %}
+            </div>
+        {% else %}
+            <div class="empty-state">
+                <h3>No progress yet</h3>
+                <p>Complete concepts and practice problems to track your progress across subjects.</p>
             </div>
         {% endif %}
 
