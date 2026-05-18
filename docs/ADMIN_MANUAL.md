@@ -1,6 +1,6 @@
 # CoachPrash Admin Manual
 
-> **Version:** 4.0 (Phase 4)
+> **Version:** 4.1 (Logging)
 > **Last Updated:** May 2026
 > **Platform:** Flask + PostgreSQL, deployed on Railway
 
@@ -31,6 +31,7 @@
 21. [Deployment & Environment Variables](#21-deployment--environment-variables)
 22. [Troubleshooting](#22-troubleshooting)
 23. [Quick Reference](#23-quick-reference)
+24. [Logging](#24-logging)
 
 ---
 
@@ -1424,3 +1425,67 @@ Units:       \,\text{m/s}^2
 <!-- Upload image at /admin/images first, then reference: -->
 <img data-bucket-key="images/{subject}/{topic}/{filename}" alt="description" />
 ```
+
+---
+
+## 24. Logging
+
+CoachPrash uses Python's standard `logging` module configured via Flask's `dictConfig`, following [Flask's official logging best practices](https://flask.palletsprojects.com/en/stable/logging/).
+
+### Configuration
+
+Logging is configured in `app/__init__.py` **before** the Flask app is created:
+
+- **Development** (`FLASK_ENV=development`): log level is `DEBUG` — shows all messages
+- **Production** (`FLASK_ENV=production`): log level is `INFO` — suppresses debug noise
+
+Log format: `[2026-05-18 14:30:05,123] INFO in auth.routes: User logged in: alice (id=abc123)`
+
+### What Gets Logged
+
+| Category | Level | Examples |
+|----------|-------|---------|
+| Authentication | INFO/WARNING | Login success, login failure, registration, OAuth flows, logout, deactivated accounts |
+| Admin operations | INFO | Subject/topic/concept CRUD, blog posts, testimonials, access codes, bulk import results |
+| Parent portal | INFO/WARNING | Link code usage, role upgrades, unauthorized access attempts |
+| Study engine | INFO | Quiz completion with mastery scores |
+| Storage (S3) | INFO/ERROR | Bucket uploads, deletes, presigned URL failures |
+| Security | WARNING | Unauthorized admin/parent access attempts, invalid stealth codes |
+| Dangerous endpoints | WARNING | Seed and drop-all endpoint invocations (authorized or not) |
+| Errors | ERROR | 500 errors with full tracebacks, bulk import failures, image upload failures |
+| HTTP errors | INFO/WARNING | 404 and 403 with request paths |
+
+### Gunicorn Integration
+
+The logging handler uses `flask.logging.wsgi_errors_stream`, which writes to gunicorn's error log in production. On Railway, these appear in the deployment logs dashboard. No separate log file configuration is needed.
+
+### Viewing Logs
+
+- **Local development**: Log output appears in the terminal running `flask run --debug`
+- **Railway production**: View logs in the Railway dashboard → your service → **Logs** tab
+- **Seed output**: The `seed.py` script uses the same logging system, so seed progress appears in gunicorn's log stream during `flask db upgrade && gunicorn ...`
+
+### Log Levels Reference
+
+| Level | When to use |
+|-------|------------|
+| `DEBUG` | Detailed diagnostic info (only visible in dev) |
+| `INFO` | Normal operations: user actions, successful operations |
+| `WARNING` | Something unexpected but recoverable: failed login, unauthorized access |
+| `ERROR` | Something failed: exceptions, upload failures, import errors |
+
+### Adding New Logging
+
+When adding new routes or features, follow this pattern:
+
+```python
+import logging
+logger = logging.getLogger(__name__)
+
+# In your route:
+logger.info('Action performed: %s', detail)
+logger.warning('Something suspicious: %s', detail)
+logger.exception('Something failed')  # auto-captures traceback
+```
+
+Use `%s` string formatting (not f-strings) in logger calls — this is a Python logging best practice that avoids string formatting overhead when the log level is disabled.

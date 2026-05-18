@@ -1,3 +1,5 @@
+import logging
+
 from flask import render_template, flash, redirect, url_for, request, session
 from flask_login import login_user, logout_user, login_required, current_user
 from app.blueprints.auth import auth_bp
@@ -6,6 +8,8 @@ from app.models.user import User
 from app.models.access import AccessCode
 from app.models.parent import ParentLinkCode, ParentStudentLink
 from app.extensions import db, oauth, limiter
+
+logger = logging.getLogger(__name__)
 
 
 @auth_bp.route('/login', methods=['GET', 'POST'])
@@ -19,12 +23,15 @@ def login():
         user = User.query.filter(User.email.ilike(form.email.data)).first()
         if user and user.check_password(form.password.data):
             if not user.is_active:
+                logger.warning('Login blocked — account deactivated: %s', user.email)
                 flash('Your account has been deactivated. Please contact support.', 'danger')
                 return render_template('auth/login.html', form=form)
             login_user(user, remember=form.remember_me.data)
             next_page = request.args.get('next')
+            logger.info('User logged in: %s (id=%s)', user.username, user.id)
             flash(f'Welcome back, {user.username}!', 'success')
             return redirect(next_page or url_for('main.home'))
+        logger.warning('Login failed — invalid credentials for: %s', form.email.data)
         flash('Invalid email or password.', 'danger')
 
     return render_template('auth/login.html', form=form)
@@ -48,6 +55,7 @@ def register():
             access_code_obj = AccessCode.query.filter_by(code=code_str).first()
             if access_code_obj:
                 if not access_code_obj.is_valid():
+                    logger.warning('Registration failed — invalid/expired access code: %s', code_str)
                     flash('Invalid or expired access code.', 'danger')
                     return render_template('auth/register.html', form=form)
                 tier = access_code_obj.tier
@@ -55,6 +63,7 @@ def register():
                 # Check parent link codes
                 parent_link_code = ParentLinkCode.query.filter_by(code=code_str).first()
                 if not parent_link_code or not parent_link_code.is_valid():
+                    logger.warning('Registration failed — invalid/expired code: %s', code_str)
                     flash('Invalid or expired code.', 'danger')
                     return render_template('auth/register.html', form=form)
 
@@ -69,6 +78,7 @@ def register():
 
         if access_code_obj:
             access_code_obj.use()
+            logger.info('Access code %s redeemed by user %s (tier=%s)', code_str, user.id, tier)
 
         if parent_link_code:
             link = ParentStudentLink(
@@ -79,9 +89,13 @@ def register():
             parent_link_code.is_used = True
             parent_link_code.used_by = user.id
             user.role = 'parent'
+            logger.info('Parent link created via registration: parent=%s, student=%s, code=%s',
+                        user.id, parent_link_code.student_id, code_str)
 
         db.session.commit()
         login_user(user)
+        logger.info('New user registered: %s (id=%s, tier=%s, role=%s)',
+                    user.username, user.id, user.tier, user.role)
         if parent_link_code:
             flash('Welcome! Your account has been created and linked to your child.', 'success')
             return redirect(url_for('parent.dashboard'))
@@ -102,6 +116,7 @@ def google_callback():
     token = oauth.google.authorize_access_token()
     userinfo = token.get('userinfo')
     if not userinfo:
+        logger.warning('Google OAuth callback failed — no userinfo returned')
         flash('Could not retrieve your Google account info.', 'danger')
         return redirect(url_for('auth.login'))
 
@@ -113,9 +128,11 @@ def google_callback():
     user = User.query.filter_by(google_id=google_id).first()
     if user:
         if not user.is_active:
+            logger.warning('Google OAuth blocked — account deactivated: %s', email)
             flash('Your account has been deactivated. Please contact support.', 'danger')
             return redirect(url_for('auth.login'))
         login_user(user, remember=True)
+        logger.info('Google OAuth login: %s (id=%s)', user.username, user.id)
         flash(f'Welcome back, {user.username}!', 'success')
         return redirect(url_for('main.home'))
 
@@ -127,9 +144,11 @@ def google_callback():
             user.auth_provider = 'both'
         db.session.commit()
         if not user.is_active:
+            logger.warning('Google OAuth merge blocked — account deactivated: %s', email)
             flash('Your account has been deactivated. Please contact support.', 'danger')
             return redirect(url_for('auth.login'))
         login_user(user, remember=True)
+        logger.info('Google OAuth account merged: %s (id=%s)', user.username, user.id)
         flash(f'Welcome back, {user.username}! Your Google account is now linked.', 'success')
         return redirect(url_for('main.home'))
 
@@ -151,6 +170,7 @@ def google_callback():
     db.session.add(user)
     db.session.commit()
     login_user(user, remember=True)
+    logger.info('New user via Google OAuth: %s (id=%s)', user.username, user.id)
     flash('Welcome! Your account has been created with Google.', 'success')
     return redirect(url_for('main.home'))
 
@@ -158,6 +178,7 @@ def google_callback():
 @auth_bp.route('/logout')
 @login_required
 def logout():
+    logger.info('User logged out: %s (id=%s)', current_user.username, current_user.id)
     logout_user()
     flash('You have been logged out.', 'info')
     return redirect(url_for('main.home'))

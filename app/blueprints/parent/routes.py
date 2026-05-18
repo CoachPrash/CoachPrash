@@ -1,3 +1,4 @@
+import logging
 from datetime import datetime, timezone, timedelta
 from functools import wraps
 from flask import render_template, redirect, url_for, flash, abort
@@ -11,6 +12,8 @@ from app.models.practice import Problem
 from app.blueprints.parent import parent_bp
 from app.blueprints.parent.forms import LinkCodeForm
 
+logger = logging.getLogger(__name__)
+
 
 def parent_required(f):
     """Decorator that requires the current user to be a parent."""
@@ -18,6 +21,8 @@ def parent_required(f):
     @login_required
     def decorated(*args, **kwargs):
         if not current_user.is_parent:
+            logger.warning('Unauthorized parent access attempt by %s (id=%s)',
+                           current_user.username, current_user.id)
             abort(403)
         return f(*args, **kwargs)
     return decorated
@@ -65,6 +70,8 @@ def student_progress(student_id):
         parent_id=current_user.id, student_id=student_id
     ).first()
     if not link:
+        logger.warning('Parent %s attempted to access unlinked student %s',
+                       current_user.id, student_id)
         abort(403)
 
     student = db.session.get(User, student_id)
@@ -175,10 +182,12 @@ def link_student():
         link_code = ParentLinkCode.query.filter_by(code=code_str).first()
 
         if not link_code:
+            logger.warning('Invalid link code attempt by %s: %s', current_user.username, code_str)
             flash('Invalid link code. Please check and try again.', 'danger')
             return render_template('parent/link_student.html', form=form)
 
         if not link_code.is_valid():
+            logger.warning('Expired/used link code attempt by %s: %s', current_user.username, code_str)
             if link_code.is_used:
                 flash('This link code has already been used.', 'danger')
             else:
@@ -212,10 +221,13 @@ def link_student():
         # Upgrade role to parent if currently a student
         if current_user.role == 'student':
             current_user.role = 'parent'
+            logger.info('User %s role upgraded to parent', current_user.username)
 
         db.session.commit()
 
         student = db.session.get(User, link_code.student_id)
+        logger.info('Parent-student link created: parent=%s, student=%s, code=%s',
+                    current_user.username, student.username, code_str)
         flash(f'Successfully linked to {student.username}!', 'success')
         return redirect(url_for('parent.dashboard'))
 

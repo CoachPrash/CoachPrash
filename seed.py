@@ -1,3 +1,4 @@
+import logging
 import os
 from datetime import datetime, timezone, timedelta
 from app import create_app
@@ -7,6 +8,8 @@ from app.models.content import Subject, Topic
 from app.models.access import AccessCode
 from app.models import Testimonial, BlogPost
 from app.utils.content_loader import load_content_json
+
+logger = logging.getLogger(__name__)
 
 
 def run_seed():
@@ -21,7 +24,7 @@ def run_seed():
 
 
 def _seed_data():
-    print('Seeding database...')
+    logger.info('Seeding database...')
 
     # --- Admin User ---
     admin_email = os.environ.get('ADMIN_EMAIL', 'admin@coachprash.com')
@@ -38,9 +41,9 @@ def _seed_data():
         admin.set_password(admin_password)
         db.session.add(admin)
         db.session.commit()
-        print(f'  Created admin user: {admin_email}')
+        logger.info('Created admin user: %s', admin_email)
     else:
-        print(f'  Admin user already exists: {admin_email}')
+        logger.info('Admin user already exists: %s', admin_email)
 
     # --- Subjects & Topics ---
     subjects_data = [
@@ -129,7 +132,7 @@ def _seed_data():
             )
             db.session.add(subject)
             db.session.flush()
-            print(f'  Created subject: {subject.name}')
+            logger.info('Created subject: %s', subject.name)
 
         for t_order, (t_name, t_slug, t_diff, t_desc) in enumerate(sdata['topics']):
             topic = Topic.query.filter_by(subject_id=subject.id, slug=t_slug).first()
@@ -145,7 +148,7 @@ def _seed_data():
                 db.session.add(topic)
 
     db.session.commit()
-    print('  Subjects and topics seeded.')
+    logger.info('Subjects and topics seeded.')
 
     # --- Load Content JSON Files ---
     content_dir = os.path.join(os.path.dirname(__file__), 'content')
@@ -159,17 +162,17 @@ def _seed_data():
     for fname in content_files:
         fpath = os.path.join(content_dir, fname)
         if not os.path.exists(fpath):
-            print(f'  Content file not found, skipping: {fname}')
+            logger.warning('Content file not found, skipping: %s', fname)
             continue
         try:
             result = load_content_json(fpath)
             if result is None:
-                print(f'  Content already loaded, skipping: {fname}')
+                logger.info('Content already loaded, skipping: %s', fname)
             else:
-                print(f'  Loaded {fname}: {result["concepts"]} concepts, '
-                      f'{result["problems"]} problems')
-        except Exception as e:
-            print(f'  Error loading {fname}: {e}')
+                logger.info('Loaded %s: %s concepts, %s problems',
+                            fname, result['concepts'], result['problems'])
+        except Exception:
+            logger.exception('Error loading %s', fname)
 
     # --- Testimonials ---
     if Testimonial.query.count() == 0:
@@ -233,9 +236,9 @@ def _seed_data():
         ]
         db.session.add_all(testimonials)
         db.session.commit()
-        print('  Testimonials seeded (8 total).')
+        logger.info('Testimonials seeded (8 total).')
     else:
-        print('  Testimonials already exist, skipping.')
+        logger.info('Testimonials already exist, skipping.')
 
     # --- Blog Posts ---
     if BlogPost.query.count() == 0:
@@ -412,9 +415,9 @@ def _seed_data():
         ]
         db.session.add_all(posts)
         db.session.commit()
-        print('  Blog posts seeded (4 total).')
+        logger.info('Blog posts seeded (4 total).')
     else:
-        print('  Blog posts already exist, skipping.')
+        logger.info('Blog posts already exist, skipping.')
 
     # --- Demo Students ---
     demo_premium_email = 'demo.student@example.com'
@@ -429,7 +432,7 @@ def _seed_data():
         )
         demo_premium.set_password('demo1234')
         db.session.add(demo_premium)
-        print(f'  Created demo premium student: {demo_premium_email}')
+        logger.info('Created demo premium student: %s', demo_premium_email)
 
     if not User.query.filter_by(email=demo_free_email).first():
         demo_free = User(
@@ -440,7 +443,7 @@ def _seed_data():
         )
         demo_free.set_password('demo1234')
         db.session.add(demo_free)
-        print(f'  Created demo free student: {demo_free_email}')
+        logger.info('Created demo free student: %s', demo_free_email)
 
     db.session.commit()
 
@@ -472,11 +475,11 @@ def _seed_data():
         ]
         db.session.add_all(codes)
         db.session.commit()
-        print('  Access codes seeded: FREEACCS (free), PREM2026 (premium, 10 uses), EXPIRED1 (expired)')
+        logger.info('Access codes seeded: FREEACCS (free), PREM2026 (premium, 10 uses), EXPIRED1 (expired)')
     else:
-        print('  Access codes already exist, skipping.')
+        logger.info('Access codes already exist, skipping.')
 
-    print('Seeding complete!')
+    logger.info('Seeding complete!')
 
 
 if __name__ == '__main__':

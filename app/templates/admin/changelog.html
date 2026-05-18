@@ -11,6 +11,49 @@
 
             <div class="changelog-entry">
                 <div class="changelog-date">
+                    <span class="changelog-date-day">18</span>
+                    <span class="changelog-date-month">May 2026</span>
+                    <span class="changelog-phase-badge">Infrastructure</span>
+                </div>
+                <div class="changelog-body">
+                    <h2>Structured Logging</h2>
+                    <p class="changelog-summary">Added production-grade logging across the entire application following Flask best practices.</p>
+
+                    <div class="changelog-section">
+                        <h3>Features</h3>
+                        <ul>
+                            <li>Centralized <code>dictConfig</code> logging setup with environment-aware log levels (DEBUG for dev, INFO for prod)</li>
+                            <li>Uses Flask's <code>wsgi_errors_stream</code> for proper gunicorn integration</li>
+                            <li>Timestamped, structured log format: <code>[datetime] LEVEL in module: message</code></li>
+                        </ul>
+                    </div>
+
+                    <div class="changelog-section">
+                        <h3>Logging Coverage</h3>
+                        <ul>
+                            <li>Authentication: login success/failure, registration, Google OAuth flows, logout, deactivated accounts</li>
+                            <li>Admin operations: all CRUD (subjects, topics, concepts, blog, testimonials, resources), access codes, bulk import, image upload</li>
+                            <li>Parent portal: link code usage, role upgrades, unauthorized access attempts</li>
+                            <li>Study engine: quiz completion with mastery scores</li>
+                            <li>Storage: S3 bucket uploads, deletes, presigned URL failures</li>
+                            <li>Security: unauthorized admin/parent access attempts, dangerous endpoint invocations (seed, drop-all)</li>
+                            <li>Error handlers: 404, 403, 500 with request paths and full tracebacks</li>
+                        </ul>
+                    </div>
+
+                    <div class="changelog-section">
+                        <h3>Improvements</h3>
+                        <ul>
+                            <li>All silent <code>except</code> blocks now log errors via <code>logger.exception()</code></li>
+                            <li>Replaced all <code>print()</code> calls in <code>seed.py</code> with structured <code>logger</code> calls</li>
+                            <li>Seed output now flows through gunicorn's log stream in production</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="changelog-entry">
+                <div class="changelog-date">
                     <span class="changelog-date-day">16</span>
                     <span class="changelog-date-month">May 2026</span>
                     <span class="changelog-phase-badge">Phase 4</span>

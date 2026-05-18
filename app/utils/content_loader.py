@@ -1,9 +1,12 @@
 """Load qhsJSON content files into the database, reusing bulk-import logic."""
 import json
+import logging
 from app.extensions import db
 from app.models.content import Subject, Topic, Concept
 from app.models.practice import ProblemSet, Problem, Choice, Hint, StepByStepSolution
 from app.utils.sanitize import sanitize_html
+
+logger = logging.getLogger(__name__)
 
 
 def load_content_json(file_path):
@@ -26,6 +29,7 @@ def load_content_json(file_path):
     # Skip if topic already has concepts
     existing = Concept.query.filter_by(topic_id=topic.id).count()
     if existing > 0:
+        logger.info('Content already loaded for topic %s, skipping %s', topic.name, file_path)
         return None  # already loaded
 
     counts = {'concepts': 0, 'problem_sets': 0, 'problems': 0,
@@ -120,4 +124,6 @@ def load_content_json(file_path):
                         counts['solutions'] += 1
 
     db.session.commit()
+    logger.info('Content loaded from %s: %s concepts, %s problems, %s solutions',
+                file_path, counts['concepts'], counts['problems'], counts['solutions'])
     return counts

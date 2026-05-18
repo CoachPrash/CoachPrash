@@ -1,6 +1,9 @@
+import logging
 import re
 import os
 from markupsafe import Markup
+
+logger = logging.getLogger(__name__)
 
 
 def register_bucket_filter(app):
@@ -24,6 +27,7 @@ def register_bucket_filter(app):
                 url = get_presigned_url(key)
                 return f'src="{url}"'
             except Exception:
+                logger.exception('Failed to resolve bucket key: %s', key)
                 return f'src="" alt="Image unavailable"'
 
         result = re.sub(r"data-bucket-key=['\"]([^'\"]+)['\"]", replace_key, html_string)

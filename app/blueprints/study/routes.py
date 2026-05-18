@@ -1,3 +1,4 @@
+import logging
 from datetime import datetime, timezone, timedelta
 from flask import render_template, request, jsonify
 from flask_login import login_required, current_user
@@ -7,6 +8,8 @@ from app.models.progress import StudentProgress, AttemptLog
 from app.models.content import Subject, Topic, Concept
 from app.utils.access import can_access_hint, can_access_solution, can_track_progress
 from app.extensions import db, limiter
+
+logger = logging.getLogger(__name__)
 
 
 # --- Practice API Endpoints ---
@@ -153,6 +156,8 @@ def complete_quiz():
         progress.status = 'in_progress'
 
     db.session.commit()
+    logger.info('Quiz completed: student=%s, concept=%s, mastery=%.2f, status=%s',
+                current_user.id, data['concept_id'], mastery, progress.status)
     return jsonify({'saved': True, 'status': progress.status, 'mastery': mastery})
 
 

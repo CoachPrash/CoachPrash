@@ -1,4 +1,7 @@
+import logging
 import os
+from logging.config import dictConfig
+
 from flask import Flask, render_template, request, redirect
 from werkzeug.middleware.proxy_fix import ProxyFix
 from dotenv import load_dotenv
@@ -9,6 +12,28 @@ load_dotenv()
 def create_app(config_name=None):
     if config_name is None:
         config_name = os.environ.get('FLASK_ENV', 'development')
+
+    # Configure logging before creating the app (Flask best practice)
+    log_level = 'DEBUG' if config_name == 'development' else 'INFO'
+    dictConfig({
+        'version': 1,
+        'formatters': {
+            'default': {
+                'format': '[%(asctime)s] %(levelname)s in %(module)s: %(message)s',
+            },
+        },
+        'handlers': {
+            'wsgi': {
+                'class': 'logging.StreamHandler',
+                'stream': 'ext://flask.logging.wsgi_errors_stream',
+                'formatter': 'default',
+            },
+        },
+        'root': {
+            'level': log_level,
+            'handlers': ['wsgi'],
+        },
+    })
 
     flask_app = Flask(__name__)
     flask_app.wsgi_app = ProxyFix(flask_app.wsgi_app, x_for=1, x_proto=1, x_host=1)
@@ -77,6 +102,7 @@ def create_app(config_name=None):
             subjects = Subject.query.filter_by(is_active=True).order_by(Subject.display_order).all()
             return dict(sidebar_subjects=subjects)
         except Exception:
+            flask_app.logger.exception('Failed to load sidebar subjects')
             return dict(sidebar_subjects=[])
 
     # --- Stealth Mode ---
@@ -100,14 +126,17 @@ def create_app(config_name=None):
     # --- Error handlers ---
     @flask_app.errorhandler(404)
     def page_not_found(e):
+        flask_app.logger.info('404 Not Found: %s', request.path)
         return render_template('errors/404.html'), 404
 
     @flask_app.errorhandler(403)
     def forbidden(e):
+        flask_app.logger.warning('403 Forbidden: %s', request.path)
         return render_template('errors/403.html'), 403
 
     @flask_app.errorhandler(500)
     def internal_error(e):
+        flask_app.logger.exception('500 Internal Server Error: %s', request.path)
         db.session.rollback()
         return render_template('errors/500.html'), 500
 

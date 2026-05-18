@@ -1,4 +1,5 @@
 import json
+import logging
 from functools import wraps
 from datetime import datetime, timezone, timedelta
 from flask import render_template, flash, redirect, url_for, request, abort, jsonify
@@ -21,12 +22,16 @@ from app.models.parent import ParentStudentLink, ParentLinkCode
 from app.extensions import db
 from app.utils.sanitize import sanitize_html
 
+logger = logging.getLogger(__name__)
+
 
 def admin_required(f):
     @wraps(f)
     @login_required
     def decorated_function(*args, **kwargs):
         if not current_user.is_admin:
+            logger.warning('Unauthorized admin access attempt by %s (id=%s) at %s',
+                           current_user.username, current_user.id, request.path)
             abort(403)
         return f(*args, **kwargs)
     return decorated_function
@@ -125,6 +130,8 @@ def edit_student(user_id):
         student.tier = form.tier.data
         student.is_active = form.is_active.data
         db.session.commit()
+        logger.info('Student updated by admin: %s (tier=%s, active=%s)',
+                    student.username, student.tier, student.is_active)
         flash(f'Student {student.username} updated.', 'success')
         return redirect(url_for('admin_panel.manage_students'))
 
@@ -163,6 +170,7 @@ def new_subject():
         )
         db.session.add(subject)
         db.session.commit()
+        logger.info('Subject created: %s (slug=%s)', subject.name, subject.slug)
         flash(f'Subject "{subject.name}" created.', 'success')
         return redirect(url_for('admin_panel.manage_content'))
     return render_template('admin/form_page.html', form=form, title='New Subject')
@@ -194,6 +202,7 @@ def delete_subject(subject_id):
     subject = db.session.get(Subject, subject_id)
     if not subject:
         abort(404)
+    logger.info('Subject deleted: %s (id=%s)', subject.name, subject.id)
     db.session.delete(subject)
     db.session.commit()
     flash(f'Subject "{subject.name}" deleted.', 'success')
@@ -219,6 +228,7 @@ def new_topic(subject_id):
         )
         db.session.add(topic)
         db.session.commit()
+        logger.info('Topic created: %s in %s', topic.name, subject.name)
         flash(f'Topic "{topic.name}" created.', 'success')
         return redirect(url_for('admin_panel.manage_content'))
     return render_template(
@@ -252,6 +262,7 @@ def delete_topic(topic_id):
     topic = db.session.get(Topic, topic_id)
     if not topic:
         abort(404)
+    logger.info('Topic deleted: %s (id=%s)', topic.name, topic.id)
     db.session.delete(topic)
     db.session.commit()
     flash('Topic deleted.', 'success')
@@ -279,6 +290,7 @@ def new_concept(topic_id):
         )
         db.session.add(concept)
         db.session.commit()
+        logger.info('Concept created: %s in %s', concept.title, topic.name)
         flash(f'Concept "{concept.title}" created.', 'success')
         return redirect(url_for('admin_panel.manage_content'))
     return render_template(
@@ -316,6 +328,7 @@ def delete_concept(concept_id):
     concept = db.session.get(Concept, concept_id)
     if not concept:
         abort(404)
+    logger.info('Concept deleted: %s (id=%s)', concept.title, concept.id)
     db.session.delete(concept)
     db.session.commit()
     flash('Concept deleted.', 'success')
@@ -346,6 +359,7 @@ def new_code():
         )
         db.session.add(code)
         db.session.commit()
+        logger.info('Access code created: %s (tier=%s)', code.code, code.tier)
         flash(f'Access code "{code.code}" created.', 'success')
         return redirect(url_for('admin_panel.manage_codes'))
     return render_template('admin/form_page.html', form=form, title='New Access Code')
@@ -360,6 +374,7 @@ def deactivate_code(code_id):
     code.is_active = not code.is_active
     db.session.commit()
     status = 'activated' if code.is_active else 'deactivated'
+    logger.info('Access code %s: %s', status, code.code)
     flash(f'Access code "{code.code}" {status}.', 'success')
     return redirect(url_for('admin_panel.manage_codes'))
 
@@ -647,8 +662,10 @@ def upload_image():
             try:
                 upload_file(file, bucket_key, content_type=file.content_type)
                 uploaded_key = bucket_key
+                logger.info('Image uploaded: %s', bucket_key)
                 flash(f'Image uploaded. Bucket key: {bucket_key}', 'success')
             except Exception as e:
+                logger.exception('Image upload failed for %s', bucket_key)
                 error = f'Upload failed: {e}'
 
     # List existing images
@@ -656,7 +673,7 @@ def upload_image():
     try:
         images = list_files(prefix='images/')
     except Exception:
-        pass
+        logger.exception('Failed to list bucket images')
 
     subjects = Subject.query.order_by(Subject.display_order).all()
     topics = Topic.query.order_by(Topic.display_order).all()
@@ -747,6 +764,7 @@ def bulk_import():
     try:
         data = json.loads(raw)
     except json.JSONDecodeError as e:
+        logger.warning('Bulk import — invalid JSON: %s', e)
         flash(f'Invalid JSON: {e}', 'danger')
         return render_template('admin/bulk_import.html')
 
@@ -867,6 +885,9 @@ def bulk_import():
                             counts['solutions'] += 1
 
         db.session.commit()
+        logger.info('Bulk import successful: %s concepts, %s problems, %s solutions into %s/%s',
+                    counts['concepts'], counts['problems'], counts['solutions'],
+                    subject.name, topic.name)
         flash(
             f"Import successful: {counts['concepts']} concepts, {counts['problem_sets']} problem sets, "
             f"{counts['problems']} problems, {counts['choices']} choices, {counts['hints']} hints, "
@@ -875,6 +896,7 @@ def bulk_import():
         )
     except Exception as e:
         db.session.rollback()
+        logger.exception('Bulk import failed for %s/%s', subject_slug, topic_slug)
         flash(f'Import failed: {e}', 'danger')
 
     return redirect(url_for('admin_panel.bulk_import'))
@@ -908,6 +930,7 @@ def generate_parent_code(student_id):
     if not student or student.role not in ('student', 'parent'):
         abort(404)
     code = ParentLinkCode.create_for_student(student.id)
+    logger.info('Parent link code generated for student %s: %s', student.username, code.code)
     flash(f'Parent link code generated: {code.code} (expires in 7 days)', 'success')
     return redirect(url_for('admin_panel.edit_student', user_id=student_id))
 
@@ -919,12 +942,14 @@ def remove_parent_link(link_id):
     if not link:
         abort(404)
     parent = db.session.get(User, link.parent_id)
+    logger.info('Parent-student link removed: parent_id=%s, student_id=%s', link.parent_id, link.student_id)
     db.session.delete(link)
 
     # If parent has no more links, revert role to student
     remaining = ParentStudentLink.query.filter_by(parent_id=link.parent_id).count()
     if remaining == 0 and parent and parent.role == 'parent':
         parent.role = 'student'
+        logger.info('User %s role reverted from parent to student (no remaining links)', parent.username)
 
     db.session.commit()
     flash('Parent-student link removed.', 'success')

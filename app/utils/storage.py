@@ -1,6 +1,9 @@
+import logging
 import os
 import boto3
 from botocore.config import Config
+
+logger = logging.getLogger(__name__)
 
 
 def _get_client():
@@ -11,6 +14,7 @@ def _get_client():
     region = os.environ.get('AWS_DEFAULT_REGION', 'us-east-1')
 
     if not all([endpoint, access_key, secret_key]):
+        logger.error('Railway Bucket not configured — missing credentials')
         raise RuntimeError(
             'Railway Bucket not configured. Set AWS_ENDPOINT_URL, '
             'AWS_ACCESS_KEY_ID, and AWS_SECRET_ACCESS_KEY.'
@@ -35,6 +39,7 @@ def _bucket_name():
 
 def upload_file(file_obj, key, content_type=None):
     """Upload a file-like object to the bucket."""
+    logger.info('Uploading file to bucket: %s', key)
     client = _get_client()
     extra = {}
     if content_type:
@@ -55,6 +60,7 @@ def get_presigned_url(key, expires_in=3600):
 
 def delete_file(key):
     """Delete a file from the bucket."""
+    logger.info('Deleting file from bucket: %s', key)
     client = _get_client()
     client.delete_object(Bucket=_bucket_name(), Key=key)
 
