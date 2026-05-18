@@ -4,6 +4,7 @@ from app.models.practice import ProblemSet, Problem, Choice, Hint, StepByStepSol
 from app.models.progress import StudentProgress, AttemptLog
 from app.models.access import AccessCode
 from app.models.resource import Resource
+from app.models.parent import ParentStudentLink, ParentLinkCode
 
 from app.extensions import db
 

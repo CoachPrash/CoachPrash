@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+
+{% block title %}{{ student.username }}'s Progress — CoachPrash{% endblock %}
+
+{% block meta_description %}View {{ student.username }}'s learning progress on CoachPrash.{% endblock %}
+
+{% block content %}
+<section class="section">
+    <div class="container">
+        <div class="breadcrumb-nav">
+            <a href="{{ url_for('parent.dashboard') }}">Parent Dashboard</a>
+            <span class="breadcrumb-sep">&raquo;</span>
+            <span>{{ student.username }}</span>
+        </div>
+
+        <h1 class="page-title">{{ student.username }}'s Progress</h1>
+
+        {% if not is_premium %}
+            <div class="progress-upgrade-banner">
+                <span class="lock-icon">&#128274;</span>
+                <div>
+                    <strong>Limited View</strong> — {{ student.username }} is on the Free tier. Upgrade to Premium for full progress tracking, mastery scores, and detailed analytics.
+                </div>
+            </div>
+        {% endif %}
+
+        <div class="progress-stats-grid">
+            <div class="stat-card">
+                <span class="stat-value">{{ total_completed }}</span>
+                <span class="stat-label">Concepts Completed</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-value">{{ total_in_progress }}</span>
+                <span class="stat-label">In Progress</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-value">{{ total_attempts }}</span>
+                <span class="stat-label">Problems Attempted</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-value">{{ accuracy }}%</span>
+                <span class="stat-label">Accuracy</span>
+            </div>
+            <div class="stat-card stat-card-accent">
+                <span class="stat-value">{{ streak }}</span>
+                <span class="stat-label">Day Streak</span>
+            </div>
+        </div>
+
+        <h2 class="section-heading">Subject Progress</h2>
+        {% if subject_progress %}
+            <div class="subject-progress-list">
+                {% for sp in subject_progress %}
+                    <div class="subject-progress-item">
+                        <div class="subject-progress-header">
+                            <span class="subject-progress-name">{{ sp.subject.name }}</span>
+                            <span class="subject-progress-pct">{{ sp.completed }}/{{ sp.total }} ({{ sp.pct }}%)</span>
+                        </div>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar-fill" style="width: {{ sp.pct }}%"></div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <div class="empty-state">
+                <h3>No subject progress yet</h3>
+                <p>{{ student.username }} hasn't started any subjects. Encourage them to begin practicing!</p>
+            </div>
+        {% endif %}
+
+        <h2 class="section-heading">Recent Activity</h2>
+        {% if recent_activity %}
+            <div class="activity-timeline">
+                {% for item in recent_activity %}
+                    <div class="activity-item {{ 'activity-correct' if item.attempt.is_correct else 'activity-incorrect' }}">
+                        <div class="activity-icon">
+                            {% if item.attempt.is_correct %}
+                                <span class="activity-check">&#10003;</span>
+                            {% else %}
+                                <span class="activity-x">&#10007;</span>
+                            {% endif %}
+                        </div>
+                        <div class="activity-body">
+                            <span class="activity-concept">{{ item.concept.title if item.concept else 'Unknown' }}</span>
+                            <span class="activity-time">{{ item.attempt.attempted_at.strftime('%b %d, %Y %I:%M %p') }}</span>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <div class="empty-state">
+                <p>No activity yet. Encourage {{ student.username }} to start practicing!</p>
+            </div>
+        {% endif %}
+
+        <div class="parent-actions">
+            <a href="{{ url_for('parent.dashboard') }}" class="btn btn-secondary">Back to Dashboard</a>
+        </div>
+    </div>
+</section>
+{% endblock %}

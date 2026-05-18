@@ -1,6 +1,6 @@
 # CoachPrash Admin Manual
 
-> **Version:** 3.0 (Phase 3)
+> **Version:** 4.0 (Phase 4)
 > **Last Updated:** May 2026
 > **Platform:** Flask + PostgreSQL, deployed on Railway
 
@@ -20,16 +20,17 @@
 10. [Resources (Slides, Docs, Videos)](#10-resources-slides-docs-videos)
 11. [Freemium Gating & Access Control](#11-freemium-gating--access-control)
 12. [Managing Students](#12-managing-students)
-13. [Access Codes](#13-access-codes)
-14. [Blog & Resources Page](#14-blog--resources-page)
-15. [Testimonials](#15-testimonials)
-16. [Contact Messages](#16-contact-messages)
-17. [SEO & Sitemap](#17-seo--sitemap)
-18. [Security & Rate Limiting](#18-security--rate-limiting)
-19. [Seeding & Demo Data](#19-seeding--demo-data)
-20. [Deployment & Environment Variables](#20-deployment--environment-variables)
-21. [Troubleshooting](#21-troubleshooting)
-22. [Quick Reference](#22-quick-reference)
+13. [Parent Portal](#13-parent-portal)
+14. [Access Codes](#14-access-codes)
+15. [Blog & Resources Page](#15-blog--resources-page)
+16. [Testimonials](#16-testimonials)
+17. [Contact Messages](#17-contact-messages)
+18. [SEO & Sitemap](#18-seo--sitemap)
+19. [Security & Rate Limiting](#19-security--rate-limiting)
+20. [Seeding & Demo Data](#20-seeding--demo-data)
+21. [Deployment & Environment Variables](#21-deployment--environment-variables)
+22. [Troubleshooting](#22-troubleshooting)
+23. [Quick Reference](#23-quick-reference)
 
 ---
 
@@ -61,6 +62,7 @@ The admin panel is accessible via the sidebar gear icon. Admin pages include:
 | Dashboard | `/admin/` | Overview stats and analytics |
 | Content | `/admin/content` | Manage subjects, topics, concepts |
 | Students | `/admin/students` | View and manage student accounts |
+| Parents | `/admin/parents` | View parent accounts and manage links |
 | Access Codes | `/admin/codes` | Generate and manage access codes |
 | Blog | `/admin/blog` | Manage blog/resource posts |
 | Testimonials | `/admin/testimonials` | Manage student testimonials |
@@ -77,10 +79,11 @@ The admin panel is accessible via the sidebar gear icon. Admin pages include:
 The dashboard (`/admin/`) shows a real-time snapshot of your site:
 
 ### Stats Cards
-- **Total Students** — registered student accounts
+- **Total Students** — registered student and parent accounts
 - **Premium Students** — students with `tier = premium`
 - **Active Concepts** — published concept pages
 - **Total Problems** — problems across all problem sets
+- **Parent Accounts** — registered parent accounts linked to students
 
 ### Recent Activity
 - **Last 10 Registrations** — newest student accounts
@@ -780,7 +783,7 @@ For hints:
 
 ### Viewing Students
 
-Go to `/admin/students` to see all registered students (role = `student`), ordered by newest first.
+Go to `/admin/students` to see all registered students and parents (roles `student` and `parent`), ordered by newest first.
 
 Use the **search box** to filter by username or email (case-insensitive).
 
@@ -790,11 +793,14 @@ Click **Edit** next to any student to change:
 - **Tier**: Switch between `free` and `premium`
 - **Is Active**: Deactivate to prevent login (without deleting the account)
 
+The edit page also shows a **Parent Access** section at the bottom (see [Section 13](#13-parent-portal) for details).
+
 ### Student Data
 
 Each student has:
 - **Username** and **Email** — set during registration
 - **Auth Provider**: `local` (email/password), `google` (Google OAuth), or `both`
+- **Role**: `student`, `parent`, or `admin`
 - **Tier**: `free` or `premium`
 - **Progress**: StudentProgress records tracking concept completion and mastery scores
 - **Attempts**: AttemptLog records for every problem attempt
@@ -810,7 +816,129 @@ Two demo accounts are created by the seed script for testing:
 
 ---
 
-## 13. Access Codes
+## 13. Parent Portal
+
+The Parent Portal allows parents and guardians to monitor their children's learning progress in a read-only dashboard.
+
+### How It Works
+
+1. **Admin generates a link code** for a specific student
+2. **Admin shares the code** with the parent (in person, via email, etc.)
+3. **Parent registers** a normal account on the site
+4. **Parent enters the code** at `/parent/link` to connect to the student
+5. **Parent views progress** on their dashboard at `/parent/`
+
+### Generating Parent Link Codes
+
+1. Go to `/admin/students`
+2. Click **Edit** next to the student you want to link a parent to
+3. Scroll to the **Parent Access** section at the bottom
+4. Click **"Generate Parent Link Code"**
+5. A green flash message shows the code: `Parent link code generated: XXXXXXXX (expires in 7 days)`
+6. The code appears in the **Link Codes** table with status "Active"
+7. Share this 8-character code with the parent
+
+#### Link Code Properties
+
+| Property | Value |
+|----------|-------|
+| Format | 8 uppercase alphanumeric characters (e.g., `A3B7XK9M`) |
+| Tied to | One specific student |
+| Expiry | 7 days from generation |
+| Usage | Single-use — marked "Used" after one parent links with it |
+| Multiple codes | You can generate multiple codes for the same student (e.g., for two parents/guardians) |
+
+#### Link Code Statuses
+
+| Status | Meaning |
+|--------|---------|
+| **Active** | Valid, not yet used, not expired |
+| **Used** | A parent has already used this code to link |
+| **Expired** | The 7-day window has passed without use |
+
+### How Parents Link Their Account
+
+1. Parent registers at `/auth/register` (as a normal account, no access code needed)
+2. Parent goes to `/parent/link`
+3. Parent enters the 8-character link code
+4. System validates the code and creates the parent-student link
+5. Parent's role is automatically upgraded from `student` to `parent`
+6. Parent is redirected to their dashboard
+
+For additional children, the parent visits `/parent/link` again with a new code.
+
+### What Parents See
+
+#### Parent Dashboard (`/parent/`)
+A card for each linked child showing:
+- Student username and tier badge (Free/Premium)
+- Concepts Completed count
+- Problems Attempted count
+- Accuracy percentage
+- Last Active date
+- "View Details" button
+
+#### Student Progress View (`/parent/student/<id>`)
+A read-only version of the student's progress page:
+- Stats grid: Concepts Completed, In Progress, Problems Attempted, Accuracy %, Day Streak
+- Subject progress bars (e.g., "Mathematics 2/4 (50%)")
+- Recent activity timeline (last 20 attempts with correct/incorrect indicators)
+
+#### Sidebar Navigation
+Parents see a **"My Children"** link (person icon) in the sidebar instead of "My Progress" or "Admin".
+
+### Freemium and Parents
+
+Parent portal access is **free** — any authenticated parent can view the dashboard. However, the **data detail** depends on the **student's tier**:
+
+| Student Tier | Parent Sees |
+|-------------|-------------|
+| Premium | Full stats: mastery scores, detailed activity, subject breakdowns |
+| Free | Basic info with a banner: "Limited View — upgrade to Premium for full tracking" |
+
+There is no separate "parent tier". The parent's own tier is irrelevant to what they see — it's entirely based on the linked student's tier.
+
+### Managing Parents (Admin)
+
+#### Manage Parents Page (`/admin/parents`)
+
+Lists all parent accounts with:
+- Parent username and email
+- Linked students (shown as badges)
+- Joined date
+- **"Unlink"** button for each link
+
+#### Removing a Parent-Student Link
+
+Click **"Unlink [StudentName]"** on the Manage Parents page. This:
+- Deletes the `ParentStudentLink` record
+- If the parent has **no remaining links**, their role reverts from `parent` back to `student`
+
+#### Viewing Links from the Student Side
+
+On the student edit page (`/admin/students/<id>/edit`), the **Parent Access** section shows:
+- All link codes generated for this student (with status)
+- All parents currently linked to this student
+
+### Security
+
+- **Ownership check**: Parents can only view students they are linked to. Attempting to access another student's ID returns 403 Forbidden.
+- **Rate limiting**: The link code form (`POST /parent/link`) is rate-limited to 5 submissions per minute.
+- **Self-linking prevention**: Users cannot link to their own account.
+- **Code expiry**: Codes expire after 7 days and are single-use.
+
+### Testing the Parent Portal
+
+A complete end-to-end test guide is available at `docs/PARENT_PORTAL_TEST.md`, covering:
+1. Generating student practice data
+2. Creating link codes as admin
+3. Registering and linking as a parent
+4. Viewing the parent dashboard and student progress
+5. Verifying admin management features
+
+---
+
+## 14. Access Codes
 
 Access codes let you grant premium access to students without a payment system.
 
@@ -855,7 +983,7 @@ The seed script creates three demo codes:
 
 ---
 
-## 14. Blog & Resources Page
+## 15. Blog & Resources Page
 
 The blog serves as a resources section at `/resources/` for study tips, subject guides, and educational articles.
 
@@ -890,7 +1018,7 @@ Blog content is sanitized with nh3 on save, same as concept content.
 
 ---
 
-## 15. Testimonials
+## 16. Testimonials
 
 ### Managing Testimonials
 
@@ -916,7 +1044,7 @@ Go to `/admin/testimonials` to view, create, edit, or delete testimonials.
 
 ---
 
-## 16. Contact Messages
+## 17. Contact Messages
 
 ### Viewing Messages
 
@@ -938,7 +1066,7 @@ The contact form at `/contact` is rate-limited to **2 submissions per minute** p
 
 ---
 
-## 17. SEO & Sitemap
+## 18. SEO & Sitemap
 
 ### Meta Tags
 
@@ -972,7 +1100,7 @@ The site uses a data-URI SVG favicon — a navy rounded rectangle with gold "CP"
 
 ---
 
-## 18. Security & Rate Limiting
+## 19. Security & Rate Limiting
 
 ### Rate Limiting
 
@@ -983,6 +1111,7 @@ The following endpoints are rate-limited (per IP address):
 | `POST /auth/login` | 5/minute | Prevent brute-force login |
 | `POST /auth/register` | 3/minute | Prevent mass registration |
 | `POST /contact` | 2/minute | Prevent contact spam |
+| `POST /parent/link` | 5/minute | Prevent link code brute-force |
 | `/api/*` (all API routes) | 60/minute | Prevent API abuse |
 
 Rate limits are stored in process memory (`memory://`). When a limit is exceeded, the server returns HTTP 429 (Too Many Requests).
@@ -1034,7 +1163,7 @@ All admin-submitted HTML content (concepts, blog posts) is sanitized with `nh3` 
 
 ---
 
-## 19. Seeding & Demo Data
+## 20. Seeding & Demo Data
 
 ### Running the Seed Script
 
@@ -1067,7 +1196,7 @@ In order:
 4. **8 Testimonials** — realistic student testimonials
 5. **4 Blog Posts** — educational articles with LaTeX
 6. **2 Demo Students** — for testing (see [Section 12](#12-managing-students))
-7. **3 Access Codes** — for testing (see [Section 13](#13-access-codes))
+7. **3 Access Codes** — for testing (see [Section 14](#14-access-codes))
 
 ### Idempotency
 
@@ -1084,7 +1213,7 @@ The seed script is safe to run multiple times:
 
 ---
 
-## 20. Deployment & Environment Variables
+## 21. Deployment & Environment Variables
 
 ### Required Environment Variables
 
@@ -1108,6 +1237,22 @@ The seed script is safe to run multiple times:
 | `AWS_DEFAULT_REGION` | Bucket region | `us-east-1` |
 | `AWS_S3_BUCKET_NAME` | Bucket name | — |
 | `ASSET_VERSION` | Cache-busting version for CSS/JS | `3.0` |
+| `STEALTH_CODE` | Stealth mode gate password (see below) | — |
+
+### Stealth Mode
+
+Set the `STEALTH_CODE` environment variable to gate the entire site behind a password screen. When enabled:
+
+- All public pages redirect to a dark "Coming Soon" page that asks for a code
+- The user enters the code and gets a cookie valid for 30 days
+- **Admin** (`/admin/*`) and **Auth** (`/auth/*`) routes are always accessible
+- Static assets (`/static/*`) load normally
+
+**Enable:** Add `STEALTH_CODE=yourSecretCode` to `.env` (local) or Railway env vars (production).
+
+**Disable:** Remove or comment out the `STEALTH_CODE` variable and restart.
+
+This is useful during development to prevent public access while keeping the site functional for authorized testers.
 
 ### Railway Deployment
 
@@ -1128,7 +1273,7 @@ Static files are cached for 1 year (`Cache-Control: public, max-age=31536000`).
 
 ---
 
-## 21. Troubleshooting
+## 22. Troubleshooting
 
 ### LaTeX Not Rendering
 
@@ -1187,7 +1332,7 @@ Static files are cached for 1 year (`Cache-Control: public, max-age=31536000`).
 
 ---
 
-## 22. Quick Reference
+## 23. Quick Reference
 
 ### URL Structure
 
@@ -1207,7 +1352,11 @@ Static files are cached for 1 year (`Cache-Control: public, max-age=31536000`).
 | `/auth/login` | Login |
 | `/auth/register` | Registration |
 | `/progress/` | Student progress dashboard |
+| `/parent/` | Parent dashboard (linked children) |
+| `/parent/student/<id>` | Parent view of a student's progress |
+| `/parent/link` | Link a child using a parent code |
 | `/admin/` | Admin dashboard |
+| `/admin/parents` | Admin: manage parent accounts |
 | `/robots.txt` | Search engine directives |
 | `/sitemap.xml` | Sitemap for search engines |
 

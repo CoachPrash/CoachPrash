@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block title %}Manage Parents — Admin{% endblock %}
+
+{% block content %}
+<section class="section">
+    <div class="container">
+        <h1>Manage Parents</h1>
+
+        {% if parent_data %}
+        <table class="admin-table">
+            <thead>
+                <tr>
+                    <th>Parent</th>
+                    <th>Email</th>
+                    <th>Linked Students</th>
+                    <th>Joined</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for pd in parent_data %}
+                <tr>
+                    <td>{{ pd.parent.username }}</td>
+                    <td>{{ pd.parent.email }}</td>
+                    <td>
+                        {% for ls in pd.linked_students %}
+                            <span class="badge badge-free">{{ ls.student.username }}</span>
+                        {% endfor %}
+                        {% if not pd.linked_students %}
+                            <span class="empty-state">None</span>
+                        {% endif %}
+                    </td>
+                    <td>{{ pd.parent.created_at.strftime('%Y-%m-%d') if pd.parent.created_at else '' }}</td>
+                    <td>
+                        {% for ls in pd.linked_students %}
+                            <form method="POST" action="{{ url_for('admin_panel.remove_parent_link', link_id=ls.link.id) }}" style="display: inline;">
+                                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                                <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Remove link to {{ ls.student.username }}?')">Unlink {{ ls.student.username }}</button>
+                            </form>
+                        {% endfor %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <div class="empty-state">
+            <h3>No parent accounts yet</h3>
+            <p>Generate parent link codes from the student edit page to enable parent access.</p>
+        </div>
+        {% endif %}
+
+        <div class="form-footer" style="margin-top: 1.5rem;">
+            <a href="{{ url_for('admin_panel.dashboard') }}" class="btn btn-outline">Back to Dashboard</a>
+        </div>
+    </div>
+</section>
+{% endblock %}

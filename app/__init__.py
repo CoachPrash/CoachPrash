@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 from werkzeug.middleware.proxy_fix import ProxyFix
 from dotenv import load_dotenv
 
@@ -38,6 +38,7 @@ def create_app(config_name=None):
         User, Subject, Topic, Concept, ProblemSet, Problem, Choice, Hint,
         StepByStepSolution, StudentProgress, AttemptLog, AccessCode,
         Testimonial, BlogPost, ContactMessage, Resource,
+        ParentStudentLink, ParentLinkCode,
     )
 
     from app.blueprints.main import main_bp
@@ -58,6 +59,9 @@ def create_app(config_name=None):
     from app.blueprints.admin_panel import admin_bp
     flask_app.register_blueprint(admin_bp, url_prefix='/admin')
 
+    from app.blueprints.parent import parent_bp
+    flask_app.register_blueprint(parent_bp, url_prefix='/parent')
+
     # db.create_all() removed — use Flask-Migrate (flask db upgrade) instead
 
     from app.utils.access import register_access_helpers
@@ -74,6 +78,24 @@ def create_app(config_name=None):
             return dict(sidebar_subjects=subjects)
         except Exception:
             return dict(sidebar_subjects=[])
+
+    # --- Stealth Mode ---
+    @flask_app.before_request
+    def stealth_gate():
+        stealth_code = os.environ.get('STEALTH_CODE')
+        if not stealth_code:
+            return None
+        allowed = (
+            request.path.startswith('/static/')
+            or request.path == '/stealth'
+            or request.path.startswith('/admin/')
+            or request.path.startswith('/auth/')
+        )
+        if allowed:
+            return None
+        if request.cookies.get('stealth') == stealth_code:
+            return None
+        return redirect('/stealth')
 
     # --- Error handlers ---
     @flask_app.errorhandler(404)

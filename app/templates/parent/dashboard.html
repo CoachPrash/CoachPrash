@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block title %}Parent Dashboard — CoachPrash{% endblock %}
+
+{% block meta_description %}Monitor your child's learning progress on CoachPrash.{% endblock %}
+
+{% block content %}
+<section class="section">
+    <div class="container">
+        <h1 class="page-title">Parent Dashboard</h1>
+
+        <p class="page-subtitle">Monitor your children's learning progress and activity.</p>
+
+        {% if children %}
+            <div class="parent-children-grid">
+                {% for child in children %}
+                    <div class="parent-child-card">
+                        <div class="child-card-header">
+                            <h3 class="child-name">{{ child.student.username }}</h3>
+                            <span class="tier-badge tier-{{ child.student.tier }}">{{ child.student.tier|capitalize }}</span>
+                        </div>
+                        <div class="child-card-stats">
+                            <div class="child-stat">
+                                <span class="child-stat-value">{{ child.total_completed }}</span>
+                                <span class="child-stat-label">Concepts Completed</span>
+                            </div>
+                            <div class="child-stat">
+                                <span class="child-stat-value">{{ child.total_attempts }}</span>
+                                <span class="child-stat-label">Problems Attempted</span>
+                            </div>
+                            <div class="child-stat">
+                                <span class="child-stat-value">{{ child.accuracy }}%</span>
+                                <span class="child-stat-label">Accuracy</span>
+                            </div>
+                        </div>
+                        <div class="child-card-footer">
+                            <span class="child-last-active">
+                                {% if child.last_active %}
+                                    Last active: {{ child.last_active.strftime('%b %d, %Y') }}
+                                {% else %}
+                                    No activity yet
+                                {% endif %}
+                            </span>
+                            <a href="{{ url_for('parent.student_progress', student_id=child.student.id) }}" class="btn btn-primary btn-sm">View Details</a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <div class="empty-state">
+                <h3>No children linked yet</h3>
+                <p>Use a parent link code from your child's teacher to connect your account.</p>
+            </div>
+        {% endif %}
+
+        <div class="parent-actions">
+            <a href="{{ url_for('parent.link_student') }}" class="btn btn-secondary">Link Another Child</a>
+        </div>
+    </div>
+</section>
+{% endblock %}

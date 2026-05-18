@@ -4,6 +4,7 @@ from app.blueprints.auth import auth_bp
 from app.blueprints.auth.forms import LoginForm, RegisterForm
 from app.models.user import User
 from app.models.access import AccessCode
+from app.models.parent import ParentLinkCode, ParentStudentLink
 from app.extensions import db, oauth, limiter
 
 
@@ -39,13 +40,23 @@ def register():
     if form.validate_on_submit():
         tier = 'free'
         access_code_obj = None
+        parent_link_code = None
 
         if form.access_code.data:
-            access_code_obj = AccessCode.query.filter_by(code=form.access_code.data.upper()).first()
-            if not access_code_obj or not access_code_obj.is_valid():
-                flash('Invalid or expired access code.', 'danger')
-                return render_template('auth/register.html', form=form)
-            tier = access_code_obj.tier
+            code_str = form.access_code.data.strip().upper()
+            # Check access codes first (tier upgrades)
+            access_code_obj = AccessCode.query.filter_by(code=code_str).first()
+            if access_code_obj:
+                if not access_code_obj.is_valid():
+                    flash('Invalid or expired access code.', 'danger')
+                    return render_template('auth/register.html', form=form)
+                tier = access_code_obj.tier
+            else:
+                # Check parent link codes
+                parent_link_code = ParentLinkCode.query.filter_by(code=code_str).first()
+                if not parent_link_code or not parent_link_code.is_valid():
+                    flash('Invalid or expired code.', 'danger')
+                    return render_template('auth/register.html', form=form)
 
         user = User(
             username=form.username.data,
@@ -54,12 +65,26 @@ def register():
         )
         user.set_password(form.password.data)
         db.session.add(user)
+        db.session.flush()
 
         if access_code_obj:
             access_code_obj.use()
 
+        if parent_link_code:
+            link = ParentStudentLink(
+                parent_id=user.id,
+                student_id=parent_link_code.student_id,
+            )
+            db.session.add(link)
+            parent_link_code.is_used = True
+            parent_link_code.used_by = user.id
+            user.role = 'parent'
+
         db.session.commit()
         login_user(user)
+        if parent_link_code:
+            flash('Welcome! Your account has been created and linked to your child.', 'success')
+            return redirect(url_for('parent.dashboard'))
         flash('Welcome! Your account has been created.', 'success')
         return redirect(url_for('main.home'))
 

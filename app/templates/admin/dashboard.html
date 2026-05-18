@@ -23,6 +23,10 @@
                 <div class="stat-number">{{ total_problems }}</div>
                 <div class="stat-label">Total Problems</div>
             </div>
+            <div class="stat-card">
+                <div class="stat-number">{{ total_parents }}</div>
+                <div class="stat-label">Parent Accounts</div>
+            </div>
         </div>
 
         <div class="admin-grid">
@@ -38,6 +42,7 @@
                     <a href="{{ url_for('admin_panel.manage_resources') }}" class="admin-link-card">📎 Resources</a>
                     <a href="{{ url_for('admin_panel.upload_image') }}" class="admin-link-card">🖼️ Upload Image</a>
                     <a href="{{ url_for('admin_panel.bulk_import') }}" class="admin-link-card">📥 Bulk Import</a>
+                    <a href="{{ url_for('admin_panel.manage_parents') }}" class="admin-link-card">👨‍👧 Parents</a>
                     <a href="{{ url_for('admin_panel.changelog') }}" class="admin-link-card">📋 What's New</a>
                 </div>
             </div>

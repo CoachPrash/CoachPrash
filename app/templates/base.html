@@ -121,6 +121,14 @@
                             <span class="sidebar-link-text">Admin</span>
                         </a>
                     </li>
+                    {% elif current_user.is_parent %}
+                    <li>
+                        <a href="{{ url_for('parent.dashboard') }}" title="My Children"
+                           class="{% if request.endpoint and request.endpoint.startswith('parent.') %}active{% endif %}">
+                            <span class="sidebar-icon">&#x1F468;</span>
+                            <span class="sidebar-link-text">My Children</span>
+                        </a>
+                    </li>
                     {% else %}
                     <li>
                         <a href="{{ url_for('study.progress_dashboard') }}" title="My Progress"

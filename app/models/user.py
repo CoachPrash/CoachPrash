@@ -45,6 +45,10 @@ class User(UserMixin, db.Model):
     def is_premium(self):
         return self.tier == 'premium'
 
+    @property
+    def is_parent(self):
+        return self.role == 'parent'
+
     def __repr__(self):
         return f'<User {self.username}>'
 

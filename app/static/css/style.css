@@ -2500,3 +2500,97 @@ body.sidebar-collapsed .sidebar-footer {
     justify-content: center;
     color: #6B7280;
 }
+
+/* --- Parent Portal --- */
+.parent-children-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+.parent-child-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.parent-child-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.child-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid var(--border);
+}
+.child-name {
+    margin: 0;
+    font-size: 1.25rem;
+    color: var(--primary);
+}
+.child-card-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+.child-stat {
+    text-align: center;
+}
+.child-stat-value {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+.child-stat-label {
+    display: block;
+    font-size: 0.75rem;
+    color: #6B7280;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.child-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--border);
+}
+.child-last-active {
+    font-size: 0.85rem;
+    color: #6B7280;
+}
+.parent-actions {
+    margin-top: 2rem;
+    text-align: center;
+}
+.page-subtitle {
+    color: #6B7280;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+.badge-info {
+    background: #3B82F6;
+    color: white;
+}
+.badge-active {
+    background: #10B981;
+    color: white;
+}
+@media (max-width: 480px) {
+    .parent-children-grid {
+        grid-template-columns: 1fr;
+    }
+    .child-card-stats {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.5rem;
+    }
+    .child-stat-value {
+        font-size: 1.2rem;
+    }
+}

@@ -13,17 +13,77 @@
                 <div class="changelog-date">
                     <span class="changelog-date-day">16</span>
                     <span class="changelog-date-month">May 2026</span>
-                    <span class="changelog-phase-badge">Docs</span>
+                    <span class="changelog-phase-badge">Phase 4</span>
                 </div>
                 <div class="changelog-body">
-                    <h2>Admin Manual</h2>
-                    <p class="changelog-summary">Comprehensive 22-chapter admin manual covering all site management workflows.</p>
+                    <h2>Parent Portal</h2>
+                    <p class="changelog-summary">Parents and guardians can now monitor their children's learning progress.</p>
+
+                    <div class="changelog-section">
+                        <h3>Features</h3>
+                        <ul>
+                            <li>Parent dashboard showing linked children with summary cards (accuracy, concepts completed, last active)</li>
+                            <li>Detailed read-only student progress view (stats, subject progress bars, recent activity timeline)</li>
+                            <li>Admin-generated parent link codes (8-character, 7-day expiry, single-use) for secure parent-student linking</li>
+                            <li>Parent role with automatic role upgrade on first link</li>
+                            <li>Freemium-aware: data visibility tied to the student's tier</li>
+                        </ul>
+                    </div>
+
+                    <div class="changelog-section">
+                        <h3>Admin</h3>
+                        <ul>
+                            <li>Generate parent link codes from student edit page</li>
+                            <li>Manage Parents page listing all parent accounts and their linked students</li>
+                            <li>Remove parent-student links (auto-reverts parent role if no links remain)</li>
+                            <li>Parent count shown on admin dashboard</li>
+                        </ul>
+                    </div>
+
+                    <div class="changelog-section">
+                        <h3>Security</h3>
+                        <ul>
+                            <li>Ownership verification on all parent routes (parents can only view their linked students)</li>
+                            <li>Rate limiting on link code submission (5/minute)</li>
+                            <li>Self-linking prevention</li>
+                        </ul>
+                    </div>
+
+                    <div class="changelog-section">
+                        <h3>Improvements</h3>
+                        <ul>
+                            <li>Registration page now accepts both access codes (tier upgrade) and parent link codes (auto-links child)</li>
+                            <li>Copy-to-clipboard button on parent link codes in student edit page</li>
+                            <li>Stealth mode: set <code>STEALTH_CODE</code> env var to gate entire site behind a password (admin/auth routes always accessible)</li>
+                            <li>Cloudflare www-to-apex redirect via Page Rules (fixes Google OAuth callback mismatch)</li>
+                        </ul>
+                    </div>
 
                     <div class="changelog-section">
                         <h3>Documentation</h3>
                         <ul>
-                            <li>Complete admin manual at <code>docs/ADMIN_MANUAL.md</code> (1,200+ lines)</li>
-                            <li>Covers: content architecture, qhsJSON format, Claude AI content generation, images, resources, freemium gating, student management, access codes, blog, SEO, security, deployment, troubleshooting</li>
+                            <li>Admin manual updated to v4.0 (23 chapters) with new Chapter 13: Parent Portal</li>
+                            <li>End-to-end parent portal test guide at <code>docs/PARENT_PORTAL_TEST.md</code></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="changelog-entry">
+                <div class="changelog-date">
+                    <span class="changelog-date-day">16</span>
+                    <span class="changelog-date-month">May 2026</span>
+                    <span class="changelog-phase-badge">Docs</span>
+                </div>
+                <div class="changelog-body">
+                    <h2>Admin Manual</h2>
+                    <p class="changelog-summary">Comprehensive admin manual covering all site management workflows.</p>
+
+                    <div class="changelog-section">
+                        <h3>Documentation</h3>
+                        <ul>
+                            <li>Complete admin manual at <code>docs/ADMIN_MANUAL.md</code></li>
+                            <li>Covers: content architecture, qhsJSON format, Claude AI content generation, images, resources, freemium gating, student management, parent portal, access codes, blog, SEO, security, deployment, troubleshooting</li>
                             <li>Quick reference section with URL table, LaTeX cheat sheet, content creation checklist</li>
                         </ul>
                     </div>

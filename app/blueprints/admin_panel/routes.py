@@ -17,6 +17,7 @@ from app.models.content import Subject, Topic, Concept
 from app.models.practice import ProblemSet, Problem, Choice, Hint, StepByStepSolution
 from app.models.progress import AttemptLog
 from app.models.access import AccessCode
+from app.models.parent import ParentStudentLink, ParentLinkCode
 from app.extensions import db
 from app.utils.sanitize import sanitize_html
 
@@ -34,8 +35,9 @@ def admin_required(f):
 @admin_bp.route('/')
 @admin_required
 def dashboard():
-    total_students = User.query.filter_by(role='student').count()
-    total_premium = User.query.filter_by(role='student', tier='premium').count()
+    total_students = User.query.filter(User.role.in_(['student', 'parent'])).count()
+    total_premium = User.query.filter(User.role.in_(['student', 'parent']), User.tier == 'premium').count()
+    total_parents = User.query.filter_by(role='parent').count()
     total_concepts = Concept.query.filter_by(is_active=True).count()
     total_problems = Problem.query.count()
     recent_students = User.query.filter_by(role='student').order_by(
@@ -90,6 +92,7 @@ def dashboard():
         overall_accuracy=overall_accuracy,
         most_attempted=most_attempted,
         hardest=hardest,
+        total_parents=total_parents,
     )
 
 
@@ -99,7 +102,7 @@ def dashboard():
 @admin_required
 def manage_students():
     search = request.args.get('search', '')
-    query = User.query.filter_by(role='student')
+    query = User.query.filter(User.role.in_(['student', 'parent']))
     if search:
         query = query.filter(
             db.or_(
@@ -115,7 +118,7 @@ def manage_students():
 @admin_required
 def edit_student(user_id):
     student = db.session.get(User, user_id)
-    if not student or student.role != 'student':
+    if not student or student.role not in ('student', 'parent'):
         abort(404)
     form = StudentEditForm(obj=student)
     if form.validate_on_submit():
@@ -124,7 +127,16 @@ def edit_student(user_id):
         db.session.commit()
         flash(f'Student {student.username} updated.', 'success')
         return redirect(url_for('admin_panel.manage_students'))
-    return render_template('admin/edit_student.html', form=form, student=student)
+
+    # Parent link info for this student
+    parent_links = ParentStudentLink.query.filter_by(student_id=student.id).all()
+    link_codes = ParentLinkCode.query.filter_by(student_id=student.id)\
+        .order_by(ParentLinkCode.created_at.desc()).all()
+
+    return render_template(
+        'admin/edit_student.html', form=form, student=student,
+        parent_links=parent_links, link_codes=link_codes,
+    )
 
 
 # --- Content Management ---
@@ -866,6 +878,57 @@ def bulk_import():
         flash(f'Import failed: {e}', 'danger')
 
     return redirect(url_for('admin_panel.bulk_import'))
+
+
+# --- Parent Management ---
+
+@admin_bp.route('/parents')
+@admin_required
+def manage_parents():
+    parents = User.query.filter_by(role='parent').order_by(User.created_at.desc()).all()
+    parent_data = []
+    for parent in parents:
+        links = ParentStudentLink.query.filter_by(parent_id=parent.id).all()
+        linked_students = []
+        for link in links:
+            student = db.session.get(User, link.student_id)
+            if student:
+                linked_students.append({'student': student, 'link': link})
+        parent_data.append({
+            'parent': parent,
+            'linked_students': linked_students,
+        })
+    return render_template('admin/manage_parents.html', parent_data=parent_data)
+
+
+@admin_bp.route('/students/<student_id>/generate-parent-code', methods=['POST'])
+@admin_required
+def generate_parent_code(student_id):
+    student = db.session.get(User, student_id)
+    if not student or student.role not in ('student', 'parent'):
+        abort(404)
+    code = ParentLinkCode.create_for_student(student.id)
+    flash(f'Parent link code generated: {code.code} (expires in 7 days)', 'success')
+    return redirect(url_for('admin_panel.edit_student', user_id=student_id))
+
+
+@admin_bp.route('/parent-links/<link_id>/remove', methods=['POST'])
+@admin_required
+def remove_parent_link(link_id):
+    link = db.session.get(ParentStudentLink, link_id)
+    if not link:
+        abort(404)
+    parent = db.session.get(User, link.parent_id)
+    db.session.delete(link)
+
+    # If parent has no more links, revert role to student
+    remaining = ParentStudentLink.query.filter_by(parent_id=link.parent_id).count()
+    if remaining == 0 and parent and parent.role == 'parent':
+        parent.role = 'student'
+
+    db.session.commit()
+    flash('Parent-student link removed.', 'success')
+    return redirect(url_for('admin_panel.manage_parents'))
 
 
 # --- What's New (Changelog) ---

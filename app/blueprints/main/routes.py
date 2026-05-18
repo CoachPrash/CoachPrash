@@ -1,4 +1,5 @@
 from flask import render_template, flash, redirect, url_for, request, Response, make_response
+from app.extensions import csrf
 from app.blueprints.main import main_bp
 from app.blueprints.main.forms import ContactForm
 from app.models import Testimonial, ContactMessage, BlogPost
@@ -46,6 +47,21 @@ def testimonials():
         Testimonial.is_featured.desc(), Testimonial.created_at.desc()
     ).all()
     return render_template('main/testimonials.html', testimonials=all_testimonials)
+
+
+@main_bp.route('/stealth', methods=['GET', 'POST'])
+@csrf.exempt
+def stealth_gate():
+    import os
+    stealth_code = os.environ.get('STEALTH_CODE', '')
+    if request.method == 'POST':
+        code = request.form.get('code', '').strip()
+        if code == stealth_code:
+            resp = make_response(redirect(url_for('main.home')))
+            resp.set_cookie('stealth', stealth_code, max_age=60*60*24*30)
+            return resp
+        flash('Invalid code.', 'danger')
+    return render_template('main/stealth.html')
 
 
 @main_bp.route('/robots.txt')
