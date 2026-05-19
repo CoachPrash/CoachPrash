@@ -39,7 +39,7 @@
                     <td>{{ '✓' if r.is_active else '✗' }}</td>
                     <td>
                         <a href="{{ url_for('admin_panel.edit_resource', resource_id=r.id) }}" class="btn btn-sm btn-outline">Edit</a>
-                        <form method="POST" action="{{ url_for('admin_panel.delete_resource', resource_id=r.id) }}" style="display:inline">
+                        <form method="POST" action="{{ url_for('admin_panel.delete_resource', resource_id=r.id) }}" class="d-inline">
                             <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
                             <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Delete this resource?')">Delete</button>
                         </form>

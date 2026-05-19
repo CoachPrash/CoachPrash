@@ -17,7 +17,7 @@
 
                 <div class="form-group">
                     {{ form.code.label(class="form-label") }}
-                    {{ form.code(class="form-control", placeholder="e.g. ABC12XY9", maxlength=8, autocomplete="off", style="text-transform: uppercase; letter-spacing: 2px; font-size: 1.2rem; text-align: center;") }}
+                    {{ form.code(class="form-control input-code", placeholder="e.g. ABC12XY9", maxlength=8, autocomplete="off") }}
                     {% for error in form.code.errors %}
                         <span class="form-error">{{ error }}</span>
                     {% endfor %}

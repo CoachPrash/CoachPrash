@@ -33,7 +33,7 @@
                     <td>{{ pd.parent.created_at.strftime('%Y-%m-%d') if pd.parent.created_at else '' }}</td>
                     <td>
                         {% for ls in pd.linked_students %}
-                            <form method="POST" action="{{ url_for('admin_panel.remove_parent_link', link_id=ls.link.id) }}" style="display: inline;">
+                            <form method="POST" action="{{ url_for('admin_panel.remove_parent_link', link_id=ls.link.id) }}" class="d-inline">
                                 <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
                                 <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Remove link to {{ ls.student.username }}?')">Unlink {{ ls.student.username }}</button>
                             </form>
@@ -50,7 +50,7 @@
         </div>
         {% endif %}
 
-        <div class="form-footer" style="margin-top: 1.5rem;">
+        <div class="form-footer mt-1-5">
             <a href="{{ url_for('admin_panel.dashboard') }}" class="btn btn-outline">Back to Dashboard</a>
         </div>
     </div>
