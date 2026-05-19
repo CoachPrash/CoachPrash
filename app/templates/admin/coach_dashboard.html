@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+{% block title %}Coach Dashboard — CoachPrash{% endblock %}
+
+{% block content %}
+<section class="section">
+    <div class="container">
+        <h1>Coach Dashboard</h1>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">{{ total_student_count }}</div>
+                <div class="stat-label">Total Students</div>
+            </div>
+            <div class="stat-card stat-card-accent">
+                <div class="stat-number">{{ active_students }}</div>
+                <div class="stat-label">Active (30 days)</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">{{ avg_accuracy }}%</div>
+                <div class="stat-label">Avg Accuracy</div>
+            </div>
+            <div class="stat-card{% if at_risk %} stat-card-warning{% endif %}">
+                <div class="stat-number">{{ at_risk | length }}</div>
+                <div class="stat-label">At-Risk Students</div>
+            </div>
+        </div>
+
+        {% if at_risk %}
+        <div class="admin-section mb-2">
+            <h2>At-Risk Alerts</h2>
+            <div class="alert-cards">
+                {% for r in at_risk %}
+                <div class="alert-card alert-card-warning">
+                    <strong>{{ r.student.username }}</strong>
+                    <span class="badge badge-{{ r.student.tier }}">{{ r.student.tier }}</span>
+                    <p>{{ r.reason }}</p>
+                    <div class="alert-card-actions">
+                        <a href="{{ url_for('admin_panel.coach_student_detail', student_id=r.student.id) }}" class="btn btn-sm btn-secondary">View Progress</a>
+                        <a href="{{ url_for('messages.compose') }}?to={{ r.student.id }}" class="btn btn-sm btn-primary">Send Message</a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+
+        <div class="admin-section">
+            <h2>All Students</h2>
+            <form method="get" class="search-bar mb-1">
+                <input type="text" name="search" value="{{ search }}" placeholder="Search by name or email..." class="form-input coach-search-input">
+                <button type="submit" class="btn btn-sm btn-primary">Search</button>
+                {% if search %}
+                <a href="{{ url_for('admin_panel.coach_dashboard') }}" class="btn btn-sm btn-secondary">Clear</a>
+                {% endif %}
+            </form>
+
+            {% if student_rows %}
+            <div class="table-responsive">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            {% set toggle_order = 'asc' if order == 'desc' else 'desc' %}
+                            <th><a href="?sort=name&order={{ toggle_order }}&search={{ search }}">Name {% if sort_by == 'name' %}{{ '▲' if order == 'asc' else '▼' }}{% endif %}</a></th>
+                            <th><a href="?sort=tier&order={{ toggle_order }}&search={{ search }}">Tier {% if sort_by == 'tier' %}{{ '▲' if order == 'asc' else '▼' }}{% endif %}</a></th>
+                            <th><a href="?sort=last_active&order={{ toggle_order }}&search={{ search }}">Last Active {% if sort_by == 'last_active' %}{{ '▲' if order == 'asc' else '▼' }}{% endif %}</a></th>
+                            <th><a href="?sort=accuracy&order={{ toggle_order }}&search={{ search }}">Accuracy {% if sort_by == 'accuracy' %}{{ '▲' if order == 'asc' else '▼' }}{% endif %}</a></th>
+                            <th><a href="?sort=streak&order={{ toggle_order }}&search={{ search }}">Streak {% if sort_by == 'streak' %}{{ '▲' if order == 'asc' else '▼' }}{% endif %}</a></th>
+                            <th><a href="?sort=concepts&order={{ toggle_order }}&search={{ search }}">Concepts {% if sort_by == 'concepts' %}{{ '▲' if order == 'asc' else '▼' }}{% endif %}</a></th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for row in student_rows %}
+                        <tr>
+                            <td><a href="{{ url_for('admin_panel.coach_student_detail', student_id=row.student.id) }}">{{ row.student.username }}</a></td>
+                            <td><span class="badge badge-{{ row.student.tier }}">{{ row.student.tier }}</span></td>
+                            <td>{{ row.last_active.strftime('%Y-%m-%d') if row.last_active else 'Never' }}</td>
+                            <td>
+                                <span class="{% if row.accuracy < 50 and row.total_attempts >= 10 %}text-danger{% elif row.accuracy >= 80 %}text-success{% endif %}">
+                                    {{ row.accuracy }}%
+                                </span>
+                                <small class="text-muted">({{ row.total_attempts }})</small>
+                            </td>
+                            <td>{{ row.streak }} day{{ 's' if row.streak != 1 else '' }}</td>
+                            <td>{{ row.concepts_completed }}</td>
+                            <td>
+                                <a href="{{ url_for('admin_panel.coach_student_detail', student_id=row.student.id) }}" class="btn btn-sm btn-secondary" title="View Progress">View</a>
+                                <a href="{{ url_for('messages.compose') }}?to={{ row.student.id }}" class="btn btn-sm btn-primary" title="Send Message">Msg</a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            {% else %}
+            <p class="empty-state">No students found{% if search %} matching "{{ search }}"{% endif %}.</p>
+            {% endif %}
+        </div>
+    </div>
+</section>
+{% endblock %}

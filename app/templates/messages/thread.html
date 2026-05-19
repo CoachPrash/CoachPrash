@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}{{ thread.subject }} — Messages — CoachPrash{% endblock %}
+
+{% block content %}
+<section class="section">
+    <div class="container">
+        <div class="mb-1">
+            <a href="{{ url_for('messages.inbox') }}" class="btn btn-sm btn-secondary">&larr; Back to Inbox</a>
+        </div>
+
+        <h1>{{ thread.subject }}</h1>
+
+        <div class="message-conversation">
+            {% for msg in messages %}
+            <div class="message-bubble {% if msg.sender_id == current_user.id %}message-sent{% else %}message-received{% endif %}">
+                <div class="message-meta">
+                    <strong>{{ msg.sender.username }}</strong>
+                    <span class="message-time">{{ msg.created_at.strftime('%b %d, %Y at %H:%M') }}</span>
+                </div>
+                <div class="message-body">{{ msg.body | nl2br }}</div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="message-reply-form">
+            <form method="post" action="{{ url_for('messages.reply_to_thread', thread_id=thread.id) }}">
+                {{ form.hidden_tag() }}
+                <div class="form-group">
+                    {{ form.body(class="form-input", rows="3", placeholder="Type your reply...") }}
+                </div>
+                <button type="submit" class="btn btn-primary">Send Reply</button>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock %}

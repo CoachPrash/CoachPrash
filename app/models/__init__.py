@@ -5,6 +5,8 @@ from app.models.progress import StudentProgress, AttemptLog
 from app.models.access import AccessCode
 from app.models.resource import Resource
 from app.models.parent import ParentStudentLink, ParentLinkCode
+from app.models.messaging import MessageThread, MessageParticipant, Message
+from app.models.reports import StudentReport
 
 from app.extensions import db
 

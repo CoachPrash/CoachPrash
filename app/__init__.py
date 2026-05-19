@@ -36,7 +36,8 @@ def create_app(config_name=None):
     })
 
     flask_app = Flask(__name__)
-    flask_app.wsgi_app = ProxyFix(flask_app.wsgi_app, x_for=1, x_proto=1, x_host=1)
+    if os.environ.get('FLASK_ENV') != 'development':
+        flask_app.wsgi_app = ProxyFix(flask_app.wsgi_app, x_for=1, x_proto=1, x_host=1)
 
     from app.config import config as app_config
     config_class = app_config.get(config_name, app_config['default'])
@@ -64,6 +65,7 @@ def create_app(config_name=None):
         StepByStepSolution, StudentProgress, AttemptLog, AccessCode,
         Testimonial, BlogPost, ContactMessage, Resource,
         ParentStudentLink, ParentLinkCode,
+        MessageThread, MessageParticipant, Message, StudentReport,
     )
 
     from app.blueprints.main import main_bp
@@ -87,6 +89,9 @@ def create_app(config_name=None):
     from app.blueprints.parent import parent_bp
     flask_app.register_blueprint(parent_bp, url_prefix='/parent')
 
+    from app.blueprints.messages import messages_bp
+    flask_app.register_blueprint(messages_bp, url_prefix='/messages')
+
     # db.create_all() removed — use Flask-Migrate (flask db upgrade) instead
 
     from app.utils.access import register_access_helpers
@@ -94,6 +99,28 @@ def create_app(config_name=None):
 
     from app.utils.bucket_filter import register_bucket_filter
     register_bucket_filter(flask_app)
+
+    @flask_app.context_processor
+    def inject_unread_messages():
+        from flask_login import current_user
+        if current_user.is_authenticated:
+            from app.models.messaging import Message, MessageParticipant
+            count = Message.query.join(
+                MessageParticipant,
+                Message.thread_id == MessageParticipant.thread_id,
+            ).filter(
+                MessageParticipant.user_id == current_user.id,
+                Message.sender_id != current_user.id,
+                Message.is_read == False,  # noqa: E712
+            ).count()
+            return dict(unread_message_count=count)
+        return dict(unread_message_count=0)
+
+    @flask_app.template_filter('nl2br')
+    def nl2br_filter(value):
+        """Convert newlines to <br> tags for message display."""
+        from markupsafe import Markup, escape
+        return Markup(escape(value).replace('\n', Markup('<br>')))
 
     @flask_app.context_processor
     def inject_sidebar_subjects():
@@ -116,6 +143,7 @@ def create_app(config_name=None):
             or request.path == '/stealth'
             or request.path.startswith('/admin/')
             or request.path.startswith('/auth/')
+            or request.path.startswith('/messages/')
         )
         if allowed:
             return None

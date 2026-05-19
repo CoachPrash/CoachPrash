@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block title %}Messages — CoachPrash{% endblock %}
+
+{% block content %}
+<section class="section">
+    <div class="container">
+        <div class="d-flex justify-between align-center mb-1-5">
+            <h1>Messages</h1>
+            <a href="{{ url_for('messages.compose') }}" class="btn btn-primary">New Message</a>
+        </div>
+
+        {% if thread_data %}
+        <div class="message-thread-list">
+            {% for td in thread_data %}
+            <a href="{{ url_for('messages.view_thread', thread_id=td.thread.id) }}" class="message-thread-card{% if td.unread > 0 %} message-unread{% endif %}">
+                <div class="message-thread-header">
+                    <span class="message-thread-from">{{ td.other_names }}</span>
+                    <span class="message-thread-date">{{ td.latest.created_at.strftime('%b %d, %H:%M') if td.latest else '' }}</span>
+                </div>
+                <div class="message-thread-subject">
+                    {{ td.thread.subject }}
+                    {% if td.unread > 0 %}
+                    <span class="badge badge-unread">{{ td.unread }}</span>
+                    {% endif %}
+                </div>
+                {% if td.latest %}
+                <div class="message-thread-preview">{{ td.latest.body | truncate(100) }}</div>
+                {% endif %}
+            </a>
+            {% endfor %}
+        </div>
+        {% else %}
+        <div class="empty-state">
+            <p>No messages yet.</p>
+            <a href="{{ url_for('messages.compose') }}" class="btn btn-primary">Send your first message</a>
+        </div>
+        {% endif %}
+    </div>
+</section>
+{% endblock %}

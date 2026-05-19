@@ -19,6 +19,8 @@ from app.models.practice import ProblemSet, Problem, Choice, Hint, StepByStepSol
 from app.models.progress import AttemptLog
 from app.models.access import AccessCode
 from app.models.parent import ParentStudentLink, ParentLinkCode
+from app.models.reports import StudentReport
+from app.utils.progress import compute_student_stats
 from app.extensions import db
 from app.utils.sanitize import sanitize_html
 
@@ -954,6 +956,335 @@ def remove_parent_link(link_id):
     db.session.commit()
     flash('Parent-student link removed.', 'success')
     return redirect(url_for('admin_panel.manage_parents'))
+
+
+# --- Coach Dashboard ---
+
+@admin_bp.route('/coach')
+@admin_required
+def coach_dashboard():
+    search = request.args.get('search', '')
+    sort_by = request.args.get('sort', 'last_active')
+    order = request.args.get('order', 'desc')
+
+    query = User.query.filter(User.role.in_(['student', 'parent']), User.is_active == True)  # noqa: E712
+    if search:
+        query = query.filter(
+            db.or_(
+                User.username.ilike(f'%{search}%'),
+                User.email.ilike(f'%{search}%'),
+            )
+        )
+    students = query.all()
+
+    now = datetime.now(timezone.utc)
+    student_rows = []
+    at_risk = []
+
+    for student in students:
+        total_attempts = AttemptLog.query.filter_by(student_id=student.id).count()
+        correct = AttemptLog.query.filter_by(student_id=student.id, is_correct=True).count()
+        accuracy = round((correct / total_attempts * 100), 1) if total_attempts > 0 else 0
+
+        completed = db.session.query(db.func.count()).select_from(
+            db.session.query(AttemptLog.student_id).filter_by(student_id=student.id)
+            .join(Problem, Problem.id == AttemptLog.problem_id)
+        ).scalar() or 0
+        from app.models.progress import StudentProgress
+        concepts_completed = StudentProgress.query.filter_by(
+            student_id=student.id, status='completed'
+        ).count()
+
+        last_attempt = AttemptLog.query.filter_by(student_id=student.id)\
+            .order_by(AttemptLog.attempted_at.desc()).first()
+        last_active = last_attempt.attempted_at if last_attempt else None
+
+        # Streak (simplified: count consecutive days from today)
+        streak = 0
+        if total_attempts > 0:
+            check_date = now.date()
+            while True:
+                day_start = datetime.combine(check_date, datetime.min.time()).replace(tzinfo=timezone.utc)
+                day_end = day_start + timedelta(days=1)
+                has = AttemptLog.query.filter(
+                    AttemptLog.student_id == student.id,
+                    AttemptLog.attempted_at >= day_start,
+                    AttemptLog.attempted_at < day_end,
+                ).first() is not None
+                if has:
+                    streak += 1
+                    check_date -= timedelta(days=1)
+                else:
+                    break
+
+        row = {
+            'student': student,
+            'total_attempts': total_attempts,
+            'accuracy': accuracy,
+            'concepts_completed': concepts_completed,
+            'last_active': last_active,
+            'streak': streak,
+        }
+        student_rows.append(row)
+
+        # At-risk detection
+        if total_attempts > 0:
+            # Ensure timezone-aware comparison
+            la = last_active.replace(tzinfo=timezone.utc) if last_active and last_active.tzinfo is None else last_active
+            if la and (now - la).days > 7:
+                at_risk.append({**row, 'reason': f'Inactive for {(now - la).days} days'})
+            elif total_attempts >= 10 and accuracy < 50:
+                at_risk.append({**row, 'reason': f'Low accuracy ({accuracy}%)'})
+
+    # Sort
+    def _tz_aware(dt):
+        """Ensure a datetime is timezone-aware for safe comparison."""
+        if dt is None:
+            return datetime.min.replace(tzinfo=timezone.utc)
+        return dt.replace(tzinfo=timezone.utc) if dt.tzinfo is None else dt
+
+    sort_keys = {
+        'name': lambda r: r['student'].username.lower(),
+        'tier': lambda r: r['student'].tier,
+        'last_active': lambda r: _tz_aware(r['last_active']),
+        'accuracy': lambda r: r['accuracy'],
+        'streak': lambda r: r['streak'],
+        'concepts': lambda r: r['concepts_completed'],
+    }
+    sort_fn = sort_keys.get(sort_by, sort_keys['last_active'])
+    student_rows.sort(key=sort_fn, reverse=(order == 'desc'))
+
+    # Class-wide analytics
+    thirty_days_ago = now - timedelta(days=30)
+    active_students = db.session.query(db.func.count(db.distinct(AttemptLog.student_id))).filter(
+        AttemptLog.attempted_at >= thirty_days_ago
+    ).scalar() or 0
+
+    total_all_attempts = AttemptLog.query.count()
+    total_correct = AttemptLog.query.filter_by(is_correct=True).count()
+    avg_accuracy = round(total_correct / total_all_attempts * 100, 1) if total_all_attempts > 0 else 0
+
+    return render_template(
+        'admin/coach_dashboard.html',
+        student_rows=student_rows,
+        at_risk=at_risk,
+        search=search,
+        sort_by=sort_by,
+        order=order,
+        active_students=active_students,
+        avg_accuracy=avg_accuracy,
+        total_student_count=len(student_rows),
+    )
+
+
+@admin_bp.route('/coach/student/<student_id>')
+@admin_required
+def coach_student_detail(student_id):
+    student = db.session.get(User, student_id)
+    if not student:
+        abort(404)
+    stats = compute_student_stats(student.id)
+    return render_template(
+        'admin/coach_student_detail.html',
+        student=student,
+        **stats,
+    )
+
+
+# --- Monthly Reports ---
+
+@admin_bp.route('/reports')
+@admin_required
+def manage_reports():
+    reports = StudentReport.query.order_by(StudentReport.created_at.desc()).all()
+    students = User.query.filter(User.role.in_(['student', 'parent'])).order_by(User.username).all()
+    now = datetime.now(timezone.utc)
+    return render_template(
+        'admin/manage_reports.html', reports=reports, students=students,
+        now_month=now.month, now_year=now.year,
+    )
+
+
+@admin_bp.route('/reports/generate', methods=['POST'])
+@admin_required
+def generate_report():
+    student_id = request.form.get('student_id')
+    month = int(request.form.get('month', datetime.now(timezone.utc).month))
+    year = int(request.form.get('year', datetime.now(timezone.utc).year))
+
+    student = db.session.get(User, student_id)
+    if not student:
+        flash('Student not found.', 'danger')
+        return redirect(url_for('admin_panel.manage_reports'))
+
+    # Check if report already exists
+    existing = StudentReport.query.filter_by(
+        student_id=student_id, report_month=month, report_year=year
+    ).first()
+    if existing:
+        flash(f'Report for {existing.period_label} already exists.', 'info')
+        return redirect(url_for('admin_panel.view_report', report_id=existing.id))
+
+    # Compute period-specific stats
+    period_start = datetime(year, month, 1, tzinfo=timezone.utc)
+    if month == 12:
+        period_end = datetime(year + 1, 1, 1, tzinfo=timezone.utc)
+    else:
+        period_end = datetime(year, month + 1, 1, tzinfo=timezone.utc)
+
+    attempts_in_period = AttemptLog.query.filter(
+        AttemptLog.student_id == student_id,
+        AttemptLog.attempted_at >= period_start,
+        AttemptLog.attempted_at < period_end,
+    ).count()
+
+    correct_in_period = AttemptLog.query.filter(
+        AttemptLog.student_id == student_id,
+        AttemptLog.attempted_at >= period_start,
+        AttemptLog.attempted_at < period_end,
+        AttemptLog.is_correct == True,  # noqa: E712
+    ).count()
+    period_accuracy = round(correct_in_period / attempts_in_period * 100, 1) if attempts_in_period > 0 else 0
+
+    # Previous month accuracy for trend
+    if month == 1:
+        prev_start = datetime(year - 1, 12, 1, tzinfo=timezone.utc)
+        prev_end = period_start
+    else:
+        prev_start = datetime(year, month - 1, 1, tzinfo=timezone.utc)
+        prev_end = period_start
+
+    prev_attempts = AttemptLog.query.filter(
+        AttemptLog.student_id == student_id,
+        AttemptLog.attempted_at >= prev_start,
+        AttemptLog.attempted_at < prev_end,
+    ).count()
+    prev_correct = AttemptLog.query.filter(
+        AttemptLog.student_id == student_id,
+        AttemptLog.attempted_at >= prev_start,
+        AttemptLog.attempted_at < prev_end,
+        AttemptLog.is_correct == True,  # noqa: E712
+    ).count()
+    prev_accuracy = round(prev_correct / prev_attempts * 100, 1) if prev_attempts > 0 else None
+
+    # Concepts progress in period
+    from app.models.progress import StudentProgress
+    from app.models.content import Concept, Topic, Subject
+    concepts_completed = StudentProgress.query.filter(
+        StudentProgress.student_id == student_id,
+        StudentProgress.status == 'completed',
+        StudentProgress.last_accessed >= period_start,
+        StudentProgress.last_accessed < period_end,
+    ).count()
+
+    concepts_started = StudentProgress.query.filter(
+        StudentProgress.student_id == student_id,
+        StudentProgress.last_accessed >= period_start,
+        StudentProgress.last_accessed < period_end,
+    ).count()
+
+    # Per-topic accuracy for strengths/weaknesses
+    topic_stats = []
+    period_attempts = AttemptLog.query.filter(
+        AttemptLog.student_id == student_id,
+        AttemptLog.attempted_at >= period_start,
+        AttemptLog.attempted_at < period_end,
+    ).all()
+
+    topic_data = {}
+    for att in period_attempts:
+        problem = db.session.get(Problem, att.problem_id)
+        if problem and problem.problem_set:
+            concept = db.session.get(Concept, problem.problem_set.concept_id)
+            if concept:
+                topic = db.session.get(Topic, concept.topic_id)
+                if topic:
+                    key = topic.id
+                    if key not in topic_data:
+                        topic_data[key] = {'name': topic.name, 'total': 0, 'correct': 0}
+                    topic_data[key]['total'] += 1
+                    if att.is_correct:
+                        topic_data[key]['correct'] += 1
+
+    for td in topic_data.values():
+        td['accuracy'] = round(td['correct'] / td['total'] * 100, 1) if td['total'] > 0 else 0
+        topic_stats.append(td)
+
+    topic_stats.sort(key=lambda t: t['accuracy'], reverse=True)
+    strongest = topic_stats[:3] if topic_stats else []
+    weakest = list(reversed(topic_stats[-3:])) if len(topic_stats) > 1 else []
+
+    # Auto-generated recommendations
+    recommendations = []
+    if weakest:
+        recommendations.append(f"Focus on {weakest[0]['name']} — accuracy is {weakest[0]['accuracy']}%.")
+    if strongest:
+        recommendations.append(f"Great work on {strongest[0]['name']} — {strongest[0]['accuracy']}% accuracy!")
+    if prev_accuracy is not None:
+        diff = period_accuracy - prev_accuracy
+        if diff > 0:
+            recommendations.append(f"Overall accuracy improved by {diff:.1f}% from last month.")
+        elif diff < 0:
+            recommendations.append(f"Overall accuracy dropped by {abs(diff):.1f}% from last month — review recent topics.")
+    if attempts_in_period == 0:
+        recommendations.append("No practice attempts this month — encourage regular practice sessions.")
+
+    summary = {
+        'student_name': student.username,
+        'student_email': student.email,
+        'period_label': f'{["", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"][month]} {year}',
+        'attempts': attempts_in_period,
+        'accuracy': period_accuracy,
+        'prev_accuracy': prev_accuracy,
+        'concepts_started': concepts_started,
+        'concepts_completed': concepts_completed,
+        'strongest': strongest,
+        'weakest': weakest,
+        'recommendations': recommendations,
+    }
+
+    report = StudentReport(
+        student_id=student_id,
+        report_month=month,
+        report_year=year,
+        generated_by=current_user.id,
+        summary_json=summary,
+    )
+    db.session.add(report)
+    db.session.commit()
+    logger.info('Report generated for student %s: %s %s', student.username, month, year)
+    flash(f'Report generated for {summary["period_label"]}.', 'success')
+    return redirect(url_for('admin_panel.view_report', report_id=report.id))
+
+
+@admin_bp.route('/reports/<report_id>')
+@admin_required
+def view_report(report_id):
+    report = db.session.get(StudentReport, report_id)
+    if not report:
+        abort(404)
+    return render_template('admin/view_report.html', report=report)
+
+
+@admin_bp.route('/reports/<report_id>/pdf')
+@admin_required
+def download_report_pdf(report_id):
+    from io import BytesIO
+    from xhtml2pdf import pisa
+
+    report = db.session.get(StudentReport, report_id)
+    if not report:
+        abort(404)
+
+    html = render_template('admin/report_pdf.html', report=report)
+    pdf_buffer = BytesIO()
+    pisa.CreatePDF(html, dest=pdf_buffer)
+    pdf_buffer.seek(0)
+
+    from flask import send_file
+    filename = f'report_{report.summary_json.get("student_name", "student")}_{report.report_month}_{report.report_year}.pdf'
+    logger.info('PDF report downloaded: %s', filename)
+    return send_file(pdf_buffer, mimetype='application/pdf', as_attachment=True, download_name=filename)
 
 
 # --- What's New (Changelog) ---

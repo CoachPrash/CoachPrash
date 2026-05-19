@@ -1,6 +1,6 @@
 # CoachPrash Admin Manual
 
-> **Version:** 4.1 (Logging)
+> **Version:** 5.0 (Coach Dashboard, Messaging & Reports)
 > **Last Updated:** May 2026
 > **Platform:** Flask + PostgreSQL, deployed on Railway
 
@@ -32,6 +32,9 @@
 22. [Troubleshooting](#22-troubleshooting)
 23. [Quick Reference](#23-quick-reference)
 24. [Logging](#24-logging)
+25. [Coach Dashboard](#25-coach-dashboard)
+26. [Messaging Center](#26-messaging-center)
+27. [Monthly Reports](#27-monthly-reports)
 
 ---
 
@@ -1489,3 +1492,102 @@ logger.exception('Something failed')  # auto-captures traceback
 ```
 
 Use `%s` string formatting (not f-strings) in logger calls — this is a Python logging best practice that avoids string formatting overhead when the log level is disabled.
+
+---
+
+## 25. Coach Dashboard
+
+The Coach Dashboard provides a comprehensive overview of all students' progress at `/admin/coach`.
+
+### Accessing the Coach Dashboard
+
+1. Log in as admin
+2. Navigate to **Admin** → **Coach Dashboard** (quick link on admin dashboard)
+3. Or go directly to `/admin/coach`
+
+### Features
+
+**All-Students Overview Table:**
+- Sortable by: Name, Tier, Last Active, Accuracy, Streak, Concepts Completed
+- Click column headers to sort ascending/descending
+- Search by name or email
+- Each row links to a detailed student view
+
+**At-Risk Alerts:**
+- Students inactive for more than 7 days (who have previous attempts)
+- Students with accuracy below 50% (with at least 10 attempts)
+- Each alert card has quick actions: View Progress, Send Message
+
+**Class-Wide Analytics:**
+- Total students, active students (last 30 days), average accuracy
+
+### Per-Student Detail
+
+Click a student name or "View" to see `/admin/coach/student/<id>`:
+- Full stats: concepts completed, in-progress, attempts, accuracy, streak
+- Subject-level progress bars
+- Recent activity timeline (last 20 attempts, color-coded correct/incorrect)
+- Quick action buttons to send a message
+
+---
+
+## 26. Messaging Center
+
+The Messaging Center provides threaded in-app messaging between the coach, students, and parents at `/messages/`.
+
+### Accessing Messages
+
+All authenticated users see a **Messages** link in the sidebar with an unread count badge.
+
+### For the Coach (Admin)
+
+1. **Inbox** (`/messages/`): Shows all conversation threads, sorted by most recent. Unread threads are highlighted.
+2. **Compose** (`/messages/compose`): Send a new message to any student or parent. Select the recipient from a dropdown.
+3. **Quick message from Coach Dashboard**: Click "Msg" next to any student to compose a message pre-addressed to them.
+
+### For Students & Parents
+
+1. **Inbox** (`/messages/`): Shows threads with the coach.
+2. **Compose** (`/messages/compose`): The recipient is automatically set to the coach — students/parents cannot message each other.
+3. **Reply**: Open any thread and use the reply form at the bottom.
+
+### Thread Behavior
+
+- Messages are organized in threads with a subject line
+- Opening a thread marks all unread messages (from others) as read
+- The unread badge in the sidebar updates on every page load
+- Replies are rate-limited to 20/minute; new messages to 10/minute
+
+---
+
+## 27. Monthly Reports
+
+Generate and download per-student monthly progress reports at `/admin/reports`.
+
+### Generating a Report
+
+1. Navigate to **Admin** → **Monthly Reports**
+2. Select a student, month, and year
+3. Click **Generate Report**
+4. The system computes period-specific analytics and saves the report
+
+### Report Contents
+
+Each report includes:
+- **Period summary**: Total attempts and accuracy for the selected month
+- **Accuracy trend**: Comparison with the previous month (improvement/decline shown as percentage)
+- **Concepts**: Number of concepts started and completed during the period
+- **Strongest topics**: Top 3 topics by accuracy
+- **Areas for improvement**: Bottom 3 topics by accuracy
+- **Auto-generated recommendations**: Personalized suggestions based on the data (e.g., "Focus on [weakest topic]", "Great work on [strongest topic]", accuracy trend commentary)
+
+### Viewing & Downloading
+
+- **HTML view**: Click "View" to see the report in the browser
+- **PDF download**: Click "PDF" to download a print-friendly PDF report suitable for sharing with parents
+- Reports are stored in the database and can be re-viewed at any time
+- Only one report per student per month (attempting to regenerate shows the existing report)
+
+### Report Data
+
+Report data is a pre-computed snapshot saved at generation time. It reflects the student's activity during the selected month and does not change if data is later modified.

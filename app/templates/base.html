@@ -138,6 +138,14 @@
                         </a>
                     </li>
                     {% endif %}
+
+                    <li>
+                        <a href="{{ url_for('messages.inbox') }}" title="Messages"
+                           class="{% if request.endpoint and request.endpoint.startswith('messages.') %}active{% endif %}">
+                            <span class="sidebar-icon">&#x1F4AC;</span>
+                            <span class="sidebar-link-text">Messages{% if unread_message_count > 0 %} <span class="sidebar-badge">{{ unread_message_count }}</span>{% endif %}</span>
+                        </a>
+                    </li>
                 {% endif %}
             </ul>
         </nav>

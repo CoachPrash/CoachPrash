@@ -13,6 +13,57 @@
                 <div class="changelog-date">
                     <span class="changelog-date-day">18</span>
                     <span class="changelog-date-month">May 2026</span>
+                    <span class="changelog-phase-badge">Phase 5</span>
+                </div>
+                <div class="changelog-body">
+                    <h2>Coach Dashboard, Messaging & Monthly Reports</h2>
+                    <p class="changelog-summary">Added coach-level student monitoring, in-app messaging for all users, and monthly student progress reports with PDF export.</p>
+
+                    <div class="changelog-section">
+                        <h3>Coach Dashboard</h3>
+                        <ul>
+                            <li>All-students overview with sortable table (name, tier, last active, accuracy, streak, concepts completed)</li>
+                            <li>At-risk alerts for students inactive &gt;7 days or with accuracy &lt;50%</li>
+                            <li>Class-wide analytics: active student count, average accuracy</li>
+                            <li>Per-student drill-down with full progress breakdown and recent activity</li>
+                        </ul>
+                    </div>
+
+                    <div class="changelog-section">
+                        <h3>Messaging Center</h3>
+                        <ul>
+                            <li>Threaded conversations between coach, students, and parents</li>
+                            <li>Unread message count badge in sidebar for all authenticated users</li>
+                            <li>Admin can message any user; students/parents message the coach</li>
+                            <li>Messages accessible at <code>/messages/</code> for all roles</li>
+                        </ul>
+                    </div>
+
+                    <div class="changelog-section">
+                        <h3>Monthly Reports</h3>
+                        <ul>
+                            <li>Generate per-student monthly progress reports with period-specific analytics</li>
+                            <li>Reports include: accuracy, attempts, concepts completed, strongest/weakest topics, accuracy trend vs previous month</li>
+                            <li>Auto-generated recommendations based on student performance data</li>
+                            <li>Download reports as PDF for sharing with parents</li>
+                        </ul>
+                    </div>
+
+                    <div class="changelog-section">
+                        <h3>Technical Improvements</h3>
+                        <ul>
+                            <li>Extracted shared <code>compute_student_stats()</code> utility — eliminates progress computation duplication across study, parent, and coach blueprints</li>
+                            <li>New database tables: <code>message_threads</code>, <code>message_participants</code>, <code>messages</code>, <code>student_reports</code></li>
+                            <li>New <code>messages</code> blueprint with full CRUD routes</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="changelog-entry">
+                <div class="changelog-date">
+                    <span class="changelog-date-day">18</span>
+                    <span class="changelog-date-month">May 2026</span>
                     <span class="changelog-phase-badge">Infrastructure</span>
                 </div>
                 <div class="changelog-body">

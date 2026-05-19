@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+{% block title %}Report: {{ report.summary_json.get('student_name', 'Student') }} — {{ report.period_label }} — CoachPrash{% endblock %}
+
+{% block content %}
+<section class="section">
+    <div class="container">
+        <div class="mb-1">
+            <a href="{{ url_for('admin_panel.manage_reports') }}" class="btn btn-sm btn-secondary">&larr; All Reports</a>
+            <a href="{{ url_for('admin_panel.download_report_pdf', report_id=report.id) }}" class="btn btn-sm btn-primary ml-0-5">Download PDF</a>
+        </div>
+
+        {% set s = report.summary_json %}
+        <h1>Progress Report: {{ s.get('student_name', 'Student') }}</h1>
+        <p class="text-muted">{{ s.get('period_label', '') }} &middot; {{ s.get('student_email', '') }}</p>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">{{ s.get('attempts', 0) }}</div>
+                <div class="stat-label">Attempts This Month</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">{{ s.get('accuracy', 0) }}%</div>
+                <div class="stat-label">Accuracy</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">{{ s.get('concepts_started', 0) }}</div>
+                <div class="stat-label">Concepts Touched</div>
+            </div>
+            <div class="stat-card stat-card-accent">
+                <div class="stat-number">{{ s.get('concepts_completed', 0) }}</div>
+                <div class="stat-label">Concepts Completed</div>
+            </div>
+        </div>
+
+        {% if s.get('prev_accuracy') is not none %}
+        <div class="admin-section">
+            <h2>Accuracy Trend</h2>
+            <p>
+                Previous month: <strong>{{ s.get('prev_accuracy') }}%</strong> &rarr;
+                This month: <strong>{{ s.get('accuracy', 0) }}%</strong>
+                {% set diff = s.get('accuracy', 0) - s.get('prev_accuracy', 0) %}
+                {% if diff > 0 %}
+                <span class="text-success">(+{{ "%.1f" | format(diff) }}%)</span>
+                {% elif diff < 0 %}
+                <span class="text-danger">({{ "%.1f" | format(diff) }}%)</span>
+                {% else %}
+                <span class="text-muted">(no change)</span>
+                {% endif %}
+            </p>
+        </div>
+        {% endif %}
+
+        {% if s.get('strongest') %}
+        <div class="admin-section">
+            <h2>Strongest Topics</h2>
+            <table class="admin-table">
+                <thead><tr><th>Topic</th><th>Accuracy</th><th>Problems</th></tr></thead>
+                <tbody>
+                    {% for t in s.get('strongest', []) %}
+                    <tr>
+                        <td>{{ t.name }}</td>
+                        <td class="text-success">{{ t.accuracy }}%</td>
+                        <td>{{ t.total }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% endif %}
+
+        {% if s.get('weakest') %}
+        <div class="admin-section">
+            <h2>Areas for Improvement</h2>
+            <table class="admin-table">
+                <thead><tr><th>Topic</th><th>Accuracy</th><th>Problems</th></tr></thead>
+                <tbody>
+                    {% for t in s.get('weakest', []) %}
+                    <tr>
+                        <td>{{ t.name }}</td>
+                        <td class="text-danger">{{ t.accuracy }}%</td>
+                        <td>{{ t.total }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% endif %}
+
+        {% if s.get('recommendations') %}
+        <div class="admin-section">
+            <h2>Recommendations</h2>
+            <ul>
+                {% for rec in s.get('recommendations', []) %}
+                <li>{{ rec }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+    </div>
+</section>
+{% endblock %}
