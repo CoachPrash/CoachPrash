@@ -17,6 +17,7 @@ class User(UserMixin, db.Model):
     google_id = db.Column(db.String(255), unique=True, nullable=True, index=True)
     is_active = db.Column(db.Boolean, default=True)
     tier = db.Column(db.String(20), nullable=False, default='free')
+    theme_id = db.Column(db.String(36), db.ForeignKey('themes.id', ondelete='SET NULL'), nullable=True)
     created_at = db.Column(db.DateTime, default=lambda: datetime.now(timezone.utc))
     updated_at = db.Column(
         db.DateTime,
@@ -24,6 +25,7 @@ class User(UserMixin, db.Model):
         onupdate=lambda: datetime.now(timezone.utc),
     )
 
+    theme = db.relationship('Theme', lazy='joined')
     progress = db.relationship('StudentProgress', backref='student', lazy='dynamic')
     attempts = db.relationship('AttemptLog', backref='student', lazy='dynamic')
     blog_posts = db.relationship('BlogPost', backref='author', lazy='dynamic')

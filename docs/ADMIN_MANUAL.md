@@ -1,6 +1,6 @@
 # CoachPrash Admin Manual
 
-> **Version:** 5.0 (Coach Dashboard, Messaging & Reports)
+> **Version:** 6.0 (Theme/Palette System)
 > **Last Updated:** May 2026
 > **Platform:** Flask + PostgreSQL, deployed on Railway
 
@@ -35,6 +35,8 @@
 25. [Coach Dashboard](#25-coach-dashboard)
 26. [Messaging Center](#26-messaging-center)
 27. [Monthly Reports](#27-monthly-reports)
+28. [Theme Management](#28-theme-management)
+29. [User Settings (Theme Picker)](#29-user-settings-theme-picker)
 
 ---
 
@@ -1591,3 +1593,89 @@ Each report includes:
 ### Report Data
 
 Report data is a pre-computed snapshot saved at generation time. It reflects the student's activity during the selected month and does not change if data is later modified.
+
+---
+
+## 28. Theme Management
+
+### Overview
+
+The theme system lets you create custom color palettes for CoachPrash. Each theme uses **4 seed colors** that automatically derive the full set of 13 CSS variables used across the site.
+
+### Accessing Theme Management
+
+Navigate to **Admin Dashboard → Themes** or go directly to `/admin/themes`.
+
+### The 4 Seed Colors
+
+| Color | Controls |
+|-------|----------|
+| **Primary** | Sidebar background, headings, text, links, primary buttons |
+| **Secondary** | CTA banners, secondary buttons, some badges |
+| **Accent** | Accent buttons, progress bars, highlights, sidebar hover |
+| **Background** | Page background tint |
+
+The remaining 9 CSS variables (card background, text secondary, borders, success/danger colors, sidebar text) are automatically derived from these 4 seed colors.
+
+### Creating a Theme
+
+1. Go to `/admin/themes` and click **+ New Theme**
+2. Enter a **Theme Name** (must be unique)
+3. Use the **color pickers** or type hex values directly (e.g., `#1B365D`)
+4. Watch the **live preview panel** on the right — it shows a miniature mockup of the site updating in real-time as you pick colors
+5. Toggle **Active** to control whether users can see and select this theme
+6. Click **Create Theme**
+
+### Editing a Theme
+
+Click **Edit** on any theme card. The form pre-fills with current colors and the live preview reflects changes as you modify them.
+
+### Setting the Default Theme
+
+Click **Set Default** on a theme card. The default theme is used for:
+- Anonymous (not logged-in) visitors
+- Logged-in users who haven't chosen a theme yet
+
+Only one theme can be the default at a time.
+
+### Deleting a Theme
+
+Click **Delete** on a non-default theme. If any users have selected that theme, they are automatically reset to the default. You cannot delete the default theme — set a different default first.
+
+### Pre-seeded Themes
+
+The platform comes with 6 pre-seeded themes:
+1. **Navy & Gold** (default) — Classic academic blue and gold
+2. **Sunshine & Navy** — Deep navy with bright yellow accents
+3. **Teal Scholar** — Teal green with orange highlights
+4. **Emerald Campus** — Forest green with gold accents
+5. **Blackboard Gold** — Dark charcoal with gold
+6. **Bumblebee** — Black and yellow
+
+### Tips for Creating Good Palettes
+
+- **Primary** should be a dark, saturated color (it's used for text and sidebar)
+- **Background** should be very light (it's the page background)
+- **Secondary** and **Accent** can be bolder — they're used for highlights and CTAs
+- Use the live preview to check contrast and readability before saving
+- Find palette inspiration on sites like Coolors, Adobe Color, or Color Hunt — you only need 4 colors
+
+---
+
+## 29. User Settings (Theme Picker)
+
+### Overview
+
+All logged-in users (students, parents, admins) can choose their preferred theme from the **Settings** page. The selected theme persists across sessions.
+
+### Accessing Settings
+
+Click the **Settings** gear icon in the sidebar (available for all authenticated users), or navigate to `/settings/theme`.
+
+### Picking a Theme
+
+1. Browse the visual theme cards — each shows a miniature preview of the site with that palette
+2. Click a card to select it (highlighted with a checkmark)
+3. Click **Save Theme** to apply
+
+The theme takes effect immediately on the next page load. Theme CSS variables are injected inline in the page `<head>`, overriding the default palette.

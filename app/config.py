@@ -17,7 +17,7 @@ class Config:
     WTF_CSRF_ENABLED = True
     GOOGLE_CLIENT_ID = os.environ.get('GOOGLE_CLIENT_ID')
     GOOGLE_CLIENT_SECRET = os.environ.get('GOOGLE_CLIENT_SECRET')
-    ASSET_VERSION = os.environ.get('ASSET_VERSION', '3.0')
+    ASSET_VERSION = os.environ.get('ASSET_VERSION', '4.0')
     RATELIMIT_STORAGE_URI = 'memory://'
 
 

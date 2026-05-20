@@ -11,6 +11,51 @@
 
             <div class="changelog-entry">
                 <div class="changelog-date">
+                    <span class="changelog-date-day">20</span>
+                    <span class="changelog-date-month">May 2026</span>
+                    <span class="changelog-phase-badge">Phase 6</span>
+                </div>
+                <div class="changelog-body">
+                    <h2>Theme / Palette System</h2>
+                    <p class="changelog-summary">Full theme management system allowing admin to create custom color palettes and users to pick their preferred theme.</p>
+
+                    <div class="changelog-section">
+                        <h3>Admin Theme Management</h3>
+                        <ul>
+                            <li>Create, edit, and delete themes from the admin panel</li>
+                            <li>4 seed colors (primary, secondary, accent, background) auto-derive 13 CSS variables</li>
+                            <li>Live preview panel shows a miniature site mockup as colors are picked</li>
+                            <li>Color picker + hex input for precise control</li>
+                            <li>Set any theme as the site-wide default for anonymous visitors</li>
+                            <li>6 pre-seeded themes: Navy &amp; Gold, Sunshine &amp; Navy, Teal Scholar, Emerald Campus, Blackboard Gold, Bumblebee</li>
+                        </ul>
+                    </div>
+
+                    <div class="changelog-section">
+                        <h3>User Theme Picker</h3>
+                        <ul>
+                            <li>New Settings page accessible from the sidebar for all logged-in users</li>
+                            <li>Visual theme cards with miniature previews of each palette</li>
+                            <li>Selected theme persists across sessions</li>
+                            <li>Themes apply instantly on page load via inline CSS variable overrides</li>
+                        </ul>
+                    </div>
+
+                    <div class="changelog-section">
+                        <h3>Technical</h3>
+                        <ul>
+                            <li>Theme model with UUID primary keys, stored in the database</li>
+                            <li>Color derivation utility (Python colorsys) for consistent palette generation</li>
+                            <li>Context processor injects theme CSS variables on every page</li>
+                            <li>Removed dev-only theme switcher toolbar</li>
+                            <li>Hardcoded CSS colors replaced with CSS custom properties for full theme coverage</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="changelog-entry">
+                <div class="changelog-date">
                     <span class="changelog-date-day">18</span>
                     <span class="changelog-date-month">May 2026</span>
                     <span class="changelog-phase-badge">Phase 5</span>

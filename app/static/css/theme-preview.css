@@ -1,0 +1,149 @@
+/* ===== THEME PREVIEW — Temporary dev tool, remove before shipping ===== */
+
+/* --- Palette 1: Current (Navy & Gold — existing CoachPrash) --- */
+/* Uses :root defaults from style.css */
+
+/* --- Palette 2: Sunshine & Navy — Energetic & Friendly --- */
+[data-theme="2"] {
+    --primary: #0C1445;
+    --secondary: #1D4ED8;
+    --accent: #FBBF24;
+    --bg: #F0F4FF;
+    --card-bg: #FFFFFF;
+    --text: #0C1445;
+    --text-secondary: #475569;
+    --success: #16A34A;
+    --border: #BFDBFE;
+    --danger: #DC3545;
+    --sidebar-bg: #0C1445;
+    --sidebar-text: rgba(255,255,255,0.9);
+    --sidebar-hover-bg: rgba(251,191,36,0.2);
+}
+
+/* --- Palette 3: Teal Scholar — Focus & Growth --- */
+[data-theme="3"] {
+    --primary: #0F766E;
+    --secondary: #1E40AF;
+    --accent: #F97316;
+    --bg: #F0FDFA;
+    --card-bg: #FFFFFF;
+    --text: #134E4A;
+    --text-secondary: #5F7A76;
+    --success: #16A34A;
+    --border: #99F6E4;
+    --danger: #DC3545;
+    --sidebar-bg: #134E4A;
+    --sidebar-text: rgba(255,255,255,0.9);
+    --sidebar-hover-bg: rgba(249,115,22,0.2);
+}
+
+/* --- Palette 4: Emerald Campus — Fresh & Academic --- */
+[data-theme="4"] {
+    --primary: #047857;
+    --secondary: #7C3AED;
+    --accent: #FBBF24;
+    --bg: #ECFDF5;
+    --card-bg: #FFFFFF;
+    --text: #064E3B;
+    --text-secondary: #6B7280;
+    --success: #10B981;
+    --border: #A7F3D0;
+    --danger: #EF4444;
+    --sidebar-bg: #064E3B;
+    --sidebar-text: rgba(255,255,255,0.9);
+    --sidebar-hover-bg: rgba(251,191,36,0.2);
+}
+
+/* --- Palette 5: Blackboard Gold — Classic Academic --- */
+[data-theme="5"] {
+    --primary: #1C1C1C;
+    --secondary: #D4A843;
+    --accent: #F5C518;
+    --bg: #F9F7F2;
+    --card-bg: #FFFFFF;
+    --text: #1C1C1C;
+    --text-secondary: #555555;
+    --success: #2D8659;
+    --border: #E5E0D5;
+    --danger: #C0392B;
+    --sidebar-bg: #1C1C1C;
+    --sidebar-text: rgba(255,255,255,0.9);
+    --sidebar-hover-bg: rgba(212,168,67,0.2);
+}
+
+/* --- Palette 6: Bumblebee — Bold Yellow & Black --- */
+[data-theme="6"] {
+    --primary: #111111;
+    --secondary: #E6A817;
+    --accent: #FFD43B;
+    --bg: #FFFDE7;
+    --card-bg: #FFFFFF;
+    --text: #111111;
+    --text-secondary: #4A4A4A;
+    --success: #2E7D32;
+    --border: #FFF176;
+    --danger: #D32F2F;
+    --sidebar-bg: #111111;
+    --sidebar-text: rgba(255,255,255,0.9);
+    --sidebar-hover-bg: rgba(255,212,59,0.2);
+}
+
+/* --- Theme Switcher Toolbar --- */
+.theme-switcher {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99999;
+    background: #1a1a2e;
+    border-radius: 12px;
+    padding: 12px 16px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: #fff;
+    flex-wrap: wrap;
+    max-width: 420px;
+}
+.theme-switcher-label {
+    font-weight: 600;
+    margin-right: 4px;
+    white-space: nowrap;
+}
+.theme-swatch {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    cursor: pointer;
+    transition: transform 0.15s, border-color 0.15s;
+    position: relative;
+    flex-shrink: 0;
+}
+.theme-swatch:hover {
+    transform: scale(1.2);
+}
+.theme-swatch.active {
+    border-color: #fff;
+    transform: scale(1.2);
+}
+.theme-swatch-inner {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+}
+.theme-swatch-half {
+    width: 50%;
+    height: 100%;
+}
+.theme-name {
+    font-size: 12px;
+    color: rgba(255,255,255,0.7);
+    width: 100%;
+    text-align: center;
+    margin-top: 4px;
+}

@@ -8,7 +8,7 @@ from app.blueprints.admin_panel import admin_bp
 from app.blueprints.admin_panel.forms import (
     StudentEditForm, SubjectForm, TopicForm, ConceptForm,
     ProblemSetForm, ProblemForm, AccessCodeForm, BlogPostForm, TestimonialForm,
-    ResourceForm,
+    ResourceForm, ThemeForm,
 )
 from app.models import (
     Testimonial, BlogPost, ContactMessage, Resource,
@@ -20,7 +20,9 @@ from app.models.progress import AttemptLog
 from app.models.access import AccessCode
 from app.models.parent import ParentStudentLink, ParentLinkCode
 from app.models.reports import StudentReport
+from app.models.theme import Theme
 from app.utils.progress import compute_student_stats
+from app.utils.colors import derive_palette
 from app.extensions import db
 from app.utils.sanitize import sanitize_html
 
@@ -1392,3 +1394,93 @@ def download_report_pdf(report_id):
 @admin_required
 def changelog():
     return render_template('admin/changelog.html')
+
+
+# --- Theme Management ---
+
+@admin_bp.route('/themes')
+@admin_required
+def manage_themes():
+    themes = Theme.query.order_by(Theme.display_order).all()
+    theme_data = []
+    for t in themes:
+        user_count = User.query.filter_by(theme_id=t.id).count()
+        theme_data.append({'theme': t, 'user_count': user_count})
+    return render_template('admin/manage_themes.html', theme_data=theme_data)
+
+
+@admin_bp.route('/themes/new', methods=['GET', 'POST'])
+@admin_required
+def new_theme():
+    form = ThemeForm()
+    if form.validate_on_submit():
+        max_order = db.session.query(db.func.max(Theme.display_order)).scalar() or 0
+        theme = Theme(
+            name=form.name.data.strip(),
+            color_primary=form.color_primary.data.upper(),
+            color_secondary=form.color_secondary.data.upper(),
+            color_accent=form.color_accent.data.upper(),
+            color_bg=form.color_bg.data.upper(),
+            is_active=form.is_active.data,
+            display_order=max_order + 1,
+        )
+        db.session.add(theme)
+        db.session.commit()
+        logger.info('Theme created: %s', theme.name)
+        flash(f'Theme "{theme.name}" created.', 'success')
+        return redirect(url_for('admin_panel.manage_themes'))
+    return render_template('admin/theme_form.html', form=form, editing=False)
+
+
+@admin_bp.route('/themes/<theme_id>/edit', methods=['GET', 'POST'])
+@admin_required
+def edit_theme(theme_id):
+    theme = db.session.get(Theme, theme_id)
+    if not theme:
+        abort(404)
+    form = ThemeForm(obj=theme)
+    if form.validate_on_submit():
+        theme.name = form.name.data.strip()
+        theme.color_primary = form.color_primary.data.upper()
+        theme.color_secondary = form.color_secondary.data.upper()
+        theme.color_accent = form.color_accent.data.upper()
+        theme.color_bg = form.color_bg.data.upper()
+        theme.is_active = form.is_active.data
+        db.session.commit()
+        logger.info('Theme updated: %s', theme.name)
+        flash(f'Theme "{theme.name}" updated.', 'success')
+        return redirect(url_for('admin_panel.manage_themes'))
+    return render_template('admin/theme_form.html', form=form, editing=True, theme=theme)
+
+
+@admin_bp.route('/themes/<theme_id>/delete', methods=['POST'])
+@admin_required
+def delete_theme(theme_id):
+    theme = db.session.get(Theme, theme_id)
+    if not theme:
+        abort(404)
+    if theme.is_default:
+        flash('Cannot delete the default theme.', 'danger')
+        return redirect(url_for('admin_panel.manage_themes'))
+    user_count = User.query.filter_by(theme_id=theme.id).count()
+    if user_count > 0:
+        User.query.filter_by(theme_id=theme.id).update({'theme_id': None})
+    db.session.delete(theme)
+    db.session.commit()
+    logger.info('Theme deleted: %s (reassigned %d users)', theme.name, user_count)
+    flash(f'Theme "{theme.name}" deleted. {user_count} user(s) reset to default.', 'success')
+    return redirect(url_for('admin_panel.manage_themes'))
+
+
+@admin_bp.route('/themes/<theme_id>/set-default', methods=['POST'])
+@admin_required
+def set_default_theme(theme_id):
+    theme = db.session.get(Theme, theme_id)
+    if not theme:
+        abort(404)
+    Theme.query.update({'is_default': False})
+    theme.is_default = True
+    db.session.commit()
+    logger.info('Default theme set to: %s', theme.name)
+    flash(f'"{theme.name}" is now the default theme.', 'success')
+    return redirect(url_for('admin_panel.manage_themes'))

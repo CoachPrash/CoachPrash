@@ -7,6 +7,7 @@ from app.models.resource import Resource
 from app.models.parent import ParentStudentLink, ParentLinkCode
 from app.models.messaging import MessageThread, MessageParticipant, Message
 from app.models.reports import StudentReport
+from app.models.theme import Theme
 
 from app.extensions import db
 

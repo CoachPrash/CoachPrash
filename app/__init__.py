@@ -66,6 +66,7 @@ def create_app(config_name=None):
         Testimonial, BlogPost, ContactMessage, Resource,
         ParentStudentLink, ParentLinkCode,
         MessageThread, MessageParticipant, Message, StudentReport,
+        Theme,
     )
 
     from app.blueprints.main import main_bp
@@ -91,6 +92,9 @@ def create_app(config_name=None):
 
     from app.blueprints.messages import messages_bp
     flask_app.register_blueprint(messages_bp, url_prefix='/messages')
+
+    from app.blueprints.settings import settings_bp
+    flask_app.register_blueprint(settings_bp, url_prefix='/settings')
 
     # db.create_all() removed — use Flask-Migrate (flask db upgrade) instead
 
@@ -121,6 +125,25 @@ def create_app(config_name=None):
         """Convert newlines to <br> tags for message display."""
         from markupsafe import Markup, escape
         return Markup(escape(value).replace('\n', Markup('<br>')))
+
+    @flask_app.context_processor
+    def inject_user_theme():
+        from flask_login import current_user
+        from app.models.theme import Theme
+        from app.utils.colors import derive_palette, palette_to_css_vars
+        theme = None
+        if current_user.is_authenticated and current_user.theme_id:
+            theme = current_user.theme
+        if not theme:
+            theme = Theme.query.filter_by(is_default=True, is_active=True).first()
+        if theme:
+            palette = derive_palette(
+                theme.color_primary, theme.color_secondary,
+                theme.color_accent, theme.color_bg,
+            )
+            css_vars = palette_to_css_vars(palette)
+            return dict(user_theme=theme, theme_css_vars=css_vars)
+        return dict(user_theme=None, theme_css_vars=None)
 
     @flask_app.context_processor
     def inject_sidebar_subjects():

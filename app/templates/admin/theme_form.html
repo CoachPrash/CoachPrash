@@ -1,0 +1,183 @@
+{% extends "base.html" %}
+{% block title %}{{ 'Edit' if editing else 'New' }} Theme — Admin — CoachPrash{% endblock %}
+
+{% block content %}
+<section class="section">
+    <div class="container">
+        <h1>{{ 'Edit' if editing else 'New' }} Theme</h1>
+
+        <div class="theme-form-layout">
+            <!-- Form column -->
+            <div class="theme-form-col">
+                <form method="POST" id="themeForm">
+                    {{ form.hidden_tag() }}
+
+                    <div class="form-group">
+                        <label for="name">Theme Name</label>
+                        {{ form.name(class="form-control", id="name", placeholder="e.g. Ocean Breeze") }}
+                        {% for error in form.name.errors %}<p class="form-error">{{ error }}</p>{% endfor %}
+                    </div>
+
+                    <div class="form-group">
+                        <label for="color_primary">Primary Color</label>
+                        <div class="color-input-group">
+                            <input type="color" id="color_primary_picker" value="{{ form.color_primary.data or '#1B365D' }}" class="color-picker">
+                            {{ form.color_primary(class="form-control color-hex-input", id="color_primary", placeholder="#1B365D") }}
+                        </div>
+                        <small class="form-hint">Sidebar, headings, text, links</small>
+                        {% for error in form.color_primary.errors %}<p class="form-error">{{ error }}</p>{% endfor %}
+                    </div>
+
+                    <div class="form-group">
+                        <label for="color_secondary">Secondary Color</label>
+                        <div class="color-input-group">
+                            <input type="color" id="color_secondary_picker" value="{{ form.color_secondary.data or '#B5121B' }}" class="color-picker">
+                            {{ form.color_secondary(class="form-control color-hex-input", id="color_secondary", placeholder="#B5121B") }}
+                        </div>
+                        <small class="form-hint">CTA banners, secondary buttons</small>
+                        {% for error in form.color_secondary.errors %}<p class="form-error">{{ error }}</p>{% endfor %}
+                    </div>
+
+                    <div class="form-group">
+                        <label for="color_accent">Accent Color</label>
+                        <div class="color-input-group">
+                            <input type="color" id="color_accent_picker" value="{{ form.color_accent.data or '#F4A100' }}" class="color-picker">
+                            {{ form.color_accent(class="form-control color-hex-input", id="color_accent", placeholder="#F4A100") }}
+                        </div>
+                        <small class="form-hint">Accent buttons, progress bars, highlights</small>
+                        {% for error in form.color_accent.errors %}<p class="form-error">{{ error }}</p>{% endfor %}
+                    </div>
+
+                    <div class="form-group">
+                        <label for="color_bg">Background Color</label>
+                        <div class="color-input-group">
+                            <input type="color" id="color_bg_picker" value="{{ form.color_bg.data or '#F0F4F8' }}" class="color-picker">
+                            {{ form.color_bg(class="form-control color-hex-input", id="color_bg", placeholder="#F0F4F8") }}
+                        </div>
+                        <small class="form-hint">Page background tint</small>
+                        {% for error in form.color_bg.errors %}<p class="form-error">{{ error }}</p>{% endfor %}
+                    </div>
+
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            {{ form.is_active(id="is_active") }} Active (visible to users)
+                        </label>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">{{ 'Save Changes' if editing else 'Create Theme' }}</button>
+                        <a href="{{ url_for('admin_panel.manage_themes') }}" class="btn btn-outline">Cancel</a>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Live preview column -->
+            <div class="theme-preview-col">
+                <h3>Live Preview</h3>
+                <div class="theme-preview-box" id="themePreview">
+                    <div class="preview-sidebar" id="previewSidebar">
+                        <div class="preview-logo">CoachPrash</div>
+                        <div class="preview-nav">
+                            <div class="preview-nav-item preview-nav-active" id="previewNavActive">Home</div>
+                            <div class="preview-nav-item">Subjects</div>
+                            <div class="preview-nav-item">About</div>
+                            <div class="preview-nav-item">Contact</div>
+                        </div>
+                    </div>
+                    <div class="preview-main" id="previewMain">
+                        <div class="preview-heading" id="previewHeading">Welcome to CoachPrash</div>
+                        <div class="preview-text" id="previewText">Expert STEM tutoring for all levels</div>
+                        <div class="preview-card" id="previewCard">
+                            <div class="preview-card-title" id="previewCardTitle">Sample Card</div>
+                            <div class="preview-card-text" id="previewCardText">This is how content cards will look with your theme.</div>
+                            <div class="preview-buttons">
+                                <span class="preview-btn" id="previewBtnPrimary">Primary</span>
+                                <span class="preview-btn" id="previewBtnSecondary">Secondary</span>
+                                <span class="preview-btn" id="previewBtnAccent">Accent</span>
+                            </div>
+                        </div>
+                        <div class="preview-cta" id="previewCta">
+                            <span style="color:#fff;font-weight:600">CTA Banner</span>
+                            <span class="preview-btn" id="previewBtnCta" style="color:#fff;border:1px solid rgba(255,255,255,0.5)">Learn More</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+(function() {
+    var fields = ['color_primary', 'color_secondary', 'color_accent', 'color_bg'];
+
+    // Sync color picker <-> hex input
+    fields.forEach(function(name) {
+        var picker = document.getElementById(name + '_picker');
+        var input = document.getElementById(name);
+        if (!picker || !input) return;
+        picker.addEventListener('input', function() {
+            input.value = picker.value.toUpperCase();
+            updatePreview();
+        });
+        input.addEventListener('input', function() {
+            if (/^#[0-9A-Fa-f]{6}$/.test(input.value)) {
+                picker.value = input.value;
+                updatePreview();
+            }
+        });
+    });
+
+    function hexToRgb(hex) {
+        var h = hex.replace('#', '');
+        return [parseInt(h.substr(0,2),16), parseInt(h.substr(2,2),16), parseInt(h.substr(4,2),16)];
+    }
+
+    function lighten(hex, amount) {
+        var rgb = hexToRgb(hex);
+        return 'rgb(' + rgb.map(function(c) { return Math.round(c + (255 - c) * amount); }).join(',') + ')';
+    }
+
+    function updatePreview() {
+        var primary = document.getElementById('color_primary').value || '#1B365D';
+        var secondary = document.getElementById('color_secondary').value || '#B5121B';
+        var accent = document.getElementById('color_accent').value || '#F4A100';
+        var bg = document.getElementById('color_bg').value || '#F0F4F8';
+
+        if (!/^#[0-9A-Fa-f]{6}$/.test(primary)) return;
+
+        var sidebar = document.getElementById('previewSidebar');
+        var main = document.getElementById('previewMain');
+        var heading = document.getElementById('previewHeading');
+        var text = document.getElementById('previewText');
+        var card = document.getElementById('previewCard');
+        var cardTitle = document.getElementById('previewCardTitle');
+        var cardText = document.getElementById('previewCardText');
+        var btnPrimary = document.getElementById('previewBtnPrimary');
+        var btnSecondary = document.getElementById('previewBtnSecondary');
+        var btnAccent = document.getElementById('previewBtnAccent');
+        var cta = document.getElementById('previewCta');
+        var navActive = document.getElementById('previewNavActive');
+
+        var accentRgb = hexToRgb(accent);
+
+        sidebar.style.background = primary;
+        main.style.background = bg;
+        heading.style.color = primary;
+        text.style.color = lighten(primary, 0.35);
+        card.style.borderColor = lighten(primary, 0.82);
+        cardTitle.style.color = primary;
+        cardText.style.color = lighten(primary, 0.35);
+        btnPrimary.style.background = primary;
+        btnSecondary.style.background = secondary;
+        btnAccent.style.background = accent;
+        cta.style.background = 'linear-gradient(135deg, ' + secondary + ', ' + primary + ')';
+        navActive.style.background = 'rgba(' + accentRgb.join(',') + ',0.2)';
+    }
+
+    updatePreview();
+})();
+</script>
+{% endblock %}

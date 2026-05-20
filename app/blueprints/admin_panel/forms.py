@@ -3,7 +3,7 @@ from wtforms import (
     StringField, TextAreaField, SelectField, IntegerField,
     BooleanField, PasswordField, DateTimeLocalField
 )
-from wtforms.validators import DataRequired, Email, Length, Optional, NumberRange
+from wtforms.validators import DataRequired, Email, Length, Optional, NumberRange, Regexp
 
 
 class StudentEditForm(FlaskForm):
@@ -116,4 +116,21 @@ class TestimonialForm(FlaskForm):
     content = TextAreaField('Testimonial', validators=[DataRequired()])
     rating = IntegerField('Rating (1-5)', default=5, validators=[NumberRange(min=1, max=5)])
     is_featured = BooleanField('Featured')
+    is_active = BooleanField('Active', default=True)
+
+
+class ThemeForm(FlaskForm):
+    name = StringField('Theme Name', validators=[DataRequired(), Length(max=100)])
+    color_primary = StringField('Primary', validators=[
+        DataRequired(), Regexp(r'^#[0-9A-Fa-f]{6}$', message='Must be a valid hex color (e.g. #1B365D)')
+    ])
+    color_secondary = StringField('Secondary', validators=[
+        DataRequired(), Regexp(r'^#[0-9A-Fa-f]{6}$', message='Must be a valid hex color')
+    ])
+    color_accent = StringField('Accent', validators=[
+        DataRequired(), Regexp(r'^#[0-9A-Fa-f]{6}$', message='Must be a valid hex color')
+    ])
+    color_bg = StringField('Background', validators=[
+        DataRequired(), Regexp(r'^#[0-9A-Fa-f]{6}$', message='Must be a valid hex color')
+    ])
     is_active = BooleanField('Active', default=True)
