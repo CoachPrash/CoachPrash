@@ -11,6 +11,44 @@
 
             <div class="changelog-entry">
                 <div class="changelog-date">
+                    <span class="changelog-date-day">21</span>
+                    <span class="changelog-date-month">May 2026</span>
+                </div>
+                <div class="changelog-body">
+                    <h2>Google Slides Integration</h2>
+                    <p class="changelog-summary">Generate branded lesson slide decks directly from Claude Code using the Google Workspace MCP server.</p>
+
+                    <div class="changelog-section">
+                        <h3>Setup</h3>
+                        <ul>
+                            <li>Integrated <code>workspace-mcp</code> (taylorwilsdon) as the MCP server for Google Workspace APIs</li>
+                            <li>Configured Desktop OAuth client for CLI-based authentication (separate from Flask login)</li>
+                            <li>Added <code>.mcp.json</code> to <code>.gitignore</code> to protect OAuth credentials</li>
+                        </ul>
+                    </div>
+
+                    <div class="changelog-section">
+                        <h3>Capabilities</h3>
+                        <ul>
+                            <li>Create Google Slides presentations with CoachPrash branding (navy/amber/off-white palette)</li>
+                            <li>Outline-first workflow: approve slide titles before full content generation</li>
+                            <li>Grade-appropriate slide counts and language (Elementary 8-12, Middle 12-16, High School 16-22)</li>
+                            <li>Every deck ends with Key Takeaways and Check Your Understanding slides</li>
+                        </ul>
+                    </div>
+
+                    <div class="changelog-section">
+                        <h3>Documentation</h3>
+                        <ul>
+                            <li>Added <code>docs/CoachPrash_GoogleSlides_ClaudeCode_Guide.md</code> — full setup guide and prompt templates</li>
+                            <li>Admin Manual Chapter 30: Google Slides Integration</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="changelog-entry">
+                <div class="changelog-date">
                     <span class="changelog-date-day">20</span>
                     <span class="changelog-date-month">May 2026</span>
                     <span class="changelog-phase-badge">Phase 6</span>

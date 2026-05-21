@@ -1,6 +1,6 @@
 # CoachPrash Admin Manual
 
-> **Version:** 6.0 (Theme/Palette System)
+> **Version:** 7.0 (Google Slides Integration)
 > **Last Updated:** May 2026
 > **Platform:** Flask + PostgreSQL, deployed on Railway
 
@@ -37,6 +37,7 @@
 27. [Monthly Reports](#27-monthly-reports)
 28. [Theme Management](#28-theme-management)
 29. [User Settings (Theme Picker)](#29-user-settings-theme-picker)
+30. [Google Slides Integration](#30-google-slides-integration)
 
 ---
 
@@ -1679,3 +1680,56 @@ Click the **Settings** gear icon in the sidebar (available for all authenticated
 3. Click **Save Theme** to apply
 
 The theme takes effect immediately on the next page load. Theme CSS variables are injected inline in the page `<head>`, overriding the default palette.
+
+---
+
+## 30. Google Slides Integration
+
+CoachPrash uses a Google Workspace MCP (Model Context Protocol) server to generate branded lesson slide decks directly from Claude Code.
+
+### Architecture
+
+- **MCP Server:** `workspace-mcp` (by taylorwilsdon) — exposes Google Slides, Drive, Docs, Sheets, and other Workspace APIs as tools for Claude Code
+- **Auth:** OAuth 2.0 with a Desktop app client — credentials stored in `.mcp.json` (gitignored)
+- **CLI Backup:** `gws` (Google Workspace CLI) is also installed for direct API access
+
+### Configuration Files
+
+| File | Purpose | Git tracked? |
+|---|---|---|
+| `.mcp.json` | MCP server config with OAuth credentials | No (gitignored) |
+| `docs/CoachPrash_GoogleSlides_ClaudeCode_Guide.md` | Full setup guide and prompt templates | Yes |
+
+### Creating a Slide Deck
+
+1. Open Claude Code in the CoachPrash project
+2. Prompt Claude to create a deck, specifying topic, grade level, and any special instructions
+3. Claude proposes an outline for approval, then generates the full deck via the Google Slides API
+4. The finished presentation appears in Google Drive with a shareable link
+
+### Deck Standards (from CLAUDE.md)
+
+- **Title slide:** Navy background (#1B365D), white title, amber subtitle (#F4A100)
+- **Content slides:** Off-white background (#F0F4F8), navy headings, amber accent bar at top
+- **Max 4 bullet points per slide** — one big idea per slide
+- **Elementary (K-5):** 8–12 slides, large text, simple language
+- **Middle (6-8):** 12–16 slides, mix of explanation and practice
+- **High School (9-12):** 16–22 slides, more depth and nuance
+- **Every deck ends** with a "Key Takeaways" slide and a "Check Your Understanding" slide (mixed question types)
+
+### Google Cloud Setup
+
+The Slides integration uses the same Google Cloud project as "Login with Google" OAuth. Required APIs:
+- Google Slides API
+- Google Drive API
+
+A separate **Desktop app** OAuth client is used (distinct from the Web app client used for Flask login). The credentials are stored as `GOOGLE_OAUTH_CLIENT_ID` and `GOOGLE_OAUTH_CLIENT_SECRET` in `.mcp.json`.
+
+### Troubleshooting
+
+| Issue | Fix |
+|---|---|
+| MCP tools not appearing | Reload VSCode window; check `.mcp.json` syntax |
+| Auth URL has `${...}` literals | Env vars not resolving — hardcode values in `.mcp.json` (it's gitignored) |
+| "Google hasn't verified this app" | Expected for testing mode — click Advanced → Go to CoachPrash |
+| 403 API error | Enable the missing API in Google Cloud Console |

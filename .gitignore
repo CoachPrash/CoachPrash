@@ -13,3 +13,4 @@ build/
 htmlcov/
 .coverage
 .claude/
+.mcp.json
