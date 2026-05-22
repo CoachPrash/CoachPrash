@@ -260,10 +260,13 @@ When I ask you to generate a deck, follow these steps:
 ---
 
 ## Folder Structure in Google Drive
-Save all decks to the folder: `CoachPrash / Decks / [Subject] / [Grade Band]`
-Create subfolders if they don't exist.
+Save all decks to: `CoachPrash / [Subject] / [Topic]`
+The folder tree mirrors the website breadcrumb: Subjects > Subject > Topic.
 
-Example path: `CoachPrash / Decks / Science / Middle School`
+Example path: `CoachPrash / Mathematics / Arithmetic`
+Example path: `CoachPrash / Physics / AP Physics 1 - Mechanics`
+
+All resource types (Slides, Docs, PDFs) live together in the Topic folder.
 ```
 
 > **Customize everything in the Brand Identity section** — especially the hex codes and tagline.

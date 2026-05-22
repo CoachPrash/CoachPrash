@@ -1717,6 +1717,25 @@ CoachPrash uses a Google Workspace MCP (Model Context Protocol) server to genera
 - **High School (9-12):** 16–22 slides, more depth and nuance
 - **Every deck ends** with a "Key Takeaways" slide and a "Check Your Understanding" slide (mixed question types)
 
+### Google Drive Folder Structure
+
+All slide decks and resources are organized on Google Drive to mirror the website's breadcrumb navigation:
+
+```
+CoachPrash / [Subject] / [Topic]
+```
+
+- **Root folder:** `CoachPrash`
+- **Subject folders (5):** Mathematics, Physics, Chemistry, Computer Science, Test Prep
+- **Topic folders (26):** One per topic matching the website's topic list (e.g., Arithmetic, AP Calculus AB, Honors Physics)
+- **File naming:** `{Title} | CoachPrash` (e.g., `Introduction to Fractions | CoachPrash`)
+- **No subfolders by resource type** — Slides, Docs, and PDFs all live in the same topic folder
+- **No concept-level subfolders** — topics contain at most ~16 files; flat structure keeps browsing simple
+
+Example paths:
+- `CoachPrash / Mathematics / Arithmetic / Introduction to Fractions | CoachPrash`
+- `CoachPrash / Physics / AP Physics 1 - Mechanics / Unit 1 - Kinematics | CoachPrash`
+
 ### Google Cloud Setup
 
 The Slides integration uses the same Google Cloud project as "Login with Google" OAuth. Required APIs:
