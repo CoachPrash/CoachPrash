@@ -77,6 +77,41 @@
 
             <div class="changelog-entry">
                 <div class="changelog-date">
+                    <span class="changelog-date-day">24</span>
+                    <span class="changelog-date-month">May 2026</span>
+                </div>
+                <div class="changelog-body">
+                    <h2>CSS Audit &amp; Cleanup</h2>
+                    <p class="changelog-summary">Full audit of style.css and all templates — moved inline styles to CSS classes, fixed bugs, and improved practice UX.</p>
+
+                    <div class="changelog-section">
+                        <h3>CSS Cleanup</h3>
+                        <ul>
+                            <li>Moved 30+ static inline styles to reusable CSS classes in theme preview templates</li>
+                            <li>Scoped duplicate <code>.message-meta</code> / <code>.message-body</code> selectors to prevent cascade conflicts</li>
+                            <li>Removed unused <code>.diagram-placeholder</code> CSS rule</li>
+                        </ul>
+                    </div>
+
+                    <div class="changelog-section">
+                        <h3>Bug Fixes</h3>
+                        <ul>
+                            <li>Fixed unstyled progress bars in Coach Student Detail (wrong CSS class names)</li>
+                            <li>Disabled aggressive static asset caching in development mode (was causing stale JS/CSS)</li>
+                        </ul>
+                    </div>
+
+                    <div class="changelog-section">
+                        <h3>Practice UX</h3>
+                        <ul>
+                            <li>Solution steps now auto-expand when "Show Solution" is clicked (no longer requires clicking each step)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="changelog-entry">
+                <div class="changelog-date">
                     <span class="changelog-date-day">22</span>
                     <span class="changelog-date-month">May 2026</span>
                 </div>

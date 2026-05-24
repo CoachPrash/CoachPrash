@@ -419,7 +419,7 @@ Each problem can have a solution with numbered steps:
 ]
 ```
 
-Solutions are displayed as an accordion — students click to reveal each step one at a time. Solutions are **premium-only** by default.
+Solutions are displayed as an accordion — all steps are expanded by default when "Show Solution" is clicked, so students see the full walkthrough immediately. Students can collapse/expand individual steps if they want to focus. Solutions are **premium-only** by default.
 
 Each step should explain **why** that step works, not just show the mechanics. Think "coaching voice."
 
