@@ -45,8 +45,8 @@
                         <span>{{ sp.subject.name }}</span>
                         <span>{{ sp.completed }}/{{ sp.total }} ({{ sp.pct }}%)</span>
                     </div>
-                    <div class="progress-bar-outer">
-                        <div class="progress-bar-inner" style="width: {{ sp.pct }}%"></div>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar-fill" style="width: {{ sp.pct }}%"></div>
                     </div>
                 </div>
                 {% endfor %}

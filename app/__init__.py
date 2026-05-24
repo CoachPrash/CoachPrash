@@ -240,9 +240,12 @@ def create_app(config_name=None):
             response.headers['Strict-Transport-Security'] = (
                 'max-age=31536000; includeSubDomains'
             )
-        # Cache-Control for static assets
+        # Cache-Control for static assets (production only)
         if request.path.startswith('/static/'):
-            response.headers['Cache-Control'] = 'public, max-age=31536000'
+            if config_name == 'production':
+                response.headers['Cache-Control'] = 'public, max-age=31536000'
+            else:
+                response.headers['Cache-Control'] = 'no-cache'
         return response
 
     _register_cli(flask_app)

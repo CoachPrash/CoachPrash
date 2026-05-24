@@ -5,7 +5,7 @@
 <section class="section">
     <div class="container">
         <h1>Choose Your Theme</h1>
-        <p style="color:var(--text-secondary);margin-bottom:1.5rem">Pick a visual style for CoachPrash. Your choice is saved to your account.</p>
+        <p class="page-subtitle">Pick a visual style for CoachPrash. Your choice is saved to your account.</p>
 
         <form method="POST" id="themePickerForm">
             <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
@@ -18,20 +18,20 @@
                      data-theme-id="{{ t.id }}" onclick="selectTheme(this, '{{ t.id }}')">
                     <div class="theme-card-preview">
                         <div class="theme-mini-sidebar" style="background:{{ t.color_primary }}">
-                            <div class="theme-mini-logo" style="color:rgba(255,255,255,0.9)">CP</div>
+                            <div class="theme-mini-logo">CP</div>
                             <div class="theme-mini-nav">
-                                <div class="theme-mini-nav-item" style="background:rgba(255,255,255,0.15)"></div>
-                                <div class="theme-mini-nav-item" style="background:rgba(255,255,255,0.1)"></div>
-                                <div class="theme-mini-nav-item" style="background:rgba(255,255,255,0.1)"></div>
+                                <div class="theme-mini-nav-item"></div>
+                                <div class="theme-mini-nav-item"></div>
+                                <div class="theme-mini-nav-item"></div>
                             </div>
                         </div>
                         <div class="theme-mini-content" style="background:{{ t.color_bg }}">
                             <div class="theme-mini-header" style="color:{{ t.color_primary }}">Heading</div>
-                            <div class="theme-mini-text" style="color:{{ t.color_primary }};opacity:0.6">Sample text</div>
+                            <div class="theme-mini-text theme-mini-text-muted" style="color:{{ t.color_primary }}">Sample text</div>
                             <div class="theme-mini-buttons">
-                                <span class="theme-mini-btn" style="background:{{ t.color_primary }};color:#fff">Primary</span>
-                                <span class="theme-mini-btn" style="background:{{ t.color_secondary }};color:#fff">Secondary</span>
-                                <span class="theme-mini-btn" style="background:{{ t.color_accent }};color:#fff">Accent</span>
+                                <span class="theme-mini-btn" style="background:{{ t.color_primary }}">Primary</span>
+                                <span class="theme-mini-btn" style="background:{{ t.color_secondary }}">Secondary</span>
+                                <span class="theme-mini-btn" style="background:{{ t.color_accent }}">Accent</span>
                             </div>
                         </div>
                     </div>
@@ -44,7 +44,7 @@
                 {% endfor %}
             </div>
 
-            <div class="form-actions" style="margin-top:1.5rem">
+            <div class="form-actions mt-1-5">
                 <button type="submit" class="btn btn-primary">Save Theme</button>
             </div>
         </form>

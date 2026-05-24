@@ -1167,9 +1167,9 @@ body.sidebar-collapsed .sidebar-footer {
     margin: 1.5rem 0;
 }
 
-.message-meta { margin-bottom: 1rem; }
-.message-meta p { margin-bottom: 0.25rem; font-size: 0.9rem; }
-.message-body { padding-top: 1rem; border-top: 1px solid var(--border); line-height: 1.7; }
+.message-detail .message-meta { margin-bottom: 1rem; }
+.message-detail .message-meta p { margin-bottom: 0.25rem; font-size: 0.9rem; }
+.message-detail .message-body { padding-top: 1rem; border-top: 1px solid var(--border); line-height: 1.7; }
 
 /* --- Preview --- */
 .preview-btn { margin-top: 0.5rem; }
@@ -1514,16 +1514,6 @@ body.sidebar-collapsed .sidebar-footer {
     border-radius: 0 4px 4px 0;
     font-style: italic;
 }
-.diagram-placeholder {
-    border: 2px dashed #D1D5DB;
-    border-radius: 8px;
-    padding: 2rem;
-    text-align: center;
-    color: #6B7280;
-    margin: 1rem 0;
-    background: #F9FAFB;
-}
-
 .concept-actions {
     margin: 2.5rem 0;
     text-align: center;
@@ -3188,3 +3178,15 @@ body.sidebar-collapsed .sidebar-footer {
     font-weight: 700;
 }
 .theme-picker-card.selected .theme-picker-check { display: inline; }
+
+/* --- Theme Preview Static Styles --- */
+.theme-mini-logo { color: rgba(255,255,255,0.9); }
+.theme-mini-nav-item:first-child { background: rgba(255,255,255,0.15); }
+.theme-mini-nav-item:nth-child(n+2) { background: rgba(255,255,255,0.1); }
+.theme-mini-btn { color: #fff; }
+.theme-mini-text-muted { opacity: 0.6; }
+
+/* Theme Form — CTA preview */
+.preview-cta-title { color: #fff; font-weight: 600; }
+.preview-cta-btn { color: #fff; border: 1px solid rgba(255,255,255,0.5); }
+

@@ -371,7 +371,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 data.steps.forEach(function (step, i) {
                     var stepText = typeof step === 'string' ? step : (step.text_html || step.text || '');
                     var stepNum = typeof step === 'object' && step.step_number ? step.step_number : (i + 1);
-                    html += '<div class="solution-step">';
+                    html += '<div class="solution-step open">';
                     html += '<button class="solution-step-toggle">';
                     html += 'Step ' + stepNum;
                     html += '</button>';
