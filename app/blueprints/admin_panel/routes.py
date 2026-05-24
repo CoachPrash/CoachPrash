@@ -23,10 +23,13 @@ from app.models.reports import StudentReport
 from app.models.theme import Theme
 from app.utils.progress import compute_student_stats
 from app.utils.colors import derive_palette
-from app.extensions import db
+from app.extensions import db, limiter
 from app.utils.sanitize import sanitize_html
 
 logger = logging.getLogger(__name__)
+
+# Rate limit all admin POST actions (content changes, uploads, etc.)
+limiter.limit("30/minute", methods=["POST"])(admin_bp)
 
 
 def admin_required(f):
@@ -651,6 +654,14 @@ def delete_resource(resource_id):
 def upload_image():
     from app.utils.storage import upload_file, list_files
 
+    from werkzeug.utils import secure_filename
+
+    ALLOWED_EXTENSIONS = {'.jpg', '.jpeg', '.png', '.gif', '.webp', '.pdf'}
+    ALLOWED_MIMETYPES = {
+        'image/jpeg', 'image/png', 'image/gif', 'image/webp',
+        'application/pdf',
+    }
+
     uploaded_key = None
     error = None
 
@@ -659,18 +670,27 @@ def upload_image():
         if not file or not file.filename:
             error = 'No file selected.'
         else:
-            subject_slug = request.form.get('subject_slug', 'general')
-            topic_slug = request.form.get('topic_slug', 'general')
-            filename = file.filename.replace(' ', '-')
-            bucket_key = f'images/{subject_slug}/{topic_slug}/{filename}'
-            try:
-                upload_file(file, bucket_key, content_type=file.content_type)
-                uploaded_key = bucket_key
-                logger.info('Image uploaded: %s', bucket_key)
-                flash(f'Image uploaded. Bucket key: {bucket_key}', 'success')
-            except Exception as e:
-                logger.exception('Image upload failed for %s', bucket_key)
-                error = f'Upload failed: {e}'
+            filename = secure_filename(file.filename)
+            if not filename:
+                error = 'Invalid filename.'
+            else:
+                ext = ('.' + filename.rsplit('.', 1)[-1].lower()) if '.' in filename else ''
+                if ext not in ALLOWED_EXTENSIONS:
+                    error = f'File type not allowed. Accepted: {", ".join(sorted(ALLOWED_EXTENSIONS))}'
+                elif file.content_type not in ALLOWED_MIMETYPES:
+                    error = f'MIME type not allowed: {file.content_type}'
+                else:
+                    subject_slug = request.form.get('subject_slug', 'general')
+                    topic_slug = request.form.get('topic_slug', 'general')
+                    bucket_key = f'images/{subject_slug}/{topic_slug}/{filename}'
+                    try:
+                        upload_file(file, bucket_key, content_type=file.content_type)
+                        uploaded_key = bucket_key
+                        logger.info('Image uploaded: %s by %s', bucket_key, current_user.username)
+                        flash(f'Image uploaded. Bucket key: {bucket_key}', 'success')
+                    except Exception as e:
+                        logger.exception('Image upload failed for %s', bucket_key)
+                        error = f'Upload failed: {e}'
 
     # List existing images
     images = []

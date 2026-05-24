@@ -1,3 +1,5 @@
+import re
+
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, BooleanField
 from wtforms.validators import DataRequired, Email, Length, EqualTo, Optional, ValidationError
@@ -10,10 +12,22 @@ class LoginForm(FlaskForm):
     remember_me = BooleanField('Remember Me')
 
 
+def _validate_password_complexity(form, field):
+    pw = field.data
+    if not re.search(r'[A-Z]', pw):
+        raise ValidationError('Password must contain at least one uppercase letter.')
+    if not re.search(r'[a-z]', pw):
+        raise ValidationError('Password must contain at least one lowercase letter.')
+    if not re.search(r'\d', pw):
+        raise ValidationError('Password must contain at least one number.')
+
+
 class RegisterForm(FlaskForm):
     username = StringField('Username', validators=[DataRequired(), Length(min=3, max=80)])
     email = StringField('Email', validators=[DataRequired(), Email(), Length(max=255)])
-    password = PasswordField('Password', validators=[DataRequired(), Length(min=8)])
+    password = PasswordField('Password', validators=[
+        DataRequired(), Length(min=8), _validate_password_complexity,
+    ])
     confirm_password = PasswordField(
         'Confirm Password',
         validators=[DataRequired(), EqualTo('password', message='Passwords must match.')],

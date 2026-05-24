@@ -1,5 +1,7 @@
 import logging
 
+from urllib.parse import urlparse
+
 from flask import render_template, flash, redirect, url_for, request, session
 from flask_login import login_user, logout_user, login_required, current_user
 from app.blueprints.auth import auth_bp
@@ -21,16 +23,29 @@ def login():
     form = LoginForm()
     if form.validate_on_submit():
         user = User.query.filter(User.email.ilike(form.email.data)).first()
+        if user and user.is_locked:
+            logger.warning('Login blocked — account locked: %s', user.email)
+            flash('Account temporarily locked due to too many failed attempts. Try again later.', 'danger')
+            return render_template('auth/login.html', form=form)
         if user and user.check_password(form.password.data):
             if not user.is_active:
                 logger.warning('Login blocked — account deactivated: %s', user.email)
                 flash('Your account has been deactivated. Please contact support.', 'danger')
                 return render_template('auth/login.html', form=form)
+            user.reset_failed_logins()
+            db.session.commit()
             login_user(user, remember=form.remember_me.data)
             next_page = request.args.get('next')
+            if next_page:
+                parsed = urlparse(next_page)
+                if parsed.netloc or parsed.scheme:
+                    next_page = None
             logger.info('User logged in: %s (id=%s)', user.username, user.id)
             flash(f'Welcome back, {user.username}!', 'success')
             return redirect(next_page or url_for('main.home'))
+        if user:
+            user.record_failed_login()
+            db.session.commit()
         logger.warning('Login failed — invalid credentials for: %s', form.email.data)
         flash('Invalid email or password.', 'danger')
 
@@ -118,6 +133,11 @@ def google_callback():
     if not userinfo:
         logger.warning('Google OAuth callback failed — no userinfo returned')
         flash('Could not retrieve your Google account info.', 'danger')
+        return redirect(url_for('auth.login'))
+
+    if not userinfo.get('email_verified', False):
+        logger.warning('Google OAuth rejected — email not verified: %s', userinfo.get('email'))
+        flash('Your Google email is not verified. Please verify it first.', 'danger')
         return redirect(url_for('auth.login'))
 
     google_id = userinfo['sub']

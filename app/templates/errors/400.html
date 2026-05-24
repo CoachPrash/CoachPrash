@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Bad Request | CoachPrash{% endblock %}
+
+{% block content %}
+<div class="container error-page">
+    <h1 class="error-code error-code--primary">400</h1>
+    <h2 class="error-subtitle">Bad Request</h2>
+    <p class="error-description">
+        The request could not be understood. Please check your input and try again.
+    </p>
+    <div class="error-actions">
+        <a href="{{ url_for('main.home') }}" class="btn btn-primary">Go Home</a>
+    </div>
+</div>
+{% endblock %}

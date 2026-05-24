@@ -1,8 +1,9 @@
 import logging
 import os
+import uuid
 from logging.config import dictConfig
 
-from flask import Flask, render_template, request, redirect
+from flask import Flask, g, render_template, request, redirect
 from werkzeug.middleware.proxy_fix import ProxyFix
 from dotenv import load_dotenv
 
@@ -15,11 +16,14 @@ def create_app(config_name=None):
 
     # Configure logging before creating the app (Flask best practice)
     log_level = 'DEBUG' if config_name == 'development' else 'INFO'
+    log_format = '[%(asctime)s] %(levelname)s in %(module)s: %(message)s'
+    if config_name == 'production':
+        log_format = '%(asctime)s %(levelname)s %(module)s %(message)s'
     dictConfig({
         'version': 1,
         'formatters': {
             'default': {
-                'format': '[%(asctime)s] %(levelname)s in %(module)s: %(message)s',
+                'format': log_format,
             },
         },
         'handlers': {
@@ -42,6 +46,14 @@ def create_app(config_name=None):
     from app.config import config as app_config
     config_class = app_config.get(config_name, app_config['default'])
     flask_app.config.from_object(config_class)
+
+    # --- Security: require real secrets in production ---
+    if config_name == 'production':
+        secret = flask_app.config.get('SECRET_KEY', '')
+        if not secret or secret == 'dev-only-not-for-production':
+            raise RuntimeError(
+                'SECRET_KEY environment variable is required in production'
+            )
 
     if hasattr(config_class, 'init_app'):
         config_class.init_app(flask_app)
@@ -174,16 +186,31 @@ def create_app(config_name=None):
             return None
         return redirect('/stealth')
 
+    # --- Request ID for log correlation ---
+    @flask_app.before_request
+    def set_request_id():
+        g.request_id = uuid.uuid4().hex[:12]
+
     # --- Error handlers ---
-    @flask_app.errorhandler(404)
-    def page_not_found(e):
-        flask_app.logger.info('404 Not Found: %s', request.path)
-        return render_template('errors/404.html'), 404
+    @flask_app.errorhandler(400)
+    def bad_request(e):
+        flask_app.logger.info('400 Bad Request: %s', request.path)
+        return render_template('errors/400.html'), 400
 
     @flask_app.errorhandler(403)
     def forbidden(e):
         flask_app.logger.warning('403 Forbidden: %s', request.path)
         return render_template('errors/403.html'), 403
+
+    @flask_app.errorhandler(404)
+    def page_not_found(e):
+        flask_app.logger.info('404 Not Found: %s', request.path)
+        return render_template('errors/404.html'), 404
+
+    @flask_app.errorhandler(429)
+    def too_many_requests(e):
+        flask_app.logger.warning('429 Too Many Requests: %s from %s', request.path, request.remote_addr)
+        return render_template('errors/429.html'), 429
 
     @flask_app.errorhandler(500)
     def internal_error(e):
@@ -195,8 +222,7 @@ def create_app(config_name=None):
     @flask_app.after_request
     def set_security_headers(response):
         response.headers['X-Content-Type-Options'] = 'nosniff'
-        response.headers['X-Frame-Options'] = 'SAMEORIGIN'
-        response.headers['X-XSS-Protection'] = '1; mode=block'
+        response.headers['X-Frame-Options'] = 'DENY'
         response.headers['Referrer-Policy'] = 'strict-origin-when-cross-origin'
         response.headers['Content-Security-Policy'] = (
             "default-src 'self'; "
@@ -207,6 +233,13 @@ def create_app(config_name=None):
             "connect-src 'self'; "
             "frame-src 'self' https://docs.google.com;"
         )
+        response.headers['Permissions-Policy'] = (
+            'camera=(), microphone=(), geolocation=(), payment=(self)'
+        )
+        if config_name == 'production':
+            response.headers['Strict-Transport-Security'] = (
+                'max-age=31536000; includeSubDomains'
+            )
         # Cache-Control for static assets
         if request.path.startswith('/static/'):
             response.headers['Cache-Control'] = 'public, max-age=31536000'

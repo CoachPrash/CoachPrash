@@ -1,6 +1,6 @@
 # CoachPrash Admin Manual
 
-> **Version:** 7.0 (Google Slides Integration)
+> **Version:** 8.0 (Security Audit & Hardening)
 > **Last Updated:** May 2026
 > **Platform:** Flask + PostgreSQL, deployed on Railway
 

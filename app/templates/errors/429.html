@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Too Many Requests | CoachPrash{% endblock %}
+
+{% block content %}
+<div class="container error-page">
+    <h1 class="error-code error-code--secondary">429</h1>
+    <h2 class="error-subtitle">Too Many Requests</h2>
+    <p class="error-description">
+        You've made too many requests in a short period. Please wait a moment and try again.
+    </p>
+    <div class="error-actions">
+        <a href="{{ url_for('main.home') }}" class="btn btn-primary">Go Home</a>
+    </div>
+</div>
+{% endblock %}

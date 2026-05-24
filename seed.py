@@ -28,7 +28,9 @@ def _seed_data():
 
     # --- Admin User ---
     admin_email = os.environ.get('ADMIN_EMAIL', 'admin@coachprash.com')
-    admin_password = os.environ.get('ADMIN_PASSWORD', 'admin123')
+    admin_password = os.environ.get('ADMIN_PASSWORD')
+    if not admin_password:
+        raise RuntimeError('ADMIN_PASSWORD environment variable is required for seeding')
 
     admin = User.query.filter_by(email=admin_email).first()
     if not admin:

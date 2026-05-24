@@ -11,6 +11,72 @@
 
             <div class="changelog-entry">
                 <div class="changelog-date">
+                    <span class="changelog-date-day">24</span>
+                    <span class="changelog-date-month">May 2026</span>
+                </div>
+                <div class="changelog-body">
+                    <h2>Security Audit &amp; Hardening</h2>
+                    <p class="changelog-summary">Comprehensive security audit covering OWASP Top 10 2025, with 15 tasks across secrets management, authentication, headers, rate limiting, file uploads, and more.</p>
+
+                    <div class="changelog-section">
+                        <h3>Critical Fixes</h3>
+                        <ul>
+                            <li>Fixed open redirect vulnerability in login flow (<code>next</code> parameter now validated)</li>
+                            <li>Removed hardcoded fallback secrets; production now requires <code>SECRET_KEY</code> env var</li>
+                            <li>Seed/drop endpoints changed from GET (password in URL) to POST (password in body), rate-limited, drop-all disabled in production</li>
+                        </ul>
+                    </div>
+
+                    <div class="changelog-section">
+                        <h3>Authentication</h3>
+                        <ul>
+                            <li>Account lockout after 5 failed login attempts (15-minute lockout)</li>
+                            <li>Password complexity requirements: min 8 chars, uppercase, lowercase, number</li>
+                            <li>Google OAuth now validates <code>email_verified</code> claim before account merge</li>
+                        </ul>
+                    </div>
+
+                    <div class="changelog-section">
+                        <h3>Security Headers &amp; Session</h3>
+                        <ul>
+                            <li>Added HSTS header for production (Strict-Transport-Security)</li>
+                            <li>Added Permissions-Policy header (camera, microphone, geolocation disabled)</li>
+                            <li>Session cookies: HttpOnly, SameSite=Lax, Secure (production)</li>
+                            <li>Removed deprecated X-XSS-Protection header</li>
+                        </ul>
+                    </div>
+
+                    <div class="changelog-section">
+                        <h3>Rate Limiting &amp; Uploads</h3>
+                        <ul>
+                            <li>Global rate limit: 200 requests/minute per IP</li>
+                            <li>Admin POST actions limited to 30/minute</li>
+                            <li>File uploads: secure_filename, extension whitelist, MIME validation, 10MB size limit</li>
+                        </ul>
+                    </div>
+
+                    <div class="changelog-section">
+                        <h3>GDPR &amp; PII Readiness</h3>
+                        <ul>
+                            <li>Account self-deletion endpoint (<code>/settings/delete-account</code>)</li>
+                            <li>Data export endpoint (<code>/settings/export-data</code>) — JSON download</li>
+                            <li>Admin audit log table for tracking administrative actions</li>
+                        </ul>
+                    </div>
+
+                    <div class="changelog-section">
+                        <h3>Dependencies</h3>
+                        <ul>
+                            <li>Upgraded 6 packages with known CVEs: Authlib 1.3&rarr;1.7, Flask 3.1.1&rarr;3.1.3, Werkzeug 3.1.3&rarr;3.1.8, requests, python-dotenv, idna</li>
+                            <li>Pinned exact versions in requirements.txt (no more wildcards)</li>
+                            <li>Added 400 (Bad Request) and 429 (Too Many Requests) error pages</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="changelog-entry">
+                <div class="changelog-date">
                     <span class="changelog-date-day">22</span>
                     <span class="changelog-date-month">May 2026</span>
                 </div>
