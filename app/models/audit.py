@@ -6,7 +6,7 @@ class AuditLog(db.Model):
     __tablename__ = 'audit_logs'
 
     id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.String(36), db.ForeignKey('users.id'), nullable=True)
+    user_id = db.Column(db.String(36), db.ForeignKey('users.id'), nullable=True, index=True)
     action = db.Column(db.String(50), nullable=False)  # e.g. 'create', 'update', 'delete'
     entity_type = db.Column(db.String(50), nullable=False)  # e.g. 'Subject', 'User'
     entity_id = db.Column(db.String(36), nullable=True)

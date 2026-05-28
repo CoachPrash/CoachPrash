@@ -10,11 +10,11 @@ class StudentReport(db.Model):
     student_id = db.Column(db.String(36), db.ForeignKey('users.id'), nullable=False, index=True)
     report_month = db.Column(db.Integer, nullable=False)
     report_year = db.Column(db.Integer, nullable=False)
-    generated_by = db.Column(db.String(36), db.ForeignKey('users.id'), nullable=False)
+    generated_by = db.Column(db.String(36), db.ForeignKey('users.id'), nullable=False, index=True)
     summary_json = db.Column(db.JSON, nullable=False, default=dict)
     created_at = db.Column(db.DateTime, default=lambda: datetime.now(timezone.utc))
 
-    student = db.relationship('User', foreign_keys=[student_id], backref='reports')
+    student = db.relationship('User', foreign_keys=[student_id], backref=db.backref('reports', cascade='all, delete-orphan'))
     generator = db.relationship('User', foreign_keys=[generated_by])
 
     __table_args__ = (

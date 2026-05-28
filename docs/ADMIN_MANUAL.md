@@ -1,6 +1,6 @@
 # CoachPrash Admin Manual
 
-> **Version:** 8.0 (Security Audit & Hardening)
+> **Version:** 11.0 (Model Integrity Audit + Problem Editor)
 > **Last Updated:** May 2026
 > **Platform:** Flask + PostgreSQL, deployed on Railway
 
@@ -38,6 +38,8 @@
 28. [Theme Management](#28-theme-management)
 29. [User Settings (Theme Picker)](#29-user-settings-theme-picker)
 30. [Google Slides Integration](#30-google-slides-integration)
+31. [Inline Problem Editor](#31-inline-problem-editor)
+32. [Database Integrity & Cascades](#32-database-integrity--cascades)
 
 ---
 
@@ -67,7 +69,7 @@ The admin panel is accessible via the sidebar gear icon. Admin pages include:
 | Page | URL | Purpose |
 |------|-----|---------|
 | Dashboard | `/admin/` | Overview stats and analytics |
-| Content | `/admin/content` | Manage subjects, topics, concepts |
+| Content | `/admin/content` | Manage subjects, courses, topics, concepts |
 | Students | `/admin/students` | View and manage student accounts |
 | Parents | `/admin/parents` | View parent accounts and manage links |
 | Access Codes | `/admin/codes` | Generate and manage access codes |
@@ -106,52 +108,165 @@ The dashboard (`/admin/`) shows a real-time snapshot of your site:
 
 ## 3. Content Architecture
 
-CoachPrash uses a four-level content hierarchy:
+CoachPrash uses a **4-level content hierarchy** with reusable concepts. Concepts are independent building blocks that can be linked to multiple topics across different courses via a many-to-many relationship.
+
+### Content Hierarchy
 
 ```
 Subject (e.g., Mathematics)
-  └── Topic (e.g., Algebra 1)
-       └── Concept (e.g., Solving Linear Equations)
-            └── Problem Set (e.g., Practice: One-Step Equations)
-                 └── Problems (MCQ, Fill-in-Blank, or FRQ)
-                      ├── Choices (for MCQ)
-                      ├── Hints (progressive, 0-N per problem)
-                      └── Solution (step-by-step, one per problem)
+  └── Course (e.g., AP Calculus AB)
+       └── Topic (e.g., Limits & Continuity)
+            └── TopicConcept (link with display_order)
+                 └── Concept (e.g., The Squeeze Theorem)  ← standalone, reusable
+                      ├── Resource (slides, videos, PDFs — travel with the concept)
+                      └── Problem Set (e.g., Practice: Squeeze Theorem)
+                           └── Problems (MCQ, FTB, or FRQ)
+                                ├── Choices (for MCQ)
+                                ├── Hints (progressive, 0-N per problem)
+                                └── Solution (step-by-step, one per problem)
 ```
+
+**Key design:** Concepts are NOT owned by a topic. They are standalone entities linked to topics via `TopicConcept`. The same concept (e.g., "Solving Linear Equations") can appear in SAT Math, Algebra 1, and Grade 6 Math — created once, linked to all three.
 
 ### What Each Level Does
 
-| Level | Purpose | Student Sees |
-|-------|---------|-------------|
-| **Subject** | Top-level category (Math, Physics, etc.) | Subject catalog at `/subjects/` |
-| **Topic** | A course within a subject (Algebra 1, AP Physics C) | Topic list at `/subjects/<slug>` |
-| **Concept** | A single lesson/explainer (~5 min read) | Concept page with content + "Practice" button |
-| **Problem Set** | A quiz attached to a concept | Quiz interface with timer, progress bar |
-| **Problem** | An individual question (MCQ, fill-in, or FRQ) | Question with choices/input, hints, solution |
+| Level | Purpose | Example | Student Sees |
+|-------|---------|---------|-------------|
+| **Subject** | Top-level category | Mathematics, Physics, Chemistry | Subject catalog at `/subjects/` |
+| **Course** | A specific course/curriculum within a subject | AP Calculus AB, Honors Physics, SAT Math | Course list at `/subjects/<subject>` and course detail page at `/subjects/<subject>/<course>` |
+| **Topic** | A unit/chapter within a course | Limits & Continuity, Newton's Laws | Topic page at `/subjects/<subject>/<course>/<topic>` |
+| **Concept** | A single lesson/explainer (~5 min read) | The Squeeze Theorem, Chain Rule | Concept page with content, resources, "Practice" button |
+| **Problem Set** | A quiz attached to a concept | Practice: Squeeze Theorem | Quiz interface with timer, progress bar |
+| **Problem** | An individual question (MCQ, FTB, or FRQ) | — | Question with choices/input, hints, solution |
+| **Resource** | External learning material (slides, videos, PDFs) | Lesson slides, worked examples video | Embedded or linked on concept/topic/course/subject pages |
+
+### Reusable Concepts
+
+Concepts are independent entities with globally unique slugs. When you create a concept, it exists on its own. You then **link** it to one or more topics via `TopicConcept`. This means:
+
+- **Create once, use everywhere** — "Linear Equations" appears in 5 courses with zero duplication
+- **Single source of truth** — update a concept's content in one place, all courses get the update
+- **Resources travel with concepts** — add a video to a concept, it appears everywhere that concept is used
+- **Progress is shared** — if a student masters a concept via SAT Prep, it shows as mastered in Algebra 1 too
+
+### Four Levels of Resources
+
+Resources can be attached at four levels:
+
+| Level | Scope | Example | Where Shown |
+|-------|-------|---------|-------------|
+| **Subject-level** | Entire subject | Subject overview video | Subject course list page |
+| **Course-level** | One course | Course syllabus, overview video | Course detail page |
+| **Topic-level** | One topic | Topic overview video, unit handout | Topic page |
+| **Concept-level** | One concept (portable) | Lesson slides, worked examples video | Concept page (everywhere the concept is linked) |
+
+### Student Navigation Flow
+
+```
+Subjects Catalog → Course List       → Course Detail          → Topic Page                     → Concept Page                            → Practice
+/subjects/         /subjects/<subj>     /subjects/<subj>/<crs>   /subjects/<subj>/<crs>/<topic>   /subjects/<subj>/<crs>/<topic>/<concept>   .../practice/
+```
+
+| Page | Content | Resources Shown |
+|------|---------|----------------|
+| **Subject Page** | Course cards with type badges, topic/concept counts, progress bars | Subject-level resources |
+| **Course Detail** | Hero, intro, topic cards, skills, prerequisites, exam info, CTA | Course-level resources |
+| **Topic Page** | Topic description, clickable concept list with progress, prev/next topic nav | Topic-level resources |
+| **Concept Page** | Lesson content, prev/next concept nav, "Practice" button | Concept-level resources |
+| **Practice Page** | Interactive quiz: problems, choices, hints, solutions, scoring | None |
+
+### Course Detail Page Sections
+
+The course detail page (`/subjects/<subject>/<course>`) renders dynamically based on the `course_info` JSON field on the Course model:
+
+| Section | Data Source | Conditional? |
+|---------|-----------|-------------|
+| Hero Header | Course name, tagline, subject icon, course_type | Always shown |
+| Sticky In-Page Nav | Auto-generated from visible sections | Always shown |
+| Course Introduction | `course_info.introduction_html` | Only if set |
+| Progress Overview | Computed from StudentProgress | Only if logged in |
+| Topic Cards | Topics with concept counts, progress bars | Always shown |
+| Skills | `course_info.skills` (list of {name, description, icon}) | Only if set |
+| Prerequisites | `course_info.prerequisites` (list of strings or {name, description}) | Only if set |
+| Exam Structure | `course_info.exam_structure` (sections with duration, weight, etc.) | Only if set |
+| Official Links | `course_info.official_links` (list of {title, url, description}) | Only if set |
+| Course Resources | Course-level resources from Resource model | Only if any exist |
+| CTA Footer | Sign up / continue learning | Always shown |
+
+### Subject Fields
+
+| Field | Type | Purpose |
+|-------|------|---------|
+| `name` | String | Display name (e.g., "Mathematics") |
+| `slug` | String | URL identifier (globally unique) |
+| `description` | Text | Brief description for catalog cards |
+| `icon` | String | Emoji displayed in sidebar and catalog |
+| `display_order` | Integer | Position among other subjects |
+
+### Course Fields
+
+| Field | Type | Purpose |
+|-------|------|---------|
+| `name` | String | Display name (e.g., "AP Calculus AB") |
+| `slug` | String | URL identifier (unique within subject) |
+| `description` | Text | Brief description for course cards |
+| `tagline` | String (300) | One-liner shown on course detail hero |
+| `difficulty_level` | String | `elementary`, `middle_school`, `high_school`, `ap`, or `college` |
+| `course_type` | String | `standard`, `ap`, `honors`, `college`, or `test_prep` (shown as badge) |
+| `course_info` | JSON | Structured data for course detail sections (see above) |
+| `display_order` | Integer | Position within parent subject |
+
+### Topic Fields
+
+| Field | Type | Purpose |
+|-------|------|---------|
+| `name` | String | Display name (e.g., "Limits & Continuity") |
+| `slug` | String | URL identifier (unique within course) |
+| `description` | Text | What students will learn |
+| `display_order` | Integer | Position within parent course |
+
+### Concept Fields
+
+| Field | Type | Purpose |
+|-------|------|---------|
+| `title` | String | Display name |
+| `slug` | String | URL identifier (**globally unique** across all concepts) |
+| `content_html` | Text | Lesson content (rendered with KaTeX) |
+| `estimated_minutes` | Integer | Reading time (3-7 min typical) |
+| `access_tier` | String | `free` or `premium` |
+| `subject_area` | String | Searchable category: `algebra`, `calculus`, `mechanics`, etc. |
+| `difficulty` | String | `easy`, `medium`, or `hard` |
+| `tags` | JSON (list) | Searchable tags: `['linear', 'equations', 'sat']` |
 
 ### Slugs
 
-Every subject, topic, and concept has a **slug** — a URL-friendly identifier:
+Every subject, course, topic, and concept has a **slug** — a URL-friendly identifier:
 
 - Must be lowercase, use hyphens instead of spaces
-- Subject slug is globally unique
-- Topic slug is unique within its subject
-- Concept slug is unique within its topic
+- Subject slugs are globally unique
+- Course slugs are unique within their subject
+- Topic slugs are unique within their course
+- **Concept slugs are globally unique** (since concepts are standalone, reusable entities)
 
-Examples:
-- Subject: `mathematics`
-- Topic: `algebra-1`
-- Concept: `solving-linear-equations`
+The resulting URL: `/subjects/mathematics/ap-calculus-ab/limits-and-continuity/the-squeeze-theorem`
 
-The resulting URL would be: `/subjects/mathematics/algebra-1/solving-linear-equations`
+Note: The URL includes the subject, course, and topic context for breadcrumbs, but the concept itself is independent.
 
 ### Display Order
 
-Every level has a `display_order` field (integer, starting from 0). Lower numbers appear first. Use this to control the sequence students see when browsing content.
+- Subjects, courses, topics: `display_order` on the model itself
+- **Concepts within a topic:** `display_order` on the `TopicConcept` link. The same concept can be at position 3 in one topic and position 1 in another.
 
 ### Active/Inactive
 
 Every level has an `is_active` boolean. Setting this to `false` hides the item from students without deleting it. Useful for draft content or seasonal topics.
+
+### Deleting vs Unlinking
+
+- **Deleting a concept** removes it from ALL topics and deletes its problems/resources
+- **Unlinking a concept** from a topic (removing the `TopicConcept` row) leaves the concept intact for other topics
+- **Deleting a topic** removes topic-concept links but concepts survive as standalone entities
+- **Deleting a course** removes all topics under it (and their concept links) but concepts survive
 
 ---
 
@@ -174,48 +289,113 @@ To create a new subject:
    - **Is Active**: Check to make visible to students
 3. Click **Save**
 
-### Step 2: Create the Topic
+### Step 2: Create the Course
 
-1. From `/admin/content`, click **New Topic** under the relevant subject
+1. From `/admin/content`, click **New Course** under the relevant subject
 2. Fill in:
    - **Name**: `AP Chemistry` (display name)
-   - **Slug**: `ap-chemistry`
-   - **Description**: What students will learn
+   - **Slug**: `ap-chemistry` (URL identifier — unique within this subject)
+   - **Description**: Brief description for course cards
+   - **Tagline**: One-liner for the course detail hero (e.g., "Master the building blocks of matter")
+   - **Course Type**: Choose from: `standard`, `ap`, `honors`, `college`, `test_prep`
    - **Difficulty Level**: Choose from: `elementary`, `middle_school`, `high_school`, `ap`, `college`
-   - **Display Order**: Position within the subject
+   - **Display Order**: Position among other courses in the subject (0 = first)
+   - **Is Active**: Check to make visible to students
+3. Click **Save**
+
+### Step 3: Set Up Course Detail Page (Optional)
+
+The `course_info` JSON field on the Course powers the course detail page sections. Set this via the admin form or seed data. Example structure:
+
+```json
+{
+  "introduction_html": "<p>AP Chemistry is a college-level course...</p>",
+  "college_equivalent": "First-year college chemistry",
+  "credit_info": "Score of 3+ may earn college credit",
+  "skills": [
+    {"name": "Experimental Design", "icon": "🔬", "description": "Design and analyze experiments"},
+    {"name": "Mathematical Reasoning", "icon": "📐", "description": "Apply math to chemical problems"}
+  ],
+  "prerequisites": [
+    {"name": "Algebra 2", "description": "Comfortable with equations and functions"},
+    "Biology (recommended)"
+  ],
+  "exam_structure": {
+    "description": "3 hours 15 minutes total",
+    "sections": [
+      {"name": "Section I: Multiple Choice", "duration": "90 min", "questions": "60 questions", "weight": "50%", "calculator": "Allowed"},
+      {"name": "Section II: Free Response", "duration": "105 min", "questions": "7 questions", "weight": "50%", "calculator": "Allowed"}
+    ]
+  },
+  "official_links": [
+    {"title": "College Board AP Chemistry", "url": "https://apcentral.collegeboard.org/courses/ap-chemistry", "description": "Official course page"}
+  ]
+}
+```
+
+All sections are optional — missing data simply means that section won't render on the course detail page.
+
+### Step 4: Create Topics
+
+1. From `/admin/content`, click **New Topic** under the relevant course
+2. Fill in:
+   - **Name**: `Atomic Structure and Properties` (display name — for AP courses, include "Unit N:" prefix if desired)
+   - **Slug**: `atomic-structure-and-properties`
+   - **Description**: What students will learn in this topic
+   - **Display Order**: Position within the course
    - **Is Active**: Check when ready for students
 3. Click **Save**
 
-### Step 3: Add Concepts
+### Step 5: Add Concepts
 
 For each lesson/explainer within the topic:
 1. Click **New Concept** under the topic
 2. Fill in:
    - **Title**: `Introduction to Atomic Structure`
-   - **Slug**: `intro-atomic-structure`
+   - **Slug**: `intro-atomic-structure` (must be **globally unique** across all concepts)
    - **Content**: Write your lesson content (see [Section 5](#5-writing-content-concepts))
    - **Estimated Minutes**: Reading time (aim for 3-7 minutes)
    - **Access Tier**: `free` (first concept) or `premium` (subsequent concepts)
-   - **Display Order**: Sequence within the topic
-3. Click **Save**
+   - **Subject Area**: Category like `chemistry`, `physics` (for filtering)
+   - **Difficulty**: `easy`, `medium`, or `hard`
+3. Click **Save** — the concept is created AND automatically linked to the topic
 
-### Step 4: Add Problems
+### Step 6: Add Problems
 
 You can add problems either:
 - **Manually** via the admin forms (tedious for many problems)
 - **Via Bulk Import** using the qhsJSON format (recommended — see [Section 7](#7-bulk-import-with-qhsjson))
 - **Generated by Claude AI** (fastest — see [Section 8](#8-generating-content-with-claude-ai))
 
+### Step 7: Add Resources
+
+Attach resources at the appropriate level:
+- **Subject-level**: Subject overview video → shown on subject page
+- **Course-level**: Course overview video, syllabus PDF → shown on course detail page
+- **Topic-level**: Topic overview video → shown on topic page
+- **Concept-level**: Lesson slides, worked examples → shown on concept page (travels with the concept to all courses)
+
+See [Section 10](#10-resources-slides-docs-videos) for details.
+
 ### Recommended Workflow
 
 The fastest way to create a complete course:
 
-1. Create Subject and Topic via the admin panel (Steps 1-2)
-2. Use the Claude AI prompt template to generate a qhsJSON file with concepts + problems
+1. Create Subject (if needed) and Course (with tagline, course_type) via the admin panel (Steps 1-2)
+2. Use the Claude AI prompt template to generate a qhsJSON v4 file with topics, concepts, and problems
 3. Validate the JSON via `/admin/content/import` (click **Validate**)
-4. Import the validated JSON (click **Import**)
-5. Review imported content on the live site
-6. Adjust access tiers and display orders as needed
+4. Import the validated JSON (click **Import**) — topics are created under the course, concepts are created and linked automatically
+5. Attach resources (slides, videos) to concepts via `/admin/resources`
+6. Review imported content on the live site
+7. Adjust access tiers and display orders as needed
+
+### Reusing Existing Concepts
+
+If you're creating a new course that shares concepts with existing courses (e.g., SAT Math reuses "Linear Equations" from Algebra 1):
+
+1. When bulk importing via qhsJSON, use the **same slug** for the shared concept
+2. The importer will find the existing concept by slug and link it to the new topic without duplicating it
+3. The concept's resources, problems, and student progress carry over automatically
 
 ---
 
@@ -328,7 +508,7 @@ Each concept can have one or more **Problem Sets** (quizzes). Each problem set c
 | Type | Code | Student Interface | Grading |
 |------|------|-------------------|---------|
 | Multiple Choice | `mcq` | 4 clickable choice cards | Automatic — compares selected choice to `is_correct` flag |
-| Fill in the Blank | `fill_in_blank` | Text input field | Automatic — case-insensitive comparison |
+| Fill The Blank | `ftb` | Text input field | Automatic — case-insensitive comparison |
 | Free Response | `frq` | Multi-line textarea | Self-graded — student compares to model answer |
 
 ### Multiple Choice (MCQ)
@@ -353,15 +533,15 @@ Example:
 }
 ```
 
-### Fill in the Blank
+### Fill The Blank (FTB)
 
-For fill-in-blank problems, specify the correct answer. Students type their answer and it's compared case-insensitively with whitespace stripped.
+For FTB problems, specify the correct answer. Students type their answer and it's compared case-insensitively with whitespace stripped.
 
 **Multiple accepted answers:** Use `||` to separate alternatives:
 ```json
 {
   "question_html": "<p>Solve: \\(2x + 4 = 10\\). \\(x = \\) ?</p>",
-  "problem_type": "fill_in_blank",
+  "problem_type": "ftb",
   "correct_answer": "3||x=3||x = 3",
   "difficulty": "easy"
 }
@@ -450,65 +630,79 @@ The most efficient way to add content is via **bulk import** using the qhsJSON (
 
 ### Prerequisites
 
-Before importing, the **Subject** and **Topic** must already exist in the database. The JSON references them by slug:
+Before importing, the **Subject** and **Course** must already exist in the database. The JSON references them by slug. Topics can be auto-created by the importer:
 
 ```json
 {
   "subject_slug": "mathematics",
-  "topic_slug": "algebra-1",
-  "concepts": [...]
+  "course_slug": "algebra-1",
+  "topics": [
+    {
+      "name": "Linear Equations",
+      "slug": "linear-equations",
+      "concepts": [...]
+    }
+  ]
 }
 ```
 
-If the subject or topic slug doesn't match an existing record, the import will fail with an error message.
+If the subject or course slug doesn't match an existing record, the import will fail with an error message.
 
-### Complete qhsJSON Format
+### Complete qhsJSON v4 Format
 
 ```json
 {
   "subject_slug": "mathematics",
-  "topic_slug": "algebra-1",
-  "concepts": [
+  "course_slug": "algebra-1",
+  "topics": [
     {
-      "title": "What is a Linear Equation?",
-      "slug": "what-is-a-linear-equation",
-      "content_html": "<h2>Understanding Linear Equations</h2><p>A <strong>linear equation</strong>...</p>",
-      "content_raw": "Plain text version of the content",
-      "estimated_minutes": 6,
-      "access_tier": "free",
+      "name": "Linear Equations",
+      "slug": "linear-equations",
+      "description": "Learn to solve equations with one variable",
       "display_order": 0,
-      "problem_sets": [
+      "concepts": [
         {
-          "title": "Practice: Identifying Linear Equations",
+          "title": "What is a Linear Equation?",
+          "slug": "what-is-a-linear-equation",
+          "content_html": "<h2>Understanding Linear Equations</h2><p>A <strong>linear equation</strong>...</p>",
+          "content_raw": "Plain text version of the content",
+          "estimated_minutes": 6,
           "access_tier": "free",
           "display_order": 0,
-          "problems": [
+          "problem_sets": [
             {
-              "question_html": "<p>Which of the following is a linear equation?</p>",
-              "question_raw": "Which of the following is a linear equation?",
-              "problem_type": "mcq",
-              "difficulty": "easy",
-              "points": 1,
-              "choices": [
-                {"text": "\\(x^2 + 3x = 10\\)", "is_correct": false},
-                {"text": "\\(2x + 5 = 11\\)", "is_correct": true},
-                {"text": "\\(\\sqrt{x} = 4\\)", "is_correct": false},
-                {"text": "\\(\\frac{1}{x} + 2 = 5\\)", "is_correct": false}
-              ],
-              "hints": [
+              "title": "Practice: Identifying Linear Equations",
+              "access_tier": "free",
+              "display_order": 0,
+              "problems": [
                 {
-                  "text": "A linear equation has the variable raised to the first power only.",
-                  "cost_points": 0
-                },
-                {
-                  "text": "Look for the equation where \\(x\\) appears with an exponent of exactly 1.",
-                  "cost_points": 1
+                  "question_html": "<p>Which of the following is a linear equation?</p>",
+                  "question_raw": "Which of the following is a linear equation?",
+                  "problem_type": "mcq",
+                  "difficulty": "easy",
+                  "points": 1,
+                  "choices": [
+                    {"text": "\\(x^2 + 3x = 10\\)", "is_correct": false},
+                    {"text": "\\(2x + 5 = 11\\)", "is_correct": true},
+                    {"text": "\\(\\sqrt{x} = 4\\)", "is_correct": false},
+                    {"text": "\\(\\frac{1}{x} + 2 = 5\\)", "is_correct": false}
+                  ],
+                  "hints": [
+                    {
+                      "text": "A linear equation has the variable raised to the first power only.",
+                      "cost_points": 0
+                    },
+                    {
+                      "text": "Look for the equation where \\(x\\) appears with an exponent of exactly 1.",
+                      "cost_points": 1
+                    }
+                  ],
+                  "solution_steps": [
+                    {"text": "A linear equation has the variable to the first power only."},
+                    {"text": "\\(x^2 + 3x = 10\\) has \\(x^2\\), so it's quadratic."},
+                    {"text": "\\(2x + 5 = 11\\) has \\(x\\) to the first power, so it is linear."}
+                  ]
                 }
-              ],
-              "solution_steps": [
-                {"text": "A linear equation has the variable to the first power only."},
-                {"text": "\\(x^2 + 3x = 10\\) has \\(x^2\\), so it's quadratic."},
-                {"text": "\\(2x + 5 = 11\\) has \\(x\\) to the first power, so it is linear."}
               ]
             }
           ]
@@ -524,20 +718,26 @@ If the subject or topic slug doesn't match an existing record, the import will f
 | Field | Required | Default | Notes |
 |-------|----------|---------|-------|
 | `subject_slug` | Yes | — | Must match existing subject |
-| `topic_slug` | Yes | — | Must match existing topic under that subject |
+| `course_slug` | Yes | — | Must match existing course under that subject |
+| `topics[]` | Yes | — | Array of topic objects |
+| `topics[].name` | Yes | — | Topic display name |
+| `topics[].slug` | No | Auto-generated from name | Unique within course |
+| `topics[].description` | No | `""` | Topic description |
+| `topics[].display_order` | No | Index in array | Sort order |
+| `topics[].concepts[]` | Yes | — | Array of concept objects within the topic |
 | `concepts[].title` | Yes | — | Display title |
-| `concepts[].slug` | No | Auto-generated from title | URL-friendly identifier |
+| `concepts[].slug` | No | Auto-generated from title | **Globally unique** — if slug exists, concept is reused |
 | `concepts[].content_html` | No | `""` | Lesson content with LaTeX |
 | `concepts[].content_raw` | No | `""` | Plain text version |
 | `concepts[].estimated_minutes` | No | `5` | Reading time estimate |
 | `concepts[].access_tier` | No | `"free"` | `"free"` or `"premium"` |
-| `concepts[].display_order` | No | Index in array | Sort order |
+| `concepts[].display_order` | No | Index in array | Sort order within topic |
 | `problem_sets[].title` | Yes | — | Quiz title |
 | `problem_sets[].access_tier` | No | `"free"` | `"free"` or `"premium"` |
-| `problems[].problem_type` | No | `"mcq"` | `"mcq"`, `"fill_in_blank"`, or `"frq"` |
+| `problems[].problem_type` | No | `"mcq"` | `"mcq"`, `"ftb"`, or `"frq"` |
 | `problems[].difficulty` | No | `"medium"` | `"easy"`, `"medium"`, or `"hard"` |
 | `problems[].points` | No | `1` | Point value |
-| `problems[].correct_answer` | Required for `fill_in_blank` | — | Use `\|\|` for multiple accepted answers |
+| `problems[].correct_answer` | Required for `ftb` | — | Use `\|\|` for multiple accepted answers |
 | `choices[].text` | Yes (MCQ) | — | Choice text (supports LaTeX) |
 | `choices[].is_correct` | Yes (MCQ) | — | Exactly one must be `true` |
 | `hints[].text` | Yes | — | Hint text (supports LaTeX) |
@@ -547,11 +747,13 @@ If the subject or topic slug doesn't match an existing record, the import will f
 ### Validation Rules
 
 The validator checks:
-- `subject_slug` and `topic_slug` exist in the database
+- `subject_slug` and `course_slug` exist in the database
+- `topics` array is present and non-empty
+- Every topic has a `name` or `slug`
 - Every concept has a `title`
 - MCQ problems have a `choices` array
-- Fill-in-blank problems have a `correct_answer`
-- `problem_type` is one of: `mcq`, `fill_in_blank`, `frq`
+- FTB problems have a `correct_answer`
+- `problem_type` is one of: `mcq`, `ftb`, `frq`
 
 ### Idempotency Warning
 
@@ -568,14 +770,14 @@ The fastest way to create high-quality educational content is to use Claude AI w
 Use this template (also found in `COACHPRASH_BUILD_PROMPTS.md`):
 
 ```
-Generate original educational content in CoachPrash qhsJSON format.
+Generate original educational content in CoachPrash qhsJSON v4 format.
 
 SUBJECT: [e.g., Mathematics]
-TOPIC: [e.g., Algebra 1]
-CONCEPT: [e.g., Solving Systems of Equations by Substitution]
+COURSE: [e.g., Algebra 1]
+TOPICS & CONCEPTS: [e.g., Topic: "Linear Equations" with concepts: "What is a Linear Equation?", "Solving One-Step Equations", "Solving Two-Step Equations"]
 GRADE LEVEL: [e.g., 9th-10th grade]
-DIFFICULTY MIX: [e.g., 3 easy, 4 medium, 3 hard]
-PROBLEM TYPES: [e.g., 7 MCQ, 2 fill-in-blank, 1 frq]
+DIFFICULTY MIX: [e.g., 3 easy, 4 medium, 3 hard per concept]
+PROBLEM TYPES: [e.g., 7 MCQ, 2 FTB, 1 FRQ per concept]
 ACCESS TIER: [free or premium]
 
 LEARNING OBJECTIVES:
@@ -591,18 +793,21 @@ REQUIREMENTS:
 - Include step-by-step solutions for every problem
 - Concept explanation should be ~5 minutes reading time
 - 4 choices per MCQ, exactly 1 correct
-- For fill_in_blank, use || separator for multiple accepted answers
-- For frq, correct_answer is a model answer shown after submission
+- For FTB, use || separator for multiple accepted answers
+- For FRQ, correct_answer is a model answer shown after submission
 - If images are needed, use:
-  <img data-bucket-key='images/{subject}/{topic}/{filename}' alt='description' />
+  <img data-bucket-key='images/{subject}/{course}/{filename}' alt='description' />
 
-OUTPUT FORMAT:
-Return ONLY valid JSON (no markdown fencing, no commentary)
+OUTPUT FORMAT (qhsJSON v4):
+- Top level: { "subject_slug": "...", "course_slug": "...", "topics": [...] }
+- Each topic: { "name": "...", "slug": "...", "concepts": [...] }
+- Each concept: { "title": "...", "slug": "...", "content_html": "...", "problem_sets": [...] }
+- Return ONLY valid JSON (no markdown fencing, no commentary)
 ```
 
 ### Workflow
 
-1. **Fill in** the template with your subject/topic/concept details
+1. **Fill in** the template with your subject/course/topic/concept details
 2. **Paste** into Claude (Pro or Claude Code)
 3. **Review** the output for accuracy — especially:
    - Correct answers (verify the math!)
@@ -631,11 +836,11 @@ Images are stored in a Railway Storage Bucket (S3-compatible) and served via pre
 
 1. Go to `/admin/images`
 2. Select the **image file** to upload
-3. Choose a **Subject** and **Topic** (for organizing files)
+3. Choose a **Subject** and **Course** (for organizing files)
 4. Click **Upload**
 5. On success, the page shows the **bucket key** — copy this for use in content
 
-The bucket key follows the pattern: `images/{subject_slug}/{topic_slug}/{filename}`
+The bucket key follows the pattern: `images/{subject_slug}/{course_slug}/{filename}`
 
 Example: `images/mathematics/algebra-1/linear-graph.png`
 
@@ -648,6 +853,8 @@ Reference uploaded images in your content HTML using the `data-bucket-key` attri
      alt="Graph of y = 2x + 1" />
 ```
 
+The bucket key path uses `images/{subject_slug}/{course_slug}/{filename}`.
+
 At render time, the `data-bucket-key` is automatically replaced with a presigned URL (valid for 1 hour). Students never see the bucket key — they get a temporary direct URL to the image.
 
 ### Using Images in qhsJSON
@@ -656,7 +863,7 @@ In your JSON content, use the same `data-bucket-key` attribute:
 
 ```json
 {
-  "content_html": "<p>Consider the graph below:</p><img data-bucket-key='images/physics/honors-physics/free-body-diagram.png' alt='Free body diagram of a box on a ramp' /><p>Identify all forces acting on the box.</p>"
+  "content_html": "<p>Consider the graph below:</p><img data-bucket-key='images/physics/honors-physics-newtons-laws/free-body-diagram.png' alt='Free body diagram of a box on a ramp' /><p>Identify all forces acting on the box.</p>"
 }
 ```
 
@@ -677,7 +884,18 @@ The `/admin/images` page lists all images currently in the `images/` prefix of t
 
 ## 10. Resources (Slides, Docs, Videos)
 
-Resources are external learning materials (Google Slides, Docs, videos, PDFs, links) attached to a topic or subject.
+Resources are external learning materials (Google Slides, Docs, videos, PDFs, links) attached to a **concept**, **topic**, **course**, or **subject**.
+
+### Four Resource Levels
+
+| Level | Scope | Example | Where Shown |
+|-------|-------|---------|-------------|
+| **Concept-level** | Portable — travels with the concept | Lesson slides, worked examples video | Concept detail page (shown in every course the concept is linked to) |
+| **Topic-level** | One topic only | Topic overview video, unit handout | Topic page |
+| **Course-level** | One course | Course overview video, syllabus PDF | Course detail page |
+| **Subject-level** | Entire subject | Subject overview video | Subject page |
+
+**Best practice:** Attach resources at the **concept level** whenever possible. Concept-level resources are portable — they automatically appear everywhere the concept is linked. This eliminates duplication when the same concept appears in multiple courses.
 
 ### Creating a Resource
 
@@ -694,7 +912,7 @@ Resources are external learning materials (Google Slides, Docs, videos, PDFs, li
    - **URL**: The sharing link
    - **Description**: Brief description shown to students
    - **Access Tier**: `free` or `premium`
-   - **Attach To**: Select a **Topic** or **Subject** (at least one required)
+   - **Attach To**: Select a **Subject**, **Course**, **Topic**, or **Concept** (at least one required)
    - **Display Order**: Position among other resources
    - **Is Active**: Check to make visible
 
@@ -707,7 +925,7 @@ For Google Slides and Docs, paste the **sharing URL** (the link you get from "Sh
 | Slides | `https://docs.google.com/presentation/d/ABC123/edit?...` | `https://docs.google.com/presentation/d/ABC123/embed?start=false&loop=false` |
 | Docs | `https://docs.google.com/document/d/ABC123/edit?...` | `https://docs.google.com/document/d/ABC123/preview` |
 
-The embedded version is displayed in an iframe on the topic overview page.
+The embedded version is displayed in an iframe on the appropriate page (concept page for concept-level, topic page for topic-level, course detail page for course-level, subject page for subject-level).
 
 ### Freemium Gating for Resources
 
@@ -1095,7 +1313,7 @@ Served at `/robots.txt`. Current configuration:
 
 Dynamically generated at `/sitemap.xml`. Includes:
 - Static pages: home, about, contact, testimonials, resources
-- All active subjects and their topics
+- All active subjects, courses, topics (4-level URLs)
 - All **free-tier** concepts (premium concepts are excluded)
 - All published blog posts
 
@@ -1193,8 +1411,8 @@ The admin password in the URL must match the `ADMIN_PASSWORD` environment variab
 In order:
 
 1. **Admin user** — from `ADMIN_EMAIL` and `ADMIN_PASSWORD` env vars
-2. **5 Subjects** with **26 Topics** — the complete course catalog structure
-3. **5 Content JSON files** — demo content with concepts and problems:
+2. **5 Subjects** with **26 Courses** and **Topics** — the complete course catalog structure
+3. **5 Content JSON files** — demo content with topics, concepts, and problems:
    - Mathematics / Algebra 1: Linear Equations
    - Physics / Honors Physics: Newton's Laws
    - Chemistry / Honors Chemistry: The Mole Concept
@@ -1347,10 +1565,11 @@ Static files are cached for 1 year (`Cache-Control: public, max-age=31536000`).
 |-----|------|
 | `/` | Home page |
 | `/subjects/` | Subject catalog |
-| `/subjects/<subject>` | Topic list for a subject |
-| `/subjects/<subject>/<topic>` | Topic overview with concepts |
-| `/subjects/<subject>/<topic>/<concept>` | Concept explainer |
-| `/subjects/<subject>/<topic>/<concept>/practice/` | Practice quiz |
+| `/subjects/<subject>` | Course list (all courses within a subject) |
+| `/subjects/<subject>/<course>` | Course detail (intro, topic cards, skills, exam info) |
+| `/subjects/<subject>/<course>/<topic>` | Topic page with concept list and progress |
+| `/subjects/<subject>/<course>/<topic>/<concept>` | Concept explainer |
+| `/subjects/<subject>/<course>/<topic>/<concept>/practice/` | Practice quiz |
 | `/resources/` | Blog/resources listing |
 | `/resources/<slug>` | Individual blog post |
 | `/about` | About page |
@@ -1370,20 +1589,20 @@ Static files are cached for 1 year (`Cache-Control: public, max-age=31536000`).
 ### Content Hierarchy at a Glance
 
 ```
-Subject → Topic → Concept → Problem Set → Problem
-                                            ├── Choices (MCQ)
-                                            ├── Hints (progressive)
-                                            └── Solution (steps)
+Subject → Course → Topic → Concept → Problem Set → Problem
+                                                     ├── Choices (MCQ)
+                                                     ├── Hints (progressive)
+                                                     └── Solution (steps)
 ```
 
 ### Creating Content: Quick Checklist
 
 1. [ ] Subject exists (or create at `/admin/content`)
-2. [ ] Topic exists under the subject (or create)
-3. [ ] Generate qhsJSON using Claude AI prompt template
+2. [ ] Course exists under the subject (or create)
+3. [ ] Generate qhsJSON v4 using Claude AI prompt template (includes topics + concepts)
 4. [ ] Verify math accuracy in the generated content
 5. [ ] Validate JSON at `/admin/content/import`
-6. [ ] Import the validated JSON
+6. [ ] Import the validated JSON (topics are auto-created under the course)
 7. [ ] Set first concept to `free`, rest to `premium`
 8. [ ] Upload any images via `/admin/images`
 9. [ ] Test the content on the live site as both free and premium users
@@ -1395,7 +1614,7 @@ Subject → Topic → Concept → Problem Set → Problem
 | Type | Student Input | Grading | `correct_answer` |
 |------|--------------|---------|-------------------|
 | `mcq` | Click a choice card | Auto (matches `is_correct`) | Not used |
-| `fill_in_blank` | Type in text field | Auto (case-insensitive) | Required (`\|\|` for alternatives) |
+| `ftb` | Type in text field | Auto (case-insensitive) | Required (`\|\|` for alternatives) |
 | `frq` | Type in textarea | Self-graded by student | Model answer shown after submit |
 
 ### LaTeX Quick Reference
@@ -1429,7 +1648,7 @@ Units:       \,\text{m/s}^2
 
 ```html
 <!-- Upload image at /admin/images first, then reference: -->
-<img data-bucket-key="images/{subject}/{topic}/{filename}" alt="description" />
+<img data-bucket-key="images/{subject}/{course}/{filename}" alt="description" />
 ```
 
 ---
@@ -1452,7 +1671,7 @@ Log format: `[2026-05-18 14:30:05,123] INFO in auth.routes: User logged in: alic
 | Category | Level | Examples |
 |----------|-------|---------|
 | Authentication | INFO/WARNING | Login success, login failure, registration, OAuth flows, logout, deactivated accounts |
-| Admin operations | INFO | Subject/topic/concept CRUD, blog posts, testimonials, access codes, bulk import results |
+| Admin operations | INFO | Subject/course/topic/concept CRUD, blog posts, testimonials, access codes, bulk import results |
 | Parent portal | INFO/WARNING | Link code usage, role upgrades, unauthorized access attempts |
 | Study engine | INFO | Quiz completion with mastery scores |
 | Storage (S3) | INFO/ERROR | Bucket uploads, deletes, presigned URL failures |
@@ -1722,15 +1941,15 @@ CoachPrash uses a Google Workspace MCP (Model Context Protocol) server to genera
 All slide decks and resources are organized on Google Drive to mirror the website's breadcrumb navigation:
 
 ```
-CoachPrash / [Subject] / [Topic]
+CoachPrash / [Subject] / [Course]
 ```
 
 - **Root folder:** `CoachPrash`
 - **Subject folders (5):** Mathematics, Physics, Chemistry, Computer Science, Test Prep
-- **Topic folders (26):** One per topic matching the website's topic list (e.g., Arithmetic, AP Calculus AB, Honors Physics)
+- **Course folders (26):** One per course matching the website's course list (e.g., Arithmetic, AP Calculus AB, Honors Physics)
 - **File naming:** `{Title} | CoachPrash` (e.g., `Introduction to Fractions | CoachPrash`)
-- **No subfolders by resource type** — Slides, Docs, and PDFs all live in the same topic folder
-- **No concept-level subfolders** — topics contain at most ~16 files; flat structure keeps browsing simple
+- **No subfolders by resource type** — Slides, Docs, and PDFs all live in the same course folder
+- **No topic-level subfolders** — courses contain at most ~16 files; flat structure keeps browsing simple
 
 Example paths:
 - `CoachPrash / Mathematics / Arithmetic / Introduction to Fractions | CoachPrash`
@@ -1752,3 +1971,127 @@ A separate **Desktop app** OAuth client is used (distinct from the Web app clien
 | Auth URL has `${...}` literals | Env vars not resolving — hardcode values in `.mcp.json` (it's gitignored) |
 | "Google hasn't verified this app" | Expected for testing mode — click Advanced → Go to CoachPrash |
 | 403 API error | Enable the missing API in Google Cloud Console |
+
+---
+
+## 31. Inline Problem Editor
+
+The problem editor lets you edit individual problems, choices, hints, and solution steps directly in the admin panel — without re-importing JSON.
+
+### Accessing the Editor
+
+1. Go to **Content** (`/admin/content`)
+2. In the content tree, problem sets appear under each concept (tree level 4) with problem counts
+3. Click **Edit** on any problem set to open the Problem Set Detail page
+
+### Problem Set Detail Page
+
+The detail page (`/admin/content/problem-set/<id>`) shows:
+
+- **Problem Set Metadata** — title, access tier (free/premium), active toggle
+- **Problem Panels** — collapsible panels for each problem, sorted by display order
+
+Click any problem panel header to expand it and see the full edit form.
+
+### Editing a Problem
+
+Each expanded panel contains:
+
+| Field | Description |
+|-------|-------------|
+| Question (raw) | HTML + LaTeX text with **live KaTeX preview** (updates as you type) |
+| Problem Type | MCQ, FTB, or FRQ — changing type shows/hides the choices section |
+| Difficulty | easy, medium, or hard |
+| Points | Point value (default: 1) |
+| Correct Answer | For FTB: the accepted answer(s). For MCQ: auto-synced from the correct choice |
+
+### Managing Choices (MCQ only)
+
+- Choices appear as dynamic rows with text input and a "correct" radio button
+- Click **+ Add Choice** to add a new choice row
+- Click the **×** button to remove a choice
+- The choice marked as correct automatically sets the problem's `correct_answer` field
+
+### Managing Hints
+
+- Hints appear as dynamic rows with text area and cost_points field
+- Click **+ Add Hint** to add a new hint
+- Hints are saved in the order displayed
+
+### Managing Solution Steps
+
+- Solution steps appear as numbered dynamic rows
+- Click **+ Add Step** to append a step
+- Steps are saved as a JSON array in the `StepByStepSolution` model
+
+### Creating New Content
+
+- **New Problem Set:** Click **+ Problems** on any concept in the content tree
+- **New Problem:** Click **+ Add Problem** at the bottom of the problem set detail page (creates an empty MCQ problem)
+
+### Deleting
+
+- **Delete Problem:** Click Delete on an expanded problem panel (confirms before deleting)
+- **Delete Problem Set:** Click Delete on the problem set metadata section (deletes all contained problems)
+- Attempt logs are deleted before the problem to avoid FK violations
+
+---
+
+## 32. Database Integrity & Cascades
+
+### Cascade Delete Rules
+
+Every parent-child relationship has `cascade='all, delete-orphan'` configured so that deleting a parent automatically deletes all children. This prevents orphaned records and FK constraint errors.
+
+**Full cascade chain:**
+```
+Subject → Courses → Topics → TopicConcepts
+                            → Resources
+                  → Resources
+         → Resources
+
+Concept → ProblemSets → Problems → Choices
+                                 → Hints
+                                 → StepByStepSolution
+                                 → AttemptLogs
+        → StudentProgress
+        → Resources
+
+User → StudentProgress
+     → AttemptLogs
+     → BlogPosts
+     → ParentStudentLinks
+     → ParentLinkCodes
+     → StudentReports
+
+MessageThread → Messages
+              → MessageParticipants
+```
+
+### Dual-Parent Models
+
+Some models have two FK parents. SQLAlchemy's `delete-orphan` requires a single parent, so these use `delete-orphan` on one side and `cascade='all'` (without `delete-orphan`) on the other:
+
+| Model | Primary Parent (delete-orphan) | Secondary Parent (cascade all) |
+|-------|-------------------------------|-------------------------------|
+| TopicConcept | Topic | Concept (manual cleanup in delete route) |
+| AttemptLog | User | Problem |
+| StudentProgress | User | Concept |
+| ParentStudentLink | Parent User | Student User |
+
+**What this means:** Deleting either parent will cascade-delete the child rows. The `delete-orphan` side additionally cleans up if the child is removed from the parent's collection.
+
+### Foreign Key Indexes
+
+All FK columns have database-level indexes. PostgreSQL does not auto-index FK columns, so these were added explicitly to speed up:
+- JOIN queries (e.g., loading a concept's problem sets)
+- Cascade delete operations (finding child rows to delete)
+- Filtered queries (e.g., "all attempts by this student")
+
+### Troubleshooting
+
+| Error | Cause | Fix |
+|-------|-------|-----|
+| `IntegrityError: NotNullViolation` on delete | Missing cascade — SQLAlchemy tries to nullify FK instead of deleting | Add `cascade='all, delete-orphan'` to the parent relationship |
+| `InvalidRequestError: single_parent` | `delete-orphan` on both sides of a dual-parent model | Use `delete-orphan` on only one side; use `cascade='all'` on the other |
+| Slow queries on large tables | Missing FK index | Add `index=True` to the FK column definition |

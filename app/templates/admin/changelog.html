@@ -11,6 +11,187 @@
 
             <div class="changelog-entry">
                 <div class="changelog-date">
+                    <span class="changelog-date-day">28</span>
+                    <span class="changelog-date-month">May 2026</span>
+                    <span class="changelog-phase-badge">Database</span>
+                </div>
+                <div class="changelog-body">
+                    <h2>Model Integrity Audit</h2>
+                    <p class="changelog-summary">Full audit of all SQLAlchemy models &mdash; added missing cascade deletes, FK indexes, and fixed dual-parent relationship conflicts.</p>
+
+                    <div class="changelog-section">
+                        <h3>Cascade Deletes</h3>
+                        <ul>
+                            <li>Added <code>cascade='all, delete-orphan'</code> on 12 parent relationships: Subject &rarr; courses/resources, Course &rarr; topics/resources, Topic &rarr; resources, Concept &rarr; resources/problem_sets, User &rarr; progress/attempts/blog_posts, MessageThread &rarr; messages/participants</li>
+                            <li>Deleting a Subject now cleanly cascades through Courses &rarr; Topics &rarr; TopicConcepts &rarr; Resources</li>
+                            <li>Deleting a User cascades to progress, attempts, blog posts, parent links, link codes, and reports</li>
+                        </ul>
+                    </div>
+
+                    <div class="changelog-section">
+                        <h3>Dual-Parent Conflict Fixes</h3>
+                        <ul>
+                            <li>Fixed <code>TopicConcept</code> (two FK parents: Topic + Concept) &mdash; <code>delete-orphan</code> on Topic side, <code>cascade='all'</code> on Concept side with manual cleanup in delete route</li>
+                            <li>Fixed <code>AttemptLog</code> (two FK parents: User + Problem) &mdash; <code>delete-orphan</code> on User side, <code>cascade='all'</code> on Problem side</li>
+                            <li>Fixed <code>StudentProgress</code> (two FK parents: User + Concept) &mdash; same pattern</li>
+                            <li>Fixed <code>ParentStudentLink</code> (two FK parents: parent User + student User) &mdash; <code>delete-orphan</code> on parent side</li>
+                        </ul>
+                    </div>
+
+                    <div class="changelog-section">
+                        <h3>Foreign Key Indexes</h3>
+                        <ul>
+                            <li>Added 22 missing FK indexes across 14 tables via Alembic migration</li>
+                            <li>PostgreSQL does not auto-index FK columns &mdash; these indexes speed up JOINs, cascade deletes, and filtered queries</li>
+                            <li>Tables indexed: courses, topics, topic_concepts, problem_sets, problems, choices, hints, student_progress, attempt_logs, resources, access_codes, parent_link_codes, blog_posts, audit_logs, student_reports</li>
+                        </ul>
+                    </div>
+
+                    <div class="changelog-section">
+                        <h3>Bug Fix</h3>
+                        <ul>
+                            <li>Fixed: Deleting a Topic caused <code>IntegrityError</code> (NotNullViolation on <code>topic_concepts.topic_id</code>) because SQLAlchemy tried to nullify the FK instead of cascade-deleting the link rows</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="changelog-entry">
+                <div class="changelog-date">
+                    <span class="changelog-date-day">28</span>
+                    <span class="changelog-date-month">May 2026</span>
+                    <span class="changelog-phase-badge">Admin</span>
+                </div>
+                <div class="changelog-body">
+                    <h2>Inline Problem Editor</h2>
+                    <p class="changelog-summary">New admin interface for editing individual problems directly, without re-importing JSON. Edit questions, choices, hints, and solution steps in-place with live LaTeX preview.</p>
+
+                    <div class="changelog-section">
+                        <h3>Features</h3>
+                        <ul>
+                            <li>Problem sets now visible in the content tree under each concept with problem counts</li>
+                            <li>Collapsible panel editor: click any problem to expand its full edit form</li>
+                            <li>Edit question text (HTML + LaTeX) with live KaTeX preview</li>
+                            <li>Dynamic add/remove rows for MCQ choices, hints, and solution steps</li>
+                            <li>Switch problem type (MCQ/FTB/FRQ) with automatic UI adjustment</li>
+                            <li>Create new problem sets and add problems from the content tree</li>
+                            <li>Delete problems and problem sets with attempt log safety checks</li>
+                            <li>Cascade delete on model relationships for cleaner data management</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="changelog-entry">
+                <div class="changelog-date">
+                    <span class="changelog-date-day">27</span>
+                    <span class="changelog-date-month">May 2026</span>
+                    <span class="changelog-phase-badge">Architecture</span>
+                </div>
+                <div class="changelog-body">
+                    <h2>4-Level Content Hierarchy</h2>
+                    <p class="changelog-summary">Complete redesign of the content architecture from 3 levels (Subject &rarr; Topic &rarr; Concept) to 4 levels (Subject &rarr; Course &rarr; Topic &rarr; Concept). Courses like "AP Calculus AB" are now properly modeled as courses within a subject, with topics like "Limits and Continuity" containing individual concepts. Concepts remain standalone, reusable building blocks linked via a many-to-many relationship.</p>
+
+                    <div class="changelog-section">
+                        <h3>New 4-Level Hierarchy</h3>
+                        <ul>
+                            <li><strong>Subject</strong> (e.g., Mathematics) &rarr; <strong>Course</strong> (e.g., AP Calculus AB) &rarr; <strong>Topic</strong> (e.g., Limits &amp; Continuity) &rarr; <strong>Concept</strong> (e.g., The Squeeze Theorem)</li>
+                            <li>New <code>Course</code> model inserted between Subject and Topic, with <code>tagline</code>, <code>course_type</code>, <code>course_info</code> JSON, and <code>difficulty_level</code></li>
+                            <li>Subjects are now pure categories (Math, Physics, etc.) &mdash; course-specific fields moved to the Course model</li>
+                            <li>Topics belong to a Course and represent units/chapters within that course</li>
+                            <li>Concepts are <strong>standalone entities</strong> with globally unique slugs, linked to Topics via <code>TopicConcept</code> many-to-many table</li>
+                            <li>Same concept can appear in multiple topics across different courses &mdash; created once, linked everywhere</li>
+                        </ul>
+                    </div>
+
+                    <div class="changelog-section">
+                        <h3>4-Level URL Structure</h3>
+                        <ul>
+                            <li>Subject catalog: <code>/subjects/</code></li>
+                            <li>Course list: <code>/subjects/&lt;subject&gt;</code> &mdash; all courses within a subject</li>
+                            <li>Course detail: <code>/subjects/&lt;subject&gt;/&lt;course&gt;</code> &mdash; rich landing page with topics, skills, exam info</li>
+                            <li>Topic detail: <code>/subjects/&lt;subject&gt;/&lt;course&gt;/&lt;topic&gt;</code> &mdash; concept list with progress</li>
+                            <li>Concept detail: <code>/subjects/&lt;subject&gt;/&lt;course&gt;/&lt;topic&gt;/&lt;concept&gt;</code></li>
+                            <li>Practice: <code>/subjects/&lt;subject&gt;/&lt;course&gt;/&lt;topic&gt;/&lt;concept&gt;/practice/</code></li>
+                            <li>Breadcrumbs updated to show full 4&ndash;5 level path on every page</li>
+                        </ul>
+                    </div>
+
+                    <div class="changelog-section">
+                        <h3>Course Detail Pages</h3>
+                        <ul>
+                            <li>New <code>course_overview.html</code> template &mdash; rich landing page for each course</li>
+                            <li>Hero header with subject icon, course name, tagline, course type badge, and quick stats</li>
+                            <li>Sticky in-page navigation with scroll-tracking active state</li>
+                            <li>Optional sections powered by <code>course_info</code> JSON: introduction, skills, prerequisites, exam structure, official links</li>
+                            <li>Progress overview for logged-in users (overall completion bar)</li>
+                            <li>Topic cards with concept counts, estimated time, per-topic progress bars</li>
+                            <li>CTA footer (sign up / continue learning)</li>
+                        </ul>
+                    </div>
+
+                    <div class="changelog-section">
+                        <h3>Reusable Concepts</h3>
+                        <ul>
+                            <li>Concepts are <strong>standalone entities</strong> with globally unique slugs</li>
+                            <li><code>TopicConcept</code> association table links concepts to topics with independent <code>display_order</code></li>
+                            <li>Same concept (e.g., "Solving Linear Equations") can appear in SAT Math, Algebra 1, and Grade 6 Math</li>
+                            <li>Updating a concept's content, resources, or problems updates it everywhere it appears</li>
+                            <li>Student progress is shared across courses &mdash; mastering a concept in one course reflects in all others</li>
+                            <li>New concept metadata: <code>subject_area</code>, <code>difficulty</code>, <code>tags</code></li>
+                        </ul>
+                    </div>
+
+                    <div class="changelog-section">
+                        <h3>4-Level Resources</h3>
+                        <ul>
+                            <li>Resources can now be attached at <strong>concept</strong>, <strong>topic</strong>, <strong>course</strong>, or <strong>subject</strong> level</li>
+                            <li>New <code>course_id</code> and <code>concept_id</code> FKs on Resource model</li>
+                            <li>Concept-level resources are <strong>portable</strong> &mdash; they travel with the concept to every course it's linked to</li>
+                            <li>Course-level resources appear on the course detail page</li>
+                            <li>Admin resource form updated with 4 dropdowns: Subject, Course, Topic, Concept</li>
+                        </ul>
+                    </div>
+
+                    <div class="changelog-section">
+                        <h3>Admin Updates</h3>
+                        <ul>
+                            <li>Content tree now shows 4-level hierarchy: Subject &rarr; Course &rarr; Topic &rarr; Concept</li>
+                            <li>New admin CRUD for Courses (create, edit, delete under a Subject)</li>
+                            <li>New admin CRUD for Topics (create, edit, delete under a Course)</li>
+                            <li>Shared-concept indicator (link icon with count) when a concept appears in multiple topics</li>
+                            <li>Bulk import updated to qhsJSON v4 format: <code>subject_slug</code> + <code>course_slug</code> + <code>topics[]</code> array</li>
+                            <li>Image upload organized by Subject &rarr; Course</li>
+                        </ul>
+                    </div>
+
+                    <div class="changelog-section">
+                        <h3>Problem Type Standardization</h3>
+                        <ul>
+                            <li>Renamed <code>fill_in_blank</code> to <code>ftb</code> (Fill The Blank) everywhere</li>
+                            <li>Three standardized types: <code>mcq</code> (Multiple Choice), <code>ftb</code> (Fill The Blank), <code>frq</code> (Free Response)</li>
+                        </ul>
+                    </div>
+
+                    <div class="changelog-section">
+                        <h3>Technical</h3>
+                        <ul>
+                            <li>Database fully dropped and recreated &mdash; clean migration with updated schema</li>
+                            <li>New <code>courses</code> table with subject FK, unique constraint on <code>(subject_id, slug)</code></li>
+                            <li>New <code>topics</code> table with course FK, unique constraint on <code>(course_id, slug)</code></li>
+                            <li>All student-facing routes updated to 4-level URL pattern with <code>TopicConcept</code> joins</li>
+                            <li>Sidebar AJAX updated: <code>courses-json</code> endpoint replaces old <code>topics-json</code></li>
+                            <li>Sitemap now generates 4-level URLs: subject &rarr; course &rarr; topic &rarr; concept</li>
+                            <li>Progress utilities, report generation, and coach dashboard updated for new hierarchy</li>
+                            <li>~20 templates updated across admin, study, and subjects blueprints</li>
+                            <li>Admin manual updated to v10.0</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="changelog-entry">
+                <div class="changelog-date">
                     <span class="changelog-date-day">24</span>
                     <span class="changelog-date-month">May 2026</span>
                 </div>
@@ -519,7 +700,7 @@
                         <h3>Teaching Resources</h3>
                         <ul>
                             <li>New Resource model for Google Slides, Docs, video links, PDFs, and external links</li>
-                            <li>Resources attach at Topic or Subject level with freemium gating</li>
+                            <li>Resources attach at Concept, Topic, or Subject level with freemium gating</li>
                             <li>Google Slides/Docs auto-converted to embed URLs and rendered as iframes</li>
                             <li>Admin CRUD for managing resources</li>
                             <li>Embedded slides section on topic overview page</li>
@@ -540,7 +721,7 @@
                         <h3>qhsJSON Standard</h3>
                         <ul>
                             <li>Defined CoachPrash qhsJSON format &mdash; custom JSON for questions, hints, and solutions</li>
-                            <li>Supports MCQ, fill-in-blank, and free response (FRQ) problem types</li>
+                            <li>Supports MCQ, FTB (Fill The Blank), and FRQ (Free Response) problem types</li>
                             <li>Images supported in questions, hints, AND solutions via <code>data-bucket-key</code></li>
                             <li>Hints support <code>cost_points</code> for point deduction on reveal</li>
                             <li>JSON validation button on bulk import page (AJAX pre-check)</li>

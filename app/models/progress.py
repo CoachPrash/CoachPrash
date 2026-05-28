@@ -7,8 +7,8 @@ class StudentProgress(db.Model):
     __tablename__ = 'student_progress'
 
     id = db.Column(db.String(36), primary_key=True, default=lambda: str(uuid.uuid4()))
-    student_id = db.Column(db.String(36), db.ForeignKey('users.id'), nullable=False)
-    concept_id = db.Column(db.String(36), db.ForeignKey('concepts.id'), nullable=False)
+    student_id = db.Column(db.String(36), db.ForeignKey('users.id'), nullable=False, index=True)
+    concept_id = db.Column(db.String(36), db.ForeignKey('concepts.id'), nullable=False, index=True)
     status = db.Column(db.String(20), nullable=False, default='not_started')
     mastery_score = db.Column(db.Float, nullable=True)
     last_accessed = db.Column(db.DateTime, nullable=True)
@@ -31,8 +31,8 @@ class AttemptLog(db.Model):
     __tablename__ = 'attempt_logs'
 
     id = db.Column(db.String(36), primary_key=True, default=lambda: str(uuid.uuid4()))
-    student_id = db.Column(db.String(36), db.ForeignKey('users.id'), nullable=False)
-    problem_id = db.Column(db.String(36), db.ForeignKey('problems.id'), nullable=False)
+    student_id = db.Column(db.String(36), db.ForeignKey('users.id'), nullable=False, index=True)
+    problem_id = db.Column(db.String(36), db.ForeignKey('problems.id'), nullable=False, index=True)
     submitted_answer = db.Column(db.String(500), nullable=False)
     is_correct = db.Column(db.Boolean, nullable=False)
     hints_used = db.Column(db.Integer, nullable=False, default=0)

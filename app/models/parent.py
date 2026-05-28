@@ -13,8 +13,8 @@ class ParentStudentLink(db.Model):
     student_id = db.Column(db.String(36), db.ForeignKey('users.id'), nullable=False, index=True)
     created_at = db.Column(db.DateTime, default=lambda: datetime.now(timezone.utc))
 
-    parent = db.relationship('User', foreign_keys=[parent_id], backref='linked_students')
-    student = db.relationship('User', foreign_keys=[student_id], backref='linked_parents')
+    parent = db.relationship('User', foreign_keys=[parent_id], backref=db.backref('linked_students', cascade='all, delete-orphan'))
+    student = db.relationship('User', foreign_keys=[student_id], backref=db.backref('linked_parents', cascade='all'))
 
     __table_args__ = (
         db.UniqueConstraint('parent_id', 'student_id', name='uq_parent_student'),
@@ -29,13 +29,13 @@ class ParentLinkCode(db.Model):
 
     id = db.Column(db.String(36), primary_key=True, default=lambda: str(uuid.uuid4()))
     code = db.Column(db.String(8), unique=True, nullable=False, index=True)
-    student_id = db.Column(db.String(36), db.ForeignKey('users.id'), nullable=False)
+    student_id = db.Column(db.String(36), db.ForeignKey('users.id'), nullable=False, index=True)
     is_used = db.Column(db.Boolean, default=False)
-    used_by = db.Column(db.String(36), db.ForeignKey('users.id'), nullable=True)
+    used_by = db.Column(db.String(36), db.ForeignKey('users.id'), nullable=True, index=True)
     created_at = db.Column(db.DateTime, default=lambda: datetime.now(timezone.utc))
     expires_at = db.Column(db.DateTime, nullable=True)
 
-    student = db.relationship('User', foreign_keys=[student_id])
+    student = db.relationship('User', foreign_keys=[student_id], backref=db.backref('link_codes', cascade='all, delete-orphan'))
     used_by_user = db.relationship('User', foreign_keys=[used_by])
 
     def __repr__(self):

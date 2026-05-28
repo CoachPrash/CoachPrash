@@ -7,7 +7,7 @@ class ProblemSet(db.Model):
     __tablename__ = 'problem_sets'
 
     id = db.Column(db.String(36), primary_key=True, default=lambda: str(uuid.uuid4()))
-    concept_id = db.Column(db.String(36), db.ForeignKey('concepts.id'), nullable=False)
+    concept_id = db.Column(db.String(36), db.ForeignKey('concepts.id'), nullable=False, index=True)
     title = db.Column(db.String(200), nullable=False)
     access_tier = db.Column(db.String(20), nullable=False, default='free')
     display_order = db.Column(db.Integer, nullable=False, default=0)
@@ -19,7 +19,7 @@ class ProblemSet(db.Model):
         onupdate=lambda: datetime.now(timezone.utc),
     )
 
-    problems = db.relationship('Problem', backref='problem_set', lazy='dynamic', order_by='Problem.display_order')
+    problems = db.relationship('Problem', backref='problem_set', lazy='dynamic', order_by='Problem.display_order', cascade='all, delete-orphan')
 
     def __repr__(self):
         return f'<ProblemSet {self.title}>'
@@ -29,7 +29,7 @@ class Problem(db.Model):
     __tablename__ = 'problems'
 
     id = db.Column(db.String(36), primary_key=True, default=lambda: str(uuid.uuid4()))
-    problem_set_id = db.Column(db.String(36), db.ForeignKey('problem_sets.id'), nullable=False)
+    problem_set_id = db.Column(db.String(36), db.ForeignKey('problem_sets.id'), nullable=False, index=True)
     question_html = db.Column(db.Text, nullable=False, default='')
     question_raw = db.Column(db.Text, nullable=False, default='')
     problem_type = db.Column(db.String(20), nullable=False, default='mcq')
@@ -44,10 +44,10 @@ class Problem(db.Model):
         onupdate=lambda: datetime.now(timezone.utc),
     )
 
-    choices = db.relationship('Choice', backref='problem', lazy='dynamic', order_by='Choice.display_order')
-    hints = db.relationship('Hint', backref='problem', lazy='dynamic', order_by='Hint.display_order')
-    solution = db.relationship('StepByStepSolution', backref='problem', uselist=False)
-    attempts = db.relationship('AttemptLog', backref='problem', lazy='dynamic')
+    choices = db.relationship('Choice', backref='problem', lazy='dynamic', order_by='Choice.display_order', cascade='all, delete-orphan')
+    hints = db.relationship('Hint', backref='problem', lazy='dynamic', order_by='Hint.display_order', cascade='all, delete-orphan')
+    solution = db.relationship('StepByStepSolution', backref='problem', uselist=False, cascade='all, delete-orphan')
+    attempts = db.relationship('AttemptLog', backref='problem', lazy='dynamic', cascade='all')
 
     def __repr__(self):
         return f'<Problem {self.id}>'
@@ -57,7 +57,7 @@ class Choice(db.Model):
     __tablename__ = 'choices'
 
     id = db.Column(db.String(36), primary_key=True, default=lambda: str(uuid.uuid4()))
-    problem_id = db.Column(db.String(36), db.ForeignKey('problems.id'), nullable=False)
+    problem_id = db.Column(db.String(36), db.ForeignKey('problems.id'), nullable=False, index=True)
     choice_text = db.Column(db.String(500), nullable=False)
     is_correct = db.Column(db.Boolean, default=False)
     display_order = db.Column(db.Integer, nullable=False, default=0)
@@ -70,7 +70,7 @@ class Hint(db.Model):
     __tablename__ = 'hints'
 
     id = db.Column(db.String(36), primary_key=True, default=lambda: str(uuid.uuid4()))
-    problem_id = db.Column(db.String(36), db.ForeignKey('problems.id'), nullable=False)
+    problem_id = db.Column(db.String(36), db.ForeignKey('problems.id'), nullable=False, index=True)
     hint_text = db.Column(db.Text, nullable=False)
     display_order = db.Column(db.Integer, nullable=False, default=0)
     cost_points = db.Column(db.Integer, nullable=False, default=0)

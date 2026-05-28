@@ -28,9 +28,9 @@ class User(UserMixin, db.Model):
     )
 
     theme = db.relationship('Theme', lazy='joined')
-    progress = db.relationship('StudentProgress', backref='student', lazy='dynamic')
-    attempts = db.relationship('AttemptLog', backref='student', lazy='dynamic')
-    blog_posts = db.relationship('BlogPost', backref='author', lazy='dynamic')
+    progress = db.relationship('StudentProgress', backref='student', lazy='dynamic', cascade='all, delete-orphan')
+    attempts = db.relationship('AttemptLog', backref='student', lazy='dynamic', cascade='all, delete-orphan')
+    blog_posts = db.relationship('BlogPost', backref='author', lazy='dynamic', cascade='all, delete-orphan')
     created_codes = db.relationship('AccessCode', backref='creator', lazy='dynamic')
 
     def set_password(self, password):

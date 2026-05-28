@@ -14,7 +14,7 @@ class AccessCode(db.Model):
     max_uses = db.Column(db.Integer, nullable=True)
     current_uses = db.Column(db.Integer, nullable=False, default=0)
     expires_at = db.Column(db.DateTime, nullable=True)
-    created_by = db.Column(db.String(36), db.ForeignKey('users.id'), nullable=True)
+    created_by = db.Column(db.String(36), db.ForeignKey('users.id'), nullable=True, index=True)
     is_active = db.Column(db.Boolean, default=True)
     created_at = db.Column(db.DateTime, default=lambda: datetime.now(timezone.utc))
     updated_at = db.Column(

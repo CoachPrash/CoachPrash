@@ -1,0 +1,314 @@
+{% extends "base.html" %}
+{% block title %}{{ ps.title }} — Problem Editor{% endblock %}
+
+{% block content %}
+<section class="section">
+    <div class="container">
+        <!-- Breadcrumb -->
+        <nav class="breadcrumb mb-1-5">
+            <a href="{{ url_for('admin_panel.manage_content') }}">Content</a>
+            <span class="breadcrumb-sep">/</span>
+            <span class="breadcrumb-current">{{ concept.title }}</span>
+            <span class="breadcrumb-sep">/</span>
+            <span class="breadcrumb-current">{{ ps.title }}</span>
+        </nav>
+
+        <!-- Problem Set Metadata -->
+        <div class="card mb-2">
+            <form method="POST" action="{{ url_for('admin_panel.edit_problem_set', ps_id=ps.id) }}">
+                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                <div class="ps-meta-row">
+                    <div class="form-group mb-0">
+                        <label>Title</label>
+                        <input type="text" name="title" value="{{ ps.title }}" class="form-control" required>
+                    </div>
+                    <div class="form-group mb-0">
+                        <label>Tier</label>
+                        <select name="access_tier" class="form-control">
+                            <option value="free" {{ 'selected' if ps.access_tier == 'free' }}>Free</option>
+                            <option value="premium" {{ 'selected' if ps.access_tier == 'premium' }}>Premium</option>
+                        </select>
+                    </div>
+                    <div class="form-group mb-0">
+                        <label>Order</label>
+                        <input type="number" name="display_order" value="{{ ps.display_order }}" class="form-control" style="width:80px">
+                    </div>
+                    <div class="form-group mb-0" style="display:flex;align-items:flex-end;gap:0.5rem">
+                        <label style="display:flex;align-items:center;gap:0.35rem">
+                            <input type="checkbox" name="is_active" {{ 'checked' if ps.is_active }}> Active
+                        </label>
+                        <button type="submit" class="btn btn-sm btn-primary">Save</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <!-- Problems Header -->
+        <div class="admin-header">
+            <h2>Problems ({{ problems|length }})</h2>
+            <form method="POST" action="{{ url_for('admin_panel.new_problem', ps_id=ps.id) }}" class="inline-form">
+                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                <button type="submit" class="btn btn-primary">+ Add Problem</button>
+            </form>
+        </div>
+
+        {% if not problems %}
+        <div class="empty-state">
+            <h3>No problems yet</h3>
+            <p>Click "+ Add Problem" to create your first problem.</p>
+        </div>
+        {% endif %}
+
+        <!-- Problems List -->
+        <div class="problem-list">
+        {% for problem in problems %}
+            <div class="problem-panel" data-problem-id="{{ problem.id }}">
+                <div class="problem-panel-header" onclick="togglePanel(this)">
+                    <span class="problem-number">#{{ loop.index }}</span>
+                    <span class="problem-preview">{{ problem.question_raw[:100]|e }}{% if problem.question_raw|length > 100 %}...{% endif %}</span>
+                    <span class="badge badge-{{ problem.difficulty }}">{{ problem.difficulty }}</span>
+                    <span class="badge">{{ problem.problem_type.upper() }}</span>
+                    <span class="badge">{{ problem.points }} pt{{ 's' if problem.points != 1 }}</span>
+                    <span class="expand-icon">&#9656;</span>
+                </div>
+                <div class="problem-panel-body">
+                    <form method="POST" action="{{ url_for('admin_panel.edit_problem', problem_id=problem.id) }}">
+                        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+
+                        <!-- Question -->
+                        <div class="form-group">
+                            <label>Question (HTML + LaTeX)</label>
+                            <textarea name="question_raw" class="form-control form-textarea latex-input" rows="5">{{ problem.question_raw }}</textarea>
+                            <div class="latex-preview"></div>
+                        </div>
+
+                        <!-- Type / Difficulty / Points / Answer -->
+                        <div class="form-row-multi">
+                            <div class="form-group">
+                                <label>Type</label>
+                                <select name="problem_type" class="form-control problem-type-select" onchange="problemTypeChanged(this)">
+                                    <option value="mcq" {{ 'selected' if problem.problem_type == 'mcq' }}>MCQ</option>
+                                    <option value="ftb" {{ 'selected' if problem.problem_type == 'ftb' }}>FTB</option>
+                                    <option value="frq" {{ 'selected' if problem.problem_type == 'frq' }}>FRQ</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Difficulty</label>
+                                <select name="difficulty" class="form-control">
+                                    <option value="easy" {{ 'selected' if problem.difficulty == 'easy' }}>Easy</option>
+                                    <option value="medium" {{ 'selected' if problem.difficulty == 'medium' }}>Medium</option>
+                                    <option value="hard" {{ 'selected' if problem.difficulty == 'hard' }}>Hard</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Points</label>
+                                <input type="number" name="points" value="{{ problem.points }}" class="form-control" min="1" style="width:80px">
+                            </div>
+                            <div class="form-group correct-answer-group" style="{{ 'display:none' if problem.problem_type == 'mcq' }}">
+                                <label>Correct Answer <span class="form-help">(FTB: use || for alternates)</span></label>
+                                <input type="text" name="correct_answer" value="{{ problem.correct_answer or '' }}" class="form-control">
+                            </div>
+                        </div>
+
+                        <!-- Choices (MCQ only) -->
+                        <div class="choices-section" style="{{ 'display:none' if problem.problem_type != 'mcq' }}">
+                            <h4>Choices</h4>
+                            <div class="dynamic-rows">
+                                {% set choices = problem.choices.all() %}
+                                {% for choice in choices %}
+                                <div class="dynamic-row">
+                                    <input type="radio" name="correct_choice" value="{{ loop.index0 }}" {{ 'checked' if choice.is_correct }} title="Mark as correct">
+                                    <input type="text" name="choice_text[]" value="{{ choice.choice_text }}" class="form-control" placeholder="Choice text...">
+                                    <button type="button" class="btn btn-sm btn-danger" onclick="removeRow(this)" title="Remove">&times;</button>
+                                </div>
+                                {% endfor %}
+                            </div>
+                            <button type="button" class="btn btn-sm btn-outline" onclick="addChoiceRow(this)">+ Add Choice</button>
+                        </div>
+
+                        <!-- Hints -->
+                        <div class="hints-section">
+                            <h4>Hints</h4>
+                            <div class="dynamic-rows">
+                                {% for hint in problem.hints.all() %}
+                                <div class="dynamic-row">
+                                    <textarea name="hint_text[]" class="form-control" rows="2" placeholder="Hint text...">{{ hint.hint_text }}</textarea>
+                                    <input type="number" name="hint_cost[]" value="{{ hint.cost_points }}" class="form-control" style="width:80px" placeholder="Cost" title="Cost (points)">
+                                    <button type="button" class="btn btn-sm btn-danger" onclick="removeRow(this)" title="Remove">&times;</button>
+                                </div>
+                                {% endfor %}
+                            </div>
+                            <button type="button" class="btn btn-sm btn-outline" onclick="addHintRow(this)">+ Add Hint</button>
+                        </div>
+
+                        <!-- Solution Steps -->
+                        <div class="solution-section">
+                            <h4>Solution Steps</h4>
+                            <div class="dynamic-rows">
+                                {% if problem.solution and problem.solution.steps_json %}
+                                {% for step in problem.solution.steps_json %}
+                                <div class="dynamic-row">
+                                    <span class="step-number">{{ loop.index }}.</span>
+                                    <textarea name="step_text[]" class="form-control latex-input" rows="2" placeholder="Solution step...">{{ step.text_html }}</textarea>
+                                    <button type="button" class="btn btn-sm btn-danger" onclick="removeRow(this)" title="Remove">&times;</button>
+                                </div>
+                                {% endfor %}
+                                {% endif %}
+                            </div>
+                            <button type="button" class="btn btn-sm btn-outline" onclick="addStepRow(this)">+ Add Step</button>
+                        </div>
+
+                        <!-- Actions -->
+                        <div class="form-actions mt-1-5">
+                            <button type="submit" class="btn btn-primary">Save Problem</button>
+                            <button type="button" class="btn btn-danger" onclick="deleteProblem('{{ problem.id }}', '{{ problem.problem_set_id }}')">Delete</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+
+        <!-- Delete Problem Set -->
+        <div class="mt-2" style="display:flex;gap:1rem;align-items:center">
+            <a href="{{ url_for('admin_panel.manage_content') }}" class="btn btn-outline">&larr; Back to Content</a>
+            <form method="POST" action="{{ url_for('admin_panel.delete_problem_set', ps_id=ps.id) }}" class="inline-form" onsubmit="return confirm('Delete this entire problem set and all its problems?')">
+                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                <button type="submit" class="btn btn-sm btn-danger">Delete Problem Set</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- Delete form (used by JS) -->
+<form id="delete-problem-form" method="POST" style="display:none">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+</form>
+
+<script>
+/* Panel toggle */
+function togglePanel(header) {
+    const panel = header.closest('.problem-panel');
+    panel.classList.toggle('expanded');
+    const body = panel.querySelector('.problem-panel-body');
+    body.style.display = panel.classList.contains('expanded') ? 'block' : 'none';
+
+    /* Render LaTeX preview on first open */
+    if (panel.classList.contains('expanded')) {
+        panel.querySelectorAll('.latex-input').forEach(renderPreview);
+    }
+}
+
+/* Dynamic row: add choice */
+function addChoiceRow(btn) {
+    const container = btn.previousElementSibling;
+    const idx = container.querySelectorAll('.dynamic-row').length;
+    const row = document.createElement('div');
+    row.className = 'dynamic-row';
+    row.innerHTML = '<input type="radio" name="correct_choice" value="' + idx + '" title="Mark as correct">'
+        + '<input type="text" name="choice_text[]" class="form-control" placeholder="Choice text...">'
+        + '<button type="button" class="btn btn-sm btn-danger" onclick="removeRow(this)" title="Remove">&times;</button>';
+    container.appendChild(row);
+}
+
+/* Dynamic row: add hint */
+function addHintRow(btn) {
+    const container = btn.previousElementSibling;
+    const row = document.createElement('div');
+    row.className = 'dynamic-row';
+    row.innerHTML = '<textarea name="hint_text[]" class="form-control" rows="2" placeholder="Hint text..."></textarea>'
+        + '<input type="number" name="hint_cost[]" value="0" class="form-control" style="width:80px" placeholder="Cost" title="Cost (points)">'
+        + '<button type="button" class="btn btn-sm btn-danger" onclick="removeRow(this)" title="Remove">&times;</button>';
+    container.appendChild(row);
+}
+
+/* Dynamic row: add solution step */
+function addStepRow(btn) {
+    const container = btn.previousElementSibling;
+    const num = container.querySelectorAll('.dynamic-row').length + 1;
+    const row = document.createElement('div');
+    row.className = 'dynamic-row';
+    row.innerHTML = '<span class="step-number">' + num + '.</span>'
+        + '<textarea name="step_text[]" class="form-control latex-input" rows="2" placeholder="Solution step..."></textarea>'
+        + '<button type="button" class="btn btn-sm btn-danger" onclick="removeRow(this)" title="Remove">&times;</button>';
+    container.appendChild(row);
+    /* Attach live preview */
+    const ta = row.querySelector('.latex-input');
+    ta.addEventListener('input', debounce(function() { renderPreview(ta); }, 300));
+}
+
+/* Remove a dynamic row and reindex choices */
+function removeRow(btn) {
+    const row = btn.closest('.dynamic-row');
+    const container = row.parentElement;
+    row.remove();
+    /* Reindex choice radio values */
+    container.querySelectorAll('.dynamic-row').forEach(function(r, i) {
+        const radio = r.querySelector('input[type="radio"]');
+        if (radio) radio.value = i;
+        const stepNum = r.querySelector('.step-number');
+        if (stepNum) stepNum.textContent = (i + 1) + '.';
+    });
+}
+
+/* Problem type change: show/hide choices and correct answer */
+function problemTypeChanged(select) {
+    const panel = select.closest('.problem-panel-body');
+    const choicesSection = panel.querySelector('.choices-section');
+    const correctAnswer = panel.querySelector('.correct-answer-group');
+    if (select.value === 'mcq') {
+        choicesSection.style.display = '';
+        correctAnswer.style.display = 'none';
+    } else {
+        choicesSection.style.display = 'none';
+        correctAnswer.style.display = '';
+    }
+}
+
+/* Delete problem */
+function deleteProblem(problemId, psId) {
+    if (!confirm('Delete this problem?')) return;
+    const form = document.getElementById('delete-problem-form');
+    form.action = '/admin/content/problem/' + problemId + '/delete';
+    form.submit();
+}
+
+/* Debounce utility */
+function debounce(fn, ms) {
+    let timer;
+    return function() {
+        clearTimeout(timer);
+        const args = arguments, ctx = this;
+        timer = setTimeout(function() { fn.apply(ctx, args); }, ms);
+    };
+}
+
+/* Live LaTeX preview */
+function renderPreview(textarea) {
+    let preview = textarea.nextElementSibling;
+    if (!preview || !preview.classList.contains('latex-preview')) {
+        /* No preview div exists (for solution steps, skip) */
+        return;
+    }
+    preview.innerHTML = textarea.value;
+    if (typeof renderMathInElement === 'function') {
+        renderMathInElement(preview, {
+            delimiters: [
+                {left: '\\[', right: '\\]', display: true},
+                {left: '\\(', right: '\\)', display: false},
+                {left: '$$', right: '$$', display: true},
+                {left: '$', right: '$', display: false}
+            ],
+            throwOnError: false
+        });
+    }
+}
+
+/* Attach live preview listeners on page load */
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.latex-input').forEach(function(ta) {
+        ta.addEventListener('input', debounce(function() { renderPreview(ta); }, 300));
+    });
+});
+</script>
+{% endblock %}

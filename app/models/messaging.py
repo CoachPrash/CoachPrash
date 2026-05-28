@@ -16,8 +16,8 @@ class MessageThread(db.Model):
     )
 
     messages = db.relationship('Message', backref='thread', lazy='dynamic',
-                               order_by='Message.created_at')
-    participants = db.relationship('MessageParticipant', backref='thread', lazy='dynamic')
+                               order_by='Message.created_at', cascade='all, delete-orphan')
+    participants = db.relationship('MessageParticipant', backref='thread', lazy='dynamic', cascade='all, delete-orphan')
 
     def __repr__(self):
         return f'<MessageThread {self.subject}>'
