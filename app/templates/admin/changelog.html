@@ -13,6 +13,44 @@
                 <div class="changelog-date">
                     <span class="changelog-date-day">28</span>
                     <span class="changelog-date-month">May 2026</span>
+                    <span class="changelog-phase-badge">Admin</span>
+                </div>
+                <div class="changelog-body">
+                    <h2>Collapsible Content Manager</h2>
+                    <p class="changelog-summary">Redesigned Manage Content page with subject tabs and collapsible course/topic rows for easier navigation as content grows.</p>
+
+                    <div class="changelog-section">
+                        <h3>Subject Tabs</h3>
+                        <ul>
+                            <li>Subject tabs at the top &mdash; click to switch between subjects, only one visible at a time</li>
+                            <li>Each tab shows the subject icon and name</li>
+                        </ul>
+                    </div>
+
+                    <div class="changelog-section">
+                        <h3>Collapsible Tree</h3>
+                        <ul>
+                            <li>Courses start collapsed with topic counts &mdash; click to expand and see topics</li>
+                            <li>Topics start collapsed with concept counts &mdash; click to expand and see concepts + problem sets</li>
+                            <li>Only one course expanded at a time per subject to keep the page focused</li>
+                            <li>Expand/collapse icons (&#9656; / &#9662;) rotate smoothly on toggle</li>
+                        </ul>
+                    </div>
+
+                    <div class="changelog-section">
+                        <h3>Other Fixes</h3>
+                        <ul>
+                            <li>Fixed duplicate badge on AP courses (was showing both &ldquo;Ap&rdquo; and &ldquo;AP&rdquo;)</li>
+                            <li>Clean migration reset: consolidated all migrations into single <code>0001_initial.py</code> with ordered naming convention</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="changelog-entry">
+                <div class="changelog-date">
+                    <span class="changelog-date-day">28</span>
+                    <span class="changelog-date-month">May 2026</span>
                     <span class="changelog-phase-badge">Database</span>
                 </div>
                 <div class="changelog-body">

@@ -9,98 +9,147 @@
             <a href="{{ url_for('admin_panel.new_subject') }}" class="btn btn-primary">+ New Subject</a>
         </div>
 
-        {% for subject in subjects %}
-        <div class="content-tree">
-            <div class="tree-header">
-                <h2>{{ subject.icon or '📚' }} {{ subject.name }}
-                    {% if not subject.is_active %}<span class="badge badge-inactive">Inactive</span>{% endif %}
-                </h2>
-                <div class="tree-actions">
-                    <a href="{{ url_for('admin_panel.new_course', subject_id=subject.id) }}" class="btn btn-sm btn-outline">+ Course</a>
-                    <a href="{{ url_for('admin_panel.edit_subject', subject_id=subject.id) }}" class="btn btn-sm btn-outline">Edit</a>
-                    <form method="POST" action="{{ url_for('admin_panel.delete_subject', subject_id=subject.id) }}" class="inline-form" onsubmit="return confirm('Delete this subject and all its content?')">
-                        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
-                        <button type="submit" class="btn btn-sm btn-danger">Delete</button>
-                    </form>
-                </div>
-            </div>
+        <!-- Subject tabs -->
+        <div class="content-tabs">
+            {% for subject in subjects %}
+            <button class="content-tab {% if loop.first %}active{% endif %}"
+                    onclick="switchSubject('{{ subject.id }}', this)">
+                {{ subject.icon or '📚' }} {{ subject.name }}
+            </button>
+            {% endfor %}
+        </div>
 
-            {% for course in subject.courses.order_by('display_order').all() %}
-            <div class="tree-item tree-level-1">
-                <div class="tree-item-header">
-                    <h3>{{ course.name }}
-                        <span class="badge badge-{{ course.difficulty_level }}">{{ course.difficulty_level.replace('_', ' ').title() }}</span>
-                        {% if course.course_type != 'standard' %}
-                            <span class="badge">{{ course.course_type.upper() }}</span>
-                        {% endif %}
-                        {% if not course.is_active %}<span class="badge badge-inactive">Inactive</span>{% endif %}
-                    </h3>
+        <!-- Subject panels -->
+        {% for subject in subjects %}
+        <div class="subject-panel {% if loop.first %}active{% endif %}" id="subject-{{ subject.id }}">
+            <div class="content-tree">
+                <div class="tree-header">
+                    <h2>{{ subject.icon or '📚' }} {{ subject.name }}
+                        {% if not subject.is_active %}<span class="badge badge-inactive">Inactive</span>{% endif %}
+                    </h2>
                     <div class="tree-actions">
-                        <a href="{{ url_for('admin_panel.new_topic', course_id=course.id) }}" class="btn btn-sm btn-outline">+ Topic</a>
-                        <a href="{{ url_for('admin_panel.edit_course', course_id=course.id) }}" class="btn btn-sm btn-outline">Edit</a>
-                        <form method="POST" action="{{ url_for('admin_panel.delete_course', course_id=course.id) }}" class="inline-form" onsubmit="return confirm('Delete this course and all its topics?')">
+                        <a href="{{ url_for('admin_panel.new_course', subject_id=subject.id) }}" class="btn btn-sm btn-outline">+ Course</a>
+                        <a href="{{ url_for('admin_panel.edit_subject', subject_id=subject.id) }}" class="btn btn-sm btn-outline">Edit</a>
+                        <form method="POST" action="{{ url_for('admin_panel.delete_subject', subject_id=subject.id) }}" class="inline-form" onsubmit="return confirm('Delete this subject and all its content?')">
                             <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
                             <button type="submit" class="btn btn-sm btn-danger">Delete</button>
                         </form>
                     </div>
                 </div>
 
-                {% for topic in course.topics.order_by('display_order').all() %}
-                <div class="tree-item tree-level-2">
-                    <div class="tree-item-header">
-                        <h4>{{ topic.name }}
-                            {% if not topic.is_active %}<span class="badge badge-inactive">Inactive</span>{% endif %}
-                        </h4>
-                        <div class="tree-actions">
-                            <a href="{{ url_for('admin_panel.new_concept', topic_id=topic.id) }}" class="btn btn-sm btn-outline">+ Concept</a>
-                            <a href="{{ url_for('admin_panel.edit_topic', topic_id=topic.id) }}" class="btn btn-sm btn-outline">Edit</a>
-                            <form method="POST" action="{{ url_for('admin_panel.delete_topic', topic_id=topic.id) }}" class="inline-form" onsubmit="return confirm('Delete this topic?')">
-                                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
-                                <button type="submit" class="btn btn-sm btn-danger">Delete</button>
-                            </form>
-                        </div>
-                    </div>
-
-                    {% for link in topic.concept_links.order_by('display_order').all() %}
-                    {% set concept = link.concept %}
-                    <div class="tree-item tree-level-3">
-                        <span>{{ concept.title }}
-                            <span class="badge badge-{{ concept.access_tier }}">{{ concept.access_tier }}</span>
-                            <span class="badge">~{{ concept.estimated_minutes }} min</span>
-                            {% if concept.topic_links.count() > 1 %}
-                                <span class="badge" title="Shared across {{ concept.topic_links.count() }} topics">&#128279; {{ concept.topic_links.count() }}</span>
+                {% for course in subject.courses.order_by('display_order').all() %}
+                {% set topic_count = course.topics.count() %}
+                <div class="course-row">
+                    <div class="course-header" onclick="toggleCourse(this)">
+                        <span class="expand-icon">&#9656;</span>
+                        <h3>{{ course.name }}
+                            {% if course.course_type != 'standard' %}
+                                <span class="badge">{{ course.course_type.upper() }}</span>
                             {% endif %}
-                        </span>
-                        <div class="tree-actions">
-                            <a href="{{ url_for('admin_panel.new_problem_set', concept_id=concept.id) }}" class="btn btn-sm btn-outline">+ Problems</a>
-                            <a href="{{ url_for('admin_panel.edit_concept', concept_id=concept.id) }}" class="btn btn-sm btn-outline">Edit</a>
-                            <form method="POST" action="{{ url_for('admin_panel.delete_concept', concept_id=concept.id) }}" class="inline-form" onsubmit="return confirm('Delete this concept? It will be removed from ALL topics.')">
+                            {% if course.difficulty_level != course.course_type %}
+                                <span class="badge badge-{{ course.difficulty_level }}">{{ course.difficulty_level.replace('_', ' ').title() }}</span>
+                            {% endif %}
+                            {% if not course.is_active %}<span class="badge badge-inactive">Inactive</span>{% endif %}
+                            <span class="tree-count">({{ topic_count }} topic{{ 's' if topic_count != 1 else '' }})</span>
+                        </h3>
+                        <div class="tree-actions" onclick="event.stopPropagation()">
+                            <a href="{{ url_for('admin_panel.new_topic', course_id=course.id) }}" class="btn btn-sm btn-outline">+ Topic</a>
+                            <a href="{{ url_for('admin_panel.edit_course', course_id=course.id) }}" class="btn btn-sm btn-outline">Edit</a>
+                            <form method="POST" action="{{ url_for('admin_panel.delete_course', course_id=course.id) }}" class="inline-form" onsubmit="return confirm('Delete this course and all its topics?')">
                                 <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
                                 <button type="submit" class="btn btn-sm btn-danger">Delete</button>
                             </form>
                         </div>
                     </div>
-                    {% for ps in concept.problem_sets.all() %}
-                    <div class="tree-item tree-level-4">
-                        <span>{{ ps.title }}
-                            <span class="badge badge-{{ ps.access_tier }}">{{ ps.access_tier }}</span>
-                            <span class="badge">{{ ps.problems.count() }} problems</span>
-                            {% if not ps.is_active %}<span class="badge badge-inactive">Inactive</span>{% endif %}
-                        </span>
-                        <div class="tree-actions">
-                            <a href="{{ url_for('admin_panel.problem_set_detail', ps_id=ps.id) }}" class="btn btn-sm btn-outline">Edit</a>
+                    <div class="course-body">
+                        {% for topic in course.topics.order_by('display_order').all() %}
+                        {% set concept_links = topic.concept_links.order_by('display_order').all() %}
+                        <div class="topic-row">
+                            <div class="topic-header" onclick="toggleTopic(this)">
+                                <span class="expand-icon">&#9656;</span>
+                                <h4>{{ topic.name }}
+                                    {% if not topic.is_active %}<span class="badge badge-inactive">Inactive</span>{% endif %}
+                                    <span class="tree-count">({{ concept_links|length }} concept{{ 's' if concept_links|length != 1 else '' }})</span>
+                                </h4>
+                                <div class="tree-actions" onclick="event.stopPropagation()">
+                                    <a href="{{ url_for('admin_panel.new_concept', topic_id=topic.id) }}" class="btn btn-sm btn-outline">+ Concept</a>
+                                    <a href="{{ url_for('admin_panel.edit_topic', topic_id=topic.id) }}" class="btn btn-sm btn-outline">Edit</a>
+                                    <form method="POST" action="{{ url_for('admin_panel.delete_topic', topic_id=topic.id) }}" class="inline-form" onsubmit="return confirm('Delete this topic?')">
+                                        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                                        <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="topic-body">
+                                {% for link in concept_links %}
+                                {% set concept = link.concept %}
+                                <div class="tree-item tree-level-3">
+                                    <span>{{ concept.title }}
+                                        <span class="badge badge-{{ concept.access_tier }}">{{ concept.access_tier }}</span>
+                                        <span class="badge">~{{ concept.estimated_minutes }} min</span>
+                                        {% if concept.topic_links.count() > 1 %}
+                                            <span class="badge" title="Shared across {{ concept.topic_links.count() }} topics">&#128279; {{ concept.topic_links.count() }}</span>
+                                        {% endif %}
+                                    </span>
+                                    <div class="tree-actions">
+                                        <a href="{{ url_for('admin_panel.new_problem_set', concept_id=concept.id) }}" class="btn btn-sm btn-outline">+ Problems</a>
+                                        <a href="{{ url_for('admin_panel.edit_concept', concept_id=concept.id) }}" class="btn btn-sm btn-outline">Edit</a>
+                                        <form method="POST" action="{{ url_for('admin_panel.delete_concept', concept_id=concept.id) }}" class="inline-form" onsubmit="return confirm('Delete this concept? It will be removed from ALL topics.')">
+                                            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                                            <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                                        </form>
+                                    </div>
+                                </div>
+                                {% for ps in concept.problem_sets.all() %}
+                                <div class="tree-item tree-level-4">
+                                    <span>{{ ps.title }}
+                                        <span class="badge badge-{{ ps.access_tier }}">{{ ps.access_tier }}</span>
+                                        <span class="badge">{{ ps.problems.count() }} problems</span>
+                                        {% if not ps.is_active %}<span class="badge badge-inactive">Inactive</span>{% endif %}
+                                    </span>
+                                    <div class="tree-actions">
+                                        <a href="{{ url_for('admin_panel.problem_set_detail', ps_id=ps.id) }}" class="btn btn-sm btn-outline">Edit</a>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                                {% endfor %}
+                            </div>
                         </div>
+                        {% endfor %}
                     </div>
-                    {% endfor %}
-                    {% endfor %}
                 </div>
                 {% endfor %}
             </div>
-            {% endfor %}
         </div>
         {% endfor %}
 
         <a href="{{ url_for('admin_panel.dashboard') }}" class="btn btn-outline">&larr; Back to Dashboard</a>
     </div>
 </section>
+
+<script>
+function switchSubject(subjectId, btn) {
+    document.querySelectorAll('.subject-panel').forEach(function(p) { p.classList.remove('active'); });
+    document.querySelectorAll('.content-tab').forEach(function(t) { t.classList.remove('active'); });
+    document.getElementById('subject-' + subjectId).classList.add('active');
+    btn.classList.add('active');
+}
+
+function toggleCourse(header) {
+    var row = header.parentElement;
+    var isExpanded = row.classList.contains('expanded');
+    // Collapse all other courses in this subject
+    row.closest('.content-tree').querySelectorAll('.course-row.expanded').forEach(function(r) {
+        r.classList.remove('expanded');
+    });
+    if (!isExpanded) {
+        row.classList.add('expanded');
+    }
+}
+
+function toggleTopic(header) {
+    var row = header.parentElement;
+    row.classList.toggle('expanded');
+}
+</script>
 {% endblock %}
