@@ -1,5 +1,5 @@
 from app.models.user import User
-from app.models.content import Subject, Topic, Concept
+from app.models.content import Subject, Course, Topic, Concept, TopicConcept
 from app.models.practice import ProblemSet, Problem, Choice, Hint, StepByStepSolution
 from app.models.progress import StudentProgress, AttemptLog
 from app.models.access import AccessCode
@@ -36,7 +36,7 @@ class BlogPost(db.Model):
     __tablename__ = 'blog_posts'
 
     id = db.Column(db.String(36), primary_key=True, default=lambda: __import__('uuid').uuid4().__str__())
-    author_id = db.Column(db.String(36), db.ForeignKey('users.id'), nullable=False)
+    author_id = db.Column(db.String(36), db.ForeignKey('users.id'), nullable=False, index=True)
     title = db.Column(db.String(200), nullable=False)
     slug = db.Column(db.String(200), unique=True, nullable=False)
     content_html = db.Column(db.Text, nullable=False, default='')

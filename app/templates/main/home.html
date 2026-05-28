@@ -18,7 +18,7 @@
         <h2 class="section-title">What We Teach</h2>
         <div class="card-grid">
             {% for subject in subjects[:5] %}
-            <a href="{{ url_for('subjects.topic_list', slug=subject.slug) }}" class="card subject-card">
+            <a href="{{ url_for('subjects.course_list', slug=subject.slug) }}" class="card subject-card">
                 <div class="subject-icon">{{ subject.icon or '📚' }}</div>
                 <h3>{{ subject.name }}</h3>
                 <p>{{ subject.description[:100] }}{% if subject.description|length > 100 %}...{% endif %}</p>

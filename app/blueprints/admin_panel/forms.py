@@ -20,10 +20,11 @@ class SubjectForm(FlaskForm):
     is_active = BooleanField('Active', default=True)
 
 
-class TopicForm(FlaskForm):
+class CourseForm(FlaskForm):
     name = StringField('Name', validators=[DataRequired(), Length(max=150)])
     slug = StringField('Slug', validators=[DataRequired(), Length(max=150)])
     description = TextAreaField('Description', validators=[Optional()])
+    tagline = StringField('Tagline', validators=[Optional(), Length(max=300)])
     difficulty_level = SelectField(
         'Difficulty',
         choices=[
@@ -34,6 +35,24 @@ class TopicForm(FlaskForm):
             ('college', 'College'),
         ],
     )
+    course_type = SelectField(
+        'Course Type',
+        choices=[
+            ('standard', 'Standard'),
+            ('ap', 'AP'),
+            ('honors', 'Honors'),
+            ('college', 'College'),
+            ('test_prep', 'Test Prep'),
+        ],
+    )
+    display_order = IntegerField('Display Order', default=0)
+    is_active = BooleanField('Active', default=True)
+
+
+class TopicForm(FlaskForm):
+    name = StringField('Name', validators=[DataRequired(), Length(max=200)])
+    slug = StringField('Slug', validators=[DataRequired(), Length(max=200)])
+    description = TextAreaField('Description', validators=[Optional()])
     display_order = IntegerField('Display Order', default=0)
     is_active = BooleanField('Active', default=True)
 
@@ -48,7 +67,11 @@ class ConceptForm(FlaskForm):
     access_tier = SelectField(
         'Access Tier', choices=[('free', 'Free'), ('premium', 'Premium')]
     )
-    display_order = IntegerField('Display Order', default=0)
+    subject_area = StringField('Subject Area', validators=[Optional(), Length(max=50)])
+    difficulty = SelectField(
+        'Difficulty',
+        choices=[('easy', 'Easy'), ('medium', 'Medium'), ('hard', 'Hard')],
+    )
     is_active = BooleanField('Active', default=True)
 
 
@@ -64,9 +87,9 @@ class ProblemSetForm(FlaskForm):
 class ProblemForm(FlaskForm):
     question_raw = TextAreaField('Question (supports LaTeX)', validators=[DataRequired()])
     problem_type = SelectField(
-        'Type', choices=[('mcq', 'Multiple Choice'), ('fill_in_blank', 'Fill in the Blank'), ('frq', 'Free Response (FRQ)')]
+        'Type', choices=[('mcq', 'Multiple Choice (MCQ)'), ('ftb', 'Fill The Blank (FTB)'), ('frq', 'Free Response (FRQ)')]
     )
-    correct_answer = StringField('Correct Answer (for fill-in-blank)', validators=[Optional()])
+    correct_answer = StringField('Correct Answer (for FTB — use || for multiple accepted answers)', validators=[Optional()])
     difficulty = SelectField(
         'Difficulty', choices=[('easy', 'Easy'), ('medium', 'Medium'), ('hard', 'Hard')]
     )

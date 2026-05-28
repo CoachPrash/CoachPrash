@@ -36,16 +36,36 @@
                     </select>
                 </div>
                 <div class="form-group form-group-half">
-                    <label for="topic_id">Topic (optional)</label>
-                    <select name="topic_id" class="form-control">
+                    <label for="course_id">Course (optional)</label>
+                    <select name="course_id" class="form-control">
                         <option value="">— None —</option>
-                        {% for t in topics %}
-                            <option value="{{ t.id }}" {% if resource is defined and resource and resource.topic_id == t.id %}selected{% endif %}>{{ t.subject.name }} &rarr; {{ t.name }}</option>
+                        {% for cr in courses %}
+                            <option value="{{ cr.id }}" {% if resource is defined and resource and resource.course_id == cr.id %}selected{% endif %}>{{ cr.subject.name }} &rarr; {{ cr.name }}</option>
                         {% endfor %}
                     </select>
                 </div>
             </div>
-            <small class="form-help">At least one of Subject or Topic must be selected.</small>
+            <div class="form-row">
+                <div class="form-group form-group-half">
+                    <label for="topic_id">Topic (optional)</label>
+                    <select name="topic_id" class="form-control">
+                        <option value="">— None —</option>
+                        {% for t in topics %}
+                            <option value="{{ t.id }}" {% if resource is defined and resource and resource.topic_id == t.id %}selected{% endif %}>{{ t.course.name }} &rarr; {{ t.name }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="form-group form-group-half">
+                    <label for="concept_id">Concept (optional)</label>
+                    <select name="concept_id" class="form-control">
+                        <option value="">— None —</option>
+                        {% for c in concepts %}
+                            <option value="{{ c.id }}" {% if resource is defined and resource and resource.concept_id == c.id %}selected{% endif %}>{{ c.title }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+            <small class="form-help">Select at least one level. Concept-level resources travel with the concept across all topics.</small>
 
             <div class="form-group">
                 <label for="description">Description</label>

@@ -7,7 +7,7 @@
         {% if subject and topic %}
         <div class="breadcrumb">
             <a href="{{ url_for('subjects.catalog') }}">Subjects</a> &rsaquo;
-            <a href="{{ url_for('subjects.topic_list', slug=subject.slug) }}">{{ subject.name }}</a> &rsaquo;
+            <a href="{{ url_for('subjects.course_list', slug=subject.slug) }}">{{ subject.name }}</a> &rsaquo;
             <span>{{ topic.name }}</span>
         </div>
         <h1>{{ topic.name }}</h1>

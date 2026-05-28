@@ -72,7 +72,7 @@
                     <ul class="sidebar-submenu">
                         {% for subj in sidebar_subjects %}
                         <li class="sidebar-expandable">
-                            <a href="{{ url_for('subjects.topic_list', slug=subj.slug) }}" title="{{ subj.name }}"
+                            <a href="{{ url_for('subjects.course_list', slug=subj.slug) }}" title="{{ subj.name }}"
                                class="sidebar-subject-link{% if request.view_args and request.view_args.get('slug') == subj.slug or request.view_args and request.view_args.get('subject_slug') == subj.slug %} active{% endif %}">
                                 <span class="sidebar-link-text">{{ subj.name }}</span>
                                 <span class="expand-chevron expand-chevron-topic" data-subject-slug="{{ subj.slug }}">&#x25B6;</span>
@@ -217,7 +217,7 @@
                         <h4>Subjects</h4>
                         <ul>
                             {% for subj in sidebar_subjects %}
-                            <li><a href="{{ url_for('subjects.topic_list', slug=subj.slug) }}">{{ subj.name }}</a></li>
+                            <li><a href="{{ url_for('subjects.course_list', slug=subj.slug) }}">{{ subj.name }}</a></li>
                             {% endfor %}
                         </ul>
                     </div>

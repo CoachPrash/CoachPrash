@@ -6,7 +6,7 @@ from flask import render_template, flash, redirect, url_for, request, abort, jso
 from flask_login import login_required, current_user
 from app.blueprints.admin_panel import admin_bp
 from app.blueprints.admin_panel.forms import (
-    StudentEditForm, SubjectForm, TopicForm, ConceptForm,
+    StudentEditForm, SubjectForm, CourseForm, TopicForm, ConceptForm,
     ProblemSetForm, ProblemForm, AccessCodeForm, BlogPostForm, TestimonialForm,
     ResourceForm, ThemeForm,
 )
@@ -14,7 +14,7 @@ from app.models import (
     Testimonial, BlogPost, ContactMessage, Resource,
 )
 from app.models.user import User
-from app.models.content import Subject, Topic, Concept
+from app.models.content import Subject, Course, Topic, Concept, TopicConcept
 from app.models.practice import ProblemSet, Problem, Choice, Hint, StepByStepSolution
 from app.models.progress import AttemptLog
 from app.models.access import AccessCode
@@ -216,30 +216,93 @@ def delete_subject(subject_id):
     return redirect(url_for('admin_panel.manage_content'))
 
 
-@admin_bp.route('/content/subject/<subject_id>/topic/new', methods=['GET', 'POST'])
+@admin_bp.route('/content/subject/<subject_id>/course/new', methods=['GET', 'POST'])
 @admin_required
-def new_topic(subject_id):
+def new_course(subject_id):
     subject = db.session.get(Subject, subject_id)
     if not subject:
         abort(404)
-    form = TopicForm()
+    form = CourseForm()
     if form.validate_on_submit():
-        topic = Topic(
+        course = Course(
             subject_id=subject.id,
             name=form.name.data,
             slug=form.slug.data,
             description=form.description.data or '',
+            tagline=form.tagline.data or '',
             difficulty_level=form.difficulty_level.data,
+            course_type=form.course_type.data,
+            display_order=form.display_order.data,
+            is_active=form.is_active.data,
+        )
+        db.session.add(course)
+        db.session.commit()
+        logger.info('Course created: %s in %s', course.name, subject.name)
+        flash(f'Course "{course.name}" created.', 'success')
+        return redirect(url_for('admin_panel.manage_content'))
+    return render_template(
+        'admin/form_page.html', form=form, title=f'New Course in {subject.name}'
+    )
+
+
+@admin_bp.route('/content/course/<course_id>/edit', methods=['GET', 'POST'])
+@admin_required
+def edit_course(course_id):
+    course = db.session.get(Course, course_id)
+    if not course:
+        abort(404)
+    form = CourseForm(obj=course)
+    if form.validate_on_submit():
+        course.name = form.name.data
+        course.slug = form.slug.data
+        course.description = form.description.data or ''
+        course.tagline = form.tagline.data or ''
+        course.difficulty_level = form.difficulty_level.data
+        course.course_type = form.course_type.data
+        course.display_order = form.display_order.data
+        course.is_active = form.is_active.data
+        db.session.commit()
+        flash(f'Course "{course.name}" updated.', 'success')
+        return redirect(url_for('admin_panel.manage_content'))
+    return render_template('admin/form_page.html', form=form, title=f'Edit Course: {course.name}')
+
+
+@admin_bp.route('/content/course/<course_id>/delete', methods=['POST'])
+@admin_required
+def delete_course(course_id):
+    course = db.session.get(Course, course_id)
+    if not course:
+        abort(404)
+    logger.info('Course deleted: %s (id=%s)', course.name, course.id)
+    db.session.delete(course)
+    db.session.commit()
+    flash('Course deleted.', 'success')
+    return redirect(url_for('admin_panel.manage_content'))
+
+
+@admin_bp.route('/content/course/<course_id>/topic/new', methods=['GET', 'POST'])
+@admin_required
+def new_topic(course_id):
+    course = db.session.get(Course, course_id)
+    if not course:
+        abort(404)
+    form = TopicForm()
+    if form.validate_on_submit():
+        topic = Topic(
+            course_id=course.id,
+            name=form.name.data,
+            slug=form.slug.data,
+            description=form.description.data or '',
             display_order=form.display_order.data,
             is_active=form.is_active.data,
         )
         db.session.add(topic)
         db.session.commit()
-        logger.info('Topic created: %s in %s', topic.name, subject.name)
+        logger.info('Topic created: %s in %s', topic.name, course.name)
         flash(f'Topic "{topic.name}" created.', 'success')
         return redirect(url_for('admin_panel.manage_content'))
     return render_template(
-        'admin/form_page.html', form=form, title=f'New Topic in {subject.name}'
+        'admin/form_page.html', form=form, title=f'New Topic in {course.name}'
     )
 
 
@@ -254,7 +317,6 @@ def edit_topic(topic_id):
         topic.name = form.name.data
         topic.slug = form.slug.data
         topic.description = form.description.data or ''
-        topic.difficulty_level = form.difficulty_level.data
         topic.display_order = form.display_order.data
         topic.is_active = form.is_active.data
         db.session.commit()
@@ -285,20 +347,31 @@ def new_concept(topic_id):
     form = ConceptForm()
     if form.validate_on_submit():
         concept = Concept(
-            topic_id=topic.id,
             title=form.title.data,
             slug=form.slug.data,
             content_raw=form.content_raw.data or '',
             content_html=sanitize_html(form.content_raw.data or ''),
             estimated_minutes=form.estimated_minutes.data,
             access_tier=form.access_tier.data,
-            display_order=form.display_order.data,
+            subject_area=form.subject_area.data or None,
+            difficulty=form.difficulty.data,
             is_active=form.is_active.data,
         )
         db.session.add(concept)
+        db.session.flush()
+        # Link to topic
+        max_order = db.session.query(db.func.max(TopicConcept.display_order)).filter_by(
+            topic_id=topic.id
+        ).scalar() or 0
+        link = TopicConcept(
+            topic_id=topic.id,
+            concept_id=concept.id,
+            display_order=max_order + 1,
+        )
+        db.session.add(link)
         db.session.commit()
-        logger.info('Concept created: %s in %s', concept.title, topic.name)
-        flash(f'Concept "{concept.title}" created.', 'success')
+        logger.info('Concept created: %s and linked to %s', concept.title, topic.name)
+        flash(f'Concept "{concept.title}" created and linked to {topic.name}.', 'success')
         return redirect(url_for('admin_panel.manage_content'))
     return render_template(
         'admin/form_page.html', form=form, title=f'New Concept in {topic.name}', has_preview=True
@@ -319,7 +392,8 @@ def edit_concept(concept_id):
         concept.content_html = sanitize_html(form.content_raw.data or '')
         concept.estimated_minutes = form.estimated_minutes.data
         concept.access_tier = form.access_tier.data
-        concept.display_order = form.display_order.data
+        concept.subject_area = form.subject_area.data or None
+        concept.difficulty = form.difficulty.data
         concept.is_active = form.is_active.data
         db.session.commit()
         flash(f'Concept "{concept.title}" updated.', 'success')
@@ -336,6 +410,8 @@ def delete_concept(concept_id):
     if not concept:
         abort(404)
     logger.info('Concept deleted: %s (id=%s)', concept.title, concept.id)
+    # Manually delete topic links (Concept side only has cascade='all', not delete-orphan)
+    TopicConcept.query.filter_by(concept_id=concept.id).delete()
     db.session.delete(concept)
     db.session.commit()
     flash('Concept deleted.', 'success')
@@ -547,10 +623,11 @@ def view_message(message_id):
 def manage_resources():
     resources = Resource.query.order_by(Resource.display_order).all()
     subjects = Subject.query.order_by(Subject.display_order).all()
+    courses = Course.query.order_by(Course.display_order).all()
     topics = Topic.query.order_by(Topic.display_order).all()
     return render_template(
         'admin/manage_resources.html',
-        resources=resources, subjects=subjects, topics=topics,
+        resources=resources, subjects=subjects, courses=courses, topics=topics,
     )
 
 
@@ -559,22 +636,28 @@ def manage_resources():
 def new_resource():
     form = ResourceForm()
     subjects = Subject.query.order_by(Subject.display_order).all()
+    courses = Course.query.order_by(Course.display_order).all()
     topics = Topic.query.order_by(Topic.display_order).all()
+    concepts = Concept.query.filter_by(is_active=True).order_by(Concept.title).all()
 
     if form.validate_on_submit():
-        topic_id = request.form.get('topic_id') or None
         subject_id = request.form.get('subject_id') or None
-        if not topic_id and not subject_id:
-            flash('Select a topic or subject to attach this resource to.', 'danger')
+        course_id = request.form.get('course_id') or None
+        topic_id = request.form.get('topic_id') or None
+        concept_id = request.form.get('concept_id') or None
+        if not topic_id and not subject_id and not concept_id and not course_id:
+            flash('Select a subject, course, topic, or concept to attach this resource to.', 'danger')
             return render_template(
                 'admin/resource_form.html', form=form, title='New Resource',
-                subjects=subjects, topics=topics,
+                subjects=subjects, courses=courses, topics=topics, concepts=concepts,
             )
 
         embed_url = Resource.to_embed_url(form.url.data)
         resource = Resource(
-            topic_id=topic_id,
             subject_id=subject_id,
+            course_id=course_id,
+            topic_id=topic_id,
+            concept_id=concept_id,
             title=form.title.data,
             resource_type=form.resource_type.data,
             url=form.url.data,
@@ -591,7 +674,7 @@ def new_resource():
 
     return render_template(
         'admin/resource_form.html', form=form, title='New Resource',
-        subjects=subjects, topics=topics,
+        subjects=subjects, courses=courses, topics=topics, concepts=concepts,
     )
 
 
@@ -603,20 +686,26 @@ def edit_resource(resource_id):
         abort(404)
     form = ResourceForm(obj=resource)
     subjects = Subject.query.order_by(Subject.display_order).all()
+    courses = Course.query.order_by(Course.display_order).all()
     topics = Topic.query.order_by(Topic.display_order).all()
+    concepts = Concept.query.filter_by(is_active=True).order_by(Concept.title).all()
 
     if form.validate_on_submit():
-        topic_id = request.form.get('topic_id') or None
         subject_id = request.form.get('subject_id') or None
-        if not topic_id and not subject_id:
-            flash('Select a topic or subject to attach this resource to.', 'danger')
+        course_id = request.form.get('course_id') or None
+        topic_id = request.form.get('topic_id') or None
+        concept_id = request.form.get('concept_id') or None
+        if not topic_id and not subject_id and not concept_id and not course_id:
+            flash('Select a subject, course, topic, or concept to attach this resource to.', 'danger')
             return render_template(
                 'admin/resource_form.html', form=form, title=f'Edit Resource: {resource.title}',
-                subjects=subjects, topics=topics, resource=resource,
+                subjects=subjects, courses=courses, topics=topics, concepts=concepts, resource=resource,
             )
 
-        resource.topic_id = topic_id
         resource.subject_id = subject_id
+        resource.course_id = course_id
+        resource.topic_id = topic_id
+        resource.concept_id = concept_id
         resource.title = form.title.data
         resource.resource_type = form.resource_type.data
         resource.url = form.url.data
@@ -631,7 +720,7 @@ def edit_resource(resource_id):
 
     return render_template(
         'admin/resource_form.html', form=form, title=f'Edit Resource: {resource.title}',
-        subjects=subjects, topics=topics, resource=resource,
+        subjects=subjects, courses=courses, topics=topics, concepts=concepts, resource=resource,
     )
 
 
@@ -681,8 +770,8 @@ def upload_image():
                     error = f'MIME type not allowed: {file.content_type}'
                 else:
                     subject_slug = request.form.get('subject_slug', 'general')
-                    topic_slug = request.form.get('topic_slug', 'general')
-                    bucket_key = f'images/{subject_slug}/{topic_slug}/{filename}'
+                    course_slug = request.form.get('course_slug', 'general')
+                    bucket_key = f'images/{subject_slug}/{course_slug}/{filename}'
                     try:
                         upload_file(file, bucket_key, content_type=file.content_type)
                         uploaded_key = bucket_key
@@ -700,12 +789,12 @@ def upload_image():
         logger.exception('Failed to list bucket images')
 
     subjects = Subject.query.order_by(Subject.display_order).all()
-    topics = Topic.query.order_by(Topic.display_order).all()
+    courses = Course.query.order_by(Course.display_order).all()
 
     return render_template(
         'admin/upload_image.html',
         uploaded_key=uploaded_key, error=error, images=images,
-        subjects=subjects, topics=topics,
+        subjects=subjects, courses=courses,
     )
 
 
@@ -727,45 +816,46 @@ def validate_json():
     errors = []
     if not data.get('subject_slug'):
         errors.append('Missing subject_slug')
-    if not data.get('topic_slug'):
-        errors.append('Missing topic_slug')
+    if not data.get('course_slug'):
+        errors.append('Missing course_slug')
 
-    concepts = data.get('concepts', [])
-    if not concepts:
-        errors.append('No concepts found')
+    topics = data.get('topics', [])
+    if not topics:
+        errors.append('No topics found')
 
-    for ci, c in enumerate(concepts):
-        if not c.get('title'):
-            errors.append(f'Concept {ci + 1}: missing title')
-        for psi, ps in enumerate(c.get('problem_sets', [])):
-            for pi, p in enumerate(ps.get('problems', [])):
-                ptype = p.get('problem_type', 'mcq')
-                if ptype not in ('mcq', 'fill_in_blank', 'frq'):
-                    errors.append(f'Concept {ci + 1}, Problem Set {psi + 1}, Problem {pi + 1}: invalid problem_type "{ptype}"')
-                if ptype == 'mcq' and not p.get('choices'):
-                    errors.append(f'Concept {ci + 1}, PS {psi + 1}, Problem {pi + 1}: MCQ missing choices')
-                if ptype == 'fill_in_blank' and not p.get('correct_answer'):
-                    errors.append(f'Concept {ci + 1}, PS {psi + 1}, Problem {pi + 1}: fill_in_blank missing correct_answer')
+    total_concepts = 0
+    total_problems = 0
+    for ti, t in enumerate(topics):
+        if not t.get('name') and not t.get('slug'):
+            errors.append(f'Topic {ti + 1}: missing name/slug')
+        for ci, c in enumerate(t.get('concepts', [])):
+            total_concepts += 1
+            if not c.get('title'):
+                errors.append(f'Topic {ti + 1}, Concept {ci + 1}: missing title')
+            for psi, ps in enumerate(c.get('problem_sets', [])):
+                for pi, p in enumerate(ps.get('problems', [])):
+                    total_problems += 1
+                    ptype = p.get('problem_type', 'mcq')
+                    if ptype not in ('mcq', 'ftb', 'frq'):
+                        errors.append(f'Topic {ti + 1}, Concept {ci + 1}, PS {psi + 1}, Problem {pi + 1}: invalid problem_type "{ptype}"')
+                    if ptype == 'mcq' and not p.get('choices'):
+                        errors.append(f'Topic {ti + 1}, Concept {ci + 1}, PS {psi + 1}, Problem {pi + 1}: MCQ missing choices')
+                    if ptype == 'ftb' and not p.get('correct_answer'):
+                        errors.append(f'Topic {ti + 1}, Concept {ci + 1}, PS {psi + 1}, Problem {pi + 1}: FTB missing correct_answer')
 
     if errors:
         return jsonify({'valid': False, 'errors': errors})
 
-    # Check subject/topic exist
+    # Check subject/course exist
     subject = Subject.query.filter_by(slug=data['subject_slug']).first()
     if not subject:
         return jsonify({'valid': False, 'error': f'Subject "{data["subject_slug"]}" not found in DB.'})
-    topic = Topic.query.filter_by(subject_id=subject.id, slug=data['topic_slug']).first()
-    if not topic:
-        return jsonify({'valid': False, 'error': f'Topic "{data["topic_slug"]}" not found in {subject.name}.'})
+    course = Course.query.filter_by(subject_id=subject.id, slug=data['course_slug']).first()
+    if not course:
+        return jsonify({'valid': False, 'error': f'Course "{data["course_slug"]}" not found in {subject.name}.'})
 
-    summary = f'{len(concepts)} concept(s)'
-    total_problems = sum(
-        len(ps.get('problems', []))
-        for c in concepts
-        for ps in c.get('problem_sets', [])
-    )
-    summary += f', {total_problems} problem(s)'
-    return jsonify({'valid': True, 'summary': summary, 'subject': subject.name, 'topic': topic.name})
+    summary = f'{len(topics)} topic(s), {total_concepts} concept(s), {total_problems} problem(s)'
+    return jsonify({'valid': True, 'summary': summary, 'subject': subject.name, 'course': course.name})
 
 
 @admin_bp.route('/content/import', methods=['GET', 'POST'])
@@ -794,9 +884,9 @@ def bulk_import():
 
     # Validate structure
     subject_slug = data.get('subject_slug')
-    topic_slug = data.get('topic_slug')
-    if not subject_slug or not topic_slug:
-        flash('JSON must include subject_slug and topic_slug.', 'danger')
+    course_slug = data.get('course_slug')
+    if not subject_slug or not course_slug:
+        flash('JSON must include subject_slug and course_slug.', 'danger')
         return render_template('admin/bulk_import.html')
 
     subject = Subject.query.filter_by(slug=subject_slug).first()
@@ -804,126 +894,366 @@ def bulk_import():
         flash(f'Subject "{subject_slug}" not found.', 'danger')
         return render_template('admin/bulk_import.html')
 
-    topic = Topic.query.filter_by(subject_id=subject.id, slug=topic_slug).first()
-    if not topic:
-        flash(f'Topic "{topic_slug}" not found in {subject.name}.', 'danger')
+    course = Course.query.filter_by(subject_id=subject.id, slug=course_slug).first()
+    if not course:
+        flash(f'Course "{course_slug}" not found in {subject.name}.', 'danger')
         return render_template('admin/bulk_import.html')
 
-    concepts_data = data.get('concepts', [])
-    if not concepts_data:
-        flash('No concepts found in JSON.', 'danger')
+    topics_data = data.get('topics', [])
+    if not topics_data:
+        flash('No topics found in JSON.', 'danger')
         return render_template('admin/bulk_import.html')
 
     # Import within a transaction
-    counts = {'concepts': 0, 'problem_sets': 0, 'problems': 0, 'choices': 0, 'hints': 0, 'solutions': 0}
+    counts = {'topics': 0, 'concepts': 0, 'problem_sets': 0, 'problems': 0,
+              'choices': 0, 'hints': 0, 'solutions': 0}
     try:
-        for ci, cdata in enumerate(concepts_data):
-            concept = Concept(
-                topic_id=topic.id,
-                title=cdata.get('title', f'Concept {ci + 1}'),
-                slug=cdata.get('slug', cdata.get('title', f'concept-{ci + 1}').lower().replace(' ', '-')),
-                content_html=sanitize_html(cdata.get('content_html', cdata.get('content_raw', ''))),
-                content_raw=cdata.get('content_raw', ''),
-                estimated_minutes=cdata.get('estimated_minutes', 5),
-                access_tier=cdata.get('access_tier', 'free'),
-                display_order=cdata.get('display_order', ci),
-                is_active=True,
-            )
-            db.session.add(concept)
-            db.session.flush()
-            counts['concepts'] += 1
-
-            for psi, psdata in enumerate(cdata.get('problem_sets', [])):
-                ps = ProblemSet(
-                    concept_id=concept.id,
-                    title=psdata.get('title', f'Problem Set {psi + 1}'),
-                    access_tier=psdata.get('access_tier', 'free'),
-                    display_order=psdata.get('display_order', psi),
+        for ti, tdata in enumerate(topics_data):
+            topic_slug = tdata.get('slug', tdata.get('name', f'topic-{ti+1}').lower().replace(' ', '-'))
+            topic = Topic.query.filter_by(course_id=course.id, slug=topic_slug).first()
+            if not topic:
+                topic = Topic(
+                    course_id=course.id,
+                    name=tdata.get('name', f'Topic {ti + 1}'),
+                    slug=topic_slug,
+                    description=tdata.get('description', ''),
+                    display_order=tdata.get('display_order', ti),
                     is_active=True,
                 )
-                db.session.add(ps)
+                db.session.add(topic)
                 db.session.flush()
-                counts['problem_sets'] += 1
+                counts['topics'] += 1
 
-                for pi, pdata in enumerate(psdata.get('problems', [])):
-                    problem = Problem(
-                        problem_set_id=ps.id,
-                        question_html=sanitize_html(pdata.get('question_html', pdata.get('question_raw', ''))),
-                        question_raw=pdata.get('question_raw', ''),
-                        problem_type=pdata.get('problem_type', 'mcq'),
-                        correct_answer=pdata.get('correct_answer', ''),
-                        difficulty=pdata.get('difficulty', 'medium'),
-                        points=pdata.get('points', 1),
-                        display_order=pdata.get('display_order', pi),
+            for ci, cdata in enumerate(tdata.get('concepts', [])):
+                slug = cdata.get('slug', cdata.get('title', f'concept-{ci+1}').lower().replace(' ', '-'))
+                concept = Concept.query.filter_by(slug=slug).first()
+                if not concept:
+                    concept = Concept(
+                        title=cdata.get('title', f'Concept {ci + 1}'),
+                        slug=slug,
+                        content_html=sanitize_html(cdata.get('content_html', cdata.get('content_raw', ''))),
+                        content_raw=cdata.get('content_raw', ''),
+                        estimated_minutes=cdata.get('estimated_minutes', 5),
+                        access_tier=cdata.get('access_tier', 'free'),
+                        subject_area=cdata.get('subject_area'),
+                        difficulty=cdata.get('difficulty', 'medium'),
+                        tags=cdata.get('tags', []),
+                        is_active=True,
                     )
-                    db.session.add(problem)
+                    db.session.add(concept)
                     db.session.flush()
-                    counts['problems'] += 1
+                    counts['concepts'] += 1
 
-                    for chi, chdata in enumerate(pdata.get('choices', [])):
-                        choice = Choice(
-                            problem_id=problem.id,
-                            choice_text=chdata.get('text', chdata.get('choice_text', '')),
-                            is_correct=chdata.get('is_correct', False),
-                            display_order=chi,
+                    for psi, psdata in enumerate(cdata.get('problem_sets', [])):
+                        ps = ProblemSet(
+                            concept_id=concept.id,
+                            title=psdata.get('title', f'Problem Set {psi + 1}'),
+                            access_tier=psdata.get('access_tier', 'free'),
+                            display_order=psdata.get('display_order', psi),
+                            is_active=True,
                         )
-                        db.session.add(choice)
-                        counts['choices'] += 1
+                        db.session.add(ps)
+                        db.session.flush()
+                        counts['problem_sets'] += 1
 
-                    for hi, hdata in enumerate(pdata.get('hints', [])):
-                        hint_text = hdata if isinstance(hdata, str) else hdata.get('text', hdata.get('hint_text', ''))
-                        cost = 0 if isinstance(hdata, str) else hdata.get('cost_points', 0)
-                        hint = Hint(
-                            problem_id=problem.id,
-                            hint_text=hint_text,
-                            display_order=hi,
-                            cost_points=cost,
-                        )
-                        db.session.add(hint)
-                        counts['hints'] += 1
-
-                    solution_data = pdata.get('solution_steps', pdata.get('solution'))
-                    if solution_data:
-                        if isinstance(solution_data, list):
-                            steps = []
-                            for i, s in enumerate(solution_data):
-                                if isinstance(s, str):
-                                    steps.append({'step_number': i + 1, 'text_html': s})
-                                else:
-                                    steps.append({
-                                        'step_number': s.get('step_number', i + 1),
-                                        'text_html': s.get('text', s.get('text_html', '')),
-                                    })
-                        elif isinstance(solution_data, dict):
-                            steps = solution_data.get('steps_json', [])
-                        else:
-                            steps = []
-                        if steps:
-                            sol = StepByStepSolution(
-                                problem_id=problem.id,
-                                steps_json=steps,
-                                access_tier=pdata.get('solution', {}).get('access_tier', 'premium')
-                                if isinstance(pdata.get('solution'), dict) else 'premium',
+                        for pi, pdata in enumerate(psdata.get('problems', [])):
+                            problem_type = pdata.get('problem_type', 'mcq')
+                            if problem_type not in ('mcq', 'ftb', 'frq'):
+                                problem_type = 'mcq'
+                            problem = Problem(
+                                problem_set_id=ps.id,
+                                question_html=sanitize_html(pdata.get('question_html', pdata.get('question_raw', ''))),
+                                question_raw=pdata.get('question_raw', ''),
+                                problem_type=problem_type,
+                                correct_answer=pdata.get('correct_answer', ''),
+                                difficulty=pdata.get('difficulty', 'medium'),
+                                points=pdata.get('points', 1),
+                                display_order=pdata.get('display_order', pi),
                             )
-                            db.session.add(sol)
-                            counts['solutions'] += 1
+                            db.session.add(problem)
+                            db.session.flush()
+                            counts['problems'] += 1
+
+                            for chi, chdata in enumerate(pdata.get('choices', [])):
+                                choice = Choice(
+                                    problem_id=problem.id,
+                                    choice_text=chdata.get('text', chdata.get('choice_text', '')),
+                                    is_correct=chdata.get('is_correct', False),
+                                    display_order=chi,
+                                )
+                                db.session.add(choice)
+                                counts['choices'] += 1
+
+                            for hi, hdata in enumerate(pdata.get('hints', [])):
+                                hint_text = hdata if isinstance(hdata, str) else hdata.get('text', hdata.get('hint_text', ''))
+                                cost = 0 if isinstance(hdata, str) else hdata.get('cost_points', 0)
+                                hint = Hint(
+                                    problem_id=problem.id,
+                                    hint_text=hint_text,
+                                    display_order=hi,
+                                    cost_points=cost,
+                                )
+                                db.session.add(hint)
+                                counts['hints'] += 1
+
+                            solution_data = pdata.get('solution_steps', pdata.get('solution'))
+                            if solution_data:
+                                if isinstance(solution_data, list):
+                                    steps = []
+                                    for i, s in enumerate(solution_data):
+                                        if isinstance(s, str):
+                                            steps.append({'step_number': i + 1, 'text_html': s})
+                                        else:
+                                            steps.append({
+                                                'step_number': s.get('step_number', i + 1),
+                                                'text_html': s.get('text', s.get('text_html', '')),
+                                            })
+                                elif isinstance(solution_data, dict):
+                                    steps = solution_data.get('steps_json', [])
+                                else:
+                                    steps = []
+                                if steps:
+                                    sol = StepByStepSolution(
+                                        problem_id=problem.id,
+                                        steps_json=steps,
+                                        access_tier=pdata.get('solution', {}).get('access_tier', 'premium')
+                                        if isinstance(pdata.get('solution'), dict) else 'premium',
+                                    )
+                                    db.session.add(sol)
+                                    counts['solutions'] += 1
+
+                # Link concept to topic via TopicConcept
+                existing_link = TopicConcept.query.filter_by(
+                    topic_id=topic.id, concept_id=concept.id
+                ).first()
+                if not existing_link:
+                    link = TopicConcept(
+                        topic_id=topic.id,
+                        concept_id=concept.id,
+                        display_order=cdata.get('display_order', ci),
+                    )
+                    db.session.add(link)
 
         db.session.commit()
-        logger.info('Bulk import successful: %s concepts, %s problems, %s solutions into %s/%s',
-                    counts['concepts'], counts['problems'], counts['solutions'],
-                    subject.name, topic.name)
+        logger.info('Bulk import successful: %s topics, %s concepts, %s problems into %s/%s',
+                    counts['topics'], counts['concepts'], counts['problems'],
+                    subject.name, course.name)
         flash(
-            f"Import successful: {counts['concepts']} concepts, {counts['problem_sets']} problem sets, "
-            f"{counts['problems']} problems, {counts['choices']} choices, {counts['hints']} hints, "
-            f"{counts['solutions']} solutions.",
+            f"Import successful: {counts['topics']} topics, {counts['concepts']} concepts, "
+            f"{counts['problem_sets']} problem sets, {counts['problems']} problems, "
+            f"{counts['choices']} choices, {counts['hints']} hints, {counts['solutions']} solutions.",
             'success'
         )
     except Exception as e:
         db.session.rollback()
-        logger.exception('Bulk import failed for %s/%s', subject_slug, topic_slug)
+        logger.exception('Bulk import failed for %s/%s', subject_slug, course_slug)
         flash(f'Import failed: {e}', 'danger')
 
     return redirect(url_for('admin_panel.bulk_import'))
+
+
+# --- Problem Set & Problem Editor ---
+
+@admin_bp.route('/content/concept/<concept_id>/problem-set/new', methods=['GET', 'POST'])
+@admin_required
+def new_problem_set(concept_id):
+    concept = db.session.get(Concept, concept_id)
+    if not concept:
+        abort(404)
+    form = ProblemSetForm()
+    if form.validate_on_submit():
+        ps = ProblemSet(
+            concept_id=concept.id,
+            title=form.title.data,
+            access_tier=form.access_tier.data,
+            display_order=form.display_order.data,
+            is_active=form.is_active.data,
+        )
+        db.session.add(ps)
+        db.session.commit()
+        logger.info('Problem set created: %s for concept %s', ps.title, concept.title)
+        flash(f'Problem set "{ps.title}" created.', 'success')
+        return redirect(url_for('admin_panel.problem_set_detail', ps_id=ps.id))
+    return render_template('admin/form_page.html', form=form, title=f'New Problem Set for {concept.title}')
+
+
+@admin_bp.route('/content/problem-set/<ps_id>')
+@admin_required
+def problem_set_detail(ps_id):
+    ps = db.session.get(ProblemSet, ps_id)
+    if not ps:
+        abort(404)
+    concept = db.session.get(Concept, ps.concept_id)
+    problems = ps.problems.all()
+    ps_form = ProblemSetForm(obj=ps)
+    return render_template(
+        'admin/problem_set_detail.html',
+        ps=ps, concept=concept, problems=problems, ps_form=ps_form,
+    )
+
+
+@admin_bp.route('/content/problem-set/<ps_id>/edit', methods=['POST'])
+@admin_required
+def edit_problem_set(ps_id):
+    ps = db.session.get(ProblemSet, ps_id)
+    if not ps:
+        abort(404)
+    form = ProblemSetForm()
+    if form.validate_on_submit():
+        ps.title = form.title.data
+        ps.access_tier = form.access_tier.data
+        ps.display_order = form.display_order.data
+        ps.is_active = form.is_active.data
+        db.session.commit()
+        flash(f'Problem set "{ps.title}" updated.', 'success')
+    return redirect(url_for('admin_panel.problem_set_detail', ps_id=ps.id))
+
+
+@admin_bp.route('/content/problem-set/<ps_id>/delete', methods=['POST'])
+@admin_required
+def delete_problem_set(ps_id):
+    ps = db.session.get(ProblemSet, ps_id)
+    if not ps:
+        abort(404)
+    # Delete attempt logs before cascade delete
+    for problem in ps.problems.all():
+        AttemptLog.query.filter_by(problem_id=problem.id).delete()
+    logger.info('Problem set deleted: %s (id=%s)', ps.title, ps.id)
+    db.session.delete(ps)
+    db.session.commit()
+    flash('Problem set deleted.', 'success')
+    return redirect(url_for('admin_panel.manage_content'))
+
+
+@admin_bp.route('/content/problem-set/<ps_id>/problem/new', methods=['POST'])
+@admin_required
+def new_problem(ps_id):
+    ps = db.session.get(ProblemSet, ps_id)
+    if not ps:
+        abort(404)
+    max_order = db.session.query(db.func.max(Problem.display_order)).filter_by(
+        problem_set_id=ps.id
+    ).scalar() or 0
+    problem = Problem(
+        problem_set_id=ps.id,
+        question_html='<p>New question</p>',
+        question_raw='<p>New question</p>',
+        problem_type='mcq',
+        difficulty='medium',
+        points=1,
+        display_order=max_order + 1,
+    )
+    db.session.add(problem)
+    db.session.commit()
+    flash('New problem added. Edit it below.', 'success')
+    return redirect(url_for('admin_panel.problem_set_detail', ps_id=ps.id))
+
+
+@admin_bp.route('/content/problem/<problem_id>/edit', methods=['POST'])
+@admin_required
+def edit_problem(problem_id):
+    problem = db.session.get(Problem, problem_id)
+    if not problem:
+        abort(404)
+
+    # Core fields
+    problem.question_raw = request.form.get('question_raw', '')
+    problem.question_html = sanitize_html(problem.question_raw)
+    problem.problem_type = request.form.get('problem_type', 'mcq')
+    problem.correct_answer = request.form.get('correct_answer', '')
+    problem.difficulty = request.form.get('difficulty', 'medium')
+    problem.points = int(request.form.get('points', 1) or 1)
+
+    # --- Choices (delete and recreate) ---
+    Choice.query.filter_by(problem_id=problem.id).delete()
+    if problem.problem_type == 'mcq':
+        choice_texts = request.form.getlist('choice_text[]')
+        correct_idx = request.form.get('correct_choice', '')
+        for i, text in enumerate(choice_texts):
+            if text.strip():
+                is_correct = str(i) == correct_idx
+                choice = Choice(
+                    problem_id=problem.id,
+                    choice_text=text.strip(),
+                    is_correct=is_correct,
+                    display_order=i,
+                )
+                db.session.add(choice)
+                if is_correct:
+                    problem.correct_answer = text.strip()
+
+    # --- Hints (delete and recreate) ---
+    Hint.query.filter_by(problem_id=problem.id).delete()
+    hint_texts = request.form.getlist('hint_text[]')
+    hint_costs = request.form.getlist('hint_cost[]')
+    for i, text in enumerate(hint_texts):
+        if text.strip():
+            cost = int(hint_costs[i]) if i < len(hint_costs) and hint_costs[i] else 0
+            hint = Hint(
+                problem_id=problem.id,
+                hint_text=text.strip(),
+                display_order=i,
+                cost_points=cost,
+            )
+            db.session.add(hint)
+
+    # --- Solution Steps (upsert) ---
+    step_texts = request.form.getlist('step_text[]')
+    steps_json = []
+    for i, text in enumerate(step_texts):
+        if text.strip():
+            steps_json.append({'step_number': i + 1, 'text_html': text.strip()})
+
+    if steps_json:
+        sol = StepByStepSolution.query.filter_by(problem_id=problem.id).first()
+        if sol:
+            sol.steps_json = steps_json
+        else:
+            sol = StepByStepSolution(
+                problem_id=problem.id,
+                steps_json=steps_json,
+                access_tier='premium',
+            )
+            db.session.add(sol)
+    else:
+        StepByStepSolution.query.filter_by(problem_id=problem.id).delete()
+
+    db.session.commit()
+    flash('Problem updated.', 'success')
+    return redirect(url_for('admin_panel.problem_set_detail', ps_id=problem.problem_set_id))
+
+
+@admin_bp.route('/content/problem/<problem_id>/delete', methods=['POST'])
+@admin_required
+def delete_problem(problem_id):
+    problem = db.session.get(Problem, problem_id)
+    if not problem:
+        abort(404)
+    ps_id = problem.problem_set_id
+    # Delete attempt logs for this problem
+    AttemptLog.query.filter_by(problem_id=problem.id).delete()
+    logger.info('Problem deleted: %s', problem.id)
+    db.session.delete(problem)
+    db.session.commit()
+    flash('Problem deleted.', 'success')
+    return redirect(url_for('admin_panel.problem_set_detail', ps_id=ps_id))
+
+
+@admin_bp.route('/content/problem-set/<ps_id>/reorder', methods=['POST'])
+@admin_required
+def reorder_problems(ps_id):
+    ps = db.session.get(ProblemSet, ps_id)
+    if not ps:
+        return jsonify({'error': 'Not found'}), 404
+    data = request.get_json()
+    if not data or 'problem_ids' not in data:
+        return jsonify({'error': 'Missing problem_ids'}), 400
+    for i, pid in enumerate(data['problem_ids']):
+        problem = db.session.get(Problem, pid)
+        if problem and problem.problem_set_id == ps.id:
+            problem.display_order = i
+    db.session.commit()
+    return jsonify({'success': True})
 
 
 # --- Parent Management ---
@@ -1191,7 +1521,6 @@ def generate_report():
 
     # Concepts progress in period
     from app.models.progress import StudentProgress
-    from app.models.content import Concept, Topic, Subject
     concepts_completed = StudentProgress.query.filter(
         StudentProgress.student_id == student_id,
         StudentProgress.status == 'completed',
@@ -1219,14 +1548,17 @@ def generate_report():
         if problem and problem.problem_set:
             concept = db.session.get(Concept, problem.problem_set.concept_id)
             if concept:
-                topic = db.session.get(Topic, concept.topic_id)
-                if topic:
-                    key = topic.id
-                    if key not in topic_data:
-                        topic_data[key] = {'name': topic.name, 'total': 0, 'correct': 0}
-                    topic_data[key]['total'] += 1
-                    if att.is_correct:
-                        topic_data[key]['correct'] += 1
+                # Find topics linked to this concept via TopicConcept
+                topic_links = TopicConcept.query.filter_by(concept_id=concept.id).all()
+                for tl in topic_links:
+                    t = db.session.get(Topic, tl.topic_id)
+                    if t:
+                        key = t.id
+                        if key not in topic_data:
+                            topic_data[key] = {'name': t.name, 'total': 0, 'correct': 0}
+                        topic_data[key]['total'] += 1
+                        if att.is_correct:
+                            topic_data[key]['correct'] += 1
 
     for td in topic_data.values():
         td['accuracy'] = round(td['correct'] / td['total'] * 100, 1) if td['total'] > 0 else 0

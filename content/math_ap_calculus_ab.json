@@ -1,0 +1,1627 @@
+{
+  "subject_slug": "mathematics",
+  "course_slug": "ap-calculus-ab",
+  "topics": [
+    {
+      "name": "Limits and Continuity",
+      "slug": "limits-and-continuity",
+      "description": "Explore the concept of limits, continuity, and the Intermediate Value Theorem.",
+      "display_order": 1,
+      "concepts": [
+        {
+          "title": "Introducing Limits and Continuity",
+          "slug": "introducing-limits-continuity",
+          "subject_area": "calculus",
+          "difficulty": "medium",
+          "tags": [
+            "limits",
+            "continuity",
+            "ap-calculus-ab",
+            "unit-1"
+          ],
+          "content_html": "<h2>Limits: The Foundation of Calculus</h2><p>Calculus begins with a deceptively simple question: <em>What value does \\(f(x)\\) approach as \\(x\\) gets closer and closer to some number \\(a\\)?</em></p><p>We write this as \\(\\displaystyle\\lim_{x \\to a} f(x) = L\\), read \"the limit of \\(f(x)\\) as \\(x\\) approaches \\(a\\) is \\(L\\).\"</p><h3>Why Limits Matter</h3><p>Limits let us talk precisely about things that are <strong>almost</strong> happening:</p><ul><li>The slope of a curve at a single point (derivatives)</li><li>The area under a curve (integrals)</li><li>The sum of infinitely many terms (series)</li></ul><h3>Evaluating Limits</h3><p>There are several strategies, roughly in order of difficulty:</p><ol><li><strong>Direct substitution:</strong> Plug in \\(x = a\\). If you get a real number, that's your limit.</li><li><strong>Factoring:</strong> Factor numerator and denominator, cancel common factors, then substitute.</li><li><strong>Conjugate multiplication:</strong> Useful when radicals appear — multiply by the conjugate.</li><li><strong>Special trig limits:</strong> Know that \\(\\displaystyle\\lim_{x \\to 0}\\frac{\\sin x}{x} = 1\\) and \\(\\displaystyle\\lim_{x \\to 0}\\frac{1 - \\cos x}{x} = 0\\).</li></ol><h3>One-Sided Limits</h3><p>Sometimes a function approaches different values from the left and right:</p><ul><li>\\(\\displaystyle\\lim_{x \\to a^-} f(x)\\) — the <strong>left-hand limit</strong> (approaching from values less than \\(a\\))</li><li>\\(\\displaystyle\\lim_{x \\to a^+} f(x)\\) — the <strong>right-hand limit</strong> (approaching from values greater than \\(a\\))</li></ul><p>The two-sided limit exists <strong>only if</strong> both one-sided limits exist and are equal.</p><h3>Continuity</h3><p>A function \\(f\\) is <strong>continuous at \\(x = a\\)</strong> if three conditions hold:</p><ol><li>\\(f(a)\\) is defined</li><li>\\(\\displaystyle\\lim_{x \\to a} f(x)\\) exists</li><li>\\(\\displaystyle\\lim_{x \\to a} f(x) = f(a)\\)</li></ol><p>If any condition fails, we say \\(f\\) has a <strong>discontinuity</strong> at \\(x = a\\).</p><div class=\"callout-key\"><strong>Key Theorems:</strong><br/>• <strong>Intermediate Value Theorem (IVT):</strong> If \\(f\\) is continuous on \\([a, b]\\) and \\(N\\) is between \\(f(a)\\) and \\(f(b)\\), then there exists some \\(c \\in (a, b)\\) with \\(f(c) = N\\).<br/>• <strong>Squeeze Theorem:</strong> If \\(g(x) \\le f(x) \\le h(x)\\) near \\(a\\), and \\(\\lim g(x) = \\lim h(x) = L\\), then \\(\\lim f(x) = L\\).</div>",
+          "content_raw": "Limits: The Foundation of Calculus",
+          "estimated_minutes": 12,
+          "access_tier": "free",
+          "display_order": 0,
+          "problem_sets": [
+            {
+              "title": "Practice: Limits and Continuity",
+              "access_tier": "free",
+              "display_order": 0,
+              "problems": [
+                {
+                  "question_html": "<p>Evaluate \\(\\displaystyle\\lim_{x \\to 3} \\frac{x^2 - 9}{x - 3}\\).</p>",
+                  "problem_type": "ftb",
+                  "correct_answer": "6||x=6",
+                  "difficulty": "easy",
+                  "points": 1,
+                  "hints": [
+                    {
+                      "text": "Factor the numerator as a difference of squares: \\(x^2 - 9 = (x-3)(x+3)\\).",
+                      "cost_points": 0
+                    },
+                    {
+                      "text": "Cancel the \\((x-3)\\) factor, then substitute \\(x = 3\\).",
+                      "cost_points": 1
+                    }
+                  ],
+                  "solution_steps": [
+                    {
+                      "text": "Factor: \\(\\frac{x^2 - 9}{x - 3} = \\frac{(x-3)(x+3)}{x-3}\\)"
+                    },
+                    {
+                      "text": "Cancel: \\(= x + 3\\) for \\(x \\neq 3\\)"
+                    },
+                    {
+                      "text": "Substitute: \\(3 + 3 = 6\\)"
+                    }
+                  ]
+                },
+                {
+                  "question_html": "<p>Evaluate \\(\\displaystyle\\lim_{x \\to 0} \\frac{\\sin(5x)}{x}\\).</p>",
+                  "problem_type": "ftb",
+                  "correct_answer": "5",
+                  "difficulty": "medium",
+                  "points": 1,
+                  "hints": [
+                    {
+                      "text": "Rewrite as \\(5 \\cdot \\frac{\\sin(5x)}{5x}\\).",
+                      "cost_points": 0
+                    },
+                    {
+                      "text": "Use the fact that \\(\\lim_{u \\to 0} \\frac{\\sin u}{u} = 1\\), where \\(u = 5x\\).",
+                      "cost_points": 1
+                    }
+                  ],
+                  "solution_steps": [
+                    {
+                      "text": "Rewrite: \\(\\frac{\\sin(5x)}{x} = 5 \\cdot \\frac{\\sin(5x)}{5x}\\)"
+                    },
+                    {
+                      "text": "As \\(x \\to 0\\), \\(5x \\to 0\\), so \\(\\frac{\\sin(5x)}{5x} \\to 1\\)"
+                    },
+                    {
+                      "text": "Therefore the limit is \\(5 \\cdot 1 = 5\\)"
+                    }
+                  ]
+                },
+                {
+                  "question_html": "<p>Which of the following functions is continuous at \\(x = 2\\)?</p>",
+                  "problem_type": "mcq",
+                  "difficulty": "easy",
+                  "points": 1,
+                  "choices": [
+                    {
+                      "text": "\\(f(x) = \\frac{x-2}{x^2-4}\\)",
+                      "is_correct": false
+                    },
+                    {
+                      "text": "\\(f(x) = \\begin{cases} x+1 & x \\neq 2 \\\\ 5 & x = 2 \\end{cases}\\)",
+                      "is_correct": false
+                    },
+                    {
+                      "text": "\\(f(x) = x^2 - 3x + 1\\)",
+                      "is_correct": true
+                    },
+                    {
+                      "text": "\\(f(x) = \\frac{1}{x-2}\\)",
+                      "is_correct": false
+                    }
+                  ],
+                  "hints": [
+                    {
+                      "text": "A polynomial is continuous everywhere. Check each function at \\(x = 2\\).",
+                      "cost_points": 0
+                    }
+                  ],
+                  "solution_steps": [
+                    {
+                      "text": "\\(f(x) = x^2 - 3x + 1\\) is a polynomial, so it's continuous at every real number, including \\(x = 2\\)."
+                    },
+                    {
+                      "text": "The other options either have \\(x = 2\\) in the denominator (undefined) or have a jump at \\(x = 2\\)."
+                    }
+                  ]
+                },
+                {
+                  "question_html": "<p>The function \\(f\\) is continuous on \\([1, 5]\\) with \\(f(1) = -3\\) and \\(f(5) = 7\\). By the Intermediate Value Theorem, there must exist some \\(c \\in (1, 5)\\) such that \\(f(c) =\\)</p>",
+                  "problem_type": "mcq",
+                  "difficulty": "medium",
+                  "points": 1,
+                  "choices": [
+                    {
+                      "text": "Any value between \\(-3\\) and \\(7\\)",
+                      "is_correct": true
+                    },
+                    {
+                      "text": "Only \\(0\\)",
+                      "is_correct": false
+                    },
+                    {
+                      "text": "Only \\(2\\)",
+                      "is_correct": false
+                    },
+                    {
+                      "text": "Any real number",
+                      "is_correct": false
+                    }
+                  ],
+                  "hints": [
+                    {
+                      "text": "IVT guarantees every value between \\(f(a)\\) and \\(f(b)\\) is hit at least once.",
+                      "cost_points": 0
+                    }
+                  ],
+                  "solution_steps": [
+                    {
+                      "text": "IVT says: for any \\(N\\) with \\(-3 < N < 7\\), there exists \\(c \\in (1,5)\\) with \\(f(c) = N\\)."
+                    },
+                    {
+                      "text": "So every value between \\(-3\\) and \\(7\\) is guaranteed — not just \\(0\\), not every real number."
+                    }
+                  ]
+                },
+                {
+                  "question_html": "<p>Evaluate \\(\\displaystyle\\lim_{x \\to \\infty} \\frac{3x^2 + 2x}{5x^2 - 1}\\).</p>",
+                  "problem_type": "ftb",
+                  "correct_answer": "3/5||0.6",
+                  "difficulty": "medium",
+                  "points": 1,
+                  "hints": [
+                    {
+                      "text": "Divide every term in the numerator and denominator by \\(x^2\\).",
+                      "cost_points": 0
+                    },
+                    {
+                      "text": "As \\(x \\to \\infty\\), terms like \\(\\frac{2}{x}\\) and \\(\\frac{1}{x^2}\\) vanish.",
+                      "cost_points": 1
+                    }
+                  ],
+                  "solution_steps": [
+                    {
+                      "text": "Divide by \\(x^2\\): \\(\\frac{3 + 2/x}{5 - 1/x^2}\\)"
+                    },
+                    {
+                      "text": "As \\(x \\to \\infty\\): \\(\\frac{3 + 0}{5 - 0} = \\frac{3}{5}\\)"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Differentiation: Definition and Fundamental Properties",
+      "slug": "differentiation-definition-fundamental-properties",
+      "description": "Define the derivative and master basic differentiation rules including power, product, and quotient rules.",
+      "display_order": 2,
+      "concepts": [
+        {
+          "title": "Defining and Computing Derivatives",
+          "slug": "defining-computing-derivatives",
+          "subject_area": "calculus",
+          "difficulty": "medium",
+          "tags": [
+            "derivatives",
+            "differentiation",
+            "ap-calculus-ab",
+            "unit-2"
+          ],
+          "content_html": "<h2>The Derivative: Instantaneous Rate of Change</h2><p>The derivative of a function at a point tells us the <strong>instantaneous rate of change</strong> — the slope of the tangent line at that point.</p><h3>Definition</h3><p>The derivative of \\(f\\) at \\(x = a\\) is:</p><p>\\[f'(a) = \\lim_{h \\to 0} \\frac{f(a+h) - f(a)}{h}\\]</p><p>If this limit exists, we say \\(f\\) is <strong>differentiable</strong> at \\(a\\).</p><h3>Derivative as a Function</h3><p>We can also define the derivative function:</p><p>\\[f'(x) = \\lim_{h \\to 0} \\frac{f(x+h) - f(x)}{h}\\]</p><p>Common notations: \\(f'(x)\\), \\(\\frac{dy}{dx}\\), \\(\\frac{d}{dx}[f(x)]\\), \\(y'\\), \\(Df(x)\\)</p><h3>Basic Differentiation Rules</h3><ul><li><strong>Power Rule:</strong> \\(\\frac{d}{dx}[x^n] = nx^{n-1}\\)</li><li><strong>Constant Multiple:</strong> \\(\\frac{d}{dx}[cf(x)] = cf'(x)\\)</li><li><strong>Sum/Difference:</strong> \\(\\frac{d}{dx}[f \\pm g] = f' \\pm g'\\)</li><li><strong>Product Rule:</strong> \\(\\frac{d}{dx}[fg] = f'g + fg'\\)</li><li><strong>Quotient Rule:</strong> \\(\\frac{d}{dx}\\left[\\frac{f}{g}\\right] = \\frac{f'g - fg'}{g^2}\\)</li></ul><h3>Trig Derivatives</h3><ul><li>\\(\\frac{d}{dx}[\\sin x] = \\cos x\\)</li><li>\\(\\frac{d}{dx}[\\cos x] = -\\sin x\\)</li><li>\\(\\frac{d}{dx}[\\tan x] = \\sec^2 x\\)</li></ul><h3>Exponential and Logarithmic Derivatives</h3><ul><li>\\(\\frac{d}{dx}[e^x] = e^x\\)</li><li>\\(\\frac{d}{dx}[\\ln x] = \\frac{1}{x}\\)</li><li>\\(\\frac{d}{dx}[a^x] = a^x \\ln a\\)</li></ul><div class=\"callout-key\"><strong>Key Insight:</strong> If \\(f\\) is differentiable at \\(a\\), then \\(f\\) is continuous at \\(a\\). The converse is <strong>false</strong> — \\(f(x) = |x|\\) is continuous at \\(0\\) but not differentiable there (the graph has a sharp corner).</div>",
+          "content_raw": "The Derivative: Instantaneous Rate of Change",
+          "estimated_minutes": 15,
+          "access_tier": "free",
+          "display_order": 0,
+          "problem_sets": [
+            {
+              "title": "Practice: Basic Derivatives",
+              "access_tier": "free",
+              "display_order": 0,
+              "problems": [
+                {
+                  "question_html": "<p>Find \\(\\frac{d}{dx}[3x^5 - 2x^3 + 7x - 4]\\).</p>",
+                  "problem_type": "mcq",
+                  "difficulty": "easy",
+                  "points": 1,
+                  "choices": [
+                    {
+                      "text": "\\(15x^4 - 6x^2 + 7\\)",
+                      "is_correct": true
+                    },
+                    {
+                      "text": "\\(15x^4 - 6x^2 + 7x\\)",
+                      "is_correct": false
+                    },
+                    {
+                      "text": "\\(3x^4 - 2x^2 + 7\\)",
+                      "is_correct": false
+                    },
+                    {
+                      "text": "\\(15x^5 - 6x^3 + 7x\\)",
+                      "is_correct": false
+                    }
+                  ],
+                  "hints": [
+                    {
+                      "text": "Apply the power rule term by term: \\(\\frac{d}{dx}[x^n] = nx^{n-1}\\).",
+                      "cost_points": 0
+                    }
+                  ],
+                  "solution_steps": [
+                    {
+                      "text": "\\(\\frac{d}{dx}[3x^5] = 15x^4\\)"
+                    },
+                    {
+                      "text": "\\(\\frac{d}{dx}[-2x^3] = -6x^2\\)"
+                    },
+                    {
+                      "text": "\\(\\frac{d}{dx}[7x] = 7\\)"
+                    },
+                    {
+                      "text": "\\(\\frac{d}{dx}[-4] = 0\\)"
+                    },
+                    {
+                      "text": "Sum: \\(15x^4 - 6x^2 + 7\\)"
+                    }
+                  ]
+                },
+                {
+                  "question_html": "<p>Find \\(f'(x)\\) if \\(f(x) = x^2 \\sin x\\).</p>",
+                  "problem_type": "mcq",
+                  "difficulty": "medium",
+                  "points": 1,
+                  "choices": [
+                    {
+                      "text": "\\(2x\\cos x\\)",
+                      "is_correct": false
+                    },
+                    {
+                      "text": "\\(2x\\sin x + x^2\\cos x\\)",
+                      "is_correct": true
+                    },
+                    {
+                      "text": "\\(x^2\\cos x - 2x\\sin x\\)",
+                      "is_correct": false
+                    },
+                    {
+                      "text": "\\(2x\\sin x - x^2\\cos x\\)",
+                      "is_correct": false
+                    }
+                  ],
+                  "hints": [
+                    {
+                      "text": "This is a product of two functions. Use the product rule: \\((fg)' = f'g + fg'\\).",
+                      "cost_points": 0
+                    },
+                    {
+                      "text": "Let \\(f = x^2\\) and \\(g = \\sin x\\). Then \\(f' = 2x\\) and \\(g' = \\cos x\\).",
+                      "cost_points": 1
+                    }
+                  ],
+                  "solution_steps": [
+                    {
+                      "text": "Product rule: \\(f'g + fg' = (2x)(\\sin x) + (x^2)(\\cos x)\\)"
+                    },
+                    {
+                      "text": "\\(= 2x\\sin x + x^2\\cos x\\)"
+                    }
+                  ]
+                },
+                {
+                  "question_html": "<p>Using the limit definition, find \\(f'(2)\\) for \\(f(x) = x^2 + 1\\).</p>",
+                  "problem_type": "ftb",
+                  "correct_answer": "4",
+                  "difficulty": "medium",
+                  "points": 1,
+                  "hints": [
+                    {
+                      "text": "Compute \\(\\lim_{h \\to 0} \\frac{f(2+h) - f(2)}{h}\\). Start by expanding \\(f(2+h) = (2+h)^2 + 1\\).",
+                      "cost_points": 0
+                    }
+                  ],
+                  "solution_steps": [
+                    {
+                      "text": "\\(f(2+h) = (2+h)^2 + 1 = 4 + 4h + h^2 + 1 = h^2 + 4h + 5\\)"
+                    },
+                    {
+                      "text": "\\(f(2) = 4 + 1 = 5\\)"
+                    },
+                    {
+                      "text": "\\(\\frac{f(2+h) - f(2)}{h} = \\frac{h^2 + 4h}{h} = h + 4\\)"
+                    },
+                    {
+                      "text": "\\(\\lim_{h \\to 0}(h + 4) = 4\\)"
+                    }
+                  ]
+                },
+                {
+                  "question_html": "<p>Find \\(\\frac{dy}{dx}\\) if \\(y = \\frac{e^x}{x+1}\\).</p>",
+                  "problem_type": "mcq",
+                  "difficulty": "hard",
+                  "points": 2,
+                  "choices": [
+                    {
+                      "text": "\\(\\frac{e^x \\cdot x}{(x+1)^2}\\)",
+                      "is_correct": true
+                    },
+                    {
+                      "text": "\\(\\frac{e^x}{(x+1)^2}\\)",
+                      "is_correct": false
+                    },
+                    {
+                      "text": "\\(\\frac{e^x(x+2)}{(x+1)^2}\\)",
+                      "is_correct": false
+                    },
+                    {
+                      "text": "\\(e^x \\ln(x+1)\\)",
+                      "is_correct": false
+                    }
+                  ],
+                  "hints": [
+                    {
+                      "text": "Use the quotient rule: \\(\\left(\\frac{f}{g}\\right)' = \\frac{f'g - fg'}{g^2}\\).",
+                      "cost_points": 0
+                    },
+                    {
+                      "text": "\\(f = e^x,\\; f' = e^x,\\; g = x+1,\\; g' = 1\\). So: \\(\\frac{e^x(x+1) - e^x(1)}{(x+1)^2}\\).",
+                      "cost_points": 1
+                    }
+                  ],
+                  "solution_steps": [
+                    {
+                      "text": "Quotient rule: \\(\\frac{e^x(x+1) - e^x \\cdot 1}{(x+1)^2}\\)"
+                    },
+                    {
+                      "text": "Factor: \\(\\frac{e^x[(x+1) - 1]}{(x+1)^2} = \\frac{e^x \\cdot x}{(x+1)^2}\\)"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Differentiation: Composite, Implicit, and Inverse Functions",
+      "slug": "differentiation-composite-implicit-inverse",
+      "description": "Apply the chain rule, implicit differentiation, and derivatives of inverse functions.",
+      "display_order": 3,
+      "concepts": [
+        {
+          "title": "The Chain Rule and Implicit Differentiation",
+          "slug": "chain-rule-implicit-differentiation",
+          "subject_area": "calculus",
+          "difficulty": "hard",
+          "tags": [
+            "chain-rule",
+            "implicit-differentiation",
+            "ap-calculus-ab",
+            "unit-3"
+          ],
+          "content_html": "<h2>Differentiation: Composite and Implicit Functions</h2><h3>The Chain Rule</h3><p>If \\(y = f(g(x))\\), then:</p><p>\\[\\frac{dy}{dx} = f'(g(x)) \\cdot g'(x)\\]</p><p>In words: <em>differentiate the outer function (leaving the inner function alone), then multiply by the derivative of the inner function.</em></p><h3>Examples</h3><ul><li>\\(\\frac{d}{dx}[\\sin(3x)] = \\cos(3x) \\cdot 3 = 3\\cos(3x)\\)</li><li>\\(\\frac{d}{dx}[(x^2+1)^5] = 5(x^2+1)^4 \\cdot 2x = 10x(x^2+1)^4\\)</li><li>\\(\\frac{d}{dx}[e^{x^2}] = e^{x^2} \\cdot 2x = 2xe^{x^2}\\)</li><li>\\(\\frac{d}{dx}[\\ln(\\cos x)] = \\frac{1}{\\cos x} \\cdot (-\\sin x) = -\\tan x\\)</li></ul><h3>Implicit Differentiation</h3><p>Sometimes \\(y\\) is defined implicitly by an equation like \\(x^2 + y^2 = 25\\) rather than explicitly as \\(y = f(x)\\). To find \\(\\frac{dy}{dx}\\):</p><ol><li>Differentiate both sides with respect to \\(x\\)</li><li>Treat \\(y\\) as a function of \\(x\\) — every time you differentiate a \\(y\\)-term, attach \\(\\frac{dy}{dx}\\)</li><li>Solve for \\(\\frac{dy}{dx}\\)</li></ol><h3>Example</h3><p>Find \\(\\frac{dy}{dx}\\) for \\(x^2 + y^2 = 25\\):</p><ol><li>Differentiate: \\(2x + 2y\\frac{dy}{dx} = 0\\)</li><li>Solve: \\(\\frac{dy}{dx} = -\\frac{x}{y}\\)</li></ol><h3>Inverse Trig Derivatives</h3><ul><li>\\(\\frac{d}{dx}[\\sin^{-1}x] = \\frac{1}{\\sqrt{1-x^2}}\\)</li><li>\\(\\frac{d}{dx}[\\cos^{-1}x] = -\\frac{1}{\\sqrt{1-x^2}}\\)</li><li>\\(\\frac{d}{dx}[\\tan^{-1}x] = \\frac{1}{1+x^2}\\)</li></ul><div class=\"callout-key\"><strong>AP Tip:</strong> The chain rule appears in nearly every derivative problem on the AP exam. When in doubt, ask yourself: \"Is this function a composition?\" If yes, use the chain rule.</div>",
+          "content_raw": "The Chain Rule and Implicit Differentiation",
+          "estimated_minutes": 15,
+          "access_tier": "free",
+          "display_order": 0,
+          "problem_sets": [
+            {
+              "title": "Practice: Chain Rule & Implicit Differentiation",
+              "access_tier": "free",
+              "display_order": 0,
+              "problems": [
+                {
+                  "question_html": "<p>Find \\(\\frac{d}{dx}[\\cos(x^3)]\\).</p>",
+                  "problem_type": "mcq",
+                  "difficulty": "easy",
+                  "points": 1,
+                  "choices": [
+                    {
+                      "text": "\\(-\\sin(x^3)\\)",
+                      "is_correct": false
+                    },
+                    {
+                      "text": "\\(-3x^2\\sin(x^3)\\)",
+                      "is_correct": true
+                    },
+                    {
+                      "text": "\\(3x^2\\cos(x^3)\\)",
+                      "is_correct": false
+                    },
+                    {
+                      "text": "\\(-\\sin(3x^2)\\)",
+                      "is_correct": false
+                    }
+                  ],
+                  "hints": [
+                    {
+                      "text": "Chain rule: differentiate the outer function \\(\\cos(u)\\), then multiply by \\(u'\\) where \\(u = x^3\\).",
+                      "cost_points": 0
+                    }
+                  ],
+                  "solution_steps": [
+                    {
+                      "text": "Let \\(u = x^3\\). Then \\(\\frac{d}{dx}[\\cos u] = -\\sin u \\cdot u'\\)"
+                    },
+                    {
+                      "text": "\\(= -\\sin(x^3) \\cdot 3x^2 = -3x^2\\sin(x^3)\\)"
+                    }
+                  ]
+                },
+                {
+                  "question_html": "<p>Find \\(\\frac{d}{dx}\\left[\\ln(x^2 + 1)\\right]\\).</p>",
+                  "problem_type": "ftb",
+                  "correct_answer": "2x/(x^2+1)||2x/(x²+1)",
+                  "difficulty": "medium",
+                  "points": 1,
+                  "hints": [
+                    {
+                      "text": "Use the chain rule: \\(\\frac{d}{dx}[\\ln u] = \\frac{u'}{u}\\).",
+                      "cost_points": 0
+                    }
+                  ],
+                  "solution_steps": [
+                    {
+                      "text": "\\(\\frac{d}{dx}[\\ln(x^2+1)] = \\frac{1}{x^2+1} \\cdot 2x = \\frac{2x}{x^2+1}\\)"
+                    }
+                  ]
+                },
+                {
+                  "question_html": "<p>Given \\(x^2 + xy + y^2 = 7\\), find \\(\\frac{dy}{dx}\\).</p>",
+                  "problem_type": "mcq",
+                  "difficulty": "hard",
+                  "points": 2,
+                  "choices": [
+                    {
+                      "text": "\\(\\frac{-(2x + y)}{x + 2y}\\)",
+                      "is_correct": true
+                    },
+                    {
+                      "text": "\\(\\frac{2x + y}{x + 2y}\\)",
+                      "is_correct": false
+                    },
+                    {
+                      "text": "\\(\\frac{-2x}{2y}\\)",
+                      "is_correct": false
+                    },
+                    {
+                      "text": "\\(\\frac{-(2x + y)}{2y}\\)",
+                      "is_correct": false
+                    }
+                  ],
+                  "hints": [
+                    {
+                      "text": "Differentiate every term with respect to \\(x\\). For the \\(xy\\) term, use the product rule.",
+                      "cost_points": 0
+                    },
+                    {
+                      "text": "You get \\(2x + y + x\\frac{dy}{dx} + 2y\\frac{dy}{dx} = 0\\). Now solve for \\(\\frac{dy}{dx}\\).",
+                      "cost_points": 1
+                    }
+                  ],
+                  "solution_steps": [
+                    {
+                      "text": "Differentiate: \\(2x + (y + x\\frac{dy}{dx}) + 2y\\frac{dy}{dx} = 0\\)"
+                    },
+                    {
+                      "text": "Group: \\((x + 2y)\\frac{dy}{dx} = -(2x + y)\\)"
+                    },
+                    {
+                      "text": "Solve: \\(\\frac{dy}{dx} = \\frac{-(2x+y)}{x+2y}\\)"
+                    }
+                  ]
+                },
+                {
+                  "question_html": "<p>Find \\(\\frac{d}{dx}\\left[e^{\\sin x}\\right]\\).</p>",
+                  "problem_type": "mcq",
+                  "difficulty": "medium",
+                  "points": 1,
+                  "choices": [
+                    {
+                      "text": "\\(e^{\\sin x}\\)",
+                      "is_correct": false
+                    },
+                    {
+                      "text": "\\(\\cos x \\cdot e^{\\sin x}\\)",
+                      "is_correct": true
+                    },
+                    {
+                      "text": "\\(e^{\\cos x}\\)",
+                      "is_correct": false
+                    },
+                    {
+                      "text": "\\(\\sin x \\cdot e^{\\sin x - 1}\\)",
+                      "is_correct": false
+                    }
+                  ],
+                  "hints": [
+                    {
+                      "text": "Chain rule with \\(e^u\\): \\(\\frac{d}{dx}[e^u] = e^u \\cdot u'\\).",
+                      "cost_points": 0
+                    }
+                  ],
+                  "solution_steps": [
+                    {
+                      "text": "\\(\\frac{d}{dx}[e^{\\sin x}] = e^{\\sin x} \\cdot \\frac{d}{dx}[\\sin x] = e^{\\sin x} \\cdot \\cos x\\)"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Contextual Applications of Differentiation",
+      "slug": "contextual-applications-of-differentiation",
+      "description": "Apply derivatives to real-world contexts: related rates, motion along a line, linearization, and L'Hôpital's Rule.",
+      "display_order": 4,
+      "concepts": [
+        {
+          "title": "Related Rates and Motion",
+          "slug": "related-rates-motion",
+          "subject_area": "calculus",
+          "difficulty": "hard",
+          "tags": [
+            "related-rates",
+            "motion",
+            "linearization",
+            "ap-calculus-ab",
+            "unit-4"
+          ],
+          "content_html": "<h2>Contextual Applications of Differentiation</h2><p>Derivatives model real-world rates of change — from ladders sliding down walls to particles moving along a line.</p><h3>Related Rates</h3><p>When two or more quantities change with respect to time and are related by an equation, we can find how fast one changes by knowing how fast the others change.</p><p><strong>Strategy:</strong></p><ol><li>Draw a picture and label variables</li><li>Write an equation relating the variables</li><li>Differentiate both sides with respect to \\(t\\)</li><li>Substitute known values and solve</li></ol><h3>Motion Along a Line</h3><p>If \\(s(t)\\) is position at time \\(t\\):</p><ul><li><strong>Velocity:</strong> \\(v(t) = s'(t)\\) — rate of change of position</li><li><strong>Speed:</strong> \\(|v(t)|\\) — magnitude of velocity</li><li><strong>Acceleration:</strong> \\(a(t) = v'(t) = s''(t)\\)</li><li>Object moves right/up when \\(v(t) > 0\\), left/down when \\(v(t) < 0\\)</li><li>Object speeds up when \\(v\\) and \\(a\\) have the same sign; slows down when they differ</li></ul><h3>Linearization and Differentials</h3><p>The <strong>linear approximation</strong> (tangent line approximation) of \\(f\\) near \\(x = a\\):</p><p>\\[L(x) = f(a) + f'(a)(x - a)\\]</p><p>This approximates \\(f(x) \\approx L(x)\\) for \\(x\\) near \\(a\\).</p><h3>L'Hôpital's Rule</h3><p>If \\(\\lim_{x \\to c} \\frac{f(x)}{g(x)}\\) gives \\(\\frac{0}{0}\\) or \\(\\frac{\\pm\\infty}{\\pm\\infty}\\), then:</p><p>\\[\\lim_{x \\to c} \\frac{f(x)}{g(x)} = \\lim_{x \\to c} \\frac{f'(x)}{g'(x)}\\]</p><p>(provided the right-hand limit exists).</p><div class=\"callout-key\"><strong>AP Exam Tip:</strong> Related rates and motion problems appear on nearly every AP exam. Always define your variables, state the relationship, and clearly show the differentiation step with respect to \\(t\\).</div>",
+          "content_raw": "Contextual Applications of Differentiation",
+          "estimated_minutes": 15,
+          "access_tier": "free",
+          "display_order": 0,
+          "problem_sets": [
+            {
+              "title": "Practice: Contextual Applications",
+              "access_tier": "free",
+              "display_order": 0,
+              "problems": [
+                {
+                  "question_html": "<p>A ladder 10 ft long leans against a wall. The bottom slides away from the wall at 2 ft/s. How fast is the top sliding down when the bottom is 6 ft from the wall?</p>",
+                  "problem_type": "frq",
+                  "correct_answer": "The top slides down at 3/2 ft/s (or 1.5 ft/s).",
+                  "difficulty": "hard",
+                  "points": 3,
+                  "hints": [
+                    {
+                      "text": "Let \\(x\\) = distance of bottom from wall, \\(y\\) = height of top. Use \\(x^2 + y^2 = 100\\).",
+                      "cost_points": 0
+                    },
+                    {
+                      "text": "Differentiate with respect to \\(t\\): \\(2x\\frac{dx}{dt} + 2y\\frac{dy}{dt} = 0\\). You know \\(x = 6\\), \\(\\frac{dx}{dt} = 2\\). Find \\(y\\) from the Pythagorean equation.",
+                      "cost_points": 1
+                    }
+                  ],
+                  "solution_steps": [
+                    {
+                      "text": "Setup: \\(x^2 + y^2 = 100\\). When \\(x = 6\\): \\(y = \\sqrt{100 - 36} = 8\\)."
+                    },
+                    {
+                      "text": "Differentiate: \\(2x\\frac{dx}{dt} + 2y\\frac{dy}{dt} = 0\\)"
+                    },
+                    {
+                      "text": "Substitute: \\(2(6)(2) + 2(8)\\frac{dy}{dt} = 0\\)"
+                    },
+                    {
+                      "text": "Solve: \\(24 + 16\\frac{dy}{dt} = 0 \\implies \\frac{dy}{dt} = -\\frac{3}{2}\\) ft/s"
+                    },
+                    {
+                      "text": "The top is sliding down at \\(\\frac{3}{2}\\) ft/s (negative sign indicates decreasing height)."
+                    }
+                  ]
+                },
+                {
+                  "question_html": "<p>A particle moves along the \\(x\\)-axis with position \\(s(t) = t^3 - 6t^2 + 9t + 2\\). At what time(s) is the particle at rest?</p>",
+                  "problem_type": "mcq",
+                  "difficulty": "medium",
+                  "points": 1,
+                  "choices": [
+                    {
+                      "text": "\\(t = 1\\) and \\(t = 3\\)",
+                      "is_correct": true
+                    },
+                    {
+                      "text": "\\(t = 0\\) and \\(t = 2\\)",
+                      "is_correct": false
+                    },
+                    {
+                      "text": "\\(t = 2\\) only",
+                      "is_correct": false
+                    },
+                    {
+                      "text": "\\(t = 3\\) only",
+                      "is_correct": false
+                    }
+                  ],
+                  "hints": [
+                    {
+                      "text": "The particle is at rest when \\(v(t) = s'(t) = 0\\).",
+                      "cost_points": 0
+                    },
+                    {
+                      "text": "\\(s'(t) = 3t^2 - 12t + 9 = 3(t^2 - 4t + 3) = 3(t-1)(t-3)\\).",
+                      "cost_points": 1
+                    }
+                  ],
+                  "solution_steps": [
+                    {
+                      "text": "\\(v(t) = s'(t) = 3t^2 - 12t + 9 = 3(t-1)(t-3)\\)"
+                    },
+                    {
+                      "text": "Set \\(v(t) = 0\\): \\(t = 1\\) or \\(t = 3\\)"
+                    }
+                  ]
+                },
+                {
+                  "question_html": "<p>Use the linear approximation of \\(f(x) = \\sqrt{x}\\) at \\(a = 25\\) to estimate \\(\\sqrt{26}\\).</p>",
+                  "problem_type": "ftb",
+                  "correct_answer": "5.1||51/10",
+                  "difficulty": "medium",
+                  "points": 1,
+                  "hints": [
+                    {
+                      "text": "\\(L(x) = f(a) + f'(a)(x - a)\\) with \\(f(x) = \\sqrt{x}\\), \\(f'(x) = \\frac{1}{2\\sqrt{x}}\\).",
+                      "cost_points": 0
+                    }
+                  ],
+                  "solution_steps": [
+                    {
+                      "text": "\\(f(25) = 5\\), \\(f'(25) = \\frac{1}{2 \\cdot 5} = \\frac{1}{10}\\)"
+                    },
+                    {
+                      "text": "\\(L(26) = 5 + \\frac{1}{10}(26 - 25) = 5 + 0.1 = 5.1\\)"
+                    }
+                  ]
+                },
+                {
+                  "question_html": "<p>Evaluate \\(\\displaystyle\\lim_{x \\to 0} \\frac{e^x - 1}{\\sin x}\\) using L'Hôpital's Rule.</p>",
+                  "problem_type": "ftb",
+                  "correct_answer": "1",
+                  "difficulty": "medium",
+                  "points": 1,
+                  "hints": [
+                    {
+                      "text": "Check: direct substitution gives \\(\\frac{0}{0}\\), so L'Hôpital's applies.",
+                      "cost_points": 0
+                    },
+                    {
+                      "text": "Differentiate top and bottom: \\(\\frac{e^x}{\\cos x}\\). Now substitute \\(x = 0\\).",
+                      "cost_points": 1
+                    }
+                  ],
+                  "solution_steps": [
+                    {
+                      "text": "\\(\\frac{0}{0}\\) form, so apply L'Hôpital's: \\(\\lim_{x \\to 0} \\frac{e^x}{\\cos x}\\)"
+                    },
+                    {
+                      "text": "\\(= \\frac{e^0}{\\cos 0} = \\frac{1}{1} = 1\\)"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Analytical Applications of Differentiation",
+      "slug": "analytical-applications-of-differentiation",
+      "description": "Use the Mean Value Theorem, first and second derivative tests, curve sketching, and optimization.",
+      "display_order": 5,
+      "concepts": [
+        {
+          "title": "Curve Sketching and Optimization",
+          "slug": "curve-sketching-optimization",
+          "subject_area": "calculus",
+          "difficulty": "hard",
+          "tags": [
+            "mean-value-theorem",
+            "extreme-values",
+            "curve-sketching",
+            "optimization",
+            "ap-calculus-ab",
+            "unit-5"
+          ],
+          "content_html": "<h2>Analytical Applications of Differentiation</h2><p>Derivatives reveal the complete behavior of a function — where it increases, decreases, has extrema, and changes concavity.</p><h3>Mean Value Theorem</h3><p>If \\(f\\) is continuous on \\([a,b]\\) and differentiable on \\((a,b)\\), then there exists \\(c \\in (a,b)\\) such that:</p><p>\\[f'(c) = \\frac{f(b) - f(a)}{b - a}\\]</p><p>The instantaneous rate of change equals the average rate of change at some point.</p><h3>Extreme Value Theorem</h3><p>If \\(f\\) is continuous on a closed interval \\([a,b]\\), then \\(f\\) attains both an absolute maximum and an absolute minimum on \\([a,b]\\).</p><h3>First Derivative Test</h3><ul><li>\\(f'(x) > 0\\): \\(f\\) is <strong>increasing</strong></li><li>\\(f'(x) < 0\\): \\(f\\) is <strong>decreasing</strong></li><li>\\(f'(c) = 0\\) or undefined: \\(c\\) is a <strong>critical point</strong></li><li>If \\(f'\\) changes from \\(+\\) to \\(-\\) at \\(c\\): local <strong>maximum</strong></li><li>If \\(f'\\) changes from \\(-\\) to \\(+\\) at \\(c\\): local <strong>minimum</strong></li></ul><h3>Second Derivative Test</h3><ul><li>\\(f''(x) > 0\\): \\(f\\) is <strong>concave up</strong> (like a cup)</li><li>\\(f''(x) < 0\\): \\(f\\) is <strong>concave down</strong> (like a frown)</li><li>\\(f''(c) = 0\\) and concavity changes: <strong>inflection point</strong></li><li>If \\(f'(c) = 0\\) and \\(f''(c) > 0\\): local min; \\(f''(c) < 0\\): local max</li></ul><h3>Optimization</h3><ol><li>Define the quantity to be optimized</li><li>Write it as a function of one variable (use constraints to eliminate variables)</li><li>Find critical points: set \\(f'(x) = 0\\)</li><li>Verify it's a max or min (first or second derivative test, or check endpoints on a closed interval)</li></ol><div class=\"callout-key\"><strong>AP Exam Tip:</strong> The AP exam loves asking you to justify answers using the Mean Value Theorem, Extreme Value Theorem, or Intermediate Value Theorem. Always state the theorem name and verify its hypotheses (continuity, differentiability, closed interval).</div>",
+          "content_raw": "Analytical Applications of Differentiation",
+          "estimated_minutes": 15,
+          "access_tier": "free",
+          "display_order": 0,
+          "problem_sets": [
+            {
+              "title": "Practice: Analytical Applications",
+              "access_tier": "free",
+              "display_order": 0,
+              "problems": [
+                {
+                  "question_html": "<p>If \\(f\\) is continuous on \\([0, 4]\\), differentiable on \\((0, 4)\\), \\(f(0) = 1\\) and \\(f(4) = 9\\), the Mean Value Theorem guarantees some \\(c \\in (0,4)\\) with \\(f'(c) =\\)</p>",
+                  "problem_type": "ftb",
+                  "correct_answer": "2",
+                  "difficulty": "easy",
+                  "points": 1,
+                  "hints": [
+                    {
+                      "text": "MVT says \\(f'(c) = \\frac{f(b)-f(a)}{b-a}\\).",
+                      "cost_points": 0
+                    }
+                  ],
+                  "solution_steps": [
+                    {
+                      "text": "\\(f'(c) = \\frac{f(4) - f(0)}{4 - 0} = \\frac{9 - 1}{4} = 2\\)"
+                    }
+                  ]
+                },
+                {
+                  "question_html": "<p>Find the critical points of \\(f(x) = x^3 - 3x^2 - 9x + 5\\).</p>",
+                  "problem_type": "mcq",
+                  "difficulty": "medium",
+                  "points": 1,
+                  "choices": [
+                    {
+                      "text": "\\(x = -1\\) and \\(x = 3\\)",
+                      "is_correct": true
+                    },
+                    {
+                      "text": "\\(x = 0\\) and \\(x = 3\\)",
+                      "is_correct": false
+                    },
+                    {
+                      "text": "\\(x = -3\\) and \\(x = 1\\)",
+                      "is_correct": false
+                    },
+                    {
+                      "text": "\\(x = 1\\) and \\(x = -3\\)",
+                      "is_correct": false
+                    }
+                  ],
+                  "hints": [
+                    {
+                      "text": "Set \\(f'(x) = 0\\). First find \\(f'(x) = 3x^2 - 6x - 9\\).",
+                      "cost_points": 0
+                    },
+                    {
+                      "text": "Factor: \\(3(x^2 - 2x - 3) = 3(x-3)(x+1) = 0\\).",
+                      "cost_points": 1
+                    }
+                  ],
+                  "solution_steps": [
+                    {
+                      "text": "\\(f'(x) = 3x^2 - 6x - 9 = 3(x^2 - 2x - 3) = 3(x-3)(x+1)\\)"
+                    },
+                    {
+                      "text": "Set \\(f'(x) = 0\\): \\(x = 3\\) or \\(x = -1\\)"
+                    }
+                  ]
+                },
+                {
+                  "question_html": "<p>Find the absolute maximum and minimum of \\(f(x) = x^3 - 3x + 1\\) on \\([-2, 3]\\).</p>",
+                  "problem_type": "frq",
+                  "correct_answer": "Absolute max: f(3) = 19 at x = 3. Absolute min: f(-2) = f(1) = -1.",
+                  "difficulty": "hard",
+                  "points": 3,
+                  "hints": [
+                    {
+                      "text": "Find critical points in \\((-2, 3)\\) by setting \\(f'(x) = 0\\). Then evaluate \\(f\\) at all critical points and endpoints.",
+                      "cost_points": 0
+                    }
+                  ],
+                  "solution_steps": [
+                    {
+                      "text": "\\(f'(x) = 3x^2 - 3 = 3(x^2 - 1) = 3(x-1)(x+1) = 0\\), so \\(x = \\pm 1\\)"
+                    },
+                    {
+                      "text": "Evaluate: \\(f(-2) = -8 + 6 + 1 = -1\\)"
+                    },
+                    {
+                      "text": "\\(f(-1) = -1 + 3 + 1 = 3\\)"
+                    },
+                    {
+                      "text": "\\(f(1) = 1 - 3 + 1 = -1\\)"
+                    },
+                    {
+                      "text": "\\(f(3) = 27 - 9 + 1 = 19\\)"
+                    },
+                    {
+                      "text": "Absolute max: \\(f(3) = 19\\). Absolute min: \\(f(-2) = f(1) = -1\\)."
+                    }
+                  ]
+                },
+                {
+                  "question_html": "<p>Determine the intervals on which \\(f(x) = x^4 - 4x^3\\) is concave up.</p>",
+                  "problem_type": "mcq",
+                  "difficulty": "medium",
+                  "points": 1,
+                  "choices": [
+                    {
+                      "text": "\\((-\\infty, 0) \\cup (2, \\infty)\\)",
+                      "is_correct": true
+                    },
+                    {
+                      "text": "\\((0, 2)\\)",
+                      "is_correct": false
+                    },
+                    {
+                      "text": "\\((2, \\infty)\\)",
+                      "is_correct": false
+                    },
+                    {
+                      "text": "\\((-\\infty, 0)\\)",
+                      "is_correct": false
+                    }
+                  ],
+                  "hints": [
+                    {
+                      "text": "Find \\(f''(x)\\) and determine where \\(f''(x) > 0\\).",
+                      "cost_points": 0
+                    },
+                    {
+                      "text": "\\(f''(x) = 12x^2 - 24x = 12x(x - 2)\\). This is positive when \\(x < 0\\) or \\(x > 2\\).",
+                      "cost_points": 1
+                    }
+                  ],
+                  "solution_steps": [
+                    {
+                      "text": "\\(f'(x) = 4x^3 - 12x^2\\), \\(f''(x) = 12x^2 - 24x = 12x(x-2)\\)"
+                    },
+                    {
+                      "text": "\\(f''(x) = 0\\) at \\(x = 0\\) and \\(x = 2\\)"
+                    },
+                    {
+                      "text": "Sign chart: \\(f'' > 0\\) on \\((-\\infty, 0)\\) and \\((2, \\infty)\\), so concave up there"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Integration and Accumulation of Change",
+      "slug": "integration-and-accumulation-of-change",
+      "description": "Understand antiderivatives, Riemann sums, definite integrals, and the Fundamental Theorem of Calculus.",
+      "display_order": 6,
+      "concepts": [
+        {
+          "title": "Introduction to Integration",
+          "slug": "introduction-to-integration",
+          "subject_area": "calculus",
+          "difficulty": "medium",
+          "tags": [
+            "integration",
+            "antiderivatives",
+            "riemann-sums",
+            "ap-calculus-ab",
+            "unit-6"
+          ],
+          "content_html": "<h2>Integration and Accumulation of Change</h2><p>Integration answers the question: <em>given a rate of change, what is the total accumulated change?</em></p><h3>Antiderivatives</h3><p>An <strong>antiderivative</strong> of \\(f(x)\\) is a function \\(F(x)\\) such that \\(F'(x) = f(x)\\). We write:</p><p>\\[\\int f(x)\\,dx = F(x) + C\\]</p><p>where \\(C\\) is the <strong>constant of integration</strong>.</p><h3>Basic Antiderivative Rules</h3><ul><li>\\(\\int x^n\\,dx = \\frac{x^{n+1}}{n+1} + C\\) (for \\(n \\neq -1\\))</li><li>\\(\\int \\frac{1}{x}\\,dx = \\ln|x| + C\\)</li><li>\\(\\int e^x\\,dx = e^x + C\\)</li><li>\\(\\int \\cos x\\,dx = \\sin x + C\\)</li><li>\\(\\int \\sin x\\,dx = -\\cos x + C\\)</li><li>\\(\\int \\sec^2 x\\,dx = \\tan x + C\\)</li></ul><h3>Riemann Sums</h3><p>A <strong>Riemann sum</strong> approximates the area under a curve by dividing it into rectangles:</p><ul><li><strong>Left sum:</strong> Use the left endpoint of each subinterval for the height</li><li><strong>Right sum:</strong> Use the right endpoint</li><li><strong>Midpoint sum:</strong> Use the midpoint</li></ul><p>As the number of rectangles \\(\\to \\infty\\), the Riemann sum \\(\\to\\) the <strong>definite integral</strong>.</p><h3>The Definite Integral</h3><p>\\[\\int_a^b f(x)\\,dx = \\lim_{n \\to \\infty} \\sum_{i=1}^{n} f(x_i^*)\\,\\Delta x\\]</p><p>Geometrically: signed area between \\(f\\) and the \\(x\\)-axis from \\(a\\) to \\(b\\).</p><h3>Properties of Definite Integrals</h3><ul><li>\\(\\int_a^a f(x)\\,dx = 0\\)</li><li>\\(\\int_a^b f(x)\\,dx = -\\int_b^a f(x)\\,dx\\)</li><li>\\(\\int_a^b [f(x) + g(x)]\\,dx = \\int_a^b f(x)\\,dx + \\int_a^b g(x)\\,dx\\)</li><li>\\(\\int_a^b cf(x)\\,dx = c\\int_a^b f(x)\\,dx\\)</li><li>\\(\\int_a^c f(x)\\,dx = \\int_a^b f(x)\\,dx + \\int_b^c f(x)\\,dx\\)</li></ul><div class=\"callout-key\"><strong>Key Insight:</strong> The integral \\(\\int_a^b f(x)\\,dx\\) gives the <strong>net</strong> signed area. Area below the \\(x\\)-axis counts as negative. For <strong>total</strong> area, integrate \\(|f(x)|\\).</div>",
+          "content_raw": "Integration and Accumulation of Change",
+          "estimated_minutes": 15,
+          "access_tier": "free",
+          "display_order": 0,
+          "problem_sets": [
+            {
+              "title": "Practice: Basic Integration",
+              "access_tier": "free",
+              "display_order": 0,
+              "problems": [
+                {
+                  "question_html": "<p>Evaluate \\(\\int (4x^3 - 2x + 5)\\,dx\\).</p>",
+                  "problem_type": "mcq",
+                  "difficulty": "easy",
+                  "points": 1,
+                  "choices": [
+                    {
+                      "text": "\\(x^4 - x^2 + 5x + C\\)",
+                      "is_correct": true
+                    },
+                    {
+                      "text": "\\(12x^2 - 2 + C\\)",
+                      "is_correct": false
+                    },
+                    {
+                      "text": "\\(4x^4 - 2x^2 + 5x + C\\)",
+                      "is_correct": false
+                    },
+                    {
+                      "text": "\\(x^4 - x^2 + C\\)",
+                      "is_correct": false
+                    }
+                  ],
+                  "hints": [
+                    {
+                      "text": "Use the power rule in reverse: \\(\\int x^n dx = \\frac{x^{n+1}}{n+1} + C\\).",
+                      "cost_points": 0
+                    }
+                  ],
+                  "solution_steps": [
+                    {
+                      "text": "\\(\\int 4x^3\\,dx = x^4\\)"
+                    },
+                    {
+                      "text": "\\(\\int -2x\\,dx = -x^2\\)"
+                    },
+                    {
+                      "text": "\\(\\int 5\\,dx = 5x\\)"
+                    },
+                    {
+                      "text": "Answer: \\(x^4 - x^2 + 5x + C\\)"
+                    }
+                  ]
+                },
+                {
+                  "question_html": "<p>Evaluate \\(\\displaystyle\\int_1^3 (2x + 1)\\,dx\\).</p>",
+                  "problem_type": "ftb",
+                  "correct_answer": "10",
+                  "difficulty": "easy",
+                  "points": 1,
+                  "hints": [
+                    {
+                      "text": "Find the antiderivative \\(x^2 + x\\), then evaluate from 1 to 3.",
+                      "cost_points": 0
+                    }
+                  ],
+                  "solution_steps": [
+                    {
+                      "text": "Antiderivative: \\(F(x) = x^2 + x\\)"
+                    },
+                    {
+                      "text": "\\(F(3) - F(1) = (9 + 3) - (1 + 1) = 12 - 2 = 10\\)"
+                    }
+                  ]
+                },
+                {
+                  "question_html": "<p>Using a left Riemann sum with \\(n = 4\\) equal subintervals, approximate \\(\\displaystyle\\int_0^4 x^2\\,dx\\).</p>",
+                  "problem_type": "ftb",
+                  "correct_answer": "14",
+                  "difficulty": "medium",
+                  "points": 2,
+                  "hints": [
+                    {
+                      "text": "Each subinterval has width \\(\\Delta x = 1\\). Left endpoints are \\(x = 0, 1, 2, 3\\).",
+                      "cost_points": 0
+                    },
+                    {
+                      "text": "Sum: \\(f(0)\\cdot 1 + f(1)\\cdot 1 + f(2)\\cdot 1 + f(3)\\cdot 1 = 0 + 1 + 4 + 9\\).",
+                      "cost_points": 1
+                    }
+                  ],
+                  "solution_steps": [
+                    {
+                      "text": "\\(\\Delta x = \\frac{4-0}{4} = 1\\)"
+                    },
+                    {
+                      "text": "Left endpoints: \\(0, 1, 2, 3\\)"
+                    },
+                    {
+                      "text": "\\(f(0) + f(1) + f(2) + f(3) = 0 + 1 + 4 + 9 = 14\\)"
+                    },
+                    {
+                      "text": "Left Riemann sum \\(= 14 \\cdot 1 = 14\\)"
+                    }
+                  ]
+                },
+                {
+                  "question_html": "<p>If \\(\\int_0^5 f(x)\\,dx = 8\\) and \\(\\int_0^3 f(x)\\,dx = 5\\), find \\(\\int_3^5 f(x)\\,dx\\).</p>",
+                  "problem_type": "ftb",
+                  "correct_answer": "3",
+                  "difficulty": "easy",
+                  "points": 1,
+                  "hints": [
+                    {
+                      "text": "Use the additive property: \\(\\int_0^5 = \\int_0^3 + \\int_3^5\\).",
+                      "cost_points": 0
+                    }
+                  ],
+                  "solution_steps": [
+                    {
+                      "text": "\\(\\int_3^5 f(x)\\,dx = \\int_0^5 f(x)\\,dx - \\int_0^3 f(x)\\,dx = 8 - 5 = 3\\)"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "The Fundamental Theorem of Calculus",
+          "slug": "fundamental-theorem-of-calculus",
+          "subject_area": "calculus",
+          "difficulty": "hard",
+          "tags": [
+            "ftc",
+            "integration",
+            "ap-calculus-ab",
+            "unit-6"
+          ],
+          "content_html": "<h2>The Fundamental Theorem of Calculus</h2><p>The FTC is the most important theorem in calculus — it connects differentiation and integration as inverse operations.</p><h3>Part 1 (FTC1)</h3><p>If \\(f\\) is continuous on \\([a, b]\\) and \\(F(x) = \\int_a^x f(t)\\,dt\\), then:</p><p>\\[F'(x) = f(x)\\]</p><p>In words: the derivative of the integral of \\(f\\) gives back \\(f\\).</p><h3>Part 2 (FTC2 — Evaluation Theorem)</h3><p>If \\(f\\) is continuous on \\([a, b]\\) and \\(F\\) is any antiderivative of \\(f\\), then:</p><p>\\[\\int_a^b f(x)\\,dx = F(b) - F(a)\\]</p><h3>FTC1 with Chain Rule</h3><p>If \\(g(x) = \\int_a^{u(x)} f(t)\\,dt\\), then by FTC1 + chain rule:</p><p>\\[g'(x) = f(u(x)) \\cdot u'(x)\\]</p><h3>Example</h3><p>If \\(g(x) = \\int_1^{x^2} \\cos(t)\\,dt\\), then \\(g'(x) = \\cos(x^2) \\cdot 2x\\).</p><h3>Accumulation Functions</h3><p>\\(F(x) = \\int_a^x f(t)\\,dt\\) is called an <strong>accumulation function</strong>. It measures the net area under \\(f\\) from \\(a\\) to \\(x\\). Key properties:</p><ul><li>\\(F(a) = 0\\) always</li><li>\\(F\\) is increasing where \\(f > 0\\)</li><li>\\(F\\) is decreasing where \\(f < 0\\)</li><li>\\(F\\) has a local max where \\(f\\) changes from positive to negative</li></ul><div class=\"callout-key\"><strong>AP Exam Alert:</strong> FTC problems appear on every AP exam. The most common type gives you a graph of \\(f\\) and asks about properties of \\(F(x) = \\int_a^x f(t)\\,dt\\) — where \\(F\\) is increasing/decreasing, has max/min, has inflection points, etc. Remember: \\(F' = f\\) and \\(F'' = f'\\).</div>",
+          "content_raw": "The Fundamental Theorem of Calculus",
+          "estimated_minutes": 12,
+          "access_tier": "free",
+          "display_order": 1,
+          "problem_sets": [
+            {
+              "title": "Practice: FTC",
+              "access_tier": "free",
+              "display_order": 0,
+              "problems": [
+                {
+                  "question_html": "<p>If \\(g(x) = \\int_2^x (t^2 - 4)\\,dt\\), find \\(g'(x)\\).</p>",
+                  "problem_type": "mcq",
+                  "difficulty": "easy",
+                  "points": 1,
+                  "choices": [
+                    {
+                      "text": "\\(x^2 - 4\\)",
+                      "is_correct": true
+                    },
+                    {
+                      "text": "\\(\\frac{x^3}{3} - 4x\\)",
+                      "is_correct": false
+                    },
+                    {
+                      "text": "\\(2x\\)",
+                      "is_correct": false
+                    },
+                    {
+                      "text": "\\(t^2 - 4\\)",
+                      "is_correct": false
+                    }
+                  ],
+                  "hints": [
+                    {
+                      "text": "By FTC Part 1: if \\(g(x) = \\int_a^x f(t)\\,dt\\), then \\(g'(x) = f(x)\\).",
+                      "cost_points": 0
+                    }
+                  ],
+                  "solution_steps": [
+                    {
+                      "text": "By FTC1: \\(g'(x) = x^2 - 4\\)"
+                    }
+                  ]
+                },
+                {
+                  "question_html": "<p>If \\(h(x) = \\int_0^{x^3} \\sin(t)\\,dt\\), find \\(h'(x)\\).</p>",
+                  "problem_type": "mcq",
+                  "difficulty": "medium",
+                  "points": 1,
+                  "choices": [
+                    {
+                      "text": "\\(\\sin(x^3)\\)",
+                      "is_correct": false
+                    },
+                    {
+                      "text": "\\(3x^2 \\sin(x^3)\\)",
+                      "is_correct": true
+                    },
+                    {
+                      "text": "\\(-\\cos(x^3) \\cdot 3x^2\\)",
+                      "is_correct": false
+                    },
+                    {
+                      "text": "\\(\\sin(3x^2)\\)",
+                      "is_correct": false
+                    }
+                  ],
+                  "hints": [
+                    {
+                      "text": "FTC1 + chain rule: \\(\\frac{d}{dx}\\int_a^{u(x)} f(t)\\,dt = f(u(x)) \\cdot u'(x)\\).",
+                      "cost_points": 0
+                    }
+                  ],
+                  "solution_steps": [
+                    {
+                      "text": "Let \\(u = x^3\\), so \\(u' = 3x^2\\)"
+                    },
+                    {
+                      "text": "\\(h'(x) = \\sin(x^3) \\cdot 3x^2 = 3x^2\\sin(x^3)\\)"
+                    }
+                  ]
+                },
+                {
+                  "question_html": "<p>Evaluate \\(\\displaystyle\\int_0^{\\pi} \\sin x\\,dx\\).</p>",
+                  "problem_type": "ftb",
+                  "correct_answer": "2",
+                  "difficulty": "easy",
+                  "points": 1,
+                  "hints": [
+                    {
+                      "text": "The antiderivative of \\(\\sin x\\) is \\(-\\cos x\\).",
+                      "cost_points": 0
+                    }
+                  ],
+                  "solution_steps": [
+                    {
+                      "text": "\\(\\int_0^{\\pi} \\sin x\\,dx = [-\\cos x]_0^{\\pi}\\)"
+                    },
+                    {
+                      "text": "\\(= -\\cos(\\pi) - (-\\cos(0)) = -(-1) - (-(1)) = 1 + 1 = 2\\)"
+                    }
+                  ]
+                },
+                {
+                  "question_html": "<p>If \\(F(x) = \\int_0^x f(t)\\,dt\\) and the graph of \\(f\\) is positive on \\((0, 3)\\) and negative on \\((3, 5)\\), at what value of \\(x\\) does \\(F\\) have a local maximum?</p>",
+                  "problem_type": "ftb",
+                  "correct_answer": "3||x=3||x = 3",
+                  "difficulty": "medium",
+                  "points": 1,
+                  "hints": [
+                    {
+                      "text": "\\(F'(x) = f(x)\\). A local max of \\(F\\) occurs where \\(F'\\) changes from positive to negative.",
+                      "cost_points": 0
+                    }
+                  ],
+                  "solution_steps": [
+                    {
+                      "text": "\\(F'(x) = f(x)\\) by FTC1."
+                    },
+                    {
+                      "text": "\\(f\\) changes from positive to negative at \\(x = 3\\)."
+                    },
+                    {
+                      "text": "So \\(F'\\) changes from \\(+\\) to \\(-\\) at \\(x = 3\\), meaning \\(F\\) has a local max at \\(x = 3\\)."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Integration Techniques: Substitution",
+          "slug": "integration-techniques-substitution",
+          "subject_area": "calculus",
+          "difficulty": "medium",
+          "tags": [
+            "u-substitution",
+            "integration",
+            "ap-calculus-ab",
+            "unit-6"
+          ],
+          "content_html": "<h2>Integration by Substitution (\\(u\\)-Substitution)</h2><p>\\(u\\)-substitution is the integration counterpart of the chain rule. It's the most important integration technique for AP Calculus AB.</p><h3>The Method</h3><ol><li>Identify an inner function \\(u = g(x)\\)</li><li>Compute \\(du = g'(x)\\,dx\\)</li><li>Rewrite the integral entirely in terms of \\(u\\)</li><li>Integrate with respect to \\(u\\)</li><li>Substitute back to \\(x\\)</li></ol><h3>Example 1: Indefinite Integral</h3><p>\\(\\int 2x\\cos(x^2)\\,dx\\)</p><ul><li>Let \\(u = x^2\\), \\(du = 2x\\,dx\\)</li><li>\\(= \\int \\cos(u)\\,du = \\sin(u) + C = \\sin(x^2) + C\\)</li></ul><h3>Example 2: Definite Integral</h3><p>\\(\\int_0^2 xe^{x^2}\\,dx\\)</p><ul><li>Let \\(u = x^2\\), \\(du = 2x\\,dx\\), so \\(x\\,dx = \\frac{1}{2}du\\)</li><li>Change bounds: when \\(x = 0\\), \\(u = 0\\); when \\(x = 2\\), \\(u = 4\\)</li><li>\\(= \\frac{1}{2}\\int_0^4 e^u\\,du = \\frac{1}{2}[e^u]_0^4 = \\frac{1}{2}(e^4 - 1)\\)</li></ul><h3>Recognizing When to Use \\(u\\)-Sub</h3><p>Look for:</p><ul><li>A composite function where the derivative of the inner function is present (or a constant multiple of it)</li><li>\\(f(g(x)) \\cdot g'(x)\\) pattern</li></ul><h3>Common Patterns</h3><ul><li>\\(\\int f'(x)/f(x)\\,dx = \\ln|f(x)| + C\\) (let \\(u = f(x)\\))</li><li>\\(\\int [f(x)]^n \\cdot f'(x)\\,dx = \\frac{[f(x)]^{n+1}}{n+1} + C\\) (let \\(u = f(x)\\))</li></ul><div class=\"callout-warning\"><strong>Common Mistake:</strong> Don't forget to change the limits of integration when using \\(u\\)-sub with a definite integral! Either change the bounds to \\(u\\)-values, or substitute back to \\(x\\) before evaluating.</div>",
+          "content_raw": "Integration by Substitution",
+          "estimated_minutes": 12,
+          "access_tier": "free",
+          "display_order": 2,
+          "problem_sets": [
+            {
+              "title": "Practice: u-Substitution",
+              "access_tier": "free",
+              "display_order": 0,
+              "problems": [
+                {
+                  "question_html": "<p>Evaluate \\(\\int 6x^2(x^3 + 1)^4\\,dx\\).</p>",
+                  "problem_type": "mcq",
+                  "difficulty": "medium",
+                  "points": 1,
+                  "choices": [
+                    {
+                      "text": "\\(\\frac{2(x^3+1)^5}{5} + C\\)",
+                      "is_correct": true
+                    },
+                    {
+                      "text": "\\(\\frac{(x^3+1)^5}{5} + C\\)",
+                      "is_correct": false
+                    },
+                    {
+                      "text": "\\(\\frac{6(x^3+1)^5}{5} + C\\)",
+                      "is_correct": false
+                    },
+                    {
+                      "text": "\\(2(x^3+1)^5 + C\\)",
+                      "is_correct": false
+                    }
+                  ],
+                  "hints": [
+                    {
+                      "text": "Let \\(u = x^3 + 1\\). Then \\(du = 3x^2\\,dx\\), so \\(6x^2\\,dx = 2\\,du\\).",
+                      "cost_points": 0
+                    }
+                  ],
+                  "solution_steps": [
+                    {
+                      "text": "Let \\(u = x^3 + 1\\), \\(du = 3x^2\\,dx\\)"
+                    },
+                    {
+                      "text": "\\(\\int 6x^2(x^3+1)^4\\,dx = 2\\int u^4\\,du\\)"
+                    },
+                    {
+                      "text": "\\(= 2 \\cdot \\frac{u^5}{5} + C = \\frac{2(x^3+1)^5}{5} + C\\)"
+                    }
+                  ]
+                },
+                {
+                  "question_html": "<p>Evaluate \\(\\displaystyle\\int_0^1 \\frac{x}{x^2 + 1}\\,dx\\).</p>",
+                  "problem_type": "ftb",
+                  "correct_answer": "ln(2)/2||(ln 2)/2||0.347",
+                  "difficulty": "medium",
+                  "points": 1,
+                  "hints": [
+                    {
+                      "text": "Let \\(u = x^2 + 1\\). Then \\(du = 2x\\,dx\\).",
+                      "cost_points": 0
+                    },
+                    {
+                      "text": "Change bounds: \\(u(0) = 1\\), \\(u(1) = 2\\). You get \\(\\frac{1}{2}\\int_1^2 \\frac{du}{u}\\).",
+                      "cost_points": 1
+                    }
+                  ],
+                  "solution_steps": [
+                    {
+                      "text": "Let \\(u = x^2+1\\), \\(du = 2x\\,dx\\), so \\(x\\,dx = \\frac{du}{2}\\)"
+                    },
+                    {
+                      "text": "Bounds: \\(u(0) = 1\\), \\(u(1) = 2\\)"
+                    },
+                    {
+                      "text": "\\(\\frac{1}{2}\\int_1^2 \\frac{du}{u} = \\frac{1}{2}[\\ln u]_1^2 = \\frac{1}{2}(\\ln 2 - \\ln 1) = \\frac{\\ln 2}{2}\\)"
+                    }
+                  ]
+                },
+                {
+                  "question_html": "<p>Evaluate \\(\\int \\tan x\\,dx\\).</p>",
+                  "problem_type": "mcq",
+                  "difficulty": "medium",
+                  "points": 1,
+                  "choices": [
+                    {
+                      "text": "\\(-\\ln|\\cos x| + C\\)",
+                      "is_correct": true
+                    },
+                    {
+                      "text": "\\(\\sec^2 x + C\\)",
+                      "is_correct": false
+                    },
+                    {
+                      "text": "\\(\\ln|\\sin x| + C\\)",
+                      "is_correct": false
+                    },
+                    {
+                      "text": "\\(-\\ln|\\sin x| + C\\)",
+                      "is_correct": false
+                    }
+                  ],
+                  "hints": [
+                    {
+                      "text": "Rewrite as \\(\\int \\frac{\\sin x}{\\cos x}\\,dx\\) and let \\(u = \\cos x\\).",
+                      "cost_points": 0
+                    }
+                  ],
+                  "solution_steps": [
+                    {
+                      "text": "\\(\\int \\tan x\\,dx = \\int \\frac{\\sin x}{\\cos x}\\,dx\\)"
+                    },
+                    {
+                      "text": "Let \\(u = \\cos x\\), \\(du = -\\sin x\\,dx\\)"
+                    },
+                    {
+                      "text": "\\(= -\\int \\frac{du}{u} = -\\ln|u| + C = -\\ln|\\cos x| + C\\)"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Differential Equations",
+      "slug": "differential-equations",
+      "description": "Solve separable differential equations, interpret slope fields, and model exponential growth/decay.",
+      "display_order": 7,
+      "concepts": [
+        {
+          "title": "Differential Equations and Slope Fields",
+          "slug": "differential-equations-slope-fields",
+          "subject_area": "calculus",
+          "difficulty": "hard",
+          "tags": [
+            "differential-equations",
+            "slope-fields",
+            "separation-of-variables",
+            "ap-calculus-ab",
+            "unit-7"
+          ],
+          "content_html": "<h2>Differential Equations</h2><p>A <strong>differential equation</strong> is an equation involving a function and its derivatives. In AP Calculus AB, we focus on first-order separable differential equations.</p><h3>Slope Fields</h3><p>A <strong>slope field</strong> (or direction field) is a visual tool: at each point \\((x, y)\\), draw a short line segment with slope \\(\\frac{dy}{dx}\\) evaluated at that point. Solution curves follow these slopes.</p><p>Reading slope fields:</p><ul><li>Horizontal segments: \\(\\frac{dy}{dx} = 0\\) there</li><li>Steep positive segments: large positive slope</li><li>Solution curves never cross (for well-behaved DEs)</li></ul><h3>Separation of Variables</h3><p>If \\(\\frac{dy}{dx} = f(x) \\cdot g(y)\\), we can separate:</p><ol><li>Rewrite: \\(\\frac{dy}{g(y)} = f(x)\\,dx\\)</li><li>Integrate both sides: \\(\\int \\frac{dy}{g(y)} = \\int f(x)\\,dx\\)</li><li>Solve for \\(y\\) if possible</li><li>Use initial condition to find \\(C\\)</li></ol><h3>Exponential Growth and Decay</h3><p>The equation \\(\\frac{dy}{dt} = ky\\) has solution \\(y = y_0 e^{kt}\\), where \\(y_0\\) is the initial value.</p><ul><li>\\(k > 0\\): exponential growth</li><li>\\(k < 0\\): exponential decay</li><li>Half-life: \\(t_{1/2} = \\frac{\\ln 2}{|k|}\\)</li></ul><div class=\"callout-key\"><strong>AP Exam Format:</strong> Slope field matching and separation of variables appear almost every year on the free-response section. Practice: (1) matching a DE to its slope field, (2) solving separable DEs with initial conditions, (3) interpreting solutions in context.</div>",
+          "content_raw": "Differential Equations and Slope Fields",
+          "estimated_minutes": 14,
+          "access_tier": "free",
+          "display_order": 0,
+          "problem_sets": [
+            {
+              "title": "Practice: Differential Equations",
+              "access_tier": "free",
+              "display_order": 0,
+              "problems": [
+                {
+                  "question_html": "<p>Solve the differential equation \\(\\frac{dy}{dx} = 3x^2\\) with \\(y(0) = 5\\).</p>",
+                  "problem_type": "mcq",
+                  "difficulty": "easy",
+                  "points": 1,
+                  "choices": [
+                    {
+                      "text": "\\(y = x^3 + 5\\)",
+                      "is_correct": true
+                    },
+                    {
+                      "text": "\\(y = x^3 + C\\)",
+                      "is_correct": false
+                    },
+                    {
+                      "text": "\\(y = 6x + 5\\)",
+                      "is_correct": false
+                    },
+                    {
+                      "text": "\\(y = 3x^3 + 5\\)",
+                      "is_correct": false
+                    }
+                  ],
+                  "hints": [
+                    {
+                      "text": "Integrate both sides: \\(y = \\int 3x^2\\,dx = x^3 + C\\). Then use \\(y(0) = 5\\).",
+                      "cost_points": 0
+                    }
+                  ],
+                  "solution_steps": [
+                    {
+                      "text": "\\(y = \\int 3x^2\\,dx = x^3 + C\\)"
+                    },
+                    {
+                      "text": "\\(y(0) = 0 + C = 5\\), so \\(C = 5\\)"
+                    },
+                    {
+                      "text": "\\(y = x^3 + 5\\)"
+                    }
+                  ]
+                },
+                {
+                  "question_html": "<p>Solve \\(\\frac{dy}{dx} = 2xy\\) with \\(y(0) = 3\\).</p>",
+                  "problem_type": "frq",
+                  "correct_answer": "y = 3e^(x^2)",
+                  "difficulty": "hard",
+                  "points": 3,
+                  "hints": [
+                    {
+                      "text": "This is separable: \\(\\frac{dy}{y} = 2x\\,dx\\). Integrate both sides.",
+                      "cost_points": 0
+                    },
+                    {
+                      "text": "You get \\(\\ln|y| = x^2 + C\\). Exponentiate: \\(y = Ae^{x^2}\\). Use the initial condition.",
+                      "cost_points": 1
+                    }
+                  ],
+                  "solution_steps": [
+                    {
+                      "text": "Separate: \\(\\frac{dy}{y} = 2x\\,dx\\)"
+                    },
+                    {
+                      "text": "Integrate: \\(\\ln|y| = x^2 + C\\)"
+                    },
+                    {
+                      "text": "Exponentiate: \\(y = Ae^{x^2}\\)"
+                    },
+                    {
+                      "text": "Initial condition: \\(y(0) = A = 3\\)"
+                    },
+                    {
+                      "text": "Solution: \\(y = 3e^{x^2}\\)"
+                    }
+                  ]
+                },
+                {
+                  "question_html": "<p>A population grows at a rate proportional to its size. If there are 1000 bacteria initially and 3000 after 2 hours, how many will there be after 5 hours? Round to the nearest whole number.</p>",
+                  "problem_type": "ftb",
+                  "correct_answer": "15588||15589",
+                  "difficulty": "hard",
+                  "points": 2,
+                  "hints": [
+                    {
+                      "text": "The model is \\(P(t) = P_0 e^{kt}\\). Use \\(P(0) = 1000\\) and \\(P(2) = 3000\\) to find \\(k\\).",
+                      "cost_points": 0
+                    },
+                    {
+                      "text": "\\(3000 = 1000e^{2k}\\) gives \\(k = \\frac{\\ln 3}{2}\\). Then compute \\(P(5)\\).",
+                      "cost_points": 1
+                    }
+                  ],
+                  "solution_steps": [
+                    {
+                      "text": "\\(P(t) = 1000e^{kt}\\)"
+                    },
+                    {
+                      "text": "\\(3000 = 1000e^{2k} \\Rightarrow e^{2k} = 3 \\Rightarrow k = \\frac{\\ln 3}{2}\\)"
+                    },
+                    {
+                      "text": "\\(P(5) = 1000e^{5 \\cdot \\frac{\\ln 3}{2}} = 1000 \\cdot 3^{5/2} = 1000 \\cdot 9\\sqrt{3}\\)"
+                    },
+                    {
+                      "text": "\\(\\approx 1000 \\cdot 15.588 = 15588\\)"
+                    }
+                  ]
+                },
+                {
+                  "question_html": "<p>In a slope field for \\(\\frac{dy}{dx} = x - y\\), what is the slope at the point \\((2, 1)\\)?</p>",
+                  "problem_type": "ftb",
+                  "correct_answer": "1",
+                  "difficulty": "easy",
+                  "points": 1,
+                  "hints": [
+                    {
+                      "text": "Just substitute \\(x = 2\\) and \\(y = 1\\) into the expression \\(x - y\\).",
+                      "cost_points": 0
+                    }
+                  ],
+                  "solution_steps": [
+                    {
+                      "text": "\\(\\frac{dy}{dx}\\bigg|_{(2,1)} = 2 - 1 = 1\\)"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Applications of Integration",
+      "slug": "applications-of-integration",
+      "description": "Compute areas between curves, volumes of revolution, and average values using integrals.",
+      "display_order": 8,
+      "concepts": [
+        {
+          "title": "Applications of Integration",
+          "slug": "applications-of-integration",
+          "subject_area": "calculus",
+          "difficulty": "hard",
+          "tags": [
+            "area",
+            "volume",
+            "ap-calculus-ab",
+            "unit-8"
+          ],
+          "content_html": "<h2>Applications of Integration</h2><p>Integration lets us compute areas, volumes, and other accumulated quantities.</p><h3>Area Between Curves</h3><p>The area between \\(y = f(x)\\) (top) and \\(y = g(x)\\) (bottom) from \\(x = a\\) to \\(x = b\\):</p><p>\\[A = \\int_a^b [f(x) - g(x)]\\,dx\\]</p><p>If the curves cross, split into sub-intervals where one is consistently on top.</p><h3>Volumes of Revolution</h3><p><strong>Disk Method</strong> (solid with no hole, revolving around an axis):</p><p>\\[V = \\pi\\int_a^b [R(x)]^2\\,dx\\]</p><p>where \\(R(x)\\) is the distance from the curve to the axis of revolution.</p><p><strong>Washer Method</strong> (solid with a hole, revolving around an axis):</p><p>\\[V = \\pi\\int_a^b \\left([R(x)]^2 - [r(x)]^2\\right)\\,dx\\]</p><p>where \\(R(x)\\) is the outer radius and \\(r(x)\\) is the inner radius.</p><h3>Volumes with Known Cross Sections</h3><p>If cross sections perpendicular to the \\(x\\)-axis have area \\(A(x)\\):</p><p>\\[V = \\int_a^b A(x)\\,dx\\]</p><p>Common cross sections: squares, semicircles, equilateral triangles, isosceles right triangles.</p><h3>Average Value of a Function</h3><p>The average value of \\(f\\) on \\([a, b]\\) is:</p><p>\\[f_{\\text{avg}} = \\frac{1}{b-a}\\int_a^b f(x)\\,dx\\]</p><div class=\"callout-key\"><strong>AP Exam Tip:</strong> Volume problems are guaranteed on the AP exam (usually FRQ). Practice setting up the integral — choosing the right method (disk vs washer) and identifying the correct radii are the hardest parts. The actual integration is usually straightforward.</div>",
+          "content_raw": "Applications of Integration",
+          "estimated_minutes": 15,
+          "access_tier": "free",
+          "display_order": 0,
+          "problem_sets": [
+            {
+              "title": "Practice: Applications of Integration",
+              "access_tier": "free",
+              "display_order": 0,
+              "problems": [
+                {
+                  "question_html": "<p>Find the area enclosed between \\(y = x^2\\) and \\(y = x\\).</p>",
+                  "problem_type": "ftb",
+                  "correct_answer": "1/6",
+                  "difficulty": "medium",
+                  "points": 2,
+                  "hints": [
+                    {
+                      "text": "First find where the curves intersect: \\(x^2 = x \\Rightarrow x(x-1) = 0\\), so \\(x = 0\\) and \\(x = 1\\).",
+                      "cost_points": 0
+                    },
+                    {
+                      "text": "On \\([0,1]\\), \\(x \\ge x^2\\). Integrate \\(\\int_0^1 (x - x^2)\\,dx\\).",
+                      "cost_points": 1
+                    }
+                  ],
+                  "solution_steps": [
+                    {
+                      "text": "Intersections: \\(x = 0\\) and \\(x = 1\\)"
+                    },
+                    {
+                      "text": "\\(A = \\int_0^1 (x - x^2)\\,dx = \\left[\\frac{x^2}{2} - \\frac{x^3}{3}\\right]_0^1\\)"
+                    },
+                    {
+                      "text": "\\(= \\frac{1}{2} - \\frac{1}{3} = \\frac{1}{6}\\)"
+                    }
+                  ]
+                },
+                {
+                  "question_html": "<p>The region bounded by \\(y = \\sqrt{x}\\), \\(y = 0\\), and \\(x = 4\\) is revolved about the \\(x\\)-axis. Find the volume.</p>",
+                  "problem_type": "mcq",
+                  "difficulty": "medium",
+                  "points": 2,
+                  "choices": [
+                    {
+                      "text": "\\(8\\pi\\)",
+                      "is_correct": true
+                    },
+                    {
+                      "text": "\\(4\\pi\\)",
+                      "is_correct": false
+                    },
+                    {
+                      "text": "\\(16\\pi\\)",
+                      "is_correct": false
+                    },
+                    {
+                      "text": "\\(\\frac{8\\pi}{3}\\)",
+                      "is_correct": false
+                    }
+                  ],
+                  "hints": [
+                    {
+                      "text": "Disk method: \\(V = \\pi\\int_0^4 (\\sqrt{x})^2\\,dx = \\pi\\int_0^4 x\\,dx\\).",
+                      "cost_points": 0
+                    }
+                  ],
+                  "solution_steps": [
+                    {
+                      "text": "Disk method with \\(R(x) = \\sqrt{x}\\):"
+                    },
+                    {
+                      "text": "\\(V = \\pi\\int_0^4 x\\,dx = \\pi\\left[\\frac{x^2}{2}\\right]_0^4 = \\pi \\cdot 8 = 8\\pi\\)"
+                    }
+                  ]
+                },
+                {
+                  "question_html": "<p>Find the average value of \\(f(x) = x^2\\) on the interval \\([0, 3]\\).</p>",
+                  "problem_type": "ftb",
+                  "correct_answer": "3",
+                  "difficulty": "easy",
+                  "points": 1,
+                  "hints": [
+                    {
+                      "text": "Average value \\(= \\frac{1}{b-a}\\int_a^b f(x)\\,dx\\).",
+                      "cost_points": 0
+                    }
+                  ],
+                  "solution_steps": [
+                    {
+                      "text": "\\(f_{\\text{avg}} = \\frac{1}{3-0}\\int_0^3 x^2\\,dx = \\frac{1}{3}\\left[\\frac{x^3}{3}\\right]_0^3\\)"
+                    },
+                    {
+                      "text": "\\(= \\frac{1}{3} \\cdot \\frac{27}{3} = \\frac{1}{3} \\cdot 9 = 3\\)"
+                    }
+                  ]
+                },
+                {
+                  "question_html": "<p>A solid has a base bounded by \\(y = \\sqrt{x}\\) and \\(y = 0\\) for \\(0 \\le x \\le 1\\). Cross sections perpendicular to the \\(x\\)-axis are squares. Set up (but do not evaluate) the integral for the volume.</p>",
+                  "problem_type": "frq",
+                  "correct_answer": "V = integral from 0 to 1 of (sqrt(x))^2 dx = integral from 0 to 1 of x dx = 1/2",
+                  "difficulty": "hard",
+                  "points": 3,
+                  "hints": [
+                    {
+                      "text": "Each square cross section has side length equal to \\(\\sqrt{x}\\) (the distance from \\(y = 0\\) to \\(y = \\sqrt{x}\\)).",
+                      "cost_points": 0
+                    },
+                    {
+                      "text": "Area of a square with side \\(s\\) is \\(s^2\\). So \\(A(x) = (\\sqrt{x})^2 = x\\).",
+                      "cost_points": 1
+                    }
+                  ],
+                  "solution_steps": [
+                    {
+                      "text": "Side length of square at position \\(x\\): \\(s = \\sqrt{x} - 0 = \\sqrt{x}\\)"
+                    },
+                    {
+                      "text": "Area: \\(A(x) = (\\sqrt{x})^2 = x\\)"
+                    },
+                    {
+                      "text": "Volume: \\(V = \\int_0^1 x\\,dx = \\frac{1}{2}\\)"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

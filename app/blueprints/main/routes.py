@@ -81,7 +81,7 @@ def robots_txt():
 
 @main_bp.route('/sitemap.xml')
 def sitemap_xml():
-    from app.models.content import Subject, Topic, Concept
+    from app.models.content import Subject, Course, Topic, Concept, TopicConcept
     base = request.url_root.rstrip('/')
     pages = []
 
@@ -93,29 +93,42 @@ def sitemap_xml():
     subjects = Subject.query.filter_by(is_active=True).all()
     for subject in subjects:
         pages.append({
-            'loc': base + url_for('subjects.subject_detail', slug=subject.slug),
+            'loc': base + url_for('subjects.course_list', slug=subject.slug),
             'priority': '0.7',
         })
-        # Topics
-        topics = Topic.query.filter_by(subject_id=subject.id, is_active=True).all()
-        for topic in topics:
+        # Courses
+        courses = Course.query.filter_by(subject_id=subject.id, is_active=True).all()
+        for course in courses:
             pages.append({
-                'loc': base + url_for('subjects.topic_detail',
-                                      subject_slug=subject.slug, topic_slug=topic.slug),
-                'priority': '0.6',
+                'loc': base + url_for('subjects.course_detail',
+                                      subject_slug=subject.slug, course_slug=course.slug),
+                'priority': '0.65',
             })
-            # Free concepts only
-            concepts = Concept.query.filter_by(
-                topic_id=topic.id, is_active=True, access_tier='free'
-            ).all()
-            for concept in concepts:
+            # Topics
+            topics = Topic.query.filter_by(course_id=course.id, is_active=True).all()
+            for topic in topics:
                 pages.append({
-                    'loc': base + url_for('subjects.concept_detail',
+                    'loc': base + url_for('subjects.topic_detail',
                                           subject_slug=subject.slug,
-                                          topic_slug=topic.slug,
-                                          concept_slug=concept.slug),
-                    'priority': '0.5',
+                                          course_slug=course.slug,
+                                          topic_slug=topic.slug),
+                    'priority': '0.6',
                 })
+                # Free concepts only (via TopicConcept)
+                links = TopicConcept.query.join(Concept).filter(
+                    TopicConcept.topic_id == topic.id,
+                    Concept.is_active == True,
+                    Concept.access_tier == 'free',
+                ).all()
+                for link in links:
+                    pages.append({
+                        'loc': base + url_for('subjects.concept_detail',
+                                              subject_slug=subject.slug,
+                                              course_slug=course.slug,
+                                              topic_slug=topic.slug,
+                                              concept_slug=link.concept.slug),
+                        'priority': '0.5',
+                    })
 
     # Blog posts
     posts = BlogPost.query.filter_by(is_published=True).all()

@@ -4,7 +4,7 @@ from datetime import datetime, timezone, timedelta
 from app import create_app
 from app.extensions import db
 from app.models.user import User
-from app.models.content import Subject, Topic
+from app.models.content import Subject, Course
 from app.models.access import AccessCode
 from app.models import Testimonial, BlogPost
 from app.utils.content_loader import load_content_json
@@ -47,7 +47,7 @@ def _seed_data():
     else:
         logger.info('Admin user already exists: %s', admin_email)
 
-    # --- Subjects & Topics ---
+    # --- Subjects & Courses ---
     subjects_data = [
         {
             'name': 'Mathematics',
@@ -55,20 +55,20 @@ def _seed_data():
             'icon': '🔢',
             'description': 'From arithmetic fundamentals to college-level calculus and linear algebra. Build a strong mathematical foundation at every level.',
             'display_order': 1,
-            'topics': [
-                ('Arithmetic', 'arithmetic', 'elementary', 'Master the building blocks: addition, subtraction, multiplication, division, fractions, and decimals.'),
-                ('Algebra 1', 'algebra-1', 'middle_school', 'Linear equations, inequalities, graphing, and an introduction to functions.'),
-                ('Geometry', 'geometry', 'high_school', 'Points, lines, angles, triangles, circles, area, volume, and geometric proofs.'),
-                ('Algebra 2', 'algebra-2', 'high_school', 'Polynomials, rational expressions, exponentials, logarithms, and complex numbers.'),
-                ('Precalculus', 'precalculus', 'high_school', 'Advanced functions, trigonometry, sequences, series, and limits.'),
-                ('Calculus \u2014 Honors', 'calculus-honors', 'high_school', 'Honors-level introduction to limits, derivatives, and integrals.'),
-                ('AP Calculus AB', 'ap-calculus-ab', 'ap', 'Limits, derivatives, integrals, and the Fundamental Theorem of Calculus. Full AP exam preparation.'),
-                ('AP Calculus BC', 'ap-calculus-bc', 'ap', 'All AB topics plus parametric, polar, vector functions, and series. Comprehensive AP exam prep.'),
-                ('Statistics \u2014 Honors', 'statistics-honors', 'high_school', 'Data analysis, probability, distributions, and inference at the honors level.'),
-                ('AP Statistics', 'ap-statistics', 'ap', 'Exploring data, sampling, probability, inference, and regression. AP exam focused.'),
-                ('Discrete Mathematics', 'discrete-mathematics', 'college', 'Combinatorics, graph theory, logic, proofs, and number theory.'),
-                ('Multivariable Calculus', 'multivariable-calculus', 'college', 'Partial derivatives, multiple integrals, vector calculus, and applications.'),
-                ('Linear Algebra', 'linear-algebra', 'college', 'Vectors, matrices, linear transformations, eigenvalues, and vector spaces.'),
+            'courses': [
+                ('Arithmetic', 'arithmetic', 'elementary', 'standard', 'Master the building blocks: addition, subtraction, multiplication, division, fractions, and decimals.'),
+                ('Algebra 1', 'algebra-1', 'middle_school', 'standard', 'Linear equations, inequalities, graphing, and an introduction to functions.'),
+                ('Geometry', 'geometry', 'high_school', 'standard', 'Points, lines, angles, triangles, circles, area, volume, and geometric proofs.'),
+                ('Algebra 2', 'algebra-2', 'high_school', 'standard', 'Polynomials, rational expressions, exponentials, logarithms, and complex numbers.'),
+                ('Precalculus', 'precalculus', 'high_school', 'standard', 'Advanced functions, trigonometry, sequences, series, and limits.'),
+                ('Calculus \u2014 Honors', 'calculus-honors', 'high_school', 'honors', 'Honors-level introduction to limits, derivatives, and integrals.'),
+                ('AP Calculus AB', 'ap-calculus-ab', 'ap', 'ap', 'Limits, derivatives, integrals, and the Fundamental Theorem of Calculus. Full AP exam preparation.'),
+                ('AP Calculus BC', 'ap-calculus-bc', 'ap', 'ap', 'All AB topics plus parametric, polar, vector functions, and series. Comprehensive AP exam prep.'),
+                ('Statistics \u2014 Honors', 'statistics-honors', 'high_school', 'honors', 'Data analysis, probability, distributions, and inference at the honors level.'),
+                ('AP Statistics', 'ap-statistics', 'ap', 'ap', 'Exploring data, sampling, probability, inference, and regression. AP exam focused.'),
+                ('Discrete Mathematics', 'discrete-mathematics', 'college', 'college', 'Combinatorics, graph theory, logic, proofs, and number theory.'),
+                ('Multivariable Calculus', 'multivariable-calculus', 'college', 'college', 'Partial derivatives, multiple integrals, vector calculus, and applications.'),
+                ('Linear Algebra', 'linear-algebra', 'college', 'college', 'Vectors, matrices, linear transformations, eigenvalues, and vector spaces.'),
             ],
         },
         {
@@ -77,12 +77,12 @@ def _seed_data():
             'icon': '\u269b\ufe0f',
             'description': 'Mechanics, electricity & magnetism, and beyond. Develop physical intuition and problem-solving skills.',
             'display_order': 2,
-            'topics': [
-                ('Honors Physics', 'honors-physics', 'high_school', 'Kinematics, dynamics, energy, momentum, waves, and thermodynamics at the honors level.'),
-                ('AP Physics 1: Mechanics', 'ap-physics-1-mechanics', 'ap', 'Algebra-based mechanics: kinematics, forces, energy, momentum, rotation, and oscillations.'),
-                ('AP Physics 2: E&M', 'ap-physics-2-em', 'ap', 'Algebra-based electricity, magnetism, optics, and modern physics.'),
-                ('AP Physics C: Mechanics', 'ap-physics-c-mechanics', 'ap', 'Calculus-based mechanics with rigorous problem-solving and free-response preparation.'),
-                ('AP Physics C: E&M', 'ap-physics-c-em', 'ap', 'Calculus-based electricity and magnetism: electric fields, circuits, magnetic fields, and induction.'),
+            'courses': [
+                ('Honors Physics', 'honors-physics', 'high_school', 'honors', 'Kinematics, dynamics, energy, momentum, waves, and thermodynamics at the honors level.'),
+                ('AP Physics 1: Mechanics', 'ap-physics-1-mechanics', 'ap', 'ap', 'Algebra-based mechanics: kinematics, forces, energy, momentum, rotation, and oscillations.'),
+                ('AP Physics 2: E&M', 'ap-physics-2-em', 'ap', 'ap', 'Algebra-based electricity, magnetism, optics, and modern physics.'),
+                ('AP Physics C: Mechanics', 'ap-physics-c-mechanics', 'ap', 'ap', 'Calculus-based mechanics with rigorous problem-solving and free-response preparation.'),
+                ('AP Physics C: E&M', 'ap-physics-c-em', 'ap', 'ap', 'Calculus-based electricity and magnetism: electric fields, circuits, magnetic fields, and induction.'),
             ],
         },
         {
@@ -91,9 +91,9 @@ def _seed_data():
             'icon': '🧪',
             'description': 'Atomic structure, chemical reactions, stoichiometry, and more. Build a solid understanding of chemistry.',
             'display_order': 3,
-            'topics': [
-                ('Honors Chemistry', 'honors-chemistry', 'high_school', 'Atomic theory, periodic trends, bonding, reactions, stoichiometry, and solutions.'),
-                ('Advanced Chemistry', 'advanced-chemistry', 'high_school', 'Equilibrium, thermodynamics, kinetics, acids/bases, and electrochemistry.'),
+            'courses': [
+                ('Honors Chemistry', 'honors-chemistry', 'high_school', 'honors', 'Atomic theory, periodic trends, bonding, reactions, stoichiometry, and solutions.'),
+                ('Advanced Chemistry', 'advanced-chemistry', 'high_school', 'standard', 'Equilibrium, thermodynamics, kinetics, acids/bases, and electrochemistry.'),
             ],
         },
         {
@@ -102,10 +102,10 @@ def _seed_data():
             'icon': '💻',
             'description': 'From programming fundamentals to algorithms and data structures. Learn to think computationally.',
             'display_order': 4,
-            'topics': [
-                ('AP Computer Science Principles', 'ap-cs-principles', 'ap', 'Big ideas of computing: abstraction, data, algorithms, programming, internet, and impact.'),
-                ('AP Computer Science A \u2014 Java', 'ap-cs-a-java', 'ap', 'Object-oriented programming in Java: classes, inheritance, arrays, recursion, and sorting.'),
-                ('Algorithms and Data Structures', 'algorithms-data-structures', 'college', 'Searching, sorting, trees, graphs, dynamic programming, and algorithm analysis.'),
+            'courses': [
+                ('AP Computer Science Principles', 'ap-cs-principles', 'ap', 'ap', 'Big ideas of computing: abstraction, data, algorithms, programming, internet, and impact.'),
+                ('AP Computer Science A \u2014 Java', 'ap-cs-a-java', 'ap', 'ap', 'Object-oriented programming in Java: classes, inheritance, arrays, recursion, and sorting.'),
+                ('Algorithms and Data Structures', 'algorithms-data-structures', 'college', 'college', 'Searching, sorting, trees, graphs, dynamic programming, and algorithm analysis.'),
             ],
         },
         {
@@ -114,10 +114,10 @@ def _seed_data():
             'icon': '📝',
             'description': 'Targeted preparation for SAT and ACT exams. Strategies, practice, and confidence building.',
             'display_order': 5,
-            'topics': [
-                ('SAT Mathematics', 'sat-mathematics', 'high_school', 'Heart of Algebra, Problem Solving & Data Analysis, Passport to Advanced Math, and Additional Topics.'),
-                ('ACT Mathematics', 'act-mathematics', 'high_school', 'Pre-Algebra, Algebra, Geometry, and Trigonometry sections of the ACT.'),
-                ('ACT Science', 'act-science', 'high_school', 'Data representation, research summaries, and conflicting viewpoints passages.'),
+            'courses': [
+                ('SAT Mathematics', 'sat-mathematics', 'high_school', 'test_prep', 'Heart of Algebra, Problem Solving & Data Analysis, Passport to Advanced Math, and Additional Topics.'),
+                ('ACT Mathematics', 'act-mathematics', 'high_school', 'test_prep', 'Pre-Algebra, Algebra, Geometry, and Trigonometry sections of the ACT.'),
+                ('ACT Science', 'act-science', 'high_school', 'test_prep', 'Data representation, research summaries, and conflicting viewpoints passages.'),
             ],
         },
     ]
@@ -136,26 +136,28 @@ def _seed_data():
             db.session.flush()
             logger.info('Created subject: %s', subject.name)
 
-        for t_order, (t_name, t_slug, t_diff, t_desc) in enumerate(sdata['topics']):
-            topic = Topic.query.filter_by(subject_id=subject.id, slug=t_slug).first()
-            if not topic:
-                topic = Topic(
+        for c_order, (c_name, c_slug, c_diff, c_type, c_desc) in enumerate(sdata['courses']):
+            course = Course.query.filter_by(subject_id=subject.id, slug=c_slug).first()
+            if not course:
+                course = Course(
                     subject_id=subject.id,
-                    name=t_name,
-                    slug=t_slug,
-                    description=t_desc,
-                    difficulty_level=t_diff,
-                    display_order=t_order + 1,
+                    name=c_name,
+                    slug=c_slug,
+                    description=c_desc,
+                    difficulty_level=c_diff,
+                    course_type=c_type,
+                    display_order=c_order + 1,
                 )
-                db.session.add(topic)
+                db.session.add(course)
 
     db.session.commit()
-    logger.info('Subjects and topics seeded.')
+    logger.info('Subjects and courses seeded.')
 
     # --- Load Content JSON Files ---
     content_dir = os.path.join(os.path.dirname(__file__), 'content')
     content_files = [
         'math_algebra1_linear_equations.json',
+        'math_ap_calculus_ab.json',
         'physics_honors_newtons_laws.json',
         'chemistry_honors_mole_concept.json',
         'cs_apcs_arrays_arraylists.json',
@@ -171,8 +173,8 @@ def _seed_data():
             if result is None:
                 logger.info('Content already loaded, skipping: %s', fname)
             else:
-                logger.info('Loaded %s: %s concepts, %s problems',
-                            fname, result['concepts'], result['problems'])
+                logger.info('Loaded %s: %s topics, %s concepts, %s problems',
+                            fname, result['topics'], result['concepts'], result['problems'])
         except Exception:
             logger.exception('Error loading %s', fname)
 

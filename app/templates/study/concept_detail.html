@@ -14,9 +14,11 @@
         <nav class="breadcrumb">
             <a href="{{ url_for('subjects.catalog') }}">Subjects</a>
             <span class="breadcrumb-sep">/</span>
-            <a href="{{ url_for('subjects.topic_list', slug=subject.slug) }}">{{ subject.name }}</a>
+            <a href="{{ url_for('subjects.course_list', slug=subject.slug) }}">{{ subject.name }}</a>
             <span class="breadcrumb-sep">/</span>
-            <a href="{{ url_for('subjects.topic_detail', subject_slug=subject.slug, topic_slug=topic.slug) }}">{{ topic.name }}</a>
+            <a href="{{ url_for('subjects.course_detail', subject_slug=subject.slug, course_slug=course.slug) }}">{{ course.name }}</a>
+            <span class="breadcrumb-sep">/</span>
+            <a href="{{ url_for('subjects.topic_detail', subject_slug=subject.slug, course_slug=course.slug, topic_slug=topic.slug) }}">{{ topic.name }}</a>
             <span class="breadcrumb-sep">/</span>
             <span class="breadcrumb-current">{{ concept.title }}</span>
         </nav>
@@ -43,9 +45,47 @@
                 {{ concept.content_html | safe }}
             </div>
 
+            {% if concept_resources %}
+                <div class="resources-section">
+                    <h2>Study Materials</h2>
+                    <div class="resources-list">
+                        {% for r in concept_resources %}
+                            <div class="resource-card">
+                                <div class="resource-card-header">
+                                    <span class="resource-type-icon">
+                                        {% if r.resource_type == 'google_slides' %}&#128202;{% elif r.resource_type == 'google_docs' %}&#128196;{% elif r.resource_type == 'video_link' %}&#127909;{% elif r.resource_type == 'pdf_link' %}&#128195;{% else %}&#128279;{% endif %}
+                                    </span>
+                                    <h3>{{ r.title }}</h3>
+                                    {% if r.access_tier == 'premium' %}
+                                        <span class="tier-badge tier-premium">Premium</span>
+                                    {% endif %}
+                                </div>
+                                {% if r.description %}
+                                    <p class="resource-description">{{ r.description }}</p>
+                                {% endif %}
+                                {% if can_access_resource(current_user, r) %}
+                                    {% if r.embed_url %}
+                                        <div class="resource-embed">
+                                            <iframe src="{{ r.embed_url }}" frameborder="0" allowfullscreen></iframe>
+                                        </div>
+                                    {% else %}
+                                        <a href="{{ r.url }}" target="_blank" rel="noopener" class="btn btn-outline btn-sm">Open Resource</a>
+                                    {% endif %}
+                                {% else %}
+                                    <div class="premium-teaser-mini">
+                                        <span class="lock-icon">&#128274;</span>
+                                        <span>This resource is available with Premium access</span>
+                                    </div>
+                                {% endif %}
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endif %}
+
             <div class="concept-actions">
                 {% if has_practice %}
-                    <a href="{{ url_for('subjects.practice_page', subject_slug=subject.slug, topic_slug=topic.slug, concept_slug=concept.slug) }}" class="btn btn-primary btn-lg">
+                    <a href="{{ url_for('subjects.practice_page', subject_slug=subject.slug, course_slug=course.slug, topic_slug=topic.slug, concept_slug=concept.slug) }}" class="btn btn-primary btn-lg">
                         Practice This Concept
                     </a>
                 {% endif %}
@@ -53,7 +93,7 @@
 
             <nav class="concept-nav">
                 {% if prev_concept %}
-                    <a href="{{ url_for('subjects.concept_detail', subject_slug=subject.slug, topic_slug=topic.slug, concept_slug=prev_concept.slug) }}" class="concept-nav-link concept-nav-prev">
+                    <a href="{{ url_for('subjects.concept_detail', subject_slug=subject.slug, course_slug=course.slug, topic_slug=topic.slug, concept_slug=prev_concept.slug) }}" class="concept-nav-link concept-nav-prev">
                         <span class="concept-nav-label">&larr; Previous</span>
                         <span class="concept-nav-title">{{ prev_concept.title }}</span>
                     </a>
@@ -61,7 +101,7 @@
                     <div></div>
                 {% endif %}
                 {% if next_concept %}
-                    <a href="{{ url_for('subjects.concept_detail', subject_slug=subject.slug, topic_slug=topic.slug, concept_slug=next_concept.slug) }}" class="concept-nav-link concept-nav-next">
+                    <a href="{{ url_for('subjects.concept_detail', subject_slug=subject.slug, course_slug=course.slug, topic_slug=topic.slug, concept_slug=next_concept.slug) }}" class="concept-nav-link concept-nav-next">
                         <span class="concept-nav-label">Next &rarr;</span>
                         <span class="concept-nav-title">{{ next_concept.title }}</span>
                     </a>

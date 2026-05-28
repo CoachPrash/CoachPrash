@@ -85,16 +85,16 @@ document.addEventListener('DOMContentLoaded', function () {
             var li = chevron.closest('.sidebar-expandable');
             li.classList.toggle('open');
 
-            // AJAX load topics on first expand
+            // AJAX load courses on first expand
             var topicsList = li.querySelector('.sidebar-topics');
             if (topicsList && !topicsList.dataset.loaded) {
                 var slug = chevron.dataset.subjectSlug;
                 topicsList.innerHTML = '<li class="sidebar-topics-loading">Loading...</li>';
-                fetch('/subjects/' + slug + '/topics-json')
+                fetch('/subjects/' + slug + '/courses-json')
                     .then(function (r) { return r.json(); })
                     .then(function (data) {
                         topicsList.innerHTML = '';
-                        data.topics.forEach(function (t) {
+                        data.courses.forEach(function (t) {
                             var item = document.createElement('li');
                             var a = document.createElement('a');
                             a.href = t.url;
@@ -143,6 +143,36 @@ document.addEventListener('DOMContentLoaded', function () {
         }, 5000);
     });
 });
+
+// === Course Homepage Sticky Nav ===
+(function () {
+    var nav = document.getElementById('courseNav');
+    if (!nav) return;
+
+    var links = nav.querySelectorAll('.course-nav-item[href^="#"]');
+    var sections = [];
+    links.forEach(function (link) {
+        var id = link.getAttribute('href').substring(1);
+        var el = document.getElementById(id);
+        if (el) sections.push({ id: id, el: el, link: link });
+    });
+
+    if (!sections.length) return;
+
+    function onScroll() {
+        var scrollY = window.scrollY + nav.offsetHeight + 20;
+        var current = sections[0];
+        for (var i = 0; i < sections.length; i++) {
+            if (sections[i].el.offsetTop <= scrollY) {
+                current = sections[i];
+            }
+        }
+        links.forEach(function (l) { l.classList.remove('active'); });
+        current.link.classList.add('active');
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+})();
 
 // KaTeX preview for admin content editors
 function previewKaTeX(btn) {

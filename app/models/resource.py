@@ -8,8 +8,10 @@ class Resource(db.Model):
     __tablename__ = 'resources'
 
     id = db.Column(db.String(36), primary_key=True, default=lambda: str(uuid.uuid4()))
-    topic_id = db.Column(db.String(36), db.ForeignKey('topics.id'), nullable=True)
-    subject_id = db.Column(db.String(36), db.ForeignKey('subjects.id'), nullable=True)
+    concept_id = db.Column(db.String(36), db.ForeignKey('concepts.id'), nullable=True, index=True)
+    topic_id = db.Column(db.String(36), db.ForeignKey('topics.id'), nullable=True, index=True)
+    course_id = db.Column(db.String(36), db.ForeignKey('courses.id'), nullable=True, index=True)
+    subject_id = db.Column(db.String(36), db.ForeignKey('subjects.id'), nullable=True, index=True)
     title = db.Column(db.String(200), nullable=False)
     resource_type = db.Column(db.String(30), nullable=False, default='google_slides')
     url = db.Column(db.Text, nullable=False)
@@ -25,8 +27,7 @@ class Resource(db.Model):
         onupdate=lambda: datetime.now(timezone.utc),
     )
 
-    topic = db.relationship('Topic', backref=db.backref('resources', lazy='dynamic', order_by='Resource.display_order'))
-    subject = db.relationship('Subject', backref=db.backref('resources', lazy='dynamic', order_by='Resource.display_order'))
+    # Relationships defined via backref on Subject, Course, Topic, and Concept models
 
     @staticmethod
     def to_embed_url(sharing_url):

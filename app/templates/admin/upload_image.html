@@ -31,10 +31,10 @@
                     </select>
                 </div>
                 <div class="form-group form-group-half">
-                    <label for="topic_slug">Topic Slug</label>
-                    <select name="topic_slug" class="form-control">
-                        {% for t in topics %}
-                            <option value="{{ t.slug }}">{{ t.subject.name }} &rarr; {{ t.name }}</option>
+                    <label for="course_slug">Course Slug</label>
+                    <select name="course_slug" class="form-control">
+                        {% for c in courses %}
+                            <option value="{{ c.slug }}">{{ c.subject.name }} &rarr; {{ c.name }}</option>
                         {% endfor %}
                     </select>
                 </div>

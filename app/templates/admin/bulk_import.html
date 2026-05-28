@@ -30,82 +30,57 @@
 
         <div class="import-format-docs">
             <h3>qhsJSON Format</h3>
-            <p>CoachPrash's standard format for questions, hints, and solutions. Supports MCQ, fill-in-blank, and free response problems with LaTeX math and images.</p>
+            <p>CoachPrash's standard format for questions, hints, and solutions. Supports MCQ, FTB, and FRQ problems with LaTeX math and images.</p>
 
             <h4>Features</h4>
             <ul>
-                <li><strong>Problem types:</strong> <code>mcq</code>, <code>fill_in_blank</code>, <code>frq</code></li>
+                <li><strong>Problem types:</strong> <code>mcq</code>, <code>ftb</code>, <code>frq</code></li>
                 <li><strong>LaTeX:</strong> Use <code>\( ... \)</code> for inline, <code>\[ ... \]</code> for display math</li>
                 <li><strong>Images:</strong> Use <code>&lt;img data-bucket-key='images/subject/topic/file.png' alt='...' /&gt;</code> in question_html, hints, or solutions</li>
                 <li><strong>Hints:</strong> Strings or objects with <code>text</code> and <code>cost_points</code></li>
                 <li><strong>Solutions:</strong> Strings or objects with <code>text</code></li>
-                <li><strong>Fill-in-blank:</strong> Multiple accepted answers separated by <code>||</code></li>
-                <li><strong>Free response:</strong> No auto-grading; <code>correct_answer</code> stores model answer shown after submission</li>
+                <li><strong>FTB (Fill The Blank):</strong> Multiple accepted answers separated by <code>||</code></li>
+                <li><strong>FRQ (Free Response):</strong> No auto-grading; <code>correct_answer</code> stores model answer shown after submission</li>
             </ul>
 
             <h4>Example</h4>
             <pre class="code-block">{
   "subject_slug": "mathematics",
-  "topic_slug": "algebra-1",
-  "concepts": [
+  "course_slug": "algebra-1",
+  "topics": [
     {
-      "title": "Solving Systems by Substitution",
-      "slug": "solving-systems-substitution",
-      "content_html": "&lt;p&gt;Content with \\( LaTeX \\) math...&lt;/p&gt;",
-      "content_raw": "Plain text version...",
-      "estimated_minutes": 5,
-      "access_tier": "free",
-      "problem_sets": [
+      "name": "Systems of Equations",
+      "slug": "systems-of-equations",
+      "concepts": [
         {
-          "title": "Practice: Substitution Method",
+          "title": "Solving Systems by Substitution",
+          "slug": "solving-systems-substitution",
+          "content_html": "&lt;p&gt;Content with \\( LaTeX \\) math...&lt;/p&gt;",
+          "content_raw": "Plain text version...",
+          "estimated_minutes": 5,
           "access_tier": "free",
-          "problems": [
+          "problem_sets": [
             {
-              "question_html": "&lt;p&gt;Solve: \\( 2x + 3 = 7 \\). What is \\( x \\)?&lt;/p&gt;",
-              "problem_type": "mcq",
-              "difficulty": "easy",
-              "points": 1,
-              "choices": [
-                {"text": "\\( x = 1 \\)", "is_correct": false},
-                {"text": "\\( x = 2 \\)", "is_correct": true},
-                {"text": "\\( x = 3 \\)", "is_correct": false},
-                {"text": "\\( x = 4 \\)", "is_correct": false}
-              ],
-              "hints": [
-                {"text": "Subtract 3 from both sides.", "cost_points": 0},
-                {"text": "You get \\( 2x = 4 \\). Now divide.", "cost_points": 1}
-              ],
-              "solution_steps": [
-                {"text": "Subtract 3: \\( 2x = 4 \\)"},
-                {"text": "Divide by 2: \\( x = 2 \\)"}
-              ]
-            },
-            {
-              "question_html": "&lt;p&gt;Solve: \\( 3x - 1 = 8 \\)&lt;/p&gt;",
-              "problem_type": "fill_in_blank",
-              "correct_answer": "3||x=3||x = 3",
-              "difficulty": "easy",
-              "hints": [
-                {"text": "Add 1 to both sides.", "cost_points": 0}
-              ],
-              "solution_steps": [
-                {"text": "Add 1: \\( 3x = 9 \\)"},
-                {"text": "Divide by 3: \\( x = 3 \\)"}
-              ]
-            },
-            {
-              "question_html": "&lt;p&gt;Solve and show your work: \\( x + 2y = 10 \\) and \\( 3x - y = 5 \\)&lt;/p&gt;",
-              "problem_type": "frq",
-              "correct_answer": "x = 20/7, y = 25/7",
-              "difficulty": "hard",
-              "points": 2,
-              "hints": [
-                {"text": "Solve equation 1 for x first.", "cost_points": 0}
-              ],
-              "solution_steps": [
-                {"text": "From eq 1: \\( x = 10 - 2y \\)"},
-                {"text": "Substitute: \\( 3(10 - 2y) - y = 5 \\)"},
-                {"text": "Solve: \\( y = 25/7 \\), then \\( x = 20/7 \\)"}
+              "title": "Practice: Substitution Method",
+              "access_tier": "free",
+              "problems": [
+                {
+                  "question_html": "&lt;p&gt;Solve: \\( 2x + 3 = 7 \\)&lt;/p&gt;",
+                  "problem_type": "mcq",
+                  "difficulty": "easy",
+                  "choices": [
+                    {"text": "\\( x = 1 \\)", "is_correct": false},
+                    {"text": "\\( x = 2 \\)", "is_correct": true},
+                    {"text": "\\( x = 3 \\)", "is_correct": false}
+                  ],
+                  "hints": [
+                    {"text": "Subtract 3 from both sides.", "cost_points": 0}
+                  ],
+                  "solution_steps": [
+                    {"text": "Subtract 3: \\( 2x = 4 \\)"},
+                    {"text": "Divide by 2: \\( x = 2 \\)"}
+                  ]
+                }
               ]
             }
           ]
@@ -141,7 +116,7 @@ document.getElementById('validateBtn').addEventListener('click', function() {
     .then(function(r) { return r.json(); })
     .then(function(data) {
         if (data.valid) {
-            resultDiv.innerHTML = '<div class="flash flash-success">Valid qhsJSON! Target: <strong>' + data.subject + ' &rarr; ' + data.topic + '</strong>. Contains: ' + data.summary + '.</div>';
+            resultDiv.innerHTML = '<div class="flash flash-success">Valid qhsJSON! Target: <strong>' + data.subject + ' &rarr; ' + data.course + '</strong>. Contains: ' + data.summary + '.</div>';
         } else if (data.errors) {
             var html = '<div class="flash flash-danger"><strong>Validation errors:</strong><ul>';
             data.errors.forEach(function(e) { html += '<li>' + e + '</li>'; });

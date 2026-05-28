@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}{{ topic.name }} — {{ subject.name }} — CoachPrash{% endblock %}
+{% block title %}{{ topic.name }} — {{ course.name }} — CoachPrash{% endblock %}
 
 {% block content %}
 <section class="section">
@@ -8,7 +8,9 @@
         <nav class="breadcrumb">
             <a href="{{ url_for('subjects.catalog') }}">Subjects</a>
             <span class="breadcrumb-sep">/</span>
-            <a href="{{ url_for('subjects.topic_list', slug=subject.slug) }}">{{ subject.name }}</a>
+            <a href="{{ url_for('subjects.course_list', slug=subject.slug) }}">{{ subject.name }}</a>
+            <span class="breadcrumb-sep">/</span>
+            <a href="{{ url_for('subjects.course_detail', subject_slug=subject.slug, course_slug=course.slug) }}">{{ course.name }}</a>
             <span class="breadcrumb-sep">/</span>
             <span class="breadcrumb-current">{{ topic.name }}</span>
         </nav>
@@ -18,8 +20,20 @@
             {% if topic.description %}
                 <p class="topic-description">{{ topic.description }}</p>
             {% endif %}
-            <span class="difficulty-badge difficulty-{{ topic.difficulty_level }}">{{ topic.difficulty_level | replace('_', ' ') | title }}</span>
         </div>
+
+        {# Per-topic progress bar #}
+        {% if topic_progress %}
+            <div class="course-progress-card" style="margin-bottom: 1.5rem;">
+                <div class="course-progress-bar-wrap">
+                    <div class="course-progress-bar" style="width: {{ topic_progress.percent }}%"></div>
+                </div>
+                <div class="course-progress-stats">
+                    <span><strong>{{ topic_progress.completed }}</strong> of <strong>{{ topic_progress.total }}</strong> concepts completed</span>
+                    <span class="course-progress-percent">{{ topic_progress.percent }}%</span>
+                </div>
+            </div>
+        {% endif %}
 
         {% if resources %}
             <div class="resources-section">
@@ -65,7 +79,7 @@
             <div class="concept-list">
                 {% for concept in concepts %}
                     {% set progress = progress_map.get(concept.id) %}
-                    <a href="{{ url_for('subjects.concept_detail', subject_slug=subject.slug, topic_slug=topic.slug, concept_slug=concept.slug) }}" class="concept-card">
+                    <a href="{{ url_for('subjects.concept_detail', subject_slug=subject.slug, course_slug=course.slug, topic_slug=topic.slug, concept_slug=concept.slug) }}" class="concept-card">
                         <div class="concept-card-left">
                             <span class="concept-number">{{ loop.index }}</span>
                             {% if progress %}
@@ -106,6 +120,26 @@
             <div class="empty-state">
                 <h3>No concepts yet</h3>
                 <p>Content for this topic is coming soon. Check back later!</p>
+            </div>
+        {% endif %}
+
+        {# Prev/Next Topic Navigation #}
+        {% if prev_topic or next_topic %}
+            <div class="concept-nav" style="margin-top: 2rem;">
+                {% if prev_topic %}
+                    <a href="{{ url_for('subjects.topic_detail', subject_slug=subject.slug, course_slug=course.slug, topic_slug=prev_topic.slug) }}" class="concept-nav-link concept-nav-prev">
+                        <span class="concept-nav-label">&larr; Previous Topic</span>
+                        <span class="concept-nav-title">{{ prev_topic.name }}</span>
+                    </a>
+                {% else %}
+                    <span></span>
+                {% endif %}
+                {% if next_topic %}
+                    <a href="{{ url_for('subjects.topic_detail', subject_slug=subject.slug, course_slug=course.slug, topic_slug=next_topic.slug) }}" class="concept-nav-link concept-nav-next">
+                        <span class="concept-nav-label">Next Topic &rarr;</span>
+                        <span class="concept-nav-title">{{ next_topic.name }}</span>
+                    </a>
+                {% endif %}
             </div>
         {% endif %}
     </div>

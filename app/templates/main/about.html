@@ -54,8 +54,8 @@
             <div class="subject-summary-card">
                 <h3>{{ subject.icon or '📚' }} {{ subject.name }}</h3>
                 <ul>
-                    {% for topic in subject.topics.filter_by(is_active=True).order_by('display_order').all() %}
-                    <li>{{ topic.name }}</li>
+                    {% for course in subject.courses.filter_by(is_active=True).order_by('display_order').all() %}
+                    <li>{{ course.name }}</li>
                     {% endfor %}
                 </ul>
             </div>

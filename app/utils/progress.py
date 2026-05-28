@@ -3,7 +3,7 @@ import logging
 from datetime import datetime, timezone, timedelta
 from app.extensions import db
 from app.models.progress import StudentProgress, AttemptLog
-from app.models.content import Subject, Concept
+from app.models.content import Subject, Course, Topic, Concept, TopicConcept
 from app.models.practice import Problem
 
 logger = logging.getLogger(__name__)
@@ -48,36 +48,44 @@ def compute_student_stats(student_id):
             else:
                 break
 
-    # Per-subject progress
+    # Per-subject progress (via TopicConcept join)
     subject_progress = []
     subjects = Subject.query.filter_by(is_active=True).order_by(Subject.display_order).all()
     for subj in subjects:
-        topic_ids = [t.id for t in subj.topics.filter_by(is_active=True).all()]
+        topic_ids = []
+        for course in subj.courses.filter_by(is_active=True).all():
+            topic_ids.extend(t.id for t in Topic.query.filter_by(course_id=course.id, is_active=True).all())
         if not topic_ids:
             continue
+        concept_ids = [
+            tc.concept_id for tc in TopicConcept.query.filter(
+                TopicConcept.topic_id.in_(topic_ids)
+            ).all()
+        ]
+        concept_ids = list(set(concept_ids))
+        if not concept_ids:
+            continue
         total_concepts = Concept.query.filter(
-            Concept.topic_id.in_(topic_ids), Concept.is_active == True  # noqa: E712
+            Concept.id.in_(concept_ids), Concept.is_active == True  # noqa: E712
         ).count()
         if total_concepts == 0:
             continue
-        completed = StudentProgress.query.join(Concept).filter(
+        completed = StudentProgress.query.filter(
             StudentProgress.student_id == student_id,
             StudentProgress.status == 'completed',
-            Concept.topic_id.in_(topic_ids),
+            StudentProgress.concept_id.in_(concept_ids),
         ).count()
-        subject_progress.append({
-            'subject': subj,
-            'total': total_concepts,
-            'completed': completed,
-            'pct': round(completed / total_concepts * 100) if total_concepts > 0 else 0,
-        })
-
-    # Filter to subjects with interaction
-    subject_progress = [sp for sp in subject_progress if sp['completed'] > 0 or
-                        StudentProgress.query.join(Concept).filter(
-                            StudentProgress.student_id == student_id,
-                            Concept.topic_id.in_([t.id for t in sp['subject'].topics.all()]),
-                        ).first() is not None]
+        has_interaction = completed > 0 or StudentProgress.query.filter(
+            StudentProgress.student_id == student_id,
+            StudentProgress.concept_id.in_(concept_ids),
+        ).first() is not None
+        if has_interaction:
+            subject_progress.append({
+                'subject': subj,
+                'total': total_concepts,
+                'completed': completed,
+                'pct': round(completed / total_concepts * 100) if total_concepts > 0 else 0,
+            })
 
     # Recent activity
     recent_attempts = AttemptLog.query.filter_by(

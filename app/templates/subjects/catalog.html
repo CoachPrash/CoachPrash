@@ -13,14 +13,14 @@
     <div class="container">
         <div class="card-grid">
             {% for subject in subjects %}
-            <a href="{{ url_for('subjects.topic_list', slug=subject.slug) }}" class="card subject-card">
+            <a href="{{ url_for('subjects.course_list', slug=subject.slug) }}" class="card subject-card">
                 <div class="subject-icon">{{ subject.icon or '📚' }}</div>
                 <h3>{{ subject.name }}</h3>
                 <p>{{ subject.description }}</p>
                 <div class="subject-meta">
-                    <span class="badge">{{ subject.topics.filter_by(is_active=True).count() }} topics</span>
+                    <span class="badge">{{ subject.courses.filter_by(is_active=True).count() }} courses</span>
                 </div>
-                <span class="card-link">View Topics &rarr;</span>
+                <span class="card-link">View Courses &rarr;</span>
             </a>
             {% endfor %}
         </div>

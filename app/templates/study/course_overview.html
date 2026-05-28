@@ -1,0 +1,288 @@
+{% extends "base.html" %}
+
+{% block title %}{{ course.name }} — {{ subject.name }} — CoachPrash{% endblock %}
+
+{% block content %}
+{# ── Hero Header ── #}
+<section class="course-hero">
+    <div class="container">
+        <nav class="breadcrumb">
+            <a href="{{ url_for('subjects.catalog') }}">Subjects</a>
+            <span class="breadcrumb-sep">/</span>
+            <a href="{{ url_for('subjects.course_list', slug=subject.slug) }}">{{ subject.name }}</a>
+            <span class="breadcrumb-sep">/</span>
+            <span class="breadcrumb-current">{{ course.name }}</span>
+        </nav>
+
+        <div class="course-hero-content">
+            <div class="course-hero-icon">{{ subject.icon or '📚' }}</div>
+            <div class="course-hero-info">
+                <h1>{{ course.name }}</h1>
+                {% if course.tagline %}
+                    <p class="course-tagline">{{ course.tagline }}</p>
+                {% endif %}
+                <div class="course-hero-meta">
+                    {% if course.course_type and course.course_type != 'standard' %}
+                        <span class="course-type-badge course-type-{{ course.course_type }}">
+                            {{ course.course_type | replace('_', ' ') | upper }}
+                        </span>
+                    {% endif %}
+                    <span class="course-stat">{{ topics_data | length }} topics</span>
+                    <span class="course-stat">{{ total_concepts }} concepts</span>
+                    {% if total_minutes %}
+                        <span class="course-stat">~{{ (total_minutes / 60) | round(0, 'ceil') | int }}h study time</span>
+                    {% endif %}
+                    {% if total_problem_sets %}
+                        <span class="course-stat">{{ total_problem_sets }} practice sets</span>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{# ── Sticky In-Page Nav ── #}
+{% set has_intro = course_info and course_info.introduction_html %}
+{% set has_skills = course_info and course_info.skills %}
+{% set has_prereqs = course_info and course_info.prerequisites %}
+{% set has_exam = course_info and course_info.exam_structure %}
+{% set has_links = course_info and course_info.official_links %}
+{% set has_resources = course_resources and course_resources | length > 0 %}
+
+<nav class="course-nav" id="courseNav">
+    <div class="container">
+        <div class="course-nav-links">
+            {% if has_intro %}
+                <a href="#overview" class="course-nav-item active">Overview</a>
+            {% endif %}
+            <a href="#topics" class="course-nav-item {% if not has_intro %}active{% endif %}">Topics</a>
+            {% if has_skills %}
+                <a href="#skills" class="course-nav-item">Skills</a>
+            {% endif %}
+            {% if has_prereqs %}
+                <a href="#prerequisites" class="course-nav-item">Prerequisites</a>
+            {% endif %}
+            {% if has_exam %}
+                <a href="#exam" class="course-nav-item">Exam Info</a>
+            {% endif %}
+            {% if has_links %}
+                <a href="#links" class="course-nav-item">Links</a>
+            {% endif %}
+            {% if has_resources %}
+                <a href="#resources" class="course-nav-item">Resources</a>
+            {% endif %}
+        </div>
+    </div>
+</nav>
+
+<div class="container course-body">
+    {# ── Course Introduction ── #}
+    {% if has_intro %}
+    <section class="course-section" id="overview">
+        <h2>Course Overview</h2>
+        <div class="course-intro-content">
+            {{ course_info.introduction_html | safe }}
+        </div>
+        {% if course_info.college_equivalent or course_info.credit_info %}
+            <div class="course-callout">
+                {% if course_info.college_equivalent %}
+                    <p><strong>College Equivalent:</strong> {{ course_info.college_equivalent }}</p>
+                {% endif %}
+                {% if course_info.credit_info %}
+                    <p><strong>Credit:</strong> {{ course_info.credit_info }}</p>
+                {% endif %}
+            </div>
+        {% endif %}
+    </section>
+    {% endif %}
+
+    {# ── Progress Overview (logged-in only) ── #}
+    {% if current_user.is_authenticated and progress_summary %}
+    <section class="course-section course-progress-section">
+        <h2>Your Progress</h2>
+        <div class="course-progress-card">
+            <div class="course-progress-bar-wrap">
+                <div class="course-progress-bar" style="width: {{ progress_summary.percent }}%"></div>
+            </div>
+            <div class="course-progress-stats">
+                <span><strong>{{ progress_summary.completed }}</strong> completed</span>
+                {% if progress_summary.in_progress %}
+                    <span><strong>{{ progress_summary.in_progress }}</strong> in progress</span>
+                {% endif %}
+                <span><strong>{{ progress_summary.total }}</strong> total concepts</span>
+                <span class="course-progress-percent">{{ progress_summary.percent }}%</span>
+            </div>
+        </div>
+    </section>
+    {% endif %}
+
+    {# ── Topic Cards ── #}
+    <section class="course-section" id="topics">
+        <h2>Topics</h2>
+        {% if topics_data %}
+            <div class="course-topics-list">
+                {% for td in topics_data %}
+                    <a href="{{ url_for('subjects.topic_detail', subject_slug=subject.slug, course_slug=course.slug, topic_slug=td.topic.slug) }}" class="course-topic-card">
+                        <div class="course-topic-num">{{ loop.index }}</div>
+                        <div class="course-topic-body">
+                            <h3>{{ td.topic.name }}</h3>
+                            {% if td.topic.description %}
+                                <p class="course-topic-desc">{{ td.topic.description }}</p>
+                            {% endif %}
+                            <div class="course-topic-meta">
+                                <span>{{ td.concept_count }} concepts</span>
+                                {% if td.minutes %}
+                                    <span>~{{ td.minutes }} min</span>
+                                {% endif %}
+                                {% if td.problem_sets %}
+                                    <span>{{ td.problem_sets }} practice sets</span>
+                                {% endif %}
+                            </div>
+                            {% if td.progress %}
+                                <div class="course-topic-progress">
+                                    <div class="course-topic-progress-bar-wrap">
+                                        <div class="course-topic-progress-bar" style="width: {{ td.progress.percent }}%"></div>
+                                    </div>
+                                    <span class="course-topic-progress-text">{{ td.progress.completed }}/{{ td.progress.total }}</span>
+                                </div>
+                            {% endif %}
+                        </div>
+                        <div class="course-topic-arrow">&rarr;</div>
+                    </a>
+                {% endfor %}
+            </div>
+        {% else %}
+            <div class="empty-state">
+                <h3>No topics yet</h3>
+                <p>Content for this course is coming soon. Check back later!</p>
+            </div>
+        {% endif %}
+    </section>
+
+    {# ── Skills / Practices ── #}
+    {% if has_skills %}
+    <section class="course-section" id="skills">
+        <h2>Skills You'll Develop</h2>
+        <div class="course-skills-grid">
+            {% for skill in course_info.skills %}
+                <div class="course-skill-card">
+                    {% if skill.icon %}<span class="course-skill-icon">{{ skill.icon }}</span>{% endif %}
+                    <h4>{{ skill.name }}</h4>
+                    {% if skill.description %}<p>{{ skill.description }}</p>{% endif %}
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+    {% endif %}
+
+    {# ── Prerequisites ── #}
+    {% if has_prereqs %}
+    <section class="course-section" id="prerequisites">
+        <h2>Prerequisites</h2>
+        <ul class="course-prereqs-list">
+            {% for prereq in course_info.prerequisites %}
+                <li>
+                    {% if prereq is mapping %}
+                        <strong>{{ prereq.name }}</strong>
+                        {% if prereq.description %} &mdash; {{ prereq.description }}{% endif %}
+                    {% else %}
+                        {{ prereq }}
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+    </section>
+    {% endif %}
+
+    {# ── Exam Structure ── #}
+    {% if has_exam %}
+    <section class="course-section" id="exam">
+        <h2>Exam Structure</h2>
+        {% if course_info.exam_structure.description %}
+            <p class="course-exam-desc">{{ course_info.exam_structure.description }}</p>
+        {% endif %}
+        {% if course_info.exam_structure.sections %}
+            <div class="course-exam-grid">
+                {% for sec in course_info.exam_structure.sections %}
+                    <div class="course-exam-card">
+                        <h4>{{ sec.name }}</h4>
+                        {% if sec.duration %}<p class="course-exam-detail"><strong>Duration:</strong> {{ sec.duration }}</p>{% endif %}
+                        {% if sec.questions %}<p class="course-exam-detail"><strong>Questions:</strong> {{ sec.questions }}</p>{% endif %}
+                        {% if sec.weight %}<p class="course-exam-detail"><strong>Weight:</strong> {{ sec.weight }}</p>{% endif %}
+                        {% if sec.calculator %}<p class="course-exam-detail"><strong>Calculator:</strong> {{ sec.calculator }}</p>{% endif %}
+                        {% if sec.description %}<p>{{ sec.description }}</p>{% endif %}
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </section>
+    {% endif %}
+
+    {# ── Official Links ── #}
+    {% if has_links %}
+    <section class="course-section" id="links">
+        <h2>Official Resources</h2>
+        <div class="course-links-grid">
+            {% for link in course_info.official_links %}
+                <a href="{{ link.url }}" target="_blank" rel="noopener" class="course-link-card">
+                    <h4>{{ link.title }}</h4>
+                    {% if link.description %}<p>{{ link.description }}</p>{% endif %}
+                    <span class="course-link-arrow">&#8599;</span>
+                </a>
+            {% endfor %}
+        </div>
+    </section>
+    {% endif %}
+
+    {# ── Course-Level Resources ── #}
+    {% if has_resources %}
+    <section class="course-section" id="resources">
+        <h2>Course Resources</h2>
+        <div class="resources-list">
+            {% for r in course_resources %}
+                <div class="resource-card">
+                    <div class="resource-card-header">
+                        <span class="resource-type-icon">
+                            {% if r.resource_type == 'google_slides' %}&#128202;{% elif r.resource_type == 'google_docs' %}&#128196;{% elif r.resource_type == 'video_link' %}&#127909;{% elif r.resource_type == 'pdf_link' %}&#128195;{% else %}&#128279;{% endif %}
+                        </span>
+                        <h3>{{ r.title }}</h3>
+                        {% if r.access_tier == 'premium' %}
+                            <span class="tier-badge tier-premium">Premium</span>
+                        {% endif %}
+                    </div>
+                    {% if r.description %}
+                        <p class="resource-description">{{ r.description }}</p>
+                    {% endif %}
+                    {% if can_access_resource(current_user, r) %}
+                        {% if r.embed_url %}
+                            <div class="resource-embed">
+                                <iframe src="{{ r.embed_url }}" frameborder="0" allowfullscreen></iframe>
+                            </div>
+                        {% else %}
+                            <a href="{{ r.url }}" target="_blank" rel="noopener" class="btn btn-outline btn-sm">Open Resource</a>
+                        {% endif %}
+                    {% else %}
+                        <div class="premium-teaser-mini">
+                            <span class="lock-icon">&#128274;</span>
+                            <span>This resource is available with Premium access</span>
+                        </div>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+    {% endif %}
+
+    {# ── CTA Footer ── #}
+    <section class="course-cta">
+        {% if not current_user.is_authenticated %}
+            <h3>Ready to start learning?</h3>
+            <p>Create a free account to track your progress and access practice problems.</p>
+            <a href="{{ url_for('auth.register') }}" class="btn btn-primary btn-lg">Get Started Free</a>
+        {% elif topics_data %}
+            <h3>Continue Learning</h3>
+            <a href="{{ url_for('subjects.topic_detail', subject_slug=subject.slug, course_slug=course.slug, topic_slug=topics_data[0].topic.slug) }}" class="btn btn-primary btn-lg">Go to First Topic</a>
+        {% endif %}
+    </section>
+</div>
+{% endblock %}

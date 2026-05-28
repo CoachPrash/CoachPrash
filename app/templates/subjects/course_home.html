@@ -1,0 +1,134 @@
+{% extends "base.html" %}
+
+{% block title %}{{ subject.name }} — CoachPrash{% endblock %}
+
+{% block content %}
+{# ── Hero Header ── #}
+<section class="course-hero">
+    <div class="container">
+        <nav class="breadcrumb">
+            <a href="{{ url_for('subjects.catalog') }}">Subjects</a>
+            <span class="breadcrumb-sep">/</span>
+            <span class="breadcrumb-current">{{ subject.name }}</span>
+        </nav>
+
+        <div class="course-hero-content">
+            <div class="course-hero-icon">{{ subject.icon or '📚' }}</div>
+            <div class="course-hero-info">
+                <h1>{{ subject.name }}</h1>
+                {% if subject.description %}
+                    <p class="course-tagline">{{ subject.description }}</p>
+                {% endif %}
+                <div class="course-hero-meta">
+                    <span class="course-stat">{{ courses_data | length }} courses</span>
+                    <span class="course-stat">{{ total_concepts }} concepts</span>
+                    {% if total_minutes %}
+                        <span class="course-stat">~{{ (total_minutes / 60) | round(0, 'ceil') | int }}h study time</span>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="container course-body">
+    {# ── Course Cards ── #}
+    <section class="course-section" id="courses">
+        <h2>Courses</h2>
+        {% if courses_data %}
+            <div class="course-topics-list">
+                {% for cd in courses_data %}
+                    <a href="{{ url_for('subjects.course_detail', subject_slug=subject.slug, course_slug=cd.course.slug) }}" class="course-topic-card">
+                        <div class="course-topic-num">{{ loop.index }}</div>
+                        <div class="course-topic-body">
+                            <h3>{{ cd.course.name }}</h3>
+                            {% if cd.course.tagline %}
+                                <p class="course-topic-desc">{{ cd.course.tagline }}</p>
+                            {% elif cd.course.description %}
+                                <p class="course-topic-desc">{{ cd.course.description }}</p>
+                            {% endif %}
+                            <div class="course-topic-meta">
+                                {% if cd.course.course_type != 'standard' %}
+                                    <span class="course-type-badge course-type-{{ cd.course.course_type }}">
+                                        {{ cd.course.course_type | replace('_', ' ') | upper }}
+                                    </span>
+                                {% endif %}
+                                <span>{{ cd.topic_count }} topics</span>
+                                <span>{{ cd.concept_count }} concepts</span>
+                                {% if cd.minutes %}
+                                    <span>~{{ cd.minutes }} min</span>
+                                {% endif %}
+                            </div>
+                            {% if cd.progress %}
+                                <div class="course-topic-progress">
+                                    <div class="course-topic-progress-bar-wrap">
+                                        <div class="course-topic-progress-bar" style="width: {{ cd.progress.percent }}%"></div>
+                                    </div>
+                                    <span class="course-topic-progress-text">{{ cd.progress.completed }}/{{ cd.progress.total }}</span>
+                                </div>
+                            {% endif %}
+                        </div>
+                        <div class="course-topic-arrow">&rarr;</div>
+                    </a>
+                {% endfor %}
+            </div>
+        {% else %}
+            <div class="empty-state">
+                <h3>No courses yet</h3>
+                <p>Courses for {{ subject.name }} are coming soon. Check back later!</p>
+            </div>
+        {% endif %}
+    </section>
+
+    {# ── Subject-Level Resources ── #}
+    {% if subject_resources and subject_resources | length > 0 %}
+    <section class="course-section" id="resources">
+        <h2>Resources</h2>
+        <div class="resources-list">
+            {% for r in subject_resources %}
+                <div class="resource-card">
+                    <div class="resource-card-header">
+                        <span class="resource-type-icon">
+                            {% if r.resource_type == 'google_slides' %}&#128202;{% elif r.resource_type == 'google_docs' %}&#128196;{% elif r.resource_type == 'video_link' %}&#127909;{% elif r.resource_type == 'pdf_link' %}&#128195;{% else %}&#128279;{% endif %}
+                        </span>
+                        <h3>{{ r.title }}</h3>
+                        {% if r.access_tier == 'premium' %}
+                            <span class="tier-badge tier-premium">Premium</span>
+                        {% endif %}
+                    </div>
+                    {% if r.description %}
+                        <p class="resource-description">{{ r.description }}</p>
+                    {% endif %}
+                    {% if can_access_resource(current_user, r) %}
+                        {% if r.embed_url %}
+                            <div class="resource-embed">
+                                <iframe src="{{ r.embed_url }}" frameborder="0" allowfullscreen></iframe>
+                            </div>
+                        {% else %}
+                            <a href="{{ r.url }}" target="_blank" rel="noopener" class="btn btn-outline btn-sm">Open Resource</a>
+                        {% endif %}
+                    {% else %}
+                        <div class="premium-teaser-mini">
+                            <span class="lock-icon">&#128274;</span>
+                            <span>This resource is available with Premium access</span>
+                        </div>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+    {% endif %}
+
+    {# ── CTA Footer ── #}
+    <section class="course-cta">
+        {% if not current_user.is_authenticated %}
+            <h3>Ready to start learning?</h3>
+            <p>Create a free account to track your progress and access practice problems.</p>
+            <a href="{{ url_for('auth.register') }}" class="btn btn-primary btn-lg">Get Started Free</a>
+        {% elif courses_data %}
+            <h3>Continue Learning</h3>
+            <a href="{{ url_for('subjects.course_detail', subject_slug=subject.slug, course_slug=courses_data[0].course.slug) }}" class="btn btn-primary btn-lg">Go to First Course</a>
+        {% endif %}
+    </section>
+</div>
+{% endblock %}

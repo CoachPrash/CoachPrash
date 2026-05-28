@@ -8,11 +8,13 @@
         <nav class="breadcrumb">
             <a href="{{ url_for('subjects.catalog') }}">Subjects</a>
             <span class="breadcrumb-sep">/</span>
-            <a href="{{ url_for('subjects.topic_list', slug=subject.slug) }}">{{ subject.name }}</a>
+            <a href="{{ url_for('subjects.course_list', slug=subject.slug) }}">{{ subject.name }}</a>
             <span class="breadcrumb-sep">/</span>
-            <a href="{{ url_for('subjects.topic_detail', subject_slug=subject.slug, topic_slug=topic.slug) }}">{{ topic.name }}</a>
+            <a href="{{ url_for('subjects.course_detail', subject_slug=subject.slug, course_slug=course.slug) }}">{{ course.name }}</a>
             <span class="breadcrumb-sep">/</span>
-            <a href="{{ url_for('subjects.concept_detail', subject_slug=subject.slug, topic_slug=topic.slug, concept_slug=concept.slug) }}">{{ concept.title }}</a>
+            <a href="{{ url_for('subjects.topic_detail', subject_slug=subject.slug, course_slug=course.slug, topic_slug=topic.slug) }}">{{ topic.name }}</a>
+            <span class="breadcrumb-sep">/</span>
+            <a href="{{ url_for('subjects.concept_detail', subject_slug=subject.slug, course_slug=course.slug, topic_slug=topic.slug, concept_slug=concept.slug) }}">{{ concept.title }}</a>
             <span class="breadcrumb-sep">/</span>
             <span class="breadcrumb-current">Practice</span>
         </nav>
@@ -21,7 +23,7 @@
             <div class="empty-state">
                 <h2>No Practice Problems Yet</h2>
                 <p>Practice problems for this concept are coming soon!</p>
-                <a href="{{ url_for('subjects.concept_detail', subject_slug=subject.slug, topic_slug=topic.slug, concept_slug=concept.slug) }}" class="btn btn-primary">Back to Concept</a>
+                <a href="{{ url_for('subjects.concept_detail', subject_slug=subject.slug, course_slug=course.slug, topic_slug=topic.slug, concept_slug=concept.slug) }}" class="btn btn-primary">Back to Concept</a>
             </div>
         {% else %}
             <div class="quiz-container" id="quizContainer">
@@ -77,7 +79,7 @@
                     </div>
                     <div class="results-actions">
                         <button class="btn btn-primary" id="retryBtn">Try Again</button>
-                        <a href="{{ url_for('subjects.concept_detail', subject_slug=subject.slug, topic_slug=topic.slug, concept_slug=concept.slug) }}" class="btn btn-outline">Back to Concept</a>
+                        <a href="{{ url_for('subjects.concept_detail', subject_slug=subject.slug, course_slug=course.slug, topic_slug=topic.slug, concept_slug=concept.slug) }}" class="btn btn-outline">Back to Concept</a>
                     </div>
                 </div>
             </div>
