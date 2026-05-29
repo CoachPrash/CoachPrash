@@ -41,10 +41,16 @@ def check_answer():
         is_correct = None
         correct_display = problem.correct_answer or ''
     else:
-        # Fill-in-blank: case-insensitive, supports multiple answers separated by ||
+        # Fill-in-blank: case-insensitive string match first, then SymPy fallback
         accepted = [a.strip().lower() for a in (problem.correct_answer or '').split('||')]
         is_correct = submitted.lower() in accepted
         correct_display = (problem.correct_answer or '').split('||')[0].strip()
+
+        if not is_correct:
+            from app.utils.math_normalize import check_math_equivalent
+            math_result = check_math_equivalent(submitted, problem.correct_answer or '')
+            if math_result is True:
+                is_correct = True
 
     # Log attempt for authenticated users
     if current_user.is_authenticated:
