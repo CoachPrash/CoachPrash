@@ -153,6 +153,96 @@ def _seed_data():
     db.session.commit()
     logger.info('Subjects and courses seeded.')
 
+    # --- AP Calculus AB Course Info ---
+    ap_calc_ab = Course.query.filter_by(slug='ap-calculus-ab').first()
+    if ap_calc_ab and not ap_calc_ab.course_info:
+        ap_calc_ab.course_info = {
+            "introduction_html": (
+                "<p><strong>AP Calculus AB</strong> is equivalent to a first-semester college calculus course. "
+                "You will explore the concepts of limits, derivatives, and integrals — the three pillars of calculus — "
+                "and apply them to solve problems involving rates of change, accumulation, and motion.</p>"
+                "<p>This course covers <strong>8 units</strong> aligned precisely with the College Board's "
+                "Course and Exam Description (CED). Each unit builds on the previous, starting with the foundational "
+                "concept of limits and culminating in applications of integration such as finding areas between curves "
+                "and volumes of solids of revolution.</p>"
+                "<p>Whether you're preparing for the AP exam or building a strong calculus foundation for college STEM courses, "
+                "every concept includes clear explanations with worked examples, practice problems with step-by-step solutions, "
+                "and AP exam tips to help you earn a 5.</p>"
+            ),
+            "college_equivalent": "One semester of college calculus",
+            "credit_info": "A score of 3 or higher may earn college credit — check your school's AP credit policy",
+            "skills": [
+                {
+                    "name": "Implementing Mathematical Processes",
+                    "icon": "\U0001f527",
+                    "description": "Determine expressions and values using mathematical procedures and rules."
+                },
+                {
+                    "name": "Connecting Representations",
+                    "icon": "\U0001f517",
+                    "description": "Translate mathematical information between analytical, graphical, tabular, and verbal representations."
+                },
+                {
+                    "name": "Justification",
+                    "icon": "\U0001f4dd",
+                    "description": "Justify reasoning and solutions using definitions, theorems, and mathematical evidence."
+                },
+                {
+                    "name": "Communication and Notation",
+                    "icon": "\U0001f4ac",
+                    "description": "Use correct notation, language, and mathematical conventions to communicate results."
+                },
+            ],
+            "prerequisites": [
+                {
+                    "name": "Algebra 2",
+                    "description": "Proficiency with polynomials, rational expressions, exponentials, and logarithms"
+                },
+                {
+                    "name": "Precalculus",
+                    "description": "Trigonometric functions, function analysis, and an introduction to limits"
+                },
+            ],
+            "exam_structure": {
+                "description": "3 hours 15 minutes, two sections, each worth 50% of the exam score",
+                "sections": [
+                    {
+                        "name": "Section I: Multiple Choice",
+                        "duration": "1 hr 45 min",
+                        "questions": "45 questions",
+                        "weight": "50%",
+                        "calculator": "Part A: No calculator (30 Q, 60 min) | Part B: Calculator required (15 Q, 45 min)"
+                    },
+                    {
+                        "name": "Section II: Free Response",
+                        "duration": "1 hr 30 min",
+                        "questions": "6 questions",
+                        "weight": "50%",
+                        "calculator": "Part A: Calculator required (2 Q, 30 min) | Part B: No calculator (4 Q, 60 min)"
+                    },
+                ]
+            },
+            "official_links": [
+                {
+                    "title": "AP Calculus AB Course Page",
+                    "url": "https://apstudents.collegeboard.org/courses/ap-calculus-ab",
+                    "description": "Official College Board course information"
+                },
+                {
+                    "title": "Course and Exam Description (CED)",
+                    "url": "https://apcentral.collegeboard.org/courses/ap-calculus-ab/course",
+                    "description": "Full CED with topic outlines and sample questions"
+                },
+                {
+                    "title": "AP Classroom",
+                    "url": "https://myap.collegeboard.org/",
+                    "description": "Practice questions and progress checks (requires College Board account)"
+                },
+            ]
+        }
+        db.session.commit()
+        logger.info('AP Calculus AB course_info populated.')
+
     # --- Load Content JSON Files ---
     content_dir = os.path.join(os.path.dirname(__file__), 'content')
     content_files = [
