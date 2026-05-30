@@ -254,6 +254,99 @@ def _seed_data():
         db.session.commit()
         logger.info('AP Calculus AB/BC course_info populated.')
 
+    # --- AP Physics 1: Mechanics Course Info ---
+    ap_phys1 = Course.query.filter_by(slug='ap-physics-1-mechanics').first()
+    if ap_phys1 and not ap_phys1.course_info:
+        ap_phys1.course_info = {
+            "introduction_html": (
+                "<p><strong>AP Physics 1: Algebra-Based</strong> is a full-year, introductory college-level "
+                "physics course focused on <strong>mechanics</strong>. The 2024-25 redesign made it a mechanics-only "
+                "course with the addition of <strong>Unit 8: Fluids</strong> (previously in AP Physics 2).</p>"
+                "<p>This course covers <strong>8 units and 43 topics</strong> aligned with the College Board's "
+                "Course and Exam Description (CED). Topics include kinematics, forces, energy, momentum, "
+                "rotation, oscillations, and fluids — all approached with algebra and trigonometry (no calculus).</p>"
+                "<p>Every concept includes clear explanations with real-world examples, worked problems with "
+                "full solutions, and AP exam tips to help you succeed on test day.</p>"
+            ),
+            "college_equivalent": "One semester of introductory algebra-based college physics",
+            "credit_info": "A score of 3 or higher may earn one semester of college physics credit. Policies vary by institution.",
+            "skills": [
+                {
+                    "name": "Modeling",
+                    "icon": "\U0001f4d0",
+                    "description": "Analyze situations using representations such as diagrams, graphs, and equations."
+                },
+                {
+                    "name": "Mathematical Routines",
+                    "icon": "\U0001f4d0",
+                    "description": "Use mathematics to solve science problems, including algebra and trigonometry."
+                },
+                {
+                    "name": "Scientific Questioning",
+                    "icon": "\U0001f50d",
+                    "description": "Determine scientific questions and methods to investigate phenomena."
+                },
+                {
+                    "name": "Experimental Methods",
+                    "icon": "\U0001f9ea",
+                    "description": "Plan and conduct experiments, collect data, and analyze results."
+                },
+                {
+                    "name": "Data Analysis",
+                    "icon": "\U0001f4ca",
+                    "description": "Analyze data, identify patterns, and evaluate evidence to draw conclusions."
+                },
+            ],
+            "prerequisites": [
+                {
+                    "name": "Geometry",
+                    "description": "Familiarity with geometric relationships, angles, and basic trigonometry"
+                },
+                {
+                    "name": "Algebra II (concurrent or completed)",
+                    "description": "Proficiency with algebraic manipulation, quadratics, and systems of equations"
+                },
+            ],
+            "exam_structure": {
+                "description": "3 hours total, two sections, each worth 50%. Calculator allowed on both sections.",
+                "sections": [
+                    {
+                        "name": "Section I: Multiple Choice",
+                        "duration": "1 hr 20 min",
+                        "questions": "40 questions",
+                        "weight": "50%",
+                        "calculator": "Calculator allowed"
+                    },
+                    {
+                        "name": "Section II: Free Response",
+                        "duration": "1 hr 40 min",
+                        "questions": "4 questions",
+                        "weight": "50%",
+                        "calculator": "Calculator allowed"
+                    },
+                ]
+            },
+            "official_links": [
+                {
+                    "title": "AP Physics 1 Course Page",
+                    "url": "https://apstudents.collegeboard.org/courses/ap-physics-1-algebra-based",
+                    "description": "Official College Board course information"
+                },
+                {
+                    "title": "Course and Exam Description (CED)",
+                    "url": "https://apcentral.collegeboard.org/courses/ap-physics-1/course",
+                    "description": "Full CED with unit outlines, topic descriptions, and sample questions"
+                },
+                {
+                    "title": "AP Classroom",
+                    "url": "https://myap.collegeboard.org/",
+                    "description": "Practice questions and progress checks (requires College Board account)"
+                },
+            ]
+        }
+        db.session.commit()
+        logger.info('AP Physics 1: Mechanics course_info populated.')
+
     # --- Load Content JSON Files (auto-discover) ---
     content_dir = os.path.join(os.path.dirname(__file__), 'content')
     discovered = sorted(glob.glob(os.path.join(content_dir, '*.json')))
