@@ -1,6 +1,6 @@
 # CoachPrash Admin Manual
 
-> **Version:** 11.0 (Model Integrity Audit + Problem Editor)
+> **Version:** 14.0 (Freemium Model Update)
 > **Last Updated:** May 2026
 > **Platform:** Flask + PostgreSQL, deployed on Railway
 
@@ -40,6 +40,8 @@
 30. [Google Slides Integration](#30-google-slides-integration)
 31. [Inline Problem Editor](#31-inline-problem-editor)
 32. [Database Integrity & Cascades](#32-database-integrity--cascades)
+33. [AP Content & BC-Only Tags](#33-ap-content--bc-only-tags)
+34. [Seed File Management](#34-seed-file-management)
 
 ---
 
@@ -355,7 +357,7 @@ For each lesson/explainer within the topic:
    - **Slug**: `intro-atomic-structure` (must be **globally unique** across all concepts)
    - **Content**: Write your lesson content (see [Section 5](#5-writing-content-concepts))
    - **Estimated Minutes**: Reading time (aim for 3-7 minutes)
-   - **Access Tier**: `free` (first concept) or `premium` (subsequent concepts)
+   - **Access Tier**: `free` (always — all concepts should be free to read)
    - **Subject Area**: Category like `chemistry`, `physics` (for filtering)
    - **Difficulty**: `easy`, `medium`, or `hard`
 3. Click **Save** — the concept is created AND automatically linked to the topic
@@ -548,6 +550,19 @@ For FTB problems, specify the correct answer. Students type their answer and it'
 ```
 
 All of `3`, `x=3`, `x = 3`, and `X = 3` would be accepted as correct.
+
+**SymPy Math Equivalence (automatic fallback):** When a student's answer doesn't match any `||` variant literally, the system automatically checks for mathematical equivalence using SymPy. This means:
+
+- `1+x` is accepted when the correct answer is `x+1`
+- `2x+6` is accepted when the correct answer is `2(x+3)`
+- `0.5` is accepted when the correct answer is `1/2`
+- `sec²x` matches `1+tan²x` (trig identities)
+- `x²/2+7` matches `x²/2+C` (constant of integration)
+- Unicode symbols (`π`, `∞`, `²`) are normalized automatically
+
+The equivalence checker only activates for math-looking expressions. Descriptive text answers like "local maximum" or "removable discontinuity" use string matching only. You do **not** need to list every algebraic form in `||` — just include the canonical form and common student notations. SymPy handles the rest.
+
+> **Tip:** You still want `||` for truly different representations that aren't algebraically equivalent, like `3` vs `x=3` (one is a value, the other is an equation).
 
 ### Free Response (FRQ)
 
@@ -945,8 +960,7 @@ CoachPrash uses a tiered access system to provide value to free users while ince
 
 | Feature | Anonymous | Free (Logged In) | Premium |
 |---------|-----------|-------------------|---------|
-| Free concepts | Full access | Full access | Full access |
-| Premium concepts | Teaser (blurred) | Teaser (blurred) | Full access |
+| Concept reading content | Full access | Full access | Full access |
 | Problems per quiz | First 3 | First 3 | All |
 | Hint #1 | Yes | Yes | Yes |
 | Hints #2+ | No | No | Yes |
@@ -959,9 +973,9 @@ CoachPrash uses a tiered access system to provide value to free users while ince
 
 #### Concept Gating
 - Each concept has an `access_tier` field: `free` or `premium`
-- **Recommended pattern**: Make the first concept in each topic `free` and the rest `premium`
-- Free/anonymous users see a blurred overlay with a "Upgrade to Premium" call-to-action on premium concepts
-- The concept content is never sent to the client for gated concepts — gating is server-side
+- **All concepts should be `free`** — every student can read concept summaries and explanations
+- Premium gating applies at the **Resource**, **ProblemSet**, and **Solution** levels, not at the concept level
+- Resources like Google Slides can be set to `premium` individually while the concept itself stays `free`
 
 #### Problem Gating
 - Free users get the **first 3 problems** of any quiz, regardless of the problem set's `access_tier`
@@ -989,10 +1003,12 @@ When creating content via the admin panel or qhsJSON:
 {
   "concepts": [
     {"title": "Intro", "access_tier": "free", ...},
-    {"title": "Advanced", "access_tier": "premium", ...}
+    {"title": "Advanced", "access_tier": "free", ...}
   ]
 }
 ```
+
+> **Note:** All concepts should use `access_tier: "free"`. Premium gating is handled at the resource and problem set levels.
 
 For hints:
 ```json
@@ -1603,7 +1619,7 @@ Subject → Course → Topic → Concept → Problem Set → Problem
 4. [ ] Verify math accuracy in the generated content
 5. [ ] Validate JSON at `/admin/content/import`
 6. [ ] Import the validated JSON (topics are auto-created under the course)
-7. [ ] Set first concept to `free`, rest to `premium`
+7. [ ] Verify all concepts are `access_tier: "free"`
 8. [ ] Upload any images via `/admin/images`
 9. [ ] Test the content on the live site as both free and premium users
 10. [ ] Check LaTeX renders correctly
@@ -2095,3 +2111,134 @@ All FK columns have database-level indexes. PostgreSQL does not auto-index FK co
 | `IntegrityError: NotNullViolation` on delete | Missing cascade — SQLAlchemy tries to nullify FK instead of deleting | Add `cascade='all, delete-orphan'` to the parent relationship |
 | `InvalidRequestError: single_parent` | `delete-orphan` on both sides of a dual-parent model | Use `delete-orphan` on only one side; use `cascade='all'` on the other |
 | Slow queries on large tables | Missing FK index | Add `index=True` to the FK column definition |
+
+---
+
+## 33. AP Content & BC-Only Tags
+
+### Unified AP Calculus AB/BC Course
+
+AP Calculus AB and BC are maintained as a **single unified course** (`ap-calculus-ab-bc`) rather than two separate courses. This avoids duplicating 78 shared AB concepts and ensures updates apply everywhere.
+
+**Course structure:**
+- **Units 1–5:** Shared (AB and BC students study these)
+- **Units 6–8:** Mostly shared, with BC-only additions (e.g., Integration by Parts, Improper Integrals, Arc Length)
+- **Unit 9:** BC-only — Parametric, Polar & Vector-Valued Functions
+- **Unit 10:** BC-only — Infinite Sequences & Series
+
+**Stats:** 10 units, 100 concepts (78 AB + 22 BC-only), 738 problems
+
+### BC-Only Tagging
+
+BC-exclusive concepts are identified two ways:
+
+1. **Tags array:** Every BC-only concept has `"bc-only"` in its `tags` field:
+   ```json
+   "tags": ["bc-only", "ap-calculus-ab-bc", "unit-9"]
+   ```
+
+2. **Content badge:** BC concepts include a visual badge at the top of their `content_html`:
+   ```html
+   <span class="badge-bc">BC Only</span>
+   ```
+
+### Creating New BC Content
+
+When adding BC-only concepts to the unified course JSON:
+
+1. Include `"bc-only"` in the `tags` array
+2. Add the `<span class="badge-bc">BC Only</span>` badge at the beginning of `content_html`
+3. Use the same freemium gating rules: 2 MCQ + 2 FTB free, all FRQs premium
+4. Set concept `access_tier: "free"` (all concepts are always free to read)
+5. Tag with the course tag `ap-calculus-ab-bc` and the unit tag (e.g., `unit-10`)
+
+### AP Content Process (All AP Courses)
+
+This process applies to **all** AP course content, not just Calculus:
+
+1. **CED alignment** — Follow the College Board Course and Exam Description unit-by-unit
+2. **Unit-by-unit build** — Each unit maps to a Topic in the 4-level hierarchy
+3. **Freemium split** — 2 MCQ + 2 FTB free per concept; all FRQs premium
+4. **Diagrams** — Add later via Railway Storage Bucket images; use `data-bucket-key` placeholders
+5. **Validation** — Run the content validator to check for missing fields, empty choices, etc.
+
+### Content File Naming
+
+AP content files follow the pattern:
+```
+content/{subject}_{course_slug}.json
+```
+
+Examples:
+- `content/math_ap_calculus_ab_bc.json`
+- `content/cs_apcs_arrays_arraylists.json`
+- `content/testprep_sat_heart_of_algebra.json`
+
+### SymPy and FTB Answers in AP Content
+
+For AP Calculus and other math-heavy courses, the SymPy equivalence checker (see Chapter 6) dramatically reduces the number of `||` variants needed. Write the canonical form as the primary `correct_answer`, and add `||` only for truly non-equivalent representations:
+
+```json
+"correct_answer": "x^2/2 + C"
+```
+
+SymPy will automatically accept `x²/2+C`, `(1/2)x^2+C`, `0.5x^2+C`, etc. No need to list these as `||` alternatives.
+
+---
+
+## 34. Seed File Management
+
+The **Seed File Manager** (`/admin/seeds`) lets admins view, compare, and reload qhsJSON content files without using the CLI or Bulk Import page.
+
+### Accessing the Seed Manager
+
+Navigate to **Admin Dashboard → Seed Files** or go directly to `/admin/seeds`.
+
+### What You See
+
+Each qhsJSON file in the `content/` folder is shown as a collapsible card with:
+
+- **Filename** and the Subject/Course it targets
+- **File stats**: topic count, concept count, problem count (from the file)
+- **Status badge**:
+  - **In Sync** (green) — all concepts exist in DB and problem counts match
+  - **Differs** (yellow) — some concepts have different problem counts or are missing
+  - **Not Loaded** (gray) — no concepts from this file exist in DB yet
+  - **Error** (red) — the target subject or course doesn't exist in the database
+
+### Expanding a File
+
+Click any card to see the full Topic → Concept breakdown with a comparison table:
+
+| Column | Description |
+|--------|-------------|
+| Concept | Concept title and slug |
+| File Problems | Number of problems in the seed file |
+| DB Problems | Number of problems currently in the database |
+| Status | In Sync, Differs, New (not yet loaded), or **Fewer in file** (warning) |
+
+The **Fewer in file** warning appears when the seed file has fewer problems than the database. This helps prevent accidental data loss when reseeding with a smaller file.
+
+### Reseeding a File
+
+Click the **Reseed** button on any file card. A confirmation dialog shows the file and DB problem counts. On confirmation:
+
+1. All existing problems for each concept in the file are **deleted**
+2. New problems from the file are **created** (nuclear replace)
+3. Topics and concepts are created or updated as needed
+4. A success flash shows the counts of loaded topics, concepts, and problems
+
+> **Important:** Reseeding is destructive — it replaces all problems for affected concepts. Always check the comparison table before reseeding.
+
+### Auto-Discovery in `flask seed`
+
+The `flask seed` CLI command now auto-discovers all `*.json` files in the `content/` folder instead of using a hardcoded list. Files are validated by checking for `subject_slug` and `course_slug` keys — non-content JSON files are skipped with a warning.
+
+To add a new content file, simply place it in `content/` and run `flask seed`. No code changes needed.
+
+### Adding New Seed Files
+
+1. Create a qhsJSON file in `content/` (e.g., `physics_ap_mechanics.json`)
+2. Ensure the target Subject and Course already exist in the database
+3. Navigate to `/admin/seeds` to verify the file appears with correct mapping
+4. Click **Reseed** to load it, or include it in the next `flask seed` run

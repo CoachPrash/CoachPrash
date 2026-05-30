@@ -550,6 +550,40 @@ body.sidebar-collapsed .sidebar-footer {
 .badge-published { background: #D4EDDA; color: var(--success); }
 .badge-draft { background: #FFF3CD; color: #856404; }
 
+/* --- Seed Management --- */
+.badge-in-sync { background: #D4EDDA; color: var(--success); }
+.badge-differs { background: #FFF3CD; color: #856404; }
+.badge-not-loaded { background: #E2E3E5; color: #383D41; }
+.badge-error { background: #F8D7DA; color: var(--danger); }
+.badge-warning-seed { background: #FFE0CC; color: #C35A00; }
+
+.seed-card { border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 1rem; overflow: hidden; }
+.seed-header { display: flex; align-items: center; gap: 0.75rem; padding: 1rem 1.25rem; cursor: pointer; flex-wrap: wrap; background: var(--card-bg); }
+.seed-header:hover { background: var(--hover-bg, #f8f9fa); }
+.seed-info { flex: 1; min-width: 200px; }
+.seed-filename { display: block; font-size: 0.95rem; }
+.seed-path { font-size: 0.82rem; color: var(--text-light); }
+.seed-badges { display: flex; gap: 0.4rem; flex-wrap: wrap; align-items: center; }
+.seed-detail { display: none; padding: 0 1.25rem 1.25rem; }
+.seed-card.expanded .seed-detail { display: block; }
+.seed-card.expanded .expand-icon { transform: rotate(90deg); }
+.seed-card .expand-icon { transition: transform 0.15s ease; display: inline-block; font-size: 0.9rem; color: var(--text-light); }
+
+.seed-summary { margin-bottom: 1rem; }
+.seed-summary-table { border-collapse: collapse; }
+.seed-summary-table th, .seed-summary-table td { padding: 0.3rem 1rem; text-align: left; border-bottom: 1px solid var(--border-color); }
+
+.seed-topic { margin-bottom: 1.25rem; }
+.seed-topic h4 { margin-bottom: 0.5rem; font-size: 0.95rem; }
+.seed-topic-slug, .seed-slug { font-size: 0.75rem; color: var(--text-light); font-weight: normal; }
+.seed-slug { display: block; }
+.seed-concept-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+.seed-concept-table th { font-weight: 600; background: var(--table-header-bg, #f1f3f5); }
+.seed-concept-table th, .seed-concept-table td { padding: 0.45rem 0.75rem; text-align: left; border-bottom: 1px solid var(--border-color); }
+
+.section-description { color: var(--text-light); margin-bottom: 1.5rem; font-size: 0.92rem; }
+.section-footer { margin-top: 2rem; }
+
 /* --- Features Grid --- */
 .features-grid {
     display: grid;

@@ -265,7 +265,7 @@
           "content_html": "<h2>Solving One-Step Equations</h2><p>A <strong>one-step equation</strong> is a linear equation that can be solved in a single step using inverse operations.</p><h3>The Golden Rule of Equations</h3><p>Whatever you do to one side, you must do to the other side. This keeps the equation balanced, like a scale.</p><h3>Addition and Subtraction</h3><p>If the equation has addition, use subtraction to undo it (and vice versa):</p><p>\\[x + 5 = 12\\]</p><p>Subtract 5 from both sides:</p><p>\\[x = 12 - 5 = 7\\]</p><h3>Multiplication and Division</h3><p>If the equation has multiplication, use division to undo it (and vice versa):</p><p>\\[3x = 21\\]</p><p>Divide both sides by 3:</p><p>\\[x = \\frac{21}{3} = 7\\]</p><h3>Working with Fractions</h3><p>If the variable is divided, multiply both sides:</p><p>\\[\\frac{x}{4} = 3\\]</p><p>Multiply both sides by 4:</p><p>\\[x = 3 \\times 4 = 12\\]</p><div class=\"callout-key\"><strong>Key Takeaway:</strong> To solve a one-step equation, identify the operation being done to the variable and use the inverse operation to isolate it.</div><div class=\"callout-warning\"><strong>Common Mistake:</strong> When dividing by a negative number, don't forget to keep track of the sign! For example, \\(-2x = 10\\) gives \\(x = -5\\), not \\(x = 5\\).</div>",
           "content_raw": "Solving One-Step Equations",
           "estimated_minutes": 5,
-          "access_tier": "premium",
+          "access_tier": "free",
           "display_order": 1,
           "problem_sets": [
             {
@@ -539,7 +539,7 @@
           "content_html": "<h2>Solving Multi-Step Equations</h2><p>Many real-world problems lead to equations that require more than one step to solve. Let's build on our one-step skills and tackle these!</p><h3>The Strategy</h3><p>When solving multi-step equations, follow this order:</p><ol><li><strong>Simplify</strong> each side (distribute and combine like terms)</li><li><strong>Move variable terms</strong> to one side (usually the left)</li><li><strong>Move constant terms</strong> to the other side</li><li><strong>Isolate the variable</strong> (divide or multiply)</li></ol><h3>Example 1: Two Steps</h3><p>Solve \\(3x + 5 = 20\\):</p><p>\\[3x + 5 = 20\\]</p><p>\\[3x = 20 - 5 = 15\\]</p><p>\\[x = \\frac{15}{3} = 5\\]</p><h3>Example 2: Distributing First</h3><p>Solve \\(2(x + 3) = 14\\):</p><p>\\[2x + 6 = 14\\]</p><p>\\[2x = 14 - 6 = 8\\]</p><p>\\[x = \\frac{8}{2} = 4\\]</p><h3>Example 3: Variables on Both Sides</h3><p>Solve \\(5x - 3 = 2x + 9\\):</p><p>\\[5x - 2x = 9 + 3\\]</p><p>\\[3x = 12\\]</p><p>\\[x = 4\\]</p><div class=\"callout-key\"><strong>Key Takeaway:</strong> Always simplify first, then move terms around, and finally isolate the variable. Think \"simplify, move, solve.\"</div><div class=\"callout-warning\"><strong>Common Mistake:</strong> When distributing a negative sign, remember to distribute to ALL terms inside the parentheses. For example, \\(-(2x + 5) = -2x - 5\\), not \\(-2x + 5\\).</div>",
           "content_raw": "Solving Multi-Step Equations",
           "estimated_minutes": 7,
-          "access_tier": "premium",
+          "access_tier": "free",
           "display_order": 2,
           "problem_sets": [
             {
@@ -819,7 +819,7 @@
           "content_html": "<h2>Word Problems with Linear Equations</h2><p>One of the most powerful uses of algebra is translating real-world situations into equations and solving them.</p><h3>The Problem-Solving Process</h3><ol><li><strong>Read</strong> the problem carefully (at least twice!)</li><li><strong>Define</strong> your variable: \"Let \\(x\\) = ...\"</li><li><strong>Translate</strong> the English into an equation</li><li><strong>Solve</strong> the equation</li><li><strong>Check</strong> your answer in the original problem (not just the equation)</li></ol><h3>Common Translations</h3><table><thead><tr><th>English</th><th>Math</th></tr></thead><tbody><tr><td>\"is\", \"equals\", \"was\"</td><td>\\(=\\)</td></tr><tr><td>\"more than\", \"increased by\"</td><td>\\(+\\)</td></tr><tr><td>\"less than\", \"decreased by\"</td><td>\\(-\\)</td></tr><tr><td>\"times\", \"of\", \"product\"</td><td>\\(\\times\\)</td></tr><tr><td>\"per\", \"each\", \"divided by\"</td><td>\\(\\div\\)</td></tr></tbody></table><h3>Example</h3><p><em>A phone plan charges $30 per month plus $0.05 per text. If last month's bill was $42.50, how many texts were sent?</em></p><p>Let \\(t\\) = number of texts.</p><p>\\[30 + 0.05t = 42.50\\]</p><p>\\[0.05t = 12.50\\]</p><p>\\[t = 250 \\text{ texts}\\]</p><div class=\"callout-key\"><strong>Key Takeaway:</strong> The hardest part of word problems is translating English to math. Once you have the equation, solving it is the same skills you already know!</div><div class=\"callout-tip\"><strong>Pro Tip:</strong> Always define your variable explicitly (write \"Let \\(x\\) = ...\") before setting up the equation. This prevents confusion about what you're actually solving for.</div>",
           "content_raw": "Word Problems with Linear Equations",
           "estimated_minutes": 7,
-          "access_tier": "premium",
+          "access_tier": "free",
           "display_order": 3,
           "problem_sets": [
             {

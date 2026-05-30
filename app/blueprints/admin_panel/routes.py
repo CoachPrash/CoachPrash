@@ -1068,6 +1068,51 @@ def bulk_import():
     return redirect(url_for('admin_panel.bulk_import'))
 
 
+# --- Seed File Management ---
+
+@admin_bp.route('/seeds')
+@admin_required
+def manage_seeds():
+    import os
+    from app.utils.seed_scanner import scan_seed_files
+    content_dir = os.path.abspath(os.path.join(
+        os.path.dirname(os.path.dirname(os.path.dirname(__file__))), '..', 'content'))
+    seed_files = scan_seed_files(content_dir)
+    return render_template('admin/manage_seeds.html', seed_files=seed_files)
+
+
+@admin_bp.route('/seeds/reseed', methods=['POST'])
+@admin_required
+def reseed_file():
+    import os
+    from app.utils.content_loader import load_content_json
+    filename = request.form.get('filename', '').strip()
+    if not filename or '/' in filename or '\\' in filename or '..' in filename:
+        flash('Invalid filename.', 'danger')
+        return redirect(url_for('admin_panel.manage_seeds'))
+
+    content_dir = os.path.abspath(os.path.join(
+        os.path.dirname(os.path.dirname(os.path.dirname(__file__))), '..', 'content'))
+    filepath = os.path.join(content_dir, filename)
+
+    if not os.path.isfile(filepath):
+        flash(f'Seed file not found: {filename}', 'danger')
+        return redirect(url_for('admin_panel.manage_seeds'))
+
+    try:
+        result = load_content_json(filepath)
+        flash(
+            f'Reseeded {filename}: {result["topics"]} topics, '
+            f'{result["concepts"]} concepts, {result["problems"]} problems.',
+            'success',
+        )
+    except Exception as e:
+        logger.exception('Error reseeding %s', filename)
+        flash(f'Error reseeding {filename}: {e}', 'danger')
+
+    return redirect(url_for('admin_panel.manage_seeds'))
+
+
 # --- Problem Set & Problem Editor ---
 
 @admin_bp.route('/content/concept/<concept_id>/problem-set/new', methods=['GET', 'POST'])

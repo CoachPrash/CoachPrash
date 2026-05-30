@@ -11,6 +11,199 @@
 
             <div class="changelog-entry">
                 <div class="changelog-date">
+                    <span class="changelog-date-day">30</span>
+                    <span class="changelog-date-month">May 2026</span>
+                    <span class="changelog-phase-badge">Content</span>
+                </div>
+                <div class="changelog-body">
+                    <h2>Freemium Model &amp; Content Fixes</h2>
+                    <p class="changelog-summary">All concept reading content is now free for every student. Premium gating applies only to practice problems, resources (e.g. Google Slides), and solutions. Also fixed character encoding issues in AP Calculus content.</p>
+
+                    <div class="changelog-section">
+                        <h3>Freemium Model Update</h3>
+                        <ul>
+                            <li>Set all concepts to <code>access_tier: "free"</code> across all 6 seed files (49 concepts total)</li>
+                            <li>Students can always read concept summaries &mdash; gating now applies at the ProblemSet, Resource, and Solution levels only</li>
+                            <li>Admin can still set individual resources (e.g. Google Slides) to premium</li>
+                        </ul>
+                    </div>
+
+                    <div class="changelog-section">
+                        <h3>Bug Fixes</h3>
+                        <ul>
+                            <li>Fixed UTF-8 mojibake in AP Calculus AB/BC content (46 em dashes + 5 bullets displaying as <code>&acirc;&euro;</code> garbage)</li>
+                            <li>Seed scanner now shows file-side stats (topic/concept/problem counts) even when course doesn&rsquo;t exist in DB yet</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="changelog-entry">
+                <div class="changelog-date">
+                    <span class="changelog-date-day">29</span>
+                    <span class="changelog-date-month">May 2026</span>
+                    <span class="changelog-phase-badge">Admin</span>
+                </div>
+                <div class="changelog-body">
+                    <h2>Seed File Management</h2>
+                    <p class="changelog-summary">New admin page to view, compare, and reseed qhsJSON content files. Also auto-discovers seed files in <code>content/</code> instead of hardcoding filenames.</p>
+
+                    <div class="changelog-section">
+                        <h3>Admin Seed Manager (<code>/admin/seeds</code>)</h3>
+                        <ul>
+                            <li>Lists all qhsJSON files discovered in <code>content/</code> folder with parsed Subject &rarr; Course mapping</li>
+                            <li>Expandable per-file detail showing Topic &rarr; Concept breakdown</li>
+                            <li>Compares file problem counts vs database problem counts per concept</li>
+                            <li>Status badges: <strong>In Sync</strong>, <strong>Differs</strong>, <strong>Not Loaded</strong>, <strong>Error</strong></li>
+                            <li>Warning when file has fewer problems than DB (prevents accidental data loss)</li>
+                            <li>One-click <strong>Reseed</strong> button with confirmation dialog</li>
+                        </ul>
+                    </div>
+
+                    <div class="changelog-section">
+                        <h3>Auto-Discovery in <code>flask seed</code></h3>
+                        <ul>
+                            <li>Replaced hardcoded 6-file list with automatic <code>content/*.json</code> discovery</li>
+                            <li>Validates each file has <code>subject_slug</code> + <code>course_slug</code> before loading</li>
+                            <li>Skips non-content JSON files gracefully with warning log</li>
+                            <li>New content files are automatically picked up &mdash; no code changes needed</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="changelog-entry">
+                <div class="changelog-date">
+                    <span class="changelog-date-day">29</span>
+                    <span class="changelog-date-month">May 2026</span>
+                    <span class="changelog-phase-badge">Content</span>
+                </div>
+                <div class="changelog-body">
+                    <h2>AP Calculus AB/BC &mdash; Unified Course</h2>
+                    <p class="changelog-summary">Merged AP Calculus AB and BC into a single unified course with 10 units, 100 concepts, and 738 problems. BC-only concepts are clearly tagged and badged so students can identify AB vs BC material at a glance.</p>
+
+                    <div class="changelog-section">
+                        <h3>Unified AB/BC Course</h3>
+                        <ul>
+                            <li>Renamed course from &ldquo;AP Calculus AB&rdquo; to &ldquo;AP Calculus AB/BC&rdquo; with updated slug <code>ap-calculus-ab-bc</code></li>
+                            <li>AB content preserved exactly as-is (Units 1&ndash;8, 78 concepts, 562 problems)</li>
+                            <li>22 new BC-only concepts added across Units 6&ndash;10 with 176 new problems</li>
+                            <li>Course info updated with combined AB/BC introduction, college equivalents, AP subscore details, and links to both AB and BC CED documents</li>
+                        </ul>
+                    </div>
+
+                    <div class="changelog-section">
+                        <h3>BC Additions to Existing Units</h3>
+                        <ul>
+                            <li><strong>Unit 6</strong> &mdash; Integration by Parts, Partial Fractions, Improper Integrals, Selecting Integration Techniques (4 concepts, 32 problems)</li>
+                            <li><strong>Unit 7</strong> &mdash; Euler&rsquo;s Method, Logistic Differential Equations (2 concepts, 16 problems)</li>
+                            <li><strong>Unit 8</strong> &mdash; Arc Length of Curves (1 concept, 8 problems)</li>
+                        </ul>
+                    </div>
+
+                    <div class="changelog-section">
+                        <h3>New BC-Only Units</h3>
+                        <ul>
+                            <li><strong>Unit 9: Parametric, Polar &amp; Vector-Valued Functions</strong> &mdash; Parametric equations, second derivatives, arc length, vector-valued functions, integration, polar coordinates, polar area (7 concepts, 56 problems)</li>
+                            <li><strong>Unit 10: Infinite Sequences &amp; Series</strong> &mdash; Convergence/divergence, geometric series, integral &amp; p-series tests, comparison tests, alternating series, ratio test, Taylor polynomials, Taylor series (8 concepts, 64 problems)</li>
+                        </ul>
+                    </div>
+
+                    <div class="changelog-section">
+                        <h3>BC-Only Tagging</h3>
+                        <ul>
+                            <li>All BC-exclusive concepts tagged with <code>bc-only</code> in their tags array</li>
+                            <li>BC concepts include a <span class="badge-bc">BC Only</span> badge in their content HTML for visual identification</li>
+                            <li>Free tier: 2 MCQ + 2 FTB per concept; all FRQs premium (same gating as AB)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="changelog-entry">
+                <div class="changelog-date">
+                    <span class="changelog-date-day">29</span>
+                    <span class="changelog-date-month">May 2026</span>
+                    <span class="changelog-phase-badge">Engine</span>
+                </div>
+                <div class="changelog-body">
+                    <h2>SymPy Math Expression Checker</h2>
+                    <p class="changelog-summary">Fill-in-the-blank answers now support symbolic math equivalence checking via SymPy. Students can type mathematically equivalent expressions (e.g., <code>1+x</code> instead of <code>x+1</code>) and get credit automatically.</p>
+
+                    <div class="changelog-section">
+                        <h3>How It Works</h3>
+                        <ul>
+                            <li>String match runs first (fast, handles non-math answers like &ldquo;local maximum&rdquo;)</li>
+                            <li>If string match fails and the answer looks mathematical, SymPy parses both student and correct answer</li>
+                            <li>Three-tier equivalence check: algebraic simplification &rarr; trig simplification &rarr; numerical evaluation</li>
+                            <li>If SymPy can&rsquo;t parse or times out, falls back to the original string match result</li>
+                        </ul>
+                    </div>
+
+                    <div class="changelog-section">
+                        <h3>Supported Equivalences</h3>
+                        <ul>
+                            <li>Algebraic: <code>2(x+3)</code> = <code>2x+6</code>, <code>x+1</code> = <code>1+x</code></li>
+                            <li>Fractions: <code>1/2</code> = <code>0.5</code></li>
+                            <li>Trig identities: <code>sec&sup2;x</code> = <code>1+tan&sup2;x</code></li>
+                            <li>Constant of integration: <code>x&sup2;/2+C</code> matches <code>x&sup2;/2+7</code></li>
+                            <li>Unicode: <code>&pi;</code> = <code>pi</code>, <code>&infin;</code> = <code>infinity</code></li>
+                            <li>Implicit multiplication: <code>2x</code> parsed as <code>2*x</code></li>
+                        </ul>
+                    </div>
+
+                    <div class="changelog-section">
+                        <h3>Technical</h3>
+                        <ul>
+                            <li>New module: <code>app/utils/math_normalize.py</code></li>
+                            <li>LRU cache (512 entries) on parsed expressions to avoid re-parsing</li>
+                            <li>2-second timeout on simplification to prevent slow expressions from blocking</li>
+                            <li>Heuristic classifier skips non-math text (descriptive answers, units)</li>
+                            <li>15 unit tests covering numeric, algebraic, trig, Unicode, and rejection cases</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="changelog-entry">
+                <div class="changelog-date">
+                    <span class="changelog-date-day">29</span>
+                    <span class="changelog-date-month">May 2026</span>
+                    <span class="changelog-phase-badge">Content</span>
+                </div>
+                <div class="changelog-body">
+                    <h2>AP Calculus AB &mdash; Full CED-Aligned Content</h2>
+                    <p class="changelog-summary">Complete AP Calculus AB content covering all 8 units from the College Board Course and Exam Description. 78 concepts with 562 problems across MCQ, FTB, and FRQ types.</p>
+
+                    <div class="changelog-section">
+                        <h3>Content Coverage</h3>
+                        <ul>
+                            <li><strong>Unit 1:</strong> Limits &amp; Continuity (13 concepts)</li>
+                            <li><strong>Unit 2:</strong> Differentiation: Definition &amp; Fundamental Properties (8 concepts)</li>
+                            <li><strong>Unit 3:</strong> Differentiation: Composite, Implicit &amp; Inverse (6 concepts)</li>
+                            <li><strong>Unit 4:</strong> Contextual Applications of Differentiation (7 concepts)</li>
+                            <li><strong>Unit 5:</strong> Analytical Applications of Differentiation (12 concepts)</li>
+                            <li><strong>Unit 6:</strong> Integration &amp; Accumulation of Change (12 concepts)</li>
+                            <li><strong>Unit 7:</strong> Differential Equations (9 concepts)</li>
+                            <li><strong>Unit 8:</strong> Applications of Integration (11 concepts)</li>
+                        </ul>
+                    </div>
+
+                    <div class="changelog-section">
+                        <h3>Problem Distribution</h3>
+                        <ul>
+                            <li>562 total problems: MCQ, FTB, and FRQ types</li>
+                            <li>Free tier: 2 MCQ + 2 FTB per concept</li>
+                            <li>Premium tier: additional MCQ/FTB + all FRQs</li>
+                            <li>Rich LaTeX rendering for all math expressions</li>
+                            <li>Step-by-step solutions with callout boxes for key theorems</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="changelog-entry">
+                <div class="changelog-date">
                     <span class="changelog-date-day">28</span>
                     <span class="changelog-date-month">May 2026</span>
                     <span class="changelog-phase-badge">Admin</span>

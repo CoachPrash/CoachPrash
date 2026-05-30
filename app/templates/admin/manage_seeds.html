@@ -1,0 +1,130 @@
+{% extends "base.html" %}
+{% block title %}Seed Files — Admin{% endblock %}
+
+{% block content %}
+<section class="section">
+    <div class="container">
+        <div class="admin-header">
+            <h1>Seed File Management</h1>
+            <div class="header-actions">
+                <a href="{{ url_for('admin_panel.manage_content') }}" class="btn btn-outline">Content Tree</a>
+                <a href="{{ url_for('admin_panel.bulk_import') }}" class="btn btn-outline">Bulk Import</a>
+            </div>
+        </div>
+
+        <p class="section-description">
+            Discovered <strong>{{ seed_files|length }}</strong> qhsJSON seed file(s) in <code>content/</code>.
+            Click a file to expand its topic/concept breakdown. Use <strong>Reseed</strong> to reload a file (replaces all problems).
+        </p>
+
+        {% if not seed_files %}
+        <div class="empty-state">
+            <p>No qhsJSON seed files found in the <code>content/</code> folder.</p>
+        </div>
+        {% endif %}
+
+        {% for seed in seed_files %}
+        <div class="seed-card" id="seed-{{ loop.index }}">
+            <div class="seed-header" onclick="toggleSeedDetail(this)">
+                <span class="expand-icon">&#9656;</span>
+                <div class="seed-info">
+                    <strong class="seed-filename">{{ seed.filename }}</strong>
+                    <span class="seed-path">{{ seed.subject_name or seed.subject_slug }} / {{ seed.course_name or seed.course_slug }}</span>
+                </div>
+                <div class="seed-badges">
+                    <span class="badge">{{ seed.file_stats.topics }} topics</span>
+                    <span class="badge">{{ seed.file_stats.concepts }} concepts</span>
+                    <span class="badge">{{ seed.file_stats.problems }} problems</span>
+                    {% if seed.status == 'in_sync' %}
+                        <span class="badge badge-in-sync">In Sync</span>
+                    {% elif seed.status == 'differs' %}
+                        <span class="badge badge-differs">Differs</span>
+                    {% elif seed.status == 'not_loaded' %}
+                        <span class="badge badge-not-loaded">Not Loaded</span>
+                    {% elif seed.status == 'error' %}
+                        <span class="badge badge-error">Error</span>
+                    {% endif %}
+                </div>
+                {% if seed.status != 'error' %}
+                <form method="POST" action="{{ url_for('admin_panel.reseed_file') }}"
+                      class="inline-form" onclick="event.stopPropagation()"
+                      onsubmit="return confirm('Reseed {{ seed.filename }}?\n\nThis will DELETE and RECREATE all problems for every concept in this file.\n\nFile: {{ seed.file_stats.problems }} problems\nDB: {{ seed.db_stats.problems }} problems')">
+                    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                    <input type="hidden" name="filename" value="{{ seed.filename }}">
+                    <button type="submit" class="btn btn-sm btn-warning">Reseed</button>
+                </form>
+                {% endif %}
+            </div>
+
+            <div class="seed-detail">
+                {% if seed.error %}
+                <div class="alert alert-danger">{{ seed.error }}</div>
+                {% endif %}
+
+                <div class="seed-summary">
+                    <table class="seed-summary-table">
+                        <tr>
+                            <th></th><th>File</th><th>Database</th>
+                        </tr>
+                        <tr>
+                            <td>Problems</td>
+                            <td>{{ seed.file_stats.problems }}</td>
+                            <td>{{ seed.db_stats.problems }}</td>
+                        </tr>
+                    </table>
+                </div>
+
+                {% for topic in seed.topics %}
+                <div class="seed-topic">
+                    <h4>{{ topic.name }} <span class="seed-topic-slug">{{ topic.slug }}</span></h4>
+                    <table class="seed-concept-table">
+                        <thead>
+                            <tr>
+                                <th>Concept</th>
+                                <th>File Problems</th>
+                                <th>DB Problems</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for concept in topic.concepts %}
+                            <tr>
+                                <td>
+                                    {{ concept.title }}
+                                    <span class="seed-slug">{{ concept.slug }}</span>
+                                </td>
+                                <td>{{ concept.file_problems }}</td>
+                                <td>{{ concept.db_problems if concept.exists_in_db else '—' }}</td>
+                                <td>
+                                    {% if not concept.exists_in_db %}
+                                        <span class="badge badge-not-loaded">New</span>
+                                    {% elif concept.file_problems == concept.db_problems %}
+                                        <span class="badge badge-in-sync">In Sync</span>
+                                    {% elif concept.file_problems < concept.db_problems %}
+                                        <span class="badge badge-warning-seed">Fewer in file (-{{ concept.db_problems - concept.file_problems }})</span>
+                                    {% else %}
+                                        <span class="badge badge-differs">Differs (+{{ concept.file_problems - concept.db_problems }})</span>
+                                    {% endif %}
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endfor %}
+
+        <div class="section-footer">
+            <a href="{{ url_for('admin_panel.dashboard') }}" class="btn btn-outline">&larr; Dashboard</a>
+        </div>
+    </div>
+</section>
+
+<script>
+function toggleSeedDetail(header) {
+    header.closest('.seed-card').classList.toggle('expanded');
+}
+</script>
+{% endblock %}

@@ -1,3 +1,5 @@
+import glob
+import json
 import logging
 import os
 from datetime import datetime, timezone, timedelta
@@ -62,8 +64,7 @@ def _seed_data():
                 ('Algebra 2', 'algebra-2', 'high_school', 'standard', 'Polynomials, rational expressions, exponentials, logarithms, and complex numbers.'),
                 ('Precalculus', 'precalculus', 'high_school', 'standard', 'Advanced functions, trigonometry, sequences, series, and limits.'),
                 ('Calculus \u2014 Honors', 'calculus-honors', 'high_school', 'honors', 'Honors-level introduction to limits, derivatives, and integrals.'),
-                ('AP Calculus AB', 'ap-calculus-ab', 'ap', 'ap', 'Limits, derivatives, integrals, and the Fundamental Theorem of Calculus. Full AP exam preparation.'),
-                ('AP Calculus BC', 'ap-calculus-bc', 'ap', 'ap', 'All AB topics plus parametric, polar, vector functions, and series. Comprehensive AP exam prep.'),
+                ('AP Calculus AB/BC', 'ap-calculus-ab-bc', 'ap', 'ap', 'Limits, derivatives, integrals, and the Fundamental Theorem of Calculus. BC topics (parametric, polar, series) clearly marked. Full AP exam preparation.'),
                 ('Statistics \u2014 Honors', 'statistics-honors', 'high_school', 'honors', 'Data analysis, probability, distributions, and inference at the honors level.'),
                 ('AP Statistics', 'ap-statistics', 'ap', 'ap', 'Exploring data, sampling, probability, inference, and regression. AP exam focused.'),
                 ('Discrete Mathematics', 'discrete-mathematics', 'college', 'college', 'Combinatorics, graph theory, logic, proofs, and number theory.'),
@@ -153,24 +154,24 @@ def _seed_data():
     db.session.commit()
     logger.info('Subjects and courses seeded.')
 
-    # --- AP Calculus AB Course Info ---
-    ap_calc_ab = Course.query.filter_by(slug='ap-calculus-ab').first()
-    if ap_calc_ab and not ap_calc_ab.course_info:
-        ap_calc_ab.course_info = {
+    # --- AP Calculus AB/BC Course Info ---
+    ap_calc = Course.query.filter_by(slug='ap-calculus-ab-bc').first()
+    if ap_calc and not ap_calc.course_info:
+        ap_calc.course_info = {
             "introduction_html": (
-                "<p><strong>AP Calculus AB</strong> is equivalent to a first-semester college calculus course. "
-                "You will explore the concepts of limits, derivatives, and integrals — the three pillars of calculus — "
-                "and apply them to solve problems involving rates of change, accumulation, and motion.</p>"
-                "<p>This course covers <strong>8 units</strong> aligned precisely with the College Board's "
-                "Course and Exam Description (CED). Each unit builds on the previous, starting with the foundational "
-                "concept of limits and culminating in applications of integration such as finding areas between curves "
-                "and volumes of solids of revolution.</p>"
-                "<p>Whether you're preparing for the AP exam or building a strong calculus foundation for college STEM courses, "
-                "every concept includes clear explanations with worked examples, practice problems with step-by-step solutions, "
-                "and AP exam tips to help you earn a 5.</p>"
+                "<p><strong>AP Calculus AB/BC</strong> is a unified course covering both the AB and BC curricula. "
+                "AB topics (Units 1-8) form a complete first-semester college calculus course. "
+                "BC-exclusive topics -- marked with a <span class='badge-bc'>BC</span> badge -- add integration techniques, "
+                "parametric/polar/vector functions, and infinite series, equivalent to a full year of college calculus.</p>"
+                "<p>This course covers <strong>10 units</strong> aligned with the College Board's Course and Exam Description (CED). "
+                "Units 1-8 are shared by both exams. Units 9 (Parametric, Polar, Vector) and 10 (Infinite Series) are BC-only. "
+                "Additional BC-only concepts appear within Units 6, 7, and 8.</p>"
+                "<p><strong>AB students:</strong> Study Units 1-8, skipping concepts marked BC. "
+                "<strong>BC students:</strong> Study all 10 units. "
+                "Every concept includes clear explanations, worked examples, and AP exam tips.</p>"
             ),
-            "college_equivalent": "One semester of college calculus",
-            "credit_info": "A score of 3 or higher may earn college credit — check your school's AP credit policy",
+            "college_equivalent": "AB: One semester of college calculus | BC: Two semesters (full year)",
+            "credit_info": "AB: Score of 3+ may earn one semester of credit. BC: Score of 3+ may earn two semesters. BC also reports an AB subscore.",
             "skills": [
                 {
                     "name": "Implementing Mathematical Processes",
@@ -204,7 +205,7 @@ def _seed_data():
                 },
             ],
             "exam_structure": {
-                "description": "3 hours 15 minutes, two sections, each worth 50% of the exam score",
+                "description": "Both exams: 3 hours 15 minutes, two sections, each worth 50%",
                 "sections": [
                     {
                         "name": "Section I: Multiple Choice",
@@ -226,12 +227,22 @@ def _seed_data():
                 {
                     "title": "AP Calculus AB Course Page",
                     "url": "https://apstudents.collegeboard.org/courses/ap-calculus-ab",
-                    "description": "Official College Board course information"
+                    "description": "Official College Board AB course information"
                 },
                 {
-                    "title": "Course and Exam Description (CED)",
+                    "title": "AP Calculus BC Course Page",
+                    "url": "https://apstudents.collegeboard.org/courses/ap-calculus-bc",
+                    "description": "Official College Board BC course information"
+                },
+                {
+                    "title": "AB Course and Exam Description",
                     "url": "https://apcentral.collegeboard.org/courses/ap-calculus-ab/course",
-                    "description": "Full CED with topic outlines and sample questions"
+                    "description": "Full AB CED with topic outlines and sample questions"
+                },
+                {
+                    "title": "BC Course and Exam Description",
+                    "url": "https://apcentral.collegeboard.org/courses/ap-calculus-bc/course",
+                    "description": "Full BC CED with topic outlines and sample questions"
                 },
                 {
                     "title": "AP Classroom",
@@ -241,30 +252,28 @@ def _seed_data():
             ]
         }
         db.session.commit()
-        logger.info('AP Calculus AB course_info populated.')
+        logger.info('AP Calculus AB/BC course_info populated.')
 
-    # --- Load Content JSON Files ---
+    # --- Load Content JSON Files (auto-discover) ---
     content_dir = os.path.join(os.path.dirname(__file__), 'content')
-    content_files = [
-        'math_algebra1_linear_equations.json',
-        'math_ap_calculus_ab.json',
-        'physics_honors_newtons_laws.json',
-        'chemistry_honors_mole_concept.json',
-        'cs_apcs_arrays_arraylists.json',
-        'testprep_sat_heart_of_algebra.json',
-    ]
-    for fname in content_files:
-        fpath = os.path.join(content_dir, fname)
-        if not os.path.exists(fpath):
-            logger.warning('Content file not found, skipping: %s', fname)
+    discovered = sorted(glob.glob(os.path.join(content_dir, '*.json')))
+    logger.info('Discovered %d JSON file(s) in content/', len(discovered))
+
+    for fpath in discovered:
+        fname = os.path.basename(fpath)
+        try:
+            with open(fpath, 'r', encoding='utf-8') as f:
+                peek = json.load(f)
+            if 'subject_slug' not in peek or 'course_slug' not in peek:
+                logger.warning('Skipping %s (not a content file)', fname)
+                continue
+        except (json.JSONDecodeError, OSError) as e:
+            logger.warning('Skipping %s: %s', fname, e)
             continue
         try:
             result = load_content_json(fpath)
-            if result is None:
-                logger.info('Content already loaded, skipping: %s', fname)
-            else:
-                logger.info('Loaded %s: %s topics, %s concepts, %s problems',
-                            fname, result['topics'], result['concepts'], result['problems'])
+            logger.info('Loaded %s: %s topics, %s concepts, %s problems',
+                        fname, result['topics'], result['concepts'], result['problems'])
         except Exception:
             logger.exception('Error loading %s', fname)
 
