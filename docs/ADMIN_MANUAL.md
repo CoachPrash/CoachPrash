@@ -1,7 +1,7 @@
 # CoachPrash Admin Manual
 
-> **Version:** 15.0 (AP Physics 1 Content)
-> **Last Updated:** May 2026
+> **Version:** 16.0 (AP Physics 2 Content)
+> **Last Updated:** June 2026
 > **Platform:** Flask + PostgreSQL, deployed on Railway
 
 ---

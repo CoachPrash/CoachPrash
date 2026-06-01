@@ -347,6 +347,88 @@ def _seed_data():
         db.session.commit()
         logger.info('AP Physics 1: Mechanics course_info populated.')
 
+    # --- AP Physics 2: E&M Course Info ---
+    ap_phys2 = Course.query.filter_by(slug='ap-physics-2-em').first()
+    if ap_phys2 and not ap_phys2.course_info:
+        ap_phys2.course_info = {
+            "introduction_html": (
+                "<p><strong>AP Physics 2: Algebra-Based</strong> is a full-year, college-level physics course "
+                "that builds on AP Physics 1. The 2024-25 redesign moved fluids to AP Physics 1, so this course "
+                "now covers <strong>thermodynamics, electricity, magnetism, optics, waves, and modern physics</strong>.</p>"
+                "<p>This course covers <strong>7 units (CED Units 9–15) and 46 topics</strong> aligned with the "
+                "College Board's Course and Exam Description (CED). All concepts are algebra-based — no calculus required.</p>"
+                "<p>Every concept includes clear explanations with real-world examples, worked problems with "
+                "full solutions, and AP exam tips to help you succeed on test day.</p>"
+            ),
+            "college_equivalent": "Second course in an introductory college course sequence in algebra-based physics",
+            "credit_info": "A score of 3 or higher may earn one semester of college physics credit. Policies vary by institution.",
+            "skills": [
+                {
+                    "name": "Creating Representations",
+                    "icon": "\U0001f4d0",
+                    "description": "Create and use representations such as diagrams, graphs, and equations to analyze physical situations."
+                },
+                {
+                    "name": "Mathematical Routines",
+                    "icon": "\U0001f4d0",
+                    "description": "Use mathematics appropriately, including algebra and trigonometry, to solve physics problems."
+                },
+                {
+                    "name": "Scientific Questioning and Argumentation",
+                    "icon": "\U0001f50d",
+                    "description": "Develop and support scientific claims with evidence, reasoning, and models."
+                },
+            ],
+            "prerequisites": [
+                {
+                    "name": "AP Physics 1 or equivalent",
+                    "description": "AP Physics 1 or a comparable introductory physics course"
+                },
+                {
+                    "name": "Pre-calculus (concurrent or completed)",
+                    "description": "Pre-calculus or an equivalent course providing proficiency with algebra and trigonometry"
+                },
+            ],
+            "exam_structure": {
+                "description": "3 hours total, two sections, each worth 50%. Calculator allowed on both sections.",
+                "sections": [
+                    {
+                        "name": "Section I: Multiple Choice",
+                        "duration": "1 hr 20 min",
+                        "questions": "40 questions",
+                        "weight": "50%",
+                        "calculator": "Calculator allowed"
+                    },
+                    {
+                        "name": "Section II: Free Response",
+                        "duration": "1 hr 40 min",
+                        "questions": "4 questions (Q1: Mathematical Routines 10 pts, Q2: Translation Between Representations 12 pts, Q3: Experimental Design and Analysis 10 pts, Q4: Qualitative/Quantitative Translation 8 pts)",
+                        "weight": "50%",
+                        "calculator": "Calculator allowed"
+                    },
+                ]
+            },
+            "official_links": [
+                {
+                    "title": "AP Physics 2 Course Page",
+                    "url": "https://apstudents.collegeboard.org/courses/ap-physics-2-algebra-based",
+                    "description": "Official College Board course information"
+                },
+                {
+                    "title": "Course and Exam Description (CED)",
+                    "url": "https://apcentral.collegeboard.org/courses/ap-physics-2/course",
+                    "description": "Full CED with unit outlines, topic descriptions, and sample questions"
+                },
+                {
+                    "title": "AP Classroom",
+                    "url": "https://myap.collegeboard.org/",
+                    "description": "Practice questions and progress checks (requires College Board account)"
+                },
+            ]
+        }
+        db.session.commit()
+        logger.info('AP Physics 2: E&M course_info populated.')
+
     # --- Load Content JSON Files (auto-discover) ---
     content_dir = os.path.join(os.path.dirname(__file__), 'content')
     discovered = sorted(glob.glob(os.path.join(content_dir, '*.json')))
