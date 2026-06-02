@@ -1,6 +1,6 @@
 # CoachPrash Admin Manual
 
-> **Version:** 17.0 (qhsJSON Schema & Validator)
+> **Version:** 18.0 (AP Calculus Content Completion)
 > **Last Updated:** June 2026
 > **Platform:** Flask + PostgreSQL, deployed on Railway
 
