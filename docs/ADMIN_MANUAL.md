@@ -1,6 +1,6 @@
 # CoachPrash Admin Manual
 
-> **Version:** 16.0 (AP Physics 2 Content)
+> **Version:** 17.0 (qhsJSON Schema & Validator)
 > **Last Updated:** June 2026
 > **Platform:** Flask + PostgreSQL, deployed on Railway
 
@@ -761,7 +761,43 @@ If the subject or course slug doesn't match an existing record, the import will 
 
 ### Validation Rules
 
-The validator checks:
+#### Standalone CLI Validator (Recommended)
+
+A standalone validator script and JSON Schema are available in the `content/` folder. **No Flask or database required.**
+
+```bash
+python content/validate_qhsjson.py                     # validate all content/*.json
+python content/validate_qhsjson.py content/foo.json     # validate specific file(s)
+python content/validate_qhsjson.py --no-warnings        # errors only
+python content/validate_qhsjson.py --verbose            # detailed stats
+```
+
+The validator runs two passes:
+
+1. **Schema validation** — Checks structure against `content/qhsjson_schema.json` (JSON Schema draft-07). Requires `jsonschema` package (`pip install jsonschema>=4.0`).
+2. **Semantic validation** — Checks rules the schema cannot express (always runs, no dependencies).
+
+**Errors** (will break seed/import):
+- Topic uses `title` instead of `name`
+- ProblemSet uses `name` instead of `title`
+- MCQ missing `choices` or has != 1 correct choice
+- FTB missing `correct_answer`
+- Duplicate concept slugs
+- Deprecated `answer_options` field (should be `choices`)
+- Invalid `problem_type`
+
+**Warnings** (degrades quality):
+- Missing `description` on topics, `content_html` on concepts
+- Missing `hints` or `solution_steps` on problems
+- FRQ missing `correct_answer` or `rubric`
+- Non-canonical field names (`hint_text` instead of `text`, `hint_cost` instead of `cost_points`, `step` instead of `step_number`)
+- `sample_answer` without `correct_answer` (loader only reads `correct_answer`)
+
+Exit code 0 = no errors (warnings OK), 1 = errors found.
+
+#### Admin Panel Validator
+
+The admin bulk import page (`/admin/content/import`) also validates before import. It checks:
 - `subject_slug` and `course_slug` exist in the database
 - `topics` array is present and non-empty
 - Every topic has a `name` or `slug`
@@ -2160,7 +2196,7 @@ This process applies to **all** AP course content, not just Calculus:
 2. **Unit-by-unit build** — Each unit maps to a Topic in the 4-level hierarchy
 3. **Freemium split** — 2 MCQ + 2 FTB free per concept; all FRQs premium
 4. **Diagrams** — Add later via Railway Storage Bucket images; use `data-bucket-key` placeholders
-5. **Validation** — Run the content validator to check for missing fields, empty choices, etc.
+5. **Validation** — Run `python content/validate_qhsjson.py` to check for missing fields, wrong field names, empty choices, etc.
 
 ### Content File Naming
 

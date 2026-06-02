@@ -11,6 +11,46 @@
 
             <div class="changelog-entry">
                 <div class="changelog-date">
+                    <span class="changelog-date-day">2</span>
+                    <span class="changelog-date-month">Jun 2026</span>
+                    <span class="changelog-phase-badge">Tooling</span>
+                </div>
+                <div class="changelog-body">
+                    <h2>qhsJSON Schema &amp; Validator</h2>
+                    <p class="changelog-summary">Added a formal JSON Schema and standalone CLI validator for all content files. Also fixed 72 structural errors and 1065 field-name issues across AP Calc, AP Physics 1, and AP Physics 2 content files.</p>
+
+                    <div class="changelog-section">
+                        <h3>New Files</h3>
+                        <ul>
+                            <li><code>content/qhsjson_schema.json</code> &mdash; JSON Schema (draft-07) defining the complete qhsJSON v4 format at every level (root, topic, concept, problem set, problem, choice, hint, solution step)</li>
+                            <li><code>content/validate_qhsjson.py</code> &mdash; Standalone CLI validator with two-pass validation: schema validation + semantic checks (no Flask/database required)</li>
+                            <li>Added <code>jsonschema&gt;=4.0</code> to <code>requirements.txt</code></li>
+                        </ul>
+                    </div>
+
+                    <div class="changelog-section">
+                        <h3>Content Fixes</h3>
+                        <ul>
+                            <li>AP Physics 2: Fixed 4 topics using <code>title</code> instead of <code>name</code>, added missing <code>description</code> fields, corrected <code>display_order</code></li>
+                            <li>AP Physics 1: Fixed 40 problem sets using <code>name</code> instead of <code>title</code></li>
+                            <li>AP Calculus: Fixed 32 MCQs using <code>answer_options</code> instead of <code>choices</code>, renamed 128 <code>hint_text</code>&rarr;<code>text</code>, 368 <code>hint_cost</code>&rarr;<code>cost_points</code>, 569 <code>step</code>&rarr;<code>step_number</code></li>
+                            <li>All 3 AP courses: Added <code>correct_answer</code> from <code>sample_answer</code> for 163 FRQs (loader only reads <code>correct_answer</code>)</li>
+                        </ul>
+                    </div>
+
+                    <div class="changelog-section">
+                        <h3>Validator Usage</h3>
+                        <ul>
+                            <li><code>python content/validate_qhsjson.py</code> &mdash; validate all content files</li>
+                            <li><code>python content/validate_qhsjson.py --no-warnings</code> &mdash; errors only</li>
+                            <li>Exit code 0 = pass, 1 = errors found</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="changelog-entry">
+                <div class="changelog-date">
                     <span class="changelog-date-day">1</span>
                     <span class="changelog-date-month">Jun 2026</span>
                     <span class="changelog-phase-badge">Content</span>

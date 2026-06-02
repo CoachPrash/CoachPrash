@@ -1,0 +1,307 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "qhsjson-v4",
+  "title": "qhsJSON v4 Schema",
+  "description": "Schema for CoachPrash educational content files (Questions, Hints, Solutions JSON).",
+  "type": "object",
+  "required": ["subject_slug", "course_slug", "topics"],
+  "properties": {
+    "subject_slug": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Must match an existing Subject record in the database."
+    },
+    "course_slug": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Must match an existing Course record under the specified subject."
+    },
+    "topics": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/definitions/Topic" }
+    }
+  },
+  "definitions": {
+    "Topic": {
+      "type": "object",
+      "required": ["name", "concepts"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Display name of the topic. Use 'name' (not 'title') at the topic level."
+        },
+        "slug": {
+          "type": "string",
+          "minLength": 1,
+          "description": "URL-safe identifier, unique within the course. Auto-generated from name if omitted."
+        },
+        "description": {
+          "type": "string",
+          "description": "Brief topic description shown on the course page."
+        },
+        "display_order": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Sort order within the course. Defaults to array index."
+        },
+        "concepts": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/definitions/Concept" }
+        }
+      }
+    },
+    "Concept": {
+      "type": "object",
+      "required": ["title", "problem_sets"],
+      "properties": {
+        "title": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Display title of the concept. Use 'title' (not 'name') at the concept level."
+        },
+        "slug": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Globally unique identifier. If a concept with this slug exists, it is reused. Auto-generated from title if omitted."
+        },
+        "content_html": {
+          "type": "string",
+          "description": "Full HTML lesson content. Supports LaTeX via \\(...\\) inline and \\[...\\] display."
+        },
+        "content_raw": {
+          "type": "string",
+          "description": "Plain text version of content for fallback/accessibility."
+        },
+        "estimated_minutes": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Estimated reading time in minutes. Defaults to 5."
+        },
+        "access_tier": {
+          "type": "string",
+          "enum": ["free", "premium"],
+          "description": "Controls access to lesson content. Defaults to 'free'."
+        },
+        "subject_area": {
+          "type": "string",
+          "description": "Subject area classification (e.g., 'mechanics', 'algebra', 'thermodynamics')."
+        },
+        "difficulty": {
+          "type": "string",
+          "enum": ["easy", "medium", "hard"],
+          "description": "Difficulty level. Defaults to 'medium'."
+        },
+        "tags": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Tag array for filtering/search."
+        },
+        "display_order": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Sort order within the topic. Defaults to array index."
+        },
+        "problem_sets": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/definitions/ProblemSet" }
+        }
+      }
+    },
+    "ProblemSet": {
+      "type": "object",
+      "required": ["title", "problems"],
+      "properties": {
+        "title": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Display title of the problem set (e.g., 'Practice: Linear Equations')."
+        },
+        "access_tier": {
+          "type": "string",
+          "enum": ["free", "premium"],
+          "description": "Controls access to all problems in this set. Defaults to 'free'."
+        },
+        "display_order": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Sort order within the concept. Defaults to array index."
+        },
+        "problems": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/definitions/Problem" }
+        }
+      }
+    },
+    "Problem": {
+      "type": "object",
+      "required": ["problem_type"],
+      "properties": {
+        "question_html": {
+          "type": "string",
+          "description": "HTML question text. Supports LaTeX and data-bucket-key images."
+        },
+        "question_raw": {
+          "type": "string",
+          "description": "Plain text version of the question."
+        },
+        "problem_type": {
+          "type": "string",
+          "enum": ["mcq", "ftb", "frq"],
+          "description": "Problem type: mcq (multiple choice), ftb (fill-in-the-blank), frq (free response)."
+        },
+        "difficulty": {
+          "type": "string",
+          "enum": ["easy", "medium", "hard"],
+          "description": "Difficulty level. Defaults to 'medium'."
+        },
+        "points": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Point value. Defaults to 1."
+        },
+        "correct_answer": {
+          "type": "string",
+          "description": "Required for FTB (use || for multiple accepted answers). For FRQ, the model answer shown after submission."
+        },
+        "choices": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/Choice" },
+          "description": "Required for MCQ problems. Typically 4 choices with exactly 1 correct."
+        },
+        "hints": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/Hint" },
+          "description": "Progressive hints. Recommended: 2 per problem (first free, second costs 1 point)."
+        },
+        "solution_steps": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/SolutionStep" },
+          "description": "Step-by-step solution shown after submission."
+        },
+        "display_order": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "access_tier": {
+          "type": "string",
+          "enum": ["free", "premium"],
+          "description": "Optional per-problem access tier. Usually controlled at problem_set level instead."
+        },
+        "rubric": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Rubric items for FRQ self-grading."
+        },
+        "sample_answer": {
+          "type": "string",
+          "description": "Alias for correct_answer on FRQ problems. Prefer correct_answer (the loader reads correct_answer)."
+        },
+        "acceptable_answers": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Additional accepted answers for FTB. Prefer using || in correct_answer instead."
+        },
+        "explanation_html": {
+          "type": "string",
+          "description": "Additional explanation HTML shown after answering."
+        }
+      }
+    },
+    "Choice": {
+      "type": "object",
+      "required": ["text", "is_correct"],
+      "properties": {
+        "text": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Choice text. Supports LaTeX."
+        },
+        "is_correct": {
+          "type": "boolean",
+          "description": "Exactly one choice per MCQ must be true."
+        }
+      }
+    },
+    "Hint": {
+      "oneOf": [
+        {
+          "type": "string",
+          "minLength": 1,
+          "description": "Simple hint text string. cost_points defaults to 0."
+        },
+        {
+          "type": "object",
+          "properties": {
+            "text": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Hint text (canonical field name)."
+            },
+            "hint_text": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Alias for text. Accepted by loader but prefer 'text'."
+            },
+            "cost_points": {
+              "type": "integer",
+              "minimum": 0,
+              "description": "0 = free hint, 1 = costs 1 point to reveal."
+            },
+            "hint_cost": {
+              "type": "integer",
+              "minimum": 0,
+              "description": "Alias for cost_points. Prefer 'cost_points'."
+            }
+          },
+          "anyOf": [
+            { "required": ["text"] },
+            { "required": ["hint_text"] }
+          ]
+        }
+      ]
+    },
+    "SolutionStep": {
+      "oneOf": [
+        {
+          "type": "string",
+          "minLength": 1,
+          "description": "Simple step text string. step_number auto-incremented."
+        },
+        {
+          "type": "object",
+          "properties": {
+            "text": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Step explanation text (canonical field name)."
+            },
+            "text_html": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Alias for text. Accepted by loader but prefer 'text'."
+            },
+            "step_number": {
+              "type": "integer",
+              "minimum": 1,
+              "description": "Step order. Auto-incremented if omitted."
+            },
+            "step": {
+              "type": "integer",
+              "minimum": 1,
+              "description": "Alias for step_number. Prefer 'step_number'."
+            }
+          },
+          "anyOf": [
+            { "required": ["text"] },
+            { "required": ["text_html"] }
+          ]
+        }
+      ]
+    }
+  }
+}
