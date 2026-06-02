@@ -1,6 +1,6 @@
 # CoachPrash Admin Manual
 
-> **Version:** 18.0 (AP Calculus Content Completion)
+> **Version:** 19.0 (AP Computer Science A Content)
 > **Last Updated:** June 2026
 > **Platform:** Flask + PostgreSQL, deployed on Railway
 

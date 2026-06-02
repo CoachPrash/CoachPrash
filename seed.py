@@ -429,6 +429,105 @@ def _seed_data():
         db.session.commit()
         logger.info('AP Physics 2: E&M course_info populated.')
 
+    # --- AP Computer Science A Course Info ---
+    ap_csa = Course.query.filter_by(slug='ap-cs-a-java').first()
+    if ap_csa and not ap_csa.course_info:
+        ap_csa.course_info = {
+            "introduction_html": (
+                "<p><strong>AP Computer Science A</strong> introduces students to computer science through "
+                "programming in <strong>Java</strong>. The 2025-26 redesigned course covers <strong>4 units "
+                "and 53 topics</strong> aligned with the College Board's Course and Exam Description (CED).</p>"
+                "<p>Topics include variables and data types, control flow (selection and iteration), "
+                "object-oriented programming and class design, and data collections (arrays, ArrayLists, "
+                "2D arrays). Students also learn searching, sorting, and recursion, along with the ethical "
+                "and social implications of computing.</p>"
+                "<p>Every concept includes clear explanations with runnable Java code examples, AP exam tips, "
+                "common mistake callouts, and practice problems that mirror the format of the AP exam.</p>"
+            ),
+            "college_equivalent": "One semester of introductory college-level computer science",
+            "credit_info": "A score of 3 or higher may earn one semester of college CS credit. Policies vary by institution.",
+            "skills": [
+                {
+                    "name": "Design Code",
+                    "icon": "\U0001f4d0",
+                    "description": "Determine an appropriate program design and develop algorithms."
+                },
+                {
+                    "name": "Develop Code",
+                    "icon": "\U0001f4bb",
+                    "description": "Write and implement program code."
+                },
+                {
+                    "name": "Analyze Code",
+                    "icon": "\U0001f50d",
+                    "description": "Determine the output or result of given program code, or explain why code may not work as intended."
+                },
+                {
+                    "name": "Document Code and Computing Systems",
+                    "icon": "\U0001f4dd",
+                    "description": "Describe the behavior and conditions that produce specified results in a program."
+                },
+                {
+                    "name": "Use Computers Responsibly",
+                    "icon": "\U0001f6e1\ufe0f",
+                    "description": "Understand the ethical and social implications of computer use."
+                },
+            ],
+            "prerequisites": [
+                {
+                    "name": "Algebra I",
+                    "description": "Strong foundation in basic linear functions, composition of functions, and problem-solving strategies"
+                },
+                {
+                    "name": "No prior Java experience required",
+                    "description": "The course is designed for beginners; Algebra II and prior programming experience are recommended but not required"
+                },
+            ],
+            "exam_structure": {
+                "description": "3 hours total, two sections. No calculator allowed. Java Quick Reference sheet provided.",
+                "sections": [
+                    {
+                        "name": "Section I: Multiple Choice",
+                        "duration": "1 hr 30 min",
+                        "questions": "42 questions",
+                        "weight": "55%",
+                        "calculator": "No calculator allowed"
+                    },
+                    {
+                        "name": "Section II: Free Response",
+                        "duration": "1 hr 30 min",
+                        "questions": "4 questions (Q1: Methods & Control Structures 7 pts, Q2: Class Design 7 pts, Q3: Data Analysis with ArrayList 5 pts, Q4: 2D Array 6 pts)",
+                        "weight": "45%",
+                        "calculator": "No calculator allowed"
+                    },
+                ]
+            },
+            "official_links": [
+                {
+                    "title": "AP Computer Science A Course Page",
+                    "url": "https://apstudents.collegeboard.org/courses/ap-computer-science-a",
+                    "description": "Official College Board course information"
+                },
+                {
+                    "title": "Course and Exam Description (CED)",
+                    "url": "https://apcentral.collegeboard.org/courses/ap-computer-science-a/course",
+                    "description": "Full CED with unit outlines, topic descriptions, and sample questions"
+                },
+                {
+                    "title": "Java Quick Reference",
+                    "url": "https://apcentral.collegeboard.org/media/pdf/ap-computer-science-a-java-quick-reference.pdf",
+                    "description": "Java Quick Reference sheet provided during the AP exam"
+                },
+                {
+                    "title": "AP Classroom",
+                    "url": "https://myap.collegeboard.org/",
+                    "description": "Practice questions and progress checks (requires College Board account)"
+                },
+            ]
+        }
+        db.session.commit()
+        logger.info('AP Computer Science A course_info populated.')
+
     # --- Load Content JSON Files (auto-discover) ---
     content_dir = os.path.join(os.path.dirname(__file__), 'content')
     discovered = sorted(glob.glob(os.path.join(content_dir, '*.json')))
