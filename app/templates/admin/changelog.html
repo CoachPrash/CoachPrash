@@ -13,6 +13,26 @@
                 <div class="changelog-date">
                     <span class="changelog-date-day">2</span>
                     <span class="changelog-date-month">Jun 2026</span>
+                    <span class="changelog-phase-badge">Fix</span>
+                </div>
+                <div class="changelog-body">
+                    <h2>FRQ Correct Answer Column &mdash; Text Type</h2>
+                    <p class="changelog-summary">Changed the <code>correct_answer</code> column on the Problem model from <code>varchar(500)</code> to <code>Text</code> to support FRQ model answers containing full code blocks.</p>
+
+                    <div class="changelog-section">
+                        <h3>Database</h3>
+                        <ul>
+                            <li>Migration <code>0002</code>: <code>problems.correct_answer</code> changed from <code>String(500)</code> to <code>Text</code></li>
+                            <li>Fixes seed failure on AP CS A content (merge sort FRQ answer was 572 chars, exceeding the 500-char limit)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="changelog-entry">
+                <div class="changelog-date">
+                    <span class="changelog-date-day">2</span>
+                    <span class="changelog-date-month">Jun 2026</span>
                     <span class="changelog-phase-badge">Content</span>
                 </div>
                 <div class="changelog-body">

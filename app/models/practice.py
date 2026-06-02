@@ -33,7 +33,7 @@ class Problem(db.Model):
     question_html = db.Column(db.Text, nullable=False, default='')
     question_raw = db.Column(db.Text, nullable=False, default='')
     problem_type = db.Column(db.String(20), nullable=False, default='mcq')
-    correct_answer = db.Column(db.String(500), nullable=True)
+    correct_answer = db.Column(db.Text, nullable=True)
     points = db.Column(db.Integer, nullable=False, default=1)
     difficulty = db.Column(db.String(20), nullable=False, default='medium')
     display_order = db.Column(db.Integer, nullable=False, default=0)

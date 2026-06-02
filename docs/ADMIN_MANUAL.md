@@ -1,6 +1,6 @@
 # CoachPrash Admin Manual
 
-> **Version:** 19.0 (AP Computer Science A Content)
+> **Version:** 20.0 (FRQ correct_answer Text Column)
 > **Last Updated:** June 2026
 > **Platform:** Flask + PostgreSQL, deployed on Railway
 
