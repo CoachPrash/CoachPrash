@@ -29,6 +29,14 @@
             <div class="quiz-container" id="quizContainer">
                 <div class="quiz-header">
                     <h2>{{ problem_set.title }}</h2>
+                    <div class="quiz-filter-bar" id="quizFilterBar">
+                        <span class="quiz-filter-label">Practice:</span>
+                        <button class="quiz-filter-btn active" data-filter="all">All</button>
+                        <button class="quiz-filter-btn" data-filter="mcq">MCQ</button>
+                        <button class="quiz-filter-btn" data-filter="ftb">Fill in Blank</button>
+                        <button class="quiz-filter-btn" data-filter="frq" style="display:none">Written</button>
+                        <button class="quiz-filter-btn" data-filter="code" style="display:none">Code</button>
+                    </div>
                     <div class="quiz-meta">
                         <span class="quiz-counter" id="quizCounter">Problem 1 of {{ total_problems }}</span>
                         <span class="quiz-timer" id="quizTimer">0:00</span>
@@ -50,6 +58,11 @@
                     <div class="quiz-hints" id="hintsArea"></div>
                     <div class="quiz-solution" id="solutionArea"></div>
                     <button class="btn btn-primary" id="nextBtn" style="display:none">Next Problem</button>
+                </div>
+
+                <div class="quiz-empty-filter" id="quizEmptyFilter" style="display:none">
+                    <p>No problems of this type in your current set.</p>
+                    <button class="btn btn-outline quiz-filter-btn" data-filter="all">Show All Problems</button>
                 </div>
 
                 {% if not is_premium and total_available is defined and total_available > total_problems %}
@@ -101,6 +114,33 @@
 
 {% block scripts %}
 {% if problem_set %}
+{% if has_code_problems %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/code-editor.css') }}?v={{ config.ASSET_VERSION }}">
+<script type="importmap">
+{
+    "imports": {
+        "style-mod": "https://esm.sh/style-mod@4",
+        "w3c-keyname": "https://esm.sh/w3c-keyname@2",
+        "crelt": "https://esm.sh/crelt@1",
+        "@marijn/find-cluster-break": "https://esm.sh/@marijn/find-cluster-break@1",
+        "@lezer/": "https://esm.sh/*@lezer/",
+        "@codemirror/": "https://esm.sh/*@codemirror/",
+        "codemirror": "https://esm.sh/*codemirror"
+    }
+}
+</script>
+<script type="module">
+try {
+    const { initCodeEditor, getEditorCode, setEditorCode } = await import('{{ url_for("static", filename="js/code-editor.js") }}?v={{ config.ASSET_VERSION }}');
+    window._initCodeEditor = initCodeEditor;
+    window._getEditorCode = getEditorCode;
+    window._setEditorCode = setEditorCode;
+    console.log('CodeMirror loaded successfully');
+} catch (e) {
+    console.error('CodeMirror failed to load:', e);
+}
+</script>
+{% endif %}
 <script src="{{ url_for('static', filename='js/practice.js') }}?v={{ config.ASSET_VERSION }}"></script>
 {% endif %}
 {% endblock %}

@@ -57,6 +57,12 @@ def load_content_json(file_path):
     counts = {'topics': 0, 'concepts': 0, 'problem_sets': 0, 'problems': 0,
               'choices': 0, 'hints': 0, 'solutions': 0}
 
+    # Track which topic slugs are in the JSON so we can clean up stale ones
+    json_topic_slugs = set()
+    for tdata in data.get('topics', []):
+        slug = tdata.get('slug', tdata.get('name', '').lower().replace(' ', '-'))
+        json_topic_slugs.add(slug)
+
     for ti, tdata in enumerate(data.get('topics', [])):
         topic_slug = tdata.get('slug', tdata.get('name', f'topic-{ti+1}').lower().replace(' ', '-'))
         topic = Topic.query.filter_by(course_id=course.id, slug=topic_slug).first()
@@ -71,12 +77,12 @@ def load_content_json(file_path):
             )
             db.session.add(topic)
             db.session.flush()
-            counts['topics'] += 1
         else:
             # Update existing topic fields
             topic.name = tdata.get('name', topic.name)
             topic.description = tdata.get('description', topic.description)
             topic.display_order = tdata.get('display_order', ti)
+        counts['topics'] += 1
 
         for ci, cdata in enumerate(tdata.get('concepts', [])):
             slug = cdata.get('slug', cdata.get('title', f'concept-{ci+1}').lower().replace(' ', '-'))
@@ -127,7 +133,7 @@ def load_content_json(file_path):
 
                 for pi, pdata in enumerate(psdata.get('problems', [])):
                     problem_type = pdata.get('problem_type', 'mcq')
-                    if problem_type not in ('mcq', 'ftb', 'frq'):
+                    if problem_type not in ('mcq', 'ftb', 'frq', 'code'):
                         problem_type = 'mcq'
                     problem = Problem(
                         problem_set_id=ps.id,
@@ -135,6 +141,11 @@ def load_content_json(file_path):
                         question_raw=pdata.get('question_raw', ''),
                         problem_type=problem_type,
                         correct_answer=pdata.get('correct_answer', ''),
+                        starter_code=pdata.get('starter_code'),
+                        test_harness=pdata.get('test_harness'),
+                        rubric_json=pdata.get('rubric'),
+                        parts_json=pdata.get('parts_json'),
+                        frq_metadata=pdata.get('frq_metadata'),
                         difficulty=pdata.get('difficulty', 'medium'),
                         points=pdata.get('points', 1),
                         display_order=pdata.get('display_order', pi),
@@ -200,6 +211,28 @@ def load_content_json(file_path):
                     display_order=display_order,
                 )
                 db.session.add(link)
+
+    # Clean up stale topics not in the JSON file
+    stale_topics = Topic.query.filter(
+        Topic.course_id == course.id,
+        ~Topic.slug.in_(json_topic_slugs),
+    ).all()
+    for stale_topic in stale_topics:
+        # Remove topic-concept links and deactivate
+        for link in TopicConcept.query.filter_by(topic_id=stale_topic.id).all():
+            concept = db.session.get(Concept, link.concept_id)
+            if concept:
+                _delete_concept_problems(concept)
+                # Only delete concept if not linked to any other topic
+                other_links = TopicConcept.query.filter(
+                    TopicConcept.concept_id == concept.id,
+                    TopicConcept.topic_id != stale_topic.id,
+                ).count()
+                if other_links == 0:
+                    db.session.delete(concept)
+            db.session.delete(link)
+        db.session.delete(stale_topic)
+        logger.info('Removed stale topic: %s (slug=%s)', stale_topic.name, stale_topic.slug)
 
     db.session.commit()
     logger.info('Content loaded from %s: %s topics, %s concepts, %s problems',

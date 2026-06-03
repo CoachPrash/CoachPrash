@@ -11,6 +11,114 @@
 
             <div class="changelog-entry">
                 <div class="changelog-date">
+                    <span class="changelog-date-day">3</span>
+                    <span class="changelog-date-month">Jun 2026</span>
+                    <span class="changelog-phase-badge">Engine</span>
+                </div>
+                <div class="changelog-body">
+                    <h2>YouCode: In-Browser Java Coding (Phase 1 &amp; 2)</h2>
+                    <p class="changelog-summary">Students can now write and execute Java code directly in the browser with instant feedback. New <code>code</code> problem type with CodeMirror 6 editor, OneCompiler API execution, output-match grading (Tier 1), and method-level test harness grading (Tier 2). 24 existing FRQs converted to auto-graded code problems.</p>
+
+                    <div class="changelog-section">
+                        <h3>Code Editor</h3>
+                        <ul>
+                            <li>CodeMirror 6 integration via esm.sh import maps &mdash; Java syntax highlighting, line numbers, bracket matching, auto-indent</li>
+                            <li>Keyboard shortcut: <kbd>Ctrl+Enter</kbd> to run code</li>
+                            <li>Dark/light theme support, mobile-responsive layout</li>
+                            <li>Starter code pre-filled from problem definition</li>
+                        </ul>
+                    </div>
+                    <div class="changelog-section">
+                        <h3>Code Execution &amp; Grading</h3>
+                        <ul>
+                            <li>OneCompiler API integration for server-side Java compilation and execution (pay-as-you-go, $1 = 2,000 credits)</li>
+                            <li><strong>Tier 1 (Output Match):</strong> Student code wrapped in <code>main()</code>, stdout compared line-by-line against expected output</li>
+                            <li><strong>Tier 2 (Method Test):</strong> Test harness calls student methods with multiple test cases, per-case pass/fail feedback with expected vs actual values</li>
+                            <li>Structured output markers (<code>@@TEST:N:PASS@@</code>) for reliable parsing even when student code prints to stdout</li>
+                            <li>Security: forbidden pattern detection (Runtime.exec, ProcessBuilder, System.exit, file I/O, reflection)</li>
+                            <li>Rate limit: 10 code executions per minute</li>
+                        </ul>
+                    </div>
+                    <div class="changelog-section">
+                        <h3>Database &amp; Backend</h3>
+                        <ul>
+                            <li>Migration <code>0003</code>: Added <code>starter_code</code>, <code>test_harness</code>, <code>rubric_json</code>, <code>parts_json</code>, <code>frq_metadata</code> columns to Problem model</li>
+                            <li><code>AttemptLog.submitted_answer</code> widened from <code>String(500)</code> to <code>Text</code> for code submissions</li>
+                            <li><code>AttemptLog.is_correct</code> changed to <code>nullable=True</code> for FRQ/code problems</li>
+                            <li>New API endpoint: <code>POST /api/practice/run-code</code></li>
+                            <li>CSP updated to allow <code>https://esm.sh</code> for CodeMirror module loading</li>
+                        </ul>
+                    </div>
+                    <div class="changelog-section">
+                        <h3>Content Conversion</h3>
+                        <ul>
+                            <li>24 of 42 AP CSA FRQ problems converted to <code>code</code> type with auto-grading harnesses</li>
+                            <li>14 output-match problems with expected output filled in</li>
+                            <li>10 method-test problems with test cases (inputs, types, expected values)</li>
+                            <li>18 FRQs remain as <code>frq</code> type (traces, explanations, class definitions)</li>
+                        </ul>
+                    </div>
+                    <div class="changelog-section">
+                        <h3>New Files</h3>
+                        <ul>
+                            <li><code>app/utils/onecompiler.py</code> &mdash; OneCompiler API client</li>
+                            <li><code>app/utils/code_grader.py</code> &mdash; Output match + test case grading</li>
+                            <li><code>app/utils/test_runner.py</code> &mdash; Java method test harness builder</li>
+                            <li><code>app/static/js/code-editor.js</code> &mdash; CodeMirror 6 ES module</li>
+                            <li><code>app/static/css/code-editor.css</code> &mdash; Editor and results styling</li>
+                            <li><code>tools/convert_frqs_to_code.py</code> &mdash; FRQ conversion utility</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="changelog-entry">
+                <div class="changelog-date">
+                    <span class="changelog-date-day">3</span>
+                    <span class="changelog-date-month">Jun 2026</span>
+                    <span class="changelog-phase-badge">Engine</span>
+                </div>
+                <div class="changelog-body">
+                    <h2>Practice Page &mdash; Problem Type Filter</h2>
+                    <p class="changelog-summary">Added filter buttons to the practice page so students can jump directly to the problem type they want: All, MCQ, Fill in Blank, Written, or Code. Client-side filtering with instant switching, no page reload.</p>
+
+                    <div class="changelog-section">
+                        <h3>Features</h3>
+                        <ul>
+                            <li>Filter bar: <strong>All | MCQ | Fill in Blank | Written | Code</strong> buttons above quiz area</li>
+                            <li>Buttons auto-hide for types not present in the current problem set</li>
+                            <li>Entire filter bar hidden when only one problem type exists</li>
+                            <li>Filter change resets quiz state (score, timer, progress) for a clean start</li>
+                            <li>Empty filter shows friendly message with &ldquo;Show All&rdquo; button</li>
+                            <li>Retry button resets filter to All</li>
+                            <li>Mastery tracking reports against full problem set regardless of active filter</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="changelog-entry">
+                <div class="changelog-date">
+                    <span class="changelog-date-day">3</span>
+                    <span class="changelog-date-month">Jun 2026</span>
+                    <span class="changelog-phase-badge">Fix</span>
+                </div>
+                <div class="changelog-body">
+                    <h2>Stale Topic Cleanup &amp; Seed Counter Fix</h2>
+                    <p class="changelog-summary">Content loader now removes stale topics that no longer exist in the JSON file. Fixed topic counter in seed logs always showing 0.</p>
+
+                    <div class="changelog-section">
+                        <h3>Fixes</h3>
+                        <ul>
+                            <li>Content loader deletes topics (and their concepts/problems) that are no longer in the JSON file &mdash; fixes phantom &ldquo;Arrays and ArrayLists&rdquo; topic</li>
+                            <li>Topic count in seed logs now counts both new and updated topics (was only counting new)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="changelog-entry">
+                <div class="changelog-date">
                     <span class="changelog-date-day">2</span>
                     <span class="changelog-date-month">Jun 2026</span>
                     <span class="changelog-phase-badge">Fix</span>

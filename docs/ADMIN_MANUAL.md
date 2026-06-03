@@ -1,6 +1,6 @@
 # CoachPrash Admin Manual
 
-> **Version:** 20.0 (FRQ correct_answer Text Column)
+> **Version:** 21.0 (YouCode: In-Browser Java Coding + Problem Type Filter)
 > **Last Updated:** June 2026
 > **Platform:** Flask + PostgreSQL, deployed on Railway
 
@@ -42,6 +42,8 @@
 32. [Database Integrity & Cascades](#32-database-integrity--cascades)
 33. [AP Content & BC-Only Tags](#33-ap-content--bc-only-tags)
 34. [Seed File Management](#34-seed-file-management)
+35. [YouCode: In-Browser Java Coding](#35-youcode-in-browser-java-coding)
+36. [Practice Page Problem Type Filter](#36-practice-page-problem-type-filter)
 
 ---
 
@@ -2278,3 +2280,159 @@ To add a new content file, simply place it in `content/` and run `flask seed`. N
 2. Ensure the target Subject and Course already exist in the database
 3. Navigate to `/admin/seeds` to verify the file appears with correct mapping
 4. Click **Reseed** to load it, or include it in the next `flask seed` run
+
+---
+
+## 35. YouCode: In-Browser Java Coding
+
+YouCode is CoachPrash's signature coding feature — students write and execute Java code directly in the browser with instant auto-graded feedback.
+
+### Architecture Overview
+
+| Component | File | Purpose |
+|-----------|------|---------|
+| Code Editor | `app/static/js/code-editor.js` | CodeMirror 6 ES module (Java syntax, line numbers, Ctrl+Enter) |
+| Editor CSS | `app/static/css/code-editor.css` | Editor container, output panels, test results table |
+| API Client | `app/utils/onecompiler.py` | Sends Java code to OneCompiler API, returns stdout/stderr |
+| Grader | `app/utils/code_grader.py` | Output comparison + test marker parsing |
+| Test Runner | `app/utils/test_runner.py` | Builds Java test harness wrapping student code |
+| API Endpoint | `app/blueprints/study/routes.py` | `POST /api/practice/run-code` |
+| Frontend | `app/static/js/practice.js` | `runCode()` function, result rendering |
+
+### Problem Type: `code`
+
+Code problems use `problem_type: "code"` in qhsJSON. They require:
+
+- **`starter_code`** — Pre-filled code template shown in the editor
+- **`test_harness`** — Grading configuration (see below)
+- **`correct_answer`** — Model solution (shown after submission, never sent to client)
+
+### Test Harness Types
+
+#### Output Match (Tier 1)
+
+Student code is wrapped in `public static void main()` and stdout is compared line-by-line to expected output.
+
+```json
+{
+  "problem_type": "code",
+  "starter_code": "// Write your code below\n",
+  "test_harness": {
+    "type": "output_match",
+    "expected_output": "Hello World\n42",
+    "wrap_in_main": true
+  }
+}
+```
+
+#### Method Test (Tier 2)
+
+Student writes a method. The test runner generates a Java class that calls the method with multiple test cases and outputs structured markers.
+
+```json
+{
+  "problem_type": "code",
+  "starter_code": "public static boolean isEven(int n) {\n    // Your code here\n}",
+  "test_harness": {
+    "type": "method_test",
+    "method_name": "isEven",
+    "class_name": "Solution",
+    "test_cases": [
+      {"inputs": ["4"], "input_types": ["int"], "expected": "true", "description": "Even positive"},
+      {"inputs": ["7"], "input_types": ["int"], "expected": "false", "description": "Odd number"},
+      {"inputs": ["0"], "input_types": ["int"], "expected": "true", "description": "Zero"}
+    ]
+  }
+}
+```
+
+**Supported input types:** `int`, `double`, `boolean`, `String`, `char`, `int[]`, `String[]`, `ArrayList<Integer>`, `ArrayList<String>`, `int[][]`
+
+### OneCompiler API
+
+- **Endpoint:** `https://api.onecompiler.com/v1/run`
+- **Auth:** `X-API-Key` header from `ONECOMPILER_API_KEY` env var
+- **Pricing:** $1 = 2,000 credits, credits never expire, pay-as-you-go
+- **Rate limit:** 10 executions/minute per user (enforced server-side)
+- **Code limit:** 5,000 characters max
+
+**Required environment variable:**
+```
+ONECOMPILER_API_KEY=oc_...
+```
+
+### Security
+
+The `check_forbidden()` function in `onecompiler.py` rejects code containing:
+- `Runtime.getRuntime()`, `ProcessBuilder` — process execution
+- `System.exit` — JVM termination
+- `java.io.File`, `FileWriter`, `FileReader` — file system access
+- `java.lang.reflect` — reflection
+- `Thread.sleep(>5000)` — long sleeps
+
+### Grading Flow
+
+1. Student writes code in CodeMirror editor
+2. Clicks "Run Code" (or Ctrl+Enter)
+3. Frontend sends `{problem_id, code}` to `/api/practice/run-code`
+4. Backend: security check → build executable → OneCompiler API → grade output
+5. Response includes pass/fail, expected vs actual, per-test results
+6. Frontend renders green (pass) or red (fail) output panel
+
+### Test Output Markers
+
+Method test harnesses produce structured markers for reliable parsing:
+
+```
+@@TEST:1:PASS@@
+@@TEST:2:FAIL:expected=true:got=false@@
+@@TEST:3:ERROR:NullPointerException: null@@
+@@RESULTS:1/3@@
+```
+
+### Database Columns (Migration 0003)
+
+| Column | Type | Purpose |
+|--------|------|---------|
+| `starter_code` | Text | Pre-filled code template |
+| `test_harness` | JSON | Grading config (type, expected output, test cases) |
+| `rubric_json` | JSON | Rubric items for display |
+| `parts_json` | JSON | Multi-part FRQ structure (future Tier 3) |
+| `frq_metadata` | JSON | AP FRQ metadata — exam year, question number |
+
+### Content Conversion Tool
+
+`tools/convert_frqs_to_code.py` — Analyzes existing FRQ problems and converts eligible ones to `code` type:
+- Problems with `System.out.println` → `output_match`
+- Problems with method signatures → `method_test` (needs manual test cases)
+- Traces, explanations, class definitions → kept as `frq`
+
+---
+
+## 36. Practice Page Problem Type Filter
+
+### Overview
+
+The practice page now has filter buttons that let students jump directly to the problem type they want:
+
+**Practice: All | MCQ | Fill in Blank | Written | Code**
+
+### How It Works
+
+- **Client-side filtering** — all problems are sent to the client (typically ~7 per concept), JS filters the array instantly
+- **No page reload** — switching filters is instant
+- Buttons auto-hide for types not present in the current problem set
+- Entire filter bar hidden when only one problem type exists
+- Filter change resets quiz state (score, timer, progress) for a clean start
+
+### Freemium Interaction
+
+Freemium gating (first 3 problems free) happens server-side before problems are sent to the client. Filtering operates on the already-gated set. If a free user's 3 problems are all MCQ, filtering to "Code" shows an empty message — this is correct behavior.
+
+### Mastery Tracking
+
+When a filtered quiz is completed, the score is reported against `allProblems.length` (the full set), not the filtered subset. This ensures mastery tracking remains accurate regardless of which filter was active.
+
+### Retry Behavior
+
+Clicking "Try Again" resets the filter to "All" and shows all problems from the beginning.

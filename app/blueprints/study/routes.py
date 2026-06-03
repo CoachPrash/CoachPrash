@@ -74,6 +74,116 @@ def check_answer():
     return jsonify(result)
 
 
+@study_bp.route('/api/practice/run-code', methods=['POST'])
+@limiter.limit('10/minute')
+def run_code():
+    """Execute student Java code and grade against test harness."""
+    data = request.get_json()
+    if not data or 'problem_id' not in data or 'code' not in data:
+        return jsonify({'error': 'Missing required fields'}), 400
+
+    problem = db.session.get(Problem, data['problem_id'])
+    if not problem or problem.problem_type != 'code':
+        return jsonify({'error': 'Problem not found'}), 404
+
+    code = data['code'].strip()
+    if not code:
+        return jsonify({'error': 'No code submitted'}), 400
+
+    from app.utils.onecompiler import (
+        execute_java, check_forbidden,
+        CodeTooLongError, ForbiddenCodeError, QuotaExceededError, OneCompilerError,
+    )
+    from app.utils.code_grader import build_executable, grade_output_match, grade_test_cases
+
+    # Security check
+    try:
+        check_forbidden(code)
+    except ForbiddenCodeError as e:
+        return jsonify({'compile_error': True, 'error': str(e)})
+
+    harness = problem.test_harness or {}
+    harness_type = harness.get('type', 'output_match')
+
+    # Build executable source
+    if harness_type == 'method_test':
+        from app.utils.test_runner import build_method_harness
+        source = build_method_harness(
+            code,
+            harness.get('test_cases', []),
+            class_name=harness.get('class_name', 'Solution'),
+            method_name=harness.get('method_name', ''),
+        )
+    else:
+        source = build_executable(code, harness)
+
+    # Execute via OneCompiler
+    try:
+        result = execute_java(source)
+    except CodeTooLongError as e:
+        return jsonify({'compile_error': True, 'error': str(e)})
+    except QuotaExceededError:
+        return jsonify({'error': 'Code execution service temporarily unavailable. Please try again later.'}), 503
+    except OneCompilerError as e:
+        return jsonify({'error': str(e)}), 500
+
+    # Check for compilation/runtime errors
+    if result['status'] != 'success':
+        error_text = result['stderr'] or result['error'] or 'Unknown error'
+        is_compile = 'error:' in error_text.lower() and 'exception' not in error_text.lower()
+        if is_compile:
+            response = {'compile_error': True, 'error': error_text}
+        else:
+            response = {'runtime_error': True, 'error': error_text}
+
+        # Log attempt
+        if current_user.is_authenticated:
+            attempt = AttemptLog(
+                student_id=current_user.id,
+                problem_id=problem.id,
+                submitted_answer=code[:2000],
+                is_correct=False,
+            )
+            db.session.add(attempt)
+            db.session.commit()
+
+        return jsonify(response)
+
+    # Grade the output
+    if harness_type == 'method_test':
+        test_results = grade_test_cases(result['stdout'], harness.get('test_cases', []))
+        is_correct = test_results['passed'] == test_results['total'] and test_results['total'] > 0
+        response = {
+            'test_results': test_results,
+            'output': result['stdout'],
+        }
+    else:
+        expected = harness.get('expected_output', '')
+        logger.info('run-code output_match: stdout=%r, expected=%r', result['stdout'], expected)
+        grade = grade_output_match(result['stdout'], expected)
+        is_correct = grade['passed']
+        response = {
+            'passed': grade['passed'],
+            'expected': grade['expected'],
+            'actual': grade['actual'],
+            'details': grade['details'],
+            'output': result['stdout'],
+        }
+
+    # Log attempt
+    if current_user.is_authenticated:
+        attempt = AttemptLog(
+            student_id=current_user.id,
+            problem_id=problem.id,
+            submitted_answer=code[:2000],
+            is_correct=is_correct,
+        )
+        db.session.add(attempt)
+        db.session.commit()
+
+    return jsonify(response)
+
+
 @study_bp.route('/api/practice/hint', methods=['POST'])
 @limiter.limit('60/minute')
 def get_hint():

@@ -1849,6 +1849,41 @@ body.sidebar-collapsed .sidebar-footer {
 .quiz-header h2 {
     margin-bottom: 0.75rem;
 }
+.quiz-filter-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+.quiz-filter-label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-right: 0.25rem;
+}
+.quiz-filter-btn {
+    padding: 0.3rem 0.85rem;
+    border: 1px solid var(--primary);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--primary);
+    font-size: 0.82rem;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+}
+.quiz-filter-btn:hover,
+.quiz-filter-btn.active {
+    background: var(--primary);
+    color: #FFF;
+}
+.quiz-empty-filter {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: var(--text-muted);
+}
+.quiz-empty-filter p {
+    margin-bottom: 1rem;
+}
 .quiz-meta {
     display: flex;
     justify-content: space-between;

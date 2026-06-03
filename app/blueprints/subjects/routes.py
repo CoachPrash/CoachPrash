@@ -378,12 +378,15 @@ def practice_page(subject_slug, course_slug, topic_slug, concept_slug):
                 {'id': c.id, 'text': c.choice_text}
                 for c in choices
             ]
+        if p.problem_type == 'code' and p.starter_code:
+            pdata['starter_code'] = p.starter_code
         pdata['hint_count'] = p.hints.count()
         pdata['has_solution'] = p.solution is not None
         problems_data.append(pdata)
 
     import json
     problems_json = json.dumps(problems_data)
+    has_code_problems = any(p.problem_type == 'code' for p in problems)
 
     return render_template(
         'study/practice.html',
@@ -396,6 +399,7 @@ def practice_page(subject_slug, course_slug, topic_slug, concept_slug):
         total_problems=len(problems),
         total_available=total_available,
         is_premium=is_premium,
+        has_code_problems=has_code_problems,
     )
 
 

@@ -18,6 +18,13 @@ document.addEventListener('DOMContentLoaded', function () {
     var problemStartTime = Date.now();
     var timerInterval = null;
     var signupPromptCount = 0;
+    var codeEditorInstance = null;  // CodeMirror editor for 'code' problems
+
+    // Filter state
+    var allProblems = problems;
+    var activeFilter = 'all';
+    var availableTypes = {};
+    allProblems.forEach(function(p) { availableTypes[p.problem_type] = (availableTypes[p.problem_type] || 0) + 1; });
 
     // DOM refs
     var counter = document.getElementById('quizCounter');
@@ -36,6 +43,26 @@ document.addEventListener('DOMContentLoaded', function () {
     var quizContainer = document.getElementById('quizContainer');
     var quizResults = document.getElementById('quizResults');
     var signupPrompt = document.getElementById('signupPrompt');
+    var filterBar = document.getElementById('quizFilterBar');
+    var emptyFilter = document.getElementById('quizEmptyFilter');
+    var quizBody = document.getElementById('quizBody');
+
+    // Filter bar: show/hide buttons based on available types, hide bar if only 1 type
+    if (filterBar) {
+        var typeCount = Object.keys(availableTypes).length;
+        if (typeCount <= 1) {
+            filterBar.style.display = 'none';
+        } else {
+            filterBar.querySelectorAll('.quiz-filter-btn').forEach(function(btn) {
+                var type = btn.getAttribute('data-filter');
+                if (type !== 'all' && !availableTypes[type]) {
+                    btn.style.display = 'none';
+                } else if (type !== 'all') {
+                    btn.style.display = '';
+                }
+            });
+        }
+    }
 
     // Timer
     timerInterval = setInterval(function () {
@@ -61,6 +88,12 @@ document.addEventListener('DOMContentLoaded', function () {
         answered = false;
         selectedAnswer = null;
         problemStartTime = Date.now();
+
+        // Clean up previous code editor
+        if (codeEditorInstance) {
+            codeEditorInstance.destroy();
+            codeEditorInstance = null;
+        }
 
         counter.textContent = 'Problem ' + (index + 1) + ' of ' + problems.length;
         progressFill.style.width = (index / problems.length * 100) + '%';
@@ -100,6 +133,64 @@ document.addEventListener('DOMContentLoaded', function () {
                 });
                 choicesArea.appendChild(btn);
             });
+        } else if (p.problem_type === 'code') {
+            // YouCode: render CodeMirror editor + Run Code button
+            submitBtn.style.display = 'none';  // hide standard submit
+
+            // Editor container
+            var editorWrapper = document.createElement('div');
+            editorWrapper.className = 'code-editor-wrapper';
+            editorWrapper.id = 'codeEditorContainer';
+            choicesArea.appendChild(editorWrapper);
+
+            // Actions: Run Code button + spinner
+            var actionsDiv = document.createElement('div');
+            actionsDiv.className = 'code-actions';
+            actionsDiv.innerHTML = '<button class="btn-run-code" id="runCodeBtn">'
+                + '<span class="run-icon">&#9654;</span> Run Code'
+                + '<span class="run-shortcut">(Ctrl+Enter)</span>'
+                + '</button>'
+                + '<div class="code-spinner" id="codeSpinner"></div>';
+            choicesArea.appendChild(actionsDiv);
+
+            // Output panel
+            var outputPanel = document.createElement('div');
+            outputPanel.className = 'code-output-panel';
+            outputPanel.id = 'codeOutputPanel';
+            outputPanel.innerHTML = '<div class="code-output-header"></div>'
+                + '<div class="code-output-body"></div>';
+            choicesArea.appendChild(outputPanel);
+
+            // Initialize CodeMirror (loaded as ES module — may not be ready yet)
+            function mountEditor() {
+                if (codeEditorInstance) {
+                    codeEditorInstance.destroy();
+                }
+                codeEditorInstance = window._initCodeEditor(
+                    editorWrapper,
+                    p.starter_code || '',
+                    { onRunCode: function () { runCode(p); } }
+                );
+            }
+            if (window._initCodeEditor) {
+                mountEditor();
+            } else {
+                // ES module not loaded yet — poll until ready
+                var cmPoll = setInterval(function() {
+                    if (window._initCodeEditor) {
+                        clearInterval(cmPoll);
+                        // Only mount if this editor wrapper is still in the DOM
+                        if (document.contains(editorWrapper)) {
+                            mountEditor();
+                        }
+                    }
+                }, 100);
+            }
+
+            // Run Code button click
+            var runBtn = document.getElementById('runCodeBtn');
+            runBtn.addEventListener('click', function () { runCode(p); });
+
         } else if (p.problem_type === 'frq') {
             var textarea = document.createElement('textarea');
             textarea.className = 'frq-textarea';
@@ -252,6 +343,51 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    function applyFilter(type) {
+        activeFilter = type;
+        if (type === 'all') {
+            problems = allProblems;
+        } else {
+            problems = allProblems.filter(function(p) { return p.problem_type === type; });
+        }
+
+        // Reset quiz state
+        currentIndex = 0;
+        score = 0;
+        answers = {};
+        hintsRevealed = {};
+        startTime = Date.now();
+        signupPromptCount = 0;
+
+        // Update active button styling
+        document.querySelectorAll('.quiz-filter-btn').forEach(function(btn) {
+            btn.classList.toggle('active', btn.getAttribute('data-filter') === type);
+        });
+
+        // Handle empty result
+        if (problems.length === 0) {
+            if (quizBody) quizBody.style.display = 'none';
+            if (emptyFilter) emptyFilter.style.display = 'block';
+            counter.textContent = 'Problem 0 of 0';
+            progressFill.style.width = '0%';
+            return;
+        }
+
+        if (quizBody) quizBody.style.display = '';
+        if (emptyFilter) emptyFilter.style.display = 'none';
+
+        // Restart timer
+        clearInterval(timerInterval);
+        timerInterval = setInterval(function () {
+            var elapsed = Math.floor((Date.now() - startTime) / 1000);
+            var mins = Math.floor(elapsed / 60);
+            var secs = elapsed % 60;
+            timer.textContent = mins + ':' + (secs < 10 ? '0' : '') + secs;
+        }, 1000);
+
+        showProblem(0);
+    }
+
     function nextProblem() {
         currentIndex++;
         if (currentIndex >= problems.length) {
@@ -288,7 +424,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 body: JSON.stringify({
                     concept_id: quizMeta.concept_id,
                     score: score,
-                    total: problems.length
+                    total: allProblems.length
                 })
             }).catch(function () {});
         }
@@ -413,6 +549,121 @@ document.addEventListener('DOMContentLoaded', function () {
         }, 2500);
     }
 
+    function runCode(problem) {
+        if (!codeEditorInstance || !window._getEditorCode) return;
+        var code = window._getEditorCode(codeEditorInstance);
+        if (!code.trim()) return;
+
+        var runBtn = document.getElementById('runCodeBtn');
+        var spinner = document.getElementById('codeSpinner');
+        var panel = document.getElementById('codeOutputPanel');
+
+        runBtn.disabled = true;
+        spinner.classList.add('active');
+        panel.className = 'code-output-panel';  // reset
+
+        fetch('/api/practice/run-code', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRFToken': csrfToken
+            },
+            body: JSON.stringify({
+                problem_id: problem.id,
+                code: code
+            })
+        })
+        .then(function (r) { return r.json(); })
+        .then(function (data) {
+            runBtn.disabled = false;
+            spinner.classList.remove('active');
+
+            var header = panel.querySelector('.code-output-header');
+            var body = panel.querySelector('.code-output-body');
+
+            if (data.compile_error) {
+                panel.className = 'code-output-panel visible compile-error';
+                header.textContent = 'Compilation Error';
+                body.textContent = data.error;
+            } else if (data.runtime_error) {
+                panel.className = 'code-output-panel visible runtime-error';
+                header.textContent = 'Runtime Error';
+                body.textContent = data.error;
+            } else if (data.test_results) {
+                // Method test results (Tier 2)
+                var passed = data.test_results.passed;
+                var total = data.test_results.total;
+                var allPass = passed === total;
+
+                panel.className = 'code-output-panel visible ' + (allPass ? 'success' : 'fail');
+                header.textContent = passed + ' of ' + total + ' tests passed';
+
+                var tableHtml = '<table class="test-results-table"><thead><tr><th></th><th>Test</th><th>Details</th></tr></thead><tbody>';
+                data.test_results.results.forEach(function (r) {
+                    var rowClass = 'test-' + r.status;
+                    var icon = r.status === 'pass' ? '&#10003;' : (r.status === 'error' ? '&#9888;' : '&#10007;');
+                    var iconClass = r.status;
+                    var detail = '';
+                    if (r.status === 'fail') {
+                        detail = 'Expected: ' + (r.expected || '') + ', Got: ' + (r.actual || '');
+                    } else if (r.status === 'error') {
+                        detail = r.error || 'Exception thrown';
+                    }
+                    tableHtml += '<tr class="' + rowClass + '"><td><span class="test-status-icon ' + iconClass + '">' + icon + '</span></td><td>' + (r.description || 'Test ' + r.case_num) + '</td><td>' + detail + '</td></tr>';
+                });
+                tableHtml += '</tbody></table>';
+                body.innerHTML = tableHtml;
+
+                if (allPass) {
+                    // Auto-grade as correct
+                    answered = true;
+                    score++;
+                    answers[problem.id] = true;
+                    showConfetti();
+                    feedbackArea.innerHTML = '<strong>All tests passed!</strong>';
+                    feedbackArea.className = 'quiz-feedback feedback-correct';
+                    feedbackArea.style.display = 'block';
+                    nextBtn.style.display = '';
+                    if (problem.has_solution) solutionBtn.style.display = '';
+                }
+            } else {
+                // Output match (Tier 1)
+                if (data.passed) {
+                    panel.className = 'code-output-panel visible success';
+                    header.textContent = 'Output Correct!';
+                    body.textContent = data.actual || data.output;
+
+                    answered = true;
+                    score++;
+                    answers[problem.id] = true;
+                    showConfetti();
+                    feedbackArea.innerHTML = '<strong>Correct!</strong>';
+                    feedbackArea.className = 'quiz-feedback feedback-correct';
+                    feedbackArea.style.display = 'block';
+                    nextBtn.style.display = '';
+                    if (problem.has_solution) solutionBtn.style.display = '';
+                } else {
+                    panel.className = 'code-output-panel visible fail';
+                    header.textContent = 'Output Incorrect';
+                    if (data.details && data.details.length) {
+                        body.innerHTML = '<pre>' + data.details.map(function(d) { return d.replace(/</g, '&lt;'); }).join('\n') + '</pre>';
+                    } else {
+                        var exp = (data.expected || '').replace(/</g, '&lt;');
+                        var act = (data.actual || '').replace(/</g, '&lt;');
+                        body.innerHTML = '<pre><strong>Expected:</strong>\n' + exp + '\n\n<strong>Your output:</strong>\n' + act + '</pre>';
+                    }
+                }
+            }
+        })
+        .catch(function (err) {
+            runBtn.disabled = false;
+            spinner.classList.remove('active');
+            panel.className = 'code-output-panel visible compile-error';
+            panel.querySelector('.code-output-header').textContent = 'Error';
+            panel.querySelector('.code-output-body').textContent = 'Failed to run code. Please try again.';
+        });
+    }
+
     // Event listeners
     submitBtn.addEventListener('click', submitAnswer);
     nextBtn.addEventListener('click', nextProblem);
@@ -422,6 +673,12 @@ document.addEventListener('DOMContentLoaded', function () {
     var retryBtn = document.getElementById('retryBtn');
     if (retryBtn) {
         retryBtn.addEventListener('click', function () {
+            // Reset to ALL filter on retry
+            activeFilter = 'all';
+            problems = allProblems;
+            document.querySelectorAll('.quiz-filter-btn').forEach(function(btn) {
+                btn.classList.toggle('active', btn.getAttribute('data-filter') === 'all');
+            });
             currentIndex = 0;
             score = 0;
             answers = {};
@@ -430,6 +687,8 @@ document.addEventListener('DOMContentLoaded', function () {
             signupPromptCount = 0;
             quizResults.style.display = 'none';
             quizContainer.style.display = '';
+            if (quizBody) quizBody.style.display = '';
+            if (emptyFilter) emptyFilter.style.display = 'none';
             timerInterval = setInterval(function () {
                 var elapsed = Math.floor((Date.now() - startTime) / 1000);
                 var mins = Math.floor(elapsed / 60);
@@ -439,6 +698,18 @@ document.addEventListener('DOMContentLoaded', function () {
             showProblem(0);
         });
     }
+
+    // Filter button click handlers
+    document.querySelectorAll('.quiz-filter-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            var type = btn.getAttribute('data-filter');
+            if (type === activeFilter) return;
+            // If results are showing, switch back to quiz view
+            quizResults.style.display = 'none';
+            quizContainer.style.display = '';
+            applyFilter(type);
+        });
+    });
 
     // Start
     showProblem(0);

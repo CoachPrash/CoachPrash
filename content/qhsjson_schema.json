@@ -151,8 +151,8 @@
         },
         "problem_type": {
           "type": "string",
-          "enum": ["mcq", "ftb", "frq"],
-          "description": "Problem type: mcq (multiple choice), ftb (fill-in-the-blank), frq (free response)."
+          "enum": ["mcq", "ftb", "frq", "code"],
+          "description": "Problem type: mcq (multiple choice), ftb (fill-in-the-blank), frq (free response), code (YouCode auto-graded Java)."
         },
         "difficulty": {
           "type": "string",
@@ -192,10 +192,66 @@
           "enum": ["free", "premium"],
           "description": "Optional per-problem access tier. Usually controlled at problem_set level instead."
         },
+        "starter_code": {
+          "type": "string",
+          "description": "Pre-filled code template shown in the editor for 'code' type problems."
+        },
+        "test_harness": {
+          "type": "object",
+          "description": "Test configuration for 'code' problems. Types: output_match (compare stdout), method_test (run test cases against a method).",
+          "properties": {
+            "type": { "type": "string", "enum": ["output_match", "method_test"] },
+            "expected_output": { "type": "string", "description": "For output_match: expected stdout." },
+            "wrap_in_main": { "type": "boolean", "description": "For output_match: wrap student code in main()." },
+            "method_name": { "type": "string", "description": "For method_test: the method to test." },
+            "class_name": { "type": "string", "description": "For method_test: class name. Defaults to Solution." },
+            "test_cases": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "inputs": { "type": "array", "items": { "type": "string" } },
+                  "input_types": { "type": "array", "items": { "type": "string" } },
+                  "expected": { "type": "string" },
+                  "description": { "type": "string" }
+                }
+              }
+            }
+          }
+        },
+        "parts_json": {
+          "type": "array",
+          "description": "Multi-part FRQ structure for AP-style problems. Each part has its own method, test cases, and rubric.",
+          "items": {
+            "type": "object",
+            "properties": {
+              "part_label": { "type": "string" },
+              "description": { "type": "string" },
+              "method_signature": { "type": "string" },
+              "starter_code": { "type": "string" },
+              "test_cases": { "type": "array" },
+              "rubric": { "type": "array", "items": { "type": "string" } },
+              "points": { "type": "integer" },
+              "reference_impl": { "type": "string" },
+              "depends_on": { "type": "array", "items": { "type": "string" } }
+            }
+          }
+        },
+        "frq_metadata": {
+          "type": "object",
+          "description": "AP FRQ metadata for released exam questions.",
+          "properties": {
+            "exam_year": { "type": "integer" },
+            "question_number": { "type": "integer" },
+            "frq_type": { "type": "string" },
+            "source": { "type": "string" },
+            "total_points": { "type": "integer" }
+          }
+        },
         "rubric": {
           "type": "array",
           "items": { "type": "string" },
-          "description": "Rubric items for FRQ self-grading."
+          "description": "Rubric items for FRQ self-grading or code problem grading criteria."
         },
         "sample_answer": {
           "type": "string",
