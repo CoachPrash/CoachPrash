@@ -1,6 +1,6 @@
 # CoachPrash Admin Manual
 
-> **Version:** 21.0 (YouCode: In-Browser Java Coding + Problem Type Filter)
+> **Version:** 22.0 (AP Statistics 2026 CED Content)
 > **Last Updated:** June 2026
 > **Platform:** Flask + PostgreSQL, deployed on Railway
 
