@@ -4516,7 +4516,7 @@
                       "cost_points": 0
                     },
                     {
-                      "text": "Bias ≠ variability. A large biased sample gives a precise but inaccurate result. The online poll is a voluntary response sample. To fix it, use random selection.",
+                      "text": "Bias \\(\neq\\) variability. A large biased sample gives a precise but inaccurate result. The online poll is a voluntary response sample. To fix it, use random selection.",
                       "cost_points": 1
                     }
                   ],
@@ -5258,7 +5258,7 @@
                       "text": "Part (a): Conditional proportion of smokers vaccinated: \\( 80/250 = 0.32 \\). Conditional proportion of non-smokers vaccinated: \\( 420/750 = 0.56 \\)."
                     },
                     {
-                      "text": "Part (b): Since 0.32 ≠ 0.56, the conditional distributions of vaccination status differ between smokers and non-smokers. This indicates an association between smoking status and vaccination status."
+                      "text": "Part (b): Since 0.32 \\(\neq\\) 0.56, the conditional distributions of vaccination status differ between smokers and non-smokers. This indicates an association between smoking status and vaccination status."
                     },
                     {
                       "text": "Part (c): A 100%-segmented bar chart would have two bars of equal height (100%). The Smoker bar would be 32% Vaccinated / 68% Not Vaccinated. The Non-Smoker bar would be 56% Vaccinated / 44% Not Vaccinated. The unequal segment sizes across the bars visually confirm the association."
@@ -9593,7 +9593,7 @@
                   "problem_type": "frq",
                   "difficulty": "medium",
                   "points": 4,
-                  "correct_answer": "(a) The parameter of interest is p = the true proportion of all registered voters who support the proposed tax increase.\n(b) Method A produces an unbiased estimator because it uses random selection, so E(p-hat_A) = p. Method B is biased because self-selection and the online format systematically overestimate support by about 5 points, so E(p-hat_B) = p + 0.05 ≠ p.\n(c) The colleague's argument is not valid. Although Method B has a larger sample size (n = 2,000 vs 250), which reduces variability, it is biased — it systematically overestimates by 5 points. A larger sample does not fix bias; it just produces more precise but consistently wrong estimates. Low variability without unbiasedness is like a marksman who always hits the same wrong spot.\n(d) An ideal estimator is both unbiased (centered on the true parameter) and has low variability (estimates cluster tightly around the center). Method A is unbiased but has moderate variability (SD = 0.031). Method B has lower variability due to larger n, but is biased. Method A is the better choice because bias cannot be reduced by increasing sample size, whereas variability can be reduced by sampling more individuals using Method A's random sampling approach.",
+                  "correct_answer": "(a) The parameter of interest is p = the true proportion of all registered voters who support the proposed tax increase.\n(b) Method A produces an unbiased estimator because it uses random selection, so E(p-hat_A) = p. Method B is biased because self-selection and the online format systematically overestimate support by about 5 points, so E(p-hat_B) = p + 0.05 \\(\neq\\) p.\n(c) The colleague's argument is not valid. Although Method B has a larger sample size (n = 2,000 vs 250), which reduces variability, it is biased — it systematically overestimates by 5 points. A larger sample does not fix bias; it just produces more precise but consistently wrong estimates. Low variability without unbiasedness is like a marksman who always hits the same wrong spot.\n(d) An ideal estimator is both unbiased (centered on the true parameter) and has low variability (estimates cluster tightly around the center). Method A is unbiased but has moderate variability (SD = 0.031). Method B has lower variability due to larger n, but is biased. Method A is the better choice because bias cannot be reduced by increasing sample size, whereas variability can be reduced by sampling more individuals using Method A's random sampling approach.",
                   "hints": [
                     {
                       "text": "For part (b), think about what random sampling guarantees versus what self-selection introduces. For part (c), consider whether a large sample size can fix a fundamental flaw in the sampling method.",
@@ -11086,7 +11086,7 @@
                   "problem_type": "frq",
                   "difficulty": "medium",
                   "points": 4,
-                  "correct_answer": "(a) Let p = the true proportion of all students at this university who complete their degree within four years after the advisor program was implemented.\nH0: p = 0.60 (the completion rate has not changed).\nHa: p ≠ 0.60 (the completion rate has changed).\n(b) A two-sided test is appropriate because the administration wants to know if the rate has changed — it could have increased (the program helped) or decreased (the program was counterproductive or other factors caused a decline). They have no prior reason to predict a specific direction.\n(c) Advantage: Using α = 0.01 reduces the probability of a Type I error from 5% to 1%, meaning the administration is less likely to falsely conclude the rate has changed when it hasn't. This is important for a university making policy decisions.\nDisadvantage: A smaller α makes it harder to reject H0, increasing the probability of a Type II error. The administration might fail to detect a real change in the completion rate, missing the chance to scale up a successful program or fix a failing one.\n(d) The test statistic would be z = (p-hat - p0) / sqrt(p0(1-p0)/n). Here p-hat = 228/350 ≈ 0.6514, p0 = 0.60, n = 350. After computing z, we would find the two-sided p-value = 2 × P(Z > |z|) and compare it to α = 0.01. If the p-value < 0.01, reject H0; otherwise, fail to reject.",
+                  "correct_answer": "(a) Let p = the true proportion of all students at this university who complete their degree within four years after the advisor program was implemented.\nH0: p = 0.60 (the completion rate has not changed).\nHa: p \\(\neq\\) 0.60 (the completion rate has changed).\n(b) A two-sided test is appropriate because the administration wants to know if the rate has changed — it could have increased (the program helped) or decreased (the program was counterproductive or other factors caused a decline). They have no prior reason to predict a specific direction.\n(c) Advantage: Using α = 0.01 reduces the probability of a Type I error from 5% to 1%, meaning the administration is less likely to falsely conclude the rate has changed when it hasn't. This is important for a university making policy decisions.\nDisadvantage: A smaller α makes it harder to reject H0, increasing the probability of a Type II error. The administration might fail to detect a real change in the completion rate, missing the chance to scale up a successful program or fix a failing one.\n(d) The test statistic would be z = (p-hat - p0) / sqrt(p0(1-p0)/n). Here p-hat = 228/350 ≈ 0.6514, p0 = 0.60, n = 350. After computing z, we would find the two-sided p-value = 2 × P(Z > |z|) and compare it to α = 0.01. If the p-value < 0.01, reject H0; otherwise, fail to reject.",
                   "hints": [
                     {
                       "text": "For part (b), the key question is: does the administration expect the program to help, hurt, or simply want to detect any change? For part (d), recall the z-test statistic formula for proportions.",
@@ -13588,7 +13588,7 @@
                   "problem_type": "frq",
                   "difficulty": "medium",
                   "points": 4,
-                  "correct_answer": "(a) Let p_1 = true proportion of adults in City X who smoke. Let p_2 = true proportion of adults in City Y who smoke.\n\n(b) H_0: p_1 - p_2 = 0 (no difference in smoking rates). H_a: p_1 - p_2 ≠ 0 (the smoking rates differ).\n\n(c) p_c = (84 + 108)/(600 + 750) = 192/1350 ≈ 0.1422. Pooling is appropriate because under H_0 we assume p_1 = p_2, so combining the samples gives the best single estimate of this common proportion.\n\n(d) The research question asks whether the rates \"differ,\" with no prior suspicion about which city has the higher rate. A one-sided test requires a directional claim made before seeing the data, which is not the case here.",
+                  "correct_answer": "(a) Let p_1 = true proportion of adults in City X who smoke. Let p_2 = true proportion of adults in City Y who smoke.\n\n(b) H_0: p_1 - p_2 = 0 (no difference in smoking rates). H_a: p_1 - p_2 \\(\neq\\) 0 (the smoking rates differ).\n\n(c) p_c = (84 + 108)/(600 + 750) = 192/1350 ≈ 0.1422. Pooling is appropriate because under H_0 we assume p_1 = p_2, so combining the samples gives the best single estimate of this common proportion.\n\n(d) The research question asks whether the rates \"differ,\" with no prior suspicion about which city has the higher rate. A one-sided test requires a directional claim made before seeing the data, which is not the case here.",
                   "hints": [
                     {
                       "text": "For part (c), remember that pooling is justified by the assumption of H_0, which says the two proportions are equal.",
@@ -13991,7 +13991,7 @@
                   "problem_type": "frq",
                   "difficulty": "hard",
                   "points": 4,
-                  "correct_answer": "STATE: p_1 = true proportion of Chain A shoppers who are very satisfied. p_2 = true proportion of Chain B shoppers who are very satisfied. H_0: p_1 - p_2 = 0; H_a: p_1 - p_2 ≠ 0. α = 0.01.\n\nPLAN: Random — both samples were randomly selected from membership lists. ✓ 10% — 600 is less than 10% of all Chain A shoppers, and 500 is less than 10% of all Chain B shoppers (assuming large chains). ✓ Large Counts: p_c = (216+195)/(600+500) = 411/1100 ≈ 0.3736. 600(0.3736)=224.2 ≥ 10; 600(0.6264)=375.8 ≥ 10; 500(0.3736)=186.8 ≥ 10; 500(0.6264)=313.2 ≥ 10. ✓\n\nDO: p-hat_1 = 216/600 = 0.36, p-hat_2 = 195/500 = 0.39. SE = sqrt(0.3736 × 0.6264 × (1/600 + 1/500)) = sqrt(0.2340 × 0.003667) = sqrt(0.000858) ≈ 0.02929. z = (0.36 - 0.39)/0.02929 = -0.03/0.02929 ≈ -1.02. P-value = 2 × P(z < -1.02) ≈ 2 × 0.1539 = 0.3078.\n\nCONCLUDE: Since the p-value (0.3078) > α (0.01), we fail to reject H_0. There is not convincing evidence of a difference in the proportions of shoppers who are very satisfied between Chain A and Chain B.",
+                  "correct_answer": "STATE: p_1 = true proportion of Chain A shoppers who are very satisfied. p_2 = true proportion of Chain B shoppers who are very satisfied. H_0: p_1 - p_2 = 0; H_a: p_1 - p_2 \\(\neq\\) 0. α = 0.01.\n\nPLAN: Random — both samples were randomly selected from membership lists. ✓ 10% — 600 is less than 10% of all Chain A shoppers, and 500 is less than 10% of all Chain B shoppers (assuming large chains). ✓ Large Counts: p_c = (216+195)/(600+500) = 411/1100 ≈ 0.3736. 600(0.3736)=224.2 ≥ 10; 600(0.6264)=375.8 ≥ 10; 500(0.3736)=186.8 ≥ 10; 500(0.6264)=313.2 ≥ 10. ✓\n\nDO: p-hat_1 = 216/600 = 0.36, p-hat_2 = 195/500 = 0.39. SE = sqrt(0.3736 × 0.6264 × (1/600 + 1/500)) = sqrt(0.2340 × 0.003667) = sqrt(0.000858) ≈ 0.02929. z = (0.36 - 0.39)/0.02929 = -0.03/0.02929 ≈ -1.02. P-value = 2 × P(z < -1.02) ≈ 2 × 0.1539 = 0.3078.\n\nCONCLUDE: Since the p-value (0.3078) > α (0.01), we fail to reject H_0. There is not convincing evidence of a difference in the proportions of shoppers who are very satisfied between Chain A and Chain B.",
                   "hints": [
                     {
                       "text": "This is a two-sided test since the question asks about \"a difference\" (no direction specified). Remember to double the tail area for the p-value.",
@@ -17521,7 +17521,7 @@
                       "cost_points": 0
                     },
                     {
-                      "text": "While the interval excludes 0 (statistically significant), the lower bound of 0.1 pounds is very small. A weight loss difference of 0.1 pounds over 12 weeks is likely not practically meaningful. Statistical significance ≠ practical significance.",
+                      "text": "While the interval excludes 0 (statistically significant), the lower bound of 0.1 pounds is very small. A weight loss difference of 0.1 pounds over 12 weeks is likely not practically meaningful. Statistical significance \\(\neq\\) practical significance.",
                       "cost_points": 1
                     }
                   ],
@@ -17916,11 +17916,11 @@
                   "points": 1,
                   "choices": [
                     {
-                      "text": "The null should have = and the alternative should have ≠, and the subscripts are wrong.",
+                      "text": "The null should have = and the alternative should have \\(\neq\\), and the subscripts are wrong.",
                       "is_correct": false
                     },
                     {
-                      "text": "The null and alternative are swapped: \\( H_0 \\) should have = and \\( H_a \\) should have >, <, or ≠.",
+                      "text": "The null and alternative are swapped: \\( H_0 \\) should have = and \\( H_a \\) should have >, <, or \\(\neq\\).",
                       "is_correct": true
                     },
                     {
@@ -17934,7 +17934,7 @@
                   ],
                   "hints": [
                     {
-                      "text": "Two rules: (1) H₀ always contains = and (2) Hₐ contains ≠, <, or >. Check which hypothesis has the equality.",
+                      "text": "Two rules: (1) H₀ always contains = and (2) Hₐ contains \\(\neq\\), <, or >. Check which hypothesis has the equality.",
                       "cost_points": 0
                     },
                     {
@@ -17947,10 +17947,10 @@
                       "text": "Error 1: \\( H_0 \\) must always contain an equality (=). The student incorrectly wrote \\( H_0: \\mu_M - \\mu_W > 0 \\), which should be in the alternative."
                     },
                     {
-                      "text": "Error 2: \\( H_a \\) must contain an inequality (≠, <, or >). The student wrote \\( H_a: \\mu_M - \\mu_W = 0 \\), which should be in the null."
+                      "text": "Error 2: \\( H_a \\) must contain an inequality (\\(\neq\\), <, or >). The student wrote \\( H_a: \\mu_M - \\mu_W = 0 \\), which should be in the null."
                     },
                     {
-                      "text": "Corrected: \\( H_0: \\mu_M - \\mu_W = 0 \\), \\( H_a: \\mu_M - \\mu_W > 0 \\) (or ≠ 0 for two-sided)."
+                      "text": "Corrected: \\( H_0: \\mu_M - \\mu_W = 0 \\), \\( H_a: \\mu_M - \\mu_W > 0 \\) (or \\(\neq\\) 0 for two-sided)."
                     }
                   ],
                   "access_tier": "premium"
@@ -18389,7 +18389,7 @@
                   "problem_type": "frq",
                   "difficulty": "hard",
                   "points": 4,
-                  "correct_answer": "STATE: Let μ₁ = the true mean dissolved oxygen level (mg/L) in Lake Alpine. Let μ₂ = the true mean dissolved oxygen level (mg/L) in Lake Basin. H₀: μ₁ − μ₂ = 0. Hₐ: μ₁ − μ₂ ≠ 0. α = 0.05.\n\nPLAN: Two-sample t-test for μ₁ − μ₂. Conditions: Random: Both samples are independent random samples. ✓ 10%: Both lakes have far more than 360 and 400 possible water samples. ✓ Normal/Large Sample: n₁ = 36 ≥ 30 and n₂ = 40 ≥ 30. ✓\n\nDO: SE = √(1.5²/36 + 1.8²/40) = √(2.25/36 + 3.24/40) = √(0.0625 + 0.081) = √0.1435 ≈ 0.3788. t = (8.4 − 7.1)/0.3788 = 1.3/0.3788 ≈ 3.432. Using conservative df = min(35, 39) = 35: p-value = 2 × P(t > 3.432) ≈ 2 × 0.0008 ≈ 0.0016.\n\nCONCLUDE: Since the p-value (≈ 0.0016) is less than α = 0.05, we reject H₀. There is convincing evidence that the true mean dissolved oxygen levels in Lake Alpine and Lake Basin are different. Specifically, the data suggest Lake Alpine has a higher mean dissolved oxygen level.",
+                  "correct_answer": "STATE: Let μ₁ = the true mean dissolved oxygen level (mg/L) in Lake Alpine. Let μ₂ = the true mean dissolved oxygen level (mg/L) in Lake Basin. H₀: μ₁ − μ₂ = 0. Hₐ: μ₁ − μ₂ \\(\neq\\) 0. α = 0.05.\n\nPLAN: Two-sample t-test for μ₁ − μ₂. Conditions: Random: Both samples are independent random samples. ✓ 10%: Both lakes have far more than 360 and 400 possible water samples. ✓ Normal/Large Sample: n₁ = 36 ≥ 30 and n₂ = 40 ≥ 30. ✓\n\nDO: SE = √(1.5²/36 + 1.8²/40) = √(2.25/36 + 3.24/40) = √(0.0625 + 0.081) = √0.1435 ≈ 0.3788. t = (8.4 − 7.1)/0.3788 = 1.3/0.3788 ≈ 3.432. Using conservative df = min(35, 39) = 35: p-value = 2 × P(t > 3.432) ≈ 2 × 0.0008 ≈ 0.0016.\n\nCONCLUDE: Since the p-value (≈ 0.0016) is less than α = 0.05, we reject H₀. There is convincing evidence that the true mean dissolved oxygen levels in Lake Alpine and Lake Basin are different. Specifically, the data suggest Lake Alpine has a higher mean dissolved oxygen level.",
                   "hints": [
                     {
                       "text": "Follow the 4 steps: State (define parameters, hypotheses, α), Plan (name the test, check conditions), Do (calculate SE, t, p-value), Conclude (compare p to α, interpret in context).",
@@ -18402,7 +18402,7 @@
                   ],
                   "solution_steps": [
                     {
-                      "text": "STATE: μ₁ = true mean dissolved oxygen (mg/L) in Lake Alpine, μ₂ = true mean in Lake Basin. H₀: μ₁ − μ₂ = 0. Hₐ: μ₁ − μ₂ ≠ 0. α = 0.05."
+                      "text": "STATE: μ₁ = true mean dissolved oxygen (mg/L) in Lake Alpine, μ₂ = true mean in Lake Basin. H₀: μ₁ − μ₂ = 0. Hₐ: μ₁ − μ₂ \\(\neq\\) 0. α = 0.05."
                     },
                     {
                       "text": "PLAN: Two-sample t-test. Random ✓, 10% ✓, Normal/Large Sample (36 ≥ 30, 40 ≥ 30) ✓."
@@ -18421,7 +18421,7 @@
                   "problem_type": "frq",
                   "difficulty": "hard",
                   "points": 4,
-                  "correct_answer": "(a) STATE: Let μ₁ = the true mean productivity score for employees using standing desks. Let μ₂ = the true mean productivity score for employees using traditional desks. H₀: μ₁ − μ₂ = 0. Hₐ: μ₁ − μ₂ ≠ 0. α = 0.05.\n\nPLAN: Two-sample t-test for μ₁ − μ₂. Conditions: Random: Employees were randomly assigned to desk types. ✓ 10%: Not needed for a randomized experiment. ✓ Normal/Large Sample: n₁ = 28 and n₂ = 32. n₂ ≥ 30 ✓. n₁ = 28 < 30, but close to 30. Without evidence of strong skewness/outliers, we proceed. ✓ (approximately)\n\nDO: SE = √(7.5²/28 + 8.2²/32) = √(56.25/28 + 67.24/32) = √(2.009 + 2.101) = √4.110 ≈ 2.027. t = (87.3 − 83.9)/2.027 = 3.4/2.027 ≈ 1.677. Conservative df = min(27, 31) = 27. p-value = 2 × P(t > 1.677 | df = 27) ≈ 2 × 0.053 ≈ 0.105.\n\nCONCLUDE: Since the p-value (≈ 0.105) is greater than α = 0.05, we fail to reject H₀. There is not convincing evidence that the mean productivity scores differ between standing desk and traditional desk users.\n\n(b) Yes, a 95% CI for μ₁ − μ₂ would contain 0. Since we failed to reject H₀ at α = 0.05 using a two-sided test, the corresponding 95% CI must contain the hypothesized value of 0.\n\n(c) Since we failed to reject H₀, we could be making a Type II error: failing to detect a real difference in mean productivity scores when one actually exists. In context, this would mean that standing desks do improve (or decrease) mean productivity, but our study did not have enough evidence to detect it.",
+                  "correct_answer": "(a) STATE: Let μ₁ = the true mean productivity score for employees using standing desks. Let μ₂ = the true mean productivity score for employees using traditional desks. H₀: μ₁ − μ₂ = 0. Hₐ: μ₁ − μ₂ \\(\neq\\) 0. α = 0.05.\n\nPLAN: Two-sample t-test for μ₁ − μ₂. Conditions: Random: Employees were randomly assigned to desk types. ✓ 10%: Not needed for a randomized experiment. ✓ Normal/Large Sample: n₁ = 28 and n₂ = 32. n₂ ≥ 30 ✓. n₁ = 28 < 30, but close to 30. Without evidence of strong skewness/outliers, we proceed. ✓ (approximately)\n\nDO: SE = √(7.5²/28 + 8.2²/32) = √(56.25/28 + 67.24/32) = √(2.009 + 2.101) = √4.110 ≈ 2.027. t = (87.3 − 83.9)/2.027 = 3.4/2.027 ≈ 1.677. Conservative df = min(27, 31) = 27. p-value = 2 × P(t > 1.677 | df = 27) ≈ 2 × 0.053 ≈ 0.105.\n\nCONCLUDE: Since the p-value (≈ 0.105) is greater than α = 0.05, we fail to reject H₀. There is not convincing evidence that the mean productivity scores differ between standing desk and traditional desk users.\n\n(b) Yes, a 95% CI for μ₁ − μ₂ would contain 0. Since we failed to reject H₀ at α = 0.05 using a two-sided test, the corresponding 95% CI must contain the hypothesized value of 0.\n\n(c) Since we failed to reject H₀, we could be making a Type II error: failing to detect a real difference in mean productivity scores when one actually exists. In context, this would mean that standing desks do improve (or decrease) mean productivity, but our study did not have enough evidence to detect it.",
                   "hints": [
                     {
                       "text": "For part (b), remember the connection: if a two-sided test at α fails to reject, the corresponding (1 − α) CI contains the null value. For part (c), identify which type of error is possible based on your decision.",
@@ -18434,7 +18434,7 @@
                   ],
                   "solution_steps": [
                     {
-                      "text": "(a) STATE: μ₁ = true mean productivity for standing desks, μ₂ for traditional. H₀: μ₁ − μ₂ = 0, Hₐ: μ₁ − μ₂ ≠ 0, α = 0.05."
+                      "text": "(a) STATE: μ₁ = true mean productivity for standing desks, μ₂ for traditional. H₀: μ₁ − μ₂ = 0, Hₐ: μ₁ − μ₂ \\(\neq\\) 0, α = 0.05."
                     },
                     {
                       "text": "PLAN: Two-sample t-test. Random assignment ✓, Normal/Large Sample: n₁ = 28 (close to 30), n₂ = 32 ≥ 30 ✓."
