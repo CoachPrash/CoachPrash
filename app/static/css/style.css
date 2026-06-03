@@ -6,6 +6,11 @@
     margin: 0;
     padding: 0;
 }
+/* Protect KaTeX internal elements from global reset */
+.katex * {
+    margin: revert;
+    padding: revert;
+}
 
 :root {
     --primary: #1B365D;
