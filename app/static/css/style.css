@@ -6,10 +6,12 @@
     margin: 0;
     padding: 0;
 }
-/* Protect KaTeX internal elements from global reset */
-.katex * {
-    margin: revert;
-    padding: revert;
+/* Exclude KaTeX internals from global reset — the reset breaks
+   composed symbols like \neq that use rlap/vbox positioning */
+.katex, .katex * {
+    margin: initial;
+    padding: initial;
+    box-sizing: initial;
 }
 
 :root {
