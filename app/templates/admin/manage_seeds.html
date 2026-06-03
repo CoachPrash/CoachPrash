@@ -7,6 +7,12 @@
         <div class="admin-header">
             <h1>Seed File Management</h1>
             <div class="header-actions">
+                <form method="POST" action="{{ url_for('admin_panel.run_full_seed') }}"
+                      class="inline-form"
+                      onsubmit="return confirm('Run full seed?\n\nThis will create any missing subjects/courses and load all content files.\nExisting data will be updated, not duplicated.')">
+                    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                    <button type="submit" class="btn btn-primary">Run Full Seed</button>
+                </form>
                 <a href="{{ url_for('admin_panel.manage_content') }}" class="btn btn-outline">Content Tree</a>
                 <a href="{{ url_for('admin_panel.bulk_import') }}" class="btn btn-outline">Bulk Import</a>
             </div>

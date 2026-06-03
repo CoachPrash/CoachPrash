@@ -1081,6 +1081,19 @@ def manage_seeds():
     return render_template('admin/manage_seeds.html', seed_files=seed_files)
 
 
+@admin_bp.route('/seeds/run-full-seed', methods=['POST'])
+@admin_required
+def run_full_seed():
+    try:
+        from seed import run_seed
+        run_seed()
+        flash('Full seed completed successfully.', 'success')
+    except Exception as e:
+        logger.exception('Error running full seed')
+        flash(f'Error running full seed: {e}', 'danger')
+    return redirect(url_for('admin_panel.manage_seeds'))
+
+
 @admin_bp.route('/seeds/reseed', methods=['POST'])
 @admin_required
 def reseed_file():
