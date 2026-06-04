@@ -13,6 +13,27 @@
                 <div class="changelog-date">
                     <span class="changelog-date-day">3</span>
                     <span class="changelog-date-month">Jun 2026</span>
+                    <span class="changelog-phase-badge">Engine</span>
+                </div>
+                <div class="changelog-body">
+                    <h2>Content Spec &amp; Token Optimization</h2>
+                    <p class="changelog-summary">Added <code>docs/CONTENT_SPEC.md</code> as the single source of truth for the qhsJSON content format. All future content generation agents read this file instead of receiving inline instructions, reducing token usage by ~50-60% per course build.</p>
+
+                    <div class="changelog-section">
+                        <h3>What Changed</h3>
+                        <ul>
+                            <li><strong>docs/CONTENT_SPEC.md:</strong> Complete qhsJSON schema, all 3 problem types (MCQ/FTB/FRQ), freemium rules, problem ordering table, and a full worked example</li>
+                            <li><strong>Agent strategy:</strong> 1 agent per unit (was 3), minimal prompts (&lt;300 words), validate via Python scripts not file reads</li>
+                            <li><strong>Applies to all courses:</strong> AP, standard (Algebra 1, Chemistry), and test prep (SAT, ACT)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="changelog-entry">
+                <div class="changelog-date">
+                    <span class="changelog-date-day">3</span>
+                    <span class="changelog-date-month">Jun 2026</span>
                     <span class="changelog-phase-badge">Content</span>
                 </div>
                 <div class="changelog-body">

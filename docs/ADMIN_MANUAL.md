@@ -1,6 +1,6 @@
 # CoachPrash Admin Manual
 
-> **Version:** 22.0 (AP Statistics 2026 CED Content)
+> **Version:** 23.0 (Content Spec & Token Optimization)
 > **Last Updated:** June 2026
 > **Platform:** Flask + PostgreSQL, deployed on Railway
 
