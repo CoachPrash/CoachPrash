@@ -131,12 +131,14 @@
       "alt_text": "Three functions where the upper and lower bounding functions both approach the same limit L, squeezing the middle function to the same limit",
       "params": {
         "type": "squeeze",
-        "function": "x**2 * sin(1/x)",
-        "x_range": [-1, 1],
-        "a": 0,
-        "b": 0,
-        "n": 0,
-        "title": "Squeeze Theorem: g(x) <= f(x) <= h(x)"
+        "x_range": [-1.5, 1.5],
+        "squeeze_at": 0,
+        "functions": [
+          {"expr": "-x**2", "label": "$g(x) = -x^2$", "color": "#2D8659"},
+          {"expr": "x**2 * sin(1/x)", "label": "$f(x) = x^2\\sin(1/x)$", "color": "#1B365D"},
+          {"expr": "x**2", "label": "$h(x) = x^2$", "color": "#C41E3A"}
+        ],
+        "title": "Squeeze Theorem: $g(x) \\leq f(x) \\leq h(x)$"
       }
     },
     {
