@@ -1,6 +1,6 @@
 # CoachPrash Admin Manual
 
-> **Version:** 25.0 (Math Keyboard & FTB Answer Tolerance)
+> **Version:** 26.0 (AP Statistics Diagrams & Git-Tracked Images)
 > **Last Updated:** June 2026
 > **Platform:** Flask + PostgreSQL, deployed on Railway
 

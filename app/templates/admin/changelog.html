@@ -11,6 +11,28 @@
 
             <div class="changelog-entry">
                 <div class="changelog-date">
+                    <span class="changelog-date-day">4</span>
+                    <span class="changelog-date-month">Jun 2026</span>
+                    <span class="changelog-phase-badge">Content</span>
+                </div>
+                <div class="changelog-body">
+                    <h2>AP Statistics Diagrams &amp; Git-Tracked Image Pipeline</h2>
+                    <p class="changelog-summary">Added 25 auto-generated SVG diagrams to AP Statistics covering normal distributions, box plots, scatter plots, Venn diagrams, histograms, and more. All 100 course images (75 Calculus + 25 Statistics) are now git-tracked under content/images/ mirroring the bucket structure.</p>
+
+                    <div class="changelog-section">
+                        <h3>What Changed</h3>
+                        <ul>
+                            <li><strong>Statistics renderer:</strong> New diagram_renderers/statistics.py with 9 diagram types: normal_curve, histogram, boxplot, scatter_regression, residual_plot, venn, dotplot, sampling_distribution, confidence_interval</li>
+                            <li><strong>25 concept diagrams:</strong> Empirical rule, binomial distribution, box plots, scatter/regression, residual plots, Venn diagrams (mutually exclusive, conditional, union), p-values, CLT, confidence intervals, and more</li>
+                            <li><strong>Git-tracked images:</strong> All SVGs stored in content/images/mathematics/{course-slug}/ mirroring the bucket path for portability</li>
+                            <li><strong>Upload script:</strong> Now loads .env automatically for local development</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="changelog-entry">
+                <div class="changelog-date">
                     <span class="changelog-date-day">3</span>
                     <span class="changelog-date-month">Jun 2026</span>
                     <span class="changelog-phase-badge">Engine</span>

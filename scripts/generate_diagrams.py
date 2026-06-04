@@ -20,6 +20,7 @@ from diagram_renderers import (
     solid_revolution,
     parametric_polar,
     series_visual,
+    statistics,
 )
 
 RENDERERS = {
@@ -30,6 +31,7 @@ RENDERERS = {
     'solid_revolution': solid_revolution,
     'parametric_polar': parametric_polar,
     'series_visual': series_visual,
+    'statistics': statistics,
 }
 
 

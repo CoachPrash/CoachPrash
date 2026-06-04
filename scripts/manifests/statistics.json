@@ -1,0 +1,509 @@
+{
+  "course": "ap-statistics",
+  "subject": "mathematics",
+  "images": [
+    {
+      "id": "stat-001",
+      "bucket_key": "images/mathematics/ap-statistics/normal-distribution-empirical-rule.svg",
+      "category": "statistics",
+      "concept_slug": "the-normal-distribution",
+      "location": "content_html",
+      "problem_index": null,
+      "description": "Standard normal distribution curve showing the 68-95-99.7 empirical rule with shaded regions at 1, 2, and 3 standard deviations from the mean",
+      "alt_text": "Bell-shaped normal distribution curve centered at mu equals 0, with vertical dashed lines marking 1, 2, and 3 standard deviations showing the 68-95-99.7 rule",
+      "params": {
+        "type": "normal_curve",
+        "mu": 0,
+        "sigma": 1,
+        "show_empirical": true,
+        "shade_between": [-1, 1],
+        "title": "The Normal Distribution: Empirical Rule"
+      }
+    },
+    {
+      "id": "stat-002",
+      "bucket_key": "images/mathematics/ap-statistics/binomial-distribution-n10-p05.svg",
+      "category": "statistics",
+      "concept_slug": "the-binomial-distribution",
+      "location": "content_html",
+      "problem_index": null,
+      "description": "Histogram of a binomial distribution with n=10 and p=0.5, showing the symmetric bell-shaped pattern of discrete probabilities",
+      "alt_text": "Bar chart showing binomial probabilities for X equals 0 through 10 with n equals 10 and p equals 0.5, symmetric and centered at 5",
+      "params": {
+        "type": "histogram",
+        "categories": ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
+        "frequencies": [0.001, 0.010, 0.044, 0.117, 0.205, 0.246, 0.205, 0.117, 0.044, 0.010, 0.001],
+        "x_label": "Number of Successes (X)",
+        "y_label": "Probability P(X = k)",
+        "title": "Binomial Distribution: $n = 10, p = 0.5$"
+      }
+    },
+    {
+      "id": "stat-003",
+      "bucket_key": "images/mathematics/ap-statistics/boxplot-five-number-summary.svg",
+      "category": "statistics",
+      "concept_slug": "graphical-representations-summary-statistics",
+      "location": "content_html",
+      "problem_index": null,
+      "description": "Annotated box plot showing all five-number summary components: minimum, Q1, median, Q3, and maximum with labeled parts",
+      "alt_text": "Box plot with annotations pointing to each component: minimum at 12, Q1 at 25, median at 35, Q3 at 48, and maximum at 67",
+      "params": {
+        "type": "boxplot",
+        "datasets": [
+          {
+            "label": "Test Scores",
+            "min": 12,
+            "q1": 25,
+            "median": 35,
+            "q3": 48,
+            "max": 67
+          }
+        ],
+        "annotate": true,
+        "y_label": "Score",
+        "title": "Five-Number Summary: Box Plot Anatomy"
+      }
+    },
+    {
+      "id": "stat-004",
+      "bucket_key": "images/mathematics/ap-statistics/scatter-plot-positive-regression.svg",
+      "category": "statistics",
+      "concept_slug": "graphical-representations-two-quantitative-variables",
+      "location": "content_html",
+      "problem_index": null,
+      "description": "Scatter plot of study hours vs exam score showing a strong positive linear relationship with least-squares regression line and r = 0.87",
+      "alt_text": "Scatter plot with points trending upward from left to right. A regression line is drawn through the data with r equals 0.87 displayed",
+      "params": {
+        "type": "scatter_regression",
+        "points": [
+          {"x": 1, "y": 52}, {"x": 2, "y": 58}, {"x": 2.5, "y": 64},
+          {"x": 3, "y": 61}, {"x": 3.5, "y": 68}, {"x": 4, "y": 72},
+          {"x": 4.5, "y": 70}, {"x": 5, "y": 78}, {"x": 5.5, "y": 80},
+          {"x": 6, "y": 82}, {"x": 6.5, "y": 79}, {"x": 7, "y": 88},
+          {"x": 7.5, "y": 85}, {"x": 8, "y": 91}, {"x": 8.5, "y": 90},
+          {"x": 9, "y": 94}, {"x": 10, "y": 96}
+        ],
+        "regression_line": {"slope": 4.85, "intercept": 47.5},
+        "r_value": 0.97,
+        "labels": {"x": "Study Hours", "y": "Exam Score"},
+        "title": "Scatter Plot with Least-Squares Regression Line"
+      }
+    },
+    {
+      "id": "stat-005",
+      "bucket_key": "images/mathematics/ap-statistics/residual-plot-good-fit.svg",
+      "category": "statistics",
+      "concept_slug": "residuals",
+      "location": "content_html",
+      "problem_index": null,
+      "description": "Residual plot showing randomly scattered points around the horizontal line at zero, indicating a good linear fit with no pattern",
+      "alt_text": "Residual plot with points scattered randomly above and below the dashed line at residual equals zero, showing no systematic pattern",
+      "params": {
+        "type": "residual_plot",
+        "points": [
+          {"x": 1, "residual": -0.35}, {"x": 2, "residual": 0.80}, {"x": 2.5, "residual": 1.38},
+          {"x": 3, "residual": -2.13}, {"x": 3.5, "residual": 0.55}, {"x": 4, "residual": 1.20},
+          {"x": 4.5, "residual": -1.30}, {"x": 5, "residual": 2.18}, {"x": 5.5, "residual": 1.68},
+          {"x": 6, "residual": 0.65}, {"x": 6.5, "residual": -3.85}, {"x": 7, "residual": 2.63},
+          {"x": 7.5, "residual": -1.88}, {"x": 8, "residual": 0.60}, {"x": 8.5, "residual": -2.90},
+          {"x": 9, "residual": 0.58}, {"x": 10, "residual": 0.98}
+        ],
+        "labels": {"x": "Study Hours", "y": "Residual (Actual - Predicted)"},
+        "title": "Residual Plot: Good Linear Fit (No Pattern)"
+      }
+    },
+    {
+      "id": "stat-006",
+      "bucket_key": "images/mathematics/ap-statistics/venn-mutually-exclusive.svg",
+      "category": "statistics",
+      "concept_slug": "mutually-exclusive-events",
+      "location": "content_html",
+      "problem_index": null,
+      "description": "Venn diagram showing two non-overlapping circles representing mutually exclusive events A and B with no intersection",
+      "alt_text": "Two separate circles labeled A and B that do not overlap, inside a rectangle labeled U, showing that A intersect B equals empty set",
+      "params": {
+        "type": "venn",
+        "sets": [
+          {"label": "A", "value": "P(A)"},
+          {"label": "B", "value": "P(B)"}
+        ],
+        "mutually_exclusive": true,
+        "show_universal": true,
+        "title": "Mutually Exclusive Events: $A \\cap B = \\emptyset$"
+      }
+    },
+    {
+      "id": "stat-007",
+      "bucket_key": "images/mathematics/ap-statistics/right-skewed-distribution.svg",
+      "category": "statistics",
+      "concept_slug": "describing-distribution-quantitative-variable",
+      "location": "content_html",
+      "problem_index": null,
+      "description": "Histogram of a right-skewed distribution with the tail extending to the right, showing mean pulled above the median",
+      "alt_text": "Histogram with bars peaking on the left side and tapering off to the right, showing a right-skewed distribution shape",
+      "params": {
+        "type": "histogram",
+        "categories": ["0-10", "10-20", "20-30", "30-40", "40-50", "50-60", "60-70", "70-80", "80-90"],
+        "frequencies": [35, 28, 18, 10, 5, 2, 1, 0.5, 0.3],
+        "x_label": "Value",
+        "y_label": "Frequency",
+        "title": "Right-Skewed Distribution (Skewed Right)"
+      }
+    },
+    {
+      "id": "stat-008",
+      "bucket_key": "images/mathematics/ap-statistics/sampling-distribution-clt.svg",
+      "category": "statistics",
+      "concept_slug": "sampling-distributions-and-the-central-limit-theorem",
+      "location": "content_html",
+      "problem_index": null,
+      "description": "Comparison of population distribution and sampling distribution of the sample mean, showing the CLT effect with n=30",
+      "alt_text": "Two overlaid bell curves: a wider dashed curve for the population distribution and a narrower solid curve for the sampling distribution of x-bar with n equals 30",
+      "params": {
+        "type": "sampling_distribution",
+        "pop_mu": 100,
+        "pop_sigma": 15,
+        "n": 30,
+        "title": "Central Limit Theorem: Population vs. Sampling Distribution"
+      }
+    },
+    {
+      "id": "stat-009",
+      "bucket_key": "images/mathematics/ap-statistics/confidence-interval-proportion.svg",
+      "category": "statistics",
+      "concept_slug": "constructing-confidence-interval-population-proportion",
+      "location": "content_html",
+      "problem_index": null,
+      "description": "Number line showing a 95% confidence interval for a population proportion with point estimate at 0.62 and margin of error 0.048",
+      "alt_text": "Number line with a thick horizontal segment from 0.572 to 0.668 representing the 95% confidence interval, with a dot at the point estimate 0.62",
+      "params": {
+        "type": "confidence_interval",
+        "estimate": 0.62,
+        "margin": 0.048,
+        "cl_label": "95% CI",
+        "parameter": "p",
+        "title": "95% Confidence Interval for a Proportion"
+      }
+    },
+    {
+      "id": "stat-010",
+      "bucket_key": "images/mathematics/ap-statistics/venn-conditional-probability.svg",
+      "category": "statistics",
+      "concept_slug": "conditional-probability",
+      "location": "content_html",
+      "problem_index": null,
+      "description": "Venn diagram showing two overlapping circles A and B with the intersection shaded to represent P(A and B) for conditional probability",
+      "alt_text": "Two overlapping circles labeled A and B inside a rectangle labeled U, with the overlap region shaded in gold to highlight the intersection",
+      "params": {
+        "type": "venn",
+        "sets": [
+          {"label": "A", "value": "0.4"},
+          {"label": "B", "value": "0.3"}
+        ],
+        "intersection": "0.15",
+        "shade_intersection": true,
+        "show_universal": true,
+        "title": "Conditional Probability: $P(A | B) = \\frac{P(A \\cap B)}{P(B)}$"
+      }
+    },
+    {
+      "id": "stat-011",
+      "bucket_key": "images/mathematics/ap-statistics/bar-chart-categorical.svg",
+      "category": "statistics",
+      "concept_slug": "graphical-representations-one-categorical-variable",
+      "location": "content_html",
+      "problem_index": null,
+      "description": "Bar chart showing favorite subjects among surveyed students with bars for Math, Science, English, History, and Art",
+      "alt_text": "Vertical bar chart with five bars showing frequency of favorite subject: Math 45, Science 38, English 30, History 22, Art 15",
+      "params": {
+        "type": "histogram",
+        "categories": ["Math", "Science", "English", "History", "Art"],
+        "frequencies": [45, 38, 30, 22, 15],
+        "x_label": "Favorite Subject",
+        "y_label": "Number of Students",
+        "title": "Bar Chart: Favorite Subject (Categorical Data)"
+      }
+    },
+    {
+      "id": "stat-012",
+      "bucket_key": "images/mathematics/ap-statistics/histogram-quantitative.svg",
+      "category": "statistics",
+      "concept_slug": "representing-quantitative-variable-graphs",
+      "location": "content_html",
+      "problem_index": null,
+      "description": "Histogram of exam scores showing a roughly symmetric, bell-shaped distribution centered around 75",
+      "alt_text": "Histogram with bins from 40 to 100 showing frequency of exam scores, roughly symmetric and centered near 75",
+      "params": {
+        "type": "histogram",
+        "bins": [40, 50, 60, 70, 80, 90, 100],
+        "frequencies": [5, 12, 25, 30, 20, 8],
+        "x_label": "Exam Score",
+        "y_label": "Frequency",
+        "title": "Histogram: Distribution of Exam Scores"
+      }
+    },
+    {
+      "id": "stat-013",
+      "bucket_key": "images/mathematics/ap-statistics/side-by-side-boxplots.svg",
+      "category": "statistics",
+      "concept_slug": "comparisons-of-distributions",
+      "location": "content_html",
+      "problem_index": null,
+      "description": "Side-by-side horizontal box plots comparing test scores for Class A and Class B, showing differences in center and spread",
+      "alt_text": "Two horizontal box plots stacked vertically: Class A centered around 72 with smaller spread, Class B centered around 68 with larger spread and an outlier at 95",
+      "params": {
+        "type": "boxplot",
+        "datasets": [
+          {
+            "label": "Class A",
+            "min": 55,
+            "q1": 65,
+            "median": 72,
+            "q3": 80,
+            "max": 88
+          },
+          {
+            "label": "Class B",
+            "min": 40,
+            "q1": 58,
+            "median": 68,
+            "q3": 78,
+            "max": 90,
+            "outliers": [95]
+          }
+        ],
+        "annotate": false,
+        "x_label": "Test Score",
+        "title": "Comparing Distributions: Class A vs. Class B"
+      }
+    },
+    {
+      "id": "stat-014",
+      "bucket_key": "images/mathematics/ap-statistics/venn-union-events.svg",
+      "category": "statistics",
+      "concept_slug": "independent-events-unions",
+      "location": "content_html",
+      "problem_index": null,
+      "description": "Venn diagram showing two overlapping events A and B with all regions labeled to illustrate the Addition Rule for unions",
+      "alt_text": "Two overlapping circles labeled A and B inside a rectangle U, with P(A only), P(A and B), and P(B only) labeled in each region",
+      "params": {
+        "type": "venn",
+        "sets": [
+          {"label": "A", "value": "P(A only)"},
+          {"label": "B", "value": "P(B only)"}
+        ],
+        "intersection": "P(A and B)",
+        "show_universal": true,
+        "title": "Addition Rule: $P(A \\cup B) = P(A) + P(B) - P(A \\cap B)$"
+      }
+    },
+    {
+      "id": "stat-015",
+      "bucket_key": "images/mathematics/ap-statistics/probability-distribution-histogram.svg",
+      "category": "statistics",
+      "concept_slug": "intro-random-variables-probability-distributions",
+      "location": "content_html",
+      "problem_index": null,
+      "description": "Probability distribution histogram for a discrete random variable X representing the number of heads in 3 coin flips",
+      "alt_text": "Bar chart showing probabilities: P(X=0) equals 0.125, P(X=1) equals 0.375, P(X=2) equals 0.375, P(X=3) equals 0.125",
+      "params": {
+        "type": "histogram",
+        "categories": ["0", "1", "2", "3"],
+        "frequencies": [0.125, 0.375, 0.375, 0.125],
+        "x_label": "X = Number of Heads",
+        "y_label": "Probability P(X = k)",
+        "title": "Probability Distribution: 3 Coin Flips"
+      }
+    },
+    {
+      "id": "stat-016",
+      "bucket_key": "images/mathematics/ap-statistics/normal-mean-std-annotated.svg",
+      "category": "statistics",
+      "concept_slug": "parameters-of-random-variables",
+      "location": "content_html",
+      "problem_index": null,
+      "description": "Normal distribution curve with the mean marked at center and standard deviation intervals labeled, illustrating parameters of a random variable",
+      "alt_text": "Bell curve centered at mu equals 70 with sigma equals 8, vertical lines at mu minus sigma (62) and mu plus sigma (78) marking the central 68 percent region",
+      "params": {
+        "type": "normal_curve",
+        "mu": 70,
+        "sigma": 8,
+        "shade_between": [62, 78],
+        "title": "Parameters: Mean ($\\mu = 70$) and Std Dev ($\\sigma = 8$)"
+      }
+    },
+    {
+      "id": "stat-017",
+      "bucket_key": "images/mathematics/ap-statistics/sampling-dist-p-hat.svg",
+      "category": "statistics",
+      "concept_slug": "sampling-distributions-for-sample-proportions",
+      "location": "content_html",
+      "problem_index": null,
+      "description": "Normal approximation of the sampling distribution of p-hat centered at p=0.6 with standard error labeled",
+      "alt_text": "Bell curve centered at 0.6 representing the sampling distribution of p-hat with n equals 100 and standard error 0.049",
+      "params": {
+        "type": "normal_curve",
+        "mu": 0.6,
+        "sigma": 0.049,
+        "shade_between": [0.502, 0.698],
+        "title": "Sampling Distribution of $\\hat{p}$ ($n = 100$, $p = 0.6$)"
+      }
+    },
+    {
+      "id": "stat-018",
+      "bucket_key": "images/mathematics/ap-statistics/p-value-right-tail.svg",
+      "category": "statistics",
+      "concept_slug": "p-values",
+      "location": "content_html",
+      "problem_index": null,
+      "description": "Standard normal curve with the right tail shaded beyond z=1.8 to illustrate a one-sided p-value",
+      "alt_text": "Standard normal bell curve with the area to the right of z equals 1.8 shaded in red, representing the p-value of 0.036",
+      "params": {
+        "type": "normal_curve",
+        "mu": 0,
+        "sigma": 1,
+        "shade_right": 1.8,
+        "z_scores": [-1.8, 0, 1.8],
+        "title": "P-Value: Right-Tailed Test ($z = 1.8$, $p = 0.036$)"
+      }
+    },
+    {
+      "id": "stat-019",
+      "bucket_key": "images/mathematics/ap-statistics/type-i-type-ii-errors.svg",
+      "category": "statistics",
+      "concept_slug": "potential-errors-when-performing-tests",
+      "location": "content_html",
+      "problem_index": null,
+      "description": "Two overlapping normal curves showing the null and alternative distributions with Type I (alpha) and Type II (beta) error regions shaded",
+      "alt_text": "Two bell curves: the null distribution centered at 0 with right tail shaded as alpha (Type I error), and the alternative distribution centered at 2 with left tail shaded as beta (Type II error)",
+      "params": {
+        "type": "normal_curve",
+        "mu": 0,
+        "sigma": 1,
+        "shade_right": 1.645,
+        "title": "Type I Error ($\\alpha$): Rejecting a True $H_0$"
+      }
+    },
+    {
+      "id": "stat-020",
+      "bucket_key": "images/mathematics/ap-statistics/sampling-dist-x-bar.svg",
+      "category": "statistics",
+      "concept_slug": "sampling-distributions-for-sample-means",
+      "location": "content_html",
+      "problem_index": null,
+      "description": "Sampling distribution of the sample mean x-bar with population mean 50 and standard error labeled for n=25",
+      "alt_text": "Bell curve centered at mu equals 50 representing the sampling distribution of x-bar with n equals 25 and standard error 2",
+      "params": {
+        "type": "sampling_distribution",
+        "pop_mu": 50,
+        "pop_sigma": 10,
+        "n": 25,
+        "title": "Sampling Distribution of $\\bar{x}$ ($n = 25$, $\\sigma = 10$)"
+      }
+    },
+    {
+      "id": "stat-021",
+      "bucket_key": "images/mathematics/ap-statistics/correlation-strength.svg",
+      "category": "statistics",
+      "concept_slug": "correlation",
+      "location": "content_html",
+      "problem_index": null,
+      "description": "Scatter plot showing a moderate positive linear relationship with r=0.72",
+      "alt_text": "Scatter plot with points showing a moderate upward trend with noticeable spread, r equals 0.72",
+      "params": {
+        "type": "scatter_regression",
+        "points": [
+          {"x": 1, "y": 15}, {"x": 2, "y": 22}, {"x": 3, "y": 18},
+          {"x": 4, "y": 30}, {"x": 5, "y": 28}, {"x": 6, "y": 35},
+          {"x": 7, "y": 32}, {"x": 8, "y": 40}, {"x": 9, "y": 38},
+          {"x": 10, "y": 45}, {"x": 11, "y": 42}, {"x": 12, "y": 50},
+          {"x": 3, "y": 25}, {"x": 5, "y": 22}, {"x": 7, "y": 38},
+          {"x": 9, "y": 35}, {"x": 11, "y": 48}
+        ],
+        "regression_line": {"slope": 3.1, "intercept": 12.5},
+        "r_value": 0.72,
+        "labels": {"x": "Hours of Study per Week", "y": "Quiz Score"},
+        "title": "Correlation: $r = 0.72$ (Moderate Positive)"
+      }
+    },
+    {
+      "id": "stat-022",
+      "bucket_key": "images/mathematics/ap-statistics/regression-line-predictions.svg",
+      "category": "statistics",
+      "concept_slug": "linear-regression-models",
+      "location": "content_html",
+      "problem_index": null,
+      "description": "Scatter plot with regression line showing a prediction: given x=6, the predicted y-hat is marked on the line with a dashed reference",
+      "alt_text": "Scatter plot with regression line and dashed lines showing how to read a predicted value: at x equals 6, y-hat equals approximately 34",
+      "params": {
+        "type": "scatter_regression",
+        "points": [
+          {"x": 1, "y": 10}, {"x": 2, "y": 15}, {"x": 3, "y": 18},
+          {"x": 4, "y": 22}, {"x": 5, "y": 28}, {"x": 6, "y": 35},
+          {"x": 7, "y": 33}, {"x": 8, "y": 40}, {"x": 9, "y": 42},
+          {"x": 10, "y": 48}
+        ],
+        "regression_line": {"slope": 4.2, "intercept": 6.5},
+        "r_value": 0.98,
+        "labels": {"x": "Fertilizer (oz)", "y": "Plant Height (cm)"},
+        "title": "Linear Regression: Predicting Plant Height"
+      }
+    },
+    {
+      "id": "stat-023",
+      "bucket_key": "images/mathematics/ap-statistics/lsrl-residual-segments.svg",
+      "category": "statistics",
+      "concept_slug": "least-squares-regression",
+      "location": "content_html",
+      "problem_index": null,
+      "description": "Scatter plot with regression line and vertical segments drawn from each data point to the line, illustrating residuals that LSRL minimizes",
+      "alt_text": "Scatter plot with a regression line and red vertical line segments connecting each data point to the line, showing the residual distances",
+      "params": {
+        "type": "scatter_regression",
+        "points": [
+          {"x": 1, "y": 12}, {"x": 2, "y": 18}, {"x": 3, "y": 15},
+          {"x": 4, "y": 25}, {"x": 5, "y": 23}, {"x": 6, "y": 30},
+          {"x": 7, "y": 28}, {"x": 8, "y": 36}
+        ],
+        "regression_line": {"slope": 3.4, "intercept": 8.0},
+        "r_value": 0.96,
+        "labels": {"x": "x", "y": "y"},
+        "title": "Least-Squares Regression: Minimizing Residuals"
+      }
+    },
+    {
+      "id": "stat-024",
+      "bucket_key": "images/mathematics/ap-statistics/sampling-dist-diff-proportions.svg",
+      "category": "statistics",
+      "concept_slug": "sampling-distributions-difference-sample-proportions",
+      "location": "content_html",
+      "problem_index": null,
+      "description": "Normal curve for the sampling distribution of the difference in sample proportions p-hat-1 minus p-hat-2, centered at 0 under the null hypothesis",
+      "alt_text": "Bell curve centered at 0 representing the sampling distribution of p-hat-1 minus p-hat-2 under H-naught, with standard error labeled",
+      "params": {
+        "type": "normal_curve",
+        "mu": 0,
+        "sigma": 0.062,
+        "shade_between": [-0.124, 0.124],
+        "title": "Sampling Dist. of $\\hat{p}_1 - \\hat{p}_2$ (Under $H_0$)"
+      }
+    },
+    {
+      "id": "stat-025",
+      "bucket_key": "images/mathematics/ap-statistics/sampling-dist-diff-means.svg",
+      "category": "statistics",
+      "concept_slug": "sampling-distributions-difference-two-means",
+      "location": "content_html",
+      "problem_index": null,
+      "description": "Normal curve for the sampling distribution of the difference in sample means x-bar-1 minus x-bar-2, centered at 0 under the null hypothesis",
+      "alt_text": "Bell curve centered at 0 representing the sampling distribution of x-bar-1 minus x-bar-2 under H-naught",
+      "params": {
+        "type": "normal_curve",
+        "mu": 0,
+        "sigma": 2.5,
+        "shade_between": [-5, 5],
+        "title": "Sampling Dist. of $\\bar{x}_1 - \\bar{x}_2$ (Under $H_0$)"
+      }
+    }
+  ]
+}
