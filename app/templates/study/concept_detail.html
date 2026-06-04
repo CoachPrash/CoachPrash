@@ -36,13 +36,13 @@
         {% if show_teaser %}
             <div class="concept-content-preview">
                 <div class="concept-content blurred-content">
-                    {{ concept.content_html | truncate(400, True) | safe }}
+                    {{ concept.content_html | truncate(400, True) | resolve_bucket_keys | safe }}
                 </div>
                 {% include "study/premium_teaser.html" %}
             </div>
         {% else %}
             <div class="concept-content" id="conceptContent">
-                {{ concept.content_html | safe }}
+                {{ concept.content_html | resolve_bucket_keys | safe }}
             </div>
 
             {% if concept_resources %}

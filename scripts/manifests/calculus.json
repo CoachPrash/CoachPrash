@@ -1,0 +1,1413 @@
+{
+  "course": "ap-calculus-ab-bc",
+  "subject": "mathematics",
+  "images": [
+    {
+      "id": "calc-001",
+      "bucket_key": "images/mathematics/ap-calculus-ab-bc/limits-graphical-hole-and-dot.svg",
+      "category": "function_graph",
+      "concept_slug": "estimating-limits-graphs",
+      "location": "question_html",
+      "problem_index": 0,
+      "description": "Graph of f(x) approaching y=5 from both sides at x=3, with open circle at (3,5) and filled dot at (3,2)",
+      "alt_text": "Graph showing a curve approaching y equals 5 from both sides at x equals 3, with a hole at (3,5) and a solid point at (3,2)",
+      "params": {
+        "functions": [{"expr": "0.5*(x-3)**2 + 5", "color": "blue", "label": "f(x)"}],
+        "x_range": [0, 6],
+        "y_range": [0, 8],
+        "points": [{"x": 3, "y": 5, "style": "open"}, {"x": 3, "y": 2, "style": "filled"}],
+        "asymptotes": [],
+        "annotations": [{"text": "hole", "xy": [3, 5]}, {"text": "f(3)=2", "xy": [3, 2]}],
+        "title": "Limit Exists but Does Not Equal f(3)"
+      }
+    },
+    {
+      "id": "calc-002",
+      "bucket_key": "images/mathematics/ap-calculus-ab-bc/limits-one-sided-jump.svg",
+      "category": "function_graph",
+      "concept_slug": "estimating-limits-graphs",
+      "location": "question_html",
+      "problem_index": 1,
+      "description": "Graph of g(x) with a jump discontinuity at x=4: left limit is 1, right limit is 3",
+      "alt_text": "Graph showing g(x) approaching y equals 1 from the left of x equals 4 and y equals 3 from the right",
+      "params": {
+        "functions": [
+          {"expr": "Piecewise((0.25*x, x < 4), (0.5*x + 1, x > 4))", "color": "blue", "label": "g(x)"}
+        ],
+        "x_range": [0, 8],
+        "y_range": [-1, 6],
+        "points": [{"x": 4, "y": 1, "style": "filled"}, {"x": 4, "y": 3, "style": "open"}],
+        "asymptotes": [],
+        "annotations": [{"text": "y=1", "xy": [3.5, 1]}, {"text": "y=3", "xy": [4.5, 3]}],
+        "title": "Jump Discontinuity at x = 4"
+      }
+    },
+    {
+      "id": "calc-003",
+      "bucket_key": "images/mathematics/ap-calculus-ab-bc/limits-vertical-asymptote.svg",
+      "category": "function_graph",
+      "concept_slug": "estimating-limits-graphs",
+      "location": "question_html",
+      "problem_index": 2,
+      "description": "Graph of f(x) with vertical asymptote at x=2, going to +infinity from left and -infinity from right",
+      "alt_text": "Graph showing f(x) going to positive infinity as x approaches 2 from the left and negative infinity from the right",
+      "params": {
+        "functions": [{"expr": "1/(x-2)", "color": "blue", "label": "f(x)"}],
+        "x_range": [-1, 5],
+        "y_range": [-8, 8],
+        "points": [],
+        "asymptotes": [{"type": "vertical", "value": 2}],
+        "annotations": [{"text": "+inf", "xy": [1.7, 6]}, {"text": "-inf", "xy": [2.3, -6]}],
+        "title": "Vertical Asymptote at x = 2"
+      }
+    },
+    {
+      "id": "calc-004",
+      "bucket_key": "images/mathematics/ap-calculus-ab-bc/limits-hole-at-2-5.svg",
+      "category": "function_graph",
+      "concept_slug": "estimating-limits-graphs",
+      "location": "question_html",
+      "problem_index": 4,
+      "description": "Graph of f with a hole at (2,5) and filled dot at (2,3)",
+      "alt_text": "Graph with an open circle at (2,5) and a filled circle at (2,3), curve passes through the hole",
+      "params": {
+        "functions": [{"expr": "x + 3", "color": "blue", "label": "f(x)"}],
+        "x_range": [-1, 5],
+        "y_range": [0, 8],
+        "points": [{"x": 2, "y": 5, "style": "open"}, {"x": 2, "y": 3, "style": "filled"}],
+        "asymptotes": [],
+        "annotations": [],
+        "title": "Removable Discontinuity: Limit vs Function Value"
+      }
+    },
+    {
+      "id": "calc-005",
+      "bucket_key": "images/mathematics/ap-calculus-ab-bc/limits-piecewise-at-zero.svg",
+      "category": "function_graph",
+      "concept_slug": "estimating-limits-graphs",
+      "location": "question_html",
+      "problem_index": 6,
+      "description": "Piecewise function: y=x+2 for x<0, y=-x+4 for x>0, no point at x=0. Left limit is 2, right limit is 4.",
+      "alt_text": "Two line segments meeting differently at x equals 0: left piece approaches 2, right piece approaches 4, with no point defined at 0",
+      "params": {
+        "functions": [
+          {"expr": "Piecewise((x+2, x < 0), (-x+4, x > 0))", "color": "blue", "label": "f(x)"}
+        ],
+        "x_range": [-4, 4],
+        "y_range": [-1, 6],
+        "points": [{"x": 0, "y": 2, "style": "open"}, {"x": 0, "y": 4, "style": "open"}],
+        "asymptotes": [],
+        "annotations": [{"text": "lim- = 2", "xy": [-0.5, 2]}, {"text": "lim+ = 4", "xy": [0.5, 4]}],
+        "title": "Piecewise Function with Jump at x = 0"
+      }
+    },
+    {
+      "id": "calc-006",
+      "bucket_key": "images/mathematics/ap-calculus-ab-bc/limits-infinite-both-sides.svg",
+      "category": "function_graph",
+      "concept_slug": "estimating-limits-graphs",
+      "location": "question_html",
+      "problem_index": 7,
+      "description": "Graph of h(x) near x=3: from left goes to +infinity, from right goes to -infinity",
+      "alt_text": "Graph of h(x) with a vertical asymptote at x equals 3, tending to positive infinity from the left and negative infinity from the right",
+      "params": {
+        "functions": [{"expr": "1/(x-3)", "color": "blue", "label": "h(x)"}],
+        "x_range": [0, 6],
+        "y_range": [-8, 8],
+        "points": [],
+        "asymptotes": [{"type": "vertical", "value": 3}],
+        "annotations": [],
+        "title": "Infinite Limits at x = 3"
+      }
+    },
+    {
+      "id": "calc-007",
+      "bucket_key": "images/mathematics/ap-calculus-ab-bc/squeeze-theorem-diagram.svg",
+      "category": "concept_diagram",
+      "concept_slug": "squeeze-theorem",
+      "location": "content_html",
+      "problem_index": null,
+      "description": "Squeeze theorem illustration: g(x) <= f(x) <= h(x) with g and h both converging to L at x=a, forcing f to converge to L",
+      "alt_text": "Three functions where the upper and lower bounding functions both approach the same limit L, squeezing the middle function to the same limit",
+      "params": {
+        "type": "squeeze",
+        "function": "x**2 * sin(1/x)",
+        "x_range": [-1, 1],
+        "a": 0,
+        "b": 0,
+        "n": 0,
+        "title": "Squeeze Theorem: g(x) <= f(x) <= h(x)"
+      }
+    },
+    {
+      "id": "calc-008",
+      "bucket_key": "images/mathematics/ap-calculus-ab-bc/discontinuity-types.svg",
+      "category": "concept_diagram",
+      "concept_slug": "types-of-discontinuities",
+      "location": "content_html",
+      "problem_index": null,
+      "description": "Three panel diagram showing removable (hole), jump, and infinite discontinuities side by side",
+      "alt_text": "Three types of discontinuities: a removable discontinuity shown as a hole in the graph, a jump discontinuity with two different y-values, and an infinite discontinuity with a vertical asymptote",
+      "params": {
+        "type": "ivt",
+        "function": "x",
+        "x_range": [-2, 2],
+        "a": -2,
+        "b": 2,
+        "n": 3,
+        "title": "Types of Discontinuities: Removable, Jump, Infinite"
+      }
+    },
+    {
+      "id": "calc-009",
+      "bucket_key": "images/mathematics/ap-calculus-ab-bc/removable-discontinuity.svg",
+      "category": "function_graph",
+      "concept_slug": "connecting-limit-representations",
+      "location": "question_html",
+      "problem_index": 2,
+      "description": "Graph with limit equal to 3 from both sides at x=a, but f(a)=5: shows open circle at (a,3) and filled dot at (a,5)",
+      "alt_text": "Graph of function with a removable discontinuity at x equals a, where the limit is 3 but f(a) is 5",
+      "params": {
+        "functions": [{"expr": "0.5*x + 1.5", "color": "blue", "label": "f(x)"}],
+        "x_range": [-1, 6],
+        "y_range": [0, 7],
+        "points": [{"x": 3, "y": 3, "style": "open"}, {"x": 3, "y": 5, "style": "filled"}],
+        "asymptotes": [],
+        "annotations": [{"text": "lim = 3", "xy": [3, 3]}, {"text": "f(a) = 5", "xy": [3, 5]}],
+        "title": "Limit Exists but f(a) Differs"
+      }
+    },
+    {
+      "id": "calc-010",
+      "bucket_key": "images/mathematics/ap-calculus-ab-bc/ivt-diagram.svg",
+      "category": "concept_diagram",
+      "concept_slug": "intermediate-value-theorem",
+      "location": "content_html",
+      "problem_index": null,
+      "description": "IVT illustration: continuous function on [a,b] with horizontal line y=N between f(a) and f(b), showing guaranteed crossing at c",
+      "alt_text": "A continuous curve from point (a, f(a)) to point (b, f(b)) with a horizontal dashed line at y equals N crossing the curve at point c",
+      "params": {
+        "type": "ivt",
+        "function": "x**3 - 3*x + 1",
+        "x_range": [-2, 3],
+        "a": -2,
+        "b": 3,
+        "n": 1,
+        "title": "Intermediate Value Theorem"
+      }
+    },
+    {
+      "id": "calc-011",
+      "bucket_key": "images/mathematics/ap-calculus-ab-bc/infinite-limits-vertical-asymptotes.svg",
+      "category": "function_graph",
+      "concept_slug": "infinite-limits-vertical-asymptotes",
+      "location": "content_html",
+      "problem_index": null,
+      "description": "Graph showing a rational function with vertical asymptotes, illustrating infinite limits",
+      "alt_text": "Graph of a rational function with vertical asymptotes showing the function going to positive and negative infinity",
+      "params": {
+        "functions": [{"expr": "1/((x-1)*(x+2))", "color": "blue", "label": "f(x)"}],
+        "x_range": [-4, 4],
+        "y_range": [-8, 8],
+        "points": [],
+        "asymptotes": [{"type": "vertical", "value": 1}, {"type": "vertical", "value": -2}],
+        "annotations": [],
+        "title": "Infinite Limits and Vertical Asymptotes"
+      }
+    },
+    {
+      "id": "calc-012",
+      "bucket_key": "images/mathematics/ap-calculus-ab-bc/limits-at-infinity-horizontal-asymptotes.svg",
+      "category": "function_graph",
+      "concept_slug": "limits-at-infinity-horizontal-asymptotes",
+      "location": "content_html",
+      "problem_index": null,
+      "description": "Graph showing a rational function approaching horizontal asymptote y=2 as x goes to plus and minus infinity",
+      "alt_text": "Graph of a rational function with a horizontal asymptote at y equals 2, showing the function leveling off at both ends",
+      "params": {
+        "functions": [{"expr": "(2*x**2 + 1)/(x**2 + 1)", "color": "blue", "label": "f(x)"}],
+        "x_range": [-10, 10],
+        "y_range": [-1, 4],
+        "points": [],
+        "asymptotes": [{"type": "horizontal", "value": 2}],
+        "annotations": [{"text": "y = 2", "xy": [7, 2.2]}],
+        "title": "Horizontal Asymptote: Limit at Infinity"
+      }
+    },
+    {
+      "id": "calc-013",
+      "bucket_key": "images/mathematics/ap-calculus-ab-bc/secant-to-tangent-line.svg",
+      "category": "concept_diagram",
+      "concept_slug": "average-instantaneous-rate-of-change",
+      "location": "content_html",
+      "problem_index": null,
+      "description": "Diagram showing secant line through two points on a curve becoming a tangent line as the second point approaches the first",
+      "alt_text": "A curve with a secant line through points (a, f(a)) and (b, f(b)), transitioning to a tangent line at point a as b approaches a",
+      "params": {
+        "type": "mvt",
+        "function": "x**2",
+        "x_range": [0, 4],
+        "a": 1,
+        "b": 3,
+        "n": 1,
+        "title": "From Secant Line to Tangent Line"
+      }
+    },
+    {
+      "id": "calc-014",
+      "bucket_key": "images/mathematics/ap-calculus-ab-bc/differentiability-corner-cusp.svg",
+      "category": "function_graph",
+      "concept_slug": "differentiability-and-continuity",
+      "location": "content_html",
+      "problem_index": null,
+      "description": "Three panel diagram showing where a function is continuous but not differentiable: corner (|x|), cusp (x^(2/3)), and vertical tangent (x^(1/3))",
+      "alt_text": "Three graphs showing continuous functions that are not differentiable: absolute value with a corner, x to the 2/3 with a cusp, and cube root with a vertical tangent",
+      "params": {
+        "functions": [
+          {"expr": "abs(x)", "color": "blue", "label": "Corner: |x|"},
+          {"expr": "x**(Rational(2,3))", "color": "red", "label": "Cusp: x^(2/3)"},
+          {"expr": "x**(Rational(1,3))", "color": "green", "label": "Vertical tangent: x^(1/3)"}
+        ],
+        "x_range": [-2, 2],
+        "y_range": [-1, 3],
+        "points": [{"x": 0, "y": 0, "style": "filled"}],
+        "asymptotes": [],
+        "annotations": [{"text": "not differentiable at x=0", "xy": [0, 0]}],
+        "title": "Continuous but Not Differentiable"
+      }
+    },
+    {
+      "id": "calc-015",
+      "bucket_key": "images/mathematics/ap-calculus-ab-bc/tangent-line-at-point.svg",
+      "category": "function_graph",
+      "concept_slug": "defining-derivative-notation",
+      "location": "content_html",
+      "problem_index": null,
+      "description": "Curve y=f(x) with tangent line drawn at point (a, f(a)), showing slope = f'(a)",
+      "alt_text": "A smooth curve with a tangent line touching it at one point, with the slope labeled as the derivative f prime of a",
+      "params": {
+        "functions": [
+          {"expr": "x**2", "color": "blue", "label": "f(x) = x^2"},
+          {"expr": "2*x - 1", "color": "red", "label": "tangent at x=1"}
+        ],
+        "x_range": [-1, 3],
+        "y_range": [-1, 5],
+        "points": [{"x": 1, "y": 1, "style": "filled"}],
+        "asymptotes": [],
+        "annotations": [{"text": "slope = f'(1) = 2", "xy": [1.5, 2]}],
+        "title": "Tangent Line and Derivative"
+      }
+    },
+    {
+      "id": "calc-016",
+      "bucket_key": "images/mathematics/ap-calculus-ab-bc/derivative-estimation-tangent.svg",
+      "category": "function_graph",
+      "concept_slug": "estimating-derivatives",
+      "location": "question_html",
+      "problem_index": 2,
+      "description": "Tangent line to y=f(x) at x=3 passing through points (1,2) and (5,10), showing slope = f'(3) = 4",
+      "alt_text": "A curve with a tangent line at x equals 3 that passes through (1,2) and (5,10), with slope equal to 4",
+      "params": {
+        "functions": [
+          {"expr": "0.5*(x-3)**2 + 6", "color": "blue", "label": "f(x)"},
+          {"expr": "2*x", "color": "red", "label": "tangent line"}
+        ],
+        "x_range": [-1, 7],
+        "y_range": [-1, 12],
+        "points": [{"x": 1, "y": 2, "style": "filled"}, {"x": 5, "y": 10, "style": "filled"}, {"x": 3, "y": 6, "style": "filled"}],
+        "asymptotes": [],
+        "annotations": [{"text": "(1, 2)", "xy": [1, 2]}, {"text": "(5, 10)", "xy": [5, 10]}, {"text": "f'(3) = 4", "xy": [3, 6]}],
+        "title": "Estimating Derivative from Tangent Line"
+      }
+    },
+    {
+      "id": "calc-017",
+      "bucket_key": "images/mathematics/ap-calculus-ab-bc/linearization-tangent-approx.svg",
+      "category": "function_graph",
+      "concept_slug": "linearization",
+      "location": "content_html",
+      "problem_index": null,
+      "description": "Curve y=sqrt(x) with tangent line at x=4 showing linear approximation L(x) = 2 + (1/4)(x-4)",
+      "alt_text": "Graph of square root of x with its tangent line at x equals 4, showing how the linear approximation stays close to the curve near x equals 4",
+      "params": {
+        "functions": [
+          {"expr": "sqrt(x)", "color": "blue", "label": "f(x) = sqrt(x)"},
+          {"expr": "2 + 0.25*(x-4)", "color": "red", "label": "L(x) = 2 + (1/4)(x-4)"}
+        ],
+        "x_range": [0, 8],
+        "y_range": [0, 4],
+        "points": [{"x": 4, "y": 2, "style": "filled"}],
+        "asymptotes": [],
+        "annotations": [{"text": "(4, 2)", "xy": [4, 2]}],
+        "title": "Linear Approximation at x = 4"
+      }
+    },
+    {
+      "id": "calc-018",
+      "bucket_key": "images/mathematics/ap-calculus-ab-bc/mean-value-theorem.svg",
+      "category": "concept_diagram",
+      "concept_slug": "mean-value-theorem",
+      "location": "content_html",
+      "problem_index": null,
+      "description": "MVT illustration: curve on [a,b] with secant line and parallel tangent line at x=c",
+      "alt_text": "A continuous curve from a to b with a secant line connecting the endpoints and a parallel tangent line at an interior point c",
+      "params": {
+        "type": "mvt",
+        "function": "x**3 - 3*x",
+        "x_range": [-2, 2],
+        "a": -2,
+        "b": 2,
+        "n": 1,
+        "title": "Mean Value Theorem"
+      }
+    },
+    {
+      "id": "calc-019",
+      "bucket_key": "images/mathematics/ap-calculus-ab-bc/evt-absolute-extrema.svg",
+      "category": "concept_diagram",
+      "concept_slug": "extreme-value-theorem-critical-points",
+      "location": "content_html",
+      "problem_index": null,
+      "description": "EVT illustration: continuous function on closed interval with absolute max and min labeled",
+      "alt_text": "A continuous function on a closed interval with the absolute maximum and absolute minimum points marked and labeled",
+      "params": {
+        "type": "evt",
+        "function": "x**3 - 3*x + 1",
+        "x_range": [-2, 2],
+        "a": -2,
+        "b": 2,
+        "n": 1,
+        "title": "Extreme Value Theorem"
+      }
+    },
+    {
+      "id": "calc-020",
+      "bucket_key": "images/mathematics/ap-calculus-ab-bc/increasing-decreasing-fprime-sign.svg",
+      "category": "function_graph",
+      "concept_slug": "increasing-decreasing-intervals",
+      "location": "content_html",
+      "problem_index": null,
+      "description": "Two-panel diagram: f(x) on top showing increasing/decreasing behavior, f'(x) on bottom showing positive/negative regions",
+      "alt_text": "Top panel shows a function with increasing and decreasing intervals; bottom panel shows its derivative with corresponding positive and negative regions",
+      "params": {
+        "functions": [
+          {"expr": "x**3 - 3*x", "color": "blue", "label": "f(x)"},
+          {"expr": "3*x**2 - 3", "color": "red", "label": "f'(x)"}
+        ],
+        "x_range": [-3, 3],
+        "y_range": [-5, 5],
+        "points": [{"x": -1, "y": 2, "style": "filled"}, {"x": 1, "y": -2, "style": "filled"}],
+        "asymptotes": [],
+        "annotations": [{"text": "local max", "xy": [-1, 2]}, {"text": "local min", "xy": [1, -2]}],
+        "title": "f Increasing/Decreasing vs f' Positive/Negative"
+      }
+    },
+    {
+      "id": "calc-021",
+      "bucket_key": "images/mathematics/ap-calculus-ab-bc/fprime-graph-inc-dec.svg",
+      "category": "function_graph",
+      "concept_slug": "increasing-decreasing-intervals",
+      "location": "question_html",
+      "problem_index": 4,
+      "description": "Graph of f' that is positive on (-3,1), zero at x=-3 and x=1, negative outside. Students determine where f is increasing.",
+      "alt_text": "Graph of the derivative f prime, positive between x equals negative 3 and x equals 1, zero at those points, and negative elsewhere",
+      "params": {
+        "functions": [{"expr": "-(x+3)*(x-1)", "color": "red", "label": "f'(x)"}],
+        "x_range": [-5, 3],
+        "y_range": [-5, 6],
+        "points": [{"x": -3, "y": 0, "style": "filled"}, {"x": 1, "y": 0, "style": "filled"}],
+        "asymptotes": [],
+        "annotations": [{"text": "f' > 0", "xy": [-1, 4]}, {"text": "f' < 0", "xy": [-4.5, -3]}, {"text": "f' < 0", "xy": [2.5, -3]}],
+        "title": "Graph of f' to Determine Increasing/Decreasing"
+      }
+    },
+    {
+      "id": "calc-022",
+      "bucket_key": "images/mathematics/ap-calculus-ab-bc/first-derivative-test.svg",
+      "category": "concept_diagram",
+      "concept_slug": "first-derivative-test",
+      "location": "content_html",
+      "problem_index": null,
+      "description": "Sign chart/diagram for f' showing + to - transition (local max) and - to + transition (local min)",
+      "alt_text": "Sign chart for the first derivative showing a local maximum where f prime changes from positive to negative and a local minimum where it changes from negative to positive",
+      "params": {
+        "type": "evt",
+        "function": "x**3 - 3*x",
+        "x_range": [-3, 3],
+        "a": -1,
+        "b": 1,
+        "n": 1,
+        "title": "First Derivative Test"
+      }
+    },
+    {
+      "id": "calc-023",
+      "bucket_key": "images/mathematics/ap-calculus-ab-bc/concavity-second-derivative.svg",
+      "category": "function_graph",
+      "concept_slug": "determining-concavity",
+      "location": "content_html",
+      "problem_index": null,
+      "description": "Two-panel: f(x) showing concave up and concave down regions, f''(x) showing positive/negative regions with inflection point where f''=0",
+      "alt_text": "Top panel shows a curve with concave up and concave down regions; bottom panel shows f double prime with corresponding positive and negative regions",
+      "params": {
+        "functions": [
+          {"expr": "x**4 - 6*x**2", "color": "blue", "label": "f(x)"},
+          {"expr": "12*x**2 - 12", "color": "green", "label": "f''(x)"}
+        ],
+        "x_range": [-3, 3],
+        "y_range": [-10, 10],
+        "points": [{"x": -1, "y": 0, "style": "filled"}, {"x": 1, "y": 0, "style": "filled"}],
+        "asymptotes": [],
+        "annotations": [{"text": "inflection point", "xy": [-1, -5]}, {"text": "inflection point", "xy": [1, -5]}],
+        "title": "Concavity and the Second Derivative"
+      }
+    },
+    {
+      "id": "calc-024",
+      "bucket_key": "images/mathematics/ap-calculus-ab-bc/sketching-f-from-fprime-graph.svg",
+      "category": "function_graph",
+      "concept_slug": "sketching-graphs-derivatives",
+      "location": "question_html",
+      "problem_index": 4,
+      "description": "Graph of f': downward parabola with vertex at (1,4), roots at x=-1 and x=3. Used to determine concavity of f.",
+      "alt_text": "Graph of f prime as a downward-opening parabola with vertex at (1,4) and x-intercepts at negative 1 and 3",
+      "params": {
+        "functions": [{"expr": "-(x+1)*(x-3)", "color": "red", "label": "f'(x)"}],
+        "x_range": [-3, 5],
+        "y_range": [-5, 6],
+        "points": [{"x": -1, "y": 0, "style": "filled"}, {"x": 3, "y": 0, "style": "filled"}, {"x": 1, "y": 4, "style": "filled"}],
+        "asymptotes": [],
+        "annotations": [{"text": "vertex (1,4)", "xy": [1, 4]}, {"text": "f' = 0", "xy": [-1, 0]}, {"text": "f' = 0", "xy": [3, 0]}],
+        "title": "Graph of f' for Concavity Analysis"
+      }
+    },
+    {
+      "id": "calc-025",
+      "bucket_key": "images/mathematics/ap-calculus-ab-bc/fprime-sign-change-features.svg",
+      "category": "function_graph",
+      "concept_slug": "sketching-graphs-derivatives",
+      "location": "question_html",
+      "problem_index": 3,
+      "description": "Graph of f' with zeros at x=-1 and x=2, positive on (-1,2), negative elsewhere, maximum at x=0.5",
+      "alt_text": "Graph of f prime with roots at x equals negative 1 and x equals 2, positive between them, negative outside, with a peak near x equals 0.5",
+      "params": {
+        "functions": [{"expr": "-(x+1)*(x-2)", "color": "red", "label": "f'(x)"}],
+        "x_range": [-3, 4],
+        "y_range": [-4, 4],
+        "points": [{"x": -1, "y": 0, "style": "filled"}, {"x": 2, "y": 0, "style": "filled"}, {"x": 0.5, "y": 2.25, "style": "filled"}],
+        "asymptotes": [],
+        "annotations": [{"text": "max of f'", "xy": [0.5, 2.25]}],
+        "title": "Graph of f' with Inflection Point Analysis"
+      }
+    },
+    {
+      "id": "calc-026",
+      "bucket_key": "images/mathematics/ap-calculus-ab-bc/connecting-f-fprime-fdoubleprime.svg",
+      "category": "function_graph",
+      "concept_slug": "connecting-f-fprime-fdoubleprime",
+      "location": "content_html",
+      "problem_index": null,
+      "description": "Three stacked graphs: f, f', f'' showing the relationship between function, first derivative, and second derivative",
+      "alt_text": "Three aligned graphs showing f(x), f prime(x), and f double prime(x), illustrating how features of each relate to the others",
+      "params": {
+        "functions": [
+          {"expr": "x**3 - 3*x", "color": "blue", "label": "f(x)"},
+          {"expr": "3*x**2 - 3", "color": "red", "label": "f'(x)"},
+          {"expr": "6*x", "color": "green", "label": "f''(x)"}
+        ],
+        "x_range": [-3, 3],
+        "y_range": [-5, 5],
+        "points": [],
+        "asymptotes": [],
+        "annotations": [],
+        "title": "Connecting f, f', and f''"
+      }
+    },
+    {
+      "id": "calc-027",
+      "bucket_key": "images/mathematics/ap-calculus-ab-bc/optimization-box-diagram.svg",
+      "category": "concept_diagram",
+      "concept_slug": "intro-optimization",
+      "location": "content_html",
+      "problem_index": null,
+      "description": "Classic optimization setup: open-top box formed by cutting squares from corners of a rectangular sheet",
+      "alt_text": "A rectangular sheet with squares cut from each corner, showing the fold lines and dimensions for creating an open-top box",
+      "params": {
+        "type": "evt",
+        "function": "x*(10-2*x)*(8-2*x)",
+        "x_range": [0, 4],
+        "a": 0,
+        "b": 4,
+        "n": 1,
+        "title": "Optimization: Open-Top Box"
+      }
+    },
+    {
+      "id": "calc-028",
+      "bucket_key": "images/mathematics/ap-calculus-ab-bc/riemann-sum-left.svg",
+      "category": "concept_diagram",
+      "concept_slug": "riemann-sums",
+      "location": "content_html",
+      "problem_index": null,
+      "description": "Left Riemann sum with 4 rectangles approximating area under f(x)=x^2 on [0,2]",
+      "alt_text": "Four left-endpoint rectangles under the curve f(x) equals x squared from 0 to 2, showing the approximation of the area",
+      "params": {
+        "type": "riemann_left",
+        "function": "x**2",
+        "x_range": [0, 2],
+        "a": 0,
+        "b": 2,
+        "n": 4,
+        "title": "Left Riemann Sum (n = 4)"
+      }
+    },
+    {
+      "id": "calc-029",
+      "bucket_key": "images/mathematics/ap-calculus-ab-bc/riemann-sum-right.svg",
+      "category": "concept_diagram",
+      "concept_slug": "riemann-sums",
+      "location": "content_html",
+      "problem_index": null,
+      "description": "Right Riemann sum with 4 rectangles approximating area under f(x)=x^2 on [0,2]",
+      "alt_text": "Four right-endpoint rectangles under the curve f(x) equals x squared from 0 to 2",
+      "params": {
+        "type": "riemann_right",
+        "function": "x**2",
+        "x_range": [0, 2],
+        "a": 0,
+        "b": 2,
+        "n": 4,
+        "title": "Right Riemann Sum (n = 4)"
+      }
+    },
+    {
+      "id": "calc-030",
+      "bucket_key": "images/mathematics/ap-calculus-ab-bc/riemann-sum-midpoint.svg",
+      "category": "concept_diagram",
+      "concept_slug": "riemann-sums",
+      "location": "content_html",
+      "problem_index": null,
+      "description": "Midpoint Riemann sum with 4 rectangles approximating area under f(x)=x^2 on [0,2]",
+      "alt_text": "Four midpoint rectangles under the curve f(x) equals x squared from 0 to 2",
+      "params": {
+        "type": "riemann_mid",
+        "function": "x**2",
+        "x_range": [0, 2],
+        "a": 0,
+        "b": 2,
+        "n": 4,
+        "title": "Midpoint Riemann Sum (n = 4)"
+      }
+    },
+    {
+      "id": "calc-031",
+      "bucket_key": "images/mathematics/ap-calculus-ab-bc/riemann-sum-trapezoidal.svg",
+      "category": "concept_diagram",
+      "concept_slug": "riemann-sums",
+      "location": "content_html",
+      "problem_index": null,
+      "description": "Trapezoidal sum with 4 trapezoids approximating area under f(x)=x^2 on [0,2]",
+      "alt_text": "Four trapezoids under the curve f(x) equals x squared from 0 to 2",
+      "params": {
+        "type": "riemann_trap",
+        "function": "x**2",
+        "x_range": [0, 2],
+        "a": 0,
+        "b": 2,
+        "n": 4,
+        "title": "Trapezoidal Sum (n = 4)"
+      }
+    },
+    {
+      "id": "calc-032",
+      "bucket_key": "images/mathematics/ap-calculus-ab-bc/ftc-accumulation-function.svg",
+      "category": "concept_diagram",
+      "concept_slug": "ftc-accumulation",
+      "location": "content_html",
+      "problem_index": null,
+      "description": "Accumulation function F(x) = integral from a to x of f(t)dt, showing shaded area growing as x increases",
+      "alt_text": "A function f(t) with shaded area from a to x representing the accumulation function F(x), the shaded region grows as x moves right",
+      "params": {
+        "type": "ftc",
+        "function": "sin(x) + 1",
+        "x_range": [0, 8],
+        "a": 0,
+        "b": 5,
+        "n": 1,
+        "title": "Accumulation Function F(x) = integral from a to x of f(t) dt"
+      }
+    },
+    {
+      "id": "calc-033",
+      "bucket_key": "images/mathematics/ap-calculus-ab-bc/accumulation-piecewise-linear.svg",
+      "category": "function_graph",
+      "concept_slug": "accumulation-functions-area",
+      "location": "question_html",
+      "problem_index": 4,
+      "description": "Graph of f consisting of line segments from (0,4) to (4,0) to (6,-2), for computing g(x) = integral from 0 to x of f(t)dt",
+      "alt_text": "A piecewise linear function with segments from (0,4) to (4,0) and from (4,0) to (6,-2), used to compute an accumulation function",
+      "params": {
+        "functions": [{"expr": "Piecewise((-x+4, x<=4), (-x+4, x>4))", "color": "blue", "label": "f(t)"}],
+        "x_range": [-1, 7],
+        "y_range": [-3, 5],
+        "points": [{"x": 0, "y": 4, "style": "filled"}, {"x": 4, "y": 0, "style": "filled"}, {"x": 6, "y": -2, "style": "filled"}],
+        "asymptotes": [],
+        "annotations": [{"text": "(0, 4)", "xy": [0, 4]}, {"text": "(4, 0)", "xy": [4, 0]}, {"text": "(6, -2)", "xy": [6, -2]}],
+        "title": "Piecewise Linear f for Accumulation"
+      }
+    },
+    {
+      "id": "calc-034",
+      "bucket_key": "images/mathematics/ap-calculus-ab-bc/accumulation-semicircle-segments.svg",
+      "category": "function_graph",
+      "concept_slug": "accumulation-functions-area",
+      "location": "question_html",
+      "problem_index": 5,
+      "description": "Graph of f consisting of semicircles and line segments: positive on (0,2), negative on (2,6), positive on (6,8)",
+      "alt_text": "A function graph made of semicircles and line segments with regions above and below the x-axis, used for accumulation function analysis",
+      "params": {
+        "functions": [{"expr": "Piecewise((sqrt(1-(x-1)**2), x<=2), (-sqrt(4-(x-4)**2), x<=6), (sqrt(1-(x-7)**2), x<=8))", "color": "blue", "label": "f(t)"}],
+        "x_range": [-1, 9],
+        "y_range": [-3, 3],
+        "points": [{"x": 0, "y": 0, "style": "filled"}, {"x": 2, "y": 0, "style": "filled"}, {"x": 6, "y": 0, "style": "filled"}, {"x": 8, "y": 0, "style": "filled"}],
+        "asymptotes": [],
+        "annotations": [{"text": "f > 0", "xy": [1, 1]}, {"text": "f < 0", "xy": [4, -2]}, {"text": "f > 0", "xy": [7, 1]}],
+        "title": "f with Semicircles and Segments for F(x)"
+      }
+    },
+    {
+      "id": "calc-035",
+      "bucket_key": "images/mathematics/ap-calculus-ab-bc/area-under-curve-basic.svg",
+      "category": "shaded_region",
+      "concept_slug": "exploring-accumulations",
+      "location": "content_html",
+      "problem_index": null,
+      "description": "Shaded area under a velocity curve v(t), representing total displacement",
+      "alt_text": "A velocity function v(t) with the region between the curve and the t-axis shaded, representing total displacement",
+      "params": {
+        "functions": [{"expr": "-0.5*(x-3)**2 + 4", "color": "blue"}],
+        "shade_between": false,
+        "shade_x_range": [0, 6],
+        "x_range": [-1, 7],
+        "y_range": [-1, 5],
+        "title": "Area Under Velocity Curve = Displacement"
+      }
+    },
+    {
+      "id": "calc-036",
+      "bucket_key": "images/mathematics/ap-calculus-ab-bc/area-between-curves-x-parabola-line.svg",
+      "category": "shaded_region",
+      "concept_slug": "area-between-curves-x",
+      "location": "content_html",
+      "problem_index": null,
+      "description": "Shaded region between y=x^2 and y=2x+3 with intersection points marked",
+      "alt_text": "The region between the parabola y equals x squared and the line y equals 2x plus 3, with the enclosed area shaded",
+      "params": {
+        "functions": [{"expr": "x**2", "color": "blue", "label": "y = x^2"}, {"expr": "2*x + 3", "color": "red", "label": "y = 2x + 3"}],
+        "shade_between": true,
+        "shade_x_range": [-1, 3],
+        "x_range": [-2, 4],
+        "y_range": [-1, 10],
+        "title": "Area Between y = x^2 and y = 2x + 3"
+      }
+    },
+    {
+      "id": "calc-037",
+      "bucket_key": "images/mathematics/ap-calculus-ab-bc/area-between-x2-and-4.svg",
+      "category": "shaded_region",
+      "concept_slug": "area-between-curves-x",
+      "location": "question_html",
+      "problem_index": 0,
+      "description": "Shaded region enclosed by y=x^2 and y=4",
+      "alt_text": "Shaded region between the parabola y equals x squared and the horizontal line y equals 4",
+      "params": {
+        "functions": [{"expr": "x**2", "color": "blue", "label": "y = x^2"}, {"expr": "4", "color": "red", "label": "y = 4"}],
+        "shade_between": true,
+        "shade_x_range": [-2, 2],
+        "x_range": [-3, 3],
+        "y_range": [-1, 6],
+        "title": "Area Between y = x^2 and y = 4"
+      }
+    },
+    {
+      "id": "calc-038",
+      "bucket_key": "images/mathematics/ap-calculus-ab-bc/area-sinx-cosx.svg",
+      "category": "shaded_region",
+      "concept_slug": "area-between-curves-x",
+      "location": "question_html",
+      "problem_index": 5,
+      "description": "Shaded region between y=sin(x) and y=cos(x) from x=0 to x=pi/2",
+      "alt_text": "Shaded region bounded by y equals sin x and y equals cos x from 0 to pi over 2",
+      "params": {
+        "functions": [{"expr": "sin(x)", "color": "blue", "label": "y = sin(x)"}, {"expr": "cos(x)", "color": "red", "label": "y = cos(x)"}],
+        "shade_between": true,
+        "shade_x_range": [0, 1.5708],
+        "x_range": [-0.5, 2],
+        "y_range": [-0.5, 1.5],
+        "title": "Area Between sin(x) and cos(x)"
+      }
+    },
+    {
+      "id": "calc-039",
+      "bucket_key": "images/mathematics/ap-calculus-ab-bc/area-between-curves-y.svg",
+      "category": "shaded_region",
+      "concept_slug": "area-between-curves-y",
+      "location": "content_html",
+      "problem_index": null,
+      "description": "Shaded region between x=y^2 and x=4, integrated with respect to y",
+      "alt_text": "Shaded region between the parabola x equals y squared and the vertical line x equals 4, shown for integration with respect to y",
+      "params": {
+        "functions": [{"expr": "x**2", "color": "blue", "label": "x = y^2"}, {"expr": "4", "color": "red", "label": "x = 4"}],
+        "shade_between": true,
+        "shade_x_range": [0, 4],
+        "x_range": [-1, 5],
+        "y_range": [-3, 3],
+        "title": "Area Between x = y^2 and x = 4 (Integrate in y)"
+      }
+    },
+    {
+      "id": "calc-040",
+      "bucket_key": "images/mathematics/ap-calculus-ab-bc/area-y2-and-y-plus-2.svg",
+      "category": "shaded_region",
+      "concept_slug": "area-between-curves-y",
+      "location": "question_html",
+      "problem_index": 2,
+      "description": "Shaded region between x=y^2 and x=y+2",
+      "alt_text": "Shaded region between the parabola x equals y squared and the line x equals y plus 2",
+      "params": {
+        "functions": [{"expr": "x**2", "color": "blue", "label": "x = y^2"}, {"expr": "x + 2", "color": "red", "label": "x = y + 2"}],
+        "shade_between": true,
+        "shade_x_range": [-1, 2],
+        "x_range": [-1, 5],
+        "y_range": [-2, 3],
+        "title": "Area Between x = y^2 and x = y + 2"
+      }
+    },
+    {
+      "id": "calc-041",
+      "bucket_key": "images/mathematics/ap-calculus-ab-bc/volume-disc-method.svg",
+      "category": "solid_revolution",
+      "concept_slug": "volume-disc-washer",
+      "location": "content_html",
+      "problem_index": null,
+      "description": "Disc method illustration: region under y=sqrt(x) from 0 to 4 revolved about x-axis",
+      "alt_text": "The region under y equals square root of x from 0 to 4 being revolved about the x-axis to form a solid, with a representative disc shown",
+      "params": {
+        "function": "sqrt(x)",
+        "axis": "x",
+        "x_range": [0, 4],
+        "method": "disc",
+        "title": "Disc Method: y = sqrt(x) about x-axis"
+      }
+    },
+    {
+      "id": "calc-042",
+      "bucket_key": "images/mathematics/ap-calculus-ab-bc/volume-washer-method.svg",
+      "category": "solid_revolution",
+      "concept_slug": "volume-disc-washer",
+      "location": "question_html",
+      "problem_index": 1,
+      "description": "Washer method: region between y=x and y=x^2 revolved about x-axis",
+      "alt_text": "The region between y equals x and y equals x squared revolved about the x-axis, showing a washer cross section with outer and inner radii",
+      "params": {
+        "function": "x",
+        "axis": "x",
+        "x_range": [0, 1],
+        "method": "washer",
+        "title": "Washer Method: y = x and y = x^2 about x-axis"
+      }
+    },
+    {
+      "id": "calc-043",
+      "bucket_key": "images/mathematics/ap-calculus-ab-bc/volume-washer-shifted-axis.svg",
+      "category": "solid_revolution",
+      "concept_slug": "volume-disc-washer",
+      "location": "question_html",
+      "problem_index": 4,
+      "description": "Region between y=x and y=x^2 revolved about the line y=-1 (shifted axis)",
+      "alt_text": "Region between y equals x and y equals x squared revolved about the line y equals negative 1, with modified washer radii",
+      "params": {
+        "function": "x",
+        "axis": "y=-1",
+        "x_range": [0, 1],
+        "method": "washer",
+        "title": "Washer Method about y = -1"
+      }
+    },
+    {
+      "id": "calc-044",
+      "bucket_key": "images/mathematics/ap-calculus-ab-bc/volume-about-y-axis.svg",
+      "category": "solid_revolution",
+      "concept_slug": "volume-disc-washer",
+      "location": "question_html",
+      "problem_index": 5,
+      "description": "Region under y=sqrt(x) from 0 to 4 revolved about the y-axis",
+      "alt_text": "Region bounded by y equals square root of x, y equals 0, and x equals 4 revolved about the y-axis",
+      "params": {
+        "function": "sqrt(x)",
+        "axis": "y",
+        "x_range": [0, 4],
+        "method": "disc",
+        "title": "Revolution about the y-axis"
+      }
+    },
+    {
+      "id": "calc-045",
+      "bucket_key": "images/mathematics/ap-calculus-ab-bc/cross-section-squares.svg",
+      "category": "concept_diagram",
+      "concept_slug": "volume-cross-sections-squares",
+      "location": "content_html",
+      "problem_index": null,
+      "description": "3D diagram showing a solid with base region bounded by y=1-x^2 and x-axis, with square cross sections perpendicular to x-axis",
+      "alt_text": "A solid whose base is the region under y equals 1 minus x squared, with square cross sections perpendicular to the x-axis shown in 3D",
+      "params": {
+        "type": "evt",
+        "function": "1 - x**2",
+        "x_range": [-1, 1],
+        "a": -1,
+        "b": 1,
+        "n": 4,
+        "title": "Cross Sections: Squares on y = 1 - x^2"
+      }
+    },
+    {
+      "id": "calc-046",
+      "bucket_key": "images/mathematics/ap-calculus-ab-bc/cross-section-equilateral-triangles.svg",
+      "category": "concept_diagram",
+      "concept_slug": "volume-cross-sections-triangles",
+      "location": "content_html",
+      "problem_index": null,
+      "description": "3D diagram showing a solid with base region and equilateral triangle cross sections perpendicular to x-axis",
+      "alt_text": "A solid with equilateral triangle cross sections perpendicular to the x-axis, base is the region under y equals 1 minus x squared",
+      "params": {
+        "type": "evt",
+        "function": "1 - x**2",
+        "x_range": [-1, 1],
+        "a": -1,
+        "b": 1,
+        "n": 4,
+        "title": "Cross Sections: Equilateral Triangles"
+      }
+    },
+    {
+      "id": "calc-047",
+      "bucket_key": "images/mathematics/ap-calculus-ab-bc/cross-section-semicircles.svg",
+      "category": "concept_diagram",
+      "concept_slug": "volume-cross-sections-triangles",
+      "location": "question_html",
+      "problem_index": 1,
+      "description": "Solid with base under y=6-2x, cross sections are semicircles with diameter on the base",
+      "alt_text": "A solid whose base is the triangle under y equals 6 minus 2x, with semicircular cross sections perpendicular to the x-axis",
+      "params": {
+        "type": "evt",
+        "function": "6 - 2*x",
+        "x_range": [0, 3],
+        "a": 0,
+        "b": 3,
+        "n": 4,
+        "title": "Cross Sections: Semicircles"
+      }
+    },
+    {
+      "id": "calc-048",
+      "bucket_key": "images/mathematics/ap-calculus-ab-bc/slope-field-y-minus-x.svg",
+      "category": "slope_field",
+      "concept_slug": "sketching-slope-fields",
+      "location": "content_html",
+      "problem_index": null,
+      "description": "Slope field for dy/dx = y - x on a grid from -3 to 3, with short line segments at each lattice point",
+      "alt_text": "A slope field showing small line segments at grid points for the differential equation dy/dx equals y minus x, from negative 3 to 3 in both directions",
+      "params": {
+        "dy_dx": "y - x",
+        "x_range": [-3, 3],
+        "y_range": [-3, 3],
+        "solution_curves": [{"x0": 0, "y0": 1}],
+        "title": "Slope Field for dy/dx = y - x"
+      }
+    },
+    {
+      "id": "calc-049",
+      "bucket_key": "images/mathematics/ap-calculus-ab-bc/slope-field-2x.svg",
+      "category": "slope_field",
+      "concept_slug": "sketching-slope-fields",
+      "location": "question_html",
+      "problem_index": 2,
+      "description": "Slope field for dy/dx = 2x showing slopes constant along vertical lines",
+      "alt_text": "Slope field for dy/dx equals 2x, where the slope depends only on x, so segments are identical along each vertical line",
+      "params": {
+        "dy_dx": "2*x",
+        "x_range": [-3, 3],
+        "y_range": [-3, 3],
+        "solution_curves": [],
+        "title": "Slope Field for dy/dx = 2x"
+      }
+    },
+    {
+      "id": "calc-050",
+      "bucket_key": "images/mathematics/ap-calculus-ab-bc/slope-field-x-over-y.svg",
+      "category": "slope_field",
+      "concept_slug": "sketching-slope-fields",
+      "location": "question_html",
+      "problem_index": 4,
+      "description": "Slope field for dy/dx = x/y showing slopes equal to 1 along y=x",
+      "alt_text": "Slope field for dy/dx equals x over y, with slope 1 along the line y equals x",
+      "params": {
+        "dy_dx": "x/y",
+        "x_range": [-3, 3],
+        "y_range": [-3, 3],
+        "solution_curves": [],
+        "title": "Slope Field for dy/dx = x/y"
+      }
+    },
+    {
+      "id": "calc-051",
+      "bucket_key": "images/mathematics/ap-calculus-ab-bc/slope-field-y-minus-x-solution.svg",
+      "category": "slope_field",
+      "concept_slug": "sketching-slope-fields",
+      "location": "question_html",
+      "problem_index": 6,
+      "description": "Slope field for dy/dx = y - x with solution curve sketched through several initial points",
+      "alt_text": "Slope field for dy/dx equals y minus x with solution curves drawn following the direction of the line segments",
+      "params": {
+        "dy_dx": "y - x",
+        "x_range": [-3, 3],
+        "y_range": [-3, 3],
+        "solution_curves": [{"x0": 0, "y0": 0}, {"x0": 1, "y0": 0}, {"x0": 0, "y0": 1}],
+        "title": "Slope Field with Solution Curves"
+      }
+    },
+    {
+      "id": "calc-052",
+      "bucket_key": "images/mathematics/ap-calculus-ab-bc/slope-field-equilibrium-stable.svg",
+      "category": "slope_field",
+      "concept_slug": "reasoning-slope-fields",
+      "location": "question_html",
+      "problem_index": 1,
+      "description": "Slope field showing stable equilibrium at y=5: horizontal segments at y=5, segments above point down, segments below point up",
+      "alt_text": "Slope field with horizontal segments along y equals 5, segments above pointing downward and segments below pointing upward, indicating stable equilibrium",
+      "params": {
+        "dy_dx": "5 - y",
+        "x_range": [-3, 3],
+        "y_range": [0, 10],
+        "solution_curves": [{"x0": 0, "y0": 3}, {"x0": 0, "y0": 7}],
+        "title": "Stable Equilibrium at y = 5"
+      }
+    },
+    {
+      "id": "calc-053",
+      "bucket_key": "images/mathematics/ap-calculus-ab-bc/slope-field-multiple-equilibria.svg",
+      "category": "slope_field",
+      "concept_slug": "reasoning-slope-fields",
+      "location": "question_html",
+      "problem_index": 6,
+      "description": "Slope field with equilibria at y=0 and y=2, solutions through (0,4) approach y=2 and solutions through (0,-1) approach y=0",
+      "alt_text": "Slope field with two equilibrium lines at y equals 0 and y equals 2, showing solutions converging toward these equilibria",
+      "params": {
+        "dy_dx": "y*(2-y)",
+        "x_range": [-2, 6],
+        "y_range": [-2, 5],
+        "solution_curves": [{"x0": 0, "y0": 4}, {"x0": 0, "y0": -1}, {"x0": 0, "y0": 1}],
+        "title": "Multiple Equilibria: y = 0 and y = 2"
+      }
+    },
+    {
+      "id": "calc-054",
+      "bucket_key": "images/mathematics/ap-calculus-ab-bc/eulers-method-diagram.svg",
+      "category": "concept_diagram",
+      "concept_slug": "eulers-method",
+      "location": "content_html",
+      "problem_index": null,
+      "description": "Euler's method illustration: stepping along tangent line segments from initial point, showing how the approximation diverges from the actual solution curve",
+      "alt_text": "A sequence of tangent line segments starting from an initial point, each step following the slope at the current point, compared to the actual smooth solution curve",
+      "params": {
+        "type": "mvt",
+        "function": "exp(x)",
+        "x_range": [0, 2],
+        "a": 0,
+        "b": 2,
+        "n": 4,
+        "title": "Euler's Method Approximation"
+      }
+    },
+    {
+      "id": "calc-055",
+      "bucket_key": "images/mathematics/ap-calculus-ab-bc/logistic-growth-curve.svg",
+      "category": "function_graph",
+      "concept_slug": "logistic-models-de",
+      "location": "content_html",
+      "problem_index": null,
+      "description": "Logistic growth curve: S-shaped curve approaching carrying capacity L, with inflection point at P=L/2",
+      "alt_text": "An S-shaped logistic growth curve starting near zero, growing rapidly through the inflection point at half the carrying capacity, then leveling off at the carrying capacity L",
+      "params": {
+        "functions": [{"expr": "100/(1 + 9*exp(-0.5*x))", "color": "blue", "label": "P(t)"}],
+        "x_range": [-2, 15],
+        "y_range": [0, 120],
+        "points": [{"x": 4.39, "y": 50, "style": "filled"}],
+        "asymptotes": [{"type": "horizontal", "value": 100}],
+        "annotations": [{"text": "L = 100", "xy": [12, 105]}, {"text": "inflection at P = L/2", "xy": [4.39, 50]}],
+        "title": "Logistic Growth Curve"
+      }
+    },
+    {
+      "id": "calc-056",
+      "bucket_key": "images/mathematics/ap-calculus-ab-bc/average-value-function.svg",
+      "category": "shaded_region",
+      "concept_slug": "average-value-function",
+      "location": "content_html",
+      "problem_index": null,
+      "description": "Shaded region under f(x) with horizontal line at y = f_avg showing the average value concept: rectangle with same area",
+      "alt_text": "A function curve with the region under it shaded, and a horizontal line at the average value showing that the rectangle has the same area as the shaded region",
+      "params": {
+        "functions": [{"expr": "x**2 + 1", "color": "blue", "label": "f(x)"}],
+        "shade_between": false,
+        "shade_x_range": [0, 3],
+        "x_range": [-1, 4],
+        "y_range": [-1, 11],
+        "title": "Average Value of f on [a, b]"
+      }
+    },
+    {
+      "id": "calc-057",
+      "bucket_key": "images/mathematics/ap-calculus-ab-bc/parametric-curve-circle.svg",
+      "category": "parametric_polar",
+      "concept_slug": "parametric-equations",
+      "location": "content_html",
+      "problem_index": null,
+      "description": "Parametric curve x=cos(t), y=sin(t) tracing out a unit circle with direction arrows",
+      "alt_text": "A unit circle traced by the parametric equations x equals cosine t and y equals sine t, with arrows showing counterclockwise direction",
+      "params": {
+        "type": "parametric",
+        "parametric": {"x_expr": "cos(t)", "y_expr": "sin(t)", "t_range": [0, "2*pi"]},
+        "polar": null,
+        "title": "Parametric Circle: x = cos(t), y = sin(t)"
+      }
+    },
+    {
+      "id": "calc-058",
+      "bucket_key": "images/mathematics/ap-calculus-ab-bc/parametric-cycloid.svg",
+      "category": "parametric_polar",
+      "concept_slug": "parametric-second-derivatives",
+      "location": "question_html",
+      "problem_index": 6,
+      "description": "Cycloid curve: x = t - sin(t), y = 1 - cos(t) for 0 <= t <= 2pi",
+      "alt_text": "A cycloid curve traced by x equals t minus sine t and y equals 1 minus cosine t, showing one arch from 0 to 2 pi",
+      "params": {
+        "type": "parametric",
+        "parametric": {"x_expr": "t - sin(t)", "y_expr": "1 - cos(t)", "t_range": [0, "2*pi"]},
+        "polar": null,
+        "title": "Cycloid: x = t - sin(t), y = 1 - cos(t)"
+      }
+    },
+    {
+      "id": "calc-059",
+      "bucket_key": "images/mathematics/ap-calculus-ab-bc/polar-cardioid.svg",
+      "category": "parametric_polar",
+      "concept_slug": "polar-coordinates",
+      "location": "question_html",
+      "problem_index": 5,
+      "description": "Cardioid curve r = 1 + sin(theta)",
+      "alt_text": "A cardioid curve in polar coordinates given by r equals 1 plus sine theta",
+      "params": {
+        "type": "polar",
+        "parametric": null,
+        "polar": {"r_expr": "1 + sin(theta)", "theta_range": [0, "2*pi"]},
+        "title": "Cardioid: r = 1 + sin(theta)"
+      }
+    },
+    {
+      "id": "calc-060",
+      "bucket_key": "images/mathematics/ap-calculus-ab-bc/polar-rose-4-petals.svg",
+      "category": "parametric_polar",
+      "concept_slug": "polar-coordinates",
+      "location": "question_html",
+      "problem_index": 1,
+      "description": "Rose curve r = 3cos(2theta) with 4 petals",
+      "alt_text": "A four-petaled rose curve in polar coordinates given by r equals 3 cosine of 2 theta",
+      "params": {
+        "type": "polar",
+        "parametric": null,
+        "polar": {"r_expr": "3*cos(2*theta)", "theta_range": [0, "2*pi"]},
+        "title": "Rose Curve: r = 3cos(2theta)"
+      }
+    },
+    {
+      "id": "calc-061",
+      "bucket_key": "images/mathematics/ap-calculus-ab-bc/polar-area-between-curves.svg",
+      "category": "parametric_polar",
+      "concept_slug": "polar-area",
+      "location": "question_html",
+      "problem_index": 6,
+      "description": "Region inside r=3sin(theta) and outside r=1+sin(theta), showing the area to be computed",
+      "alt_text": "The region inside the circle r equals 3 sine theta and outside the cardioid r equals 1 plus sine theta, with the area between them shaded",
+      "params": {
+        "type": "polar",
+        "parametric": null,
+        "polar": {"r_expr": "3*sin(theta)", "theta_range": [0, "pi"]},
+        "title": "Polar Area: Inside r = 3sin(theta), Outside r = 1 + sin(theta)"
+      }
+    },
+    {
+      "id": "calc-062",
+      "bucket_key": "images/mathematics/ap-calculus-ab-bc/taylor-polynomial-sinx.svg",
+      "category": "series_visual",
+      "concept_slug": "taylor-polynomials",
+      "location": "content_html",
+      "problem_index": null,
+      "description": "Taylor polynomials P1, P3, P5, P7 for sin(x) centered at 0, showing improving approximation",
+      "alt_text": "The graph of sine x with its Taylor polynomials of degree 1, 3, 5, and 7 overlaid, showing how each successive polynomial better approximates sine",
+      "params": {
+        "type": "taylor",
+        "function": "sin(x)",
+        "center": 0,
+        "degrees": [1, 3, 5, 7],
+        "x_range": [-6, 6],
+        "title": "Taylor Polynomials for sin(x)"
+      }
+    },
+    {
+      "id": "calc-063",
+      "bucket_key": "images/mathematics/ap-calculus-ab-bc/taylor-polynomial-exp.svg",
+      "category": "series_visual",
+      "concept_slug": "taylor-polynomials",
+      "location": "content_html",
+      "problem_index": null,
+      "description": "Taylor polynomials P1, P2, P3, P4 for e^x centered at 0",
+      "alt_text": "The graph of e to the x with its Taylor polynomials of degree 1, 2, 3, and 4, showing improving approximation near x equals 0",
+      "params": {
+        "type": "taylor",
+        "function": "exp(x)",
+        "center": 0,
+        "degrees": [1, 2, 3, 4],
+        "x_range": [-4, 4],
+        "title": "Taylor Polynomials for e^x"
+      }
+    },
+    {
+      "id": "calc-064",
+      "bucket_key": "images/mathematics/ap-calculus-ab-bc/convergence-radius-interval.svg",
+      "category": "series_visual",
+      "concept_slug": "taylor-series",
+      "location": "content_html",
+      "problem_index": null,
+      "description": "Number line diagram showing interval of convergence with center a, radius R, and endpoint behavior",
+      "alt_text": "A number line centered at a with the interval of convergence marked from a minus R to a plus R, with notes about testing endpoints",
+      "params": {
+        "type": "convergence",
+        "function": "1/(1-x)",
+        "center": 0,
+        "degrees": [],
+        "x_range": [-2, 2],
+        "title": "Interval of Convergence"
+      }
+    },
+    {
+      "id": "calc-065",
+      "bucket_key": "images/mathematics/ap-calculus-ab-bc/geometric-series-partial-sums.svg",
+      "category": "series_visual",
+      "concept_slug": "geometric-series",
+      "location": "content_html",
+      "problem_index": null,
+      "description": "Partial sums of a convergent geometric series approaching the limit S = a/(1-r)",
+      "alt_text": "A plot of partial sums S_1, S_2, S_3, etc. of a geometric series, showing them approaching the horizontal limit line",
+      "params": {
+        "type": "partial_sum",
+        "function": "(1/2)**x",
+        "center": 0,
+        "degrees": [],
+        "x_range": [0, 10],
+        "title": "Partial Sums of Geometric Series (r = 1/2)"
+      }
+    },
+    {
+      "id": "calc-066",
+      "bucket_key": "images/mathematics/ap-calculus-ab-bc/alternating-series-partial-sums.svg",
+      "category": "series_visual",
+      "concept_slug": "alternating-series",
+      "location": "content_html",
+      "problem_index": null,
+      "description": "Partial sums of alternating series oscillating above and below the limit, converging",
+      "alt_text": "Partial sums of an alternating series alternating above and below the true sum, getting closer with each term",
+      "params": {
+        "type": "partial_sum",
+        "function": "(-1)**(x+1)/x",
+        "center": 0,
+        "degrees": [],
+        "x_range": [0, 12],
+        "title": "Alternating Series: Partial Sums Oscillate"
+      }
+    },
+    {
+      "id": "calc-067",
+      "bucket_key": "images/mathematics/ap-calculus-ab-bc/integral-test-comparison.svg",
+      "category": "concept_diagram",
+      "concept_slug": "integral-test-p-series",
+      "location": "content_html",
+      "problem_index": null,
+      "description": "Integral test diagram: bars for a_n overlaid with continuous curve f(x), showing the comparison between the series and the integral",
+      "alt_text": "Bar graph of series terms a_n with the continuous decreasing function f(x) overlaid, showing the integral test comparison",
+      "params": {
+        "type": "riemann_left",
+        "function": "1/x**2",
+        "x_range": [1, 8],
+        "a": 1,
+        "b": 8,
+        "n": 7,
+        "title": "Integral Test: Comparing Series to Integral"
+      }
+    },
+    {
+      "id": "calc-068",
+      "bucket_key": "images/mathematics/ap-calculus-ab-bc/related-rates-ladder.svg",
+      "category": "concept_diagram",
+      "concept_slug": "intro-related-rates",
+      "location": "content_html",
+      "problem_index": null,
+      "description": "Classic related rates diagram: ladder sliding down a wall, showing x (base), y (height), and the constant hypotenuse",
+      "alt_text": "A right triangle formed by a ladder leaning against a wall, with the base x increasing, the height y decreasing, and the ladder length constant",
+      "params": {
+        "type": "mvt",
+        "function": "sqrt(25 - x**2)",
+        "x_range": [0, 5],
+        "a": 0,
+        "b": 5,
+        "n": 1,
+        "title": "Related Rates: Sliding Ladder"
+      }
+    },
+    {
+      "id": "calc-069",
+      "bucket_key": "images/mathematics/ap-calculus-ab-bc/implicit-circle-tangent.svg",
+      "category": "function_graph",
+      "concept_slug": "implicit-relation-behaviors",
+      "location": "question_html",
+      "problem_index": 0,
+      "description": "Circle x^2+y^2=16 with tangent line at point (2sqrt2, 2sqrt2)",
+      "alt_text": "A circle of radius 4 centered at the origin with a tangent line drawn at the point (2 root 2, 2 root 2)",
+      "params": {
+        "functions": [{"expr": "sqrt(16-x**2)", "color": "blue", "label": "x^2 + y^2 = 16"}],
+        "x_range": [-5, 5],
+        "y_range": [-5, 5],
+        "points": [{"x": 2.828, "y": 2.828, "style": "filled"}],
+        "asymptotes": [],
+        "annotations": [{"text": "tangent line", "xy": [3.5, 2]}],
+        "title": "Tangent to Circle x^2 + y^2 = 16"
+      }
+    },
+    {
+      "id": "calc-070",
+      "bucket_key": "images/mathematics/ap-calculus-ab-bc/implicit-ellipse-tangent.svg",
+      "category": "function_graph",
+      "concept_slug": "implicit-relation-behaviors",
+      "location": "question_html",
+      "problem_index": 3,
+      "description": "Ellipse x^2/9 + y^2/4 = 1 with horizontal tangent lines at the top and bottom",
+      "alt_text": "An ellipse with semi-major axis 3 and semi-minor axis 2, showing horizontal tangent lines at the topmost and bottommost points",
+      "params": {
+        "functions": [{"expr": "2*sqrt(1 - x**2/9)", "color": "blue", "label": "ellipse (top)"}],
+        "x_range": [-4, 4],
+        "y_range": [-3, 3],
+        "points": [{"x": 0, "y": 2, "style": "filled"}, {"x": 0, "y": -2, "style": "filled"}],
+        "asymptotes": [],
+        "annotations": [{"text": "horizontal tangent", "xy": [0.5, 2.2]}, {"text": "horizontal tangent", "xy": [0.5, -2.2]}],
+        "title": "Horizontal Tangents on Ellipse"
+      }
+    },
+    {
+      "id": "calc-071",
+      "bucket_key": "images/mathematics/ap-calculus-ab-bc/velocity-displacement-integral.svg",
+      "category": "shaded_region",
+      "concept_slug": "position-velocity-acceleration-integrals",
+      "location": "content_html",
+      "problem_index": null,
+      "description": "Velocity function v(t) with regions above and below t-axis shaded differently, showing displacement vs total distance",
+      "alt_text": "A velocity function with positive regions shaded one color and negative regions shaded another, illustrating the difference between displacement and total distance traveled",
+      "params": {
+        "functions": [{"expr": "sin(x)", "color": "blue", "label": "v(t)"}],
+        "shade_between": false,
+        "shade_x_range": [0, 6.28],
+        "x_range": [-1, 7],
+        "y_range": [-1.5, 1.5],
+        "title": "Displacement vs Total Distance"
+      }
+    },
+    {
+      "id": "calc-072",
+      "bucket_key": "images/mathematics/ap-calculus-ab-bc/improper-integral-convergent.svg",
+      "category": "shaded_region",
+      "concept_slug": "improper-integrals",
+      "location": "content_html",
+      "problem_index": null,
+      "description": "Shaded region under 1/x^2 from 1 to infinity, showing a convergent improper integral",
+      "alt_text": "The region under 1 over x squared from x equals 1 extending to infinity, shaded to show the finite area that converges to 1",
+      "params": {
+        "functions": [{"expr": "1/x**2", "color": "blue", "label": "1/x^2"}],
+        "shade_between": false,
+        "shade_x_range": [1, 10],
+        "x_range": [0, 10],
+        "y_range": [-0.2, 2],
+        "title": "Convergent Improper Integral: integral of 1/x^2 from 1 to infinity"
+      }
+    },
+    {
+      "id": "calc-073",
+      "bucket_key": "images/mathematics/ap-calculus-ab-bc/arc-length-curve.svg",
+      "category": "function_graph",
+      "concept_slug": "arc-length",
+      "location": "content_html",
+      "problem_index": null,
+      "description": "Curve with small line segments ds approximating arc length, showing the Pythagorean relationship ds^2 = dx^2 + dy^2",
+      "alt_text": "A smooth curve with small right triangles along it showing how arc length is computed from infinitesimal horizontal and vertical changes",
+      "params": {
+        "functions": [{"expr": "sin(x) + 2", "color": "blue", "label": "y = f(x)"}],
+        "x_range": [0, 6],
+        "y_range": [0, 4],
+        "points": [],
+        "asymptotes": [],
+        "annotations": [{"text": "ds", "xy": [2, 3]}, {"text": "dx", "xy": [2.3, 2.5]}, {"text": "dy", "xy": [2.5, 2.8]}],
+        "title": "Arc Length: ds^2 = dx^2 + dy^2"
+      }
+    },
+    {
+      "id": "calc-074",
+      "bucket_key": "images/mathematics/ap-calculus-ab-bc/straight-line-motion-pos-vel-acc.svg",
+      "category": "function_graph",
+      "concept_slug": "straight-line-motion",
+      "location": "content_html",
+      "problem_index": null,
+      "description": "Three stacked graphs: position s(t), velocity v(t)=s'(t), acceleration a(t)=v'(t) for a particle",
+      "alt_text": "Three vertically aligned graphs showing position, velocity, and acceleration of a particle over time, with derivative relationships indicated",
+      "params": {
+        "functions": [
+          {"expr": "t**3 - 6*t**2 + 9*t", "color": "blue", "label": "s(t)"},
+          {"expr": "3*t**2 - 12*t + 9", "color": "red", "label": "v(t) = s'(t)"},
+          {"expr": "6*t - 12", "color": "green", "label": "a(t) = v'(t)"}
+        ],
+        "x_range": [0, 5],
+        "y_range": [-5, 10],
+        "points": [],
+        "asymptotes": [],
+        "annotations": [],
+        "title": "Position, Velocity, and Acceleration"
+      }
+    },
+    {
+      "id": "calc-075",
+      "bucket_key": "images/mathematics/ap-calculus-ab-bc/removing-discontinuity.svg",
+      "category": "function_graph",
+      "concept_slug": "removing-discontinuities",
+      "location": "content_html",
+      "problem_index": null,
+      "description": "Graph of (x^2-1)/(x-1) with removable discontinuity at x=1: line y=x+1 with a hole at (1,2)",
+      "alt_text": "The line y equals x plus 1 with an open circle at the point (1, 2), representing the removable discontinuity of (x squared minus 1) over (x minus 1)",
+      "params": {
+        "functions": [{"expr": "x + 1", "color": "blue", "label": "f(x) = (x^2-1)/(x-1)"}],
+        "x_range": [-2, 4],
+        "y_range": [-1, 5],
+        "points": [{"x": 1, "y": 2, "style": "open"}],
+        "asymptotes": [],
+        "annotations": [{"text": "hole at (1,2)", "xy": [1, 2]}],
+        "title": "Removable Discontinuity at x = 1"
+      }
+    }
+  ]
+}

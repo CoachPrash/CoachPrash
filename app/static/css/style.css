@@ -1731,6 +1731,22 @@ body.sidebar-collapsed .sidebar-footer {
     border-radius: 0 4px 4px 0;
     font-style: italic;
 }
+.concept-content figure.concept-diagram {
+    margin: 1.5rem 0;
+    text-align: center;
+}
+.concept-content figure.concept-diagram img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid var(--border, #E5E7EB);
+}
+.concept-content figure.concept-diagram figcaption {
+    font-size: 0.85rem;
+    color: #6B7280;
+    margin-top: 0.5rem;
+    font-style: italic;
+}
 .concept-actions {
     margin: 2.5rem 0;
     text-align: center;

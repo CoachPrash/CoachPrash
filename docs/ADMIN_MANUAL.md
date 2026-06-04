@@ -1,6 +1,6 @@
 # CoachPrash Admin Manual
 
-> **Version:** 23.0 (Content Spec & Token Optimization)
+> **Version:** 24.0 (AP Calculus Diagrams & Image Pipeline)
 > **Last Updated:** June 2026
 > **Platform:** Flask + PostgreSQL, deployed on Railway
 

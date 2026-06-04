@@ -363,11 +363,12 @@ def practice_page(subject_slug, course_slug, topic_slug, concept_slug):
         problems = problems[:3]
 
     # Serialize problems for the client — NEVER include correct answers
+    from app.utils.bucket_filter import resolve_bucket_keys_str
     problems_data = []
     for p in problems:
         pdata = {
             'id': p.id,
-            'question_html': p.question_html,
+            'question_html': resolve_bucket_keys_str(p.question_html),
             'problem_type': p.problem_type,
             'difficulty': p.difficulty,
             'points': p.points,

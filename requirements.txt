@@ -17,3 +17,4 @@ nh3==0.2.22
 fpdf2==2.8.7
 sympy>=1.12
 jsonschema>=4.0
+matplotlib>=3.8

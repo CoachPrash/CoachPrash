@@ -210,8 +210,9 @@ def get_hint():
     # Check if next hint is accessible
     next_accessible = has_more and can_access_hint(current_user, hint_index + 1)
 
+    from app.utils.bucket_filter import resolve_bucket_keys_str
     return jsonify({
-        'hint_text': hint.hint_text,
+        'hint_text': resolve_bucket_keys_str(hint.hint_text),
         'has_more': has_more,
         'next_accessible': next_accessible,
     })
@@ -234,7 +235,15 @@ def get_solution():
     if not solution:
         return jsonify({'error': 'No solution available'}), 404
 
-    return jsonify({'steps': solution.steps_json})
+    from app.utils.bucket_filter import resolve_bucket_keys_str
+    steps = solution.steps_json
+    if steps and isinstance(steps, list):
+        steps = [
+            {**s, 'text': resolve_bucket_keys_str(s.get('text', ''))}
+            if isinstance(s, dict) else s
+            for s in steps
+        ]
+    return jsonify({'steps': steps})
 
 
 @study_bp.route('/api/practice/complete', methods=['POST'])

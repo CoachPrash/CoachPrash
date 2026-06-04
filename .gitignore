@@ -14,3 +14,4 @@ htmlcov/
 .coverage
 .claude/
 .mcp.json
+scripts/output/

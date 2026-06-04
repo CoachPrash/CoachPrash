@@ -746,10 +746,10 @@ def upload_image():
 
     from werkzeug.utils import secure_filename
 
-    ALLOWED_EXTENSIONS = {'.jpg', '.jpeg', '.png', '.gif', '.webp', '.pdf'}
+    ALLOWED_EXTENSIONS = {'.jpg', '.jpeg', '.png', '.gif', '.webp', '.pdf', '.svg'}
     ALLOWED_MIMETYPES = {
         'image/jpeg', 'image/png', 'image/gif', 'image/webp',
-        'application/pdf',
+        'application/pdf', 'image/svg+xml',
     }
 
     uploaded_key = None

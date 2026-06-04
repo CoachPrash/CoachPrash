@@ -13,6 +13,28 @@
                 <div class="changelog-date">
                     <span class="changelog-date-day">3</span>
                     <span class="changelog-date-month">Jun 2026</span>
+                    <span class="changelog-phase-badge">Content</span>
+                </div>
+                <div class="changelog-body">
+                    <h2>AP Calculus AB/BC &mdash; 75 Diagrams &amp; Graphs</h2>
+                    <p class="changelog-summary">Added 75 auto-generated SVG diagrams to AP Calculus AB/BC concepts and problems. Covers function graphs with discontinuities, slope fields, shaded regions for integrals, Riemann sums, solids of revolution, parametric/polar curves, and Taylor polynomial visualizations.</p>
+
+                    <div class="changelog-section">
+                        <h3>What Changed</h3>
+                        <ul>
+                            <li><strong>75 SVG images</strong> generated via matplotlib and uploaded to Railway storage bucket</li>
+                            <li><strong>7 diagram categories:</strong> function graphs (27), concept diagrams (20), shaded regions (9), slope fields (6), parametric/polar (5), series visuals (5), solids of revolution (4)</li>
+                            <li><strong>Image pipeline:</strong> manifest-driven batch generation, upload, and injection via <code>scripts/</code> tooling</li>
+                            <li><strong>Infrastructure:</strong> wired <code>resolve_bucket_keys</code> filter into concept and practice templates; added SVG upload support; added <code>.concept-diagram</code> CSS styling</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="changelog-entry">
+                <div class="changelog-date">
+                    <span class="changelog-date-day">3</span>
+                    <span class="changelog-date-month">Jun 2026</span>
                     <span class="changelog-phase-badge">Engine</span>
                 </div>
                 <div class="changelog-body">
