@@ -83,6 +83,124 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
+    function textToLatex(text) {
+        if (!text) return '';
+        var s = text;
+        // sqrt(X) → \sqrt{X}
+        s = s.replace(/sqrt\(([^)]*)\)/g, '\\sqrt{$1}');
+        // trig / log functions
+        s = s.replace(/\b(ln|log|sin|cos|tan)\(/g, '\\$1(');
+        // |X| → \left|X\right|
+        s = s.replace(/\|([^|]+)\|/g, '\\left|$1\\right|');
+        // e^(X) → e^{X}
+        s = s.replace(/e\^\(([^)]*)\)/g, 'e^{$1}');
+        // e^X (single token) → e^{X}
+        s = s.replace(/e\^([a-zA-Z0-9])/g, 'e^{$1}');
+        // ^(X) → ^{X}
+        s = s.replace(/\^\(([^)]*)\)/g, '^{$1}');
+        // ^X (single token) → ^{X}
+        s = s.replace(/\^([a-zA-Z0-9])/g, '^{$1}');
+        // Full-string simple fraction A/B → \frac{A}{B}
+        if (/^[^/]+\/[^/]+$/.test(s) && !/\\/.test(text)) {
+            var parts = s.split('/');
+            s = '\\frac{' + parts[0].trim() + '}{' + parts[1].trim() + '}';
+        }
+        // pi → \pi, infinity → \infty
+        s = s.replace(/\binfinity\b/g, '\\infty');
+        s = s.replace(/\bpi\b/g, '\\pi');
+        // N*\pi → N\pi (cleaner)
+        s = s.replace(/\*\\pi/g, '\\pi');
+        return s;
+    }
+
+    function insertAtCursor(inputEl, text, cursorOffset) {
+        var start = inputEl.selectionStart;
+        var end = inputEl.selectionEnd;
+        var val = inputEl.value;
+
+        if (start !== end && cursorOffset < 0) {
+            // Wrap selection: e.g. sqrt() wraps to sqrt(selection)
+            var wrapper = text;
+            var insertPos = wrapper.length + cursorOffset; // position of closing char
+            var before = wrapper.substring(0, insertPos);
+            var after = wrapper.substring(insertPos);
+            var selected = val.substring(start, end);
+            inputEl.value = val.substring(0, start) + before + selected + after + val.substring(end);
+            inputEl.selectionStart = start + before.length;
+            inputEl.selectionEnd = start + before.length + selected.length;
+        } else {
+            inputEl.value = val.substring(0, start) + text + val.substring(end);
+            var newPos = start + text.length + cursorOffset;
+            inputEl.selectionStart = newPos;
+            inputEl.selectionEnd = newPos;
+        }
+
+        inputEl.dispatchEvent(new Event('input'));
+        inputEl.focus();
+    }
+
+    function updateMathPreview(inputEl, previewDiv) {
+        var val = inputEl.value.trim();
+        if (!val) {
+            previewDiv.innerHTML = '';
+            return;
+        }
+        if (typeof katex === 'undefined') return;
+        var latex = textToLatex(val);
+        try {
+            katex.render(latex, previewDiv, { throwOnError: false });
+        } catch (e) {
+            previewDiv.textContent = val;
+        }
+    }
+
+    function createMathToolbar(inputEl, container) {
+        var buttons = [
+            { label: '√', text: 'sqrt()', offset: -1, aria: 'Square root' },
+            { label: 'π', text: 'pi', offset: 0, aria: 'Pi' },
+            { label: '∞', text: 'infinity', offset: 0, aria: 'Infinity' },
+            { label: 'xⁿ', text: '^', offset: 0, aria: 'Exponent' },
+            { label: 'a/b', text: '/', offset: 0, aria: 'Fraction' },
+            { label: '|x|', text: '||', offset: -1, aria: 'Absolute value' },
+            { label: 'ln', text: 'ln()', offset: -1, aria: 'Natural log' },
+            { label: 'eˣ', text: 'e^', offset: 0, aria: 'Exponential' },
+            { label: 'sin', text: 'sin()', offset: -1, aria: 'Sine' },
+            { label: 'cos', text: 'cos()', offset: -1, aria: 'Cosine' },
+            { label: 'tan', text: 'tan()', offset: -1, aria: 'Tangent' }
+        ];
+
+        var toolbar = document.createElement('div');
+        toolbar.className = 'math-toolbar';
+
+        buttons.forEach(function (b) {
+            var btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = 'math-btn';
+            btn.textContent = b.label;
+            btn.setAttribute('aria-label', b.aria);
+            btn.addEventListener('mousedown', function (e) {
+                e.preventDefault(); // prevent input blur on mobile
+            });
+            btn.addEventListener('click', function () {
+                insertAtCursor(inputEl, b.text, b.offset);
+                updateMathPreview(inputEl, preview);
+            });
+            toolbar.appendChild(btn);
+        });
+
+        var preview = document.createElement('div');
+        preview.className = 'math-preview';
+
+        // Insert toolbar before input, preview after input
+        container.insertBefore(toolbar, inputEl);
+        inputEl.parentNode.insertBefore(preview, inputEl.nextSibling);
+
+        // Live preview on typing
+        inputEl.addEventListener('input', function () {
+            updateMathPreview(inputEl, preview);
+        });
+    }
+
     function showProblem(index) {
         var p = problems[index];
         answered = false;
@@ -217,6 +335,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             });
             choicesArea.appendChild(input);
+            createMathToolbar(input, choicesArea);
         }
 
         renderKaTeX(problemDisplay);
@@ -323,6 +442,8 @@ document.addEventListener('DOMContentLoaded', function () {
             });
             var fillInput = choicesArea.querySelector('.fill-blank-input');
             if (fillInput) fillInput.disabled = true;
+            var mathToolbar = choicesArea.querySelector('.math-toolbar');
+            if (mathToolbar) { mathToolbar.style.pointerEvents = 'none'; mathToolbar.style.opacity = '0.5'; }
             var frqTextarea = choicesArea.querySelector('.frq-textarea');
             if (frqTextarea) frqTextarea.disabled = true;
 

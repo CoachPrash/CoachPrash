@@ -312,7 +312,7 @@ def _numerical_check(a, b, allow_constant_diff=False):
                 val_b = complex(N(b))
                 if allow_constant_diff:
                     return True  # any two constants differ by a constant
-                return abs(val_a - val_b) < 1e-10
+                return abs(val_a - val_b) < 1e-3
             except Exception:
                 return None
 

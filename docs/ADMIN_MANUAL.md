@@ -1,6 +1,6 @@
 # CoachPrash Admin Manual
 
-> **Version:** 24.0 (AP Calculus Diagrams & Image Pipeline)
+> **Version:** 25.0 (Math Keyboard & FTB Answer Tolerance)
 > **Last Updated:** June 2026
 > **Platform:** Flask + PostgreSQL, deployed on Railway
 
