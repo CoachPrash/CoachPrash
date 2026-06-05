@@ -233,6 +233,8 @@ document.addEventListener('DOMContentLoaded', function () {
         hintBtn.style.display = p.hint_count > 0 ? '' : 'none';
         hintBtn.textContent = 'Show Hint';
         solutionBtn.style.display = 'none';
+        solutionBtn.disabled = false;
+        solutionBtn.textContent = 'Show Solution';
 
         if (p.problem_type === 'mcq' && p.choices) {
             p.choices.forEach(function (c) {
