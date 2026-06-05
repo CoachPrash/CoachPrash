@@ -11,6 +11,29 @@
 
             <div class="changelog-entry">
                 <div class="changelog-date">
+                    <span class="changelog-date-day">5</span>
+                    <span class="changelog-date-month">Jun 2026</span>
+                    <span class="changelog-phase-badge">Polish</span>
+                </div>
+                <div class="changelog-body">
+                    <h2>Diagram Captions &amp; Table Styling</h2>
+                    <p class="changelog-summary">Styled diagram figcaptions (italic, gray, smaller text) in practice mode, added borders and centered columns to all content tables, and removed legacy inline table styles.</p>
+
+                    <div class="changelog-section">
+                        <h3>What Changed</h3>
+                        <ul>
+                            <li><strong>Diagram captions:</strong> Figcaptions below diagrams now render as italic gray text in both concept and practice views</li>
+                            <li><strong>Table styling:</strong> All tables in concept content and practice questions now have borders, centered text, and shaded headers</li>
+                            <li><strong>Sanitizer fix:</strong> Added <code>class</code> to allowed attributes on <code>&lt;figure&gt;</code> so <code>concept-diagram</code> class survives HTML sanitization during seed</li>
+                            <li><strong>Inline style cleanup:</strong> Stripped 24 legacy inline table styles (border, cellpadding, cellspacing) from AP Statistics content — CSS handles it now</li>
+                            <li><strong>ASSET_VERSION:</strong> Bumped to 11.0</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="changelog-entry">
+                <div class="changelog-date">
                     <span class="changelog-date-day">4</span>
                     <span class="changelog-date-month">Jun 2026</span>
                     <span class="changelog-phase-badge">Content</span>

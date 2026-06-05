@@ -1948,6 +1948,43 @@ body.sidebar-collapsed .sidebar-footer {
     margin-bottom: 0.75rem;
 }
 
+/* Diagram figures inside practice problems and concept content */
+figure.concept-diagram {
+    margin: 1rem 0 1.25rem;
+    text-align: center;
+}
+figure.concept-diagram img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid var(--border, #E5E7EB);
+}
+figure.concept-diagram figcaption {
+    font-size: 0.85rem;
+    color: #6B7280;
+    margin-top: 0.5rem;
+    font-style: italic;
+}
+
+/* Tables in content and practice questions */
+.concept-content table,
+.problem-question table {
+    border-collapse: collapse;
+    margin: 1rem auto;
+    font-size: 0.95rem;
+}
+.concept-content th, .concept-content td,
+.problem-question th, .problem-question td {
+    border: 1px solid var(--border, #D1D5DB);
+    padding: 0.5rem 0.75rem;
+    text-align: center;
+}
+.concept-content th,
+.problem-question th {
+    background: var(--table-header-bg, #F3F4F6);
+    font-weight: 600;
+}
+
 /* MCQ choice buttons */
 .quiz-choices {
     display: flex;

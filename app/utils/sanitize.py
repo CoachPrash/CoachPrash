@@ -17,6 +17,7 @@ ALLOWED_ATTRS = {
     'pre': {'class'},
     'td': {'colspan', 'rowspan'},
     'th': {'colspan', 'rowspan'},
+    'figure': {'class'},
 }
 
 
