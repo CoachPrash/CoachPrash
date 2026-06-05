@@ -1,6 +1,6 @@
 # CoachPrash Admin Manual
 
-> **Version:** 26.0 (AP Statistics Diagrams & Git-Tracked Images)
+> **Version:** 27.0 (AP Statistics Problem-Level Diagrams)
 > **Last Updated:** June 2026
 > **Platform:** Flask + PostgreSQL, deployed on Railway
 
