@@ -21,6 +21,7 @@ from diagram_renderers import (
     parametric_polar,
     series_visual,
     statistics,
+    mechanics,
 )
 
 RENDERERS = {
@@ -32,6 +33,7 @@ RENDERERS = {
     'parametric_polar': parametric_polar,
     'series_visual': series_visual,
     'statistics': statistics,
+    'mechanics': mechanics,
 }
 
 

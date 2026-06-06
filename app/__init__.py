@@ -3,6 +3,7 @@ import os
 import uuid
 from logging.config import dictConfig
 
+import click
 from flask import Flask, g, render_template, request, redirect
 from werkzeug.middleware.proxy_fix import ProxyFix
 from dotenv import load_dotenv
@@ -255,7 +256,8 @@ def create_app(config_name=None):
 
 def _register_cli(flask_app):
     @flask_app.cli.command('seed')
-    def seed_command():
+    @click.option('--file', default=None, help='Seed only a specific content JSON file (e.g. content/physics_ap_physics_1_mechanics.json)')
+    def seed_command(file):
         """Seed the database with initial data."""
         from seed import run_seed
-        run_seed()
+        run_seed(content_file=file)

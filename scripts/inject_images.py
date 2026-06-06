@@ -96,7 +96,10 @@ def main():
                     skipped += 1
                     continue
 
-                problems = problem_sets[0].get('problems', [])
+                # Flatten problems across all problem sets
+                problems = []
+                for ps in problem_sets:
+                    problems.extend(ps.get('problems', []))
                 if problem_index >= len(problems):
                     print(f"WARNING: {entry['id']} problem_index {problem_index} "
                           f"out of range for {slug} (has {len(problems)} problems)")

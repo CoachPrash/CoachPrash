@@ -11,6 +11,29 @@
 
             <div class="changelog-entry">
                 <div class="changelog-date">
+                    <span class="changelog-date-day">6</span>
+                    <span class="changelog-date-month">Jun 2026</span>
+                    <span class="changelog-phase-badge">Content</span>
+                </div>
+                <div class="changelog-body">
+                    <h2>AP Physics 1: Diagrams, Problem Restructuring &amp; Free Gate</h2>
+                    <p class="changelog-summary">Added 55 physics diagrams, restructured problem sets to match 10-problem spec, updated free gate to 4 problems, and added single-file seed support.</p>
+
+                    <div class="changelog-section">
+                        <h3>What Changed</h3>
+                        <ul>
+                            <li><strong>Physics diagrams:</strong> Built mechanics renderer (9 diagram types: FBD, motion graphs, vectors, energy bars, collisions, circular motion, SHM, torque, fluids) and generated 55 SVG diagrams for AP Physics 1</li>
+                            <li><strong>Problem restructuring:</strong> Merged 2 problem sets per concept into 1, reordered into spec format (MCQ MCQ FTB FTB MCQ MCQ FTB FTB FRQ FRQ), making previously invisible FRQs accessible</li>
+                            <li><strong>Free gate update:</strong> Free users now see 4 problems (was 3) — 2 MCQ + 2 FTB</li>
+                            <li><strong>Single-file seed:</strong> Added <code>flask seed --file</code> flag to reseed just one content JSON without touching other tables</li>
+                            <li><strong>Inject fix:</strong> Fixed inject_images.py to flatten problems across all problem sets, not just the first one</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="changelog-entry">
+                <div class="changelog-date">
                     <span class="changelog-date-day">5</span>
                     <span class="changelog-date-month">Jun 2026</span>
                     <span class="changelog-phase-badge">Bug Fix</span>

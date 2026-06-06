@@ -16,6 +16,17 @@ TEXT_COLOR = '#1A1A2E'
 # Additional plot colors for multiple curves
 COLORS = [PRIMARY, SECONDARY, SUCCESS, ACCENT, '#7C3AED', '#0891B2']
 
+# Force-type colour coding for physics diagrams
+FORCE_COLORS = {
+    'gravity': '#1B365D',    # weight (Fg)
+    'normal': '#2D8659',     # green
+    'friction': '#C41E3A',   # red
+    'tension': '#F4A100',    # gold
+    'applied': '#7C3AED',    # purple
+    'spring': '#0891B2',     # teal
+    'net': '#000000',        # black
+}
+
 # Standard figure size
 FIG_SIZE = (6, 4)
 DPI = 150

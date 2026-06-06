@@ -358,9 +358,9 @@ def practice_page(subject_slug, course_slug, topic_slug, concept_slug):
     is_premium = current_user.is_authenticated and current_user.is_premium
     total_available = len(problems)
 
-    # Apply freemium gating: free users get first 3
+    # Apply freemium gating: free users get first 4
     if not is_premium:
-        problems = problems[:3]
+        problems = problems[:4]
 
     # Serialize problems for the client — NEVER include correct answers
     from app.utils.bucket_filter import resolve_bucket_keys_str

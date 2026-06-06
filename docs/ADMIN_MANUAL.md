@@ -1,6 +1,6 @@
 # CoachPrash Admin Manual
 
-> **Version:** 21.0 (YouCode: In-Browser Java Coding + Problem Type Filter)
+> **Version:** 22.0 (AP Physics 1 Diagrams + Problem Restructuring + Single-File Seed)
 > **Last Updated:** June 2026
 > **Platform:** Flask + PostgreSQL, deployed on Railway
 

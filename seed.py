@@ -14,18 +14,34 @@ from app.utils.content_loader import load_content_json
 logger = logging.getLogger(__name__)
 
 
-def run_seed():
+def run_seed(content_file=None):
     from flask import current_app
     try:
         current_app._get_current_object()
-        _seed_data()
+        _seed_data(content_file=content_file)
     except RuntimeError:
         app = create_app()
         with app.app_context():
-            _seed_data()
+            _seed_data(content_file=content_file)
 
 
-def _seed_data():
+def _seed_data(content_file=None):
+    # Single-file mode: only reload that one content file, skip everything else
+    if content_file:
+        fpath = os.path.abspath(content_file)
+        if not os.path.isfile(fpath):
+            logger.error('File not found: %s', content_file)
+            return
+        fname = os.path.basename(fpath)
+        logger.info('Single-file mode: %s', fname)
+        try:
+            result = load_content_json(fpath)
+            logger.info('Loaded %s: %s topics, %s concepts, %s problems',
+                        fname, result['topics'], result['concepts'], result['problems'])
+        except Exception:
+            logger.exception('Error loading %s', fname)
+        return
+
     logger.info('Seeding database...')
 
     # --- Admin User ---
