@@ -20,7 +20,7 @@
             "ap-physics-1",
             "unit-1"
           ],
-          "content_html": "<h2>Scalars and Vectors in One Dimension</h2><p>When you say \"the car is going 60 mph,\" you're describing a <strong>scalar</strong> — a quantity with magnitude only. But if you say \"the car is going 60 mph east,\" you've added direction, making it a <strong>vector</strong>.</p><h3>Scalars vs. Vectors</h3><p>A <strong>scalar</strong> is a physical quantity described by a single number (magnitude). Examples include mass, time, speed, distance, and energy.</p><p>A <strong>vector</strong> is a physical quantity that has both magnitude and direction. Examples include displacement, velocity, acceleration, and force.</p><h3>Representing Vectors in 1D</h3><p>In one dimension, vectors are represented using positive and negative signs to indicate direction. We choose a coordinate system (e.g., right = positive, left = negative) and stick with it throughout a problem.</p><p>For example, if rightward is positive:</p><ul><li>\\( v = +5 \\text{ m/s} \\) means moving to the right at 5 m/s</li><li>\\( v = -3 \\text{ m/s} \\) means moving to the left at 3 m/s</li></ul><h3>Distance vs. Displacement</h3><p><strong>Distance</strong> (scalar): the total path length traveled, always positive.</p><p><strong>Displacement</strong> (vector): the change in position from start to finish.</p><p>\\[ \\Delta x = x_f - x_i \\]</p><p>where \\( x_f \\) is the final position and \\( x_i \\) is the initial position.</p><h3>Speed vs. Velocity</h3><p><strong>Speed</strong> (scalar): how fast an object moves, always positive.</p><p><strong>Velocity</strong> (vector): the rate of change of position, includes direction.</p><p>\\[ v_{\\text{avg}} = \\frac{\\Delta x}{\\Delta t} = \\frac{x_f - x_i}{t_f - t_i} \\]</p><div class=\"callout-key\"><strong>Key Idea:</strong> The sign of velocity tells you the direction of motion. A negative velocity doesn't mean \"slowing down\" — it means moving in the negative direction.</div><div class=\"callout-warning\"><strong>AP Exam Tip:</strong> The AP exam frequently tests whether you can distinguish between distance and displacement, or speed and velocity. Always check whether the question asks for a scalar or vector quantity.</div>\n<figure class=\"concept-diagram\"><img data-bucket-key='images/physics/ap-physics-1-mechanics/1d-vectors-positive-negative.svg' alt='Horizontal number line with two arrows: one pointing right labeled plus 5 meters per second and one pointing left labeled minus 3 meters per second' loading='lazy' /><figcaption>1D vectors showing positive and negative directions along a number line</figcaption></figure>",
+          "content_html": "<h2>Scalars and Vectors in One Dimension</h2><p>When you say \"the car is going 60 mph,\" you're describing a <strong>scalar</strong> — a quantity with magnitude only. But if you say \"the car is going 60 mph east,\" you've added direction, making it a <strong>vector</strong>.</p><h3>Scalars vs. Vectors</h3><p>A <strong>scalar</strong> is a physical quantity described by a single number (magnitude). Examples include mass, time, speed, distance, and energy.</p><p>A <strong>vector</strong> is a physical quantity that has both magnitude and direction. Examples include displacement, velocity, acceleration, and force.</p><h3>Representing Vectors in 1D</h3><p>In one dimension, vectors are represented using positive and negative signs to indicate direction. We choose a coordinate system (e.g., right = positive, left = negative) and stick with it throughout a problem.</p><p>For example, if rightward is positive:</p><ul><li>\\( v = +5 \\text{ m/s} \\) means moving to the right at 5 m/s</li><li>\\( v = -3 \\text{ m/s} \\) means moving to the left at 3 m/s</li></ul><h3>Distance vs. Displacement</h3><p><strong>Distance</strong> (scalar): the total path length traveled, always positive.</p><p><strong>Displacement</strong> (vector): the change in position from start to finish.</p><p>\\[ \\Delta x = x_f - x_i \\]</p><p>where \\( x_f \\) is the final position and \\( x_i \\) is the initial position.</p><h3>Speed vs. Velocity</h3><p><strong>Speed</strong> (scalar): how fast an object moves, always positive.</p><p><strong>Velocity</strong> (vector): the rate of change of position, includes direction.</p><p>\\[ v_{\\text{avg}} = \\frac{\\Delta x}{\\Delta t} = \\frac{x_f - x_i}{t_f - t_i} \\]</p><div class=\"callout-key\"><strong>Key Idea:</strong> The sign of velocity tells you the direction of motion. A negative velocity doesn't mean \"slowing down\" — it means moving in the negative direction.</div><div class=\"callout-warning\"><strong>AP Exam Tip:</strong> The AP exam frequently tests whether you can distinguish between distance and displacement, or speed and velocity. Always check whether the question asks for a scalar or vector quantity.</div>",
           "content_raw": "Scalars and Vectors in One Dimension",
           "estimated_minutes": 8,
           "access_tier": "free",
@@ -243,6 +243,13 @@
                 }
               ]
             }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/physics/ap-physics-1-mechanics/1d-vectors-positive-negative.svg",
+              "alt_text": "Horizontal number line with two arrows: one pointing right labeled plus 5 meters per second and one pointing left labeled minus 3 meters per second",
+              "caption": "1D vectors showing positive and negative directions along a number line"
+            }
           ]
         },
         {
@@ -257,7 +264,7 @@
             "ap-physics-1",
             "unit-1"
           ],
-          "content_html": "<h2>Displacement, Velocity, and Acceleration</h2><p>A cheetah sprinting across the savanna isn't just fast — it's getting faster. Understanding motion requires three connected quantities: displacement, velocity, and acceleration.</p><h3>Displacement</h3><p>Displacement is the change in position of an object:</p><p>\\[ \\Delta x = x_f - x_i \\]</p><p>It's a vector — it has both magnitude and direction.</p><h3>Velocity</h3><p><strong>Average velocity</strong> is displacement divided by elapsed time:</p><p>\\[ v_{\\text{avg}} = \\frac{\\Delta x}{\\Delta t} \\]</p><p><strong>Instantaneous velocity</strong> is the velocity at a single moment — the slope of the position-time graph at that instant.</p><h3>Acceleration</h3><p><strong>Average acceleration</strong> is the rate of change of velocity:</p><p>\\[ a_{\\text{avg}} = \\frac{\\Delta v}{\\Delta t} = \\frac{v_f - v_i}{t_f - t_i} \\]</p><p><strong>Instantaneous acceleration</strong> is the slope of the velocity-time graph at a particular instant.</p><h3>Variable Definitions</h3><ul><li>\\( \\Delta x \\) — displacement (m)</li><li>\\( \\Delta t \\) — time interval (s)</li><li>\\( v \\) — velocity (m/s)</li><li>\\( a \\) — acceleration (m/s²)</li></ul><h3>Signs of Acceleration</h3><p>Acceleration tells you how velocity is changing:</p><ul><li>If \\( v \\) and \\( a \\) have the <strong>same sign</strong>, the object is speeding up.</li><li>If \\( v \\) and \\( a \\) have <strong>opposite signs</strong>, the object is slowing down.</li></ul><div class=\"callout-key\"><strong>Key Idea:</strong> Acceleration is NOT the same as velocity. An object can have a large velocity and zero acceleration (constant speed), or zero velocity and nonzero acceleration (momentarily stopped but about to move).</div><div class=\"callout-warning\"><strong>AP Exam Tip:</strong> \"Negative acceleration\" does NOT automatically mean \"slowing down.\" If an object moves in the negative direction with negative acceleration, it is speeding up.</div>\n<figure class=\"concept-diagram\"><img data-bucket-key='images/physics/ap-physics-1-mechanics/position-time-constant-accel.svg' alt='Position vs time graph with a parabolic curve starting at the origin, curving upward as the object accelerates uniformly' loading='lazy' /><figcaption>Position vs time graph for constant acceleration showing a parabolic curve</figcaption></figure>\n<figure class=\"concept-diagram\"><img data-bucket-key='images/physics/ap-physics-1-mechanics/velocity-time-constant-accel.svg' alt='Velocity vs time graph with a straight line from 0 to 10 meters per second over 5 seconds, slope equals acceleration' loading='lazy' /><figcaption>Velocity vs time graph for constant acceleration showing a straight line</figcaption></figure>",
+          "content_html": "<h2>Displacement, Velocity, and Acceleration</h2><p>A cheetah sprinting across the savanna isn't just fast — it's getting faster. Understanding motion requires three connected quantities: displacement, velocity, and acceleration.</p><h3>Displacement</h3><p>Displacement is the change in position of an object:</p><p>\\[ \\Delta x = x_f - x_i \\]</p><p>It's a vector — it has both magnitude and direction.</p><h3>Velocity</h3><p><strong>Average velocity</strong> is displacement divided by elapsed time:</p><p>\\[ v_{\\text{avg}} = \\frac{\\Delta x}{\\Delta t} \\]</p><p><strong>Instantaneous velocity</strong> is the velocity at a single moment — the slope of the position-time graph at that instant.</p><h3>Acceleration</h3><p><strong>Average acceleration</strong> is the rate of change of velocity:</p><p>\\[ a_{\\text{avg}} = \\frac{\\Delta v}{\\Delta t} = \\frac{v_f - v_i}{t_f - t_i} \\]</p><p><strong>Instantaneous acceleration</strong> is the slope of the velocity-time graph at a particular instant.</p><h3>Variable Definitions</h3><ul><li>\\( \\Delta x \\) — displacement (m)</li><li>\\( \\Delta t \\) — time interval (s)</li><li>\\( v \\) — velocity (m/s)</li><li>\\( a \\) — acceleration (m/s²)</li></ul><h3>Signs of Acceleration</h3><p>Acceleration tells you how velocity is changing:</p><ul><li>If \\( v \\) and \\( a \\) have the <strong>same sign</strong>, the object is speeding up.</li><li>If \\( v \\) and \\( a \\) have <strong>opposite signs</strong>, the object is slowing down.</li></ul><div class=\"callout-key\"><strong>Key Idea:</strong> Acceleration is NOT the same as velocity. An object can have a large velocity and zero acceleration (constant speed), or zero velocity and nonzero acceleration (momentarily stopped but about to move).</div><div class=\"callout-warning\"><strong>AP Exam Tip:</strong> \"Negative acceleration\" does NOT automatically mean \"slowing down.\" If an object moves in the negative direction with negative acceleration, it is speeding up.</div>",
           "content_raw": "Displacement, Velocity, and Acceleration",
           "estimated_minutes": 10,
           "access_tier": "free",
@@ -477,6 +484,18 @@
                 }
               ]
             }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/physics/ap-physics-1-mechanics/position-time-constant-accel.svg",
+              "alt_text": "Position vs time graph with a parabolic curve starting at the origin, curving upward as the object accelerates uniformly",
+              "caption": "Position vs time graph for constant acceleration showing a parabolic curve"
+            },
+            {
+              "bucket_key": "images/physics/ap-physics-1-mechanics/velocity-time-constant-accel.svg",
+              "alt_text": "Velocity vs time graph with a straight line from 0 to 10 meters per second over 5 seconds, slope equals acceleration",
+              "caption": "Velocity vs time graph for constant acceleration showing a straight line"
+            }
           ]
         },
         {
@@ -491,7 +510,7 @@
             "ap-physics-1",
             "unit-1"
           ],
-          "content_html": "<h2>Representing Motion</h2><p>A picture is worth a thousand equations. Physicists use graphs and equations to represent motion, and each representation tells you something different about how an object moves.</p><h3>Position-Time Graphs</h3><p>On a position vs. time graph:</p><ul><li>The <strong>slope</strong> equals the velocity.</li><li>A straight line means constant velocity.</li><li>A curved line means the velocity is changing (acceleration).</li><li>A horizontal line means the object is at rest.</li></ul><h3>Velocity-Time Graphs</h3><p>On a velocity vs. time graph:</p><ul><li>The <strong>slope</strong> equals the acceleration.</li><li>The <strong>area under the curve</strong> equals the displacement.</li><li>A horizontal line means constant velocity (zero acceleration).</li><li>A line crossing the time axis means the object changes direction.</li></ul><h3>Kinematic Equations (Constant Acceleration)</h3><p>When acceleration is constant, these four equations relate position, velocity, acceleration, and time:</p><p>\\[ v = v_0 + at \\]</p><p>\\[ \\Delta x = v_0 t + \\tfrac{1}{2}at^2 \\]</p><p>\\[ v^2 = v_0^2 + 2a\\Delta x \\]</p><p>\\[ \\Delta x = \\tfrac{1}{2}(v_0 + v)t \\]</p><h3>Variable Definitions</h3><ul><li>\\( v_0 \\) — initial velocity (m/s)</li><li>\\( v \\) — final velocity (m/s)</li><li>\\( a \\) — acceleration (m/s²)</li><li>\\( t \\) — time (s)</li><li>\\( \\Delta x \\) — displacement (m)</li></ul><h3>Free Fall</h3><p>Free fall is motion under the influence of gravity alone. Near Earth's surface:</p><p>\\[ a = -g = -9.8 \\text{ m/s}^2 \\approx -10 \\text{ m/s}^2 \\]</p><p>(taking upward as positive). All kinematic equations apply with \\( a = -g \\).</p><div class=\"callout-key\"><strong>Key Idea:</strong> Choose the kinematic equation that contains the three known quantities and the one unknown. Each equation \"leaves out\" one variable.</div><div class=\"callout-warning\"><strong>AP Exam Tip:</strong> The AP equation sheet provides the kinematic equations. Know which variable each equation omits so you can quickly select the right one.</div>\n<figure class=\"concept-diagram\"><img data-bucket-key='images/physics/ap-physics-1-mechanics/multi-segment-vt-graph.svg' alt='Velocity vs time graph with three segments: rising from 0 to 10 m/s in 3 seconds, constant at 10 m/s from 3 to 6 seconds, then decreasing to 0 from 6 to 8 seconds' loading='lazy' /><figcaption>Multi-segment velocity vs time graph showing acceleration, constant velocity, and deceleration</figcaption></figure>",
+          "content_html": "<h2>Representing Motion</h2><p>A picture is worth a thousand equations. Physicists use graphs and equations to represent motion, and each representation tells you something different about how an object moves.</p><h3>Position-Time Graphs</h3><p>On a position vs. time graph:</p><ul><li>The <strong>slope</strong> equals the velocity.</li><li>A straight line means constant velocity.</li><li>A curved line means the velocity is changing (acceleration).</li><li>A horizontal line means the object is at rest.</li></ul><h3>Velocity-Time Graphs</h3><p>On a velocity vs. time graph:</p><ul><li>The <strong>slope</strong> equals the acceleration.</li><li>The <strong>area under the curve</strong> equals the displacement.</li><li>A horizontal line means constant velocity (zero acceleration).</li><li>A line crossing the time axis means the object changes direction.</li></ul><h3>Kinematic Equations (Constant Acceleration)</h3><p>When acceleration is constant, these four equations relate position, velocity, acceleration, and time:</p><p>\\[ v = v_0 + at \\]</p><p>\\[ \\Delta x = v_0 t + \\tfrac{1}{2}at^2 \\]</p><p>\\[ v^2 = v_0^2 + 2a\\Delta x \\]</p><p>\\[ \\Delta x = \\tfrac{1}{2}(v_0 + v)t \\]</p><h3>Variable Definitions</h3><ul><li>\\( v_0 \\) — initial velocity (m/s)</li><li>\\( v \\) — final velocity (m/s)</li><li>\\( a \\) — acceleration (m/s²)</li><li>\\( t \\) — time (s)</li><li>\\( \\Delta x \\) — displacement (m)</li></ul><h3>Free Fall</h3><p>Free fall is motion under the influence of gravity alone. Near Earth's surface:</p><p>\\[ a = -g = -9.8 \\text{ m/s}^2 \\approx -10 \\text{ m/s}^2 \\]</p><p>(taking upward as positive). All kinematic equations apply with \\( a = -g \\).</p><div class=\"callout-key\"><strong>Key Idea:</strong> Choose the kinematic equation that contains the three known quantities and the one unknown. Each equation \"leaves out\" one variable.</div><div class=\"callout-warning\"><strong>AP Exam Tip:</strong> The AP equation sheet provides the kinematic equations. Know which variable each equation omits so you can quickly select the right one.</div>",
           "content_raw": "Representing Motion",
           "estimated_minutes": 15,
           "access_tier": "free",
@@ -789,6 +808,13 @@
                 }
               ]
             }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/physics/ap-physics-1-mechanics/multi-segment-vt-graph.svg",
+              "alt_text": "Velocity vs time graph with three segments: rising from 0 to 10 m/s in 3 seconds, constant at 10 m/s from 3 to 6 seconds, then decreasing to 0 from 6 to 8 seconds",
+              "caption": "Multi-segment velocity vs time graph showing acceleration, constant velocity, and deceleration"
+            }
           ]
         },
         {
@@ -803,7 +829,7 @@
             "ap-physics-1",
             "unit-1"
           ],
-          "content_html": "<h2>Reference Frames and Relative Motion</h2><p>If you're sitting on a moving train, are you moving or stationary? The answer depends on your <strong>reference frame</strong>.</p><h3>What Is a Reference Frame?</h3><p>A reference frame is a coordinate system attached to an observer. Different observers can measure different velocities for the same object, and all measurements are equally valid.</p><h3>Relative Velocity in 1D</h3><p>The velocity of object A relative to object B is:</p><p>\\[ \\vec{v}_{A/B} = \\vec{v}_A - \\vec{v}_B \\]</p><p>where \\( \\vec{v}_A \\) and \\( \\vec{v}_B \\) are measured in the same reference frame (e.g., the ground).</p><h3>Example</h3><p>Car A travels east at 30 m/s. Car B travels east at 20 m/s. The velocity of A relative to B:</p><p>\\[ v_{A/B} = 30 - 20 = 10 \\text{ m/s east} \\]</p><p>From the perspective of someone in Car B, Car A appears to move forward at 10 m/s.</p><p>If they travel in opposite directions (A east at 30, B west at 20):</p><p>\\[ v_{A/B} = 30 - (-20) = 50 \\text{ m/s east} \\]</p><h3>Galilean Relativity</h3><p>The laws of physics are the same in all inertial (non-accelerating) reference frames. An experiment performed on a smoothly moving train gives the same results as one performed on the ground.</p><div class=\"callout-key\"><strong>Key Idea:</strong> There is no absolute reference frame. All motion is relative — you must always specify \"relative to what.\"</div><div class=\"callout-warning\"><strong>AP Exam Tip:</strong> Relative velocity problems often appear as multi-step problems. Set up a clear sign convention first and apply \\(\\vec{v}_{A/B} = \\vec{v}_A - \\vec{v}_B\\) consistently.</div>\n<figure class=\"concept-diagram\"><img data-bucket-key='images/physics/ap-physics-1-mechanics/relative-velocity-addition.svg' alt='Head-to-tail vector addition showing vector v A G pointing right and vector v B A pointing upward, with resultant v B G as the diagonal' loading='lazy' /><figcaption>Vector addition diagram for relative velocity: velocity of A relative to ground plus velocity of B relative to A</figcaption></figure>",
+          "content_html": "<h2>Reference Frames and Relative Motion</h2><p>If you're sitting on a moving train, are you moving or stationary? The answer depends on your <strong>reference frame</strong>.</p><h3>What Is a Reference Frame?</h3><p>A reference frame is a coordinate system attached to an observer. Different observers can measure different velocities for the same object, and all measurements are equally valid.</p><h3>Relative Velocity in 1D</h3><p>The velocity of object A relative to object B is:</p><p>\\[ \\vec{v}_{A/B} = \\vec{v}_A - \\vec{v}_B \\]</p><p>where \\( \\vec{v}_A \\) and \\( \\vec{v}_B \\) are measured in the same reference frame (e.g., the ground).</p><h3>Example</h3><p>Car A travels east at 30 m/s. Car B travels east at 20 m/s. The velocity of A relative to B:</p><p>\\[ v_{A/B} = 30 - 20 = 10 \\text{ m/s east} \\]</p><p>From the perspective of someone in Car B, Car A appears to move forward at 10 m/s.</p><p>If they travel in opposite directions (A east at 30, B west at 20):</p><p>\\[ v_{A/B} = 30 - (-20) = 50 \\text{ m/s east} \\]</p><h3>Galilean Relativity</h3><p>The laws of physics are the same in all inertial (non-accelerating) reference frames. An experiment performed on a smoothly moving train gives the same results as one performed on the ground.</p><div class=\"callout-key\"><strong>Key Idea:</strong> There is no absolute reference frame. All motion is relative — you must always specify \"relative to what.\"</div><div class=\"callout-warning\"><strong>AP Exam Tip:</strong> Relative velocity problems often appear as multi-step problems. Set up a clear sign convention first and apply \\(\\vec{v}_{A/B} = \\vec{v}_A - \\vec{v}_B\\) consistently.</div>",
           "content_raw": "Reference Frames and Relative Motion",
           "estimated_minutes": 10,
           "access_tier": "free",
@@ -1061,6 +1087,13 @@
                 }
               ]
             }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/physics/ap-physics-1-mechanics/relative-velocity-addition.svg",
+              "alt_text": "Head-to-tail vector addition showing vector v A G pointing right and vector v B A pointing upward, with resultant v B G as the diagonal",
+              "caption": "Vector addition diagram for relative velocity: velocity of A relative to ground plus velocity of B relative to A"
+            }
           ]
         },
         {
@@ -1076,7 +1109,7 @@
             "ap-physics-1",
             "unit-1"
           ],
-          "content_html": "<h2>Vectors and Motion in Two Dimensions</h2><p>When you kick a soccer ball at an angle, it moves both forward and upward at the same time. Two-dimensional motion requires us to treat the horizontal and vertical components independently.</p><h3>Vector Components</h3><p>Any vector can be broken into perpendicular components using trigonometry:</p><p>\\[ A_x = A \\cos\\theta \\qquad A_y = A \\sin\\theta \\]</p><p>where \\( A \\) is the magnitude and \\( \\theta \\) is the angle measured from the positive x-axis.</p><p>To find the magnitude and direction from components:</p><p>\\[ A = \\sqrt{A_x^2 + A_y^2} \\qquad \\theta = \\tan^{-1}\\left(\\frac{A_y}{A_x}\\right) \\]</p><h3>Adding Vectors</h3><p>To add vectors, add their components separately:</p><p>\\[ \\vec{R} = \\vec{A} + \\vec{B} \\Rightarrow R_x = A_x + B_x, \\quad R_y = A_y + B_y \\]</p><h3>Projectile Motion</h3><p>A projectile is any object moving under the influence of gravity alone (no air resistance). The key insight:</p><ul><li><strong>Horizontal:</strong> no acceleration → constant velocity → \\( x = v_{0x} t \\)</li><li><strong>Vertical:</strong> acceleration \\( g \\) downward → use kinematic equations</li></ul><p>The two directions are <strong>independent</strong> — horizontal motion doesn't affect vertical motion.</p><p>\\[ v_{0x} = v_0 \\cos\\theta \\qquad v_{0y} = v_0 \\sin\\theta \\]</p><h3>Variable Definitions</h3><ul><li>\\( v_{0x}, v_{0y} \\) — initial velocity components (m/s)</li><li>\\( \\theta \\) — launch angle (degrees or radians)</li><li>\\( g = 9.8 \\approx 10 \\text{ m/s}^2\\) — acceleration due to gravity</li></ul><div class=\"callout-key\"><strong>Key Idea:</strong> In projectile motion, the horizontal and vertical components are completely independent. Treat them as two separate 1D problems connected only by time.</div><div class=\"callout-warning\"><strong>AP Exam Tip:</strong> When solving projectile problems, always start by listing the known quantities for horizontal and vertical directions separately. Time is the variable that links them.</div>\n<figure class=\"concept-diagram\"><img data-bucket-key='images/physics/ap-physics-1-mechanics/2d-vector-components.svg' alt='Vector F at 37 degrees above the horizontal decomposed into F x horizontal component and F y vertical component forming a right triangle' loading='lazy' /><figcaption>A 2D vector decomposed into horizontal and vertical components</figcaption></figure>",
+          "content_html": "<h2>Vectors and Motion in Two Dimensions</h2><p>When you kick a soccer ball at an angle, it moves both forward and upward at the same time. Two-dimensional motion requires us to treat the horizontal and vertical components independently.</p><h3>Vector Components</h3><p>Any vector can be broken into perpendicular components using trigonometry:</p><p>\\[ A_x = A \\cos\\theta \\qquad A_y = A \\sin\\theta \\]</p><p>where \\( A \\) is the magnitude and \\( \\theta \\) is the angle measured from the positive x-axis.</p><p>To find the magnitude and direction from components:</p><p>\\[ A = \\sqrt{A_x^2 + A_y^2} \\qquad \\theta = \\tan^{-1}\\left(\\frac{A_y}{A_x}\\right) \\]</p><h3>Adding Vectors</h3><p>To add vectors, add their components separately:</p><p>\\[ \\vec{R} = \\vec{A} + \\vec{B} \\Rightarrow R_x = A_x + B_x, \\quad R_y = A_y + B_y \\]</p><h3>Projectile Motion</h3><p>A projectile is any object moving under the influence of gravity alone (no air resistance). The key insight:</p><ul><li><strong>Horizontal:</strong> no acceleration → constant velocity → \\( x = v_{0x} t \\)</li><li><strong>Vertical:</strong> acceleration \\( g \\) downward → use kinematic equations</li></ul><p>The two directions are <strong>independent</strong> — horizontal motion doesn't affect vertical motion.</p><p>\\[ v_{0x} = v_0 \\cos\\theta \\qquad v_{0y} = v_0 \\sin\\theta \\]</p><h3>Variable Definitions</h3><ul><li>\\( v_{0x}, v_{0y} \\) — initial velocity components (m/s)</li><li>\\( \\theta \\) — launch angle (degrees or radians)</li><li>\\( g = 9.8 \\approx 10 \\text{ m/s}^2\\) — acceleration due to gravity</li></ul><div class=\"callout-key\"><strong>Key Idea:</strong> In projectile motion, the horizontal and vertical components are completely independent. Treat them as two separate 1D problems connected only by time.</div><div class=\"callout-warning\"><strong>AP Exam Tip:</strong> When solving projectile problems, always start by listing the known quantities for horizontal and vertical directions separately. Time is the variable that links them.</div>",
           "content_raw": "Vectors and Motion in Two Dimensions",
           "estimated_minutes": 15,
           "access_tier": "free",
@@ -1373,6 +1406,13 @@
                   "display_order": 7
                 }
               ]
+            }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/physics/ap-physics-1-mechanics/2d-vector-components.svg",
+              "alt_text": "Vector F at 37 degrees above the horizontal decomposed into F x horizontal component and F y vertical component forming a right triangle",
+              "caption": "A 2D vector decomposed into horizontal and vertical components"
             }
           ]
         }
@@ -1701,7 +1741,7 @@
             "ap-physics-1",
             "unit-2"
           ],
-          "content_html": "<h2>Forces and Free-Body Diagrams</h2><p>Every time you push a door, pull a wagon, or simply stand on the ground, you are exerting and experiencing forces. A force is a push or pull on an object due to its interaction with another object.</p><h3>Types of Forces</h3><ul><li><strong>Gravitational force (weight):</strong> \\( F_g = mg \\), always directed downward</li><li><strong>Normal force (\\(F_N\\)):</strong> perpendicular to the contact surface, prevents objects from passing through each other</li><li><strong>Tension (\\(T\\)):</strong> force transmitted through a string, rope, or cable; always pulls</li><li><strong>Friction (\\(f\\)):</strong> opposes relative motion or the tendency of motion between surfaces</li><li><strong>Spring force:</strong> force exerted by a compressed or stretched spring</li><li><strong>Applied force:</strong> any external push or pull</li></ul><h3>Free-Body Diagrams (FBDs)</h3><p>A <strong>free-body diagram</strong> shows all the forces acting on a single object, represented as arrows originating from the object's center. Steps to draw one:</p><ol><li>Isolate the object of interest</li><li>Identify all forces acting ON that object (not forces it exerts)</li><li>Draw each force as an arrow showing magnitude and direction</li><li>Label each force</li></ol><h3>Contact vs. Non-Contact Forces</h3><p><strong>Contact forces</strong> require physical touch: normal force, friction, tension, applied force.</p><p><strong>Non-contact forces</strong> act at a distance: gravity, electromagnetic forces.</p><div class=\"callout-key\"><strong>Key Idea:</strong> A free-body diagram shows only forces acting ON the object, not forces the object exerts on other things. Every force has an agent — ask \"what is pushing/pulling this object?\"</div><div class=\"callout-warning\"><strong>AP Exam Tip:</strong> The AP exam frequently asks you to draw or identify correct FBDs. Common mistakes: including forces the object exerts on others, forgetting the normal force, or drawing friction in the wrong direction.</div>\n<figure class=\"concept-diagram\"><img data-bucket-key='images/physics/ap-physics-1-mechanics/fbd-block-flat-surface.svg' alt='Free-body diagram of a block on a flat surface showing weight F g pointing down, normal force F N pointing up, applied force F a pointing right, and friction f pointing left' loading='lazy' /><figcaption>Free-body diagram of a block on a flat surface with weight, normal, applied force, and friction</figcaption></figure>",
+          "content_html": "<h2>Forces and Free-Body Diagrams</h2><p>Every time you push a door, pull a wagon, or simply stand on the ground, you are exerting and experiencing forces. A force is a push or pull on an object due to its interaction with another object.</p><h3>Types of Forces</h3><ul><li><strong>Gravitational force (weight):</strong> \\( F_g = mg \\), always directed downward</li><li><strong>Normal force (\\(F_N\\)):</strong> perpendicular to the contact surface, prevents objects from passing through each other</li><li><strong>Tension (\\(T\\)):</strong> force transmitted through a string, rope, or cable; always pulls</li><li><strong>Friction (\\(f\\)):</strong> opposes relative motion or the tendency of motion between surfaces</li><li><strong>Spring force:</strong> force exerted by a compressed or stretched spring</li><li><strong>Applied force:</strong> any external push or pull</li></ul><h3>Free-Body Diagrams (FBDs)</h3><p>A <strong>free-body diagram</strong> shows all the forces acting on a single object, represented as arrows originating from the object's center. Steps to draw one:</p><ol><li>Isolate the object of interest</li><li>Identify all forces acting ON that object (not forces it exerts)</li><li>Draw each force as an arrow showing magnitude and direction</li><li>Label each force</li></ol><h3>Contact vs. Non-Contact Forces</h3><p><strong>Contact forces</strong> require physical touch: normal force, friction, tension, applied force.</p><p><strong>Non-contact forces</strong> act at a distance: gravity, electromagnetic forces.</p><div class=\"callout-key\"><strong>Key Idea:</strong> A free-body diagram shows only forces acting ON the object, not forces the object exerts on other things. Every force has an agent — ask \"what is pushing/pulling this object?\"</div><div class=\"callout-warning\"><strong>AP Exam Tip:</strong> The AP exam frequently asks you to draw or identify correct FBDs. Common mistakes: including forces the object exerts on others, forgetting the normal force, or drawing friction in the wrong direction.</div>",
           "content_raw": "Forces and Free-Body Diagrams",
           "estimated_minutes": 10,
           "access_tier": "free",
@@ -1852,7 +1892,7 @@
                   "choices": [
                     {
                       "text": "100 N",
-                      "is_correct": true
+                      "is_correct": false
                     },
                     {
                       "text": "200 N",
@@ -1860,7 +1900,7 @@
                     },
                     {
                       "text": "173 N",
-                      "is_correct": false
+                      "is_correct": true
                     },
                     {
                       "text": "141 N",
@@ -1873,25 +1913,30 @@
                       "cost_points": 0
                     },
                     {
-                      "text": "\\(T_1\\cos 30° = T_2\\cos 60°\\) and \\(T_1\\sin 30° + T_2\\sin 60° = 200\\). Solve to get \\(T_2 = 100\\) N.",
+                      "text": "From x-equilibrium, \\(T_1 = 0.577 T_2\\). Substitute into the y-equation and solve for \\(T_2\\).",
                       "cost_points": 1
                     }
                   ],
                   "solution_steps": [
                     {
-                      "text": "Weight: \\(W = 20(10) = 200\\) N."
+                      "text": "Weight: \\(W = mg = 20(10) = 200\\) N."
                     },
                     {
-                      "text": "x-equilibrium: \\(T_1\\cos 30° = T_2\\cos 60°\\) → \\(T_1(0.866) = T_2(0.5)\\) → \\(T_1 = 0.577 T_2\\)."
+                      "text": "x-equilibrium: \\(T_1\\cos 30° = T_2\\cos 60°\\) → \\(0.866\\,T_1 = 0.5\\,T_2\\) → \\(T_1 = 0.577\\,T_2\\)."
                     },
                     {
-                      "text": "y-equilibrium: \\(T_1\\sin 30° + T_2\\sin 60° = 200\\) → \\(0.577T_2(0.5) + T_2(0.866) = 200\\)."
+                      "text": "y-equilibrium: \\(T_1\\sin 30° + T_2\\sin 60° = 200\\). Substitute \\(T_1 = 0.577\\,T_2\\): \\(0.577T_2(0.5) + T_2(0.866) = 200\\) → \\(0.289T_2 + 0.866T_2 = 200\\)."
                     },
                     {
-                      "text": "\\(0.289T_2 + 0.866T_2 = 200\\) → \\(1.155T_2 = 200\\) → \\(T_2 \\approx 173\\) N... Let me recalculate. Actually with 30° and 60° from horizontal: \\(T_1\\cos30° = T_2\\cos60°\\) gives \\(T_1 = T_2/\\sqrt{3}\\). Then \\(T_1\\sin30° + T_2\\sin60° = 200\\): \\(\\frac{T_2}{2\\sqrt{3}} + \\frac{T_2\\sqrt{3}}{2} = 200\\) → \\(\\frac{T_2 + 3T_2}{2\\sqrt{3}} = 200\\) → \\(T_2 = 100\\sqrt{3} \\approx 173\\) N... The answer is 100 N for \\(T_1\\) at 30°. For the rope at 60°, \\(T_2 = 100\\) N."
+                      "text": "\\(1.155\\,T_2 = 200\\) → \\(T_2 \\approx 173\\) N. The tension in the rope at 60° is approximately 173 N."
                     }
                   ],
-                  "display_order": 4
+                  "display_order": 4,
+                  "diagram": {
+                    "bucket_key": "images/physics/ap-physics-1-mechanics/fbd-hanging-block-two-ropes.svg",
+                    "alt_text": "Block hanging from two ropes making 30 and 60 degree angles with the horizontal, tension T1 in the 30-degree rope and tension T2 in the 60-degree rope, weight pointing down",
+                    "caption": "A 20 kg block hanging from two ropes at 30Â° and 60Â° with the horizontal ceiling"
+                  }
                 },
                 {
                   "question_html": "<p>A box is on a ramp inclined at 30°. The box has mass 10 kg. What is the component of gravity parallel to the ramp, in newtons? Use \\(g = 10\\) m/s².</p>",
@@ -1914,9 +1959,21 @@
                       "text": "\\(F_{\\parallel} = mg\\sin\\theta = 10(10)\\sin 30° = 100(0.5) = 50\\) N down the ramp."
                     }
                   ],
-                  "display_order": 5
+                  "display_order": 5,
+                  "diagram": {
+                    "bucket_key": "images/physics/ap-physics-1-mechanics/fbd-box-ramp-30deg.svg",
+                    "alt_text": "Box on a 30-degree incline with weight straight down, normal force perpendicular to the ramp surface at 120 degrees, and gravity component parallel to ramp",
+                    "caption": "Free-body diagram of a 10 kg box on a 30Â° incline showing gravity components"
+                  }
                 }
               ]
+            }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/physics/ap-physics-1-mechanics/fbd-block-flat-surface.svg",
+              "alt_text": "Free-body diagram of a block on a flat surface showing weight F g pointing down, normal force F N pointing up, applied force F a pointing right, and friction f pointing left",
+              "caption": "Free-body diagram of a block on a flat surface with weight, normal, applied force, and friction"
             }
           ]
         },
@@ -1932,7 +1989,7 @@
             "ap-physics-1",
             "unit-2"
           ],
-          "content_html": "<h2>Newton's Third Law</h2><p>When you push against a wall, the wall pushes back on you with exactly the same force. This isn't a coincidence — it's Newton's Third Law.</p><h3>The Law</h3><p><strong>Newton's Third Law:</strong> If object A exerts a force on object B, then object B exerts a force on object A that is equal in magnitude and opposite in direction.</p><p>\\[ \\vec{F}_{A \\text{ on } B} = -\\vec{F}_{B \\text{ on } A} \\]</p><h3>Key Properties of Third-Law Pairs</h3><ul><li>They act on <strong>different objects</strong></li><li>They are the <strong>same type</strong> of force (e.g., both gravitational, both contact)</li><li>They are <strong>always equal in magnitude</strong>, regardless of the masses of the objects</li><li>They exist <strong>simultaneously</strong> — one cannot exist without the other</li></ul><h3>Common Misconception</h3><p>\"The heavier truck exerts more force on the small car in a collision.\" <strong>Wrong!</strong> Both experience the same force. The car has greater acceleration because it has less mass (\\(a = F/m\\)).</p><div class=\"callout-key\"><strong>Key Idea:</strong> Third-law force pairs always act on different objects. They never cancel each other because they don't act on the same object. Forces cancel only when they act on the same object.</div><div class=\"callout-warning\"><strong>AP Exam Tip:</strong> To identify a Newton's third law pair, check: (1) Are the forces on different objects? (2) Are they the same type of force? (3) Are they equal and opposite? All three must be true.</div>\n<figure class=\"concept-diagram\"><img data-bucket-key='images/physics/ap-physics-1-mechanics/fbd-newtons-third-law-pair.svg' alt='Two blocks A and B side by side, with force F A on B pointing right on block B and force F B on A pointing left on block A, equal in magnitude and opposite in direction' loading='lazy' /><figcaption>Two objects showing Newton's Third Law action-reaction force pairs</figcaption></figure>",
+          "content_html": "<h2>Newton's Third Law</h2><p>When you push against a wall, the wall pushes back on you with exactly the same force. This isn't a coincidence — it's Newton's Third Law.</p><h3>The Law</h3><p><strong>Newton's Third Law:</strong> If object A exerts a force on object B, then object B exerts a force on object A that is equal in magnitude and opposite in direction.</p><p>\\[ \\vec{F}_{A \\text{ on } B} = -\\vec{F}_{B \\text{ on } A} \\]</p><h3>Key Properties of Third-Law Pairs</h3><ul><li>They act on <strong>different objects</strong></li><li>They are the <strong>same type</strong> of force (e.g., both gravitational, both contact)</li><li>They are <strong>always equal in magnitude</strong>, regardless of the masses of the objects</li><li>They exist <strong>simultaneously</strong> — one cannot exist without the other</li></ul><h3>Common Misconception</h3><p>\"The heavier truck exerts more force on the small car in a collision.\" <strong>Wrong!</strong> Both experience the same force. The car has greater acceleration because it has less mass (\\(a = F/m\\)).</p><div class=\"callout-key\"><strong>Key Idea:</strong> Third-law force pairs always act on different objects. They never cancel each other because they don't act on the same object. Forces cancel only when they act on the same object.</div><div class=\"callout-warning\"><strong>AP Exam Tip:</strong> To identify a Newton's third law pair, check: (1) Are the forces on different objects? (2) Are they the same type of force? (3) Are they equal and opposite? All three must be true.</div>",
           "content_raw": "Newton's Third Law",
           "estimated_minutes": 8,
           "access_tier": "free",
@@ -2144,6 +2201,13 @@
                 }
               ]
             }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/physics/ap-physics-1-mechanics/fbd-newtons-third-law-pair.svg",
+              "alt_text": "Two blocks A and B side by side, with force F A on B pointing right on block B and force F B on A pointing left on block A, equal in magnitude and opposite in direction",
+              "caption": "Two objects showing Newton's Third Law action-reaction force pairs"
+            }
           ]
         },
         {
@@ -2159,7 +2223,7 @@
             "ap-physics-1",
             "unit-2"
           ],
-          "content_html": "<h2>Newton's First Law</h2><p>A hockey puck sliding on frictionless ice will continue moving in a straight line forever. It doesn't need a force to keep moving — it needs a force to stop.</p><h3>The Law</h3><p><strong>Newton's First Law (Law of Inertia):</strong> An object at rest stays at rest, and an object in motion stays in motion with constant velocity, unless acted upon by a net external force.</p><p>\\[ \\text{If } \\vec{F}_{\\text{net}} = 0, \\text{ then } \\vec{v} = \\text{constant} \\]</p><h3>Inertia</h3><p><strong>Inertia</strong> is the tendency of an object to resist changes in its state of motion. Mass is a measure of inertia — more mass means more resistance to acceleration.</p><h3>Equilibrium</h3><p>An object is in <strong>equilibrium</strong> when the net force on it is zero. This can mean:</p><ul><li><strong>Static equilibrium:</strong> at rest and staying at rest</li><li><strong>Dynamic equilibrium:</strong> moving at constant velocity</li></ul><p>In both cases, \\(\\vec{F}_{\\text{net}} = 0\\) and \\(\\vec{a} = 0\\).</p><div class=\"callout-key\"><strong>Key Idea:</strong> An object does NOT need a force to keep moving. It needs a force to change its motion (speed up, slow down, or change direction).</div><div class=\"callout-warning\"><strong>AP Exam Tip:</strong> If an object moves at constant velocity, the net force is zero — even if multiple forces act on it. They simply balance out.</div>\n<figure class=\"concept-diagram\"><img data-bucket-key='images/physics/ap-physics-1-mechanics/fbd-balanced-forces.svg' alt='Block with equal and opposite force pairs: weight and normal vertically balanced, applied force and friction horizontally balanced, net force equals zero' loading='lazy' /><figcaption>Free-body diagram of balanced forces on an object at rest or moving at constant velocity</figcaption></figure>",
+          "content_html": "<h2>Newton's First Law</h2><p>A hockey puck sliding on frictionless ice will continue moving in a straight line forever. It doesn't need a force to keep moving — it needs a force to stop.</p><h3>The Law</h3><p><strong>Newton's First Law (Law of Inertia):</strong> An object at rest stays at rest, and an object in motion stays in motion with constant velocity, unless acted upon by a net external force.</p><p>\\[ \\text{If } \\vec{F}_{\\text{net}} = 0, \\text{ then } \\vec{v} = \\text{constant} \\]</p><h3>Inertia</h3><p><strong>Inertia</strong> is the tendency of an object to resist changes in its state of motion. Mass is a measure of inertia — more mass means more resistance to acceleration.</p><h3>Equilibrium</h3><p>An object is in <strong>equilibrium</strong> when the net force on it is zero. This can mean:</p><ul><li><strong>Static equilibrium:</strong> at rest and staying at rest</li><li><strong>Dynamic equilibrium:</strong> moving at constant velocity</li></ul><p>In both cases, \\(\\vec{F}_{\\text{net}} = 0\\) and \\(\\vec{a} = 0\\).</p><div class=\"callout-key\"><strong>Key Idea:</strong> An object does NOT need a force to keep moving. It needs a force to change its motion (speed up, slow down, or change direction).</div><div class=\"callout-warning\"><strong>AP Exam Tip:</strong> If an object moves at constant velocity, the net force is zero — even if multiple forces act on it. They simply balance out.</div>",
           "content_raw": "Newton's First Law",
           "estimated_minutes": 8,
           "access_tier": "free",
@@ -2370,6 +2434,13 @@
                 }
               ]
             }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/physics/ap-physics-1-mechanics/fbd-balanced-forces.svg",
+              "alt_text": "Block with equal and opposite force pairs: weight and normal vertically balanced, applied force and friction horizontally balanced, net force equals zero",
+              "caption": "Free-body diagram of balanced forces on an object at rest or moving at constant velocity"
+            }
           ]
         },
         {
@@ -2384,7 +2455,7 @@
             "ap-physics-1",
             "unit-2"
           ],
-          "content_html": "<h2>Newton's Second Law</h2><p>Newton's Second Law is the most important equation in mechanics. It connects force, mass, and acceleration in one powerful statement.</p><h3>The Law</h3><p>\\[ \\vec{F}_{\\text{net}} = m\\vec{a} \\]</p><p>The net force on an object equals its mass times its acceleration. The acceleration is always in the same direction as the net force.</p><h3>Applying Newton's Second Law</h3><p>Steps to solve problems:</p><ol><li>Draw a free-body diagram</li><li>Choose a coordinate system</li><li>Write \\(\\sum F_x = ma_x\\) and \\(\\sum F_y = ma_y\\)</li><li>Solve for the unknown</li></ol><h3>Variable Definitions</h3><ul><li>\\( F_{\\text{net}} \\) — net (total) force (N)</li><li>\\( m \\) — mass (kg)</li><li>\\( a \\) — acceleration (m/s²)</li></ul><h3>Weight vs. Mass</h3><p><strong>Mass</strong> (kg) is the amount of matter; it's the same everywhere.</p><p><strong>Weight</strong> (N) is the gravitational force: \\( W = mg \\). It depends on location.</p><div class=\"callout-key\"><strong>Key Idea:</strong> The acceleration of an object is directly proportional to the net force and inversely proportional to its mass. Double the force → double the acceleration. Double the mass → half the acceleration.</div><div class=\"callout-warning\"><strong>AP Exam Tip:</strong> Always use the NET force in \\(F = ma\\), not just one of the forces. A common error is forgetting friction or weight components.</div>\n<figure class=\"concept-diagram\"><img data-bucket-key='images/physics/ap-physics-1-mechanics/fbd-net-force-acceleration.svg' alt='Block on flat surface with applied force larger than friction, resulting in net force and acceleration arrow pointing right' loading='lazy' /><figcaption>Free-body diagram showing net force producing acceleration on a block</figcaption></figure>",
+          "content_html": "<h2>Newton's Second Law</h2><p>Newton's Second Law is the most important equation in mechanics. It connects force, mass, and acceleration in one powerful statement.</p><h3>The Law</h3><p>\\[ \\vec{F}_{\\text{net}} = m\\vec{a} \\]</p><p>The net force on an object equals its mass times its acceleration. The acceleration is always in the same direction as the net force.</p><h3>Applying Newton's Second Law</h3><p>Steps to solve problems:</p><ol><li>Draw a free-body diagram</li><li>Choose a coordinate system</li><li>Write \\(\\sum F_x = ma_x\\) and \\(\\sum F_y = ma_y\\)</li><li>Solve for the unknown</li></ol><h3>Variable Definitions</h3><ul><li>\\( F_{\\text{net}} \\) — net (total) force (N)</li><li>\\( m \\) — mass (kg)</li><li>\\( a \\) — acceleration (m/s²)</li></ul><h3>Weight vs. Mass</h3><p><strong>Mass</strong> (kg) is the amount of matter; it's the same everywhere.</p><p><strong>Weight</strong> (N) is the gravitational force: \\( W = mg \\). It depends on location.</p><div class=\"callout-key\"><strong>Key Idea:</strong> The acceleration of an object is directly proportional to the net force and inversely proportional to its mass. Double the force → double the acceleration. Double the mass → half the acceleration.</div><div class=\"callout-warning\"><strong>AP Exam Tip:</strong> Always use the NET force in \\(F = ma\\), not just one of the forces. A common error is forgetting friction or weight components.</div>",
           "content_raw": "Newton's Second Law",
           "estimated_minutes": 12,
           "access_tier": "free",
@@ -2571,7 +2642,12 @@
                       "text": "\\(a = 20/5 = 4\\) m/s²."
                     }
                   ],
-                  "display_order": 4
+                  "display_order": 4,
+                  "diagram": {
+                    "bucket_key": "images/physics/ap-physics-1-mechanics/fbd-atwood-machine.svg",
+                    "alt_text": "Block A of 3 kg on a frictionless table connected by a string over a pulley to Block B of 2 kg hanging vertically, tension T in the string",
+                    "caption": "Two blocks connected by a string over a pulley: Block A on a frictionless table, Block B hanging vertically"
+                  }
                 },
                 {
                   "question_html": "<p>If the net force on a 4 kg object is tripled while its mass is doubled, by what factor does the acceleration change?</p>",
@@ -2679,6 +2755,13 @@
                 }
               ]
             }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/physics/ap-physics-1-mechanics/fbd-net-force-acceleration.svg",
+              "alt_text": "Block on flat surface with applied force larger than friction, resulting in net force and acceleration arrow pointing right",
+              "caption": "Free-body diagram showing net force producing acceleration on a block"
+            }
           ]
         },
         {
@@ -2693,7 +2776,7 @@
             "ap-physics-1",
             "unit-2"
           ],
-          "content_html": "<h2>Gravitational Force</h2><p>Every object in the universe attracts every other object. The force that keeps planets in orbit and apples falling from trees is the same: gravity.</p><h3>Weight Near Earth's Surface</h3><p>Near Earth's surface, the gravitational force on an object (its weight) is:</p><p>\\[ F_g = mg \\]</p><p>where \\( g \\approx 9.8 \\text{ m/s}^2 \\approx 10 \\text{ m/s}^2 \\) is the gravitational field strength (acceleration due to gravity).</p><h3>Newton's Law of Universal Gravitation</h3><p>The gravitational force between any two masses:</p><p>\\[ F_g = \\frac{Gm_1 m_2}{r^2} \\]</p><p>where:</p><ul><li>\\( G = 6.67 \\times 10^{-11} \\text{ N·m}^2/\\text{kg}^2 \\) — gravitational constant</li><li>\\( m_1, m_2 \\) — the two masses (kg)</li><li>\\( r \\) — distance between their centers (m)</li></ul><h3>Gravitational Field</h3><p>The gravitational field strength at a distance \\(r\\) from mass \\(M\\) is:</p><p>\\[ g = \\frac{GM}{r^2} \\]</p><p>On Earth's surface, \\( g = \\frac{GM_E}{R_E^2} \\approx 9.8 \\text{ m/s}^2 \\).</p><div class=\"callout-key\"><strong>Key Idea:</strong> Gravitational force is always attractive, acts between any two masses, and follows an inverse-square law — double the distance and the force drops to one-quarter.</div><div class=\"callout-warning\"><strong>AP Exam Tip:</strong> The value of \\(g\\) varies with altitude and location. Near Earth's surface, use \\(g = 9.8\\) (or 10) m/s², but for objects far from Earth, use the universal law.</div>\n<figure class=\"concept-diagram\"><img data-bucket-key='images/physics/ap-physics-1-mechanics/fbd-freefall.svg' alt='Small circle representing an object in freefall with a single downward arrow labeled F g equals m g' loading='lazy' /><figcaption>Free-body diagram of an object in freefall with only gravitational force</figcaption></figure>",
+          "content_html": "<h2>Gravitational Force</h2><p>Every object in the universe attracts every other object. The force that keeps planets in orbit and apples falling from trees is the same: gravity.</p><h3>Weight Near Earth's Surface</h3><p>Near Earth's surface, the gravitational force on an object (its weight) is:</p><p>\\[ F_g = mg \\]</p><p>where \\( g \\approx 9.8 \\text{ m/s}^2 \\approx 10 \\text{ m/s}^2 \\) is the gravitational field strength (acceleration due to gravity).</p><h3>Newton's Law of Universal Gravitation</h3><p>The gravitational force between any two masses:</p><p>\\[ F_g = \\frac{Gm_1 m_2}{r^2} \\]</p><p>where:</p><ul><li>\\( G = 6.67 \\times 10^{-11} \\text{ N·m}^2/\\text{kg}^2 \\) — gravitational constant</li><li>\\( m_1, m_2 \\) — the two masses (kg)</li><li>\\( r \\) — distance between their centers (m)</li></ul><h3>Gravitational Field</h3><p>The gravitational field strength at a distance \\(r\\) from mass \\(M\\) is:</p><p>\\[ g = \\frac{GM}{r^2} \\]</p><p>On Earth's surface, \\( g = \\frac{GM_E}{R_E^2} \\approx 9.8 \\text{ m/s}^2 \\).</p><div class=\"callout-key\"><strong>Key Idea:</strong> Gravitational force is always attractive, acts between any two masses, and follows an inverse-square law — double the distance and the force drops to one-quarter.</div><div class=\"callout-warning\"><strong>AP Exam Tip:</strong> The value of \\(g\\) varies with altitude and location. Near Earth's surface, use \\(g = 9.8\\) (or 10) m/s², but for objects far from Earth, use the universal law.</div>",
           "content_raw": "Gravitational Force",
           "estimated_minutes": 10,
           "access_tier": "free",
@@ -2979,6 +3062,13 @@
                 }
               ]
             }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/physics/ap-physics-1-mechanics/fbd-freefall.svg",
+              "alt_text": "Small circle representing an object in freefall with a single downward arrow labeled F g equals m g",
+              "caption": "Free-body diagram of an object in freefall with only gravitational force"
+            }
           ]
         },
         {
@@ -2992,7 +3082,7 @@
             "ap-physics-1",
             "unit-2"
           ],
-          "content_html": "<h2>Kinetic and Static Friction</h2><p>Try pushing a heavy bookcase across the floor. At first it doesn't budge — static friction holds it. Push harder and it suddenly slides, now opposed by kinetic friction, which is generally less than the maximum static friction.</p><h3>Static Friction</h3><p>Static friction prevents an object from starting to move. It adjusts to match the applied force, up to a maximum:</p><p>\\[ f_s \\leq \\mu_s F_N \\]</p><p>The object begins to slide when the applied force exceeds \\( \\mu_s F_N \\).</p><h3>Kinetic Friction</h3><p>Once sliding, kinetic friction acts on the object:</p><p>\\[ f_k = \\mu_k F_N \\]</p><p>Kinetic friction is approximately constant and typically less than maximum static friction: \\( \\mu_k < \\mu_s \\).</p><h3>Variable Definitions</h3><ul><li>\\( f_s \\) — static friction force (N)</li><li>\\( f_k \\) — kinetic friction force (N)</li><li>\\( \\mu_s \\) — coefficient of static friction (dimensionless)</li><li>\\( \\mu_k \\) — coefficient of kinetic friction (dimensionless)</li><li>\\( F_N \\) — normal force (N)</li></ul><h3>Direction of Friction</h3><p>Friction always opposes the relative motion (kinetic) or the tendency of motion (static) between two surfaces.</p><div class=\"callout-key\"><strong>Key Idea:</strong> Friction depends on the normal force, not the surface area. On an incline, the normal force is \\(mg\\cos\\theta\\), NOT \\(mg\\).</div><div class=\"callout-warning\"><strong>AP Exam Tip:</strong> Static friction is NOT always equal to \\(\\mu_s F_N\\). That's the MAXIMUM value. Static friction can be any value from 0 up to \\(\\mu_s F_N\\).</div>\n<figure class=\"concept-diagram\"><img data-bucket-key='images/physics/ap-physics-1-mechanics/fbd-friction-block.svg' alt='Block on flat surface with weight pointing down, normal force up, applied force right, and kinetic friction force pointing left opposing the motion' loading='lazy' /><figcaption>Free-body diagram of a block sliding on a surface with kinetic friction opposing motion</figcaption></figure>",
+          "content_html": "<h2>Kinetic and Static Friction</h2><p>Try pushing a heavy bookcase across the floor. At first it doesn't budge — static friction holds it. Push harder and it suddenly slides, now opposed by kinetic friction, which is generally less than the maximum static friction.</p><h3>Static Friction</h3><p>Static friction prevents an object from starting to move. It adjusts to match the applied force, up to a maximum:</p><p>\\[ f_s \\leq \\mu_s F_N \\]</p><p>The object begins to slide when the applied force exceeds \\( \\mu_s F_N \\).</p><h3>Kinetic Friction</h3><p>Once sliding, kinetic friction acts on the object:</p><p>\\[ f_k = \\mu_k F_N \\]</p><p>Kinetic friction is approximately constant and typically less than maximum static friction: \\( \\mu_k < \\mu_s \\).</p><h3>Variable Definitions</h3><ul><li>\\( f_s \\) — static friction force (N)</li><li>\\( f_k \\) — kinetic friction force (N)</li><li>\\( \\mu_s \\) — coefficient of static friction (dimensionless)</li><li>\\( \\mu_k \\) — coefficient of kinetic friction (dimensionless)</li><li>\\( F_N \\) — normal force (N)</li></ul><h3>Direction of Friction</h3><p>Friction always opposes the relative motion (kinetic) or the tendency of motion (static) between two surfaces.</p><div class=\"callout-key\"><strong>Key Idea:</strong> Friction depends on the normal force, not the surface area. On an incline, the normal force is \\(mg\\cos\\theta\\), NOT \\(mg\\).</div><div class=\"callout-warning\"><strong>AP Exam Tip:</strong> Static friction is NOT always equal to \\(\\mu_s F_N\\). That's the MAXIMUM value. Static friction can be any value from 0 up to \\(\\mu_s F_N\\).</div>",
           "content_raw": "Kinetic and Static Friction",
           "estimated_minutes": 12,
           "access_tier": "free",
@@ -3176,7 +3266,12 @@
                       "text": "\\(a = g(\\sin 30° - 0.2\\cos 30°) = 10(0.5 - 0.173) = 3.27\\) m/s² \\(\\approx 3.3\\) m/s²."
                     }
                   ],
-                  "display_order": 4
+                  "display_order": 4,
+                  "diagram": {
+                    "bucket_key": "images/physics/ap-physics-1-mechanics/fbd-incline-friction-30deg.svg",
+                    "alt_text": "10 kg box on a 30-degree incline with weight pointing straight down, normal force perpendicular to incline at 120 degrees, and kinetic friction force pointing up the incline at 30 degrees",
+                    "caption": "Free-body diagram of a 10 kg box sliding down a 30Â° incline with kinetic friction"
+                  }
                 },
                 {
                   "question_html": "<p>A 5 kg block on a flat surface (\\(\\mu_s = 0.6\\), \\(\\mu_k = 0.4\\)) is pushed with a force that increases from 0. At what force does the block start to slide? Use \\(g = 10\\) m/s². Give your answer in newtons.</p>",
@@ -3263,9 +3358,21 @@
                     }
                   ],
                   "correct_answer": "The push has horizontal component 200cos30° = 173 N and vertical component 200sin30° = 100 N (downward). Normal force: N = mg + 100 = 500 N. Friction: fk = 0.25(500) = 125 N. Net horizontal force: 173 - 125 = 48 N. Acceleration: a = 48/40 = 1.2 m/s².",
-                  "display_order": 7
+                  "display_order": 7,
+                  "diagram": {
+                    "bucket_key": "images/physics/ap-physics-1-mechanics/fbd-crate-angled-push.svg",
+                    "alt_text": "40 kg crate on flat surface with 200 N applied force at 30 degrees below horizontal, weight down, increased normal force up, and kinetic friction opposing motion",
+                    "caption": "Free-body diagram of a 40 kg crate pushed at 30Â° below horizontal with friction"
+                  }
                 }
               ]
+            }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/physics/ap-physics-1-mechanics/fbd-friction-block.svg",
+              "alt_text": "Block on flat surface with weight pointing down, normal force up, applied force right, and kinetic friction force pointing left opposing the motion",
+              "caption": "Free-body diagram of a block sliding on a surface with kinetic friction opposing motion"
             }
           ]
         },
@@ -3281,7 +3388,7 @@
             "ap-physics-1",
             "unit-2"
           ],
-          "content_html": "<h2>Spring Forces</h2><p>When you stretch or compress a spring, it pushes back. The harder you pull, the harder it resists — and the relationship is remarkably simple.</p><h3>Hooke's Law</h3><p>The force exerted by a spring is proportional to its displacement from the natural (unstretched) length:</p><p>\\[ F_s = -kx \\]</p><p>The negative sign means the spring force is always a <strong>restoring force</strong> — it acts in the direction opposite to the displacement.</p><p>The magnitude of the spring force is:</p><p>\\[ |F_s| = k|x| \\]</p><h3>Variable Definitions</h3><ul><li>\\( F_s \\) — spring force (N)</li><li>\\( k \\) — spring constant (N/m) — a measure of the spring's stiffness</li><li>\\( x \\) — displacement from natural length (m)</li></ul><h3>Spring Constant</h3><p>A large \\(k\\) means a stiff spring (hard to stretch). A small \\(k\\) means a soft spring (easy to stretch).</p><p>\\(k\\) can be found experimentally by measuring the force needed to stretch the spring a known amount:</p><p>\\[ k = \\frac{F}{x} \\]</p><h3>Elastic Limit</h3><p>Hooke's Law applies only within the <strong>elastic limit</strong>. If stretched too far, the spring deforms permanently and the linear relationship breaks down.</p><div class=\"callout-key\"><strong>Key Idea:</strong> Hooke's Law is linear: double the displacement → double the force. The spring constant \\(k\\) is the slope of a force vs. displacement graph.</div><div class=\"callout-warning\"><strong>AP Exam Tip:</strong> Watch the sign convention. If the spring is compressed (\\(x < 0\\)), the force is positive (pushes outward). The restoring nature of the spring force is central to understanding oscillations (Unit 7).</div>\n<figure class=\"concept-diagram\"><img data-bucket-key='images/physics/ap-physics-1-mechanics/spring-mass-equilibrium.svg' alt='Horizontal spring attached to a wall on the left with a block on the right, shown at equilibrium position with displacement x marked' loading='lazy' /><figcaption>Spring-mass system showing the block at equilibrium, stretched, and compressed positions</figcaption></figure>",
+          "content_html": "<h2>Spring Forces</h2><p>When you stretch or compress a spring, it pushes back. The harder you pull, the harder it resists — and the relationship is remarkably simple.</p><h3>Hooke's Law</h3><p>The force exerted by a spring is proportional to its displacement from the natural (unstretched) length:</p><p>\\[ F_s = -kx \\]</p><p>The negative sign means the spring force is always a <strong>restoring force</strong> — it acts in the direction opposite to the displacement.</p><p>The magnitude of the spring force is:</p><p>\\[ |F_s| = k|x| \\]</p><h3>Variable Definitions</h3><ul><li>\\( F_s \\) — spring force (N)</li><li>\\( k \\) — spring constant (N/m) — a measure of the spring's stiffness</li><li>\\( x \\) — displacement from natural length (m)</li></ul><h3>Spring Constant</h3><p>A large \\(k\\) means a stiff spring (hard to stretch). A small \\(k\\) means a soft spring (easy to stretch).</p><p>\\(k\\) can be found experimentally by measuring the force needed to stretch the spring a known amount:</p><p>\\[ k = \\frac{F}{x} \\]</p><h3>Elastic Limit</h3><p>Hooke's Law applies only within the <strong>elastic limit</strong>. If stretched too far, the spring deforms permanently and the linear relationship breaks down.</p><div class=\"callout-key\"><strong>Key Idea:</strong> Hooke's Law is linear: double the displacement → double the force. The spring constant \\(k\\) is the slope of a force vs. displacement graph.</div><div class=\"callout-warning\"><strong>AP Exam Tip:</strong> Watch the sign convention. If the spring is compressed (\\(x < 0\\)), the force is positive (pushes outward). The restoring nature of the spring force is central to understanding oscillations (Unit 7).</div>",
           "content_raw": "Spring Forces",
           "estimated_minutes": 10,
           "access_tier": "free",
@@ -3550,6 +3657,13 @@
                 }
               ]
             }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/physics/ap-physics-1-mechanics/spring-mass-equilibrium.svg",
+              "alt_text": "Horizontal spring attached to a wall on the left with a block on the right, shown at equilibrium position with displacement x marked",
+              "caption": "Spring-mass system showing the block at equilibrium, stretched, and compressed positions"
+            }
           ]
         },
         {
@@ -3564,7 +3678,7 @@
             "ap-physics-1",
             "unit-2"
           ],
-          "content_html": "<h2>Circular Motion</h2><p>A car rounding a curve, a satellite orbiting Earth, a ball on a string — these all involve circular motion, where the direction of velocity is constantly changing.</p><h3>Uniform Circular Motion</h3><p>An object moving in a circle at constant speed has:</p><ul><li>Constant speed \\(v\\)</li><li>Changing velocity (direction changes)</li><li>Acceleration directed toward the center: <strong>centripetal acceleration</strong></li></ul><p>\\[ a_c = \\frac{v^2}{r} \\]</p><h3>Centripetal Force</h3><p>By Newton's Second Law, the net force causing circular motion points toward the center:</p><p>\\[ F_c = ma_c = \\frac{mv^2}{r} \\]</p><p>This is NOT a new type of force — it's the name for whatever real force (tension, gravity, friction, normal force) provides the inward acceleration.</p><h3>Period and Frequency</h3><p>\\[ T = \\frac{2\\pi r}{v} \\qquad f = \\frac{1}{T} \\]</p><h3>Variable Definitions</h3><ul><li>\\( a_c \\) — centripetal acceleration (m/s²)</li><li>\\( v \\) — speed (m/s)</li><li>\\( r \\) — radius of circular path (m)</li><li>\\( T \\) — period (s) — time for one revolution</li><li>\\( f \\) — frequency (Hz) — revolutions per second</li></ul><div class=\"callout-key\"><strong>Key Idea:</strong> \"Centripetal\" means \"center-seeking.\" There is no outward centripetal force on the object — the inward force is what keeps it moving in a circle. \"Centrifugal force\" is a fictitious force felt in a rotating reference frame.</div><div class=\"callout-warning\"><strong>AP Exam Tip:</strong> Never write \"centripetal force\" as a label on a free-body diagram. Instead, identify the real force (tension, gravity, friction, normal) that acts as the centripetal force.</div>\n<figure class=\"concept-diagram\"><img data-bucket-key='images/physics/ap-physics-1-mechanics/uniform-circular-motion.svg' alt='Circle with an object at four positions showing velocity arrows tangent to the circle and centripetal acceleration arrows pointing toward the center' loading='lazy' /><figcaption>Uniform circular motion showing velocity tangent to the circle and centripetal acceleration toward center</figcaption></figure>",
+          "content_html": "<h2>Circular Motion</h2><p>A car rounding a curve, a satellite orbiting Earth, a ball on a string — these all involve circular motion, where the direction of velocity is constantly changing.</p><h3>Uniform Circular Motion</h3><p>An object moving in a circle at constant speed has:</p><ul><li>Constant speed \\(v\\)</li><li>Changing velocity (direction changes)</li><li>Acceleration directed toward the center: <strong>centripetal acceleration</strong></li></ul><p>\\[ a_c = \\frac{v^2}{r} \\]</p><h3>Centripetal Force</h3><p>By Newton's Second Law, the net force causing circular motion points toward the center:</p><p>\\[ F_c = ma_c = \\frac{mv^2}{r} \\]</p><p>This is NOT a new type of force — it's the name for whatever real force (tension, gravity, friction, normal force) provides the inward acceleration.</p><h3>Period and Frequency</h3><p>\\[ T = \\frac{2\\pi r}{v} \\qquad f = \\frac{1}{T} \\]</p><h3>Variable Definitions</h3><ul><li>\\( a_c \\) — centripetal acceleration (m/s²)</li><li>\\( v \\) — speed (m/s)</li><li>\\( r \\) — radius of circular path (m)</li><li>\\( T \\) — period (s) — time for one revolution</li><li>\\( f \\) — frequency (Hz) — revolutions per second</li></ul><div class=\"callout-key\"><strong>Key Idea:</strong> \"Centripetal\" means \"center-seeking.\" There is no outward centripetal force on the object — the inward force is what keeps it moving in a circle. \"Centrifugal force\" is a fictitious force felt in a rotating reference frame.</div><div class=\"callout-warning\"><strong>AP Exam Tip:</strong> Never write \"centripetal force\" as a label on a free-body diagram. Instead, identify the real force (tension, gravity, friction, normal) that acts as the centripetal force.</div>",
           "content_raw": "Circular Motion",
           "estimated_minutes": 15,
           "access_tier": "free",
@@ -3742,7 +3856,12 @@
                       "text": "\\(mg = mv^2/r \\Rightarrow v = \\sqrt{gr} = \\sqrt{10 \\times 0.8} = \\sqrt{8} = 2\\sqrt{2} \\approx 2.83\\) m/s."
                     }
                   ],
-                  "display_order": 4
+                  "display_order": 4,
+                  "diagram": {
+                    "bucket_key": "images/physics/ap-physics-1-mechanics/circular-motion-vertical.svg",
+                    "alt_text": "Ball at top of vertical circle with weight and tension both pointing downward toward center, providing centripetal force",
+                    "caption": "Ball on a string swung in a vertical circle, showing forces at the top of the loop"
+                  }
                 },
                 {
                   "question_html": "<p>If the speed of an object in circular motion is doubled while the radius remains the same, by what factor does the centripetal force change?</p>",
@@ -3879,6 +3998,13 @@
                 }
               ]
             }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/physics/ap-physics-1-mechanics/uniform-circular-motion.svg",
+              "alt_text": "Circle with an object at four positions showing velocity arrows tangent to the circle and centripetal acceleration arrows pointing toward the center",
+              "caption": "Uniform circular motion showing velocity tangent to the circle and centripetal acceleration toward center"
+            }
           ]
         }
       ]
@@ -3900,7 +4026,7 @@
             "ap-physics-1",
             "unit-3"
           ],
-          "content_html": "<h2>Translational Kinetic Energy</h2><p>A moving truck carries more \"punch\" than a moving bicycle. Kinetic energy quantifies the energy an object has due to its motion.</p><h3>Definition</h3><p>The translational kinetic energy of an object with mass \\(m\\) moving at speed \\(v\\):</p><p>\\[ K = \\frac{1}{2}mv^2 \\]</p><h3>Key Properties</h3><ul><li>Kinetic energy is always positive (or zero)</li><li>It is a <strong>scalar</strong> — no direction</li><li>It depends on the square of speed: double the speed → quadruple the KE</li><li>SI unit: joule (J) = kg·m²/s²</li></ul><h3>Variable Definitions</h3><ul><li>\\( K \\) — kinetic energy (J)</li><li>\\( m \\) — mass (kg)</li><li>\\( v \\) — speed (m/s)</li></ul><div class=\"callout-key\"><strong>Key Idea:</strong> Because KE depends on \\(v^2\\), small changes in speed at high velocities produce large changes in kinetic energy. Going from 10 to 20 m/s triples the KE, not doubles it.</div><div class=\"callout-warning\"><strong>AP Exam Tip:</strong> Kinetic energy is frame-dependent — it depends on the observer's reference frame. The AP exam usually assumes the ground frame unless stated otherwise.</div>\n<figure class=\"concept-diagram\"><img data-bucket-key='images/physics/ap-physics-1-mechanics/energy-bar-ke-only.svg' alt='Bar chart with a single state showing a kinetic energy bar at 50 joules' loading='lazy' /><figcaption>Energy bar chart showing kinetic energy of a moving object</figcaption></figure>",
+          "content_html": "<h2>Translational Kinetic Energy</h2><p>A moving truck carries more \"punch\" than a moving bicycle. Kinetic energy quantifies the energy an object has due to its motion.</p><h3>Definition</h3><p>The translational kinetic energy of an object with mass \\(m\\) moving at speed \\(v\\):</p><p>\\[ K = \\frac{1}{2}mv^2 \\]</p><h3>Key Properties</h3><ul><li>Kinetic energy is always positive (or zero)</li><li>It is a <strong>scalar</strong> — no direction</li><li>It depends on the square of speed: double the speed → quadruple the KE</li><li>SI unit: joule (J) = kg·m²/s²</li></ul><h3>Variable Definitions</h3><ul><li>\\( K \\) — kinetic energy (J)</li><li>\\( m \\) — mass (kg)</li><li>\\( v \\) — speed (m/s)</li></ul><div class=\"callout-key\"><strong>Key Idea:</strong> Because KE depends on \\(v^2\\), small changes in speed at high velocities produce large changes in kinetic energy. Going from 10 to 20 m/s triples the KE, not doubles it.</div><div class=\"callout-warning\"><strong>AP Exam Tip:</strong> Kinetic energy is frame-dependent — it depends on the observer's reference frame. The AP exam usually assumes the ground frame unless stated otherwise.</div>",
           "content_raw": "Translational Kinetic Energy",
           "estimated_minutes": 8,
           "access_tier": "free",
@@ -4105,6 +4231,13 @@
                 }
               ]
             }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/physics/ap-physics-1-mechanics/energy-bar-ke-only.svg",
+              "alt_text": "Bar chart with a single state showing a kinetic energy bar at 50 joules",
+              "caption": "Energy bar chart showing kinetic energy of a moving object"
+            }
           ]
         },
         {
@@ -4118,7 +4251,7 @@
             "ap-physics-1",
             "unit-3"
           ],
-          "content_html": "<h2>Work</h2><p>In physics, \"work\" has a precise meaning: it's the transfer of energy to an object by a force acting on it through a displacement.</p><h3>Work Done by a Constant Force</h3><p>\\[ W = Fd\\cos\\theta \\]</p><p>where \\(F\\) is the magnitude of the force, \\(d\\) is the magnitude of the displacement, and \\(\\theta\\) is the angle between the force and displacement vectors.</p><h3>Special Cases</h3><ul><li>\\(\\theta = 0°\\): force and displacement in same direction → \\(W = Fd\\) (positive work)</li><li>\\(\\theta = 90°\\): force perpendicular to displacement → \\(W = 0\\) (no work)</li><li>\\(\\theta = 180°\\): force opposite to displacement → \\(W = -Fd\\) (negative work)</li></ul><h3>Work-Energy Theorem</h3><p>The net work done on an object equals its change in kinetic energy:</p><p>\\[ W_{\\text{net}} = \\Delta K = K_f - K_i = \\frac{1}{2}mv_f^2 - \\frac{1}{2}mv_i^2 \\]</p><h3>Work Done by Variable Forces</h3><p>For a force that changes, work equals the area under the force vs. displacement graph.</p><h3>Variable Definitions</h3><ul><li>\\( W \\) — work (J)</li><li>\\( F \\) — force magnitude (N)</li><li>\\( d \\) — displacement magnitude (m)</li><li>\\( \\theta \\) — angle between force and displacement</li></ul><div class=\"callout-key\"><strong>Key Idea:</strong> The normal force and gravity do zero work when an object moves horizontally, because they are perpendicular to the displacement. Work requires a force component along the direction of motion.</div><div class=\"callout-warning\"><strong>AP Exam Tip:</strong> Negative work doesn't mean \"less\" work — it means the force takes energy away from the object (e.g., friction slowing something down).</div>\n<figure class=\"concept-diagram\"><img data-bucket-key='images/physics/ap-physics-1-mechanics/fbd-force-at-angle.svg' alt='Block on flat surface with applied force F at 30 degrees above horizontal, weight down, normal force up, and friction left' loading='lazy' /><figcaption>Free-body diagram showing an applied force at an angle to the displacement direction</figcaption></figure>",
+          "content_html": "<h2>Work</h2><p>In physics, \"work\" has a precise meaning: it's the transfer of energy to an object by a force acting on it through a displacement.</p><h3>Work Done by a Constant Force</h3><p>\\[ W = Fd\\cos\\theta \\]</p><p>where \\(F\\) is the magnitude of the force, \\(d\\) is the magnitude of the displacement, and \\(\\theta\\) is the angle between the force and displacement vectors.</p><h3>Special Cases</h3><ul><li>\\(\\theta = 0°\\): force and displacement in same direction → \\(W = Fd\\) (positive work)</li><li>\\(\\theta = 90°\\): force perpendicular to displacement → \\(W = 0\\) (no work)</li><li>\\(\\theta = 180°\\): force opposite to displacement → \\(W = -Fd\\) (negative work)</li></ul><h3>Work-Energy Theorem</h3><p>The net work done on an object equals its change in kinetic energy:</p><p>\\[ W_{\\text{net}} = \\Delta K = K_f - K_i = \\frac{1}{2}mv_f^2 - \\frac{1}{2}mv_i^2 \\]</p><h3>Work Done by Variable Forces</h3><p>For a force that changes, work equals the area under the force vs. displacement graph.</p><h3>Variable Definitions</h3><ul><li>\\( W \\) — work (J)</li><li>\\( F \\) — force magnitude (N)</li><li>\\( d \\) — displacement magnitude (m)</li><li>\\( \\theta \\) — angle between force and displacement</li></ul><div class=\"callout-key\"><strong>Key Idea:</strong> The normal force and gravity do zero work when an object moves horizontally, because they are perpendicular to the displacement. Work requires a force component along the direction of motion.</div><div class=\"callout-warning\"><strong>AP Exam Tip:</strong> Negative work doesn't mean \"less\" work — it means the force takes energy away from the object (e.g., friction slowing something down).</div>",
           "content_raw": "Work",
           "estimated_minutes": 12,
           "access_tier": "free",
@@ -4362,7 +4495,12 @@
                       "text": "\\(W = \\frac{1}{2}kx^2 = \\frac{1}{2}(400)(0.2^2) = 200(0.04) = 8\\) J."
                     }
                   ],
-                  "display_order": 6
+                  "display_order": 6,
+                  "diagram": {
+                    "bucket_key": "images/physics/ap-physics-1-mechanics/fbd-block-slides-ramp-work.svg",
+                    "alt_text": "5 kg block on a frictionless 30-degree ramp, sliding 3 m down with weight pointing down and normal force perpendicular to surface",
+                    "caption": "A 5 kg block sliding 3 m down a frictionless 30Â° ramp for work calculation"
+                  }
                 },
                 {
                   "question_html": "<p>A 5 kg block slides 3 m down a frictionless ramp inclined at 30°. Use \\(g = 10\\) m/s².</p><p>(a) How much work does gravity do?</p><p>(b) How much work does the normal force do?</p><p>(c) What is the block's speed at the bottom if it started from rest?</p>",
@@ -4401,6 +4539,13 @@
                 }
               ]
             }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/physics/ap-physics-1-mechanics/fbd-force-at-angle.svg",
+              "alt_text": "Block on flat surface with applied force F at 30 degrees above horizontal, weight down, normal force up, and friction left",
+              "caption": "Free-body diagram showing an applied force at an angle to the displacement direction"
+            }
           ]
         },
         {
@@ -4414,7 +4559,7 @@
             "ap-physics-1",
             "unit-3"
           ],
-          "content_html": "<h2>Potential Energy</h2><p>A book on a high shelf has energy stored in it — not because it's moving, but because of its position. This stored energy is <strong>potential energy</strong>.</p><h3>Gravitational Potential Energy</h3><p>Near Earth's surface:</p><p>\\[ U_g = mgh \\]</p><p>where \\(h\\) is the height above a chosen reference level. The reference level (where \\(h = 0\\)) is arbitrary — only changes in PE matter.</p><h3>Elastic (Spring) Potential Energy</h3><p>Energy stored in a compressed or stretched spring:</p><p>\\[ U_s = \\frac{1}{2}kx^2 \\]</p><p>where \\(x\\) is the displacement from the natural length.</p><h3>Work Done by Conservative Forces</h3><p>Gravity and spring forces are <strong>conservative</strong>: the work they do depends only on initial and final positions, not the path. For conservative forces:</p><p>\\[ W_{\\text{conservative}} = -\\Delta U \\]</p><p>Friction is <strong>non-conservative</strong> — the work it does depends on the path.</p><h3>Variable Definitions</h3><ul><li>\\( U_g \\) — gravitational PE (J)</li><li>\\( U_s \\) — spring PE (J)</li><li>\\( h \\) — height above reference (m)</li><li>\\( k \\) — spring constant (N/m)</li><li>\\( x \\) — spring displacement (m)</li></ul><div class=\"callout-key\"><strong>Key Idea:</strong> Potential energy is energy of position or configuration. Only changes in PE are physically meaningful — the zero level is a matter of convenience.</div><div class=\"callout-warning\"><strong>AP Exam Tip:</strong> Choose your reference level wisely (usually the lowest point in the problem). Once chosen, be consistent throughout.</div>\n<figure class=\"concept-diagram\"><img data-bucket-key='images/physics/ap-physics-1-mechanics/energy-bar-pe-height.svg' alt='Bar chart with three states at different heights showing increasing gravitational potential energy: 0 J at ground, 50 J at 5 m, 100 J at 10 m' loading='lazy' /><figcaption>Energy bar chart comparing gravitational PE at different heights</figcaption></figure>",
+          "content_html": "<h2>Potential Energy</h2><p>A book on a high shelf has energy stored in it — not because it's moving, but because of its position. This stored energy is <strong>potential energy</strong>.</p><h3>Gravitational Potential Energy</h3><p>Near Earth's surface:</p><p>\\[ U_g = mgh \\]</p><p>where \\(h\\) is the height above a chosen reference level. The reference level (where \\(h = 0\\)) is arbitrary — only changes in PE matter.</p><h3>Elastic (Spring) Potential Energy</h3><p>Energy stored in a compressed or stretched spring:</p><p>\\[ U_s = \\frac{1}{2}kx^2 \\]</p><p>where \\(x\\) is the displacement from the natural length.</p><h3>Work Done by Conservative Forces</h3><p>Gravity and spring forces are <strong>conservative</strong>: the work they do depends only on initial and final positions, not the path. For conservative forces:</p><p>\\[ W_{\\text{conservative}} = -\\Delta U \\]</p><p>Friction is <strong>non-conservative</strong> — the work it does depends on the path.</p><h3>Variable Definitions</h3><ul><li>\\( U_g \\) — gravitational PE (J)</li><li>\\( U_s \\) — spring PE (J)</li><li>\\( h \\) — height above reference (m)</li><li>\\( k \\) — spring constant (N/m)</li><li>\\( x \\) — spring displacement (m)</li></ul><div class=\"callout-key\"><strong>Key Idea:</strong> Potential energy is energy of position or configuration. Only changes in PE are physically meaningful — the zero level is a matter of convenience.</div><div class=\"callout-warning\"><strong>AP Exam Tip:</strong> Choose your reference level wisely (usually the lowest point in the problem). Once chosen, be consistent throughout.</div>",
           "content_raw": "Potential Energy",
           "estimated_minutes": 12,
           "access_tier": "free",
@@ -4694,6 +4839,13 @@
                 }
               ]
             }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/physics/ap-physics-1-mechanics/energy-bar-pe-height.svg",
+              "alt_text": "Bar chart with three states at different heights showing increasing gravitational potential energy: 0 J at ground, 50 J at 5 m, 100 J at 10 m",
+              "caption": "Energy bar chart comparing gravitational PE at different heights"
+            }
           ]
         },
         {
@@ -4707,7 +4859,7 @@
             "ap-physics-1",
             "unit-3"
           ],
-          "content_html": "<h2>Conservation of Energy</h2><p>Energy cannot be created or destroyed — only transformed from one form to another. This principle is one of the most powerful problem-solving tools in physics.</p><h3>Conservation of Mechanical Energy</h3><p>When only conservative forces act (no friction, no air resistance):</p><p>\\[ K_i + U_i = K_f + U_f \\]</p><p>or equivalently:</p><p>\\[ \\Delta K + \\Delta U = 0 \\]</p><h3>With Non-Conservative Forces</h3><p>When friction or other non-conservative forces are present:</p><p>\\[ K_i + U_i + W_{\\text{nc}} = K_f + U_f \\]</p><p>where \\(W_{\\text{nc}}\\) is the work done by non-conservative forces (usually negative for friction).</p><p>Equivalently: \\(\\Delta E_{\\text{mech}} = W_{\\text{nc}}\\). Friction converts mechanical energy to thermal energy.</p><h3>Problem-Solving Strategy</h3><ol><li>Define the system and identify initial and final states</li><li>Choose a reference level for gravitational PE</li><li>Identify all energy types present at each state</li><li>Determine if non-conservative forces do work</li><li>Apply the energy equation and solve</li></ol><div class=\"callout-key\"><strong>Key Idea:</strong> Energy conservation often avoids the need for force and acceleration analysis. If you only need to relate speeds and heights (not time or force), energy methods are usually simpler.</div><div class=\"callout-warning\"><strong>AP Exam Tip:</strong> The AP exam loves problems where energy conservation is simpler than kinematics — roller coasters, pendulums, objects on ramps. Always consider energy methods first.</div>\n<figure class=\"concept-diagram\"><img data-bucket-key='images/physics/ap-physics-1-mechanics/energy-bar-conservation.svg' alt='Three-state bar chart showing top with all PE, middle with equal KE and PE, bottom with all KE, total energy constant' loading='lazy' /><figcaption>Energy bar chart showing conservation of energy during a ball drop: PE converts to KE</figcaption></figure>",
+          "content_html": "<h2>Conservation of Energy</h2><p>Energy cannot be created or destroyed — only transformed from one form to another. This principle is one of the most powerful problem-solving tools in physics.</p><h3>Conservation of Mechanical Energy</h3><p>When only conservative forces act (no friction, no air resistance):</p><p>\\[ K_i + U_i = K_f + U_f \\]</p><p>or equivalently:</p><p>\\[ \\Delta K + \\Delta U = 0 \\]</p><h3>With Non-Conservative Forces</h3><p>When friction or other non-conservative forces are present:</p><p>\\[ K_i + U_i + W_{\\text{nc}} = K_f + U_f \\]</p><p>where \\(W_{\\text{nc}}\\) is the work done by non-conservative forces (usually negative for friction).</p><p>Equivalently: \\(\\Delta E_{\\text{mech}} = W_{\\text{nc}}\\). Friction converts mechanical energy to thermal energy.</p><h3>Problem-Solving Strategy</h3><ol><li>Define the system and identify initial and final states</li><li>Choose a reference level for gravitational PE</li><li>Identify all energy types present at each state</li><li>Determine if non-conservative forces do work</li><li>Apply the energy equation and solve</li></ol><div class=\"callout-key\"><strong>Key Idea:</strong> Energy conservation often avoids the need for force and acceleration analysis. If you only need to relate speeds and heights (not time or force), energy methods are usually simpler.</div><div class=\"callout-warning\"><strong>AP Exam Tip:</strong> The AP exam loves problems where energy conservation is simpler than kinematics — roller coasters, pendulums, objects on ramps. Always consider energy methods first.</div>",
           "content_raw": "Conservation of Energy",
           "estimated_minutes": 15,
           "access_tier": "free",
@@ -4894,7 +5046,12 @@
                       "text": "\\(90 - 30 = \\frac{1}{2}(3)v^2 \\Rightarrow v = \\sqrt{40} \\approx 6.3\\) m/s."
                     }
                   ],
-                  "display_order": 4
+                  "display_order": 4,
+                  "diagram": {
+                    "bucket_key": "images/physics/ap-physics-1-mechanics/energy-bar-ramp-friction.svg",
+                    "alt_text": "Bar chart with two states: at top with all gravitational PE, at bottom with KE and thermal energy from friction, total energy conserved",
+                    "caption": "Energy bar chart for a 3 kg block sliding down a ramp with friction, showing PE converting to KE and thermal energy"
+                  }
                 },
                 {
                   "question_html": "<p>A 1 kg ball at the end of a 2 m string is released from horizontal position. What is its speed at the bottom of the swing? Use \\(g = 10\\) m/s².</p>",
@@ -4963,7 +5120,12 @@
                       "text": "Note: the launch angle doesn't matter for this energy calculation — only the height and initial speed matter."
                     }
                   ],
-                  "display_order": 6
+                  "display_order": 6,
+                  "diagram": {
+                    "bucket_key": "images/physics/ap-physics-1-mechanics/energy-bar-spring-launch.svg",
+                    "alt_text": "Three-state bar chart: compressed spring with all elastic PE, released block with all KE, block at max height with all gravitational PE",
+                    "caption": "Energy bar chart for a spring launching a block: elastic PE converts to KE then to gravitational PE"
+                  }
                 },
                 {
                   "question_html": "<p>A 4 kg block is released from the top of a frictionless curved track (height 3 m) that ends in a horizontal section. A spring (\\(k = 2000\\) N/m) at the bottom catches the block. How much does the spring compress? Use \\(g = 10\\) m/s². Give your answer in meters. Round to two decimal places.</p>",
@@ -5027,6 +5189,13 @@
                   "display_order": 8
                 }
               ]
+            }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/physics/ap-physics-1-mechanics/energy-bar-conservation.svg",
+              "alt_text": "Three-state bar chart showing top with all PE, middle with equal KE and PE, bottom with all KE, total energy constant",
+              "caption": "Energy bar chart showing conservation of energy during a ball drop: PE converts to KE"
             }
           ]
         },
@@ -5347,7 +5516,7 @@
             "ap-physics-1",
             "unit-4"
           ],
-          "content_html": "<h2>Linear Momentum</h2><p>A slow-moving freight train is hard to stop, and so is a speeding bullet — but for different reasons. Momentum captures both mass and velocity in one quantity.</p><h3>Definition</h3><p>The linear momentum of an object is:</p><p>\\[ \\vec{p} = m\\vec{v} \\]</p><h3>Properties</h3><ul><li>Momentum is a <strong>vector</strong> — it has the same direction as velocity</li><li>SI unit: kg·m/s</li><li>A heavy slow object can have the same momentum as a light fast object</li></ul><h3>Momentum of a System</h3><p>The total momentum of a system is the vector sum of all individual momenta:</p><p>\\[ \\vec{p}_{\\text{total}} = \\sum m_i \\vec{v}_i \\]</p><div class=\"callout-key\"><strong>Key Idea:</strong> Momentum is a vector — direction matters. Two objects moving in opposite directions can have zero total momentum even though both are moving.</div><div class=\"callout-warning\"><strong>AP Exam Tip:</strong> Don't confuse momentum (\\(p = mv\\)) with kinetic energy (\\(K = \\frac{1}{2}mv^2\\)). They are different quantities and not interchangeable.</div>\n<figure class=\"concept-diagram\"><img data-bucket-key='images/physics/ap-physics-1-mechanics/momentum-vector.svg' alt='Two horizontal arrows: a short arrow labeled p equals 10 kg m/s for a 2 kg object at 5 m/s, and a longer arrow labeled p equals 30 kg m/s for a 3 kg object at 10 m/s' loading='lazy' /><figcaption>Momentum vectors for objects of different mass and velocity</figcaption></figure>",
+          "content_html": "<h2>Linear Momentum</h2><p>A slow-moving freight train is hard to stop, and so is a speeding bullet — but for different reasons. Momentum captures both mass and velocity in one quantity.</p><h3>Definition</h3><p>The linear momentum of an object is:</p><p>\\[ \\vec{p} = m\\vec{v} \\]</p><h3>Properties</h3><ul><li>Momentum is a <strong>vector</strong> — it has the same direction as velocity</li><li>SI unit: kg·m/s</li><li>A heavy slow object can have the same momentum as a light fast object</li></ul><h3>Momentum of a System</h3><p>The total momentum of a system is the vector sum of all individual momenta:</p><p>\\[ \\vec{p}_{\\text{total}} = \\sum m_i \\vec{v}_i \\]</p><div class=\"callout-key\"><strong>Key Idea:</strong> Momentum is a vector — direction matters. Two objects moving in opposite directions can have zero total momentum even though both are moving.</div><div class=\"callout-warning\"><strong>AP Exam Tip:</strong> Don't confuse momentum (\\(p = mv\\)) with kinetic energy (\\(K = \\frac{1}{2}mv^2\\)). They are different quantities and not interchangeable.</div>",
           "content_raw": "Linear Momentum",
           "estimated_minutes": 8,
           "access_tier": "free",
@@ -5552,6 +5721,13 @@
                 }
               ]
             }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/physics/ap-physics-1-mechanics/momentum-vector.svg",
+              "alt_text": "Two horizontal arrows: a short arrow labeled p equals 10 kg m/s for a 2 kg object at 5 m/s, and a longer arrow labeled p equals 30 kg m/s for a 3 kg object at 10 m/s",
+              "caption": "Momentum vectors for objects of different mass and velocity"
+            }
           ]
         },
         {
@@ -5565,7 +5741,7 @@
             "ap-physics-1",
             "unit-4"
           ],
-          "content_html": "<h2>Change in Momentum and Impulse</h2><p>A tennis racket striking a ball exerts a large force over a short time. The result — a change in the ball's momentum — is called impulse.</p><h3>Impulse-Momentum Theorem</h3><p>The impulse delivered to an object equals its change in momentum:</p><p>\\[ \\vec{J} = \\vec{F}_{\\text{avg}} \\Delta t = \\Delta \\vec{p} = m\\vec{v}_f - m\\vec{v}_i \\]</p><h3>Force-Time Graphs</h3><p>Impulse equals the <strong>area under a force vs. time graph</strong>. For a variable force, integrate the area.</p><h3>Reducing Impact Force</h3><p>Since \\(J = F\\Delta t\\) is fixed for a given momentum change, increasing the time of impact decreases the force:</p><ul><li>Airbags increase collision time → reduce force on passengers</li><li>Catching a ball by \"giving\" with your hand → longer contact time → less force</li></ul><div class=\"callout-key\"><strong>Key Idea:</strong> Impulse is the bridge between force (Newton's Second Law) and momentum. \\(\\vec{F} = \\frac{\\Delta \\vec{p}}{\\Delta t}\\) is actually Newton's original formulation of the Second Law.</div><div class=\"callout-warning\"><strong>AP Exam Tip:</strong> When a ball bounces off a wall, the change in momentum is larger than if it sticks (because the velocity reverses direction). Don't forget to account for the sign change.</div>\n<figure class=\"concept-diagram\"><img data-bucket-key='images/physics/ap-physics-1-mechanics/impulse-force-time-graph.svg' alt='Force vs time graph showing a triangular pulse from 0 to 0.1 seconds with peak force of 200 N, shaded area represents impulse of 10 N s' loading='lazy' /><figcaption>Force vs time graph with shaded area representing impulse</figcaption></figure>",
+          "content_html": "<h2>Change in Momentum and Impulse</h2><p>A tennis racket striking a ball exerts a large force over a short time. The result — a change in the ball's momentum — is called impulse.</p><h3>Impulse-Momentum Theorem</h3><p>The impulse delivered to an object equals its change in momentum:</p><p>\\[ \\vec{J} = \\vec{F}_{\\text{avg}} \\Delta t = \\Delta \\vec{p} = m\\vec{v}_f - m\\vec{v}_i \\]</p><h3>Force-Time Graphs</h3><p>Impulse equals the <strong>area under a force vs. time graph</strong>. For a variable force, integrate the area.</p><h3>Reducing Impact Force</h3><p>Since \\(J = F\\Delta t\\) is fixed for a given momentum change, increasing the time of impact decreases the force:</p><ul><li>Airbags increase collision time → reduce force on passengers</li><li>Catching a ball by \"giving\" with your hand → longer contact time → less force</li></ul><div class=\"callout-key\"><strong>Key Idea:</strong> Impulse is the bridge between force (Newton's Second Law) and momentum. \\(\\vec{F} = \\frac{\\Delta \\vec{p}}{\\Delta t}\\) is actually Newton's original formulation of the Second Law.</div><div class=\"callout-warning\"><strong>AP Exam Tip:</strong> When a ball bounces off a wall, the change in momentum is larger than if it sticks (because the velocity reverses direction). Don't forget to account for the sign change.</div>",
           "content_raw": "Change in Momentum and Impulse",
           "estimated_minutes": 10,
           "access_tier": "free",
@@ -5837,6 +6013,13 @@
                 }
               ]
             }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/physics/ap-physics-1-mechanics/impulse-force-time-graph.svg",
+              "alt_text": "Force vs time graph showing a triangular pulse from 0 to 0.1 seconds with peak force of 200 N, shaded area represents impulse of 10 N s",
+              "caption": "Force vs time graph with shaded area representing impulse"
+            }
           ]
         },
         {
@@ -5850,7 +6033,7 @@
             "ap-physics-1",
             "unit-4"
           ],
-          "content_html": "<h2>Conservation of Linear Momentum</h2><p>When two ice skaters push off each other, one goes left and the other goes right — but the total momentum of the system stays the same: zero.</p><h3>The Law</h3><p>If the net external force on a system is zero, the total momentum of the system is conserved:</p><p>\\[ \\vec{p}_i = \\vec{p}_f \\]</p><p>\\[ m_1 \\vec{v}_{1i} + m_2 \\vec{v}_{2i} = m_1 \\vec{v}_{1f} + m_2 \\vec{v}_{2f} \\]</p><h3>When Is Momentum Conserved?</h3><p>Momentum is conserved when:</p><ul><li>No net external force acts on the system</li><li>Or the external forces are negligible compared to internal forces (e.g., during a brief collision, gravity is negligible)</li></ul><h3>Types of Events</h3><ul><li><strong>Collisions:</strong> objects come together (momentum always conserved)</li><li><strong>Explosions:</strong> one object splits into pieces (momentum conserved)</li></ul><div class=\"callout-key\"><strong>Key Idea:</strong> Momentum conservation applies to the SYSTEM, not individual objects. Each object's momentum changes, but the total stays constant.</div><div class=\"callout-warning\"><strong>AP Exam Tip:</strong> In 2D problems, apply conservation of momentum separately in x and y directions. Momentum is a vector — you must conserve each component.</div>\n<figure class=\"concept-diagram\"><img data-bucket-key='images/physics/ap-physics-1-mechanics/collision-perfectly-inelastic.svg' alt='Before collision: cart A at 6 m/s moving right toward stationary cart B. After collision: combined cart AB moving right at 3 m/s' loading='lazy' /><figcaption>Before and after diagram of a perfectly inelastic collision between two carts</figcaption></figure>",
+          "content_html": "<h2>Conservation of Linear Momentum</h2><p>When two ice skaters push off each other, one goes left and the other goes right — but the total momentum of the system stays the same: zero.</p><h3>The Law</h3><p>If the net external force on a system is zero, the total momentum of the system is conserved:</p><p>\\[ \\vec{p}_i = \\vec{p}_f \\]</p><p>\\[ m_1 \\vec{v}_{1i} + m_2 \\vec{v}_{2i} = m_1 \\vec{v}_{1f} + m_2 \\vec{v}_{2f} \\]</p><h3>When Is Momentum Conserved?</h3><p>Momentum is conserved when:</p><ul><li>No net external force acts on the system</li><li>Or the external forces are negligible compared to internal forces (e.g., during a brief collision, gravity is negligible)</li></ul><h3>Types of Events</h3><ul><li><strong>Collisions:</strong> objects come together (momentum always conserved)</li><li><strong>Explosions:</strong> one object splits into pieces (momentum conserved)</li></ul><div class=\"callout-key\"><strong>Key Idea:</strong> Momentum conservation applies to the SYSTEM, not individual objects. Each object's momentum changes, but the total stays constant.</div><div class=\"callout-warning\"><strong>AP Exam Tip:</strong> In 2D problems, apply conservation of momentum separately in x and y directions. Momentum is a vector — you must conserve each component.</div>",
           "content_raw": "Conservation of Linear Momentum",
           "estimated_minutes": 12,
           "access_tier": "free",
@@ -5899,7 +6082,12 @@
                       "text": "\\(p_i = 5(6) + 10(0) = 30\\) kg·m/s. \\(p_f = 15 v_f = 30 \\Rightarrow v_f = 2\\) m/s."
                     }
                   ],
-                  "display_order": 0
+                  "display_order": 0,
+                  "diagram": {
+                    "bucket_key": "images/physics/ap-physics-1-mechanics/collision-cart-sticks.svg",
+                    "alt_text": "Before: 5 kg cart moving right at 6 m/s toward stationary 10 kg cart. After: combined 15 kg cart moving right at 2 m/s",
+                    "caption": "5 kg cart at 6 m/s collides and sticks to a stationary 10 kg cart"
+                  }
                 },
                 {
                   "question_html": "<p>A 2 kg rifle fires a 0.01 kg bullet at 300 m/s. What is the recoil velocity of the rifle?</p>",
@@ -6119,6 +6307,13 @@
                 }
               ]
             }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/physics/ap-physics-1-mechanics/collision-perfectly-inelastic.svg",
+              "alt_text": "Before collision: cart A at 6 m/s moving right toward stationary cart B. After collision: combined cart AB moving right at 3 m/s",
+              "caption": "Before and after diagram of a perfectly inelastic collision between two carts"
+            }
           ]
         },
         {
@@ -6134,7 +6329,7 @@
             "ap-physics-1",
             "unit-4"
           ],
-          "content_html": "<h2>Elastic and Inelastic Collisions</h2><p>When two billiard balls collide, they bounce apart and the total kinetic energy is nearly the same before and after. When two lumps of clay collide, they stick together and kinetic energy is lost. These represent different types of collisions.</p><h3>Types of Collisions</h3><ul><li><strong>Perfectly elastic:</strong> momentum AND kinetic energy are both conserved. Objects bounce apart. (Ideal case — atom-atom collisions, billiards approximately)</li><li><strong>Perfectly inelastic:</strong> momentum is conserved, but kinetic energy is NOT. Objects stick together. Maximum KE loss.</li><li><strong>Inelastic:</strong> momentum is conserved, some KE is lost (but not maximum). Most real collisions.</li></ul><h3>Perfectly Inelastic (Stick Together)</h3><p>\\[ m_1 v_{1i} + m_2 v_{2i} = (m_1 + m_2) v_f \\]</p><h3>Elastic Collision (1D, object 2 at rest)</h3><p>\\[ v_{1f} = \\frac{m_1 - m_2}{m_1 + m_2} v_{1i} \\qquad v_{2f} = \\frac{2m_1}{m_1 + m_2} v_{1i} \\]</p><h3>KE Lost in Inelastic Collisions</h3><p>\\[ \\Delta K = K_f - K_i \\]</p><p>This \"lost\" KE is converted to thermal energy, sound, and deformation.</p><div class=\"callout-key\"><strong>Key Idea:</strong> Momentum is ALWAYS conserved in collisions (both elastic and inelastic). Kinetic energy is only conserved in perfectly elastic collisions.</div><div class=\"callout-warning\"><strong>AP Exam Tip:</strong> To determine if a collision is elastic, compute the total KE before and after. If they're equal, it's elastic. If not, it's inelastic. You don't need to memorize the elastic collision formulas — they're derived from conservation of momentum + conservation of KE.</div>\n<figure class=\"concept-diagram\"><img data-bucket-key='images/physics/ap-physics-1-mechanics/collision-elastic.svg' alt='Before: ball A moving right at 6 m/s toward stationary ball B of equal mass. After: ball A stationary, ball B moving right at 6 m/s' loading='lazy' /><figcaption>Before and after diagram of a perfectly elastic collision between equal masses</figcaption></figure>",
+          "content_html": "<h2>Elastic and Inelastic Collisions</h2><p>When two billiard balls collide, they bounce apart and the total kinetic energy is nearly the same before and after. When two lumps of clay collide, they stick together and kinetic energy is lost. These represent different types of collisions.</p><h3>Types of Collisions</h3><ul><li><strong>Perfectly elastic:</strong> momentum AND kinetic energy are both conserved. Objects bounce apart. (Ideal case — atom-atom collisions, billiards approximately)</li><li><strong>Perfectly inelastic:</strong> momentum is conserved, but kinetic energy is NOT. Objects stick together. Maximum KE loss.</li><li><strong>Inelastic:</strong> momentum is conserved, some KE is lost (but not maximum). Most real collisions.</li></ul><h3>Perfectly Inelastic (Stick Together)</h3><p>\\[ m_1 v_{1i} + m_2 v_{2i} = (m_1 + m_2) v_f \\]</p><h3>Elastic Collision (1D, object 2 at rest)</h3><p>\\[ v_{1f} = \\frac{m_1 - m_2}{m_1 + m_2} v_{1i} \\qquad v_{2f} = \\frac{2m_1}{m_1 + m_2} v_{1i} \\]</p><h3>KE Lost in Inelastic Collisions</h3><p>\\[ \\Delta K = K_f - K_i \\]</p><p>This \"lost\" KE is converted to thermal energy, sound, and deformation.</p><div class=\"callout-key\"><strong>Key Idea:</strong> Momentum is ALWAYS conserved in collisions (both elastic and inelastic). Kinetic energy is only conserved in perfectly elastic collisions.</div><div class=\"callout-warning\"><strong>AP Exam Tip:</strong> To determine if a collision is elastic, compute the total KE before and after. If they're equal, it's elastic. If not, it's inelastic. You don't need to memorize the elastic collision formulas — they're derived from conservation of momentum + conservation of KE.</div>",
           "content_raw": "Elastic and Inelastic Collisions",
           "estimated_minutes": 15,
           "access_tier": "free",
@@ -6252,7 +6447,12 @@
                       "text": "The first ball stops; the second ball moves at 6 m/s. They exchange velocities completely."
                     }
                   ],
-                  "display_order": 2
+                  "display_order": 2,
+                  "diagram": {
+                    "bucket_key": "images/physics/ap-physics-1-mechanics/collision-elastic-equal-mass.svg",
+                    "alt_text": "Before: 2 kg ball A at 6 m/s moving right toward stationary 2 kg ball B. After: ball A stationary, ball B moving right at 6 m/s",
+                    "caption": "Elastic head-on collision between two equal-mass balls"
+                  }
                 },
                 {
                   "question_html": "<p>A 4 kg object moving at 5 m/s collides with and sticks to a 1 kg object at rest. How much kinetic energy is lost, in joules?</p>",
@@ -6460,9 +6660,21 @@
                     }
                   ],
                   "correct_answer": "(a) 3(4) + 2(−1) = 3(1) + 2v₂f → 10 = 3 + 2v₂f → v₂f = 3.5 m/s. (b) Ki = ½(3)(16) + ½(2)(1) = 24 + 1 = 25 J. Kf = ½(3)(1) + ½(2)(12.25) = 1.5 + 12.25 = 13.75 J. Since 13.75 ≠ 25, this is NOT elastic. KE lost = 11.25 J.",
-                  "display_order": 8
+                  "display_order": 8,
+                  "diagram": {
+                    "bucket_key": "images/physics/ap-physics-1-mechanics/collision-ballistic-pendulum.svg",
+                    "alt_text": "Before: 0.01 kg bullet at 400 m/s moving toward 2 kg block at rest. After: combined 2.01 kg mass moving at approximately 2 m/s",
+                    "caption": "Ballistic pendulum: bullet embeds in block, block+bullet swings upward"
+                  }
                 }
               ]
+            }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/physics/ap-physics-1-mechanics/collision-elastic.svg",
+              "alt_text": "Before: ball A moving right at 6 m/s toward stationary ball B of equal mass. After: ball A stationary, ball B moving right at 6 m/s",
+              "caption": "Before and after diagram of a perfectly elastic collision between equal masses"
             }
           ]
         }
@@ -6484,7 +6696,7 @@
             "ap-physics-1",
             "unit-5"
           ],
-          "content_html": "<p>A spinning figure skater, a rotating Ferris wheel, a turning bicycle tire — rotational motion is everywhere. Just as we described translational motion with position, velocity, and acceleration, we can describe rotation with analogous quantities.</p><h3>Angular Position and Displacement</h3><p><strong>Angular position</strong> \\( \\theta \\) measures how far an object has rotated from a reference line, in <strong>radians</strong> (rad).</p><p>\\[ \\Delta\\theta = \\theta_f - \\theta_i \\]</p><p><strong>Angular displacement</strong> \\( \\Delta\\theta \\) is the change in angular position. A full revolution equals \\( 2\\pi \\) rad (360°).</p><h3>Angular Velocity</h3><p><strong>Angular velocity</strong> \\( \\omega \\) is the rate of change of angular position:</p><p>\\[ \\omega = \\frac{\\Delta\\theta}{\\Delta t} \\]</p><p>Units: rad/s. Positive \\( \\omega \\) indicates counterclockwise rotation (by convention).</p><h3>Angular Acceleration</h3><p><strong>Angular acceleration</strong> \\( \\alpha \\) is the rate of change of angular velocity:</p><p>\\[ \\alpha = \\frac{\\Delta\\omega}{\\Delta t} \\]</p><p>Units: rad/s². When \\( \\alpha \\) has the same sign as \\( \\omega \\), the object speeds up rotationally; opposite signs mean it slows down.</p><h3>Rotational Kinematic Equations</h3><p>For <strong>constant angular acceleration</strong>, the kinematic equations mirror their translational counterparts:</p><p>\\[ \\omega_f = \\omega_i + \\alpha t \\]</p><p>\\[ \\Delta\\theta = \\omega_i t + \\tfrac{1}{2}\\alpha t^2 \\]</p><p>\\[ \\omega_f^2 = \\omega_i^2 + 2\\alpha\\,\\Delta\\theta \\]</p><h3>Variable Definitions</h3><ul><li>\\( \\theta \\) = angular position (rad)</li><li>\\( \\omega \\) = angular velocity (rad/s)</li><li>\\( \\alpha \\) = angular acceleration (rad/s²)</li><li>\\( t \\) = time (s)</li></ul><h3>Worked Example</h3><p>A wheel starts from rest and accelerates at \\( \\alpha = 4.0 \\) rad/s² for 3.0 s. Find the angular displacement.</p><p>\\[ \\Delta\\theta = \\omega_i t + \\tfrac{1}{2}\\alpha t^2 = 0 + \\tfrac{1}{2}(4.0)(3.0)^2 = 18 \\text{ rad} \\]</p><p>That's \\( 18 / (2\\pi) \\approx 2.9 \\) revolutions.</p><!-- DIAGRAM: wheel rotating with angular position, velocity, and acceleration vectors labeled --><div class=\"callout-key\"><strong>Key Idea:</strong> Rotational kinematic equations have the exact same structure as translational kinematics — just replace \\( x \\) with \\( \\theta \\), \\( v \\) with \\( \\omega \\), and \\( a \\) with \\( \\alpha \\).</div><div class=\"callout-warning\"><strong>AP Exam Tip:</strong> Always use radians (not degrees) in rotational calculations. The kinematic equations only work with radian measure.</div>\n<figure class=\"concept-diagram\"><img data-bucket-key='images/physics/ap-physics-1-mechanics/omega-time-graph.svg' alt='Angular velocity omega vs time graph with a straight line from 0 to 20 rad/s over 4 seconds, slope equals angular acceleration alpha' loading='lazy' /><figcaption>Angular velocity vs time graph showing constant angular acceleration</figcaption></figure>",
+          "content_html": "<p>A spinning figure skater, a rotating Ferris wheel, a turning bicycle tire — rotational motion is everywhere. Just as we described translational motion with position, velocity, and acceleration, we can describe rotation with analogous quantities.</p><h3>Angular Position and Displacement</h3><p><strong>Angular position</strong> \\( \\theta \\) measures how far an object has rotated from a reference line, in <strong>radians</strong> (rad).</p><p>\\[ \\Delta\\theta = \\theta_f - \\theta_i \\]</p><p><strong>Angular displacement</strong> \\( \\Delta\\theta \\) is the change in angular position. A full revolution equals \\( 2\\pi \\) rad (360°).</p><h3>Angular Velocity</h3><p><strong>Angular velocity</strong> \\( \\omega \\) is the rate of change of angular position:</p><p>\\[ \\omega = \\frac{\\Delta\\theta}{\\Delta t} \\]</p><p>Units: rad/s. Positive \\( \\omega \\) indicates counterclockwise rotation (by convention).</p><h3>Angular Acceleration</h3><p><strong>Angular acceleration</strong> \\( \\alpha \\) is the rate of change of angular velocity:</p><p>\\[ \\alpha = \\frac{\\Delta\\omega}{\\Delta t} \\]</p><p>Units: rad/s². When \\( \\alpha \\) has the same sign as \\( \\omega \\), the object speeds up rotationally; opposite signs mean it slows down.</p><h3>Rotational Kinematic Equations</h3><p>For <strong>constant angular acceleration</strong>, the kinematic equations mirror their translational counterparts:</p><p>\\[ \\omega_f = \\omega_i + \\alpha t \\]</p><p>\\[ \\Delta\\theta = \\omega_i t + \\tfrac{1}{2}\\alpha t^2 \\]</p><p>\\[ \\omega_f^2 = \\omega_i^2 + 2\\alpha\\,\\Delta\\theta \\]</p><h3>Variable Definitions</h3><ul><li>\\( \\theta \\) = angular position (rad)</li><li>\\( \\omega \\) = angular velocity (rad/s)</li><li>\\( \\alpha \\) = angular acceleration (rad/s²)</li><li>\\( t \\) = time (s)</li></ul><h3>Worked Example</h3><p>A wheel starts from rest and accelerates at \\( \\alpha = 4.0 \\) rad/s² for 3.0 s. Find the angular displacement.</p><p>\\[ \\Delta\\theta = \\omega_i t + \\tfrac{1}{2}\\alpha t^2 = 0 + \\tfrac{1}{2}(4.0)(3.0)^2 = 18 \\text{ rad} \\]</p><p>That's \\( 18 / (2\\pi) \\approx 2.9 \\) revolutions.</p><!-- DIAGRAM: wheel rotating with angular position, velocity, and acceleration vectors labeled --><div class=\"callout-key\"><strong>Key Idea:</strong> Rotational kinematic equations have the exact same structure as translational kinematics — just replace \\( x \\) with \\( \\theta \\), \\( v \\) with \\( \\omega \\), and \\( a \\) with \\( \\alpha \\).</div><div class=\"callout-warning\"><strong>AP Exam Tip:</strong> Always use radians (not degrees) in rotational calculations. The kinematic equations only work with radian measure.</div>",
           "content_raw": "Rotational Kinematics: angular position, angular velocity, angular acceleration, and rotational kinematic equations for constant angular acceleration.",
           "estimated_minutes": 15,
           "access_tier": "free",
@@ -6790,6 +7002,13 @@
                   "display_order": 7
                 }
               ]
+            }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/physics/ap-physics-1-mechanics/omega-time-graph.svg",
+              "alt_text": "Angular velocity omega vs time graph with a straight line from 0 to 20 rad/s over 4 seconds, slope equals angular acceleration alpha",
+              "caption": "Angular velocity vs time graph showing constant angular acceleration"
             }
           ]
         },
@@ -7110,7 +7329,7 @@
             "ap-physics-1",
             "unit-5"
           ],
-          "content_html": "<p>Opening a door, tightening a bolt with a wrench, or turning a steering wheel — all involve torque. Torque is the rotational equivalent of force: it causes angular acceleration.</p><h3>Definition of Torque</h3><p><strong>Torque</strong> \\( \\tau \\) measures the tendency of a force to cause rotation about a pivot point (axis of rotation):</p><p>\\[ \\tau = rF\\sin\\theta \\]</p><p>where \\( r \\) is the distance from the pivot to where the force is applied, \\( F \\) is the magnitude of the force, and \\( \\theta \\) is the angle between \\( \\vec{r} \\) and \\( \\vec{F} \\).</p><h3>Lever Arm</h3><p>The <strong>lever arm</strong> (or moment arm) \\( r_{\\perp} \\) is the perpendicular distance from the pivot to the line of action of the force:</p><p>\\[ \\tau = r_{\\perp} F = rF\\sin\\theta \\]</p><p>Maximum torque occurs when the force is perpendicular to \\( \\vec{r} \\) (\\( \\theta = 90° \\)), so \\( \\tau = rF \\).</p><h3>Sign Convention</h3><p>Torques causing counterclockwise rotation are positive; clockwise torques are negative.</p><h3>Net Torque</h3><p>The <strong>net torque</strong> on an object is the sum of all individual torques about the same pivot:</p><p>\\[ \\sum\\tau = \\tau_1 + \\tau_2 + \\cdots \\]</p><h3>Variable Definitions</h3><ul><li>\\( \\tau \\) = torque (N·m)</li><li>\\( r \\) = distance from pivot to point of force application (m)</li><li>\\( F \\) = force magnitude (N)</li><li>\\( \\theta \\) = angle between \\( \\vec{r} \\) and \\( \\vec{F} \\)</li><li>\\( r_{\\perp} \\) = lever arm / moment arm (m)</li></ul><h3>Worked Example</h3><p>You push on a door \\( 0.80 \\) m from the hinge with a force of \\( 25 \\) N perpendicular to the door. What is the torque?</p><p>\\[ \\tau = rF\\sin 90° = (0.80)(25)(1) = 20 \\text{ N·m} \\]</p><!-- DIAGRAM: door viewed from above showing pivot at hinge, force applied at distance r, with angle theta labeled --><div class=\"callout-key\"><strong>Key Idea:</strong> Torque depends on three things: how much force, how far from the pivot, and the angle. Pushing at the edge of a door (large \\( r \\)) is much easier than pushing near the hinge (small \\( r \\)).</div><div class=\"callout-warning\"><strong>AP Exam Tip:</strong> When \\( \\theta = 0° \\) or \\( 180° \\), the torque is zero — the force acts along the line from the pivot and cannot cause rotation. Always identify the angle carefully.</div>\n<figure class=\"concept-diagram\"><img data-bucket-key='images/physics/ap-physics-1-mechanics/torque-lever-arm.svg' alt='Horizontal beam with a pivot point marked by a triangle, a downward force F applied at one end with lever arm r labeled from pivot to force' loading='lazy' /><figcaption>Torque diagram showing a force applied at a lever arm distance from the pivot</figcaption></figure>",
+          "content_html": "<p>Opening a door, tightening a bolt with a wrench, or turning a steering wheel — all involve torque. Torque is the rotational equivalent of force: it causes angular acceleration.</p><h3>Definition of Torque</h3><p><strong>Torque</strong> \\( \\tau \\) measures the tendency of a force to cause rotation about a pivot point (axis of rotation):</p><p>\\[ \\tau = rF\\sin\\theta \\]</p><p>where \\( r \\) is the distance from the pivot to where the force is applied, \\( F \\) is the magnitude of the force, and \\( \\theta \\) is the angle between \\( \\vec{r} \\) and \\( \\vec{F} \\).</p><h3>Lever Arm</h3><p>The <strong>lever arm</strong> (or moment arm) \\( r_{\\perp} \\) is the perpendicular distance from the pivot to the line of action of the force:</p><p>\\[ \\tau = r_{\\perp} F = rF\\sin\\theta \\]</p><p>Maximum torque occurs when the force is perpendicular to \\( \\vec{r} \\) (\\( \\theta = 90° \\)), so \\( \\tau = rF \\).</p><h3>Sign Convention</h3><p>Torques causing counterclockwise rotation are positive; clockwise torques are negative.</p><h3>Net Torque</h3><p>The <strong>net torque</strong> on an object is the sum of all individual torques about the same pivot:</p><p>\\[ \\sum\\tau = \\tau_1 + \\tau_2 + \\cdots \\]</p><h3>Variable Definitions</h3><ul><li>\\( \\tau \\) = torque (N·m)</li><li>\\( r \\) = distance from pivot to point of force application (m)</li><li>\\( F \\) = force magnitude (N)</li><li>\\( \\theta \\) = angle between \\( \\vec{r} \\) and \\( \\vec{F} \\)</li><li>\\( r_{\\perp} \\) = lever arm / moment arm (m)</li></ul><h3>Worked Example</h3><p>You push on a door \\( 0.80 \\) m from the hinge with a force of \\( 25 \\) N perpendicular to the door. What is the torque?</p><p>\\[ \\tau = rF\\sin 90° = (0.80)(25)(1) = 20 \\text{ N·m} \\]</p><!-- DIAGRAM: door viewed from above showing pivot at hinge, force applied at distance r, with angle theta labeled --><div class=\"callout-key\"><strong>Key Idea:</strong> Torque depends on three things: how much force, how far from the pivot, and the angle. Pushing at the edge of a door (large \\( r \\)) is much easier than pushing near the hinge (small \\( r \\)).</div><div class=\"callout-warning\"><strong>AP Exam Tip:</strong> When \\( \\theta = 0° \\) or \\( 180° \\), the torque is zero — the force acts along the line from the pivot and cannot cause rotation. Always identify the angle carefully.</div>",
           "content_raw": "Torque: definition, lever arm, sign convention, net torque, and the relationship between force, distance, and angle.",
           "estimated_minutes": 15,
           "access_tier": "free",
@@ -7357,7 +7576,12 @@
                       "text": "\\( r_2 = \\frac{(1.2)(400)}{300} = \\frac{480}{300} = 1.6 \\) m."
                     }
                   ],
-                  "display_order": 6
+                  "display_order": 6,
+                  "diagram": {
+                    "bucket_key": "images/physics/ap-physics-1-mechanics/torque-seesaw-problem.svg",
+                    "alt_text": "3 m seesaw balanced at center with 400 N child 1.2 m left of pivot and 300 N child at unknown distance right of pivot",
+                    "caption": "Seesaw with a 400 N child at 1.2 m from pivot and unknown position for 300 N child"
+                  }
                 },
                 {
                   "question_html": "<p>Explain why door handles are placed far from the hinges rather than near them. Use the concept of torque in your answer, and discuss what would happen if you pushed at the same force closer to the hinge.</p>",
@@ -7395,6 +7619,13 @@
                   "display_order": 7
                 }
               ]
+            }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/physics/ap-physics-1-mechanics/torque-lever-arm.svg",
+              "alt_text": "Horizontal beam with a pivot point marked by a triangle, a downward force F applied at one end with lever arm r labeled from pivot to force",
+              "caption": "Torque diagram showing a force applied at a lever arm distance from the pivot"
             }
           ]
         },
@@ -7710,7 +7941,7 @@
             "ap-physics-1",
             "unit-5"
           ],
-          "content_html": "<p>A balanced seesaw, a hanging sign that doesn't rotate, a bridge that remains level — these are all examples of <strong>rotational equilibrium</strong>.</p><h3>Newton's First Law for Rotation</h3><p>An object in rotational equilibrium has zero net torque and therefore zero angular acceleration. It either remains at rest (not rotating) or rotates at constant angular velocity:</p><p>\\[ \\sum\\tau = 0 \\implies \\alpha = 0 \\]</p><h3>Static Equilibrium</h3><p>An object in <strong>static equilibrium</strong> satisfies two conditions simultaneously:</p><ol><li><strong>Translational:</strong> \\( \\sum\\vec{F} = 0 \\) (no net force)</li><li><strong>Rotational:</strong> \\( \\sum\\tau = 0 \\) (no net torque about any point)</li></ol><h3>Choosing a Pivot Point</h3><p>For equilibrium problems, you can choose <strong>any point</strong> as the pivot for calculating torques. A smart choice eliminates unknown forces from the torque equation. Often, choosing the point where an unknown force acts is the best strategy.</p><h3>Solving Static Equilibrium Problems</h3><ol><li>Draw a free-body diagram showing all forces and where they act</li><li>Set \\( \\sum F_x = 0 \\) and \\( \\sum F_y = 0 \\)</li><li>Choose a convenient pivot and set \\( \\sum\\tau = 0 \\)</li><li>Solve the system of equations</li></ol><h3>Worked Example</h3><p>A \\( 4.0 \\) m uniform beam (weight \\( 200 \\) N) rests on two supports: one at each end. A \\( 300 \\) N person stands \\( 1.0 \\) m from the left end. Find the force at each support.</p><p>Choose left support as pivot:</p><p>\\[ \\sum\\tau = 0: \\quad (300)(1.0) + (200)(2.0) - F_R(4.0) = 0 \\]</p><p>\\[ 300 + 400 = 4.0\\,F_R \\implies F_R = 175 \\text{ N} \\]</p><p>From \\( \\sum F_y = 0 \\): \\( F_L = 200 + 300 - 175 = 325 \\) N.</p><!-- DIAGRAM: beam on two supports with person standing on it, forces and distances labeled --><div class=\"callout-key\"><strong>Key Idea:</strong> In rotational equilibrium, the total clockwise torque equals the total counterclockwise torque about any pivot point you choose.</div><div class=\"callout-warning\"><strong>AP Exam Tip:</strong> For static equilibrium, you must check BOTH \\( \\sum F = 0 \\) AND \\( \\sum\\tau = 0 \\). Many students forget one condition. Also, choose your pivot wisely to simplify the math.</div>\n<figure class=\"concept-diagram\"><img data-bucket-key='images/physics/ap-physics-1-mechanics/torque-balanced-seesaw.svg' alt='Horizontal beam balanced on a central pivot with weight F1 on the left at distance r1 and weight F2 on the right at distance r2, torques are equal' loading='lazy' /><figcaption>Balanced seesaw showing two weights creating equal and opposite torques about the pivot</figcaption></figure>",
+          "content_html": "<p>A balanced seesaw, a hanging sign that doesn't rotate, a bridge that remains level — these are all examples of <strong>rotational equilibrium</strong>.</p><h3>Newton's First Law for Rotation</h3><p>An object in rotational equilibrium has zero net torque and therefore zero angular acceleration. It either remains at rest (not rotating) or rotates at constant angular velocity:</p><p>\\[ \\sum\\tau = 0 \\implies \\alpha = 0 \\]</p><h3>Static Equilibrium</h3><p>An object in <strong>static equilibrium</strong> satisfies two conditions simultaneously:</p><ol><li><strong>Translational:</strong> \\( \\sum\\vec{F} = 0 \\) (no net force)</li><li><strong>Rotational:</strong> \\( \\sum\\tau = 0 \\) (no net torque about any point)</li></ol><h3>Choosing a Pivot Point</h3><p>For equilibrium problems, you can choose <strong>any point</strong> as the pivot for calculating torques. A smart choice eliminates unknown forces from the torque equation. Often, choosing the point where an unknown force acts is the best strategy.</p><h3>Solving Static Equilibrium Problems</h3><ol><li>Draw a free-body diagram showing all forces and where they act</li><li>Set \\( \\sum F_x = 0 \\) and \\( \\sum F_y = 0 \\)</li><li>Choose a convenient pivot and set \\( \\sum\\tau = 0 \\)</li><li>Solve the system of equations</li></ol><h3>Worked Example</h3><p>A \\( 4.0 \\) m uniform beam (weight \\( 200 \\) N) rests on two supports: one at each end. A \\( 300 \\) N person stands \\( 1.0 \\) m from the left end. Find the force at each support.</p><p>Choose left support as pivot:</p><p>\\[ \\sum\\tau = 0: \\quad (300)(1.0) + (200)(2.0) - F_R(4.0) = 0 \\]</p><p>\\[ 300 + 400 = 4.0\\,F_R \\implies F_R = 175 \\text{ N} \\]</p><p>From \\( \\sum F_y = 0 \\): \\( F_L = 200 + 300 - 175 = 325 \\) N.</p><!-- DIAGRAM: beam on two supports with person standing on it, forces and distances labeled --><div class=\"callout-key\"><strong>Key Idea:</strong> In rotational equilibrium, the total clockwise torque equals the total counterclockwise torque about any pivot point you choose.</div><div class=\"callout-warning\"><strong>AP Exam Tip:</strong> For static equilibrium, you must check BOTH \\( \\sum F = 0 \\) AND \\( \\sum\\tau = 0 \\). Many students forget one condition. Also, choose your pivot wisely to simplify the math.</div>",
           "content_raw": "Rotational equilibrium: Newton's first law in rotational form, static equilibrium conditions, choosing pivot points for torque calculations.",
           "estimated_minutes": 15,
           "access_tier": "free",
@@ -7851,7 +8082,12 @@
                       "text": "\\( 400 + 400 = 4.0\\,F_R \\), so \\( F_R = 200 \\) N."
                     }
                   ],
-                  "display_order": 3
+                  "display_order": 3,
+                  "diagram": {
+                    "bucket_key": "images/physics/ap-physics-1-mechanics/torque-beam-two-loads.svg",
+                    "alt_text": "4 m horizontal plank supported at both ends with a 200 N beam weight at center and 400 N box 1 m from left end, normal forces at supports",
+                    "caption": "A 4.0 m uniform plank supported at both ends with a 400 N box at 1.0 m from the left"
+                  }
                 },
                 {
                   "question_html": "<p>A \\( 4.0 \\) m uniform beam of weight \\( 200 \\) N is supported at both ends. Two loads are placed on it: \\( 100 \\) N at \\( 1.0 \\) m from the left and \\( 300 \\) N at \\( 3.0 \\) m from the left. What is the upward force at the right support?</p>",
@@ -7962,6 +8198,13 @@
                 }
               ]
             }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/physics/ap-physics-1-mechanics/torque-balanced-seesaw.svg",
+              "alt_text": "Horizontal beam balanced on a central pivot with weight F1 on the left at distance r1 and weight F2 on the right at distance r2, torques are equal",
+              "caption": "Balanced seesaw showing two weights creating equal and opposite torques about the pivot"
+            }
           ]
         },
         {
@@ -7974,7 +8217,7 @@
             "ap-physics-1",
             "unit-5"
           ],
-          "content_html": "<p>Just as \\( F = ma \\) connects force to translational acceleration, there is a rotational version that connects torque to angular acceleration.</p><h3>Newton's Second Law for Rotation</h3><p>\\[ \\sum\\tau = I\\alpha \\]</p><p>The net torque on an object equals its rotational inertia times its angular acceleration. This is the fundamental equation of rotational dynamics.</p><h3>Analogy to Translation</h3><table><tr><th>Translation</th><th>Rotation</th></tr><tr><td>\\( F \\) (force)</td><td>\\( \\tau \\) (torque)</td></tr><tr><td>\\( m \\) (mass)</td><td>\\( I \\) (rotational inertia)</td></tr><tr><td>\\( a \\) (acceleration)</td><td>\\( \\alpha \\) (angular acceleration)</td></tr><tr><td>\\( F = ma \\)</td><td>\\( \\tau = I\\alpha \\)</td></tr></table><h3>Problem-Solving Strategy</h3><ol><li>Identify the axis of rotation</li><li>Draw free-body diagrams showing where forces act</li><li>Calculate each torque about the axis</li><li>Find or calculate \\( I \\) for the object</li><li>Apply \\( \\sum\\tau = I\\alpha \\) to find \\( \\alpha \\)</li></ol><h3>Variable Definitions</h3><ul><li>\\( \\sum\\tau \\) = net torque (N·m)</li><li>\\( I \\) = rotational inertia (kg·m²)</li><li>\\( \\alpha \\) = angular acceleration (rad/s²)</li></ul><h3>Worked Example</h3><p>A solid disk of mass \\( 4.0 \\) kg and radius \\( 0.20 \\) m has a tangential force of \\( 10 \\) N applied at its rim. What is the angular acceleration?</p><p>\\[ I = \\tfrac{1}{2}MR^2 = \\tfrac{1}{2}(4.0)(0.20)^2 = 0.080 \\text{ kg·m²} \\]</p><p>\\[ \\tau = FR = (10)(0.20) = 2.0 \\text{ N·m} \\]</p><p>\\[ \\alpha = \\frac{\\tau}{I} = \\frac{2.0}{0.080} = 25 \\text{ rad/s²} \\]</p><!-- DIAGRAM: disk with tangential force at rim, axis at center, angular acceleration direction shown --><div class=\"callout-key\"><strong>Key Idea:</strong> \\( \\tau = I\\alpha \\) is the rotational analog of \\( F = ma \\). A larger rotational inertia means the same torque produces a smaller angular acceleration.</div><div class=\"callout-warning\"><strong>AP Exam Tip:</strong> Many problems combine translational and rotational dynamics (e.g., a block connected to a pulley by a string). Set up \\( F = ma \\) for the translating object and \\( \\tau = I\\alpha \\) for the rotating object, then use the constraint \\( a = R\\alpha \\) to connect them.</div>\n<figure class=\"concept-diagram\"><img data-bucket-key='images/physics/ap-physics-1-mechanics/torque-net-angular-accel.svg' alt='Beam with pivot at center, larger force on left creating greater torque than smaller force on right, net torque causes counterclockwise angular acceleration' loading='lazy' /><figcaption>Torque diagram showing unbalanced torques producing angular acceleration</figcaption></figure>",
+          "content_html": "<p>Just as \\( F = ma \\) connects force to translational acceleration, there is a rotational version that connects torque to angular acceleration.</p><h3>Newton's Second Law for Rotation</h3><p>\\[ \\sum\\tau = I\\alpha \\]</p><p>The net torque on an object equals its rotational inertia times its angular acceleration. This is the fundamental equation of rotational dynamics.</p><h3>Analogy to Translation</h3><table><tr><th>Translation</th><th>Rotation</th></tr><tr><td>\\( F \\) (force)</td><td>\\( \\tau \\) (torque)</td></tr><tr><td>\\( m \\) (mass)</td><td>\\( I \\) (rotational inertia)</td></tr><tr><td>\\( a \\) (acceleration)</td><td>\\( \\alpha \\) (angular acceleration)</td></tr><tr><td>\\( F = ma \\)</td><td>\\( \\tau = I\\alpha \\)</td></tr></table><h3>Problem-Solving Strategy</h3><ol><li>Identify the axis of rotation</li><li>Draw free-body diagrams showing where forces act</li><li>Calculate each torque about the axis</li><li>Find or calculate \\( I \\) for the object</li><li>Apply \\( \\sum\\tau = I\\alpha \\) to find \\( \\alpha \\)</li></ol><h3>Variable Definitions</h3><ul><li>\\( \\sum\\tau \\) = net torque (N·m)</li><li>\\( I \\) = rotational inertia (kg·m²)</li><li>\\( \\alpha \\) = angular acceleration (rad/s²)</li></ul><h3>Worked Example</h3><p>A solid disk of mass \\( 4.0 \\) kg and radius \\( 0.20 \\) m has a tangential force of \\( 10 \\) N applied at its rim. What is the angular acceleration?</p><p>\\[ I = \\tfrac{1}{2}MR^2 = \\tfrac{1}{2}(4.0)(0.20)^2 = 0.080 \\text{ kg·m²} \\]</p><p>\\[ \\tau = FR = (10)(0.20) = 2.0 \\text{ N·m} \\]</p><p>\\[ \\alpha = \\frac{\\tau}{I} = \\frac{2.0}{0.080} = 25 \\text{ rad/s²} \\]</p><!-- DIAGRAM: disk with tangential force at rim, axis at center, angular acceleration direction shown --><div class=\"callout-key\"><strong>Key Idea:</strong> \\( \\tau = I\\alpha \\) is the rotational analog of \\( F = ma \\). A larger rotational inertia means the same torque produces a smaller angular acceleration.</div><div class=\"callout-warning\"><strong>AP Exam Tip:</strong> Many problems combine translational and rotational dynamics (e.g., a block connected to a pulley by a string). Set up \\( F = ma \\) for the translating object and \\( \\tau = I\\alpha \\) for the rotating object, then use the constraint \\( a = R\\alpha \\) to connect them.</div>",
           "content_raw": "Newton's second law for rotation: τ = Iα, analogy to F = ma, problem-solving strategy for rotational dynamics.",
           "estimated_minutes": 20,
           "access_tier": "free",
@@ -8167,7 +8410,12 @@
                       "text": "\\( mg = R\\alpha(m + \\frac{1}{2}M) \\), so \\( \\alpha = \\frac{mg}{R(m + M/2)} = \\frac{2.0 \\times 9.8}{0.10(2.0 + 2.0)} = \\frac{19.6}{0.40} = 49 \\) rad/s²."
                     }
                   ],
-                  "display_order": 4
+                  "display_order": 4,
+                  "diagram": {
+                    "bucket_key": "images/physics/ap-physics-1-mechanics/fbd-block-pulley-rotational.svg",
+                    "alt_text": "2 kg block hanging from a string wrapped around a solid disk pulley of mass 4 kg and radius 0.10 m, block accelerates downward",
+                    "caption": "Block hanging from string wrapped around a solid pulley, combining linear and rotational dynamics"
+                  }
                 },
                 {
                   "question_html": "<p>Two forces act on a disk of mass \\( 5.0 \\) kg and radius \\( 0.25 \\) m that rotates about its center. A \\( 20 \\) N force acts tangentially at the rim (clockwise), and a \\( 12 \\) N force acts tangentially at the rim (counterclockwise). What is the magnitude of the angular acceleration?</p>",
@@ -8278,6 +8526,13 @@
                 }
               ]
             }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/physics/ap-physics-1-mechanics/torque-net-angular-accel.svg",
+              "alt_text": "Beam with pivot at center, larger force on left creating greater torque than smaller force on right, net torque causes counterclockwise angular acceleration",
+              "caption": "Torque diagram showing unbalanced torques producing angular acceleration"
+            }
           ]
         }
       ]
@@ -8298,7 +8553,7 @@
             "ap-physics-1",
             "unit-6"
           ],
-          "content_html": "<p>A spinning flywheel stores energy. A rotating merry-go-round can do work if it slows down. This energy of rotation is called <strong>rotational kinetic energy</strong>.</p><h3>Definition</h3><p>\\[ K_{\\text{rot}} = \\frac{1}{2}I\\omega^2 \\]</p><p>This is the rotational analog of translational kinetic energy \\( K = \\frac{1}{2}mv^2 \\).</p><h3>Total Kinetic Energy</h3><p>An object that both translates and rotates (like a rolling ball) has total kinetic energy:</p><p>\\[ K_{\\text{total}} = \\frac{1}{2}mv_{\\text{cm}}^2 + \\frac{1}{2}I\\omega^2 \\]</p><p>where \\( v_{\\text{cm}} \\) is the speed of the center of mass.</p><h3>Variable Definitions</h3><ul><li>\\( K_{\\text{rot}} \\) = rotational kinetic energy (J)</li><li>\\( I \\) = rotational inertia (kg·m²)</li><li>\\( \\omega \\) = angular velocity (rad/s)</li><li>\\( v_{\\text{cm}} \\) = center-of-mass velocity (m/s)</li></ul><h3>Worked Example</h3><p>A solid disk of mass \\( 3.0 \\) kg and radius \\( 0.20 \\) m spins at \\( 10 \\) rad/s. What is its rotational kinetic energy?</p><p>\\[ I = \\tfrac{1}{2}MR^2 = \\tfrac{1}{2}(3.0)(0.20)^2 = 0.060 \\text{ kg·m²} \\]</p><p>\\[ K_{\\text{rot}} = \\tfrac{1}{2}(0.060)(10)^2 = 3.0 \\text{ J} \\]</p><!-- DIAGRAM: spinning disk with angular velocity arrow and energy label --><div class=\"callout-key\"><strong>Key Idea:</strong> Rotational kinetic energy depends on both how much rotational inertia an object has and how fast it spins. Doubling \\( \\omega \\) quadruples the energy.</div><div class=\"callout-warning\"><strong>AP Exam Tip:</strong> When applying conservation of energy to rolling objects, you must include both translational AND rotational kinetic energy. Forgetting the rotational term is a common error.</div>\n<figure class=\"concept-diagram\"><img data-bucket-key='images/physics/ap-physics-1-mechanics/energy-bar-rotational-ke.svg' alt='Bar chart with two states: sliding object with only translational KE, and rolling object with both translational and rotational KE' loading='lazy' /><figcaption>Energy bar chart comparing translational and rotational kinetic energy for a rolling object</figcaption></figure>",
+          "content_html": "<p>A spinning flywheel stores energy. A rotating merry-go-round can do work if it slows down. This energy of rotation is called <strong>rotational kinetic energy</strong>.</p><h3>Definition</h3><p>\\[ K_{\\text{rot}} = \\frac{1}{2}I\\omega^2 \\]</p><p>This is the rotational analog of translational kinetic energy \\( K = \\frac{1}{2}mv^2 \\).</p><h3>Total Kinetic Energy</h3><p>An object that both translates and rotates (like a rolling ball) has total kinetic energy:</p><p>\\[ K_{\\text{total}} = \\frac{1}{2}mv_{\\text{cm}}^2 + \\frac{1}{2}I\\omega^2 \\]</p><p>where \\( v_{\\text{cm}} \\) is the speed of the center of mass.</p><h3>Variable Definitions</h3><ul><li>\\( K_{\\text{rot}} \\) = rotational kinetic energy (J)</li><li>\\( I \\) = rotational inertia (kg·m²)</li><li>\\( \\omega \\) = angular velocity (rad/s)</li><li>\\( v_{\\text{cm}} \\) = center-of-mass velocity (m/s)</li></ul><h3>Worked Example</h3><p>A solid disk of mass \\( 3.0 \\) kg and radius \\( 0.20 \\) m spins at \\( 10 \\) rad/s. What is its rotational kinetic energy?</p><p>\\[ I = \\tfrac{1}{2}MR^2 = \\tfrac{1}{2}(3.0)(0.20)^2 = 0.060 \\text{ kg·m²} \\]</p><p>\\[ K_{\\text{rot}} = \\tfrac{1}{2}(0.060)(10)^2 = 3.0 \\text{ J} \\]</p><!-- DIAGRAM: spinning disk with angular velocity arrow and energy label --><div class=\"callout-key\"><strong>Key Idea:</strong> Rotational kinetic energy depends on both how much rotational inertia an object has and how fast it spins. Doubling \\( \\omega \\) quadruples the energy.</div><div class=\"callout-warning\"><strong>AP Exam Tip:</strong> When applying conservation of energy to rolling objects, you must include both translational AND rotational kinetic energy. Forgetting the rotational term is a common error.</div>",
           "content_raw": "Rotational kinetic energy: definition, formula, total kinetic energy of translating and rotating objects.",
           "estimated_minutes": 12,
           "access_tier": "free",
@@ -8601,6 +8856,13 @@
                   "display_order": 7
                 }
               ]
+            }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/physics/ap-physics-1-mechanics/energy-bar-rotational-ke.svg",
+              "alt_text": "Bar chart with two states: sliding object with only translational KE, and rolling object with both translational and rotational KE",
+              "caption": "Energy bar chart comparing translational and rotational kinetic energy for a rolling object"
             }
           ]
         },
@@ -9539,7 +9801,7 @@
             "ap-physics-1",
             "unit-6"
           ],
-          "content_html": "<p>A ball rolling down a hill, a tire moving along a road, a bowling ball on a lane — rolling is a combination of translation and rotation that appears everywhere in everyday life.</p><h3>Rolling Without Slipping</h3><p>When an object rolls without slipping, the contact point is momentarily at rest relative to the surface. This gives the key constraint:</p><p>\\[ v_{\\text{cm}} = R\\omega \\]</p><p>The center-of-mass speed equals the radius times the angular velocity. Differentiating:</p><p>\\[ a_{\\text{cm}} = R\\alpha \\]</p><h3>Energy of Rolling</h3><p>A rolling object has both translational and rotational kinetic energy:</p><p>\\[ K_{\\text{total}} = \\frac{1}{2}mv_{\\text{cm}}^2 + \\frac{1}{2}I\\omega^2 \\]</p><p>Using \\( \\omega = v/R \\), this can be written as:</p><p>\\[ K_{\\text{total}} = \\frac{1}{2}mv^2\\left(1 + \\frac{I}{mR^2}\\right) \\]</p><h3>Rolling Down an Incline</h3><p>For an object rolling down a frictionless ramp of height \\( h \\):</p><p>\\[ mgh = \\frac{1}{2}mv^2 + \\frac{1}{2}I\\omega^2 \\]</p><p>Objects with smaller \\( I/(mR^2) \\) reach the bottom faster because more energy goes to translation.</p><h3>Role of Friction</h3><p>Static friction provides the torque needed for rolling without slipping. It does NOT do work (no displacement at the contact point). Without friction, the object would slide instead of roll.</p><h3>Variable Definitions</h3><ul><li>\\( v_{\\text{cm}} \\) = center-of-mass velocity (m/s)</li><li>\\( R \\) = radius (m)</li><li>\\( \\omega \\) = angular velocity (rad/s)</li></ul><h3>Worked Example</h3><p>A solid sphere and a hollow sphere of equal mass and radius roll down the same ramp. Which reaches the bottom first?</p><p>Solid sphere: \\( I = \\frac{2}{5}mR^2 \\) → \\( v = \\sqrt{\\frac{10gh}{7}} \\)</p><p>Hollow sphere: \\( I = \\frac{2}{3}mR^2 \\) → \\( v = \\sqrt{\\frac{6gh}{5}} \\)</p><p>Since \\( \\frac{10}{7} > \\frac{6}{5} \\), the solid sphere is faster. Less of its energy goes to rotation.</p><!-- DIAGRAM: sphere rolling down incline with velocity and angular velocity vectors, friction force at contact --><div class=\"callout-key\"><strong>Key Idea:</strong> For rolling without slipping, \\( v = R\\omega \\). Objects with lower \\( I/(mR^2) \\) ratios roll faster down inclines because a greater fraction of their energy is translational.</div><div class=\"callout-warning\"><strong>AP Exam Tip:</strong> Static friction is essential for rolling without slipping — it provides the torque — but it does no work. The energy analysis uses conservation of energy without a friction work term.</div>\n<figure class=\"concept-diagram\"><img data-bucket-key='images/physics/ap-physics-1-mechanics/fbd-sphere-rolling-incline.svg' alt='Sphere on a 30-degree incline with weight pointing straight down, normal force perpendicular to the incline surface, and static friction pointing up the incline' loading='lazy' /><figcaption>Free-body diagram of a sphere rolling down an incline without slipping</figcaption></figure>",
+          "content_html": "<p>A ball rolling down a hill, a tire moving along a road, a bowling ball on a lane — rolling is a combination of translation and rotation that appears everywhere in everyday life.</p><h3>Rolling Without Slipping</h3><p>When an object rolls without slipping, the contact point is momentarily at rest relative to the surface. This gives the key constraint:</p><p>\\[ v_{\\text{cm}} = R\\omega \\]</p><p>The center-of-mass speed equals the radius times the angular velocity. Differentiating:</p><p>\\[ a_{\\text{cm}} = R\\alpha \\]</p><h3>Energy of Rolling</h3><p>A rolling object has both translational and rotational kinetic energy:</p><p>\\[ K_{\\text{total}} = \\frac{1}{2}mv_{\\text{cm}}^2 + \\frac{1}{2}I\\omega^2 \\]</p><p>Using \\( \\omega = v/R \\), this can be written as:</p><p>\\[ K_{\\text{total}} = \\frac{1}{2}mv^2\\left(1 + \\frac{I}{mR^2}\\right) \\]</p><h3>Rolling Down an Incline</h3><p>For an object rolling down a frictionless ramp of height \\( h \\):</p><p>\\[ mgh = \\frac{1}{2}mv^2 + \\frac{1}{2}I\\omega^2 \\]</p><p>Objects with smaller \\( I/(mR^2) \\) reach the bottom faster because more energy goes to translation.</p><h3>Role of Friction</h3><p>Static friction provides the torque needed for rolling without slipping. It does NOT do work (no displacement at the contact point). Without friction, the object would slide instead of roll.</p><h3>Variable Definitions</h3><ul><li>\\( v_{\\text{cm}} \\) = center-of-mass velocity (m/s)</li><li>\\( R \\) = radius (m)</li><li>\\( \\omega \\) = angular velocity (rad/s)</li></ul><h3>Worked Example</h3><p>A solid sphere and a hollow sphere of equal mass and radius roll down the same ramp. Which reaches the bottom first?</p><p>Solid sphere: \\( I = \\frac{2}{5}mR^2 \\) → \\( v = \\sqrt{\\frac{10gh}{7}} \\)</p><p>Hollow sphere: \\( I = \\frac{2}{3}mR^2 \\) → \\( v = \\sqrt{\\frac{6gh}{5}} \\)</p><p>Since \\( \\frac{10}{7} > \\frac{6}{5} \\), the solid sphere is faster. Less of its energy goes to rotation.</p><!-- DIAGRAM: sphere rolling down incline with velocity and angular velocity vectors, friction force at contact --><div class=\"callout-key\"><strong>Key Idea:</strong> For rolling without slipping, \\( v = R\\omega \\). Objects with lower \\( I/(mR^2) \\) ratios roll faster down inclines because a greater fraction of their energy is translational.</div><div class=\"callout-warning\"><strong>AP Exam Tip:</strong> Static friction is essential for rolling without slipping — it provides the torque — but it does no work. The energy analysis uses conservation of energy without a friction work term.</div>",
           "content_raw": "Rolling without slipping: v = Rω constraint, total kinetic energy, rolling down inclines, role of static friction.",
           "estimated_minutes": 18,
           "access_tier": "free",
@@ -9729,7 +9991,12 @@
                       "text": "\\( v = \\sqrt{\\frac{10gh}{7}} = \\sqrt{\\frac{10(9.8)(2.0)}{7}} = \\sqrt{28} \\approx 5.3 \\) m/s."
                     }
                   ],
-                  "display_order": 4
+                  "display_order": 4,
+                  "diagram": {
+                    "bucket_key": "images/physics/ap-physics-1-mechanics/fbd-rolling-sphere-ramp.svg",
+                    "alt_text": "Solid sphere on an incline with weight pointing straight down, normal force perpendicular to surface, and static friction up the incline preventing slipping",
+                    "caption": "Solid sphere of 3 kg rolling without slipping down a ramp of height 2 m"
+                  }
                 },
                 {
                   "question_html": "<p>A hollow cylinder and a solid cylinder of equal mass and radius start from rest and roll down identical ramps. What is the ratio of their speeds at the bottom (\\( v_{\\text{solid}} / v_{\\text{hollow}} \\))?</p>",
@@ -9840,6 +10107,13 @@
                 }
               ]
             }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/physics/ap-physics-1-mechanics/fbd-sphere-rolling-incline.svg",
+              "alt_text": "Sphere on a 30-degree incline with weight pointing straight down, normal force perpendicular to the incline surface, and static friction pointing up the incline",
+              "caption": "Free-body diagram of a sphere rolling down an incline without slipping"
+            }
           ]
         },
         {
@@ -9853,7 +10127,7 @@
             "ap-physics-1",
             "unit-6"
           ],
-          "content_html": "<p>The International Space Station orbits Earth every 90 minutes. The Moon takes about 27 days. Understanding orbital motion connects Newton's law of gravitation with circular motion and energy conservation.</p><h3>Circular Orbits</h3><p>For a satellite in a circular orbit, gravitational force provides the centripetal force:</p><p>\\[ \\frac{GMm}{r^2} = \\frac{mv^2}{r} \\]</p><p>Solving for the orbital speed:</p><p>\\[ v = \\sqrt{\\frac{GM}{r}} \\]</p><p>Key insight: orbital speed depends only on \\( M \\) (the central body's mass) and \\( r \\) (the orbital radius), NOT on the satellite's mass.</p><h3>Orbital Period</h3><p>The period of a circular orbit (time for one revolution):</p><p>\\[ T = \\frac{2\\pi r}{v} = 2\\pi r\\sqrt{\\frac{r}{GM}} = 2\\pi\\sqrt{\\frac{r^3}{GM}} \\]</p><h3>Gravitational Potential Energy</h3><p>\\[ U_g = -\\frac{GMm}{r} \\]</p><p>The negative sign means the object is bound. At \\( r = \\infty \\), \\( U = 0 \\).</p><h3>Total Energy in Orbit</h3><p>\\[ E = K + U = \\frac{1}{2}mv^2 - \\frac{GMm}{r} = -\\frac{GMm}{2r} \\]</p><p>The total energy is negative (bound orbit) and equals half the potential energy.</p><h3>Variable Definitions</h3><ul><li>\\( G \\) = gravitational constant (\\( 6.67 \\times 10^{-11} \\) N·m²/kg²)</li><li>\\( M \\) = mass of central body (kg)</li><li>\\( m \\) = mass of satellite (kg)</li><li>\\( r \\) = orbital radius from center of central body (m)</li><li>\\( v \\) = orbital speed (m/s)</li><li>\\( T \\) = orbital period (s)</li></ul><h3>Worked Example</h3><p>A satellite orbits Earth at twice the radius of the ISS. How does its speed compare?</p><p>Since \\( v \\propto 1/\\sqrt{r} \\), doubling \\( r \\) gives \\( v_{\\text{new}} = v_{\\text{ISS}} / \\sqrt{2} \\approx 0.71\\,v_{\\text{ISS}} \\).</p><!-- DIAGRAM: satellite in circular orbit with gravitational force, velocity vector, and radius labeled --><div class=\"callout-key\"><strong>Key Idea:</strong> Higher orbits are slower. This seems counterintuitive, but increasing \\( r \\) weakens gravity, which means less centripetal force and thus a lower orbital speed.</div><div class=\"callout-warning\"><strong>AP Exam Tip:</strong> Don't confuse orbital radius \\( r \\) with altitude \\( h \\). The orbital radius is \\( r = R_{\\text{planet}} + h \\), measured from the center of the planet, not the surface.</div>\n<figure class=\"concept-diagram\"><img data-bucket-key='images/physics/ap-physics-1-mechanics/satellite-orbit.svg' alt='Satellite orbiting Earth in a circle with velocity tangent to orbit and gravitational force pointing toward Earth center providing centripetal force' loading='lazy' /><figcaption>Satellite in circular orbit around Earth with gravitational force providing centripetal acceleration</figcaption></figure>",
+          "content_html": "<p>The International Space Station orbits Earth every 90 minutes. The Moon takes about 27 days. Understanding orbital motion connects Newton's law of gravitation with circular motion and energy conservation.</p><h3>Circular Orbits</h3><p>For a satellite in a circular orbit, gravitational force provides the centripetal force:</p><p>\\[ \\frac{GMm}{r^2} = \\frac{mv^2}{r} \\]</p><p>Solving for the orbital speed:</p><p>\\[ v = \\sqrt{\\frac{GM}{r}} \\]</p><p>Key insight: orbital speed depends only on \\( M \\) (the central body's mass) and \\( r \\) (the orbital radius), NOT on the satellite's mass.</p><h3>Orbital Period</h3><p>The period of a circular orbit (time for one revolution):</p><p>\\[ T = \\frac{2\\pi r}{v} = 2\\pi r\\sqrt{\\frac{r}{GM}} = 2\\pi\\sqrt{\\frac{r^3}{GM}} \\]</p><h3>Gravitational Potential Energy</h3><p>\\[ U_g = -\\frac{GMm}{r} \\]</p><p>The negative sign means the object is bound. At \\( r = \\infty \\), \\( U = 0 \\).</p><h3>Total Energy in Orbit</h3><p>\\[ E = K + U = \\frac{1}{2}mv^2 - \\frac{GMm}{r} = -\\frac{GMm}{2r} \\]</p><p>The total energy is negative (bound orbit) and equals half the potential energy.</p><h3>Variable Definitions</h3><ul><li>\\( G \\) = gravitational constant (\\( 6.67 \\times 10^{-11} \\) N·m²/kg²)</li><li>\\( M \\) = mass of central body (kg)</li><li>\\( m \\) = mass of satellite (kg)</li><li>\\( r \\) = orbital radius from center of central body (m)</li><li>\\( v \\) = orbital speed (m/s)</li><li>\\( T \\) = orbital period (s)</li></ul><h3>Worked Example</h3><p>A satellite orbits Earth at twice the radius of the ISS. How does its speed compare?</p><p>Since \\( v \\propto 1/\\sqrt{r} \\), doubling \\( r \\) gives \\( v_{\\text{new}} = v_{\\text{ISS}} / \\sqrt{2} \\approx 0.71\\,v_{\\text{ISS}} \\).</p><!-- DIAGRAM: satellite in circular orbit with gravitational force, velocity vector, and radius labeled --><div class=\"callout-key\"><strong>Key Idea:</strong> Higher orbits are slower. This seems counterintuitive, but increasing \\( r \\) weakens gravity, which means less centripetal force and thus a lower orbital speed.</div><div class=\"callout-warning\"><strong>AP Exam Tip:</strong> Don't confuse orbital radius \\( r \\) with altitude \\( h \\). The orbital radius is \\( r = R_{\\text{planet}} + h \\), measured from the center of the planet, not the surface.</div>",
           "content_raw": "Orbiting satellites: circular orbit conditions, orbital speed and period, gravitational PE, total energy in orbit.",
           "estimated_minutes": 15,
           "access_tier": "free",
@@ -10154,6 +10428,13 @@
                 }
               ]
             }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/physics/ap-physics-1-mechanics/satellite-orbit.svg",
+              "alt_text": "Satellite orbiting Earth in a circle with velocity tangent to orbit and gravitational force pointing toward Earth center providing centripetal force",
+              "caption": "Satellite in circular orbit around Earth with gravitational force providing centripetal acceleration"
+            }
           ]
         }
       ]
@@ -10174,7 +10455,7 @@
             "ap-physics-1",
             "unit-7"
           ],
-          "content_html": "<p>A child on a swing, a vibrating guitar string, a mass bouncing on a spring — these are all examples of oscillatory motion. The simplest and most important type is <strong>simple harmonic motion (SHM)</strong>.</p><h3>What Is SHM?</h3><p><strong>Simple harmonic motion</strong> occurs when an object oscillates about an equilibrium position under the influence of a <strong>restoring force</strong> that is proportional to the displacement from equilibrium:</p><p>\\[ F = -kx \\]</p><p>The negative sign means the force always points back toward equilibrium. The constant \\( k \\) is the force constant (or spring constant for a spring system).</p><h3>Characteristics of SHM</h3><ul><li><strong>Amplitude</strong> \\( A \\): maximum displacement from equilibrium</li><li><strong>Period</strong> \\( T \\): time for one complete cycle</li><li><strong>Frequency</strong> \\( f \\): number of cycles per second (\\( f = 1/T \\))</li><li><strong>Equilibrium position</strong>: the position where the net force is zero</li></ul><h3>Examples of SHM Systems</h3><ul><li><strong>Mass-spring system:</strong> A mass on a spring oscillates horizontally or vertically</li><li><strong>Simple pendulum:</strong> For small angles, a pendulum undergoes approximately SHM</li></ul><h3>Variable Definitions</h3><ul><li>\\( F \\) = restoring force (N)</li><li>\\( k \\) = spring/force constant (N/m)</li><li>\\( x \\) = displacement from equilibrium (m)</li><li>\\( A \\) = amplitude (m)</li><li>\\( T \\) = period (s)</li><li>\\( f \\) = frequency (Hz = 1/s)</li></ul><h3>Worked Example</h3><p>A \\( 0.50 \\) kg mass on a spring (\\( k = 20 \\) N/m) is pulled \\( 0.10 \\) m from equilibrium and released. What is the restoring force at maximum displacement?</p><p>\\[ F = -kx = -(20)(0.10) = -2.0 \\text{ N} \\]</p><p>The force is \\( 2.0 \\) N directed back toward equilibrium.</p><!-- DIAGRAM: mass on spring showing equilibrium position, displacement x, and restoring force arrow --><div class=\"callout-key\"><strong>Key Idea:</strong> SHM requires a restoring force proportional to displacement. At equilibrium, the force (and acceleration) are zero but velocity is maximum. At maximum displacement, force and acceleration are maximum but velocity is zero.</div><div class=\"callout-warning\"><strong>AP Exam Tip:</strong> SHM is only exact when the restoring force is linear (\\( F \\propto x \\)). A pendulum is approximately SHM only for small angles (roughly \\( < 15° \\)).</div>\n<figure class=\"concept-diagram\"><img data-bucket-key='images/physics/ap-physics-1-mechanics/shm-spring-mass-displaced.svg' alt='Horizontal spring attached to a wall with a block displaced 0.5 units to the right of equilibrium position' loading='lazy' /><figcaption>Spring-mass system showing the mass displaced from equilibrium with restoring force</figcaption></figure>",
+          "content_html": "<p>A child on a swing, a vibrating guitar string, a mass bouncing on a spring — these are all examples of oscillatory motion. The simplest and most important type is <strong>simple harmonic motion (SHM)</strong>.</p><h3>What Is SHM?</h3><p><strong>Simple harmonic motion</strong> occurs when an object oscillates about an equilibrium position under the influence of a <strong>restoring force</strong> that is proportional to the displacement from equilibrium:</p><p>\\[ F = -kx \\]</p><p>The negative sign means the force always points back toward equilibrium. The constant \\( k \\) is the force constant (or spring constant for a spring system).</p><h3>Characteristics of SHM</h3><ul><li><strong>Amplitude</strong> \\( A \\): maximum displacement from equilibrium</li><li><strong>Period</strong> \\( T \\): time for one complete cycle</li><li><strong>Frequency</strong> \\( f \\): number of cycles per second (\\( f = 1/T \\))</li><li><strong>Equilibrium position</strong>: the position where the net force is zero</li></ul><h3>Examples of SHM Systems</h3><ul><li><strong>Mass-spring system:</strong> A mass on a spring oscillates horizontally or vertically</li><li><strong>Simple pendulum:</strong> For small angles, a pendulum undergoes approximately SHM</li></ul><h3>Variable Definitions</h3><ul><li>\\( F \\) = restoring force (N)</li><li>\\( k \\) = spring/force constant (N/m)</li><li>\\( x \\) = displacement from equilibrium (m)</li><li>\\( A \\) = amplitude (m)</li><li>\\( T \\) = period (s)</li><li>\\( f \\) = frequency (Hz = 1/s)</li></ul><h3>Worked Example</h3><p>A \\( 0.50 \\) kg mass on a spring (\\( k = 20 \\) N/m) is pulled \\( 0.10 \\) m from equilibrium and released. What is the restoring force at maximum displacement?</p><p>\\[ F = -kx = -(20)(0.10) = -2.0 \\text{ N} \\]</p><p>The force is \\( 2.0 \\) N directed back toward equilibrium.</p><!-- DIAGRAM: mass on spring showing equilibrium position, displacement x, and restoring force arrow --><div class=\"callout-key\"><strong>Key Idea:</strong> SHM requires a restoring force proportional to displacement. At equilibrium, the force (and acceleration) are zero but velocity is maximum. At maximum displacement, force and acceleration are maximum but velocity is zero.</div><div class=\"callout-warning\"><strong>AP Exam Tip:</strong> SHM is only exact when the restoring force is linear (\\( F \\propto x \\)). A pendulum is approximately SHM only for small angles (roughly \\( < 15° \\)).</div>",
           "content_raw": "Simple harmonic motion: definition, restoring force proportional to displacement, amplitude, period, frequency, examples.",
           "estimated_minutes": 12,
           "access_tier": "free",
@@ -10355,7 +10636,12 @@
                       "text": "At maximum displacement: \\( v = 0 \\), \\( |F| \\) and \\( |a| \\) are maximum."
                     }
                   ],
-                  "display_order": 4
+                  "display_order": 4,
+                  "diagram": {
+                    "bucket_key": "images/physics/ap-physics-1-mechanics/shm-spring-mass-problem.svg",
+                    "alt_text": "Horizontal spring with block displaced 0.08 m from equilibrium position, spring constant 50 N/m, mass 0.20 kg",
+                    "caption": "A 0.20 kg mass on a spring (k = 50 N/m) pulled 0.08 m from equilibrium"
+                  }
                 },
                 {
                   "question_html": "<p>Explain why a pendulum undergoes approximately simple harmonic motion only for small angles. What happens to the restoring force at large angles?</p>",
@@ -10394,6 +10680,13 @@
                 }
               ]
             }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/physics/ap-physics-1-mechanics/shm-spring-mass-displaced.svg",
+              "alt_text": "Horizontal spring attached to a wall with a block displaced 0.5 units to the right of equilibrium position",
+              "caption": "Spring-mass system showing the mass displaced from equilibrium with restoring force"
+            }
           ]
         },
         {
@@ -10406,7 +10699,7 @@
             "ap-physics-1",
             "unit-7"
           ],
-          "content_html": "<p>How fast does a pendulum swing? How quickly does a mass on a spring bounce? The period and frequency of SHM depend on the physical properties of the system.</p><h3>Mass-Spring System</h3><p>\\[ T = 2\\pi\\sqrt{\\frac{m}{k}} \\qquad f = \\frac{1}{2\\pi}\\sqrt{\\frac{k}{m}} \\]</p><p>The period depends on mass \\( m \\) and spring constant \\( k \\). It does <strong>not</strong> depend on amplitude.</p><h3>Simple Pendulum</h3><p>\\[ T = 2\\pi\\sqrt{\\frac{L}{g}} \\qquad f = \\frac{1}{2\\pi}\\sqrt{\\frac{g}{L}} \\]</p><p>The period depends on length \\( L \\) and gravitational acceleration \\( g \\). It does <strong>not</strong> depend on mass or amplitude (for small oscillations).</p><h3>Angular Frequency</h3><p>\\[ \\omega = 2\\pi f = \\frac{2\\pi}{T} \\]</p><p>Angular frequency \\( \\omega \\) has units of rad/s.</p><h3>Variable Definitions</h3><ul><li>\\( T \\) = period (s)</li><li>\\( f \\) = frequency (Hz)</li><li>\\( m \\) = mass (kg)</li><li>\\( k \\) = spring constant (N/m)</li><li>\\( L \\) = pendulum length (m)</li><li>\\( g \\) = gravitational acceleration (m/s²)</li><li>\\( \\omega \\) = angular frequency (rad/s)</li></ul><h3>Worked Example</h3><p>A \\( 0.50 \\) kg mass hangs from a spring with \\( k = 200 \\) N/m. What is the period?</p><p>\\[ T = 2\\pi\\sqrt{\\frac{m}{k}} = 2\\pi\\sqrt{\\frac{0.50}{200}} = 2\\pi\\sqrt{0.0025} = 2\\pi(0.050) = 0.31 \\text{ s} \\]</p><!-- DIAGRAM: mass-spring system and simple pendulum side by side with period formulas --><div class=\"callout-key\"><strong>Key Idea:</strong> The period of SHM is independent of amplitude. A pendulum with a small swing takes the same time per cycle as one with a slightly larger swing. This is what makes pendulum clocks work.</div><div class=\"callout-warning\"><strong>AP Exam Tip:</strong> Don't confuse which formula goes with which system. Spring period depends on mass (not length); pendulum period depends on length (not mass). Both are independent of amplitude.</div>\n<figure class=\"concept-diagram\"><img data-bucket-key='images/physics/ap-physics-1-mechanics/shm-wave-period-amplitude.svg' alt='Sinusoidal wave showing two complete cycles with period T marked between peaks and amplitude A marked from center to peak' loading='lazy' /><figcaption>Displacement vs time sinusoidal wave with period T and amplitude A labeled</figcaption></figure>",
+          "content_html": "<p>How fast does a pendulum swing? How quickly does a mass on a spring bounce? The period and frequency of SHM depend on the physical properties of the system.</p><h3>Mass-Spring System</h3><p>\\[ T = 2\\pi\\sqrt{\\frac{m}{k}} \\qquad f = \\frac{1}{2\\pi}\\sqrt{\\frac{k}{m}} \\]</p><p>The period depends on mass \\( m \\) and spring constant \\( k \\). It does <strong>not</strong> depend on amplitude.</p><h3>Simple Pendulum</h3><p>\\[ T = 2\\pi\\sqrt{\\frac{L}{g}} \\qquad f = \\frac{1}{2\\pi}\\sqrt{\\frac{g}{L}} \\]</p><p>The period depends on length \\( L \\) and gravitational acceleration \\( g \\). It does <strong>not</strong> depend on mass or amplitude (for small oscillations).</p><h3>Angular Frequency</h3><p>\\[ \\omega = 2\\pi f = \\frac{2\\pi}{T} \\]</p><p>Angular frequency \\( \\omega \\) has units of rad/s.</p><h3>Variable Definitions</h3><ul><li>\\( T \\) = period (s)</li><li>\\( f \\) = frequency (Hz)</li><li>\\( m \\) = mass (kg)</li><li>\\( k \\) = spring constant (N/m)</li><li>\\( L \\) = pendulum length (m)</li><li>\\( g \\) = gravitational acceleration (m/s²)</li><li>\\( \\omega \\) = angular frequency (rad/s)</li></ul><h3>Worked Example</h3><p>A \\( 0.50 \\) kg mass hangs from a spring with \\( k = 200 \\) N/m. What is the period?</p><p>\\[ T = 2\\pi\\sqrt{\\frac{m}{k}} = 2\\pi\\sqrt{\\frac{0.50}{200}} = 2\\pi\\sqrt{0.0025} = 2\\pi(0.050) = 0.31 \\text{ s} \\]</p><!-- DIAGRAM: mass-spring system and simple pendulum side by side with period formulas --><div class=\"callout-key\"><strong>Key Idea:</strong> The period of SHM is independent of amplitude. A pendulum with a small swing takes the same time per cycle as one with a slightly larger swing. This is what makes pendulum clocks work.</div><div class=\"callout-warning\"><strong>AP Exam Tip:</strong> Don't confuse which formula goes with which system. Spring period depends on mass (not length); pendulum period depends on length (not mass). Both are independent of amplitude.</div>",
           "content_raw": "Frequency and period of SHM: mass-spring and pendulum formulas, independence from amplitude, angular frequency.",
           "estimated_minutes": 15,
           "access_tier": "free",
@@ -10695,6 +10988,13 @@
                 }
               ]
             }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/physics/ap-physics-1-mechanics/shm-wave-period-amplitude.svg",
+              "alt_text": "Sinusoidal wave showing two complete cycles with period T marked between peaks and amplitude A marked from center to peak",
+              "caption": "Displacement vs time sinusoidal wave with period T and amplitude A labeled"
+            }
           ]
         },
         {
@@ -10707,7 +11007,7 @@
             "ap-physics-1",
             "unit-7"
           ],
-          "content_html": "<p>SHM can be described mathematically and graphically. Understanding the relationships between position, velocity, and acceleration as functions of time is essential.</p><h3>Position as a Function of Time</h3><p>\\[ x(t) = A\\cos(\\omega t) \\]</p><p>(if starting from maximum displacement). Here \\( \\omega = 2\\pi/T \\) is the angular frequency.</p><h3>Velocity</h3><p>\\[ v(t) = -A\\omega\\sin(\\omega t) \\]</p><p>Maximum speed: \\( v_{\\text{max}} = A\\omega \\)</p><h3>Acceleration</h3><p>\\[ a(t) = -A\\omega^2\\cos(\\omega t) = -\\omega^2 x \\]</p><p>Maximum acceleration: \\( a_{\\text{max}} = A\\omega^2 \\)</p><h3>Phase Relationships</h3><ul><li>Position and acceleration are <strong>180° out of phase</strong> (when \\( x \\) is max positive, \\( a \\) is max negative)</li><li>Velocity is <strong>90° ahead</strong> of position (velocity leads position by a quarter cycle)</li><li>When \\( x = 0 \\): \\( |v| = v_{\\text{max}} \\), \\( a = 0 \\)</li><li>When \\( |x| = A \\): \\( v = 0 \\), \\( |a| = a_{\\text{max}} \\)</li></ul><h3>Graphs</h3><p>Position: cosine wave. Velocity: negative sine wave (shifted ¼ period left). Acceleration: negative cosine (shifted ½ period, i.e., inverted position graph).</p><h3>Variable Definitions</h3><ul><li>\\( A \\) = amplitude (m)</li><li>\\( \\omega \\) = angular frequency (rad/s)</li><li>\\( v_{\\text{max}} = A\\omega \\) = maximum speed (m/s)</li><li>\\( a_{\\text{max}} = A\\omega^2 \\) = maximum acceleration (m/s²)</li></ul><h3>Worked Example</h3><p>A mass oscillates with \\( A = 0.10 \\) m and \\( T = 0.50 \\) s. Find the maximum speed.</p><p>\\[ \\omega = \\frac{2\\pi}{T} = \\frac{2\\pi}{0.50} = 4\\pi \\text{ rad/s} \\]</p><p>\\[ v_{\\text{max}} = A\\omega = (0.10)(4\\pi) = 0.40\\pi \\approx 1.26 \\text{ m/s} \\]</p><!-- DIAGRAM: three graphs stacked: x(t), v(t), a(t) showing phase relationships --><div class=\"callout-key\"><strong>Key Idea:</strong> In SHM, acceleration is always opposite to displacement (\\( a = -\\omega^2 x \\)). Position and velocity are 90° out of phase — velocity is zero at the extremes and maximum at equilibrium.</div><div class=\"callout-warning\"><strong>AP Exam Tip:</strong> On position-time graph questions, remember that the slope of \\( x(t) \\) gives velocity and the slope of \\( v(t) \\) gives acceleration. Check the graph at key points to match with physical behavior.</div>\n<figure class=\"concept-diagram\"><img data-bucket-key='images/physics/ap-physics-1-mechanics/shm-x-vs-t-wave.svg' alt='Sinusoidal curve of displacement x versus time t showing 1.5 cycles of oscillation' loading='lazy' /><figcaption>Displacement vs time graph for SHM showing position oscillation over time</figcaption></figure>",
+          "content_html": "<p>SHM can be described mathematically and graphically. Understanding the relationships between position, velocity, and acceleration as functions of time is essential.</p><h3>Position as a Function of Time</h3><p>\\[ x(t) = A\\cos(\\omega t) \\]</p><p>(if starting from maximum displacement). Here \\( \\omega = 2\\pi/T \\) is the angular frequency.</p><h3>Velocity</h3><p>\\[ v(t) = -A\\omega\\sin(\\omega t) \\]</p><p>Maximum speed: \\( v_{\\text{max}} = A\\omega \\)</p><h3>Acceleration</h3><p>\\[ a(t) = -A\\omega^2\\cos(\\omega t) = -\\omega^2 x \\]</p><p>Maximum acceleration: \\( a_{\\text{max}} = A\\omega^2 \\)</p><h3>Phase Relationships</h3><ul><li>Position and acceleration are <strong>180° out of phase</strong> (when \\( x \\) is max positive, \\( a \\) is max negative)</li><li>Velocity is <strong>90° ahead</strong> of position (velocity leads position by a quarter cycle)</li><li>When \\( x = 0 \\): \\( |v| = v_{\\text{max}} \\), \\( a = 0 \\)</li><li>When \\( |x| = A \\): \\( v = 0 \\), \\( |a| = a_{\\text{max}} \\)</li></ul><h3>Graphs</h3><p>Position: cosine wave. Velocity: negative sine wave (shifted ¼ period left). Acceleration: negative cosine (shifted ½ period, i.e., inverted position graph).</p><h3>Variable Definitions</h3><ul><li>\\( A \\) = amplitude (m)</li><li>\\( \\omega \\) = angular frequency (rad/s)</li><li>\\( v_{\\text{max}} = A\\omega \\) = maximum speed (m/s)</li><li>\\( a_{\\text{max}} = A\\omega^2 \\) = maximum acceleration (m/s²)</li></ul><h3>Worked Example</h3><p>A mass oscillates with \\( A = 0.10 \\) m and \\( T = 0.50 \\) s. Find the maximum speed.</p><p>\\[ \\omega = \\frac{2\\pi}{T} = \\frac{2\\pi}{0.50} = 4\\pi \\text{ rad/s} \\]</p><p>\\[ v_{\\text{max}} = A\\omega = (0.10)(4\\pi) = 0.40\\pi \\approx 1.26 \\text{ m/s} \\]</p><!-- DIAGRAM: three graphs stacked: x(t), v(t), a(t) showing phase relationships --><div class=\"callout-key\"><strong>Key Idea:</strong> In SHM, acceleration is always opposite to displacement (\\( a = -\\omega^2 x \\)). Position and velocity are 90° out of phase — velocity is zero at the extremes and maximum at equilibrium.</div><div class=\"callout-warning\"><strong>AP Exam Tip:</strong> On position-time graph questions, remember that the slope of \\( x(t) \\) gives velocity and the slope of \\( v(t) \\) gives acceleration. Check the graph at key points to match with physical behavior.</div>",
           "content_raw": "Representing SHM: position, velocity, acceleration as functions of time, phase relationships, graphical analysis.",
           "estimated_minutes": 15,
           "access_tier": "free",
@@ -11002,6 +11302,13 @@
                 }
               ]
             }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/physics/ap-physics-1-mechanics/shm-x-vs-t-wave.svg",
+              "alt_text": "Sinusoidal curve of displacement x versus time t showing 1.5 cycles of oscillation",
+              "caption": "Displacement vs time graph for SHM showing position oscillation over time"
+            }
           ]
         },
         {
@@ -11014,7 +11321,7 @@
             "ap-physics-1",
             "unit-7"
           ],
-          "content_html": "<p>Energy sloshes back and forth between kinetic and potential forms in SHM. Understanding this energy exchange is key to analyzing oscillating systems.</p><h3>Energy in a Mass-Spring System</h3><p><strong>Potential energy</strong> (stored in spring):</p><p>\\[ U = \\frac{1}{2}kx^2 \\]</p><p><strong>Kinetic energy</strong>:</p><p>\\[ K = \\frac{1}{2}mv^2 \\]</p><p><strong>Total mechanical energy</strong> (constant, if no friction):</p><p>\\[ E = K + U = \\frac{1}{2}kA^2 = \\text{constant} \\]</p><h3>Energy at Key Positions</h3><ul><li>At \\( x = \\pm A \\) (extremes): \\( U = \\frac{1}{2}kA^2 \\), \\( K = 0 \\) → all PE</li><li>At \\( x = 0 \\) (equilibrium): \\( U = 0 \\), \\( K = \\frac{1}{2}kA^2 \\) → all KE</li><li>At any position: \\( K + U = \\frac{1}{2}kA^2 \\)</li></ul><h3>Finding Speed at Any Position</h3><p>From energy conservation:</p><p>\\[ \\frac{1}{2}mv^2 + \\frac{1}{2}kx^2 = \\frac{1}{2}kA^2 \\]</p><p>\\[ v = \\sqrt{\\frac{k}{m}(A^2 - x^2)} = \\omega\\sqrt{A^2 - x^2} \\]</p><h3>Variable Definitions</h3><ul><li>\\( E \\) = total mechanical energy (J)</li><li>\\( U \\) = elastic potential energy (J)</li><li>\\( K \\) = kinetic energy (J)</li><li>\\( A \\) = amplitude (m)</li><li>\\( k \\) = spring constant (N/m)</li></ul><h3>Worked Example</h3><p>A \\( 0.50 \\) kg mass oscillates on a spring (\\( k = 80 \\) N/m) with amplitude \\( 0.10 \\) m. Find the speed when \\( x = 0.060 \\) m.</p><p>\\[ v = \\sqrt{\\frac{k}{m}(A^2 - x^2)} = \\sqrt{\\frac{80}{0.50}((0.10)^2 - (0.060)^2)} \\]</p><p>\\[ v = \\sqrt{160(0.01 - 0.0036)} = \\sqrt{160(0.0064)} = \\sqrt{1.024} \\approx 1.01 \\text{ m/s} \\]</p><!-- DIAGRAM: energy bar chart showing K and U at different positions in SHM cycle --><div class=\"callout-key\"><strong>Key Idea:</strong> Total energy in SHM is constant and proportional to \\( A^2 \\). Doubling the amplitude quadruples the total energy. Energy continuously transforms between kinetic and potential forms.</div><div class=\"callout-warning\"><strong>AP Exam Tip:</strong> Energy conservation gives you a powerful shortcut. Instead of using kinematics, use \\( \\frac{1}{2}mv^2 + \\frac{1}{2}kx^2 = \\frac{1}{2}kA^2 \\) to find the speed at any position.</div>\n<figure class=\"concept-diagram\"><img data-bucket-key='images/physics/ap-physics-1-mechanics/energy-bar-shm.svg' alt='Bar chart with three states: at max displacement with all PE, at equilibrium with all KE, and at other max displacement with all PE again' loading='lazy' /><figcaption>Energy bar chart for SHM showing KE and PE at different positions in the oscillation</figcaption></figure>",
+          "content_html": "<p>Energy sloshes back and forth between kinetic and potential forms in SHM. Understanding this energy exchange is key to analyzing oscillating systems.</p><h3>Energy in a Mass-Spring System</h3><p><strong>Potential energy</strong> (stored in spring):</p><p>\\[ U = \\frac{1}{2}kx^2 \\]</p><p><strong>Kinetic energy</strong>:</p><p>\\[ K = \\frac{1}{2}mv^2 \\]</p><p><strong>Total mechanical energy</strong> (constant, if no friction):</p><p>\\[ E = K + U = \\frac{1}{2}kA^2 = \\text{constant} \\]</p><h3>Energy at Key Positions</h3><ul><li>At \\( x = \\pm A \\) (extremes): \\( U = \\frac{1}{2}kA^2 \\), \\( K = 0 \\) → all PE</li><li>At \\( x = 0 \\) (equilibrium): \\( U = 0 \\), \\( K = \\frac{1}{2}kA^2 \\) → all KE</li><li>At any position: \\( K + U = \\frac{1}{2}kA^2 \\)</li></ul><h3>Finding Speed at Any Position</h3><p>From energy conservation:</p><p>\\[ \\frac{1}{2}mv^2 + \\frac{1}{2}kx^2 = \\frac{1}{2}kA^2 \\]</p><p>\\[ v = \\sqrt{\\frac{k}{m}(A^2 - x^2)} = \\omega\\sqrt{A^2 - x^2} \\]</p><h3>Variable Definitions</h3><ul><li>\\( E \\) = total mechanical energy (J)</li><li>\\( U \\) = elastic potential energy (J)</li><li>\\( K \\) = kinetic energy (J)</li><li>\\( A \\) = amplitude (m)</li><li>\\( k \\) = spring constant (N/m)</li></ul><h3>Worked Example</h3><p>A \\( 0.50 \\) kg mass oscillates on a spring (\\( k = 80 \\) N/m) with amplitude \\( 0.10 \\) m. Find the speed when \\( x = 0.060 \\) m.</p><p>\\[ v = \\sqrt{\\frac{k}{m}(A^2 - x^2)} = \\sqrt{\\frac{80}{0.50}((0.10)^2 - (0.060)^2)} \\]</p><p>\\[ v = \\sqrt{160(0.01 - 0.0036)} = \\sqrt{160(0.0064)} = \\sqrt{1.024} \\approx 1.01 \\text{ m/s} \\]</p><!-- DIAGRAM: energy bar chart showing K and U at different positions in SHM cycle --><div class=\"callout-key\"><strong>Key Idea:</strong> Total energy in SHM is constant and proportional to \\( A^2 \\). Doubling the amplitude quadruples the total energy. Energy continuously transforms between kinetic and potential forms.</div><div class=\"callout-warning\"><strong>AP Exam Tip:</strong> Energy conservation gives you a powerful shortcut. Instead of using kinematics, use \\( \\frac{1}{2}mv^2 + \\frac{1}{2}kx^2 = \\frac{1}{2}kA^2 \\) to find the speed at any position.</div>",
           "content_raw": "Energy in SHM: potential and kinetic energy exchange, total energy proportional to amplitude squared, speed at any position.",
           "estimated_minutes": 15,
           "access_tier": "free",
@@ -11306,6 +11613,13 @@
                 }
               ]
             }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/physics/ap-physics-1-mechanics/energy-bar-shm.svg",
+              "alt_text": "Bar chart with three states: at max displacement with all PE, at equilibrium with all KE, and at other max displacement with all PE again",
+              "caption": "Energy bar chart for SHM showing KE and PE at different positions in the oscillation"
+            }
           ]
         }
       ]
@@ -11566,7 +11880,7 @@
             "ap-physics-1",
             "unit-8"
           ],
-          "content_html": "<p>Diving deeper into a pool, you feel increasing pressure on your ears. Pressure is one of the most important concepts in fluid mechanics.</p><h3>Definition of Pressure</h3><p><strong>Pressure</strong> is force per unit area:</p><p>\\[ P = \\frac{F}{A} \\]</p><p>SI unit: Pascal (Pa) = N/m². Atmospheric pressure at sea level: \\( P_0 \\approx 1.01 \\times 10^5 \\) Pa.</p><h3>Pressure in a Fluid at Rest</h3><p>Pressure increases with depth in a fluid due to the weight of the fluid above:</p><p>\\[ P = P_0 + \\rho g h \\]</p><p>where \\( P_0 \\) is the pressure at the surface, \\( \\rho \\) is the fluid density, \\( g \\) is gravitational acceleration, and \\( h \\) is the depth below the surface.</p><h3>Key Properties of Fluid Pressure</h3><ul><li>Pressure acts in <strong>all directions equally</strong> at a given depth (Pascal's principle)</li><li>Pressure depends only on depth, not on the shape of the container</li><li>At the same depth in the same fluid, the pressure is the same everywhere</li></ul><h3>Gauge Pressure vs. Absolute Pressure</h3><ul><li><strong>Absolute pressure:</strong> \\( P = P_0 + \\rho g h \\)</li><li><strong>Gauge pressure:</strong> \\( P_{\\text{gauge}} = \\rho g h \\) (pressure above atmospheric)</li></ul><h3>Variable Definitions</h3><ul><li>\\( P \\) = pressure (Pa = N/m²)</li><li>\\( F \\) = force (N)</li><li>\\( A \\) = area (m²)</li><li>\\( P_0 \\) = atmospheric pressure (\\( \\approx 1.01 \\times 10^5 \\) Pa)</li><li>\\( h \\) = depth (m)</li></ul><h3>Worked Example</h3><p>What is the absolute pressure at \\( 5.0 \\) m below the surface of a lake?</p><p>\\[ P = P_0 + \\rho g h = 1.01 \\times 10^5 + (1000)(9.8)(5.0) = 1.01 \\times 10^5 + 4.9 \\times 10^4 = 1.50 \\times 10^5 \\text{ Pa} \\]</p><!-- DIAGRAM: container of fluid with depth h marked, pressure arrows at a point showing all directions --><div class=\"callout-key\"><strong>Key Idea:</strong> Pressure in a static fluid increases linearly with depth. At a given depth, pressure is the same in all directions and doesn't depend on container shape.</div><div class=\"callout-warning\"><strong>AP Exam Tip:</strong> Watch for whether a problem asks for gauge pressure (\\( \\rho gh \\)) or absolute pressure (\\( P_0 + \\rho gh \\)). Read carefully — the answers can differ by \\( 10^5 \\) Pa!</div>\n<figure class=\"concept-diagram\"><img data-bucket-key='images/physics/ap-physics-1-mechanics/fluid-pressure-depth.svg' alt='Container of fluid with horizontal arrows at three depths showing pressure increasing with depth: small arrow at top, medium in middle, large at bottom' loading='lazy' /><figcaption>Fluid pressure increases with depth, showing pressure arrows at three depths</figcaption></figure>",
+          "content_html": "<p>Diving deeper into a pool, you feel increasing pressure on your ears. Pressure is one of the most important concepts in fluid mechanics.</p><h3>Definition of Pressure</h3><p><strong>Pressure</strong> is force per unit area:</p><p>\\[ P = \\frac{F}{A} \\]</p><p>SI unit: Pascal (Pa) = N/m². Atmospheric pressure at sea level: \\( P_0 \\approx 1.01 \\times 10^5 \\) Pa.</p><h3>Pressure in a Fluid at Rest</h3><p>Pressure increases with depth in a fluid due to the weight of the fluid above:</p><p>\\[ P = P_0 + \\rho g h \\]</p><p>where \\( P_0 \\) is the pressure at the surface, \\( \\rho \\) is the fluid density, \\( g \\) is gravitational acceleration, and \\( h \\) is the depth below the surface.</p><h3>Key Properties of Fluid Pressure</h3><ul><li>Pressure acts in <strong>all directions equally</strong> at a given depth (Pascal's principle)</li><li>Pressure depends only on depth, not on the shape of the container</li><li>At the same depth in the same fluid, the pressure is the same everywhere</li></ul><h3>Gauge Pressure vs. Absolute Pressure</h3><ul><li><strong>Absolute pressure:</strong> \\( P = P_0 + \\rho g h \\)</li><li><strong>Gauge pressure:</strong> \\( P_{\\text{gauge}} = \\rho g h \\) (pressure above atmospheric)</li></ul><h3>Variable Definitions</h3><ul><li>\\( P \\) = pressure (Pa = N/m²)</li><li>\\( F \\) = force (N)</li><li>\\( A \\) = area (m²)</li><li>\\( P_0 \\) = atmospheric pressure (\\( \\approx 1.01 \\times 10^5 \\) Pa)</li><li>\\( h \\) = depth (m)</li></ul><h3>Worked Example</h3><p>What is the absolute pressure at \\( 5.0 \\) m below the surface of a lake?</p><p>\\[ P = P_0 + \\rho g h = 1.01 \\times 10^5 + (1000)(9.8)(5.0) = 1.01 \\times 10^5 + 4.9 \\times 10^4 = 1.50 \\times 10^5 \\text{ Pa} \\]</p><!-- DIAGRAM: container of fluid with depth h marked, pressure arrows at a point showing all directions --><div class=\"callout-key\"><strong>Key Idea:</strong> Pressure in a static fluid increases linearly with depth. At a given depth, pressure is the same in all directions and doesn't depend on container shape.</div><div class=\"callout-warning\"><strong>AP Exam Tip:</strong> Watch for whether a problem asks for gauge pressure (\\( \\rho gh \\)) or absolute pressure (\\( P_0 + \\rho gh \\)). Read carefully — the answers can differ by \\( 10^5 \\) Pa!</div>",
           "content_raw": "Pressure: definition, pressure with depth, Pascal's principle, gauge vs absolute pressure.",
           "estimated_minutes": 15,
           "access_tier": "free",
@@ -11852,6 +12166,13 @@
                 }
               ]
             }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/physics/ap-physics-1-mechanics/fluid-pressure-depth.svg",
+              "alt_text": "Container of fluid with horizontal arrows at three depths showing pressure increasing with depth: small arrow at top, medium in middle, large at bottom",
+              "caption": "Fluid pressure increases with depth, showing pressure arrows at three depths"
+            }
           ]
         },
         {
@@ -11865,7 +12186,7 @@
             "ap-physics-1",
             "unit-8"
           ],
-          "content_html": "<p>Why does a beach ball pop up from underwater? Why does a helium balloon rise? These are consequences of <strong>buoyancy</strong>, which arises directly from pressure differences in fluids.</p><h3>Buoyant Force</h3><p><strong>Archimedes' Principle:</strong> The buoyant force on an object submerged (fully or partially) in a fluid equals the weight of the fluid displaced:</p><p>\\[ F_b = \\rho_f V_d g \\]</p><p>where \\( \\rho_f \\) is the fluid density, \\( V_d \\) is the volume of fluid displaced, and \\( g \\) is gravitational acceleration.</p><h3>Origin of Buoyancy</h3><p>Buoyancy arises because pressure increases with depth. The bottom of a submerged object experiences greater pressure (and thus greater upward force) than the top. The net upward force is the buoyant force.</p><h3>Floating Objects</h3><p>When an object floats, the buoyant force equals its weight:</p><p>\\[ F_b = mg \\implies \\rho_f V_d g = \\rho_{\\text{obj}} V_{\\text{obj}} g \\]</p><p>\\[ \\frac{V_d}{V_{\\text{obj}}} = \\frac{\\rho_{\\text{obj}}}{\\rho_f} \\]</p><p>This tells us what fraction of the object is submerged.</p><h3>Apparent Weight</h3><p>An object submerged in a fluid appears to weigh less. The <strong>apparent weight</strong> is:</p><p>\\[ W_{\\text{app}} = mg - F_b \\]</p><h3>Variable Definitions</h3><ul><li>\\( F_b \\) = buoyant force (N)</li><li>\\( \\rho_f \\) = fluid density (kg/m³)</li><li>\\( V_d \\) = displaced volume (m³)</li><li>\\( W_{\\text{app}} \\) = apparent weight (N)</li></ul><h3>Worked Example</h3><p>A block of wood (density \\( 600 \\) kg/m³) floats in water. What fraction is submerged?</p><p>\\[ \\frac{V_d}{V_{\\text{obj}}} = \\frac{\\rho_{\\text{obj}}}{\\rho_f} = \\frac{600}{1000} = 0.60 \\]</p><p>60% of the block is submerged.</p><!-- DIAGRAM: block floating in water with submerged and above-water portions labeled, buoyant force and weight arrows --><div class=\"callout-key\"><strong>Key Idea:</strong> Buoyancy is caused by the pressure difference between the top and bottom of an object in a fluid. Archimedes' principle: \\( F_b = \\rho_f V_d g \\) = weight of displaced fluid.</div><div class=\"callout-warning\"><strong>AP Exam Tip:</strong> For floating objects, \\( F_b = mg \\). The fraction submerged equals the ratio of densities. Don't forget: a fully submerged object displaces a volume equal to its own volume.</div>\n<figure class=\"concept-diagram\"><img data-bucket-key='images/physics/ap-physics-1-mechanics/fluid-buoyancy.svg' alt='Rectangular object submerged in fluid with downward weight arrow F g and upward buoyant force arrow F b, F g is larger than F b so object sinks' loading='lazy' /><figcaption>Buoyant force diagram showing an object submerged in fluid with weight and buoyant force</figcaption></figure>",
+          "content_html": "<p>Why does a beach ball pop up from underwater? Why does a helium balloon rise? These are consequences of <strong>buoyancy</strong>, which arises directly from pressure differences in fluids.</p><h3>Buoyant Force</h3><p><strong>Archimedes' Principle:</strong> The buoyant force on an object submerged (fully or partially) in a fluid equals the weight of the fluid displaced:</p><p>\\[ F_b = \\rho_f V_d g \\]</p><p>where \\( \\rho_f \\) is the fluid density, \\( V_d \\) is the volume of fluid displaced, and \\( g \\) is gravitational acceleration.</p><h3>Origin of Buoyancy</h3><p>Buoyancy arises because pressure increases with depth. The bottom of a submerged object experiences greater pressure (and thus greater upward force) than the top. The net upward force is the buoyant force.</p><h3>Floating Objects</h3><p>When an object floats, the buoyant force equals its weight:</p><p>\\[ F_b = mg \\implies \\rho_f V_d g = \\rho_{\\text{obj}} V_{\\text{obj}} g \\]</p><p>\\[ \\frac{V_d}{V_{\\text{obj}}} = \\frac{\\rho_{\\text{obj}}}{\\rho_f} \\]</p><p>This tells us what fraction of the object is submerged.</p><h3>Apparent Weight</h3><p>An object submerged in a fluid appears to weigh less. The <strong>apparent weight</strong> is:</p><p>\\[ W_{\\text{app}} = mg - F_b \\]</p><h3>Variable Definitions</h3><ul><li>\\( F_b \\) = buoyant force (N)</li><li>\\( \\rho_f \\) = fluid density (kg/m³)</li><li>\\( V_d \\) = displaced volume (m³)</li><li>\\( W_{\\text{app}} \\) = apparent weight (N)</li></ul><h3>Worked Example</h3><p>A block of wood (density \\( 600 \\) kg/m³) floats in water. What fraction is submerged?</p><p>\\[ \\frac{V_d}{V_{\\text{obj}}} = \\frac{\\rho_{\\text{obj}}}{\\rho_f} = \\frac{600}{1000} = 0.60 \\]</p><p>60% of the block is submerged.</p><!-- DIAGRAM: block floating in water with submerged and above-water portions labeled, buoyant force and weight arrows --><div class=\"callout-key\"><strong>Key Idea:</strong> Buoyancy is caused by the pressure difference between the top and bottom of an object in a fluid. Archimedes' principle: \\( F_b = \\rho_f V_d g \\) = weight of displaced fluid.</div><div class=\"callout-warning\"><strong>AP Exam Tip:</strong> For floating objects, \\( F_b = mg \\). The fraction submerged equals the ratio of densities. Don't forget: a fully submerged object displaces a volume equal to its own volume.</div>",
           "content_raw": "Buoyancy, Archimedes' principle, origin of buoyant force from pressure differences, floating fraction, apparent weight.",
           "estimated_minutes": 15,
           "access_tier": "free",
@@ -11957,7 +12278,12 @@
                       "text": "About \\( 89.8\\% \\) of the ice is below the surface."
                     }
                   ],
-                  "display_order": 1
+                  "display_order": 1,
+                  "diagram": {
+                    "bucket_key": "images/physics/ap-physics-1-mechanics/fluid-buoyancy-ice-seawater.svg",
+                    "alt_text": "Block of ice floating in seawater with approximately 90 percent submerged, buoyant force upward equals weight downward",
+                    "caption": "Ice block floating in seawater with most of its volume submerged"
+                  }
                 },
                 {
                   "question_html": "<p>A \\( 5.0 \\) kg object is fully submerged in water. Its volume is \\( 0.002 \\) m³. What is the apparent weight, in N?</p>",
@@ -12058,7 +12384,12 @@
                       "text": "Tension: \\( T = mg - F_b = 29.4 - 10.9 = 18.5 \\) N."
                     }
                   ],
-                  "display_order": 4
+                  "display_order": 4,
+                  "diagram": {
+                    "bucket_key": "images/physics/ap-physics-1-mechanics/fluid-submerged-aluminum.svg",
+                    "alt_text": "Aluminum block submerged in water suspended from a string, with tension T upward, buoyant force F b upward, and weight F g downward, T plus F b equals F g",
+                    "caption": "Aluminum block suspended by a string while submerged in water, showing tension, buoyancy, and weight"
+                  }
                 },
                 {
                   "question_html": "<p>A balloon is filled with helium (\\( \\rho = 0.164 \\) kg/m³) and has a volume of \\( 0.030 \\) m³. The surrounding air has density \\( 1.2 \\) kg/m³. What is the net upward force on the balloon (ignoring the weight of the balloon material)?</p>",
@@ -12169,6 +12500,13 @@
                 }
               ]
             }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/physics/ap-physics-1-mechanics/fluid-buoyancy.svg",
+              "alt_text": "Rectangular object submerged in fluid with downward weight arrow F g and upward buoyant force arrow F b, F g is larger than F b so object sinks",
+              "caption": "Buoyant force diagram showing an object submerged in fluid with weight and buoyant force"
+            }
           ]
         },
         {
@@ -12182,7 +12520,7 @@
             "ap-physics-1",
             "unit-8"
           ],
-          "content_html": "<p>Water speeds up when a hose nozzle narrows. An airplane wing generates lift because air moves faster over the top. These phenomena involve the conservation of mass and energy applied to flowing fluids.</p><h3>Equation of Continuity</h3><p>For an <strong>incompressible fluid</strong> flowing through a pipe, the volume flow rate is constant:</p><p>\\[ A_1 v_1 = A_2 v_2 \\]</p><p>where \\( A \\) is the cross-sectional area and \\( v \\) is the fluid speed. When the pipe narrows (\\( A \\) decreases), the fluid speeds up (\\( v \\) increases).</p><h3>Bernoulli's Equation</h3><p>Bernoulli's equation applies conservation of energy to a flowing fluid (ideal, incompressible, streamline flow):</p><p>\\[ P_1 + \\frac{1}{2}\\rho v_1^2 + \\rho g y_1 = P_2 + \\frac{1}{2}\\rho v_2^2 + \\rho g y_2 \\]</p><p>This says that along a streamline, the sum of pressure, kinetic energy per unit volume, and gravitational potential energy per unit volume is constant.</p><h3>Key Implications</h3><ul><li>Where fluid speed is <strong>higher</strong>, pressure is <strong>lower</strong> (at the same height)</li><li>This explains lift on airplane wings, atomizers, and the curve of spinning balls</li></ul><h3>Variable Definitions</h3><ul><li>\\( A \\) = cross-sectional area (m²)</li><li>\\( v \\) = fluid speed (m/s)</li><li>\\( P \\) = pressure (Pa)</li><li>\\( y \\) = height (m)</li><li>\\( \\rho \\) = fluid density (kg/m³)</li></ul><h3>Worked Example</h3><p>Water flows through a pipe at \\( 2.0 \\) m/s in a section with area \\( 0.040 \\) m². The pipe narrows to \\( 0.010 \\) m². What is the speed in the narrow section?</p><p>\\[ A_1 v_1 = A_2 v_2 \\implies v_2 = \\frac{A_1 v_1}{A_2} = \\frac{(0.040)(2.0)}{0.010} = 8.0 \\text{ m/s} \\]</p><!-- DIAGRAM: pipe with wide and narrow sections, fluid flow arrows, showing speed and pressure changes --><div class=\"callout-key\"><strong>Key Idea:</strong> The equation of continuity (conservation of mass) tells us fluid speeds up in narrow sections. Bernoulli's equation (conservation of energy) tells us pressure drops where speed increases.</div><div class=\"callout-warning\"><strong>AP Exam Tip:</strong> Bernoulli's equation applies to ideal (inviscid, incompressible, streamline) flow. Real fluids have viscosity and turbulence, but for AP Physics 1, the ideal model is sufficient.</div>\n<figure class=\"concept-diagram\"><img data-bucket-key='images/physics/ap-physics-1-mechanics/fluid-continuity-pipe.svg' alt='Pipe narrowing from wide section with slow flow arrows to narrow section with fast flow arrows, showing A1 v1 equals A2 v2' loading='lazy' /><figcaption>Fluid flowing through a pipe that narrows, illustrating the continuity equation: speed increases as area decreases</figcaption></figure>",
+          "content_html": "<p>Water speeds up when a hose nozzle narrows. An airplane wing generates lift because air moves faster over the top. These phenomena involve the conservation of mass and energy applied to flowing fluids.</p><h3>Equation of Continuity</h3><p>For an <strong>incompressible fluid</strong> flowing through a pipe, the volume flow rate is constant:</p><p>\\[ A_1 v_1 = A_2 v_2 \\]</p><p>where \\( A \\) is the cross-sectional area and \\( v \\) is the fluid speed. When the pipe narrows (\\( A \\) decreases), the fluid speeds up (\\( v \\) increases).</p><h3>Bernoulli's Equation</h3><p>Bernoulli's equation applies conservation of energy to a flowing fluid (ideal, incompressible, streamline flow):</p><p>\\[ P_1 + \\frac{1}{2}\\rho v_1^2 + \\rho g y_1 = P_2 + \\frac{1}{2}\\rho v_2^2 + \\rho g y_2 \\]</p><p>This says that along a streamline, the sum of pressure, kinetic energy per unit volume, and gravitational potential energy per unit volume is constant.</p><h3>Key Implications</h3><ul><li>Where fluid speed is <strong>higher</strong>, pressure is <strong>lower</strong> (at the same height)</li><li>This explains lift on airplane wings, atomizers, and the curve of spinning balls</li></ul><h3>Variable Definitions</h3><ul><li>\\( A \\) = cross-sectional area (m²)</li><li>\\( v \\) = fluid speed (m/s)</li><li>\\( P \\) = pressure (Pa)</li><li>\\( y \\) = height (m)</li><li>\\( \\rho \\) = fluid density (kg/m³)</li></ul><h3>Worked Example</h3><p>Water flows through a pipe at \\( 2.0 \\) m/s in a section with area \\( 0.040 \\) m². The pipe narrows to \\( 0.010 \\) m². What is the speed in the narrow section?</p><p>\\[ A_1 v_1 = A_2 v_2 \\implies v_2 = \\frac{A_1 v_1}{A_2} = \\frac{(0.040)(2.0)}{0.010} = 8.0 \\text{ m/s} \\]</p><!-- DIAGRAM: pipe with wide and narrow sections, fluid flow arrows, showing speed and pressure changes --><div class=\"callout-key\"><strong>Key Idea:</strong> The equation of continuity (conservation of mass) tells us fluid speeds up in narrow sections. Bernoulli's equation (conservation of energy) tells us pressure drops where speed increases.</div><div class=\"callout-warning\"><strong>AP Exam Tip:</strong> Bernoulli's equation applies to ideal (inviscid, incompressible, streamline) flow. Real fluids have viscosity and turbulence, but for AP Physics 1, the ideal model is sufficient.</div>",
           "content_raw": "Equation of continuity, Bernoulli's equation, relationship between speed and pressure in flowing fluids.",
           "estimated_minutes": 18,
           "access_tier": "free",
@@ -12473,6 +12811,13 @@
                   "display_order": 7
                 }
               ]
+            }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/physics/ap-physics-1-mechanics/fluid-continuity-pipe.svg",
+              "alt_text": "Pipe narrowing from wide section with slow flow arrows to narrow section with fast flow arrows, showing A1 v1 equals A2 v2",
+              "caption": "Fluid flowing through a pipe that narrows, illustrating the continuity equation: speed increases as area decreases"
             }
           ]
         }

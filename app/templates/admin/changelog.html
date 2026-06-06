@@ -13,6 +13,30 @@
                 <div class="changelog-date">
                     <span class="changelog-date-day">6</span>
                     <span class="changelog-date-month">Jun 2026</span>
+                    <span class="changelog-phase-badge">Architecture</span>
+                </div>
+                <div class="changelog-body">
+                    <h2>Diagrams as Problem Data &mdash; Retire inject_images.py</h2>
+                    <p class="changelog-summary">Moved diagram references from inline HTML into structured JSON fields on problems and concepts. Diagrams now travel with their problem/concept regardless of reordering or sharing across courses.</p>
+
+                    <div class="changelog-section">
+                        <h3>What Changed</h3>
+                        <ul>
+                            <li><strong>Diagram fields:</strong> Problems have an optional <code>diagram</code> object; concepts have an optional <code>diagrams</code> array in the content JSON. The seed process builds <code>&lt;figure&gt;</code> tags at load time</li>
+                            <li><strong>inject_images.py retired:</strong> No more separate injection step &mdash; diagram data lives alongside the problem it belongs to</li>
+                            <li><strong>Manifests slimmed:</strong> Manifest files now contain only SVG generation metadata (id, bucket_key, params), not injection targeting</li>
+                            <li><strong>All 175 diagrams migrated:</strong> 105 concept-level + 70 problem-level across Physics, Calculus, and Statistics</li>
+                            <li><strong>Physics FBD fix:</strong> Corrected two-rope tension problem (answer was 100 N, should be 173 N) and cleaned AI self-correction artifact from solution</li>
+                            <li><strong>CONTENT_SPEC.md:</strong> Documented <code>diagram</code> and <code>diagrams</code> fields in the qhsJSON spec</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="changelog-entry">
+                <div class="changelog-date">
+                    <span class="changelog-date-day">6</span>
+                    <span class="changelog-date-month">Jun 2026</span>
                     <span class="changelog-phase-badge">Content</span>
                 </div>
                 <div class="changelog-body">

@@ -1,6 +1,6 @@
 # CoachPrash Admin Manual
 
-> **Version:** 22.0 (AP Physics 1 Diagrams + Problem Restructuring + Single-File Seed)
+> **Version:** 23.0 (Diagrams as Problem Data + Retire inject_images.py)
 > **Last Updated:** June 2026
 > **Platform:** Flask + PostgreSQL, deployed on Railway
 

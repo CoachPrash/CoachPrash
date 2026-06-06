@@ -66,6 +66,70 @@ content/{subject_slug}_{course_slug}.json
 
 ---
 
+## Diagrams
+
+Diagrams are stored as data fields in the content JSON, not as inline HTML. The seed process builds `<figure>` tags at load time.
+
+### Concept-level diagrams
+
+Add a `diagrams` array to the concept object:
+
+```json
+{
+  "title": "Forces and Free-Body Diagrams",
+  "slug": "forces-free-body-diagrams",
+  "content_html": "...",
+  "diagrams": [
+    {
+      "bucket_key": "images/physics/ap-physics-1-mechanics/fbd-block-flat-surface.svg",
+      "alt_text": "Free-body diagram showing all forces on a block on a flat surface",
+      "caption": "Forces acting on a block on a flat surface"
+    }
+  ],
+  "problem_sets": [ ... ]
+}
+```
+
+Diagrams are appended to `content_html` at seed time.
+
+### Problem-level diagrams
+
+Add a `diagram` object (singular) to the problem:
+
+```json
+{
+  "question_html": "<p>A box slides down a 30° incline...</p>",
+  "problem_type": "mcq",
+  "diagram": {
+    "bucket_key": "images/physics/ap-physics-1-mechanics/fbd-box-ramp-30deg.svg",
+    "alt_text": "Free-body diagram of box on 30° incline",
+    "caption": "Forces on a box sliding down a ramp"
+  },
+  "choices": [ ... ]
+}
+```
+
+The diagram is prepended to `question_html` at seed time. This means diagrams move with problems — reordering, restructuring, or sharing concepts across courses never breaks diagram associations.
+
+### Diagram fields
+
+| Field | Required | Description |
+|-------|----------|-------------|
+| `bucket_key` | Yes | S3 object key (e.g., `images/physics/ap-physics-1-mechanics/fbd.svg`) |
+| `alt_text` | Yes | Accessible description for screen readers |
+| `caption` | No | Figcaption text displayed below the image |
+
+### Diagram generation pipeline
+
+SVG files are generated from manifest files (`scripts/manifests/*.json`) which contain rendering parameters only. The manifests do NOT reference problems — they are purely build tools for SVG generation.
+
+```
+manifest → generate_diagrams.py → upload_diagrams.py → bucket
+content JSON (diagram field) → flask seed → <figure> tags in DB
+```
+
+---
+
 ## Problem Set Structure
 
 Each concept gets exactly **1 problem_set** with **10 problems** in this exact order:

@@ -88,10 +88,21 @@ def load_content_json(file_path):
             slug = cdata.get('slug', cdata.get('title', f'concept-{ci+1}').lower().replace(' ', '-'))
 
             concept = Concept.query.filter_by(slug=slug).first()
+            content_html = cdata.get('content_html', '')
+            # Append concept-level diagrams from "diagrams" array
+            for diag in cdata.get('diagrams', []):
+                content_html += (
+                    f'\n<figure class="concept-diagram">'
+                    f'<img data-bucket-key=\'{diag["bucket_key"]}\' '
+                    f'alt=\'{diag["alt_text"]}\' loading=\'lazy\' />'
+                    f'<figcaption>{diag.get("caption", "")}</figcaption>'
+                    f'</figure>'
+                )
+
             if concept:
                 # Update existing concept fields
                 concept.title = cdata.get('title', concept.title)
-                concept.content_html = sanitize_html(cdata.get('content_html', concept.content_html or ''))
+                concept.content_html = sanitize_html(content_html or concept.content_html or '')
                 concept.content_raw = cdata.get('content_raw', concept.content_raw or '')
                 concept.estimated_minutes = cdata.get('estimated_minutes', concept.estimated_minutes)
                 concept.access_tier = cdata.get('access_tier', concept.access_tier)
@@ -105,7 +116,7 @@ def load_content_json(file_path):
                 concept = Concept(
                     title=cdata.get('title', f'Concept {ci + 1}'),
                     slug=slug,
-                    content_html=sanitize_html(cdata.get('content_html', '')),
+                    content_html=sanitize_html(content_html),
                     content_raw=cdata.get('content_raw', ''),
                     estimated_minutes=cdata.get('estimated_minutes', 5),
                     access_tier=cdata.get('access_tier', 'free'),
@@ -135,9 +146,20 @@ def load_content_json(file_path):
                     problem_type = pdata.get('problem_type', 'mcq')
                     if problem_type not in ('mcq', 'ftb', 'frq', 'code'):
                         problem_type = 'mcq'
+                    # Build question_html with optional diagram prepended
+                    q_html = pdata.get('question_html', '')
+                    diag = pdata.get('diagram')
+                    if diag:
+                        q_html = (
+                            f'<figure class="concept-diagram">'
+                            f'<img data-bucket-key=\'{diag["bucket_key"]}\' '
+                            f'alt=\'{diag["alt_text"]}\' loading=\'lazy\' />'
+                            f'<figcaption>{diag.get("caption", "")}</figcaption>'
+                            f'</figure>\n'
+                        ) + q_html
                     problem = Problem(
                         problem_set_id=ps.id,
-                        question_html=sanitize_html(pdata.get('question_html', '')),
+                        question_html=sanitize_html(q_html),
                         question_raw=pdata.get('question_raw', ''),
                         problem_type=problem_type,
                         correct_answer=pdata.get('correct_answer', ''),

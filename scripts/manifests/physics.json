@@ -6,17 +6,16 @@
       "id": "phys1-001",
       "bucket_key": "images/physics/ap-physics-1-mechanics/1d-vectors-positive-negative.svg",
       "category": "mechanics",
-      "concept_slug": "scalars-vectors-1d",
-      "location": "content_html",
-      "problem_index": null,
-      "description": "1D vectors showing positive and negative directions along a number line",
-      "alt_text": "Horizontal number line with two arrows: one pointing right labeled plus 5 meters per second and one pointing left labeled minus 3 meters per second",
       "params": {
         "type": "vector_diagram",
         "title": "Vectors in One Dimension",
         "style": "components",
         "vectors": [
-          {"magnitude": 5, "angle_deg": 0, "label": "$v = +5$ m/s"}
+          {
+            "magnitude": 5,
+            "angle_deg": 0,
+            "label": "$v = +5$ m/s"
+          }
         ]
       }
     },
@@ -24,11 +23,6 @@
       "id": "phys1-002",
       "bucket_key": "images/physics/ap-physics-1-mechanics/position-time-constant-accel.svg",
       "category": "mechanics",
-      "concept_slug": "displacement-velocity-acceleration",
-      "location": "content_html",
-      "problem_index": null,
-      "description": "Position vs time graph for constant acceleration showing a parabolic curve",
-      "alt_text": "Position vs time graph with a parabolic curve starting at the origin, curving upward as the object accelerates uniformly",
       "params": {
         "type": "motion_graph",
         "title": "Position vs Time (Constant a)",
@@ -36,10 +30,19 @@
         "x_label": "Time (s)",
         "y_label": "Position (m)",
         "segments": [
-          {"t_start": 0, "t_end": 5, "expr": "0.5*2*t**2"}
+          {
+            "t_start": 0,
+            "t_end": 5,
+            "expr": "0.5*2*t**2"
+          }
         ],
         "annotations": [
-          {"t": 5, "y": 25, "text": "x = 25 m", "va": "bottom"}
+          {
+            "t": 5,
+            "y": 25,
+            "text": "x = 25 m",
+            "va": "bottom"
+          }
         ]
       }
     },
@@ -47,11 +50,6 @@
       "id": "phys1-003",
       "bucket_key": "images/physics/ap-physics-1-mechanics/velocity-time-constant-accel.svg",
       "category": "mechanics",
-      "concept_slug": "displacement-velocity-acceleration",
-      "location": "content_html",
-      "problem_index": null,
-      "description": "Velocity vs time graph for constant acceleration showing a straight line",
-      "alt_text": "Velocity vs time graph with a straight line from 0 to 10 meters per second over 5 seconds, slope equals acceleration",
       "params": {
         "type": "motion_graph",
         "title": "Velocity vs Time (Constant a)",
@@ -59,10 +57,20 @@
         "x_label": "Time (s)",
         "y_label": "Velocity (m/s)",
         "segments": [
-          {"t_start": 0, "t_end": 5, "y_start": 0, "y_end": 10}
+          {
+            "t_start": 0,
+            "t_end": 5,
+            "y_start": 0,
+            "y_end": 10
+          }
         ],
         "annotations": [
-          {"t": 2.5, "y": 5, "text": "slope = a", "va": "bottom"}
+          {
+            "t": 2.5,
+            "y": 5,
+            "text": "slope = a",
+            "va": "bottom"
+          }
         ]
       }
     },
@@ -70,11 +78,6 @@
       "id": "phys1-004",
       "bucket_key": "images/physics/ap-physics-1-mechanics/multi-segment-vt-graph.svg",
       "category": "mechanics",
-      "concept_slug": "representing-motion",
-      "location": "content_html",
-      "problem_index": null,
-      "description": "Multi-segment velocity vs time graph showing acceleration, constant velocity, and deceleration",
-      "alt_text": "Velocity vs time graph with three segments: rising from 0 to 10 m/s in 3 seconds, constant at 10 m/s from 3 to 6 seconds, then decreasing to 0 from 6 to 8 seconds",
       "params": {
         "type": "motion_graph",
         "title": "Multi-Segment v-t Graph",
@@ -82,9 +85,27 @@
         "x_label": "Time (s)",
         "y_label": "Velocity (m/s)",
         "segments": [
-          {"t_start": 0, "t_end": 3, "y_start": 0, "y_end": 10, "label": "accelerating"},
-          {"t_start": 3, "t_end": 6, "y_start": 10, "y_end": 10, "label": "constant v"},
-          {"t_start": 6, "t_end": 8, "y_start": 10, "y_end": 0, "label": "decelerating"}
+          {
+            "t_start": 0,
+            "t_end": 3,
+            "y_start": 0,
+            "y_end": 10,
+            "label": "accelerating"
+          },
+          {
+            "t_start": 3,
+            "t_end": 6,
+            "y_start": 10,
+            "y_end": 10,
+            "label": "constant v"
+          },
+          {
+            "t_start": 6,
+            "t_end": 8,
+            "y_start": 10,
+            "y_end": 0,
+            "label": "decelerating"
+          }
         ]
       }
     },
@@ -92,18 +113,21 @@
       "id": "phys1-005",
       "bucket_key": "images/physics/ap-physics-1-mechanics/relative-velocity-addition.svg",
       "category": "mechanics",
-      "concept_slug": "reference-frames-relative-motion",
-      "location": "content_html",
-      "problem_index": null,
-      "description": "Vector addition diagram for relative velocity: velocity of A relative to ground plus velocity of B relative to A",
-      "alt_text": "Head-to-tail vector addition showing vector v A G pointing right and vector v B A pointing upward, with resultant v B G as the diagonal",
       "params": {
         "type": "vector_diagram",
         "title": "Relative Velocity Addition",
         "style": "addition",
         "vectors": [
-          {"magnitude": 4, "angle_deg": 0, "label": "$\\vec{v}_{AG}$"},
-          {"magnitude": 3, "angle_deg": 90, "label": "$\\vec{v}_{BA}$"}
+          {
+            "magnitude": 4,
+            "angle_deg": 0,
+            "label": "$\\vec{v}_{AG}$"
+          },
+          {
+            "magnitude": 3,
+            "angle_deg": 90,
+            "label": "$\\vec{v}_{BA}$"
+          }
         ],
         "resultant_label": "$\\vec{v}_{BG}$"
       }
@@ -112,17 +136,16 @@
       "id": "phys1-006",
       "bucket_key": "images/physics/ap-physics-1-mechanics/2d-vector-components.svg",
       "category": "mechanics",
-      "concept_slug": "vectors-motion-2d",
-      "location": "content_html",
-      "problem_index": null,
-      "description": "A 2D vector decomposed into horizontal and vertical components",
-      "alt_text": "Vector F at 37 degrees above the horizontal decomposed into F x horizontal component and F y vertical component forming a right triangle",
       "params": {
         "type": "vector_diagram",
         "title": "2D Vector Components",
         "style": "components",
         "vectors": [
-          {"magnitude": 50, "angle_deg": 37, "label": "$F = 50$ N"}
+          {
+            "magnitude": 50,
+            "angle_deg": 37,
+            "label": "$F = 50$ N"
+          }
         ]
       }
     },
@@ -130,11 +153,6 @@
       "id": "phys1-007",
       "bucket_key": "images/physics/ap-physics-1-mechanics/fbd-block-flat-surface.svg",
       "category": "mechanics",
-      "concept_slug": "forces-free-body-diagrams",
-      "location": "content_html",
-      "problem_index": null,
-      "description": "Free-body diagram of a block on a flat surface with weight, normal, applied force, and friction",
-      "alt_text": "Free-body diagram of a block on a flat surface showing weight F g pointing down, normal force F N pointing up, applied force F a pointing right, and friction f pointing left",
       "params": {
         "type": "free_body_diagram",
         "title": "Block on Flat Surface",
@@ -145,10 +163,50 @@
         "show_ground": true,
         "show_axes": false,
         "forces": [
-          {"name": "weight", "type": "gravity", "angle_deg": 270, "length": 0.8, "label": "$F_g$", "label_offset": [-0.2, 0]},
-          {"name": "normal", "type": "normal", "angle_deg": 90, "length": 0.8, "label": "$F_N$", "label_offset": [0.2, 0]},
-          {"name": "applied", "type": "applied", "angle_deg": 0, "length": 0.6, "label": "$F_a$", "label_offset": [0, 0.15]},
-          {"name": "friction", "type": "friction", "angle_deg": 180, "length": 0.3, "label": "$f$", "label_offset": [0, 0.15]}
+          {
+            "name": "weight",
+            "type": "gravity",
+            "angle_deg": 270,
+            "length": 0.8,
+            "label": "$F_g$",
+            "label_offset": [
+              -0.2,
+              0
+            ]
+          },
+          {
+            "name": "normal",
+            "type": "normal",
+            "angle_deg": 90,
+            "length": 0.8,
+            "label": "$F_N$",
+            "label_offset": [
+              0.2,
+              0
+            ]
+          },
+          {
+            "name": "applied",
+            "type": "applied",
+            "angle_deg": 0,
+            "length": 0.6,
+            "label": "$F_a$",
+            "label_offset": [
+              0,
+              0.15
+            ]
+          },
+          {
+            "name": "friction",
+            "type": "friction",
+            "angle_deg": 180,
+            "length": 0.3,
+            "label": "$f$",
+            "label_offset": [
+              0,
+              0.15
+            ]
+          }
         ]
       }
     },
@@ -156,11 +214,6 @@
       "id": "phys1-008",
       "bucket_key": "images/physics/ap-physics-1-mechanics/fbd-newtons-third-law-pair.svg",
       "category": "mechanics",
-      "concept_slug": "newtons-third-law",
-      "location": "content_html",
-      "problem_index": null,
-      "description": "Two objects showing Newton's Third Law action-reaction force pairs",
-      "alt_text": "Two blocks A and B side by side, with force F A on B pointing right on block B and force F B on A pointing left on block A, equal in magnitude and opposite in direction",
       "params": {
         "type": "free_body_diagram",
         "title": "Newton's 3rd Law Pair",
@@ -171,9 +224,39 @@
         "show_ground": false,
         "show_axes": false,
         "forces": [
-          {"name": "force_on_A", "type": "applied", "angle_deg": 180, "length": 0.7, "label": "$F_{B \\to A}$", "label_offset": [0, 0.15]},
-          {"name": "weight_A", "type": "gravity", "angle_deg": 270, "length": 0.8, "label": "$F_g$", "label_offset": [-0.2, 0]},
-          {"name": "normal_A", "type": "normal", "angle_deg": 90, "length": 0.8, "label": "$F_N$", "label_offset": [0.2, 0]}
+          {
+            "name": "force_on_A",
+            "type": "applied",
+            "angle_deg": 180,
+            "length": 0.7,
+            "label": "$F_{B \\to A}$",
+            "label_offset": [
+              0,
+              0.15
+            ]
+          },
+          {
+            "name": "weight_A",
+            "type": "gravity",
+            "angle_deg": 270,
+            "length": 0.8,
+            "label": "$F_g$",
+            "label_offset": [
+              -0.2,
+              0
+            ]
+          },
+          {
+            "name": "normal_A",
+            "type": "normal",
+            "angle_deg": 90,
+            "length": 0.8,
+            "label": "$F_N$",
+            "label_offset": [
+              0.2,
+              0
+            ]
+          }
         ]
       }
     },
@@ -181,11 +264,6 @@
       "id": "phys1-009",
       "bucket_key": "images/physics/ap-physics-1-mechanics/fbd-balanced-forces.svg",
       "category": "mechanics",
-      "concept_slug": "newtons-first-law",
-      "location": "content_html",
-      "problem_index": null,
-      "description": "Free-body diagram of balanced forces on an object at rest or moving at constant velocity",
-      "alt_text": "Block with equal and opposite force pairs: weight and normal vertically balanced, applied force and friction horizontally balanced, net force equals zero",
       "params": {
         "type": "free_body_diagram",
         "title": "Balanced Forces (a = 0)",
@@ -196,10 +274,50 @@
         "show_ground": true,
         "show_axes": false,
         "forces": [
-          {"name": "weight", "type": "gravity", "angle_deg": 270, "length": 0.8, "label": "$F_g$", "label_offset": [-0.2, 0]},
-          {"name": "normal", "type": "normal", "angle_deg": 90, "length": 0.8, "label": "$F_N$", "label_offset": [0.2, 0]},
-          {"name": "applied", "type": "applied", "angle_deg": 0, "length": 0.5, "label": "$F_a$", "label_offset": [0, 0.15]},
-          {"name": "friction", "type": "friction", "angle_deg": 180, "length": 0.5, "label": "$f$", "label_offset": [0, 0.15]}
+          {
+            "name": "weight",
+            "type": "gravity",
+            "angle_deg": 270,
+            "length": 0.8,
+            "label": "$F_g$",
+            "label_offset": [
+              -0.2,
+              0
+            ]
+          },
+          {
+            "name": "normal",
+            "type": "normal",
+            "angle_deg": 90,
+            "length": 0.8,
+            "label": "$F_N$",
+            "label_offset": [
+              0.2,
+              0
+            ]
+          },
+          {
+            "name": "applied",
+            "type": "applied",
+            "angle_deg": 0,
+            "length": 0.5,
+            "label": "$F_a$",
+            "label_offset": [
+              0,
+              0.15
+            ]
+          },
+          {
+            "name": "friction",
+            "type": "friction",
+            "angle_deg": 180,
+            "length": 0.5,
+            "label": "$f$",
+            "label_offset": [
+              0,
+              0.15
+            ]
+          }
         ]
       }
     },
@@ -207,11 +325,6 @@
       "id": "phys1-010",
       "bucket_key": "images/physics/ap-physics-1-mechanics/fbd-net-force-acceleration.svg",
       "category": "mechanics",
-      "concept_slug": "newtons-second-law",
-      "location": "content_html",
-      "problem_index": null,
-      "description": "Free-body diagram showing net force producing acceleration on a block",
-      "alt_text": "Block on flat surface with applied force larger than friction, resulting in net force and acceleration arrow pointing right",
       "params": {
         "type": "free_body_diagram",
         "title": "Net Force and Acceleration",
@@ -222,11 +335,61 @@
         "show_ground": true,
         "show_axes": false,
         "forces": [
-          {"name": "weight", "type": "gravity", "angle_deg": 270, "length": 0.8, "label": "$F_g$", "label_offset": [-0.2, 0]},
-          {"name": "normal", "type": "normal", "angle_deg": 90, "length": 0.8, "label": "$F_N$", "label_offset": [0.2, 0]},
-          {"name": "applied", "type": "applied", "angle_deg": 0, "length": 0.8, "label": "$F_a$", "label_offset": [0, 0.15]},
-          {"name": "friction", "type": "friction", "angle_deg": 180, "length": 0.4, "label": "$f_k$", "label_offset": [0, 0.15]},
-          {"name": "net", "type": "net", "angle_deg": 0, "length": 0.4, "label": "$F_{net}$", "label_offset": [0, -0.2]}
+          {
+            "name": "weight",
+            "type": "gravity",
+            "angle_deg": 270,
+            "length": 0.8,
+            "label": "$F_g$",
+            "label_offset": [
+              -0.2,
+              0
+            ]
+          },
+          {
+            "name": "normal",
+            "type": "normal",
+            "angle_deg": 90,
+            "length": 0.8,
+            "label": "$F_N$",
+            "label_offset": [
+              0.2,
+              0
+            ]
+          },
+          {
+            "name": "applied",
+            "type": "applied",
+            "angle_deg": 0,
+            "length": 0.8,
+            "label": "$F_a$",
+            "label_offset": [
+              0,
+              0.15
+            ]
+          },
+          {
+            "name": "friction",
+            "type": "friction",
+            "angle_deg": 180,
+            "length": 0.4,
+            "label": "$f_k$",
+            "label_offset": [
+              0,
+              0.15
+            ]
+          },
+          {
+            "name": "net",
+            "type": "net",
+            "angle_deg": 0,
+            "length": 0.4,
+            "label": "$F_{net}$",
+            "label_offset": [
+              0,
+              -0.2
+            ]
+          }
         ]
       }
     },
@@ -234,11 +397,6 @@
       "id": "phys1-011",
       "bucket_key": "images/physics/ap-physics-1-mechanics/fbd-freefall.svg",
       "category": "mechanics",
-      "concept_slug": "gravitational-force",
-      "location": "content_html",
-      "problem_index": null,
-      "description": "Free-body diagram of an object in freefall with only gravitational force",
-      "alt_text": "Small circle representing an object in freefall with a single downward arrow labeled F g equals m g",
       "params": {
         "type": "free_body_diagram",
         "title": "Object in Freefall",
@@ -249,7 +407,17 @@
         "show_ground": false,
         "show_axes": false,
         "forces": [
-          {"name": "weight", "type": "gravity", "angle_deg": 270, "length": 1.0, "label": "$F_g = mg$", "label_offset": [0.25, 0]}
+          {
+            "name": "weight",
+            "type": "gravity",
+            "angle_deg": 270,
+            "length": 1.0,
+            "label": "$F_g = mg$",
+            "label_offset": [
+              0.25,
+              0
+            ]
+          }
         ]
       }
     },
@@ -257,11 +425,6 @@
       "id": "phys1-012",
       "bucket_key": "images/physics/ap-physics-1-mechanics/fbd-friction-block.svg",
       "category": "mechanics",
-      "concept_slug": "kinetic-static-friction",
-      "location": "content_html",
-      "problem_index": null,
-      "description": "Free-body diagram of a block sliding on a surface with kinetic friction opposing motion",
-      "alt_text": "Block on flat surface with weight pointing down, normal force up, applied force right, and kinetic friction force pointing left opposing the motion",
       "params": {
         "type": "free_body_diagram",
         "title": "Block with Kinetic Friction",
@@ -272,10 +435,50 @@
         "show_ground": true,
         "show_axes": false,
         "forces": [
-          {"name": "weight", "type": "gravity", "angle_deg": 270, "length": 0.9, "label": "$F_g$", "label_offset": [-0.2, 0]},
-          {"name": "normal", "type": "normal", "angle_deg": 90, "length": 0.9, "label": "$F_N$", "label_offset": [0.2, 0]},
-          {"name": "applied", "type": "applied", "angle_deg": 0, "length": 0.7, "label": "$F_a$", "label_offset": [0, 0.15]},
-          {"name": "friction", "type": "friction", "angle_deg": 180, "length": 0.35, "label": "$f_k = \\mu_k F_N$", "label_offset": [0, 0.15]}
+          {
+            "name": "weight",
+            "type": "gravity",
+            "angle_deg": 270,
+            "length": 0.9,
+            "label": "$F_g$",
+            "label_offset": [
+              -0.2,
+              0
+            ]
+          },
+          {
+            "name": "normal",
+            "type": "normal",
+            "angle_deg": 90,
+            "length": 0.9,
+            "label": "$F_N$",
+            "label_offset": [
+              0.2,
+              0
+            ]
+          },
+          {
+            "name": "applied",
+            "type": "applied",
+            "angle_deg": 0,
+            "length": 0.7,
+            "label": "$F_a$",
+            "label_offset": [
+              0,
+              0.15
+            ]
+          },
+          {
+            "name": "friction",
+            "type": "friction",
+            "angle_deg": 180,
+            "length": 0.35,
+            "label": "$f_k = \\mu_k F_N$",
+            "label_offset": [
+              0,
+              0.15
+            ]
+          }
         ]
       }
     },
@@ -283,11 +486,6 @@
       "id": "phys1-013",
       "bucket_key": "images/physics/ap-physics-1-mechanics/spring-mass-equilibrium.svg",
       "category": "mechanics",
-      "concept_slug": "spring-forces",
-      "location": "content_html",
-      "problem_index": null,
-      "description": "Spring-mass system showing the block at equilibrium, stretched, and compressed positions",
-      "alt_text": "Horizontal spring attached to a wall on the left with a block on the right, shown at equilibrium position with displacement x marked",
       "params": {
         "type": "shm_diagram",
         "style": "spring_mass",
@@ -300,20 +498,31 @@
       "id": "phys1-014",
       "bucket_key": "images/physics/ap-physics-1-mechanics/uniform-circular-motion.svg",
       "category": "mechanics",
-      "concept_slug": "circular-motion",
-      "location": "content_html",
-      "problem_index": null,
-      "description": "Uniform circular motion showing velocity tangent to the circle and centripetal acceleration toward center",
-      "alt_text": "Circle with an object at four positions showing velocity arrows tangent to the circle and centripetal acceleration arrows pointing toward the center",
       "params": {
         "type": "circular_motion",
         "title": "Uniform Circular Motion",
         "radius": 1.2,
         "positions": [
-          {"angle_deg": 0, "show_v": true, "show_ac": true},
-          {"angle_deg": 90, "show_v": true, "show_ac": true},
-          {"angle_deg": 180, "show_v": true, "show_ac": true},
-          {"angle_deg": 270, "show_v": true, "show_ac": true}
+          {
+            "angle_deg": 0,
+            "show_v": true,
+            "show_ac": true
+          },
+          {
+            "angle_deg": 90,
+            "show_v": true,
+            "show_ac": true
+          },
+          {
+            "angle_deg": 180,
+            "show_v": true,
+            "show_ac": true
+          },
+          {
+            "angle_deg": 270,
+            "show_v": true,
+            "show_ac": true
+          }
         ]
       }
     },
@@ -321,17 +530,20 @@
       "id": "phys1-015",
       "bucket_key": "images/physics/ap-physics-1-mechanics/energy-bar-ke-only.svg",
       "category": "mechanics",
-      "concept_slug": "translational-kinetic-energy",
-      "location": "content_html",
-      "problem_index": null,
-      "description": "Energy bar chart showing kinetic energy of a moving object",
-      "alt_text": "Bar chart with a single state showing a kinetic energy bar at 50 joules",
       "params": {
         "type": "energy_bar_chart",
         "title": "Kinetic Energy",
         "states": [
-          {"label": "At rest", "KE": 0, "PE": 0},
-          {"label": "Moving", "KE": 50, "PE": 0}
+          {
+            "label": "At rest",
+            "KE": 0,
+            "PE": 0
+          },
+          {
+            "label": "Moving",
+            "KE": 50,
+            "PE": 0
+          }
         ]
       }
     },
@@ -339,11 +551,6 @@
       "id": "phys1-016",
       "bucket_key": "images/physics/ap-physics-1-mechanics/fbd-force-at-angle.svg",
       "category": "mechanics",
-      "concept_slug": "work",
-      "location": "content_html",
-      "problem_index": null,
-      "description": "Free-body diagram showing an applied force at an angle to the displacement direction",
-      "alt_text": "Block on flat surface with applied force F at 30 degrees above horizontal, weight down, normal force up, and friction left",
       "params": {
         "type": "free_body_diagram",
         "title": "Force at Angle to Motion",
@@ -354,10 +561,50 @@
         "show_ground": true,
         "show_axes": false,
         "forces": [
-          {"name": "weight", "type": "gravity", "angle_deg": 270, "length": 0.9, "label": "$F_g$", "label_offset": [-0.2, 0]},
-          {"name": "normal", "type": "normal", "angle_deg": 90, "length": 0.7, "label": "$F_N$", "label_offset": [0.2, 0]},
-          {"name": "applied", "type": "applied", "angle_deg": 30, "length": 0.8, "label": "$F_a$", "label_offset": [0.1, 0.15]},
-          {"name": "friction", "type": "friction", "angle_deg": 180, "length": 0.35, "label": "$f$", "label_offset": [0, 0.15]}
+          {
+            "name": "weight",
+            "type": "gravity",
+            "angle_deg": 270,
+            "length": 0.9,
+            "label": "$F_g$",
+            "label_offset": [
+              -0.2,
+              0
+            ]
+          },
+          {
+            "name": "normal",
+            "type": "normal",
+            "angle_deg": 90,
+            "length": 0.7,
+            "label": "$F_N$",
+            "label_offset": [
+              0.2,
+              0
+            ]
+          },
+          {
+            "name": "applied",
+            "type": "applied",
+            "angle_deg": 30,
+            "length": 0.8,
+            "label": "$F_a$",
+            "label_offset": [
+              0.1,
+              0.15
+            ]
+          },
+          {
+            "name": "friction",
+            "type": "friction",
+            "angle_deg": 180,
+            "length": 0.35,
+            "label": "$f$",
+            "label_offset": [
+              0,
+              0.15
+            ]
+          }
         ]
       }
     },
@@ -365,18 +612,25 @@
       "id": "phys1-017",
       "bucket_key": "images/physics/ap-physics-1-mechanics/energy-bar-pe-height.svg",
       "category": "mechanics",
-      "concept_slug": "potential-energy",
-      "location": "content_html",
-      "problem_index": null,
-      "description": "Energy bar chart comparing gravitational PE at different heights",
-      "alt_text": "Bar chart with three states at different heights showing increasing gravitational potential energy: 0 J at ground, 50 J at 5 m, 100 J at 10 m",
       "params": {
         "type": "energy_bar_chart",
         "title": "Gravitational PE vs Height",
         "states": [
-          {"label": "h = 0", "KE": 0, "PE": 0},
-          {"label": "h = 5 m", "KE": 0, "PE": 50},
-          {"label": "h = 10 m", "KE": 0, "PE": 100}
+          {
+            "label": "h = 0",
+            "KE": 0,
+            "PE": 0
+          },
+          {
+            "label": "h = 5 m",
+            "KE": 0,
+            "PE": 50
+          },
+          {
+            "label": "h = 10 m",
+            "KE": 0,
+            "PE": 100
+          }
         ]
       }
     },
@@ -384,18 +638,25 @@
       "id": "phys1-018",
       "bucket_key": "images/physics/ap-physics-1-mechanics/energy-bar-conservation.svg",
       "category": "mechanics",
-      "concept_slug": "conservation-of-energy",
-      "location": "content_html",
-      "problem_index": null,
-      "description": "Energy bar chart showing conservation of energy during a ball drop: PE converts to KE",
-      "alt_text": "Three-state bar chart showing top with all PE, middle with equal KE and PE, bottom with all KE, total energy constant",
       "params": {
         "type": "energy_bar_chart",
         "title": "Energy Conservation: Ball Drop",
         "states": [
-          {"label": "Top", "KE": 0, "PE": 50},
-          {"label": "Mid", "KE": 25, "PE": 25},
-          {"label": "Bottom", "KE": 50, "PE": 0}
+          {
+            "label": "Top",
+            "KE": 0,
+            "PE": 50
+          },
+          {
+            "label": "Mid",
+            "KE": 25,
+            "PE": 25
+          },
+          {
+            "label": "Bottom",
+            "KE": 50,
+            "PE": 0
+          }
         ]
       }
     },
@@ -403,18 +664,21 @@
       "id": "phys1-019",
       "bucket_key": "images/physics/ap-physics-1-mechanics/momentum-vector.svg",
       "category": "mechanics",
-      "concept_slug": "linear-momentum-concept",
-      "location": "content_html",
-      "problem_index": null,
-      "description": "Momentum vectors for objects of different mass and velocity",
-      "alt_text": "Two horizontal arrows: a short arrow labeled p equals 10 kg m/s for a 2 kg object at 5 m/s, and a longer arrow labeled p equals 30 kg m/s for a 3 kg object at 10 m/s",
       "params": {
         "type": "vector_diagram",
         "title": "Momentum Vectors",
         "style": "addition",
         "vectors": [
-          {"magnitude": 10, "angle_deg": 0, "label": "$p_1 = 10$ kg·m/s"},
-          {"magnitude": 30, "angle_deg": 0, "label": "$p_2 = 30$ kg·m/s"}
+          {
+            "magnitude": 10,
+            "angle_deg": 0,
+            "label": "$p_1 = 10$ kgÂ·m/s"
+          },
+          {
+            "magnitude": 30,
+            "angle_deg": 0,
+            "label": "$p_2 = 30$ kgÂ·m/s"
+          }
         ],
         "resultant_label": "$p_{total}$"
       }
@@ -423,11 +687,6 @@
       "id": "phys1-020",
       "bucket_key": "images/physics/ap-physics-1-mechanics/impulse-force-time-graph.svg",
       "category": "mechanics",
-      "concept_slug": "change-in-momentum-impulse",
-      "location": "content_html",
-      "problem_index": null,
-      "description": "Force vs time graph with shaded area representing impulse",
-      "alt_text": "Force vs time graph showing a triangular pulse from 0 to 0.1 seconds with peak force of 200 N, shaded area represents impulse of 10 N s",
       "params": {
         "type": "motion_graph",
         "title": "F vs t: Impulse = Area",
@@ -435,11 +694,26 @@
         "x_label": "Time (s)",
         "y_label": "Force (N)",
         "segments": [
-          {"t_start": 0, "t_end": 0.05, "y_start": 0, "y_end": 200},
-          {"t_start": 0.05, "t_end": 0.1, "y_start": 200, "y_end": 0}
+          {
+            "t_start": 0,
+            "t_end": 0.05,
+            "y_start": 0,
+            "y_end": 200
+          },
+          {
+            "t_start": 0.05,
+            "t_end": 0.1,
+            "y_start": 200,
+            "y_end": 0
+          }
         ],
         "annotations": [
-          {"t": 0.05, "y": 100, "text": "J = area", "va": "bottom"}
+          {
+            "t": 0.05,
+            "y": 100,
+            "text": "J = area",
+            "va": "bottom"
+          }
         ]
       }
     },
@@ -447,21 +721,28 @@
       "id": "phys1-021",
       "bucket_key": "images/physics/ap-physics-1-mechanics/collision-perfectly-inelastic.svg",
       "category": "mechanics",
-      "concept_slug": "conservation-linear-momentum",
-      "location": "content_html",
-      "problem_index": null,
-      "description": "Before and after diagram of a perfectly inelastic collision between two carts",
-      "alt_text": "Before collision: cart A at 6 m/s moving right toward stationary cart B. After collision: combined cart AB moving right at 3 m/s",
       "params": {
         "type": "collision_diagram",
         "title": "Perfectly Inelastic Collision",
         "collision_type": "perfectly_inelastic",
         "before": [
-          {"label": "A", "mass": 4, "velocity": 6},
-          {"label": "B", "mass": 4, "velocity": 0}
+          {
+            "label": "A",
+            "mass": 4,
+            "velocity": 6
+          },
+          {
+            "label": "B",
+            "mass": 4,
+            "velocity": 0
+          }
         ],
         "after": [
-          {"label": "AB", "mass": 8, "velocity": 3}
+          {
+            "label": "AB",
+            "mass": 8,
+            "velocity": 3
+          }
         ]
       }
     },
@@ -469,22 +750,33 @@
       "id": "phys1-022",
       "bucket_key": "images/physics/ap-physics-1-mechanics/collision-elastic.svg",
       "category": "mechanics",
-      "concept_slug": "elastic-inelastic-collisions",
-      "location": "content_html",
-      "problem_index": null,
-      "description": "Before and after diagram of a perfectly elastic collision between equal masses",
-      "alt_text": "Before: ball A moving right at 6 m/s toward stationary ball B of equal mass. After: ball A stationary, ball B moving right at 6 m/s",
       "params": {
         "type": "collision_diagram",
         "title": "Elastic Collision (Equal Mass)",
         "collision_type": "elastic",
         "before": [
-          {"label": "A", "mass": 2, "velocity": 6},
-          {"label": "B", "mass": 2, "velocity": 0}
+          {
+            "label": "A",
+            "mass": 2,
+            "velocity": 6
+          },
+          {
+            "label": "B",
+            "mass": 2,
+            "velocity": 0
+          }
         ],
         "after": [
-          {"label": "A", "mass": 2, "velocity": 0},
-          {"label": "B", "mass": 2, "velocity": 6}
+          {
+            "label": "A",
+            "mass": 2,
+            "velocity": 0
+          },
+          {
+            "label": "B",
+            "mass": 2,
+            "velocity": 6
+          }
         ]
       }
     },
@@ -492,11 +784,6 @@
       "id": "phys1-023",
       "bucket_key": "images/physics/ap-physics-1-mechanics/omega-time-graph.svg",
       "category": "mechanics",
-      "concept_slug": "rotational-kinematics",
-      "location": "content_html",
-      "problem_index": null,
-      "description": "Angular velocity vs time graph showing constant angular acceleration",
-      "alt_text": "Angular velocity omega vs time graph with a straight line from 0 to 20 rad/s over 4 seconds, slope equals angular acceleration alpha",
       "params": {
         "type": "motion_graph",
         "title": "Angular Velocity vs Time",
@@ -504,10 +791,20 @@
         "x_label": "Time (s)",
         "y_label": "$\\omega$ (rad/s)",
         "segments": [
-          {"t_start": 0, "t_end": 4, "y_start": 0, "y_end": 20}
+          {
+            "t_start": 0,
+            "t_end": 4,
+            "y_start": 0,
+            "y_end": 20
+          }
         ],
         "annotations": [
-          {"t": 2, "y": 10, "text": "slope = $\\alpha$", "va": "bottom"}
+          {
+            "t": 2,
+            "y": 10,
+            "text": "slope = $\\alpha$",
+            "va": "bottom"
+          }
         ]
       }
     },
@@ -515,18 +812,21 @@
       "id": "phys1-024",
       "bucket_key": "images/physics/ap-physics-1-mechanics/torque-lever-arm.svg",
       "category": "mechanics",
-      "concept_slug": "torque",
-      "location": "content_html",
-      "problem_index": null,
-      "description": "Torque diagram showing a force applied at a lever arm distance from the pivot",
-      "alt_text": "Horizontal beam with a pivot point marked by a triangle, a downward force F applied at one end with lever arm r labeled from pivot to force",
       "params": {
         "type": "torque_diagram",
         "title": "Torque = r x F",
         "beam_length": 3.0,
         "pivot_pos": 0.0,
         "forces": [
-          {"pos": 1.0, "angle_deg": 270, "length": 0.7, "label": "$F$", "type": "applied", "show_lever_arm": true, "r_label": "$r$"}
+          {
+            "pos": 1.0,
+            "angle_deg": 270,
+            "length": 0.7,
+            "label": "$F$",
+            "type": "applied",
+            "show_lever_arm": true,
+            "r_label": "$r$"
+          }
         ]
       }
     },
@@ -534,19 +834,30 @@
       "id": "phys1-025",
       "bucket_key": "images/physics/ap-physics-1-mechanics/torque-balanced-seesaw.svg",
       "category": "mechanics",
-      "concept_slug": "rotational-equilibrium",
-      "location": "content_html",
-      "problem_index": null,
-      "description": "Balanced seesaw showing two weights creating equal and opposite torques about the pivot",
-      "alt_text": "Horizontal beam balanced on a central pivot with weight F1 on the left at distance r1 and weight F2 on the right at distance r2, torques are equal",
       "params": {
         "type": "torque_diagram",
         "title": "Rotational Equilibrium",
         "beam_length": 3.0,
         "pivot_pos": 0.5,
         "forces": [
-          {"pos": 0.0, "angle_deg": 270, "length": 0.6, "label": "$F_1$", "type": "gravity", "show_lever_arm": true, "r_label": "$r_1$"},
-          {"pos": 1.0, "angle_deg": 270, "length": 0.4, "label": "$F_2$", "type": "gravity", "show_lever_arm": true, "r_label": "$r_2$"}
+          {
+            "pos": 0.0,
+            "angle_deg": 270,
+            "length": 0.6,
+            "label": "$F_1$",
+            "type": "gravity",
+            "show_lever_arm": true,
+            "r_label": "$r_1$"
+          },
+          {
+            "pos": 1.0,
+            "angle_deg": 270,
+            "length": 0.4,
+            "label": "$F_2$",
+            "type": "gravity",
+            "show_lever_arm": true,
+            "r_label": "$r_2$"
+          }
         ]
       }
     },
@@ -554,19 +865,30 @@
       "id": "phys1-026",
       "bucket_key": "images/physics/ap-physics-1-mechanics/torque-net-angular-accel.svg",
       "category": "mechanics",
-      "concept_slug": "newtons-second-law-rotational",
-      "location": "content_html",
-      "problem_index": null,
-      "description": "Torque diagram showing unbalanced torques producing angular acceleration",
-      "alt_text": "Beam with pivot at center, larger force on left creating greater torque than smaller force on right, net torque causes counterclockwise angular acceleration",
       "params": {
         "type": "torque_diagram",
         "title": "Net Torque and $\\alpha$",
         "beam_length": 3.0,
         "pivot_pos": 0.5,
         "forces": [
-          {"pos": 0.1, "angle_deg": 270, "length": 0.8, "label": "$F_1$", "type": "applied", "show_lever_arm": true, "r_label": "$r_1$"},
-          {"pos": 0.9, "angle_deg": 270, "length": 0.4, "label": "$F_2$", "type": "applied", "show_lever_arm": true, "r_label": "$r_2$"}
+          {
+            "pos": 0.1,
+            "angle_deg": 270,
+            "length": 0.8,
+            "label": "$F_1$",
+            "type": "applied",
+            "show_lever_arm": true,
+            "r_label": "$r_1$"
+          },
+          {
+            "pos": 0.9,
+            "angle_deg": 270,
+            "length": 0.4,
+            "label": "$F_2$",
+            "type": "applied",
+            "show_lever_arm": true,
+            "r_label": "$r_2$"
+          }
         ]
       }
     },
@@ -574,17 +896,20 @@
       "id": "phys1-027",
       "bucket_key": "images/physics/ap-physics-1-mechanics/energy-bar-rotational-ke.svg",
       "category": "mechanics",
-      "concept_slug": "rotational-kinetic-energy",
-      "location": "content_html",
-      "problem_index": null,
-      "description": "Energy bar chart comparing translational and rotational kinetic energy for a rolling object",
-      "alt_text": "Bar chart with two states: sliding object with only translational KE, and rolling object with both translational and rotational KE",
       "params": {
         "type": "energy_bar_chart",
         "title": "Rolling: KE_trans + KE_rot",
         "states": [
-          {"label": "Sliding", "KE": 50, "PE": 0},
-          {"label": "Rolling", "KE": 35, "PE": 0}
+          {
+            "label": "Sliding",
+            "KE": 50,
+            "PE": 0
+          },
+          {
+            "label": "Rolling",
+            "KE": 35,
+            "PE": 0
+          }
         ]
       }
     },
@@ -592,11 +917,6 @@
       "id": "phys1-028",
       "bucket_key": "images/physics/ap-physics-1-mechanics/fbd-sphere-rolling-incline.svg",
       "category": "mechanics",
-      "concept_slug": "rolling",
-      "location": "content_html",
-      "problem_index": null,
-      "description": "Free-body diagram of a sphere rolling down an incline without slipping",
-      "alt_text": "Sphere on a 30-degree incline with weight pointing straight down, normal force perpendicular to the incline surface, and static friction pointing up the incline",
       "params": {
         "type": "free_body_diagram",
         "title": "Sphere Rolling Down Incline",
@@ -607,9 +927,39 @@
         "show_ground": true,
         "show_axes": true,
         "forces": [
-          {"name": "weight", "type": "gravity", "angle_deg": 270, "length": 1.0, "label": "$F_g$", "label_offset": [-0.2, 0]},
-          {"name": "normal", "type": "normal", "angle_deg": 120, "length": 0.7, "label": "$F_N$", "label_offset": [-0.15, 0.1]},
-          {"name": "friction", "type": "friction", "angle_deg": 30, "length": 0.35, "label": "$f_s$", "label_offset": [0, 0.15]}
+          {
+            "name": "weight",
+            "type": "gravity",
+            "angle_deg": 270,
+            "length": 1.0,
+            "label": "$F_g$",
+            "label_offset": [
+              -0.2,
+              0
+            ]
+          },
+          {
+            "name": "normal",
+            "type": "normal",
+            "angle_deg": 120,
+            "length": 0.7,
+            "label": "$F_N$",
+            "label_offset": [
+              -0.15,
+              0.1
+            ]
+          },
+          {
+            "name": "friction",
+            "type": "friction",
+            "angle_deg": 30,
+            "length": 0.35,
+            "label": "$f_s$",
+            "label_offset": [
+              0,
+              0.15
+            ]
+          }
         ]
       }
     },
@@ -617,20 +967,31 @@
       "id": "phys1-029",
       "bucket_key": "images/physics/ap-physics-1-mechanics/satellite-orbit.svg",
       "category": "mechanics",
-      "concept_slug": "orbiting-satellites",
-      "location": "content_html",
-      "problem_index": null,
-      "description": "Satellite in circular orbit around Earth with gravitational force providing centripetal acceleration",
-      "alt_text": "Satellite orbiting Earth in a circle with velocity tangent to orbit and gravitational force pointing toward Earth center providing centripetal force",
       "params": {
         "type": "circular_motion",
         "title": "Satellite in Orbit",
         "radius": 1.5,
         "positions": [
-          {"angle_deg": 45, "show_v": true, "show_F": true},
-          {"angle_deg": 135, "show_v": true, "show_F": true},
-          {"angle_deg": 225, "show_v": true, "show_F": true},
-          {"angle_deg": 315, "show_v": true, "show_F": true}
+          {
+            "angle_deg": 45,
+            "show_v": true,
+            "show_F": true
+          },
+          {
+            "angle_deg": 135,
+            "show_v": true,
+            "show_F": true
+          },
+          {
+            "angle_deg": 225,
+            "show_v": true,
+            "show_F": true
+          },
+          {
+            "angle_deg": 315,
+            "show_v": true,
+            "show_F": true
+          }
         ]
       }
     },
@@ -638,11 +999,6 @@
       "id": "phys1-030",
       "bucket_key": "images/physics/ap-physics-1-mechanics/shm-spring-mass-displaced.svg",
       "category": "mechanics",
-      "concept_slug": "defining-shm",
-      "location": "content_html",
-      "problem_index": null,
-      "description": "Spring-mass system showing the mass displaced from equilibrium with restoring force",
-      "alt_text": "Horizontal spring attached to a wall with a block displaced 0.5 units to the right of equilibrium position",
       "params": {
         "type": "shm_diagram",
         "style": "spring_mass",
@@ -655,11 +1011,6 @@
       "id": "phys1-031",
       "bucket_key": "images/physics/ap-physics-1-mechanics/shm-wave-period-amplitude.svg",
       "category": "mechanics",
-      "concept_slug": "frequency-period-shm",
-      "location": "content_html",
-      "problem_index": null,
-      "description": "Displacement vs time sinusoidal wave with period T and amplitude A labeled",
-      "alt_text": "Sinusoidal wave showing two complete cycles with period T marked between peaks and amplitude A marked from center to peak",
       "params": {
         "type": "shm_diagram",
         "style": "wave",
@@ -673,11 +1024,6 @@
       "id": "phys1-032",
       "bucket_key": "images/physics/ap-physics-1-mechanics/shm-x-vs-t-wave.svg",
       "category": "mechanics",
-      "concept_slug": "representing-analyzing-shm",
-      "location": "content_html",
-      "problem_index": null,
-      "description": "Displacement vs time graph for SHM showing position oscillation over time",
-      "alt_text": "Sinusoidal curve of displacement x versus time t showing 1.5 cycles of oscillation",
       "params": {
         "type": "shm_diagram",
         "style": "wave",
@@ -691,18 +1037,25 @@
       "id": "phys1-033",
       "bucket_key": "images/physics/ap-physics-1-mechanics/energy-bar-shm.svg",
       "category": "mechanics",
-      "concept_slug": "energy-shm",
-      "location": "content_html",
-      "problem_index": null,
-      "description": "Energy bar chart for SHM showing KE and PE at different positions in the oscillation",
-      "alt_text": "Bar chart with three states: at max displacement with all PE, at equilibrium with all KE, and at other max displacement with all PE again",
       "params": {
         "type": "energy_bar_chart",
         "title": "Energy in SHM",
         "states": [
-          {"label": "x = −A", "KE": 0, "PE": 40},
-          {"label": "x = 0", "KE": 40, "PE": 0},
-          {"label": "x = +A", "KE": 0, "PE": 40}
+          {
+            "label": "x = âˆ’A",
+            "KE": 0,
+            "PE": 40
+          },
+          {
+            "label": "x = 0",
+            "KE": 40,
+            "PE": 0
+          },
+          {
+            "label": "x = +A",
+            "KE": 0,
+            "PE": 40
+          }
         ]
       }
     },
@@ -710,28 +1063,22 @@
       "id": "phys1-034",
       "bucket_key": "images/physics/ap-physics-1-mechanics/fluid-pressure-depth.svg",
       "category": "mechanics",
-      "concept_slug": "pressure",
-      "location": "content_html",
-      "problem_index": null,
-      "description": "Fluid pressure increases with depth, showing pressure arrows at three depths",
-      "alt_text": "Container of fluid with horizontal arrows at three depths showing pressure increasing with depth: small arrow at top, medium in middle, large at bottom",
       "params": {
         "type": "fluid_diagram",
         "style": "pressure_depth",
         "title": "Pressure vs Depth",
         "depth": 3.0,
-        "depths_shown": [0.5, 1.5, 2.5]
+        "depths_shown": [
+          0.5,
+          1.5,
+          2.5
+        ]
       }
     },
     {
       "id": "phys1-035",
       "bucket_key": "images/physics/ap-physics-1-mechanics/fluid-buoyancy.svg",
       "category": "mechanics",
-      "concept_slug": "fluids-newtons-laws",
-      "location": "content_html",
-      "problem_index": null,
-      "description": "Buoyant force diagram showing an object submerged in fluid with weight and buoyant force",
-      "alt_text": "Rectangular object submerged in fluid with downward weight arrow F g and upward buoyant force arrow F b, F g is larger than F b so object sinks",
       "params": {
         "type": "fluid_diagram",
         "style": "buoyancy",
@@ -745,14 +1092,9 @@
       "id": "phys1-036",
       "bucket_key": "images/physics/ap-physics-1-mechanics/fbd-box-ramp-30deg.svg",
       "category": "mechanics",
-      "concept_slug": "forces-free-body-diagrams",
-      "location": "question_html",
-      "problem_index": 5,
-      "description": "Free-body diagram of a 10 kg box on a 30° incline showing gravity components",
-      "alt_text": "Box on a 30-degree incline with weight straight down, normal force perpendicular to the ramp surface at 120 degrees, and gravity component parallel to ramp",
       "params": {
         "type": "free_body_diagram",
-        "title": "10 kg Box on 30° Ramp",
+        "title": "10 kg Box on 30Â° Ramp",
         "object_shape": "block",
         "object_label": "10 kg",
         "object_size": 0.4,
@@ -760,8 +1102,28 @@
         "show_ground": true,
         "show_axes": true,
         "forces": [
-          {"name": "weight", "type": "gravity", "angle_deg": 270, "length": 1.0, "label": "$F_g$", "label_offset": [-0.2, 0]},
-          {"name": "normal", "type": "normal", "angle_deg": 120, "length": 0.7, "label": "$F_N$", "label_offset": [-0.15, 0.1]}
+          {
+            "name": "weight",
+            "type": "gravity",
+            "angle_deg": 270,
+            "length": 1.0,
+            "label": "$F_g$",
+            "label_offset": [
+              -0.2,
+              0
+            ]
+          },
+          {
+            "name": "normal",
+            "type": "normal",
+            "angle_deg": 120,
+            "length": 0.7,
+            "label": "$F_N$",
+            "label_offset": [
+              -0.15,
+              0.1
+            ]
+          }
         ]
       }
     },
@@ -769,11 +1131,6 @@
       "id": "phys1-037",
       "bucket_key": "images/physics/ap-physics-1-mechanics/fbd-atwood-machine.svg",
       "category": "mechanics",
-      "concept_slug": "newtons-second-law",
-      "location": "question_html",
-      "problem_index": 4,
-      "description": "Two blocks connected by a string over a pulley: Block A on a frictionless table, Block B hanging vertically",
-      "alt_text": "Block A of 3 kg on a frictionless table connected by a string over a pulley to Block B of 2 kg hanging vertically, tension T in the string",
       "params": {
         "type": "free_body_diagram",
         "title": "Atwood-Style Setup",
@@ -784,8 +1141,28 @@
         "show_ground": false,
         "show_axes": false,
         "forces": [
-          {"name": "weight", "type": "gravity", "angle_deg": 270, "length": 0.8, "label": "$F_g = 20$ N", "label_offset": [0.25, 0]},
-          {"name": "tension", "type": "tension", "angle_deg": 90, "length": 0.5, "label": "$T$", "label_offset": [0.2, 0]}
+          {
+            "name": "weight",
+            "type": "gravity",
+            "angle_deg": 270,
+            "length": 0.8,
+            "label": "$F_g = 20$ N",
+            "label_offset": [
+              0.25,
+              0
+            ]
+          },
+          {
+            "name": "tension",
+            "type": "tension",
+            "angle_deg": 90,
+            "length": 0.5,
+            "label": "$T$",
+            "label_offset": [
+              0.2,
+              0
+            ]
+          }
         ]
       }
     },
@@ -793,14 +1170,9 @@
       "id": "phys1-038",
       "bucket_key": "images/physics/ap-physics-1-mechanics/fbd-incline-friction-30deg.svg",
       "category": "mechanics",
-      "concept_slug": "kinetic-static-friction",
-      "location": "question_html",
-      "problem_index": 4,
-      "description": "Free-body diagram of a 10 kg box sliding down a 30° incline with kinetic friction",
-      "alt_text": "10 kg box on a 30-degree incline with weight pointing straight down, normal force perpendicular to incline at 120 degrees, and kinetic friction force pointing up the incline at 30 degrees",
       "params": {
         "type": "free_body_diagram",
-        "title": "Box on 30° Incline (Friction)",
+        "title": "Box on 30Â° Incline (Friction)",
         "object_shape": "block",
         "object_label": "10 kg",
         "object_size": 0.4,
@@ -808,9 +1180,39 @@
         "show_ground": true,
         "show_axes": true,
         "forces": [
-          {"name": "weight", "type": "gravity", "angle_deg": 270, "length": 1.0, "label": "$F_g$", "label_offset": [-0.2, 0]},
-          {"name": "normal", "type": "normal", "angle_deg": 120, "length": 0.7, "label": "$F_N$", "label_offset": [-0.15, 0.1]},
-          {"name": "friction", "type": "friction", "angle_deg": 30, "length": 0.35, "label": "$f_k$", "label_offset": [0, 0.15]}
+          {
+            "name": "weight",
+            "type": "gravity",
+            "angle_deg": 270,
+            "length": 1.0,
+            "label": "$F_g$",
+            "label_offset": [
+              -0.2,
+              0
+            ]
+          },
+          {
+            "name": "normal",
+            "type": "normal",
+            "angle_deg": 120,
+            "length": 0.7,
+            "label": "$F_N$",
+            "label_offset": [
+              -0.15,
+              0.1
+            ]
+          },
+          {
+            "name": "friction",
+            "type": "friction",
+            "angle_deg": 30,
+            "length": 0.35,
+            "label": "$f_k$",
+            "label_offset": [
+              0,
+              0.15
+            ]
+          }
         ]
       }
     },
@@ -818,14 +1220,9 @@
       "id": "phys1-039",
       "bucket_key": "images/physics/ap-physics-1-mechanics/fbd-crate-angled-push.svg",
       "category": "mechanics",
-      "concept_slug": "kinetic-static-friction",
-      "location": "question_html",
-      "problem_index": 7,
-      "description": "Free-body diagram of a 40 kg crate pushed at 30° below horizontal with friction",
-      "alt_text": "40 kg crate on flat surface with 200 N applied force at 30 degrees below horizontal, weight down, increased normal force up, and kinetic friction opposing motion",
       "params": {
         "type": "free_body_diagram",
-        "title": "Crate Pushed at 30° Below",
+        "title": "Crate Pushed at 30Â° Below",
         "object_shape": "block",
         "object_label": "40 kg",
         "object_size": 0.4,
@@ -833,10 +1230,50 @@
         "show_ground": true,
         "show_axes": false,
         "forces": [
-          {"name": "weight", "type": "gravity", "angle_deg": 270, "length": 0.9, "label": "$F_g$", "label_offset": [-0.2, 0]},
-          {"name": "normal", "type": "normal", "angle_deg": 90, "length": 1.0, "label": "$F_N$", "label_offset": [0.2, 0]},
-          {"name": "applied", "type": "applied", "angle_deg": 330, "length": 0.7, "label": "$F_a = 200$ N", "label_offset": [0.1, -0.15]},
-          {"name": "friction", "type": "friction", "angle_deg": 180, "length": 0.4, "label": "$f_k$", "label_offset": [0, 0.15]}
+          {
+            "name": "weight",
+            "type": "gravity",
+            "angle_deg": 270,
+            "length": 0.9,
+            "label": "$F_g$",
+            "label_offset": [
+              -0.2,
+              0
+            ]
+          },
+          {
+            "name": "normal",
+            "type": "normal",
+            "angle_deg": 90,
+            "length": 1.0,
+            "label": "$F_N$",
+            "label_offset": [
+              0.2,
+              0
+            ]
+          },
+          {
+            "name": "applied",
+            "type": "applied",
+            "angle_deg": 330,
+            "length": 0.7,
+            "label": "$F_a = 200$ N",
+            "label_offset": [
+              0.1,
+              -0.15
+            ]
+          },
+          {
+            "name": "friction",
+            "type": "friction",
+            "angle_deg": 180,
+            "length": 0.4,
+            "label": "$f_k$",
+            "label_offset": [
+              0,
+              0.15
+            ]
+          }
         ]
       }
     },
@@ -844,14 +1281,9 @@
       "id": "phys1-040",
       "bucket_key": "images/physics/ap-physics-1-mechanics/fbd-block-slides-ramp-work.svg",
       "category": "mechanics",
-      "concept_slug": "work",
-      "location": "question_html",
-      "problem_index": 6,
-      "description": "A 5 kg block sliding 3 m down a frictionless 30° ramp for work calculation",
-      "alt_text": "5 kg block on a frictionless 30-degree ramp, sliding 3 m down with weight pointing down and normal force perpendicular to surface",
       "params": {
         "type": "free_body_diagram",
-        "title": "Block on 30° Ramp (Work)",
+        "title": "Block on 30Â° Ramp (Work)",
         "object_shape": "block",
         "object_label": "5 kg",
         "object_size": 0.4,
@@ -859,8 +1291,28 @@
         "show_ground": true,
         "show_axes": true,
         "forces": [
-          {"name": "weight", "type": "gravity", "angle_deg": 270, "length": 0.9, "label": "$F_g$", "label_offset": [-0.2, 0]},
-          {"name": "normal", "type": "normal", "angle_deg": 120, "length": 0.65, "label": "$F_N$", "label_offset": [-0.15, 0.1]}
+          {
+            "name": "weight",
+            "type": "gravity",
+            "angle_deg": 270,
+            "length": 0.9,
+            "label": "$F_g$",
+            "label_offset": [
+              -0.2,
+              0
+            ]
+          },
+          {
+            "name": "normal",
+            "type": "normal",
+            "angle_deg": 120,
+            "length": 0.65,
+            "label": "$F_N$",
+            "label_offset": [
+              -0.15,
+              0.1
+            ]
+          }
         ]
       }
     },
@@ -868,17 +1320,22 @@
       "id": "phys1-041",
       "bucket_key": "images/physics/ap-physics-1-mechanics/energy-bar-ramp-friction.svg",
       "category": "mechanics",
-      "concept_slug": "conservation-of-energy",
-      "location": "question_html",
-      "problem_index": 4,
-      "description": "Energy bar chart for a 3 kg block sliding down a ramp with friction, showing PE converting to KE and thermal energy",
-      "alt_text": "Bar chart with two states: at top with all gravitational PE, at bottom with KE and thermal energy from friction, total energy conserved",
       "params": {
         "type": "energy_bar_chart",
         "title": "Ramp with Friction",
         "states": [
-          {"label": "Top", "KE": 0, "PE": 90, "Eth": 0},
-          {"label": "Bottom", "KE": 60, "PE": 0, "Eth": 30}
+          {
+            "label": "Top",
+            "KE": 0,
+            "PE": 90,
+            "Eth": 0
+          },
+          {
+            "label": "Bottom",
+            "KE": 60,
+            "PE": 0,
+            "Eth": 30
+          }
         ]
       }
     },
@@ -886,18 +1343,25 @@
       "id": "phys1-042",
       "bucket_key": "images/physics/ap-physics-1-mechanics/energy-bar-spring-launch.svg",
       "category": "mechanics",
-      "concept_slug": "conservation-of-energy",
-      "location": "question_html",
-      "problem_index": 6,
-      "description": "Energy bar chart for a spring launching a block: elastic PE converts to KE then to gravitational PE",
-      "alt_text": "Three-state bar chart: compressed spring with all elastic PE, released block with all KE, block at max height with all gravitational PE",
       "params": {
         "type": "energy_bar_chart",
         "title": "Spring Launches Block",
         "states": [
-          {"label": "Compressed", "KE": 0, "PE": 36},
-          {"label": "Released", "KE": 36, "PE": 0},
-          {"label": "Max Height", "KE": 0, "PE": 36}
+          {
+            "label": "Compressed",
+            "KE": 0,
+            "PE": 36
+          },
+          {
+            "label": "Released",
+            "KE": 36,
+            "PE": 0
+          },
+          {
+            "label": "Max Height",
+            "KE": 0,
+            "PE": 36
+          }
         ]
       }
     },
@@ -905,21 +1369,28 @@
       "id": "phys1-043",
       "bucket_key": "images/physics/ap-physics-1-mechanics/collision-cart-sticks.svg",
       "category": "mechanics",
-      "concept_slug": "conservation-linear-momentum",
-      "location": "question_html",
-      "problem_index": 0,
-      "description": "5 kg cart at 6 m/s collides and sticks to a stationary 10 kg cart",
-      "alt_text": "Before: 5 kg cart moving right at 6 m/s toward stationary 10 kg cart. After: combined 15 kg cart moving right at 2 m/s",
       "params": {
         "type": "collision_diagram",
         "title": "Cart Collision (Inelastic)",
         "collision_type": "perfectly_inelastic",
         "before": [
-          {"label": "A", "mass": 5, "velocity": 6},
-          {"label": "B", "mass": 10, "velocity": 0}
+          {
+            "label": "A",
+            "mass": 5,
+            "velocity": 6
+          },
+          {
+            "label": "B",
+            "mass": 10,
+            "velocity": 0
+          }
         ],
         "after": [
-          {"label": "AB", "mass": 15, "velocity": 2}
+          {
+            "label": "AB",
+            "mass": 15,
+            "velocity": 2
+          }
         ]
       }
     },
@@ -927,22 +1398,33 @@
       "id": "phys1-044",
       "bucket_key": "images/physics/ap-physics-1-mechanics/collision-elastic-equal-mass.svg",
       "category": "mechanics",
-      "concept_slug": "elastic-inelastic-collisions",
-      "location": "question_html",
-      "problem_index": 2,
-      "description": "Elastic head-on collision between two equal-mass balls",
-      "alt_text": "Before: 2 kg ball A at 6 m/s moving right toward stationary 2 kg ball B. After: ball A stationary, ball B moving right at 6 m/s",
       "params": {
         "type": "collision_diagram",
         "title": "Elastic: Equal Masses",
         "collision_type": "elastic",
         "before": [
-          {"label": "A", "mass": 2, "velocity": 6},
-          {"label": "B", "mass": 2, "velocity": 0}
+          {
+            "label": "A",
+            "mass": 2,
+            "velocity": 6
+          },
+          {
+            "label": "B",
+            "mass": 2,
+            "velocity": 0
+          }
         ],
         "after": [
-          {"label": "A", "mass": 2, "velocity": 0},
-          {"label": "B", "mass": 2, "velocity": 6}
+          {
+            "label": "A",
+            "mass": 2,
+            "velocity": 0
+          },
+          {
+            "label": "B",
+            "mass": 2,
+            "velocity": 6
+          }
         ]
       }
     },
@@ -950,21 +1432,28 @@
       "id": "phys1-045",
       "bucket_key": "images/physics/ap-physics-1-mechanics/collision-ballistic-pendulum.svg",
       "category": "mechanics",
-      "concept_slug": "elastic-inelastic-collisions",
-      "location": "question_html",
-      "problem_index": 8,
-      "description": "Ballistic pendulum: bullet embeds in block, block+bullet swings upward",
-      "alt_text": "Before: 0.01 kg bullet at 400 m/s moving toward 2 kg block at rest. After: combined 2.01 kg mass moving at approximately 2 m/s",
       "params": {
         "type": "collision_diagram",
         "title": "Ballistic Pendulum",
         "collision_type": "perfectly_inelastic",
         "before": [
-          {"label": "bullet", "mass": 0.01, "velocity": 400},
-          {"label": "block", "mass": 2, "velocity": 0}
+          {
+            "label": "bullet",
+            "mass": 0.01,
+            "velocity": 400
+          },
+          {
+            "label": "block",
+            "mass": 2,
+            "velocity": 0
+          }
         ],
         "after": [
-          {"label": "combined", "mass": 2.01, "velocity": 2}
+          {
+            "label": "combined",
+            "mass": 2.01,
+            "velocity": 2
+          }
         ]
       }
     },
@@ -972,19 +1461,30 @@
       "id": "phys1-046",
       "bucket_key": "images/physics/ap-physics-1-mechanics/torque-seesaw-problem.svg",
       "category": "mechanics",
-      "concept_slug": "torque",
-      "location": "question_html",
-      "problem_index": 6,
-      "description": "Seesaw with a 400 N child at 1.2 m from pivot and unknown position for 300 N child",
-      "alt_text": "3 m seesaw balanced at center with 400 N child 1.2 m left of pivot and 300 N child at unknown distance right of pivot",
       "params": {
         "type": "torque_diagram",
         "title": "Seesaw Balance Problem",
         "beam_length": 3.0,
         "pivot_pos": 0.5,
         "forces": [
-          {"pos": 0.1, "angle_deg": 270, "length": 0.7, "label": "400 N", "type": "gravity", "show_lever_arm": true, "r_label": "1.2 m"},
-          {"pos": 0.9, "angle_deg": 270, "length": 0.5, "label": "300 N", "type": "gravity", "show_lever_arm": true, "r_label": "? m"}
+          {
+            "pos": 0.1,
+            "angle_deg": 270,
+            "length": 0.7,
+            "label": "400 N",
+            "type": "gravity",
+            "show_lever_arm": true,
+            "r_label": "1.2 m"
+          },
+          {
+            "pos": 0.9,
+            "angle_deg": 270,
+            "length": 0.5,
+            "label": "300 N",
+            "type": "gravity",
+            "show_lever_arm": true,
+            "r_label": "? m"
+          }
         ]
       }
     },
@@ -992,20 +1492,39 @@
       "id": "phys1-047",
       "bucket_key": "images/physics/ap-physics-1-mechanics/torque-beam-two-loads.svg",
       "category": "mechanics",
-      "concept_slug": "rotational-equilibrium",
-      "location": "question_html",
-      "problem_index": 3,
-      "description": "A 4.0 m uniform plank supported at both ends with a 400 N box at 1.0 m from the left",
-      "alt_text": "4 m horizontal plank supported at both ends with a 200 N beam weight at center and 400 N box 1 m from left end, normal forces at supports",
       "params": {
         "type": "torque_diagram",
         "title": "Plank with Load",
         "beam_length": 4.0,
         "pivot_pos": 0.0,
         "forces": [
-          {"pos": 0.25, "angle_deg": 270, "length": 0.7, "label": "400 N", "type": "gravity", "show_lever_arm": true, "r_label": "1.0 m"},
-          {"pos": 0.5, "angle_deg": 270, "length": 0.4, "label": "200 N", "type": "gravity", "show_lever_arm": true, "r_label": "2.0 m"},
-          {"pos": 1.0, "angle_deg": 90, "length": 0.5, "label": "$F_R$", "type": "normal", "show_lever_arm": true, "r_label": "4.0 m"}
+          {
+            "pos": 0.25,
+            "angle_deg": 270,
+            "length": 0.7,
+            "label": "400 N",
+            "type": "gravity",
+            "show_lever_arm": true,
+            "r_label": "1.0 m"
+          },
+          {
+            "pos": 0.5,
+            "angle_deg": 270,
+            "length": 0.4,
+            "label": "200 N",
+            "type": "gravity",
+            "show_lever_arm": true,
+            "r_label": "2.0 m"
+          },
+          {
+            "pos": 1.0,
+            "angle_deg": 90,
+            "length": 0.5,
+            "label": "$F_R$",
+            "type": "normal",
+            "show_lever_arm": true,
+            "r_label": "4.0 m"
+          }
         ]
       }
     },
@@ -1013,11 +1532,6 @@
       "id": "phys1-048",
       "bucket_key": "images/physics/ap-physics-1-mechanics/fbd-block-pulley-rotational.svg",
       "category": "mechanics",
-      "concept_slug": "newtons-second-law-rotational",
-      "location": "question_html",
-      "problem_index": 4,
-      "description": "Block hanging from string wrapped around a solid pulley, combining linear and rotational dynamics",
-      "alt_text": "2 kg block hanging from a string wrapped around a solid disk pulley of mass 4 kg and radius 0.10 m, block accelerates downward",
       "params": {
         "type": "free_body_diagram",
         "title": "Block on Pulley",
@@ -1028,8 +1542,28 @@
         "show_ground": false,
         "show_axes": false,
         "forces": [
-          {"name": "weight", "type": "gravity", "angle_deg": 270, "length": 0.9, "label": "$F_g = 20$ N", "label_offset": [0.25, 0]},
-          {"name": "tension", "type": "tension", "angle_deg": 90, "length": 0.5, "label": "$T$", "label_offset": [0.2, 0]}
+          {
+            "name": "weight",
+            "type": "gravity",
+            "angle_deg": 270,
+            "length": 0.9,
+            "label": "$F_g = 20$ N",
+            "label_offset": [
+              0.25,
+              0
+            ]
+          },
+          {
+            "name": "tension",
+            "type": "tension",
+            "angle_deg": 90,
+            "length": 0.5,
+            "label": "$T$",
+            "label_offset": [
+              0.2,
+              0
+            ]
+          }
         ]
       }
     },
@@ -1037,11 +1571,6 @@
       "id": "phys1-049",
       "bucket_key": "images/physics/ap-physics-1-mechanics/fbd-rolling-sphere-ramp.svg",
       "category": "mechanics",
-      "concept_slug": "rolling",
-      "location": "question_html",
-      "problem_index": 4,
-      "description": "Solid sphere of 3 kg rolling without slipping down a ramp of height 2 m",
-      "alt_text": "Solid sphere on an incline with weight pointing straight down, normal force perpendicular to surface, and static friction up the incline preventing slipping",
       "params": {
         "type": "free_body_diagram",
         "title": "3 kg Sphere Rolling Down",
@@ -1052,9 +1581,39 @@
         "show_ground": true,
         "show_axes": true,
         "forces": [
-          {"name": "weight", "type": "gravity", "angle_deg": 270, "length": 1.0, "label": "$F_g$", "label_offset": [-0.2, 0]},
-          {"name": "normal", "type": "normal", "angle_deg": 120, "length": 0.7, "label": "$F_N$", "label_offset": [-0.15, 0.1]},
-          {"name": "friction", "type": "friction", "angle_deg": 30, "length": 0.3, "label": "$f_s$", "label_offset": [0, 0.15]}
+          {
+            "name": "weight",
+            "type": "gravity",
+            "angle_deg": 270,
+            "length": 1.0,
+            "label": "$F_g$",
+            "label_offset": [
+              -0.2,
+              0
+            ]
+          },
+          {
+            "name": "normal",
+            "type": "normal",
+            "angle_deg": 120,
+            "length": 0.7,
+            "label": "$F_N$",
+            "label_offset": [
+              -0.15,
+              0.1
+            ]
+          },
+          {
+            "name": "friction",
+            "type": "friction",
+            "angle_deg": 30,
+            "length": 0.3,
+            "label": "$f_s$",
+            "label_offset": [
+              0,
+              0.15
+            ]
+          }
         ]
       }
     },
@@ -1062,11 +1621,6 @@
       "id": "phys1-050",
       "bucket_key": "images/physics/ap-physics-1-mechanics/shm-spring-mass-problem.svg",
       "category": "mechanics",
-      "concept_slug": "defining-shm",
-      "location": "question_html",
-      "problem_index": 4,
-      "description": "A 0.20 kg mass on a spring (k = 50 N/m) pulled 0.08 m from equilibrium",
-      "alt_text": "Horizontal spring with block displaced 0.08 m from equilibrium position, spring constant 50 N/m, mass 0.20 kg",
       "params": {
         "type": "shm_diagram",
         "style": "spring_mass",
@@ -1079,11 +1633,6 @@
       "id": "phys1-051",
       "bucket_key": "images/physics/ap-physics-1-mechanics/fluid-buoyancy-ice-seawater.svg",
       "category": "mechanics",
-      "concept_slug": "fluids-newtons-laws",
-      "location": "question_html",
-      "problem_index": 1,
-      "description": "Ice block floating in seawater with most of its volume submerged",
-      "alt_text": "Block of ice floating in seawater with approximately 90 percent submerged, buoyant force upward equals weight downward",
       "params": {
         "type": "fluid_diagram",
         "style": "buoyancy",
@@ -1097,11 +1646,6 @@
       "id": "phys1-052",
       "bucket_key": "images/physics/ap-physics-1-mechanics/fluid-submerged-aluminum.svg",
       "category": "mechanics",
-      "concept_slug": "fluids-newtons-laws",
-      "location": "question_html",
-      "problem_index": 4,
-      "description": "Aluminum block suspended by a string while submerged in water, showing tension, buoyancy, and weight",
-      "alt_text": "Aluminum block submerged in water suspended from a string, with tension T upward, buoyant force F b upward, and weight F g downward, T plus F b equals F g",
       "params": {
         "type": "fluid_diagram",
         "style": "buoyancy",
@@ -1115,11 +1659,6 @@
       "id": "phys1-053",
       "bucket_key": "images/physics/ap-physics-1-mechanics/fbd-hanging-block-two-ropes.svg",
       "category": "mechanics",
-      "concept_slug": "forces-free-body-diagrams",
-      "location": "question_html",
-      "problem_index": 4,
-      "description": "A 20 kg block hanging from two ropes at 30° and 60° with the horizontal ceiling",
-      "alt_text": "Block hanging from two ropes making 30 and 60 degree angles with the horizontal, tension T1 in the 30-degree rope and tension T2 in the 60-degree rope, weight pointing down",
       "params": {
         "type": "free_body_diagram",
         "title": "Block on Two Ropes",
@@ -1130,9 +1669,39 @@
         "show_ground": false,
         "show_axes": false,
         "forces": [
-          {"name": "weight", "type": "gravity", "angle_deg": 270, "length": 1.0, "label": "$F_g$", "label_offset": [0.2, 0]},
-          {"name": "tension1", "type": "tension", "angle_deg": 150, "length": 0.7, "label": "$T_1$", "label_offset": [-0.15, 0.1]},
-          {"name": "tension2", "type": "tension", "angle_deg": 30, "length": 0.9, "label": "$T_2$", "label_offset": [0.15, 0.1]}
+          {
+            "name": "weight",
+            "type": "gravity",
+            "angle_deg": 270,
+            "length": 1.0,
+            "label": "$F_g$",
+            "label_offset": [
+              0.2,
+              0
+            ]
+          },
+          {
+            "name": "tension1",
+            "type": "tension",
+            "angle_deg": 150,
+            "length": 0.7,
+            "label": "$T_1$",
+            "label_offset": [
+              -0.15,
+              0.1
+            ]
+          },
+          {
+            "name": "tension2",
+            "type": "tension",
+            "angle_deg": 30,
+            "length": 0.9,
+            "label": "$T_2$",
+            "label_offset": [
+              0.15,
+              0.1
+            ]
+          }
         ]
       }
     },
@@ -1140,17 +1709,16 @@
       "id": "phys1-054",
       "bucket_key": "images/physics/ap-physics-1-mechanics/circular-motion-vertical.svg",
       "category": "mechanics",
-      "concept_slug": "circular-motion",
-      "location": "question_html",
-      "problem_index": 4,
-      "description": "Ball on a string swung in a vertical circle, showing forces at the top of the loop",
-      "alt_text": "Ball at top of vertical circle with weight and tension both pointing downward toward center, providing centripetal force",
       "params": {
         "type": "circular_motion",
         "title": "Vertical Circle (Top)",
         "radius": 0.8,
         "positions": [
-          {"angle_deg": 90, "show_v": true, "show_F": true}
+          {
+            "angle_deg": 90,
+            "show_v": true,
+            "show_F": true
+          }
         ]
       }
     },
@@ -1158,15 +1726,10 @@
       "id": "phys1-055",
       "bucket_key": "images/physics/ap-physics-1-mechanics/fluid-continuity-pipe.svg",
       "category": "mechanics",
-      "concept_slug": "fluids-conservation-laws",
-      "location": "content_html",
-      "problem_index": null,
-      "description": "Fluid flowing through a pipe that narrows, illustrating the continuity equation: speed increases as area decreases",
-      "alt_text": "Pipe narrowing from wide section with slow flow arrows to narrow section with fast flow arrows, showing A1 v1 equals A2 v2",
       "params": {
         "type": "fluid_diagram",
         "style": "u_tube",
-        "title": "Continuity: A1·v1 = A2·v2",
+        "title": "Continuity: A1Â·v1 = A2Â·v2",
         "h_diff": 0.3,
         "left_label": "Wide (slow)",
         "right_label": "Narrow (fast)"

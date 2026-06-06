@@ -6,17 +6,15 @@
       "id": "stat-001",
       "bucket_key": "images/mathematics/ap-statistics/normal-distribution-empirical-rule.svg",
       "category": "statistics",
-      "concept_slug": "the-normal-distribution",
-      "location": "content_html",
-      "problem_index": null,
-      "description": "Standard normal distribution curve showing the 68-95-99.7 empirical rule with shaded regions at 1, 2, and 3 standard deviations from the mean",
-      "alt_text": "Bell-shaped normal distribution curve centered at mu equals 0, with vertical dashed lines marking 1, 2, and 3 standard deviations showing the 68-95-99.7 rule",
       "params": {
         "type": "normal_curve",
         "mu": 0,
         "sigma": 1,
         "show_empirical": true,
-        "shade_between": [-1, 1],
+        "shade_between": [
+          -1,
+          1
+        ],
         "title": "The Normal Distribution: Empirical Rule"
       }
     },
@@ -24,15 +22,34 @@
       "id": "stat-002",
       "bucket_key": "images/mathematics/ap-statistics/binomial-distribution-n10-p05.svg",
       "category": "statistics",
-      "concept_slug": "the-binomial-distribution",
-      "location": "content_html",
-      "problem_index": null,
-      "description": "Histogram of a binomial distribution with n=10 and p=0.5, showing the symmetric bell-shaped pattern of discrete probabilities",
-      "alt_text": "Bar chart showing binomial probabilities for X equals 0 through 10 with n equals 10 and p equals 0.5, symmetric and centered at 5",
       "params": {
         "type": "histogram",
-        "categories": ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
-        "frequencies": [0.001, 0.010, 0.044, 0.117, 0.205, 0.246, 0.205, 0.117, 0.044, 0.010, 0.001],
+        "categories": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10"
+        ],
+        "frequencies": [
+          0.001,
+          0.01,
+          0.044,
+          0.117,
+          0.205,
+          0.246,
+          0.205,
+          0.117,
+          0.044,
+          0.01,
+          0.001
+        ],
         "x_label": "Number of Successes (X)",
         "y_label": "Probability P(X = k)",
         "title": "Binomial Distribution: $n = 10, p = 0.5$"
@@ -42,11 +59,6 @@
       "id": "stat-003",
       "bucket_key": "images/mathematics/ap-statistics/boxplot-five-number-summary.svg",
       "category": "statistics",
-      "concept_slug": "graphical-representations-summary-statistics",
-      "location": "content_html",
-      "problem_index": null,
-      "description": "Annotated box plot showing all five-number summary components: minimum, Q1, median, Q3, and maximum with labeled parts",
-      "alt_text": "Box plot with annotations pointing to each component: minimum at 12, Q1 at 25, median at 35, Q3 at 48, and maximum at 67",
       "params": {
         "type": "boxplot",
         "datasets": [
@@ -68,24 +80,87 @@
       "id": "stat-004",
       "bucket_key": "images/mathematics/ap-statistics/scatter-plot-positive-regression.svg",
       "category": "statistics",
-      "concept_slug": "graphical-representations-two-quantitative-variables",
-      "location": "content_html",
-      "problem_index": null,
-      "description": "Scatter plot of study hours vs exam score showing a strong positive linear relationship with least-squares regression line and r = 0.87",
-      "alt_text": "Scatter plot with points trending upward from left to right. A regression line is drawn through the data with r equals 0.87 displayed",
       "params": {
         "type": "scatter_regression",
         "points": [
-          {"x": 1, "y": 52}, {"x": 2, "y": 58}, {"x": 2.5, "y": 64},
-          {"x": 3, "y": 61}, {"x": 3.5, "y": 68}, {"x": 4, "y": 72},
-          {"x": 4.5, "y": 70}, {"x": 5, "y": 78}, {"x": 5.5, "y": 80},
-          {"x": 6, "y": 82}, {"x": 6.5, "y": 79}, {"x": 7, "y": 88},
-          {"x": 7.5, "y": 85}, {"x": 8, "y": 91}, {"x": 8.5, "y": 90},
-          {"x": 9, "y": 94}, {"x": 10, "y": 96}
+          {
+            "x": 1,
+            "y": 52
+          },
+          {
+            "x": 2,
+            "y": 58
+          },
+          {
+            "x": 2.5,
+            "y": 64
+          },
+          {
+            "x": 3,
+            "y": 61
+          },
+          {
+            "x": 3.5,
+            "y": 68
+          },
+          {
+            "x": 4,
+            "y": 72
+          },
+          {
+            "x": 4.5,
+            "y": 70
+          },
+          {
+            "x": 5,
+            "y": 78
+          },
+          {
+            "x": 5.5,
+            "y": 80
+          },
+          {
+            "x": 6,
+            "y": 82
+          },
+          {
+            "x": 6.5,
+            "y": 79
+          },
+          {
+            "x": 7,
+            "y": 88
+          },
+          {
+            "x": 7.5,
+            "y": 85
+          },
+          {
+            "x": 8,
+            "y": 91
+          },
+          {
+            "x": 8.5,
+            "y": 90
+          },
+          {
+            "x": 9,
+            "y": 94
+          },
+          {
+            "x": 10,
+            "y": 96
+          }
         ],
-        "regression_line": {"slope": 4.85, "intercept": 47.5},
+        "regression_line": {
+          "slope": 4.85,
+          "intercept": 47.5
+        },
         "r_value": 0.97,
-        "labels": {"x": "Study Hours", "y": "Exam Score"},
+        "labels": {
+          "x": "Study Hours",
+          "y": "Exam Score"
+        },
         "title": "Scatter Plot with Least-Squares Regression Line"
       }
     },
@@ -93,22 +168,82 @@
       "id": "stat-005",
       "bucket_key": "images/mathematics/ap-statistics/residual-plot-good-fit.svg",
       "category": "statistics",
-      "concept_slug": "residuals",
-      "location": "content_html",
-      "problem_index": null,
-      "description": "Residual plot showing randomly scattered points around the horizontal line at zero, indicating a good linear fit with no pattern",
-      "alt_text": "Residual plot with points scattered randomly above and below the dashed line at residual equals zero, showing no systematic pattern",
       "params": {
         "type": "residual_plot",
         "points": [
-          {"x": 1, "residual": -0.35}, {"x": 2, "residual": 0.80}, {"x": 2.5, "residual": 1.38},
-          {"x": 3, "residual": -2.13}, {"x": 3.5, "residual": 0.55}, {"x": 4, "residual": 1.20},
-          {"x": 4.5, "residual": -1.30}, {"x": 5, "residual": 2.18}, {"x": 5.5, "residual": 1.68},
-          {"x": 6, "residual": 0.65}, {"x": 6.5, "residual": -3.85}, {"x": 7, "residual": 2.63},
-          {"x": 7.5, "residual": -1.88}, {"x": 8, "residual": 0.60}, {"x": 8.5, "residual": -2.90},
-          {"x": 9, "residual": 0.58}, {"x": 10, "residual": 0.98}
+          {
+            "x": 1,
+            "residual": -0.35
+          },
+          {
+            "x": 2,
+            "residual": 0.8
+          },
+          {
+            "x": 2.5,
+            "residual": 1.38
+          },
+          {
+            "x": 3,
+            "residual": -2.13
+          },
+          {
+            "x": 3.5,
+            "residual": 0.55
+          },
+          {
+            "x": 4,
+            "residual": 1.2
+          },
+          {
+            "x": 4.5,
+            "residual": -1.3
+          },
+          {
+            "x": 5,
+            "residual": 2.18
+          },
+          {
+            "x": 5.5,
+            "residual": 1.68
+          },
+          {
+            "x": 6,
+            "residual": 0.65
+          },
+          {
+            "x": 6.5,
+            "residual": -3.85
+          },
+          {
+            "x": 7,
+            "residual": 2.63
+          },
+          {
+            "x": 7.5,
+            "residual": -1.88
+          },
+          {
+            "x": 8,
+            "residual": 0.6
+          },
+          {
+            "x": 8.5,
+            "residual": -2.9
+          },
+          {
+            "x": 9,
+            "residual": 0.58
+          },
+          {
+            "x": 10,
+            "residual": 0.98
+          }
         ],
-        "labels": {"x": "Study Hours", "y": "Residual (Actual - Predicted)"},
+        "labels": {
+          "x": "Study Hours",
+          "y": "Residual (Actual - Predicted)"
+        },
         "title": "Residual Plot: Good Linear Fit (No Pattern)"
       }
     },
@@ -116,16 +251,17 @@
       "id": "stat-006",
       "bucket_key": "images/mathematics/ap-statistics/venn-mutually-exclusive.svg",
       "category": "statistics",
-      "concept_slug": "mutually-exclusive-events",
-      "location": "content_html",
-      "problem_index": null,
-      "description": "Venn diagram showing two non-overlapping circles representing mutually exclusive events A and B with no intersection",
-      "alt_text": "Two separate circles labeled A and B that do not overlap, inside a rectangle labeled U, showing that A intersect B equals empty set",
       "params": {
         "type": "venn",
         "sets": [
-          {"label": "A", "value": "P(A)"},
-          {"label": "B", "value": "P(B)"}
+          {
+            "label": "A",
+            "value": "P(A)"
+          },
+          {
+            "label": "B",
+            "value": "P(B)"
+          }
         ],
         "mutually_exclusive": true,
         "show_universal": true,
@@ -136,15 +272,30 @@
       "id": "stat-007",
       "bucket_key": "images/mathematics/ap-statistics/right-skewed-distribution.svg",
       "category": "statistics",
-      "concept_slug": "describing-distribution-quantitative-variable",
-      "location": "content_html",
-      "problem_index": null,
-      "description": "Histogram of a right-skewed distribution with the tail extending to the right, showing mean pulled above the median",
-      "alt_text": "Histogram with bars peaking on the left side and tapering off to the right, showing a right-skewed distribution shape",
       "params": {
         "type": "histogram",
-        "categories": ["0-10", "10-20", "20-30", "30-40", "40-50", "50-60", "60-70", "70-80", "80-90"],
-        "frequencies": [35, 28, 18, 10, 5, 2, 1, 0.5, 0.3],
+        "categories": [
+          "0-10",
+          "10-20",
+          "20-30",
+          "30-40",
+          "40-50",
+          "50-60",
+          "60-70",
+          "70-80",
+          "80-90"
+        ],
+        "frequencies": [
+          35,
+          28,
+          18,
+          10,
+          5,
+          2,
+          1,
+          0.5,
+          0.3
+        ],
         "x_label": "Value",
         "y_label": "Frequency",
         "title": "Right-Skewed Distribution (Skewed Right)"
@@ -154,11 +305,6 @@
       "id": "stat-008",
       "bucket_key": "images/mathematics/ap-statistics/sampling-distribution-clt.svg",
       "category": "statistics",
-      "concept_slug": "sampling-distributions-and-the-central-limit-theorem",
-      "location": "content_html",
-      "problem_index": null,
-      "description": "Comparison of population distribution and sampling distribution of the sample mean, showing the CLT effect with n=30",
-      "alt_text": "Two overlaid bell curves: a wider dashed curve for the population distribution and a narrower solid curve for the sampling distribution of x-bar with n equals 30",
       "params": {
         "type": "sampling_distribution",
         "pop_mu": 100,
@@ -171,11 +317,6 @@
       "id": "stat-009",
       "bucket_key": "images/mathematics/ap-statistics/confidence-interval-proportion.svg",
       "category": "statistics",
-      "concept_slug": "constructing-confidence-interval-population-proportion",
-      "location": "content_html",
-      "problem_index": null,
-      "description": "Number line showing a 95% confidence interval for a population proportion with point estimate at 0.62 and margin of error 0.048",
-      "alt_text": "Number line with a thick horizontal segment from 0.572 to 0.668 representing the 95% confidence interval, with a dot at the point estimate 0.62",
       "params": {
         "type": "confidence_interval",
         "estimate": 0.62,
@@ -189,16 +330,17 @@
       "id": "stat-010",
       "bucket_key": "images/mathematics/ap-statistics/venn-conditional-probability.svg",
       "category": "statistics",
-      "concept_slug": "conditional-probability",
-      "location": "content_html",
-      "problem_index": null,
-      "description": "Venn diagram showing two overlapping circles A and B with the intersection shaded to represent P(A and B) for conditional probability",
-      "alt_text": "Two overlapping circles labeled A and B inside a rectangle labeled U, with the overlap region shaded in gold to highlight the intersection",
       "params": {
         "type": "venn",
         "sets": [
-          {"label": "A", "value": "0.4"},
-          {"label": "B", "value": "0.3"}
+          {
+            "label": "A",
+            "value": "0.4"
+          },
+          {
+            "label": "B",
+            "value": "0.3"
+          }
         ],
         "intersection": "0.15",
         "shade_intersection": true,
@@ -210,15 +352,22 @@
       "id": "stat-011",
       "bucket_key": "images/mathematics/ap-statistics/bar-chart-categorical.svg",
       "category": "statistics",
-      "concept_slug": "graphical-representations-one-categorical-variable",
-      "location": "content_html",
-      "problem_index": null,
-      "description": "Bar chart showing favorite subjects among surveyed students with bars for Math, Science, English, History, and Art",
-      "alt_text": "Vertical bar chart with five bars showing frequency of favorite subject: Math 45, Science 38, English 30, History 22, Art 15",
       "params": {
         "type": "histogram",
-        "categories": ["Math", "Science", "English", "History", "Art"],
-        "frequencies": [45, 38, 30, 22, 15],
+        "categories": [
+          "Math",
+          "Science",
+          "English",
+          "History",
+          "Art"
+        ],
+        "frequencies": [
+          45,
+          38,
+          30,
+          22,
+          15
+        ],
         "x_label": "Favorite Subject",
         "y_label": "Number of Students",
         "title": "Bar Chart: Favorite Subject (Categorical Data)"
@@ -228,15 +377,25 @@
       "id": "stat-012",
       "bucket_key": "images/mathematics/ap-statistics/histogram-quantitative.svg",
       "category": "statistics",
-      "concept_slug": "representing-quantitative-variable-graphs",
-      "location": "content_html",
-      "problem_index": null,
-      "description": "Histogram of exam scores showing a roughly symmetric, bell-shaped distribution centered around 75",
-      "alt_text": "Histogram with bins from 40 to 100 showing frequency of exam scores, roughly symmetric and centered near 75",
       "params": {
         "type": "histogram",
-        "bins": [40, 50, 60, 70, 80, 90, 100],
-        "frequencies": [5, 12, 25, 30, 20, 8],
+        "bins": [
+          40,
+          50,
+          60,
+          70,
+          80,
+          90,
+          100
+        ],
+        "frequencies": [
+          5,
+          12,
+          25,
+          30,
+          20,
+          8
+        ],
         "x_label": "Exam Score",
         "y_label": "Frequency",
         "title": "Histogram: Distribution of Exam Scores"
@@ -246,11 +405,6 @@
       "id": "stat-013",
       "bucket_key": "images/mathematics/ap-statistics/side-by-side-boxplots.svg",
       "category": "statistics",
-      "concept_slug": "comparisons-of-distributions",
-      "location": "content_html",
-      "problem_index": null,
-      "description": "Side-by-side horizontal box plots comparing test scores for Class A and Class B, showing differences in center and spread",
-      "alt_text": "Two horizontal box plots stacked vertically: Class A centered around 72 with smaller spread, Class B centered around 68 with larger spread and an outlier at 95",
       "params": {
         "type": "boxplot",
         "datasets": [
@@ -269,7 +423,9 @@
             "median": 68,
             "q3": 78,
             "max": 90,
-            "outliers": [95]
+            "outliers": [
+              95
+            ]
           }
         ],
         "annotate": false,
@@ -281,16 +437,17 @@
       "id": "stat-014",
       "bucket_key": "images/mathematics/ap-statistics/venn-union-events.svg",
       "category": "statistics",
-      "concept_slug": "independent-events-unions",
-      "location": "content_html",
-      "problem_index": null,
-      "description": "Venn diagram showing two overlapping events A and B with all regions labeled to illustrate the Addition Rule for unions",
-      "alt_text": "Two overlapping circles labeled A and B inside a rectangle U, with P(A only), P(A and B), and P(B only) labeled in each region",
       "params": {
         "type": "venn",
         "sets": [
-          {"label": "A", "value": "P(A only)"},
-          {"label": "B", "value": "P(B only)"}
+          {
+            "label": "A",
+            "value": "P(A only)"
+          },
+          {
+            "label": "B",
+            "value": "P(B only)"
+          }
         ],
         "intersection": "P(A and B)",
         "show_universal": true,
@@ -301,15 +458,20 @@
       "id": "stat-015",
       "bucket_key": "images/mathematics/ap-statistics/probability-distribution-histogram.svg",
       "category": "statistics",
-      "concept_slug": "intro-random-variables-probability-distributions",
-      "location": "content_html",
-      "problem_index": null,
-      "description": "Probability distribution histogram for a discrete random variable X representing the number of heads in 3 coin flips",
-      "alt_text": "Bar chart showing probabilities: P(X=0) equals 0.125, P(X=1) equals 0.375, P(X=2) equals 0.375, P(X=3) equals 0.125",
       "params": {
         "type": "histogram",
-        "categories": ["0", "1", "2", "3"],
-        "frequencies": [0.125, 0.375, 0.375, 0.125],
+        "categories": [
+          "0",
+          "1",
+          "2",
+          "3"
+        ],
+        "frequencies": [
+          0.125,
+          0.375,
+          0.375,
+          0.125
+        ],
         "x_label": "X = Number of Heads",
         "y_label": "Probability P(X = k)",
         "title": "Probability Distribution: 3 Coin Flips"
@@ -319,16 +481,14 @@
       "id": "stat-016",
       "bucket_key": "images/mathematics/ap-statistics/normal-mean-std-annotated.svg",
       "category": "statistics",
-      "concept_slug": "parameters-of-random-variables",
-      "location": "content_html",
-      "problem_index": null,
-      "description": "Normal distribution curve with the mean marked at center and standard deviation intervals labeled, illustrating parameters of a random variable",
-      "alt_text": "Bell curve centered at mu equals 70 with sigma equals 8, vertical lines at mu minus sigma (62) and mu plus sigma (78) marking the central 68 percent region",
       "params": {
         "type": "normal_curve",
         "mu": 70,
         "sigma": 8,
-        "shade_between": [62, 78],
+        "shade_between": [
+          62,
+          78
+        ],
         "title": "Parameters: Mean ($\\mu = 70$) and Std Dev ($\\sigma = 8$)"
       }
     },
@@ -336,16 +496,14 @@
       "id": "stat-017",
       "bucket_key": "images/mathematics/ap-statistics/sampling-dist-p-hat.svg",
       "category": "statistics",
-      "concept_slug": "sampling-distributions-for-sample-proportions",
-      "location": "content_html",
-      "problem_index": null,
-      "description": "Normal approximation of the sampling distribution of p-hat centered at p=0.6 with standard error labeled",
-      "alt_text": "Bell curve centered at 0.6 representing the sampling distribution of p-hat with n equals 100 and standard error 0.049",
       "params": {
         "type": "normal_curve",
         "mu": 0.6,
         "sigma": 0.049,
-        "shade_between": [0.502, 0.698],
+        "shade_between": [
+          0.502,
+          0.698
+        ],
         "title": "Sampling Distribution of $\\hat{p}$ ($n = 100$, $p = 0.6$)"
       }
     },
@@ -353,17 +511,16 @@
       "id": "stat-018",
       "bucket_key": "images/mathematics/ap-statistics/p-value-right-tail.svg",
       "category": "statistics",
-      "concept_slug": "p-values",
-      "location": "content_html",
-      "problem_index": null,
-      "description": "Standard normal curve with the right tail shaded beyond z=1.8 to illustrate a one-sided p-value",
-      "alt_text": "Standard normal bell curve with the area to the right of z equals 1.8 shaded in red, representing the p-value of 0.036",
       "params": {
         "type": "normal_curve",
         "mu": 0,
         "sigma": 1,
         "shade_right": 1.8,
-        "z_scores": [-1.8, 0, 1.8],
+        "z_scores": [
+          -1.8,
+          0,
+          1.8
+        ],
         "title": "P-Value: Right-Tailed Test ($z = 1.8$, $p = 0.036$)"
       }
     },
@@ -371,11 +528,6 @@
       "id": "stat-019",
       "bucket_key": "images/mathematics/ap-statistics/type-i-type-ii-errors.svg",
       "category": "statistics",
-      "concept_slug": "potential-errors-when-performing-tests",
-      "location": "content_html",
-      "problem_index": null,
-      "description": "Two overlapping normal curves showing the null and alternative distributions with Type I (alpha) and Type II (beta) error regions shaded",
-      "alt_text": "Two bell curves: the null distribution centered at 0 with right tail shaded as alpha (Type I error), and the alternative distribution centered at 2 with left tail shaded as beta (Type II error)",
       "params": {
         "type": "normal_curve",
         "mu": 0,
@@ -388,11 +540,6 @@
       "id": "stat-020",
       "bucket_key": "images/mathematics/ap-statistics/sampling-dist-x-bar.svg",
       "category": "statistics",
-      "concept_slug": "sampling-distributions-for-sample-means",
-      "location": "content_html",
-      "problem_index": null,
-      "description": "Sampling distribution of the sample mean x-bar with population mean 50 and standard error labeled for n=25",
-      "alt_text": "Bell curve centered at mu equals 50 representing the sampling distribution of x-bar with n equals 25 and standard error 2",
       "params": {
         "type": "sampling_distribution",
         "pop_mu": 50,
@@ -405,24 +552,87 @@
       "id": "stat-021",
       "bucket_key": "images/mathematics/ap-statistics/correlation-strength.svg",
       "category": "statistics",
-      "concept_slug": "correlation",
-      "location": "content_html",
-      "problem_index": null,
-      "description": "Scatter plot showing a moderate positive linear relationship with r=0.72",
-      "alt_text": "Scatter plot with points showing a moderate upward trend with noticeable spread, r equals 0.72",
       "params": {
         "type": "scatter_regression",
         "points": [
-          {"x": 1, "y": 15}, {"x": 2, "y": 22}, {"x": 3, "y": 18},
-          {"x": 4, "y": 30}, {"x": 5, "y": 28}, {"x": 6, "y": 35},
-          {"x": 7, "y": 32}, {"x": 8, "y": 40}, {"x": 9, "y": 38},
-          {"x": 10, "y": 45}, {"x": 11, "y": 42}, {"x": 12, "y": 50},
-          {"x": 3, "y": 25}, {"x": 5, "y": 22}, {"x": 7, "y": 38},
-          {"x": 9, "y": 35}, {"x": 11, "y": 48}
+          {
+            "x": 1,
+            "y": 15
+          },
+          {
+            "x": 2,
+            "y": 22
+          },
+          {
+            "x": 3,
+            "y": 18
+          },
+          {
+            "x": 4,
+            "y": 30
+          },
+          {
+            "x": 5,
+            "y": 28
+          },
+          {
+            "x": 6,
+            "y": 35
+          },
+          {
+            "x": 7,
+            "y": 32
+          },
+          {
+            "x": 8,
+            "y": 40
+          },
+          {
+            "x": 9,
+            "y": 38
+          },
+          {
+            "x": 10,
+            "y": 45
+          },
+          {
+            "x": 11,
+            "y": 42
+          },
+          {
+            "x": 12,
+            "y": 50
+          },
+          {
+            "x": 3,
+            "y": 25
+          },
+          {
+            "x": 5,
+            "y": 22
+          },
+          {
+            "x": 7,
+            "y": 38
+          },
+          {
+            "x": 9,
+            "y": 35
+          },
+          {
+            "x": 11,
+            "y": 48
+          }
         ],
-        "regression_line": {"slope": 3.1, "intercept": 12.5},
+        "regression_line": {
+          "slope": 3.1,
+          "intercept": 12.5
+        },
         "r_value": 0.72,
-        "labels": {"x": "Hours of Study per Week", "y": "Quiz Score"},
+        "labels": {
+          "x": "Hours of Study per Week",
+          "y": "Quiz Score"
+        },
         "title": "Correlation: $r = 0.72$ (Moderate Positive)"
       }
     },
@@ -430,22 +640,59 @@
       "id": "stat-022",
       "bucket_key": "images/mathematics/ap-statistics/regression-line-predictions.svg",
       "category": "statistics",
-      "concept_slug": "linear-regression-models",
-      "location": "content_html",
-      "problem_index": null,
-      "description": "Scatter plot with regression line showing a prediction: given x=6, the predicted y-hat is marked on the line with a dashed reference",
-      "alt_text": "Scatter plot with regression line and dashed lines showing how to read a predicted value: at x equals 6, y-hat equals approximately 34",
       "params": {
         "type": "scatter_regression",
         "points": [
-          {"x": 1, "y": 10}, {"x": 2, "y": 15}, {"x": 3, "y": 18},
-          {"x": 4, "y": 22}, {"x": 5, "y": 28}, {"x": 6, "y": 35},
-          {"x": 7, "y": 33}, {"x": 8, "y": 40}, {"x": 9, "y": 42},
-          {"x": 10, "y": 48}
+          {
+            "x": 1,
+            "y": 10
+          },
+          {
+            "x": 2,
+            "y": 15
+          },
+          {
+            "x": 3,
+            "y": 18
+          },
+          {
+            "x": 4,
+            "y": 22
+          },
+          {
+            "x": 5,
+            "y": 28
+          },
+          {
+            "x": 6,
+            "y": 35
+          },
+          {
+            "x": 7,
+            "y": 33
+          },
+          {
+            "x": 8,
+            "y": 40
+          },
+          {
+            "x": 9,
+            "y": 42
+          },
+          {
+            "x": 10,
+            "y": 48
+          }
         ],
-        "regression_line": {"slope": 4.2, "intercept": 6.5},
+        "regression_line": {
+          "slope": 4.2,
+          "intercept": 6.5
+        },
         "r_value": 0.98,
-        "labels": {"x": "Fertilizer (oz)", "y": "Plant Height (cm)"},
+        "labels": {
+          "x": "Fertilizer (oz)",
+          "y": "Plant Height (cm)"
+        },
         "title": "Linear Regression: Predicting Plant Height"
       }
     },
@@ -453,21 +700,51 @@
       "id": "stat-023",
       "bucket_key": "images/mathematics/ap-statistics/lsrl-residual-segments.svg",
       "category": "statistics",
-      "concept_slug": "least-squares-regression",
-      "location": "content_html",
-      "problem_index": null,
-      "description": "Scatter plot with regression line and vertical segments drawn from each data point to the line, illustrating residuals that LSRL minimizes",
-      "alt_text": "Scatter plot with a regression line and red vertical line segments connecting each data point to the line, showing the residual distances",
       "params": {
         "type": "scatter_regression",
         "points": [
-          {"x": 1, "y": 12}, {"x": 2, "y": 18}, {"x": 3, "y": 15},
-          {"x": 4, "y": 25}, {"x": 5, "y": 23}, {"x": 6, "y": 30},
-          {"x": 7, "y": 28}, {"x": 8, "y": 36}
+          {
+            "x": 1,
+            "y": 12
+          },
+          {
+            "x": 2,
+            "y": 18
+          },
+          {
+            "x": 3,
+            "y": 15
+          },
+          {
+            "x": 4,
+            "y": 25
+          },
+          {
+            "x": 5,
+            "y": 23
+          },
+          {
+            "x": 6,
+            "y": 30
+          },
+          {
+            "x": 7,
+            "y": 28
+          },
+          {
+            "x": 8,
+            "y": 36
+          }
         ],
-        "regression_line": {"slope": 3.4, "intercept": 8.0},
+        "regression_line": {
+          "slope": 3.4,
+          "intercept": 8.0
+        },
         "r_value": 0.96,
-        "labels": {"x": "x", "y": "y"},
+        "labels": {
+          "x": "x",
+          "y": "y"
+        },
         "title": "Least-Squares Regression: Minimizing Residuals"
       }
     },
@@ -475,16 +752,14 @@
       "id": "stat-024",
       "bucket_key": "images/mathematics/ap-statistics/sampling-dist-diff-proportions.svg",
       "category": "statistics",
-      "concept_slug": "sampling-distributions-difference-sample-proportions",
-      "location": "content_html",
-      "problem_index": null,
-      "description": "Normal curve for the sampling distribution of the difference in sample proportions p-hat-1 minus p-hat-2, centered at 0 under the null hypothesis",
-      "alt_text": "Bell curve centered at 0 representing the sampling distribution of p-hat-1 minus p-hat-2 under H-naught, with standard error labeled",
       "params": {
         "type": "normal_curve",
         "mu": 0,
         "sigma": 0.062,
-        "shade_between": [-0.124, 0.124],
+        "shade_between": [
+          -0.124,
+          0.124
+        ],
         "title": "Sampling Dist. of $\\hat{p}_1 - \\hat{p}_2$ (Under $H_0$)"
       }
     },
@@ -492,33 +767,38 @@
       "id": "stat-025",
       "bucket_key": "images/mathematics/ap-statistics/sampling-dist-diff-means.svg",
       "category": "statistics",
-      "concept_slug": "sampling-distributions-difference-two-means",
-      "location": "content_html",
-      "problem_index": null,
-      "description": "Normal curve for the sampling distribution of the difference in sample means x-bar-1 minus x-bar-2, centered at 0 under the null hypothesis",
-      "alt_text": "Bell curve centered at 0 representing the sampling distribution of x-bar-1 minus x-bar-2 under H-naught",
       "params": {
         "type": "normal_curve",
         "mu": 0,
         "sigma": 2.5,
-        "shade_between": [-5, 5],
+        "shade_between": [
+          -5,
+          5
+        ],
         "title": "Sampling Dist. of $\\bar{x}_1 - \\bar{x}_2$ (Under $H_0$)"
       }
     },
-
     {
       "id": "stat-026",
       "bucket_key": "images/mathematics/ap-statistics/prob-histogram-test-scores.svg",
       "category": "statistics",
-      "concept_slug": "representing-quantitative-variable-graphs",
-      "location": "question_html",
-      "problem_index": 0,
-      "description": "Histogram of test scores with bins 50-59 (3), 60-69 (7), 70-79 (12), 80-89 (10), 90-99 (8)",
-      "alt_text": "Histogram showing test score frequencies: 50-59 has 3, 60-69 has 7, 70-79 has 12, 80-89 has 10, 90-99 has 8",
       "params": {
         "type": "histogram",
-        "bins": [50, 60, 70, 80, 90, 100],
-        "frequencies": [3, 7, 12, 10, 8],
+        "bins": [
+          50,
+          60,
+          70,
+          80,
+          90,
+          100
+        ],
+        "frequencies": [
+          3,
+          7,
+          12,
+          10,
+          8
+        ],
         "x_label": "Test Score",
         "y_label": "Frequency",
         "title": "Test Score Distribution"
@@ -528,14 +808,30 @@
       "id": "stat-027",
       "bucket_key": "images/mathematics/ap-statistics/prob-dotplot-pets.svg",
       "category": "statistics",
-      "concept_slug": "representing-quantitative-variable-graphs",
-      "location": "question_html",
-      "problem_index": 3,
-      "description": "Dotplot of number of pets owned by 20 students: 0 pets (4), 1 pet (7), 2 pets (5), 3 pets (3), 4 pets (1)",
-      "alt_text": "Dotplot showing dots stacked at each value: four dots at 0, seven at 1, five at 2, three at 3, one at 4",
       "params": {
         "type": "dotplot",
-        "values": [0,0,0,0, 1,1,1,1,1,1,1, 2,2,2,2,2, 3,3,3, 4],
+        "values": [
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          2,
+          2,
+          2,
+          2,
+          2,
+          3,
+          3,
+          3,
+          4
+        ],
         "x_label": "Number of Pets",
         "title": "Pets Owned by 20 Students"
       }
@@ -544,16 +840,24 @@
       "id": "stat-028",
       "bucket_key": "images/mathematics/ap-statistics/prob-histogram-temperatures.svg",
       "category": "statistics",
-      "concept_slug": "representing-quantitative-variable-graphs",
-      "location": "question_html",
-      "problem_index": 4,
-      "description": "Histogram of daily high temperatures in June: 70-74 (4), 75-79 (8), 80-84 (10), 85-89 (6), 90-94 (2)",
-      "alt_text": "Histogram of daily temperatures with bins from 70 to 94, peaking at 80-84 with frequency 10",
       "params": {
         "type": "histogram",
-        "bins": [70, 75, 80, 85, 90, 95],
-        "frequencies": [4, 8, 10, 6, 2],
-        "x_label": "Daily High Temperature (\u00b0F)",
+        "bins": [
+          70,
+          75,
+          80,
+          85,
+          90,
+          95
+        ],
+        "frequencies": [
+          4,
+          8,
+          10,
+          6,
+          2
+        ],
+        "x_label": "Daily High Temperature (°F)",
         "y_label": "Frequency",
         "title": "Daily High Temperatures in June"
       }
@@ -562,15 +866,23 @@
       "id": "stat-029",
       "bucket_key": "images/mathematics/ap-statistics/prob-histogram-commute.svg",
       "category": "statistics",
-      "concept_slug": "representing-quantitative-variable-graphs",
-      "location": "question_html",
-      "problem_index": 7,
-      "description": "Relative frequency histogram of commute times for 50 employees",
-      "alt_text": "Histogram showing relative frequencies: 0-9 min (0.10), 10-19 (0.24), 20-29 (0.32), 30-39 (0.20), 40-49 (0.14)",
       "params": {
         "type": "histogram",
-        "bins": [0, 10, 20, 30, 40, 50],
-        "frequencies": [0.10, 0.24, 0.32, 0.20, 0.14],
+        "bins": [
+          0,
+          10,
+          20,
+          30,
+          40,
+          50
+        ],
+        "frequencies": [
+          0.1,
+          0.24,
+          0.32,
+          0.2,
+          0.14
+        ],
         "x_label": "Commute Time (minutes)",
         "y_label": "Relative Frequency",
         "title": "Commute Times for 50 Employees"
@@ -580,15 +892,31 @@
       "id": "stat-030",
       "bucket_key": "images/mathematics/ap-statistics/prob-histogram-salaries-skewed.svg",
       "category": "statistics",
-      "concept_slug": "describing-distribution-quantitative-variable",
-      "location": "question_html",
-      "problem_index": 0,
-      "description": "Right-skewed histogram of employee salaries peaking near $40K-$50K with tail to $200K",
-      "alt_text": "Histogram of salaries with a large peak near 40-50 thousand dollars and a long tail extending toward 200 thousand",
       "params": {
         "type": "histogram",
-        "bins": [20, 40, 60, 80, 100, 120, 140, 160, 180, 200],
-        "frequencies": [8, 35, 18, 10, 5, 3, 2, 1, 1],
+        "bins": [
+          20,
+          40,
+          60,
+          80,
+          100,
+          120,
+          140,
+          160,
+          180,
+          200
+        ],
+        "frequencies": [
+          8,
+          35,
+          18,
+          10,
+          5,
+          3,
+          2,
+          1,
+          1
+        ],
         "x_label": "Salary (thousands $)",
         "y_label": "Frequency",
         "title": "Employee Salaries"
@@ -598,14 +926,26 @@
       "id": "stat-031",
       "bucket_key": "images/mathematics/ap-statistics/prob-dotplot-study-bimodal.svg",
       "category": "statistics",
-      "concept_slug": "describing-distribution-quantitative-variable",
-      "location": "question_html",
-      "problem_index": 1,
-      "description": "Bimodal dotplot of study hours with clusters at 2 hours and 7 hours",
-      "alt_text": "Dotplot showing two clusters: one group of dots near 2 hours and another near 7 hours with a gap in between",
       "params": {
         "type": "dotplot",
-        "values": [1, 1.5, 2, 2, 2, 2.5, 2.5, 3, 6, 6.5, 7, 7, 7, 7.5, 7.5, 8],
+        "values": [
+          1,
+          1.5,
+          2,
+          2,
+          2,
+          2.5,
+          2.5,
+          3,
+          6,
+          6.5,
+          7,
+          7,
+          7,
+          7.5,
+          7.5,
+          8
+        ],
         "x_label": "Hours Studied",
         "title": "Study Hours (Bimodal Distribution)"
       }
@@ -614,15 +954,33 @@
       "id": "stat-032",
       "bucket_key": "images/mathematics/ap-statistics/prob-histogram-test-symmetric.svg",
       "category": "statistics",
-      "concept_slug": "describing-distribution-quantitative-variable",
-      "location": "question_html",
-      "problem_index": 8,
-      "description": "Approximately symmetric histogram of standardized math test scores for 200 students, peak near 500",
-      "alt_text": "Histogram of test scores from 300 to 800, roughly symmetric and bell-shaped with peak near 500",
       "params": {
         "type": "histogram",
-        "bins": [300, 350, 400, 450, 500, 550, 600, 650, 700, 750, 800],
-        "frequencies": [4, 10, 22, 38, 45, 38, 22, 12, 6, 3],
+        "bins": [
+          300,
+          350,
+          400,
+          450,
+          500,
+          550,
+          600,
+          650,
+          700,
+          750,
+          800
+        ],
+        "frequencies": [
+          4,
+          10,
+          22,
+          38,
+          45,
+          38,
+          22,
+          12,
+          6,
+          3
+        ],
         "x_label": "Test Score",
         "y_label": "Number of Students",
         "title": "Standardized Math Test Scores (n = 200)"
@@ -632,11 +990,6 @@
       "id": "stat-033",
       "bucket_key": "images/mathematics/ap-statistics/prob-boxplot-basketball-outlier.svg",
       "category": "statistics",
-      "concept_slug": "graphical-representations-summary-statistics",
-      "location": "question_html",
-      "problem_index": 8,
-      "description": "Box plot of basketball player points per game with outlier at 45",
-      "alt_text": "Horizontal box plot showing min 8, Q1 15, median 19, Q3 25, max 28 with an outlier dot at 45",
       "params": {
         "type": "boxplot",
         "datasets": [
@@ -647,7 +1000,9 @@
             "median": 19,
             "q3": 25,
             "max": 28,
-            "outliers": [45]
+            "outliers": [
+              45
+            ]
           }
         ],
         "annotate": true,
@@ -659,11 +1014,6 @@
       "id": "stat-034",
       "bucket_key": "images/mathematics/ap-statistics/prob-boxplots-rainfall.svg",
       "category": "statistics",
-      "concept_slug": "graphical-representations-summary-statistics",
-      "location": "question_html",
-      "problem_index": 9,
-      "description": "Side-by-side box plots comparing annual rainfall for City A and City B",
-      "alt_text": "Two horizontal box plots: City A from 20 to 50 inches, City B from 10 to 70 inches with outlier at 70",
       "params": {
         "type": "boxplot",
         "datasets": [
@@ -682,7 +1032,9 @@
             "median": 40,
             "q3": 55,
             "max": 65,
-            "outliers": [70]
+            "outliers": [
+              70
+            ]
           }
         ],
         "annotate": false,
@@ -694,11 +1046,6 @@
       "id": "stat-035",
       "bucket_key": "images/mathematics/ap-statistics/prob-boxplots-temperatures-3city.svg",
       "category": "statistics",
-      "concept_slug": "comparisons-of-distributions",
-      "location": "question_html",
-      "problem_index": 1,
-      "description": "Parallel box plots of daily high temperatures for three cities in July",
-      "alt_text": "Three horizontal box plots showing City X median 88 IQR 4, City Y median 85 IQR 12, City Z median 90 IQR 7",
       "params": {
         "type": "boxplot",
         "datasets": [
@@ -728,7 +1075,7 @@
           }
         ],
         "annotate": false,
-        "x_label": "Daily High Temperature (\u00b0F)",
+        "x_label": "Daily High Temperature (°F)",
         "title": "July Temperatures: Three Cities"
       }
     },
@@ -736,11 +1083,6 @@
       "id": "stat-036",
       "bucket_key": "images/mathematics/ap-statistics/prob-boxplots-step-counts.svg",
       "category": "statistics",
-      "concept_slug": "comparisons-of-distributions",
-      "location": "question_html",
-      "problem_index": 8,
-      "description": "Parallel box plots of daily step counts for three fitness groups with outlier in Group B",
-      "alt_text": "Three horizontal box plots: Group A (3K-14K), Group B (5K-16K with outlier at 22K), Group C (2K-9K)",
       "params": {
         "type": "boxplot",
         "datasets": [
@@ -759,7 +1101,9 @@
             "median": 9000,
             "q3": 11500,
             "max": 16000,
-            "outliers": [22000]
+            "outliers": [
+              22000
+            ]
           },
           {
             "label": "Group C",
@@ -779,28 +1123,139 @@
       "id": "stat-037",
       "bucket_key": "images/mathematics/ap-statistics/prob-scatter-birds-positive.svg",
       "category": "statistics",
-      "concept_slug": "graphical-representations-two-quantitative-variables",
-      "location": "question_html",
-      "problem_index": 0,
-      "description": "Scatterplot of bird height vs wingspan showing strong positive linear association",
-      "alt_text": "Scatterplot with points rising tightly from left to right showing strong positive linear association between height and wingspan",
       "params": {
         "type": "scatter_regression",
         "points": [
-          {"x": 12, "y": 24}, {"x": 13, "y": 27}, {"x": 14, "y": 28},
-          {"x": 14.5, "y": 30}, {"x": 15, "y": 31}, {"x": 15.5, "y": 32},
-          {"x": 16, "y": 33}, {"x": 16, "y": 34}, {"x": 16.5, "y": 35},
-          {"x": 17, "y": 36}, {"x": 17.5, "y": 37}, {"x": 18, "y": 38},
-          {"x": 18, "y": 37}, {"x": 18.5, "y": 39}, {"x": 19, "y": 40},
-          {"x": 19.5, "y": 41}, {"x": 20, "y": 42}, {"x": 20, "y": 43},
-          {"x": 20.5, "y": 44}, {"x": 21, "y": 45}, {"x": 21.5, "y": 46},
-          {"x": 22, "y": 47}, {"x": 12.5, "y": 25}, {"x": 13.5, "y": 28},
-          {"x": 15, "y": 32}, {"x": 16.5, "y": 34}, {"x": 17, "y": 35},
-          {"x": 19, "y": 41}, {"x": 20.5, "y": 43}, {"x": 21, "y": 44}
+          {
+            "x": 12,
+            "y": 24
+          },
+          {
+            "x": 13,
+            "y": 27
+          },
+          {
+            "x": 14,
+            "y": 28
+          },
+          {
+            "x": 14.5,
+            "y": 30
+          },
+          {
+            "x": 15,
+            "y": 31
+          },
+          {
+            "x": 15.5,
+            "y": 32
+          },
+          {
+            "x": 16,
+            "y": 33
+          },
+          {
+            "x": 16,
+            "y": 34
+          },
+          {
+            "x": 16.5,
+            "y": 35
+          },
+          {
+            "x": 17,
+            "y": 36
+          },
+          {
+            "x": 17.5,
+            "y": 37
+          },
+          {
+            "x": 18,
+            "y": 38
+          },
+          {
+            "x": 18,
+            "y": 37
+          },
+          {
+            "x": 18.5,
+            "y": 39
+          },
+          {
+            "x": 19,
+            "y": 40
+          },
+          {
+            "x": 19.5,
+            "y": 41
+          },
+          {
+            "x": 20,
+            "y": 42
+          },
+          {
+            "x": 20,
+            "y": 43
+          },
+          {
+            "x": 20.5,
+            "y": 44
+          },
+          {
+            "x": 21,
+            "y": 45
+          },
+          {
+            "x": 21.5,
+            "y": 46
+          },
+          {
+            "x": 22,
+            "y": 47
+          },
+          {
+            "x": 12.5,
+            "y": 25
+          },
+          {
+            "x": 13.5,
+            "y": 28
+          },
+          {
+            "x": 15,
+            "y": 32
+          },
+          {
+            "x": 16.5,
+            "y": 34
+          },
+          {
+            "x": 17,
+            "y": 35
+          },
+          {
+            "x": 19,
+            "y": 41
+          },
+          {
+            "x": 20.5,
+            "y": 43
+          },
+          {
+            "x": 21,
+            "y": 44
+          }
         ],
-        "regression_line": {"slope": 2.1, "intercept": -1.0},
+        "regression_line": {
+          "slope": 2.1,
+          "intercept": -1.0
+        },
         "r_value": 0.98,
-        "labels": {"x": "Height (cm)", "y": "Wingspan (cm)"},
+        "labels": {
+          "x": "Height (cm)",
+          "y": "Wingspan (cm)"
+        },
         "title": "Bird Height vs. Wingspan"
       }
     },
@@ -808,30 +1263,151 @@
       "id": "stat-038",
       "bucket_key": "images/mathematics/ap-statistics/prob-scatter-weight-mpg-negative.svg",
       "category": "statistics",
-      "concept_slug": "graphical-representations-two-quantitative-variables",
-      "location": "question_html",
-      "problem_index": 4,
-      "description": "Scatterplot of car weight vs fuel efficiency showing negative linear trend with one outlier above",
-      "alt_text": "Scatterplot showing downward trend from left to right with one point far above the rest, representing a car with unusually high fuel efficiency",
       "params": {
         "type": "scatter_regression",
         "points": [
-          {"x": 2200, "y": 35}, {"x": 2400, "y": 33}, {"x": 2600, "y": 31},
-          {"x": 2800, "y": 29}, {"x": 3000, "y": 27}, {"x": 3000, "y": 28},
-          {"x": 3200, "y": 26}, {"x": 3200, "y": 25}, {"x": 3400, "y": 24},
-          {"x": 3400, "y": 23}, {"x": 3600, "y": 22}, {"x": 3600, "y": 21},
-          {"x": 3800, "y": 20}, {"x": 3800, "y": 19}, {"x": 4000, "y": 18},
-          {"x": 4000, "y": 17}, {"x": 4200, "y": 16}, {"x": 4200, "y": 15},
-          {"x": 4400, "y": 14}, {"x": 4600, "y": 13}, {"x": 4600, "y": 12},
-          {"x": 2500, "y": 32}, {"x": 2700, "y": 30}, {"x": 2900, "y": 28},
-          {"x": 3100, "y": 26}, {"x": 3300, "y": 24}, {"x": 3500, "y": 22},
-          {"x": 3700, "y": 20}, {"x": 3900, "y": 18}, {"x": 4100, "y": 16},
-          {"x": 4300, "y": 15}, {"x": 4500, "y": 13},
-          {"x": 3500, "y": 38}
+          {
+            "x": 2200,
+            "y": 35
+          },
+          {
+            "x": 2400,
+            "y": 33
+          },
+          {
+            "x": 2600,
+            "y": 31
+          },
+          {
+            "x": 2800,
+            "y": 29
+          },
+          {
+            "x": 3000,
+            "y": 27
+          },
+          {
+            "x": 3000,
+            "y": 28
+          },
+          {
+            "x": 3200,
+            "y": 26
+          },
+          {
+            "x": 3200,
+            "y": 25
+          },
+          {
+            "x": 3400,
+            "y": 24
+          },
+          {
+            "x": 3400,
+            "y": 23
+          },
+          {
+            "x": 3600,
+            "y": 22
+          },
+          {
+            "x": 3600,
+            "y": 21
+          },
+          {
+            "x": 3800,
+            "y": 20
+          },
+          {
+            "x": 3800,
+            "y": 19
+          },
+          {
+            "x": 4000,
+            "y": 18
+          },
+          {
+            "x": 4000,
+            "y": 17
+          },
+          {
+            "x": 4200,
+            "y": 16
+          },
+          {
+            "x": 4200,
+            "y": 15
+          },
+          {
+            "x": 4400,
+            "y": 14
+          },
+          {
+            "x": 4600,
+            "y": 13
+          },
+          {
+            "x": 4600,
+            "y": 12
+          },
+          {
+            "x": 2500,
+            "y": 32
+          },
+          {
+            "x": 2700,
+            "y": 30
+          },
+          {
+            "x": 2900,
+            "y": 28
+          },
+          {
+            "x": 3100,
+            "y": 26
+          },
+          {
+            "x": 3300,
+            "y": 24
+          },
+          {
+            "x": 3500,
+            "y": 22
+          },
+          {
+            "x": 3700,
+            "y": 20
+          },
+          {
+            "x": 3900,
+            "y": 18
+          },
+          {
+            "x": 4100,
+            "y": 16
+          },
+          {
+            "x": 4300,
+            "y": 15
+          },
+          {
+            "x": 4500,
+            "y": 13
+          },
+          {
+            "x": 3500,
+            "y": 38
+          }
         ],
-        "regression_line": {"slope": -0.009, "intercept": 54.5},
+        "regression_line": {
+          "slope": -0.009,
+          "intercept": 54.5
+        },
         "r_value": -0.95,
-        "labels": {"x": "Weight (pounds)", "y": "Fuel Efficiency (mpg)"},
+        "labels": {
+          "x": "Weight (pounds)",
+          "y": "Fuel Efficiency (mpg)"
+        },
         "title": "Car Weight vs. Fuel Efficiency"
       }
     },
@@ -839,36 +1415,219 @@
       "id": "stat-039",
       "bucket_key": "images/mathematics/ap-statistics/prob-scatter-calories-bmi.svg",
       "category": "statistics",
-      "concept_slug": "graphical-representations-two-quantitative-variables",
-      "location": "question_html",
-      "problem_index": 8,
-      "description": "Scatterplot of daily caloric intake vs BMI showing moderate positive association with two clusters",
-      "alt_text": "Scatterplot showing two clusters of points: one around 1800-2200 calories with BMI 20-25, another around 2800-3500 calories with BMI 28-35",
       "params": {
         "type": "scatter_regression",
         "points": [
-          {"x": 1800, "y": 21}, {"x": 1850, "y": 22}, {"x": 1900, "y": 20},
-          {"x": 1950, "y": 23}, {"x": 2000, "y": 22}, {"x": 2000, "y": 24},
-          {"x": 2050, "y": 21}, {"x": 2100, "y": 24}, {"x": 2100, "y": 23},
-          {"x": 2150, "y": 25}, {"x": 2200, "y": 24}, {"x": 2200, "y": 22},
-          {"x": 1900, "y": 23}, {"x": 1950, "y": 21}, {"x": 2050, "y": 25},
-          {"x": 2100, "y": 22}, {"x": 2150, "y": 24}, {"x": 2200, "y": 25},
-          {"x": 1850, "y": 20}, {"x": 2000, "y": 23},
-          {"x": 2800, "y": 28}, {"x": 2900, "y": 29}, {"x": 2950, "y": 30},
-          {"x": 3000, "y": 31}, {"x": 3000, "y": 29}, {"x": 3100, "y": 32},
-          {"x": 3100, "y": 30}, {"x": 3200, "y": 33}, {"x": 3200, "y": 31},
-          {"x": 3300, "y": 34}, {"x": 3300, "y": 32}, {"x": 3400, "y": 33},
-          {"x": 3400, "y": 35}, {"x": 3500, "y": 34}, {"x": 3500, "y": 35},
-          {"x": 2850, "y": 28}, {"x": 2950, "y": 30}, {"x": 3050, "y": 31},
-          {"x": 3150, "y": 32}, {"x": 3250, "y": 33},
-          {"x": 2500, "y": 26}, {"x": 2600, "y": 27}, {"x": 2400, "y": 25},
-          {"x": 2350, "y": 26}, {"x": 2700, "y": 28}, {"x": 2450, "y": 25},
-          {"x": 2550, "y": 27}, {"x": 2650, "y": 26}, {"x": 2300, "y": 24},
-          {"x": 2750, "y": 27}
+          {
+            "x": 1800,
+            "y": 21
+          },
+          {
+            "x": 1850,
+            "y": 22
+          },
+          {
+            "x": 1900,
+            "y": 20
+          },
+          {
+            "x": 1950,
+            "y": 23
+          },
+          {
+            "x": 2000,
+            "y": 22
+          },
+          {
+            "x": 2000,
+            "y": 24
+          },
+          {
+            "x": 2050,
+            "y": 21
+          },
+          {
+            "x": 2100,
+            "y": 24
+          },
+          {
+            "x": 2100,
+            "y": 23
+          },
+          {
+            "x": 2150,
+            "y": 25
+          },
+          {
+            "x": 2200,
+            "y": 24
+          },
+          {
+            "x": 2200,
+            "y": 22
+          },
+          {
+            "x": 1900,
+            "y": 23
+          },
+          {
+            "x": 1950,
+            "y": 21
+          },
+          {
+            "x": 2050,
+            "y": 25
+          },
+          {
+            "x": 2100,
+            "y": 22
+          },
+          {
+            "x": 2150,
+            "y": 24
+          },
+          {
+            "x": 2200,
+            "y": 25
+          },
+          {
+            "x": 1850,
+            "y": 20
+          },
+          {
+            "x": 2000,
+            "y": 23
+          },
+          {
+            "x": 2800,
+            "y": 28
+          },
+          {
+            "x": 2900,
+            "y": 29
+          },
+          {
+            "x": 2950,
+            "y": 30
+          },
+          {
+            "x": 3000,
+            "y": 31
+          },
+          {
+            "x": 3000,
+            "y": 29
+          },
+          {
+            "x": 3100,
+            "y": 32
+          },
+          {
+            "x": 3100,
+            "y": 30
+          },
+          {
+            "x": 3200,
+            "y": 33
+          },
+          {
+            "x": 3200,
+            "y": 31
+          },
+          {
+            "x": 3300,
+            "y": 34
+          },
+          {
+            "x": 3300,
+            "y": 32
+          },
+          {
+            "x": 3400,
+            "y": 33
+          },
+          {
+            "x": 3400,
+            "y": 35
+          },
+          {
+            "x": 3500,
+            "y": 34
+          },
+          {
+            "x": 3500,
+            "y": 35
+          },
+          {
+            "x": 2850,
+            "y": 28
+          },
+          {
+            "x": 2950,
+            "y": 30
+          },
+          {
+            "x": 3050,
+            "y": 31
+          },
+          {
+            "x": 3150,
+            "y": 32
+          },
+          {
+            "x": 3250,
+            "y": 33
+          },
+          {
+            "x": 2500,
+            "y": 26
+          },
+          {
+            "x": 2600,
+            "y": 27
+          },
+          {
+            "x": 2400,
+            "y": 25
+          },
+          {
+            "x": 2350,
+            "y": 26
+          },
+          {
+            "x": 2700,
+            "y": 28
+          },
+          {
+            "x": 2450,
+            "y": 25
+          },
+          {
+            "x": 2550,
+            "y": 27
+          },
+          {
+            "x": 2650,
+            "y": 26
+          },
+          {
+            "x": 2300,
+            "y": 24
+          },
+          {
+            "x": 2750,
+            "y": 27
+          }
         ],
-        "regression_line": {"slope": 0.008, "intercept": 6.5},
+        "regression_line": {
+          "slope": 0.008,
+          "intercept": 6.5
+        },
         "r_value": 0.92,
-        "labels": {"x": "Daily Caloric Intake", "y": "BMI"},
+        "labels": {
+          "x": "Daily Caloric Intake",
+          "y": "BMI"
+        },
         "title": "Caloric Intake vs. BMI (Two Clusters)"
       }
     },
@@ -876,31 +1635,155 @@
       "id": "stat-040",
       "bucket_key": "images/mathematics/ap-statistics/prob-scatter-distance-commute.svg",
       "category": "statistics",
-      "concept_slug": "graphical-representations-two-quantitative-variables",
-      "location": "question_html",
-      "problem_index": 9,
-      "description": "Scatterplot of distance from downtown vs commute time with two unusual points",
-      "alt_text": "Scatterplot showing positive linear trend with two outlier points: one close to downtown with long commute, one far from downtown with short commute",
       "params": {
         "type": "scatter_regression",
         "points": [
-          {"x": 2, "y": 10}, {"x": 3, "y": 14}, {"x": 4, "y": 16},
-          {"x": 5, "y": 18}, {"x": 6, "y": 22}, {"x": 7, "y": 24},
-          {"x": 8, "y": 26}, {"x": 9, "y": 28}, {"x": 10, "y": 30},
-          {"x": 11, "y": 32}, {"x": 12, "y": 34}, {"x": 13, "y": 35},
-          {"x": 14, "y": 38}, {"x": 15, "y": 40}, {"x": 16, "y": 42},
-          {"x": 17, "y": 44}, {"x": 18, "y": 45}, {"x": 19, "y": 48},
-          {"x": 20, "y": 50}, {"x": 3, "y": 12}, {"x": 5, "y": 20},
-          {"x": 7, "y": 25}, {"x": 9, "y": 27}, {"x": 11, "y": 33},
-          {"x": 13, "y": 36}, {"x": 15, "y": 41}, {"x": 17, "y": 43},
-          {"x": 19, "y": 47}, {"x": 4, "y": 15}, {"x": 8, "y": 27},
-          {"x": 12, "y": 33}, {"x": 16, "y": 43},
-          {"x": 1, "y": 45},
-          {"x": 22, "y": 15}
+          {
+            "x": 2,
+            "y": 10
+          },
+          {
+            "x": 3,
+            "y": 14
+          },
+          {
+            "x": 4,
+            "y": 16
+          },
+          {
+            "x": 5,
+            "y": 18
+          },
+          {
+            "x": 6,
+            "y": 22
+          },
+          {
+            "x": 7,
+            "y": 24
+          },
+          {
+            "x": 8,
+            "y": 26
+          },
+          {
+            "x": 9,
+            "y": 28
+          },
+          {
+            "x": 10,
+            "y": 30
+          },
+          {
+            "x": 11,
+            "y": 32
+          },
+          {
+            "x": 12,
+            "y": 34
+          },
+          {
+            "x": 13,
+            "y": 35
+          },
+          {
+            "x": 14,
+            "y": 38
+          },
+          {
+            "x": 15,
+            "y": 40
+          },
+          {
+            "x": 16,
+            "y": 42
+          },
+          {
+            "x": 17,
+            "y": 44
+          },
+          {
+            "x": 18,
+            "y": 45
+          },
+          {
+            "x": 19,
+            "y": 48
+          },
+          {
+            "x": 20,
+            "y": 50
+          },
+          {
+            "x": 3,
+            "y": 12
+          },
+          {
+            "x": 5,
+            "y": 20
+          },
+          {
+            "x": 7,
+            "y": 25
+          },
+          {
+            "x": 9,
+            "y": 27
+          },
+          {
+            "x": 11,
+            "y": 33
+          },
+          {
+            "x": 13,
+            "y": 36
+          },
+          {
+            "x": 15,
+            "y": 41
+          },
+          {
+            "x": 17,
+            "y": 43
+          },
+          {
+            "x": 19,
+            "y": 47
+          },
+          {
+            "x": 4,
+            "y": 15
+          },
+          {
+            "x": 8,
+            "y": 27
+          },
+          {
+            "x": 12,
+            "y": 33
+          },
+          {
+            "x": 16,
+            "y": 43
+          },
+          {
+            "x": 1,
+            "y": 45
+          },
+          {
+            "x": 22,
+            "y": 15
+          }
         ],
-        "regression_line": {"slope": 2.1, "intercept": 6.0},
+        "regression_line": {
+          "slope": 2.1,
+          "intercept": 6.0
+        },
         "r_value": 0.88,
-        "labels": {"x": "Distance from Downtown (miles)", "y": "Commute Time (min)"},
+        "labels": {
+          "x": "Distance from Downtown (miles)",
+          "y": "Commute Time (min)"
+        },
         "title": "Distance vs. Commute Time"
       }
     },
@@ -908,26 +1791,90 @@
       "id": "stat-041",
       "bucket_key": "images/mathematics/ap-statistics/prob-residual-u-shaped.svg",
       "category": "statistics",
-      "concept_slug": "residuals",
-      "location": "question_html",
-      "problem_index": 1,
-      "description": "Residual plot showing a clear U-shaped curved pattern indicating a non-linear relationship",
-      "alt_text": "Residual plot with points forming a U-shape: negative residuals at low and high x values, positive residuals in the middle",
       "params": {
         "type": "residual_plot",
         "points": [
-          {"x": 1, "residual": 4.2}, {"x": 2, "residual": 1.8},
-          {"x": 3, "residual": -0.5}, {"x": 4, "residual": -2.1},
-          {"x": 5, "residual": -3.0}, {"x": 6, "residual": -2.8},
-          {"x": 7, "residual": -1.5}, {"x": 8, "residual": 0.3},
-          {"x": 9, "residual": 2.5}, {"x": 10, "residual": 5.1},
-          {"x": 1.5, "residual": 3.5}, {"x": 2.5, "residual": 0.8},
-          {"x": 3.5, "residual": -1.2}, {"x": 4.5, "residual": -2.6},
-          {"x": 5.5, "residual": -3.2}, {"x": 6.5, "residual": -2.3},
-          {"x": 7.5, "residual": -0.6}, {"x": 8.5, "residual": 1.5},
-          {"x": 9.5, "residual": 3.8}
+          {
+            "x": 1,
+            "residual": 4.2
+          },
+          {
+            "x": 2,
+            "residual": 1.8
+          },
+          {
+            "x": 3,
+            "residual": -0.5
+          },
+          {
+            "x": 4,
+            "residual": -2.1
+          },
+          {
+            "x": 5,
+            "residual": -3.0
+          },
+          {
+            "x": 6,
+            "residual": -2.8
+          },
+          {
+            "x": 7,
+            "residual": -1.5
+          },
+          {
+            "x": 8,
+            "residual": 0.3
+          },
+          {
+            "x": 9,
+            "residual": 2.5
+          },
+          {
+            "x": 10,
+            "residual": 5.1
+          },
+          {
+            "x": 1.5,
+            "residual": 3.5
+          },
+          {
+            "x": 2.5,
+            "residual": 0.8
+          },
+          {
+            "x": 3.5,
+            "residual": -1.2
+          },
+          {
+            "x": 4.5,
+            "residual": -2.6
+          },
+          {
+            "x": 5.5,
+            "residual": -3.2
+          },
+          {
+            "x": 6.5,
+            "residual": -2.3
+          },
+          {
+            "x": 7.5,
+            "residual": -0.6
+          },
+          {
+            "x": 8.5,
+            "residual": 1.5
+          },
+          {
+            "x": 9.5,
+            "residual": 3.8
+          }
         ],
-        "labels": {"x": "x", "y": "Residual"},
+        "labels": {
+          "x": "x",
+          "y": "Residual"
+        },
         "title": "Residual Plot: U-Shaped Pattern (Non-Linear)"
       }
     },
@@ -935,21 +1882,34 @@
       "id": "stat-042",
       "bucket_key": "images/mathematics/ap-statistics/prob-residual-fertilizer.svg",
       "category": "statistics",
-      "concept_slug": "residuals",
-      "location": "question_html",
-      "problem_index": 8,
-      "description": "Residual plot for plant height vs fertilizer regression showing slight positive pattern",
-      "alt_text": "Residual plot with five points: residuals at x=2,4,6,8,10 showing values of 1.2, -0.6, 0.6, -0.2, 1.0",
       "params": {
         "type": "residual_plot",
         "points": [
-          {"x": 2, "residual": 1.2},
-          {"x": 4, "residual": -0.6},
-          {"x": 6, "residual": 0.6},
-          {"x": 8, "residual": -0.2},
-          {"x": 10, "residual": -1.0}
+          {
+            "x": 2,
+            "residual": 1.2
+          },
+          {
+            "x": 4,
+            "residual": -0.6
+          },
+          {
+            "x": 6,
+            "residual": 0.6
+          },
+          {
+            "x": 8,
+            "residual": -0.2
+          },
+          {
+            "x": 10,
+            "residual": -1.0
+          }
         ],
-        "labels": {"x": "Fertilizer (grams)", "y": "Residual (cm)"},
+        "labels": {
+          "x": "Fertilizer (grams)",
+          "y": "Residual (cm)"
+        },
         "title": "Residuals: Plant Height vs. Fertilizer"
       }
     },
@@ -957,22 +1917,62 @@
       "id": "stat-043",
       "bucket_key": "images/mathematics/ap-statistics/prob-residual-advertising-curved.svg",
       "category": "statistics",
-      "concept_slug": "residuals",
-      "location": "question_html",
-      "problem_index": 9,
-      "description": "Residual plot showing negative-positive-negative pattern indicating quadratic relationship",
-      "alt_text": "Residual plot with points negative at low x, positive in middle x, and negative at high x, forming an inverted-U shape",
       "params": {
         "type": "residual_plot",
         "points": [
-          {"x": 1, "residual": -3.5}, {"x": 2, "residual": -2.0},
-          {"x": 3, "residual": -0.5}, {"x": 4, "residual": 1.5},
-          {"x": 5, "residual": 2.8}, {"x": 6, "residual": 3.0},
-          {"x": 7, "residual": 2.5}, {"x": 8, "residual": 1.2},
-          {"x": 9, "residual": -1.0}, {"x": 10, "residual": -2.5},
-          {"x": 11, "residual": -4.0}, {"x": 12, "residual": -5.5}
+          {
+            "x": 1,
+            "residual": -3.5
+          },
+          {
+            "x": 2,
+            "residual": -2.0
+          },
+          {
+            "x": 3,
+            "residual": -0.5
+          },
+          {
+            "x": 4,
+            "residual": 1.5
+          },
+          {
+            "x": 5,
+            "residual": 2.8
+          },
+          {
+            "x": 6,
+            "residual": 3.0
+          },
+          {
+            "x": 7,
+            "residual": 2.5
+          },
+          {
+            "x": 8,
+            "residual": 1.2
+          },
+          {
+            "x": 9,
+            "residual": -1.0
+          },
+          {
+            "x": 10,
+            "residual": -2.5
+          },
+          {
+            "x": 11,
+            "residual": -4.0
+          },
+          {
+            "x": 12,
+            "residual": -5.5
+          }
         ],
-        "labels": {"x": "Advertising Spending ($K)", "y": "Residual ($K Revenue)"},
+        "labels": {
+          "x": "Advertising Spending ($K)",
+          "y": "Residual ($K Revenue)"
+        },
         "title": "Residuals: Advertising vs. Revenue (Curved Pattern)"
       }
     },
@@ -980,25 +1980,99 @@
       "id": "stat-044",
       "bucket_key": "images/mathematics/ap-statistics/prob-scatter-temperature-hotchocolate.svg",
       "category": "statistics",
-      "concept_slug": "residuals",
-      "location": "question_html",
-      "problem_index": 4,
-      "description": "Scatterplot of temperature vs hot chocolate sales showing strong negative linear relationship",
-      "alt_text": "Scatterplot showing clear downward trend: as temperature increases, hot chocolate sales decrease",
       "params": {
         "type": "scatter_regression",
         "points": [
-          {"x": 25, "y": 85}, {"x": 30, "y": 78}, {"x": 32, "y": 74},
-          {"x": 35, "y": 70}, {"x": 38, "y": 65}, {"x": 40, "y": 60},
-          {"x": 42, "y": 58}, {"x": 45, "y": 55}, {"x": 48, "y": 50},
-          {"x": 50, "y": 48}, {"x": 52, "y": 45}, {"x": 55, "y": 40},
-          {"x": 58, "y": 38}, {"x": 60, "y": 33}, {"x": 62, "y": 30},
-          {"x": 65, "y": 25}, {"x": 68, "y": 22}, {"x": 70, "y": 18},
-          {"x": 72, "y": 15}, {"x": 75, "y": 10}
+          {
+            "x": 25,
+            "y": 85
+          },
+          {
+            "x": 30,
+            "y": 78
+          },
+          {
+            "x": 32,
+            "y": 74
+          },
+          {
+            "x": 35,
+            "y": 70
+          },
+          {
+            "x": 38,
+            "y": 65
+          },
+          {
+            "x": 40,
+            "y": 60
+          },
+          {
+            "x": 42,
+            "y": 58
+          },
+          {
+            "x": 45,
+            "y": 55
+          },
+          {
+            "x": 48,
+            "y": 50
+          },
+          {
+            "x": 50,
+            "y": 48
+          },
+          {
+            "x": 52,
+            "y": 45
+          },
+          {
+            "x": 55,
+            "y": 40
+          },
+          {
+            "x": 58,
+            "y": 38
+          },
+          {
+            "x": 60,
+            "y": 33
+          },
+          {
+            "x": 62,
+            "y": 30
+          },
+          {
+            "x": 65,
+            "y": 25
+          },
+          {
+            "x": 68,
+            "y": 22
+          },
+          {
+            "x": 70,
+            "y": 18
+          },
+          {
+            "x": 72,
+            "y": 15
+          },
+          {
+            "x": 75,
+            "y": 10
+          }
         ],
-        "regression_line": {"slope": -1.5, "intercept": 120},
+        "regression_line": {
+          "slope": -1.5,
+          "intercept": 120
+        },
         "r_value": -0.99,
-        "labels": {"x": "Temperature (\u00b0F)", "y": "Hot Chocolates Sold"},
+        "labels": {
+          "x": "Temperature (°F)",
+          "y": "Hot Chocolates Sold"
+        },
         "title": "Temperature vs. Hot Chocolate Sales"
       }
     },
@@ -1006,15 +2080,41 @@
       "id": "stat-045",
       "bucket_key": "images/mathematics/ap-statistics/prob-dotplot-tips-serverA.svg",
       "category": "statistics",
-      "concept_slug": "describing-distribution-quantitative-variable",
-      "location": "question_html",
-      "problem_index": 9,
-      "description": "Two dotplots comparing daily tips for Server A (right-skewed with outlier at $95) and Server B (uniform, $30-$70)",
-      "alt_text": "Two rows of dots: Server A has most dots between $40-$60 with one at $95, Server B has dots evenly spread from $30 to $70",
       "params": {
         "type": "dotplot",
-        "values": [15, 35, 38, 40, 42, 43, 45, 45, 47, 48, 50, 50, 52, 53, 55, 55, 55, 57, 58, 58, 60, 60, 62, 62, 63, 65, 68, 70, 75, 95],
-        "x_label": "Daily Tips ($) \u2014 Server A",
+        "values": [
+          15,
+          35,
+          38,
+          40,
+          42,
+          43,
+          45,
+          45,
+          47,
+          48,
+          50,
+          50,
+          52,
+          53,
+          55,
+          55,
+          55,
+          57,
+          58,
+          58,
+          60,
+          60,
+          62,
+          62,
+          63,
+          65,
+          68,
+          70,
+          75,
+          95
+        ],
+        "x_label": "Daily Tips ($) — Server A",
         "title": "Server A: Daily Tips Over 30 Days"
       }
     }
