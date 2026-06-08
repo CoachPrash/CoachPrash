@@ -10191,7 +10191,7 @@
                 {
                   "question_html": "<p>An ambulance siren emits a 700 Hz tone. As it passes you, the frequency drops from 750 Hz to 656 Hz. What is the ambulance's speed? (\\( v = 343 \\) m/s). Round to the nearest whole number.</p>",
                   "problem_type": "ftb",
-                  "correct_answer": "29",
+                  "correct_answer": "23",
                   "difficulty": "hard",
                   "points": 1,
                   "hints": [
@@ -10200,7 +10200,7 @@
                       "cost_points": 0
                     },
                     {
-                      "text": "\\( 343 - v_s = 700 \\times 343/750 = 320.1 \\). \\( v_s = 343 - 320.1 = 22.9 \\) m/s. Check with receding: \\( 656 = 700 \\times 343/(343 + v_s) \\) → \\( 343 + v_s = 700 \\times 343/656 = 366.0 \\) → \\( v_s = 23.0 \\) m/s. Hmm, let me verify: approaching gives 750 → \\( v_s = 343(1 - 700/750) = 343(50/750) = 22.9 \\). Receding gives 656 → \\( v_s = 343(700/656 - 1) = 343(44/656) = 23.0 \\). Both ≈ 23 m/s.",
+                      "text": "\\( 343 - v_s = 700 \\times 343/750 = 320.1 \\), so \\( v_s = 22.9 \\) m/s. Verify with receding: \\( 343 + v_s = 700 \\times 343/656 = 366.0 \\), so \\( v_s = 23.0 \\) m/s. Both give \\( v_s \\approx 23 \\) m/s.",
                       "cost_points": 1
                     }
                   ],

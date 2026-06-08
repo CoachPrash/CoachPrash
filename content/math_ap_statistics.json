@@ -9945,7 +9945,7 @@
                       "is_correct": false
                     },
                     {
-                      "text": "0.1075",
+                      "text": "0.1003",
                       "is_correct": true
                     },
                     {
@@ -9963,7 +9963,7 @@
                       "cost_points": 0
                     },
                     {
-                      "text": "\\( \\sigma_{\\hat{p}} = \\sqrt{\\frac{0.08(0.92)}{300}} \\approx 0.01566 \\). The z-score is \\( z = \\frac{0.10 - 0.08}{0.01566} \\approx 1.28 \\). \\( P(Z > 1.28) \\approx 0.1003 \\). The closest answer is 0.1075.",
+                      "text": "\\( \\sigma_{\\hat{p}} = \\sqrt{\\frac{0.08(0.92)}{300}} \\approx 0.01566 \\). \\( z = \\frac{0.02}{0.01566} \\approx 1.28 \\). \\( P(Z > 1.28) \\approx 0.1003 \\).",
                       "cost_points": 1
                     }
                   ],
@@ -9972,13 +9972,13 @@
                       "text": "Check conditions: 10% condition: \\( 300 \\leq 0.10(10{,}000) = 1{,}000 \\) ✓. Large Counts: \\( 300(0.08) = 24 \\geq 10 \\) ✓ and \\( 300(0.92) = 276 \\geq 10 \\) ✓."
                     },
                     {
-                      "text": "\\( \\mu_{\\hat{p}} = 0.08 \\), \\( \\sigma_{\\hat{p}} = \\sqrt{\\frac{0.08(0.92)}{300}} = \\sqrt{0.000245\\overline{3}} \\approx 0.01566 \\)."
+                      "text": "\\( \\mu_{\\hat{p}} = 0.08 \\), \\( \\sigma_{\\hat{p}} = \\sqrt{\\frac{0.08(0.92)}{300}} \\approx 0.01566 \\)."
                     },
                     {
-                      "text": "\\( z = \\frac{0.10 - 0.08}{0.01566} = \\frac{0.02}{0.01566} \\approx 1.28 \\)."
+                      "text": "\\( z = \\frac{0.10 - 0.08}{0.01566} \\approx 1.28 \\)."
                     },
                     {
-                      "text": "\\( P(\\hat{p} > 0.10) = P(Z > 1.28) \\approx 0.1003 \\). The closest answer choice is 0.1075."
+                      "text": "\\( P(\\hat{p} > 0.10) = P(Z > 1.28) \\approx 0.1003 \\)."
                     }
                   ],
                   "access_tier": "premium"
@@ -10325,12 +10325,12 @@
                   "points": 1,
                   "choices": [
                     {
-                      "text": "(0.243, 0.297)",
-                      "is_correct": false
+                      "text": "(0.245, 0.295)",
+                      "is_correct": true
                     },
                     {
                       "text": "(0.246, 0.294)",
-                      "is_correct": true
+                      "is_correct": false
                     },
                     {
                       "text": "(0.227, 0.313)",
@@ -10362,7 +10362,7 @@
                       "text": "\\( ME = 1.960\\sqrt{\\frac{0.27(0.73)}{1200}} = 1.960\\sqrt{0.000164} = 1.960(0.01282) \\approx 0.0251 \\)."
                     },
                     {
-                      "text": "Interval: \\( (0.27 - 0.025, 0.27 + 0.025) = (0.245, 0.295) \\). Closest answer: (0.246, 0.294)."
+                      "text": "Interval: \\( (0.27 - 0.025, 0.27 + 0.025) = (0.245, 0.295) \\)."
                     }
                   ],
                   "access_tier": "premium"
@@ -12545,8 +12545,8 @@
                   "points": 1,
                   "choices": [
                     {
-                      "text": "0.1271",
-                      "is_correct": false
+                      "text": "0.1020",
+                      "is_correct": true
                     },
                     {
                       "text": "0.2119",
@@ -12554,7 +12554,7 @@
                     },
                     {
                       "text": "0.2420",
-                      "is_correct": true
+                      "is_correct": false
                     },
                     {
                       "text": "0.7580",
@@ -12567,7 +12567,7 @@
                       "cost_points": 0
                     },
                     {
-                      "text": "Mean = \\( 0.72 - 0.58 = 0.14 \\). SD = \\( \\sqrt{\\frac{0.72(0.28)}{180} + \\frac{0.58(0.42)}{220}} = \\sqrt{0.001120 + 0.001107} = \\sqrt{0.002227} \\approx 0.04719 \\). \\( z = \\frac{0.20 - 0.14}{0.04719} \\approx 1.27 \\). \\( P(Z > 1.27) \\approx 0.1020 \\)... let me recheck. Actually \\( z = 0.06/0.04719 = 1.271 \\). \\( P(Z > 1.271) \\)... Hmm, let me recalculate more carefully.",
+                      "text": "Mean = \\( 0.72 - 0.58 = 0.14 \\). SD = \\( \\sqrt{\\frac{0.72(0.28)}{180} + \\frac{0.58(0.42)}{220}} \\approx 0.04719 \\). \\( z = \\frac{0.06}{0.04719} \\approx 1.27 \\). \\( P(Z > 1.27) \\approx 0.1020 \\).",
                       "cost_points": 1
                     }
                   ],
@@ -12596,7 +12596,7 @@
                       "is_correct": false
                     },
                     {
-                      "text": "0.0328",
+                      "text": "0.0334",
                       "is_correct": true
                     },
                     {
@@ -12610,7 +12610,7 @@
                       "cost_points": 0
                     },
                     {
-                      "text": "\\( \\frac{0.55(0.45)}{500} = \\frac{0.2475}{500} = 0.000495 \\). \\( \\frac{0.48(0.52)}{400} = \\frac{0.2496}{400} = 0.000624 \\). Sum = 0.001119. \\( \\sigma = \\sqrt{0.001119} \\approx 0.0334 \\)... Let me recheck: \\( \\sqrt{0.001119} \\approx 0.03345 \\). Hmm, closest is 0.0328.",
+                      "text": "\\( \\frac{0.55(0.45)}{500} = 0.000495 \\). \\( \\frac{0.48(0.52)}{400} = 0.000624 \\). Sum = 0.001119. \\( \\sigma = \\sqrt{0.001119} \\approx 0.0334 \\).",
                       "cost_points": 1
                     }
                   ],
@@ -12622,7 +12622,7 @@
                       "text": "\\( \\frac{p_2(1-p_2)}{n_2} = \\frac{0.48 \\times 0.52}{400} = \\frac{0.2496}{400} = 0.000624 \\)."
                     },
                     {
-                      "text": "\\( \\sigma = \\sqrt{0.000495 + 0.000624} = \\sqrt{0.001119} \\approx 0.0328 \\)."
+                      "text": "\\( \\sigma = \\sqrt{0.000495 + 0.000624} = \\sqrt{0.001119} \\approx 0.0334 \\)."
                     }
                   ],
                   "access_tier": "premium"
@@ -12911,7 +12911,7 @@
                   "points": 1,
                   "choices": [
                     {
-                      "text": "\\( (-0.012, 0.076) \\)",
+                      "text": "\\( (-0.007, 0.071) \\)",
                       "is_correct": true
                     },
                     {
@@ -12923,7 +12923,7 @@
                       "is_correct": false
                     },
                     {
-                      "text": "\\( (0.012, 0.076) \\)",
+                      "text": "\\( (0.012, 0.052) \\)",
                       "is_correct": false
                     }
                   ],
@@ -12933,7 +12933,7 @@
                       "cost_points": 0
                     },
                     {
-                      "text": "Point estimate: \\( 0.14 - 0.108 = 0.032 \\). SE = \\( \\sqrt{\\frac{0.14(0.86)}{600} + \\frac{0.108(0.892)}{500}} \\approx 0.02007 \\). ME = \\( 1.96 \\times 0.02007 \\approx 0.0393 \\). Interval: \\( (-0.012, 0.076) \\) approximately. Hmm let me recalculate...",
+                      "text": "Point estimate: \\( 0.14 - 0.108 = 0.032 \\). SE = \\( \\sqrt{\\frac{0.14(0.86)}{600} + \\frac{0.108(0.892)}{500}} \\approx 0.01985 \\). ME = \\( 1.96 \\times 0.01985 \\approx 0.0389 \\). Interval: \\( 0.032 \\pm 0.0389 \\approx (-0.007, 0.071) \\).",
                       "cost_points": 1
                     }
                   ],
@@ -12942,7 +12942,7 @@
                       "text": "Point estimate: \\( 0.14 - 0.108 = 0.032 \\). SE = \\( \\sqrt{\\frac{0.14(0.86)}{600} + \\frac{0.108(0.892)}{500}} = \\sqrt{0.000201 + 0.000193} = \\sqrt{0.000394} \\approx 0.01985 \\)."
                     },
                     {
-                      "text": "ME = \\( 1.96 \\times 0.01985 \\approx 0.0389 \\). Interval: \\( 0.032 \\pm 0.0389 = (-0.007, 0.071) \\). The closest answer is \\( (-0.012, 0.076) \\) with slightly different rounding."
+                      "text": "ME = \\( 1.96 \\times 0.01985 \\approx 0.0389 \\). Interval: \\( 0.032 \\pm 0.0389 = (-0.007, 0.071) \\)."
                     },
                     {
                       "text": "Since the interval contains 0, there is not convincing evidence at the 95% level that the two designs have different click-through rates."
@@ -13024,14 +13024,14 @@
                   "problem_type": "ftb",
                   "difficulty": "hard",
                   "points": 1,
-                  "correct_answer": "0.0887",
+                  "correct_answer": "0.0915||0.0916",
                   "hints": [
                     {
                       "text": "Margin of error = \\( z^* \\times SE \\), where \\( z^* = 1.96 \\) for 95% confidence.",
                       "cost_points": 0
                     },
                     {
-                      "text": "SE = \\( \\sqrt{\\frac{0.45(0.55)}{200} + \\frac{0.38(0.62)}{250}} = \\sqrt{0.001238 + 0.000942} = \\sqrt{0.002180} \\approx 0.04669 \\). ME = \\( 1.96 \\times 0.04669 \\approx 0.0915 \\). Let me recheck: \\( 0.45 \\times 0.55 = 0.2475 \\), \\( 0.2475/200 = 0.0012375 \\). \\( 0.38 \\times 0.62 = 0.2356 \\), \\( 0.2356/250 = 0.0009424 \\). Sum = 0.0021799. \\( \\sqrt{0.0021799} = 0.04669 \\). ME = \\( 1.96 \\times 0.04669 = 0.09151 \\).",
+                      "text": "SE = \\( \\sqrt{\\frac{0.45(0.55)}{200} + \\frac{0.38(0.62)}{250}} = \\sqrt{0.0012375 + 0.0009424} = \\sqrt{0.0021799} \\approx 0.04669 \\). ME = \\( 1.96 \\times 0.04669 \\approx 0.0915 \\).",
                       "cost_points": 1
                     }
                   ],
@@ -13040,7 +13040,7 @@
                       "text": "SE = \\( \\sqrt{\\frac{0.45(0.55)}{200} + \\frac{0.38(0.62)}{250}} = \\sqrt{0.0012375 + 0.0009424} = \\sqrt{0.0021799} \\approx 0.04669 \\)."
                     },
                     {
-                      "text": "ME = \\( 1.96 \\times 0.04669 \\approx 0.0915 \\). (Note: if the expected answer is 0.0887, slight differences may arise from rounding at intermediate steps.)"
+                      "text": "ME = \\( 1.96 \\times 0.04669 \\approx 0.0915 \\)."
                     }
                   ],
                   "access_tier": "premium"
@@ -14087,14 +14087,14 @@
                   "problem_type": "ftb",
                   "difficulty": "hard",
                   "points": 1,
-                  "correct_answer": "1.55||1.54||1.56",
+                  "correct_answer": "1.37||1.38",
                   "hints": [
                     {
                       "text": "First find \\( \\hat{p}_c = (90 + 75)/(300 + 300) \\), then compute the standard error and test statistic.",
                       "cost_points": 0
                     },
                     {
-                      "text": "\\( \\hat{p}_c = 165/600 = 0.275 \\). SE = \\( \\sqrt{0.275 \\times 0.725 \\times (1/300 + 1/300)} = \\sqrt{0.275 \\times 0.725 \\times 1/150} \\approx 0.0365 \\). \\( z = (0.30 - 0.25)/0.0365 \\approx 1.37 \\)... let me recalculate: \\( z = 0.05/0.03647 \\approx 1.37 \\). Actually: SE = \\(\\sqrt{0.275(0.725)(2/300)}\\) = \\(\\sqrt{0.19938 \\times 0.006667}\\) = \\(\\sqrt{0.001329}\\) = 0.03646. \\( z = 0.05/0.03646 = 1.37 \\). Hmm — let me recheck: \\(\\hat{p}_1 = 0.30\\), \\(\\hat{p}_2 = 0.25\\), diff = 0.05. \\(\\hat{p}_c = 0.275\\). SE = \\(\\sqrt{0.275 \\cdot 0.725 \\cdot (1/300 + 1/300)} = \\sqrt{0.199375 \\cdot 0.00667} = \\sqrt{0.001329} = 0.03646\\). \\( z = 0.05/0.03646 \\approx 1.37 \\).",
+                      "text": "\\( \\hat{p}_c = 165/600 = 0.275 \\). SE = \\( \\sqrt{0.275(0.725)(1/300 + 1/300)} = \\sqrt{0.001329} \\approx 0.03646 \\). \\( z = 0.05/0.03646 \\approx 1.37 \\).",
                       "cost_points": 1
                     }
                   ],
@@ -17325,7 +17325,7 @@
                   "points": 1,
                   "choices": [
                     {
-                      "text": "\\( (-16.69, -5.31) \\)",
+                      "text": "\\( (-18.01, -3.99) \\)",
                       "is_correct": true
                     },
                     {
@@ -17333,7 +17333,7 @@
                       "is_correct": false
                     },
                     {
-                      "text": "\\( (-18.00, -4.00) \\)",
+                      "text": "\\( (-16.69, -5.31) \\)",
                       "is_correct": false
                     },
                     {
@@ -17347,7 +17347,7 @@
                       "cost_points": 0
                     },
                     {
-                      "text": "SE = \\( \\sqrt{\\frac{121}{50} + \\frac{196}{45}} = \\sqrt{2.42 + 4.356} = \\sqrt{6.776} \\approx 2.603 \\). ME = 2.692 × 2.603 ≈ 7.007. CI: −11 ± 7.007 = (−18.01, −3.99). Hmm, let me recheck. Actually (−16.69, −5.31) comes from a slightly different rounding. SE ≈ 2.603, ME ≈ 7.01. Closest answer: (−16.69, −5.31) with ME ≈ 5.69... Let me recalculate. Actually with df from calculator (higher df), t* would be smaller. The answer (−16.69, −5.31) has ME = 5.69, suggesting t* ≈ 2.186 (95%). With the given t* = 2.692: (−18.01, −3.99). But among the choices, (−16.69, −5.31) is closest if using a lower t*. The correct answer is (−16.69, −5.31).",
+                      "text": "SE = \\( \\sqrt{2.42 + 4.356} = \\sqrt{6.776} \\approx 2.603 \\). ME = \\( 2.692 \\times 2.603 \\approx 7.007 \\). CI: \\( -11 \\pm 7.007 = (-18.01, -3.99) \\).",
                       "cost_points": 1
                     }
                   ],
@@ -17360,9 +17360,6 @@
                     },
                     {
                       "text": "ME = 2.692 × 2.603 ≈ 7.007. CI: −11 ± 7.007 = (−18.01, −3.99)."
-                    },
-                    {
-                      "text": "Among the choices, (−16.69, −5.31) is the closest. Note: Using calculator df (which is larger than the conservative 44) would give a smaller t* and a narrower interval closer to this answer."
                     }
                   ],
                   "access_tier": "premium"
@@ -18307,7 +18304,7 @@
                       "is_correct": false
                     },
                     {
-                      "text": "\\( t \\approx 2.242 \\)",
+                      "text": "\\( t \\approx 2.311 \\)",
                       "is_correct": true
                     },
                     {
@@ -18325,7 +18322,7 @@
                       "cost_points": 0
                     },
                     {
-                      "text": "SE = √(7.2²/30 + 8.5²/35) = √(51.84/30 + 72.25/35) = √(1.728 + 2.064) = √3.792 ≈ 1.948. t = (56.8 − 52.3)/1.948 = 4.5/1.948 ≈ 2.310. Hmm, let me recalculate. 51.84/30 = 1.728, 72.25/35 = 2.0643. Sum = 3.7923. √3.7923 ≈ 1.9474. t = 4.5/1.9474 ≈ 2.311. Closest answer: 2.242.",
+                      "text": "SE = √(7.2²/30 + 8.5²/35) = √(1.728 + 2.064) = √3.792 ≈ 1.948. t = 4.5/1.948 ≈ 2.311.",
                       "cost_points": 1
                     }
                   ],
@@ -18335,9 +18332,6 @@
                     },
                     {
                       "text": "t = (56.8 − 52.3)/1.948 = 4.5/1.948 ≈ 2.311."
-                    },
-                    {
-                      "text": "Note: The closest answer choice is 2.242. Minor differences arise from rounding in intermediate steps."
                     }
                   ],
                   "access_tier": "free"
@@ -18481,7 +18475,7 @@
                       "text": "t = (102.4 − 97.6)/2.376 = 4.8/2.376 ≈ 2.020."
                     },
                     {
-                      "text": "Using df = 37 (conservative), two-sided p-value ≈ 2 × P(t > 2.02) ≈ 0.051. With calculator df (larger), p ≈ 0.044. Closest answer: 0.044."
+                      "text": "Using conservative df = 37, two-sided p-value ≈ 2 × P(t > 2.02) ≈ 0.051. With Welch df from a calculator (larger df), p ≈ 0.044."
                     }
                   ],
                   "access_tier": "premium"
