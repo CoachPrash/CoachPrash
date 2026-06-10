@@ -9749,6 +9749,66 @@
                     }
                   ],
                   "correct_answer": "(a) Differentiate: e^y dy/dx = 2x + dy/dx. So dy/dx(e^y - 1) = 2x, giving dy/dx = 2x/(e^y - 1). (b) At (0,0): dy/dx = 0/(e^0 - 1) = 0/0, which is indeterminate. We need a different approach. Differentiating again or using L'Hopital-type reasoning: from e^y dy/dx = 2x + dy/dx, at (0,0): dy/dx(1 - 1) = 0, which is 0 = 0 (always true). Take the second derivative or note that near (0,0) the implicit function theorem fails since e^y - 1 = 0. The tangent line requires further analysis (the point is a singular point of the implicit curve)."
+                },
+                {
+                  "question_html": "<p><strong>2024 AP Calculus AB FRQ #5</strong></p><p>Consider the curve defined by the equation x² + 3y² + 2y = 48. It can be shown that dy/dx = −2x/(3 + 4y).</p><p>(a) There is a point on the curve near (2, 4) with x-coordinate 3. Use the line tangent to the curve at (2, 4) to approximate the y-coordinate of this point.</p><p>(b) Is the horizontal line y = 1 tangent to the curve? Give a reason for your answer.</p><p>(c) The curve intersects the positive x-axis at the point (√48, 0). Is the line tangent to the curve at this point vertical? Give a reason for your answer.</p><p>(d) For time <em>t</em> ≥ 0, a particle is moving along another curve defined by the equation y³ + 2xy = 24. At the instant the particle is at the point (4, 2), the y-coordinate of the particle’s position is decreasing at a rate of 2 units per second. At that instant, what is the rate of change of the x-coordinate of the particle’s position with respect to time?</p>",
+                  "problem_type": "frq",
+                  "difficulty": "hard",
+                  "points": 9,
+                  "access_tier": "premium",
+                  "correct_answer": "(a) At (2, 4): dy/dx = −4/(3 + 16) = −4/19. y ≈ 4 + (−4/19)(3 − 2) = 4 − 4/19 = 72/19.\n(b) dy/dx = 0 when −2x = 0, so x = 0. Check (0, 1): 0 + 3(1) + 2 = 5 ≠ 48. So y = 1 is NOT tangent.\n(c) At (√48, 0): dy/dx = −2√48/(3 + 0) = −2√48/3. Denominator ≠ 0, so not vertical.\n(d) dx/dt = 10 units per second.",
+                  "frq_metadata": {
+                    "exam_year": 2024,
+                    "question_number": 5,
+                    "source": "College Board AP Calculus AB Exam"
+                  },
+                  "hints": [
+                    {
+                      "text": "For (a), use linearization: y ≈ y₀ + (dy/dx)(x − x₀). For (b), consider what dy/dx = 0 requires and check if the resulting point is on the curve. For (c), check whether the denominator of dy/dx is zero. For (d), differentiate y³ + 2xy = 24 implicitly with respect to t.",
+                      "cost_points": 0
+                    },
+                    {
+                      "text": "For (a), dy/dx at (2, 4) = −4/(3 + 16) = −4/19. For (b), dy/dx = 0 requires x = 0; substitute (0, 1) into x² + 3y² + 2y = 48 to check. For (d), differentiate to get 3y²(dy/dt) + 2y(dx/dt) + 2x(dy/dt) = 0, substitute (4, 2) and dy/dt = −2, solve for dx/dt.",
+                      "cost_points": 1
+                    }
+                  ],
+                  "solution_steps": [
+                    {
+                      "text": "Part (a): At (2, 4), dy/dx = −2(2)/(3 + 4(4)) = −4/19."
+                    },
+                    {
+                      "text": "Part (a): Tangent line approximation: y ≈ 4 + (−4/19)(3 − 2) = 4 − 4/19 = 72/19."
+                    },
+                    {
+                      "text": "Part (b): For y = 1 to be tangent, dy/dx must equal 0 at the point of tangency. dy/dx = 0 when −2x = 0, so x = 0. The potential point of tangency is (0, 1)."
+                    },
+                    {
+                      "text": "Part (b): Check if (0, 1) is on the curve: 0² + 3(1)² + 2(1) = 5 ≠ 48. Since (0, 1) is not on the curve, y = 1 is not tangent to the curve."
+                    },
+                    {
+                      "text": "Part (c): At (√48, 0), the denominator of dy/dx is 3 + 4(0) = 3 ≠ 0. So dy/dx = −2√48/3, which is defined and finite. The tangent line is not vertical."
+                    },
+                    {
+                      "text": "Part (d): Differentiate y³ + 2xy = 24 with respect to t: 3y²(dy/dt) + 2y(dx/dt) + 2x(dy/dt) = 0."
+                    },
+                    {
+                      "text": "Part (d): Substitute (x, y) = (4, 2) and dy/dt = −2: 3(4)(−2) + 2(2)(dx/dt) + 2(4)(−2) = 0, giving −24 + 4(dx/dt) − 16 = 0."
+                    },
+                    {
+                      "text": "Part (d): Solve: 4(dx/dt) = 40, so dx/dt = 10 units per second."
+                    }
+                  ],
+                  "rubric": [
+                    "Part (a): 1 point for evaluating dy/dx = −4/19 at (2, 4).",
+                    "Part (a): 1 point for the tangent line approximation y ≈ 72/19.",
+                    "Part (b): 1 point for considering dy/dx = 0 and determining x = 0.",
+                    "Part (b): 1 point for concluding y = 1 is not tangent because (0, 1) is not on the curve.",
+                    "Part (c): 1 point for showing the denominator is nonzero and concluding the tangent is not vertical.",
+                    "Part (d): 1 point for correctly differentiating y³ + 2xy = 24 with respect to t to get 3y²(dy/dt) + 2y(dx/dt) + 2x(dy/dt) = 0.",
+                    "Part (d): 1 point for substituting (4, 2) into the differentiated equation.",
+                    "Part (d): 1 point for using dy/dt = −2.",
+                    "Part (d): 1 point for finding dx/dt = 10."
+                  ]
                 }
               ]
             }
@@ -16857,6 +16917,66 @@
                     "Applies FTC to the lower limit x (subtracts, multiplies by 1)",
                     "Correct final answer: 2x*sqrt(x^2+5) - sqrt(x+5)"
                   ]
+                },
+                {
+                  "question_html": "<p><strong>2024 AP Calculus AB FRQ #4</strong></p><p>The graph of a differentiable function <em>f</em>, shown for −6 ≤ x ≤ 7, has a horizontal tangent at x = −2 and is linear for 0 ≤ x ≤ 7. Let R be the region in the second quadrant bounded by the graph of <em>f</em>, the vertical line x = −6, and the x- and y-axes. Region R has area 12.</p><p>(a) The function g is defined by g(x) = ∫<sub>0</sub><sup>x</sup> f(t) dt. Find the values of g(−6), g(4), and g(6).</p><p>(b) For the function g defined in part (a), find all values of x in the interval 0 ≤ x ≤ 6 at which the graph of g has a critical point. Give a reason for your answer.</p><p>(c) The function h is defined by h(x) = ∫<sub>−6</sub><sup>x</sup> f′(t) dt. Find the values of h(6), h′(6), and h″(6). Show the work that leads to your answers.</p>",
+                  "problem_type": "frq",
+                  "difficulty": "hard",
+                  "points": 9,
+                  "access_tier": "premium",
+                  "correct_answer": "(a) g(−6) = −12, g(4) = 4, g(6) = 3.\n(b) g has a critical point at x = 4 because g′(x) = f(x) and f(4) = 0.\n(c) h(6) = f(6) − f(−6) = −1 − 0.5 = −3/2; h′(6) = f′(6) = −1/2; h″(6) = f″(6) = 0.",
+                  "frq_metadata": {
+                    "exam_year": 2024,
+                    "question_number": 4,
+                    "source": "College Board AP Calculus AB Exam"
+                  },
+                  "hints": [
+                    {
+                      "text": "Use the Fundamental Theorem of Calculus: g′(x) = f(x). For integral values, use geometric areas from the graph. For part (c), apply FTC to simplify h(x) = f(x) − f(−6) before differentiating.",
+                      "cost_points": 0
+                    },
+                    {
+                      "text": "g(−6) = −∫₋₆⁰ f(t) dt = −(area of R) = −12. For g(4) and g(6), compute signed area under the linear portion of f using triangle geometry. For h(x), note h(x) = f(x) − f(−6) by FTC, so h′(x) = f′(x) and h″(x) = f″(x). The linear segment has constant slope and zero second derivative.",
+                      "cost_points": 1
+                    }
+                  ],
+                  "solution_steps": [
+                    {
+                      "text": "Part (a): g(−6) = ∫₀⁻⁶ f(t) dt = −∫₋₆⁰ f(t) dt. Since f is positive on [−6, 0] and region R has area 12, g(−6) = −12."
+                    },
+                    {
+                      "text": "Part (a): g(4) = ∫₀⁴ f(t) dt. From the graph, f is linear on [0, 7]. Computing the signed area under this linear segment from 0 to 4, g(4) = 4."
+                    },
+                    {
+                      "text": "Part (a): g(6) = ∫₀⁶ f(t) dt. Computing the signed area under the linear segment from 0 to 6, g(6) = 3."
+                    },
+                    {
+                      "text": "Part (b): By the Fundamental Theorem of Calculus, g′(x) = f(x). Critical points of g occur where g′(x) = f(x) = 0."
+                    },
+                    {
+                      "text": "Part (b): From the graph, f(x) = 0 at x = 4 on the interval [0, 6]. Therefore g has a critical point at x = 4."
+                    },
+                    {
+                      "text": "Part (c): By FTC, h(x) = ∫₋₆ˣ f′(t) dt = f(x) − f(−6). So h(6) = f(6) − f(−6). From the graph, f(6) = −1 and f(−6) = 0.5, so h(6) = −1 − 0.5 = −3/2."
+                    },
+                    {
+                      "text": "Part (c): h′(x) = f′(x), so h′(6) = f′(6). Since f is linear on [0, 7], f′(6) equals the constant slope of that segment: h′(6) = −1/2."
+                    },
+                    {
+                      "text": "Part (c): h″(x) = f″(x), so h″(6) = f″(6). Since f is linear on [0, 7], the second derivative is 0. Therefore h″(6) = 0."
+                    }
+                  ],
+                  "rubric": [
+                    "Part (a): 1 point for g(−6) = −12.",
+                    "Part (a): 1 point for g(4) = 4.",
+                    "Part (a): 1 point for g(6) = 3.",
+                    "Part (b): 1 point for stating g′(x) = f(x) using the Fundamental Theorem of Calculus.",
+                    "Part (b): 1 point for identifying x = 4 as the only critical point with reason f(4) = 0.",
+                    "Part (c): 1 point for using FTC to write h(x) = f(x) − f(−6).",
+                    "Part (c): 1 point for h(6) = −3/2.",
+                    "Part (c): 1 point for h′(6) = −1/2.",
+                    "Part (c): 1 point for h″(6) = 0."
+                  ]
                 }
               ]
             }
@@ -21776,6 +21896,69 @@
                     "(c) Using the tangent addition formula, these are curves of the form \\(y = \\frac{x + a}{1 - ax}\\) where \\(a = \\tan C\\)."
                   ],
                   "correct_answer": "(a) Separate: dy/(1+y^2) = dx/(1+x^2). Integrate: arctan(y) = arctan(x) + C.\n(b) y = tan(arctan(x) + C).\n(c) Using the tangent addition formula: y = tan(arctan(x) + C) = (x + tan C)/(1 - x tan C). Letting a = tan C, this gives y = (x + a)/(1 - ax), which is a family of linear fractional transformations."
+                },
+                {
+                  "question_html": "<p><strong>2024 AP Calculus AB FRQ #3</strong></p><p>The depth of seawater at a location can be modeled by the function <em>H</em> that satisfies the differential equation dH/dt = (1/2)(H − 1)cos(πt/2), where H(t) is measured in feet and <em>t</em> is measured in hours after noon (<em>t</em> = 0). It is known that H(0) = 4.</p><p>(a) A portion of the slope field for the differential equation is provided. Sketch the solution curve y = H(t) through the point (0, 4).</p><p>(b) For 0 &lt; <em>t</em> &lt; 5, it can be shown that H(t) &gt; 1. Find the value of <em>t</em>, for 0 &lt; <em>t</em> &lt; 5, at which H has a critical point. Determine whether the critical point corresponds to a relative minimum, a relative maximum, or neither. Justify your answer.</p><p>(c) Use separation of variables to find y = H(t), the particular solution to the differential equation dH/dt = (1/2)(H − 1)cos(πt/2) with initial condition H(0) = 4.</p>",
+                  "problem_type": "frq",
+                  "difficulty": "hard",
+                  "points": 9,
+                  "access_tier": "premium",
+                  "correct_answer": "(a) Sketch a solution curve through (0, 4) following the slope field.\n(b) dH/dt = 0 when cos(πt/2) = 0, giving t = 1 and t = 3. At t = 1, dH/dt changes from positive to negative → relative maximum. At t = 3, dH/dt changes from negative to positive → relative minimum.\n(c) H(t) = 1 + 3e^((1/π)sin(πt/2)).",
+                  "frq_metadata": {
+                    "exam_year": 2024,
+                    "question_number": 3,
+                    "source": "College Board AP Calculus AB Exam"
+                  },
+                  "hints": [
+                    {
+                      "text": "Part (b): Set dH/dt = 0 and use the first derivative test. Part (c): Separate the H terms from the t terms, integrate both sides, and apply the initial condition.",
+                      "cost_points": 0
+                    },
+                    {
+                      "text": "For (b), since H > 1, dH/dt = 0 when cos(πt/2) = 0, giving t = 1, 3. Check sign changes of cos(πt/2) around each value. For (c), rewrite as dH/(H − 1) = (1/2)cos(πt/2) dt, integrate to get ln|H − 1| = (1/π)sin(πt/2) + C, then use H(0) = 4 to find C = ln 3.",
+                      "cost_points": 1
+                    }
+                  ],
+                  "solution_steps": [
+                    {
+                      "text": "Part (a): Starting at (0, 4), draw a curve following the slope field. It should increase initially, reach a maximum near t = 1, decrease to a minimum near t = 3, then increase again."
+                    },
+                    {
+                      "text": "Part (b): Critical points occur where dH/dt = 0. Since H(t) > 1, we have (H − 1) > 0, so dH/dt = 0 when cos(πt/2) = 0, i.e., πt/2 = π/2, 3π/2, giving t = 1 and t = 3."
+                    },
+                    {
+                      "text": "Part (b): At t = 1: For t slightly less than 1, cos(πt/2) > 0, so dH/dt > 0. For t slightly greater than 1, cos(πt/2) < 0, so dH/dt < 0. Since dH/dt changes from positive to negative, H has a relative maximum at t = 1."
+                    },
+                    {
+                      "text": "Part (b): At t = 3: For t slightly less than 3, cos(πt/2) < 0, so dH/dt < 0. For t slightly greater than 3, cos(πt/2) > 0, so dH/dt > 0. Since dH/dt changes from negative to positive, H has a relative minimum at t = 3."
+                    },
+                    {
+                      "text": "Part (c): Separate variables: dH/(H − 1) = (1/2)cos(πt/2) dt."
+                    },
+                    {
+                      "text": "Part (c): Integrate the left side: ∫ dH/(H − 1) = ln|H − 1|."
+                    },
+                    {
+                      "text": "Part (c): Integrate the right side: ∫ (1/2)cos(πt/2) dt = (1/2)(2/π)sin(πt/2) + C = (1/π)sin(πt/2) + C."
+                    },
+                    {
+                      "text": "Part (c): Apply initial condition H(0) = 4: ln|4 − 1| = (1/π)sin(0) + C → ln(3) = C."
+                    },
+                    {
+                      "text": "Part (c): ln(H − 1) = (1/π)sin(πt/2) + ln(3). Exponentiate: H − 1 = 3e^((1/π)sin(πt/2)). Therefore H(t) = 1 + 3e^((1/π)sin(πt/2))."
+                    }
+                  ],
+                  "rubric": [
+                    "Part (a): 1 point for a solution curve through (0, 4) following the slope field.",
+                    "Part (b): 1 point for considering dH/dt = 0 and using the sign of cos(πt/2).",
+                    "Part (b): 1 point for identifying t = 1 (and t = 3) as critical points.",
+                    "Part (b): 1 point for correctly determining relative maximum at t = 1 and relative minimum at t = 3 with first derivative test justification.",
+                    "Part (c): 1 point for correctly separating variables.",
+                    "Part (c): 1 point for the antiderivative ln|H − 1|.",
+                    "Part (c): 1 point for the antiderivative (1/π)sin(πt/2).",
+                    "Part (c): 1 point for applying initial condition to find C = ln(3).",
+                    "Part (c): 1 point for solving to get H(t) = 1 + 3e^((1/π)sin(πt/2))."
+                  ]
                 }
               ]
             }
@@ -23790,6 +23973,63 @@
                     }
                   ],
                   "correct_answer": "(a) Displacement = ∫₀³ sin(πt) dt = [-cos(πt)/π]₀³ = (-cos(3π)/π) - (-cos(0)/π) = (1/π) - (-1/π) = 2/π. (b) v(t) = 0 at t = 0,1,2,3. |∫₀¹ sin(πt)dt| + |∫₁² sin(πt)dt| + |∫₂³ sin(πt)dt| = 2/π + 2/π + 2/π = 6/π. (c) Displacement is positive (2/π > 0), so the particle is to the right of its starting point."
+                },
+                {
+                  "question_html": "<p><strong>2024 AP Calculus AB FRQ #2</strong></p><p>A particle moves along the x-axis so that its velocity at time <em>t</em> ≥ 0 is given by v(t) = 2.38e<sup>−0.02t</sup> sin(πt/56) − 0.2t.</p><p>(a) There is one time, <em>t</em> = <em>t<sub>R</sub></em>, in the interval 0 &lt; <em>t</em> &lt; 2 when the particle is at rest. Find <em>t<sub>R</sub></em>. For 0 &lt; <em>t</em> &lt; <em>t<sub>R</sub></em>, is the particle moving to the right or to the left? Give a reason for your answer.</p><p>(b) Find the acceleration of the particle at time <em>t</em> = 1.5. Show the setup for your calculations. Is the speed of the particle increasing or decreasing at time <em>t</em> = 1.5? Explain your reasoning.</p><p>(c) The position of the particle at time <em>t</em> is x(t), and its position at time <em>t</em> = 1 is x(1) = −3. Find the position of the particle at time <em>t</em> = 4. Show the setup for your calculations.</p><p>(d) Find the total distance traveled by the particle over the interval 1 ≤ <em>t</em> ≤ 4. Show the setup for your calculations.</p>",
+                  "problem_type": "frq",
+                  "difficulty": "hard",
+                  "points": 9,
+                  "access_tier": "premium",
+                  "correct_answer": "(a) t_R ≈ 1.426. For 0 < t < t_R, v(t) > 0, so the particle is moving to the right.\n(b) a(1.5) = v′(1.5) ≈ −1. Since v(1.5) < 0 and a(1.5) < 0 (same sign), the speed is increasing.\n(c) x(4) = x(1) + ∫₁⁴ v(t) dt = −3 + 0.197 ≈ −2.803.\n(d) Total distance = ∫₁⁴ |v(t)| dt ≈ 0.958.",
+                  "frq_metadata": {
+                    "exam_year": 2024,
+                    "question_number": 2,
+                    "source": "College Board AP Calculus AB Exam"
+                  },
+                  "hints": [
+                    {
+                      "text": "Part (a) requires solving v(t) = 0 on (0, 2). Part (b) uses the derivative of v(t) to find acceleration. Part (c) applies the Fundamental Theorem of Calculus for position. Part (d) integrates the absolute value of velocity for total distance.",
+                      "cost_points": 0
+                    },
+                    {
+                      "text": "For (a), use a calculator to solve v(t) = 0 and check the sign of v before the root. For (b), compute v′(1.5) and compare the signs of v(1.5) and a(1.5)—same sign means speed increasing. For (c), x(4) = −3 + ∫₁⁴ v(t) dt. For (d), total distance = ∫₁⁴ |v(t)| dt.",
+                      "cost_points": 1
+                    }
+                  ],
+                  "solution_steps": [
+                    {
+                      "text": "Part (a): Set v(t) = 0 and solve on (0, 2). Using a calculator, t_R ≈ 1.426."
+                    },
+                    {
+                      "text": "Part (a): For 0 < t < t_R, v(t) > 0, so the particle is moving to the right."
+                    },
+                    {
+                      "text": "Part (b): The acceleration is a(1.5) = v′(1.5). Using a calculator, a(1.5) ≈ −1 (or −0.999)."
+                    },
+                    {
+                      "text": "Part (b): At t = 1.5, v(1.5) < 0 and a(1.5) < 0. Since velocity and acceleration have the same sign, the speed is increasing."
+                    },
+                    {
+                      "text": "Part (c): By the Fundamental Theorem of Calculus, x(4) = x(1) + ∫₁⁴ v(t) dt = −3 + ∫₁⁴ v(t) dt."
+                    },
+                    {
+                      "text": "Part (c): Using a calculator, ∫₁⁴ v(t) dt ≈ 0.197. Therefore x(4) ≈ −3 + 0.197 ≈ −2.803."
+                    },
+                    {
+                      "text": "Part (d): Total distance traveled = ∫₁⁴ |v(t)| dt ≈ 0.958."
+                    }
+                  ],
+                  "rubric": [
+                    "Part (a): 1 point for finding t_R ≈ 1.426.",
+                    "Part (a): 1 point for stating the particle moves right because v(t) > 0 for 0 < t < t_R.",
+                    "Part (b): 1 point for a(1.5) = v′(1.5) ≈ −1 with setup shown.",
+                    "Part (b): 1 point for speed increasing because v(1.5) and a(1.5) have the same sign.",
+                    "Part (c): 1 point for the integral setup x(4) = x(1) + ∫₁⁴ v(t) dt.",
+                    "Part (c): 1 point for using the initial condition x(1) = −3.",
+                    "Part (c): 1 point for the answer x(4) ≈ −2.803.",
+                    "Part (d): 1 point for the integral setup ∫₁⁴ |v(t)| dt.",
+                    "Part (d): 1 point for the answer ≈ 0.958."
+                  ]
                 }
               ]
             }
@@ -24156,6 +24396,63 @@
                     }
                   ],
                   "correct_answer": "(a) Total entering = ∫₀⁸ 80e^{-0.2t} dt = [-400e^{-0.2t}]₀⁸ = -400e^{-1.6} + 400 = 400(1-e^{-1.6}) ≈ 400(0.7981) ≈ 319. (b) Customers in store = ∫₀⁸(80e^{-0.2t}-30)dt = 400(1-e^{-1.6}) - 240 ≈ 319 - 240 = 79. (c) Net rate = 0: 80e^{-0.2t} = 30, e^{-0.2t} = 3/8, t = -5ln(3/8) = 5ln(8/3) ≈ 4.90 hours."
+                },
+                {
+                  "question_html": "<p><strong>2024 AP Calculus AB FRQ #1</strong></p><p>The temperature of coffee in a cup at time <em>t</em> minutes is modeled by a decreasing differentiable function <em>C</em>, where <em>C(t)</em> is measured in degrees Celsius. For 0 ≤ <em>t</em> ≤ 12, selected values of <em>C(t)</em> are given in the table shown.</p><table border=\"1\" cellpadding=\"6\" cellspacing=\"0\"><tr><th><em>t</em> (minutes)</th><td>0</td><td>3</td><td>7</td><td>12</td></tr><tr><th><em>C(t)</em> (degrees Celsius)</th><td>100</td><td>85</td><td>69</td><td>55</td></tr></table><p>(a) Approximate C′(5) using the average rate of change of C over the interval 3 ≤ <em>t</em> ≤ 7. Show the computations that lead to your answer and indicate units of measure.</p><p>(b) Use a left Riemann sum with the three subintervals indicated by the data in the table to approximate ∫₀¹² C(t) dt. Using correct units, interpret the meaning of (1/12)∫₀¹² C(t) dt in the context of the problem.</p><p>(c) For 12 ≤ <em>t</em> ≤ 20, the rate of change of the temperature of the coffee is modeled by C′(t) = −24.55e^(0.01t), where C′(t) is measured in degrees Celsius per minute. Find the temperature of the coffee at time <em>t</em> = 20. Show the setup for your calculations.</p><p>(d) For the model defined in part (c), it can be shown that C″(t) = 0.2455e^(0.01t)(100 − t). For 12 &lt; <em>t</em> &lt; 20, determine whether the temperature of the coffee is changing at a decreasing rate or at an increasing rate. Give a reason for your answer.</p>",
+                  "problem_type": "frq",
+                  "difficulty": "hard",
+                  "points": 9,
+                  "access_tier": "premium",
+                  "correct_answer": "(a) C′(5) ≈ (69 − 85)/(7 − 3) = −4 degrees Celsius per minute.\n(b) Left Riemann sum: 3(100) + 4(85) + 5(69) = 985. (1/12)∫₀¹² C(t) dt is the average temperature of the coffee, in degrees Celsius, over the interval from t = 0 to t = 12 minutes.\n(c) C(20) = C(12) + ∫₁₂²⁰ C′(t) dt = 55 + ∫₁₂²⁰ (−24.55e^(0.01t²)) dt ≈ 55 − 14.671 ≈ 40.329 degrees Celsius.\n(d) C″(t) > 0 for 12 < t < 20 (since all factors are positive), so C′(t) is increasing. The temperature is changing at an increasing rate.",
+                  "frq_metadata": {
+                    "exam_year": 2024,
+                    "question_number": 1,
+                    "source": "College Board AP Calculus AB Exam"
+                  },
+                  "hints": [
+                    {
+                      "text": "Part (a) uses the difference quotient. Part (b) uses left endpoints and subinterval widths from the table. Part (c) applies the Fundamental Theorem of Calculus with the given initial condition. Part (d) requires analyzing the sign of C″(t).",
+                      "cost_points": 0
+                    },
+                    {
+                      "text": "For (a), compute [C(7) − C(3)]/(7 − 3). For (b), the three subintervals are [0, 3], [3, 7], [7, 12] with widths 3, 4, 5 and left values 100, 85, 69. For (c), write C(20) = C(12) + ∫₁₂²⁰ C′(t) dt and evaluate. For (d), check whether each factor of C″(t) is positive or negative on (12, 20).",
+                      "cost_points": 1
+                    }
+                  ],
+                  "solution_steps": [
+                    {
+                      "text": "Part (a): Using the average rate of change over [3, 7]: C′(5) ≈ [C(7) − C(3)]/(7 − 3) = (69 − 85)/4 = −16/4 = −4."
+                    },
+                    {
+                      "text": "Part (a) units: The units of C′(5) are degrees Celsius per minute."
+                    },
+                    {
+                      "text": "Part (b): The three subintervals from the table are [0, 3], [3, 7], and [7, 12], with widths 3, 4, and 5. The left Riemann sum is: 3·C(0) + 4·C(3) + 5·C(7) = 3(100) + 4(85) + 5(69) = 300 + 340 + 345 = 985."
+                    },
+                    {
+                      "text": "Part (b) interpretation: (1/12)∫₀¹² C(t) dt is the average temperature of the coffee, in degrees Celsius, over the time interval from t = 0 to t = 12 minutes."
+                    },
+                    {
+                      "text": "Part (c): By the Fundamental Theorem of Calculus, C(20) = C(12) + ∫₁₂²⁰ C′(t) dt = 55 + ∫₁₂²⁰ (−24.55e^(0.01t²)) dt."
+                    },
+                    {
+                      "text": "Part (c): Using a calculator, ∫₁₂²⁰ (−24.55e^(0.01t²)) dt ≈ −14.671. Therefore C(20) ≈ 55 − 14.671 ≈ 40.329 degrees Celsius."
+                    },
+                    {
+                      "text": "Part (d): For 12 < t < 20: 0.2455 > 0, e^(0.01t²) > 0, and (100 − t) > 0 since t < 20 < 100. Therefore C″(t) > 0 on (12, 20), meaning C′(t) is increasing. The temperature is changing at an increasing rate."
+                    }
+                  ],
+                  "rubric": [
+                    "Part (a): 1 point for the estimate C′(5) ≈ (69 − 85)/(7 − 3) = −4 with supporting work.",
+                    "Part (a): 1 point for correct units (degrees Celsius per minute).",
+                    "Part (b): 1 point for the correct form of a left Riemann sum: 3·C(0) + 4·C(3) + 5·C(7).",
+                    "Part (b): 1 point for the correct numerical estimate of 985.",
+                    "Part (b): 1 point for interpreting (1/12)∫₀¹² C(t) dt as the average temperature over [0, 12].",
+                    "Part (c): 1 point for the integral expression ∫₁₂²⁰ C′(t) dt.",
+                    "Part (c): 1 point for using the initial condition C(12) = 55.",
+                    "Part (c): 1 point for the correct answer C(20) ≈ 40.329.",
+                    "Part (d): 1 point for stating the temperature is changing at an increasing rate with reason that C″(t) > 0."
+                  ]
                 }
               ]
             }
@@ -25667,6 +25964,66 @@
                     }
                   ],
                   "correct_answer": "(a) At position x, the base of the rectangle spans from y = -√(16-x²) to y = √(16-x²), so base = 2√(16-x²). Height = 2 × base = 4√(16-x²). A(x) = 2√(16-x²) · 4√(16-x²) = 8(16-x²). (b) V = ∫_{-4}^{4} 8(16-x²) dx = 16∫₀⁴ (16-x²) dx = 16[16x - x³/3]₀⁴ = 16(64 - 64/3) = 16 · 128/3 = 2048/3."
+                },
+                {
+                  "question_html": "<p><strong>2024 AP Calculus AB FRQ #6</strong></p><p>The functions <em>f</em> and <em>g</em> are defined by f(x) = x² + 2 and g(x) = x² − 2x, as shown in the graph.</p><p>(a) Let R be the region bounded by the graphs of f and g, from x = 0 to x = 2, as shown in the graph. Write, but do not evaluate, an integral expression that gives the area of region R.</p><p>(b) Let S be the region bounded by the graph of g and the x-axis, from x = 2 to x = 5, as shown in the graph. Region S is the base of a solid. For this solid, at each x the cross section perpendicular to the x-axis is a rectangle with height equal to half its base in region S. Find the volume of the solid. Show the work that leads to your answer.</p><p>(c) Write, but do not evaluate, an integral expression that gives the volume of the solid generated when region S, as described in part (b), is rotated about the horizontal line y = 20.</p>",
+                  "problem_type": "frq",
+                  "difficulty": "hard",
+                  "points": 9,
+                  "access_tier": "premium",
+                  "correct_answer": "(a) Area = ∫₀² [f(x) − g(x)] dx = ∫₀² (2 + 2x) dx.\n(b) Volume = (1/2)∫₂⁵ (x² − 2x)² dx = (1/2)∫₂⁵ (x⁴ − 4x³ + 4x²) dx = 414/5.\n(c) Volume = π∫₂⁵ [20² − (20 − (x² − 2x))²] dx = π∫₂⁵ [400 − (20 − x² + 2x)²] dx.",
+                  "frq_metadata": {
+                    "exam_year": 2024,
+                    "question_number": 6,
+                    "source": "College Board AP Calculus AB Exam"
+                  },
+                  "hints": [
+                    {
+                      "text": "For (a), determine which function is on top from x = 0 to x = 2 and set up the area as the integral of (top − bottom). For (b), find the cross-sectional area as base × height where height = (1/2)(base). For (c), use the washer method for revolution about y = 20.",
+                      "cost_points": 0
+                    },
+                    {
+                      "text": "For (a), f(x) − g(x) = (x² + 2) − (x² − 2x) = 2 + 2x. For (b), base of each rectangle is g(x) = x² − 2x, so area = (1/2)(x² − 2x)². Expand and integrate from 2 to 5. For (c), outer radius = 20, inner radius = 20 − g(x) = 20 − x² + 2x; use washer formula π∫[R² − r²] dx.",
+                      "cost_points": 1
+                    }
+                  ],
+                  "solution_steps": [
+                    {
+                      "text": "Part (a): For 0 ≤ x ≤ 2, f(x) − g(x) = (x² + 2) − (x² − 2x) = 2 + 2x > 0, so f is above g."
+                    },
+                    {
+                      "text": "Part (a): Area of R = ∫₀² [f(x) − g(x)] dx = ∫₀² (2 + 2x) dx."
+                    },
+                    {
+                      "text": "Part (b): For x in [2, 5], g(x) = x² − 2x = x(x − 2) ≥ 0. The base of each rectangular cross section is g(x), and the height is (1/2)g(x). Cross-sectional area A(x) = (1/2)(x² − 2x)²."
+                    },
+                    {
+                      "text": "Part (b): Volume = (1/2)∫₂⁵ (x² − 2x)² dx = (1/2)∫₂⁵ (x⁴ − 4x³ + 4x²) dx."
+                    },
+                    {
+                      "text": "Part (b): Antiderivative: x⁵/5 − x⁴ + 4x³/3. At x = 5: 625 − 625 + 500/3 = 500/3. At x = 2: 32/5 − 16 + 32/3 = (96 + 160 − 240)/15 = 16/15."
+                    },
+                    {
+                      "text": "Part (b): Volume = (1/2)(500/3 − 16/15) = (1/2)(2500/15 − 16/15) = (1/2)(2484/15) = 1242/15 = 414/5."
+                    },
+                    {
+                      "text": "Part (c): When S is revolved about y = 20, use the washer method. Outer radius R(x) = 20 (distance from y = 20 to x-axis). Inner radius r(x) = 20 − g(x) = 20 − x² + 2x."
+                    },
+                    {
+                      "text": "Part (c): Volume = π∫₂⁵ [R(x)² − r(x)²] dx = π∫₂⁵ [400 − (20 − x² + 2x)²] dx."
+                    }
+                  ],
+                  "rubric": [
+                    "Part (a): 1 point for correct integrand f(x) − g(x) = 2 + 2x.",
+                    "Part (a): 1 point for correct integral expression ∫₀² (2 + 2x) dx.",
+                    "Part (b): 1 point for correct cross-sectional area integrand (1/2)(x² − 2x)².",
+                    "Part (b): 1 point for correct limits of integration 2 to 5.",
+                    "Part (b): 1 point for correct antiderivative of x⁴ − 4x³ + 4x².",
+                    "Part (b): 1 point for correct volume 414/5.",
+                    "Part (c): 1 point for correct washer method form π∫[R² − r²] dx.",
+                    "Part (c): 1 point for correct outer radius 20 and inner radius (20 − x² + 2x) in the integrand.",
+                    "Part (c): 1 point for correct limits 2 to 5 and constant π."
+                  ]
                 }
               ]
             }

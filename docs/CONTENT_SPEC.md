@@ -229,6 +229,34 @@ Each concept gets exactly **1 problem_set** with **10 problems** in this exact o
 - Create original, real-world context FRQs with multi-part structure
 - **AP courses only:** Use released College Board FRQs verbatim (public domain). Never copy from third-party sites.
 - **AP Statistics inference:** Use State/Plan/Do/Conclude framework
+- Problem sets can have more than 10 problems when released FRQs are appended
+
+#### Released AP FRQs
+
+Released College Board FRQs are appended to existing problem sets (not replacing). They include a `frq_metadata` field and attribution in `question_html`:
+
+```json
+{
+  "question_html": "<p><strong>2024 AP Calculus AB FRQ #2</strong></p><p>[verbatim question]</p>",
+  "problem_type": "frq",
+  "difficulty": "hard",
+  "points": 9,
+  "access_tier": "premium",
+  "correct_answer": "(a) ...\n(b) ...",
+  "frq_metadata": {
+    "exam_year": 2024,
+    "question_number": 2,
+    "source": "College Board AP Calculus AB Exam"
+  },
+  "hints": [ ... ],
+  "solution_steps": [ ... ],
+  "rubric": [ "Part (a): 1 point for ...", "Part (b): 1 point for ..." ]
+}
+```
+
+- `frq_metadata` is stored in the JSON only (not in the database)
+- `rubric` array must match official Scoring Guidelines point allocation
+- Solutions must align with official College Board Scoring Guidelines
 
 ---
 

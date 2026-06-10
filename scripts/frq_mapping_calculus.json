@@ -1,0 +1,53 @@
+{
+  "description": "Maps released AP Calculus FRQs to concept slugs in content JSON",
+  "mappings": [
+    {
+      "exam_year": 2024,
+      "exam_type": "ab",
+      "question_number": 1,
+      "concept_slug": "accumulation-applied-contexts",
+      "topics": ["rate of change from table", "Riemann sums", "FTC", "average value", "concavity"],
+      "frq_file": "scripts/output/frq_extracts/2024_ab_frqs.json"
+    },
+    {
+      "exam_year": 2024,
+      "exam_type": "ab",
+      "question_number": 2,
+      "concept_slug": "position-velocity-acceleration-integrals",
+      "topics": ["particle motion", "velocity", "acceleration", "position", "total distance"],
+      "frq_file": "scripts/output/frq_extracts/2024_ab_frqs.json"
+    },
+    {
+      "exam_year": 2024,
+      "exam_type": "ab",
+      "question_number": 3,
+      "concept_slug": "separation-of-variables",
+      "topics": ["differential equation", "slope field", "separation of variables", "particular solution"],
+      "frq_file": "scripts/output/frq_extracts/2024_ab_frqs.json"
+    },
+    {
+      "exam_year": 2024,
+      "exam_type": "ab",
+      "question_number": 4,
+      "concept_slug": "ftc-accumulation",
+      "topics": ["FTC", "accumulation function", "graph analysis", "critical points"],
+      "frq_file": "scripts/output/frq_extracts/2024_ab_frqs.json"
+    },
+    {
+      "exam_year": 2024,
+      "exam_type": "ab",
+      "question_number": 5,
+      "concept_slug": "implicit-differentiation",
+      "topics": ["implicit differentiation", "linearization", "tangent line", "related rates"],
+      "frq_file": "scripts/output/frq_extracts/2024_ab_frqs.json"
+    },
+    {
+      "exam_year": 2024,
+      "exam_type": "ab",
+      "question_number": 6,
+      "concept_slug": "volume-cross-sections-squares",
+      "topics": ["area between curves", "volume cross-sections", "volume of revolution", "washer method"],
+      "frq_file": "scripts/output/frq_extracts/2024_ab_frqs.json"
+    }
+  ]
+}
