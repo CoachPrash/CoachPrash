@@ -1,6 +1,6 @@
 # CoachPrash Admin Manual
 
-> **Version:** 22.0 (AP Physics 1 Diagrams + Problem Restructuring + Single-File Seed)
+> **Version:** 23.0 (2024 Released FRQs + Filter Label Fix)
 > **Last Updated:** June 2026
 > **Platform:** Flask + PostgreSQL, deployed on Railway
 
@@ -2164,7 +2164,7 @@ AP Calculus AB and BC are maintained as a **single unified course** (`ap-calculu
 - **Unit 9:** BC-only — Parametric, Polar & Vector-Valued Functions
 - **Unit 10:** BC-only — Infinite Sequences & Series
 
-**Stats:** 10 units, 100 concepts (78 AB + 22 BC-only), 738 problems
+**Stats:** 10 units, 100 concepts (78 AB + 22 BC-only), 744 problems (738 base + 6 released 2024 FRQs)
 
 ### BC-Only Tagging
 
@@ -2415,7 +2415,7 @@ Method test harnesses produce structured markers for reliable parsing:
 
 The practice page now has filter buttons that let students jump directly to the problem type they want:
 
-**Practice: All | MCQ | Fill in Blank | Written | Code**
+**Practice: All | MCQ | Fill in Blank | FRQ | Code**
 
 ### How It Works
 
@@ -2423,7 +2423,7 @@ The practice page now has filter buttons that let students jump directly to the 
 - **No page reload** — switching filters is instant
 - Buttons auto-hide for types not present in the current problem set
 - Entire filter bar hidden when only one problem type exists
-- Filter change resets quiz state (score, timer, progress) for a clean start
+- Filter preserves all answer tracking (correct/incorrect/skipped status) — switching filters does not reset progress
 
 ### Freemium Interaction
 

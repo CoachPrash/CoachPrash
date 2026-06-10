@@ -11,6 +11,37 @@
 
             <div class="changelog-entry">
                 <div class="changelog-date">
+                    <span class="changelog-date-day">9</span>
+                    <span class="changelog-date-month">Jun 2026</span>
+                    <span class="changelog-phase-badge">Content</span>
+                </div>
+                <div class="changelog-body">
+                    <h2>2024 AP Calculus AB Released FRQs</h2>
+                    <p class="changelog-summary">Added all 6 released College Board FRQs from the 2024 AP Calculus AB exam as practice problems, with full step-by-step solutions, rubrics, and hints aligned to official Scoring Guidelines.</p>
+
+                    <div class="changelog-section">
+                        <h3>What&rsquo;s New</h3>
+                        <ul>
+                            <li><strong>6 FRQ problems</strong> mapped to their matching concepts (particle motion, rate functions, table approximation, related rates, implicit differentiation, area/volume)</li>
+                            <li>Each problem includes <strong>multi-part sub-questions</strong> (a&ndash;d), full solution steps, grading rubric, and progressive hints</li>
+                            <li>Problems sourced verbatim from released College Board materials &mdash; equations, tables, and graphs faithfully reproduced</li>
+                            <li>AP Calculus AB/BC course now has <strong>744 total problems</strong> (738 base + 6 released FRQs)</li>
+                        </ul>
+                    </div>
+
+                    <div class="changelog-section">
+                        <h3>Extraction Pipeline</h3>
+                        <ul>
+                            <li>Reusable scripts for extracting FRQs from College Board PDFs, validating against qhsJSON spec, and appending to content files</li>
+                            <li>Concept mapping via <code>scripts/frq_mapping_calculus.json</code> for consistent year-over-year alignment</li>
+                            <li>Ready to scale to 2017&ndash;2023 AB and BC exams</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="changelog-entry">
+                <div class="changelog-date">
                     <span class="changelog-date-day">7</span>
                     <span class="changelog-date-month">Jun 2026</span>
                     <span class="changelog-phase-badge">Content Fix</span>
