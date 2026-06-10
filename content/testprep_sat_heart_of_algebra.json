@@ -23,7 +23,6 @@
               "problems": [
                 {
                   "question_html": "<p>A gym charges a one-time registration fee of $25 plus $40 per month. If Marcus has budgeted $345 for gym expenses, which equation can be used to find the maximum number of months, \\(m\\), he can afford?</p>",
-                  "question_raw": "A gym charges a one-time registration fee of $25 plus $40 per month. If Marcus has budgeted $345 for gym expenses, which equation can be used to find the maximum number of months, m, he can afford?",
                   "problem_type": "mcq",
                   "difficulty": "easy",
                   "points": 1,
@@ -68,11 +67,11 @@
                     {
                       "text": "The answer is <strong>C</strong>: \\(40m + 25 = 345\\)."
                     }
-                  ]
+                  ],
+                  "access_tier": "free"
                 },
                 {
                   "question_html": "<p>If \\(3(2x - 5) = 4x + 7\\), what is the value of \\(x\\)?</p>",
-                  "question_raw": "If 3(2x - 5) = 4x + 7, what is the value of x?",
                   "problem_type": "mcq",
                   "difficulty": "medium",
                   "points": 1,
@@ -117,11 +116,11 @@
                     {
                       "text": "Divide by 2: \\(x = 11\\)."
                     }
-                  ]
+                  ],
+                  "access_tier": "free"
                 },
                 {
                   "question_html": "<p>Which of the following values of \\(x\\) satisfies the inequality \\(-3x + 7 > 19\\)?</p>",
-                  "question_raw": "Which of the following values of x satisfies the inequality -3x + 7 > 19?",
                   "problem_type": "mcq",
                   "difficulty": "medium",
                   "points": 1,
@@ -166,60 +165,11 @@
                     {
                       "text": "The answer is <strong>A</strong>: \\(-5\\)."
                     }
-                  ]
-                },
-                {
-                  "question_html": "<p>For what value of \\(a\\) does the equation \\(a(x + 3) = 4x + 12\\) have infinitely many solutions?</p>",
-                  "question_raw": "For what value of a does the equation a(x + 3) = 4x + 12 have infinitely many solutions?",
-                  "problem_type": "mcq",
-                  "difficulty": "hard",
-                  "points": 1,
-                  "choices": [
-                    {
-                      "text": "\\(3\\)",
-                      "is_correct": false
-                    },
-                    {
-                      "text": "\\(4\\)",
-                      "is_correct": true
-                    },
-                    {
-                      "text": "\\(6\\)",
-                      "is_correct": false
-                    },
-                    {
-                      "text": "\\(12\\)",
-                      "is_correct": false
-                    }
                   ],
-                  "hints": [
-                    {
-                      "text": "For infinitely many solutions, both sides must be <strong>identical</strong> after simplifying. Distribute \\(a\\) on the left side and compare coefficients.",
-                      "cost_points": 0
-                    },
-                    {
-                      "text": "Left side: \\(ax + 3a\\). Right side: \\(4x + 12\\). For these to be identical: \\(a = 4\\) and \\(3a = 12\\). Both give \\(a = 4\\).",
-                      "cost_points": 1
-                    }
-                  ],
-                  "solution_steps": [
-                    {
-                      "text": "Distribute on the left: \\(ax + 3a = 4x + 12\\)."
-                    },
-                    {
-                      "text": "For infinitely many solutions, coefficients must match: \\(a = 4\\) (from the \\(x\\) terms)."
-                    },
-                    {
-                      "text": "Verify with constants: \\(3(4) = 12\\) ✓."
-                    },
-                    {
-                      "text": "The answer is <strong>B</strong>: \\(a = 4\\)."
-                    }
-                  ]
+                  "access_tier": "premium"
                 },
                 {
                   "question_html": "<p>If \\(|2x - 5| = 11\\), what is the sum of all possible values of \\(x\\)?</p>",
-                  "question_raw": "If |2x - 5| = 11, what is the sum of all possible values of x?",
                   "problem_type": "mcq",
                   "difficulty": "medium",
                   "points": 1,
@@ -264,11 +214,60 @@
                     {
                       "text": "The answer is <strong>B</strong>: \\(5\\)."
                     }
-                  ]
+                  ],
+                  "access_tier": "premium"
+                },
+                {
+                  "question_html": "<p>For what value of \\(a\\) does the equation \\(a(x + 3) = 4x + 12\\) have infinitely many solutions?</p>",
+                  "problem_type": "mcq",
+                  "difficulty": "hard",
+                  "points": 1,
+                  "choices": [
+                    {
+                      "text": "\\(3\\)",
+                      "is_correct": false
+                    },
+                    {
+                      "text": "\\(4\\)",
+                      "is_correct": true
+                    },
+                    {
+                      "text": "\\(6\\)",
+                      "is_correct": false
+                    },
+                    {
+                      "text": "\\(12\\)",
+                      "is_correct": false
+                    }
+                  ],
+                  "hints": [
+                    {
+                      "text": "For infinitely many solutions, both sides must be <strong>identical</strong> after simplifying. Distribute \\(a\\) on the left side and compare coefficients.",
+                      "cost_points": 0
+                    },
+                    {
+                      "text": "Left side: \\(ax + 3a\\). Right side: \\(4x + 12\\). For these to be identical: \\(a = 4\\) and \\(3a = 12\\). Both give \\(a = 4\\).",
+                      "cost_points": 1
+                    }
+                  ],
+                  "solution_steps": [
+                    {
+                      "text": "Distribute on the left: \\(ax + 3a = 4x + 12\\)."
+                    },
+                    {
+                      "text": "For infinitely many solutions, coefficients must match: \\(a = 4\\) (from the \\(x\\) terms)."
+                    },
+                    {
+                      "text": "Verify with constants: \\(3(4) = 12\\) ✓."
+                    },
+                    {
+                      "text": "The answer is <strong>B</strong>: \\(a = 4\\)."
+                    }
+                  ],
+                  "access_tier": "premium"
                 },
                 {
                   "question_html": "<p>A phone plan charges $0.10 per text message and $0.05 per minute of talk time. Last month, Priya sent 3 times as many text messages as minutes she talked. If her total bill was $17.50, how many text messages did she send?</p>",
-                  "question_raw": "A phone plan charges $0.10 per text message and $0.05 per minute of talk time. Last month, Priya sent 3 times as many text messages as minutes she talked. If her total bill was $17.50, how many text messages did she send?",
                   "problem_type": "mcq",
                   "difficulty": "hard",
                   "points": 1,
@@ -316,7 +315,8 @@
                     {
                       "text": "The answer is <strong>C</strong>: \\(150\\)."
                     }
-                  ]
+                  ],
+                  "access_tier": "premium"
                 }
               ]
             }
@@ -338,7 +338,6 @@
               "problems": [
                 {
                   "question_html": "<p>If \\(x + y = 10\\) and \\(3x - y = 14\\), what is the value of \\(x\\)?</p>",
-                  "question_raw": "If x + y = 10 and 3x - y = 14, what is the value of x?",
                   "problem_type": "mcq",
                   "difficulty": "easy",
                   "points": 1,
@@ -383,11 +382,11 @@
                     {
                       "text": "The answer is <strong>B</strong>: \\(6\\)."
                     }
-                  ]
+                  ],
+                  "access_tier": "free"
                 },
                 {
                   "question_html": "<p>A coffee shop sells lattes for $5 and cappuccinos for $4. On Monday, the shop sold a total of 80 drinks and earned $350. How many lattes were sold?</p>",
-                  "question_raw": "A coffee shop sells lattes for $5 and cappuccinos for $4. On Monday, the shop sold a total of 80 drinks and earned $350. How many lattes were sold?",
                   "problem_type": "mcq",
                   "difficulty": "medium",
                   "points": 1,
@@ -435,60 +434,11 @@
                     {
                       "text": "Verify: \\(C = 50\\), revenue = \\(5(30) + 4(50) = 350\\) ✓."
                     }
-                  ]
-                },
-                {
-                  "question_html": "<p>For what value of \\(k\\) does the following system have no solution?</p><p>\\[3x + 6y = 12\\]</p><p>\\[kx + 2y = 5\\]</p>",
-                  "question_raw": "For what value of k does the system 3x + 6y = 12 and kx + 2y = 5 have no solution?",
-                  "problem_type": "mcq",
-                  "difficulty": "hard",
-                  "points": 1,
-                  "choices": [
-                    {
-                      "text": "\\(1\\)",
-                      "is_correct": true
-                    },
-                    {
-                      "text": "\\(2\\)",
-                      "is_correct": false
-                    },
-                    {
-                      "text": "\\(3\\)",
-                      "is_correct": false
-                    },
-                    {
-                      "text": "\\(6\\)",
-                      "is_correct": false
-                    }
                   ],
-                  "hints": [
-                    {
-                      "text": "For no solution, the lines must be <strong>parallel</strong>: same slope but different y-intercepts. Compare the ratios of the coefficients.",
-                      "cost_points": 0
-                    },
-                    {
-                      "text": "Rewrite the first equation: divide by 3 → \\(x + 2y = 4\\). For parallel lines, we need \\(k = 1\\) so both have the form \\(x + 2y = \\text{something}\\), but \\(4 \\neq 5\\).",
-                      "cost_points": 1
-                    }
-                  ],
-                  "solution_steps": [
-                    {
-                      "text": "For no solution, the ratio of coefficients must be equal but the constant ratio must differ."
-                    },
-                    {
-                      "text": "\\(\\dfrac{3}{k} = \\dfrac{6}{2}\\) → \\(\\dfrac{3}{k} = 3\\) → \\(k = 1\\)."
-                    },
-                    {
-                      "text": "Check constants: \\(\\dfrac{12}{5} \\neq 3\\) ✓ (so no solution, not infinitely many)."
-                    },
-                    {
-                      "text": "The answer is <strong>A</strong>: \\(k = 1\\)."
-                    }
-                  ]
+                  "access_tier": "free"
                 },
                 {
                   "question_html": "<p>If \\(2x + 3y = 12\\) and \\(4x - 3y = 6\\), what is the value of \\(x + y\\)?</p>",
-                  "question_raw": "If 2x + 3y = 12 and 4x - 3y = 6, what is the value of x + y?",
                   "problem_type": "mcq",
                   "difficulty": "medium",
                   "points": 1,
@@ -533,11 +483,11 @@
                     {
                       "text": "Therefore \\(x + y = 3 + 2 = 5\\)."
                     }
-                  ]
+                  ],
+                  "access_tier": "premium"
                 },
                 {
                   "question_html": "<p>Tickets to a school play cost $8 for adults and $5 for students. A total of 200 tickets were sold, and the revenue was $1,180. How many student tickets were sold?</p>",
-                  "question_raw": "Tickets to a school play cost $8 for adults and $5 for students. A total of 200 tickets were sold, and the revenue was $1,180. How many student tickets were sold?",
                   "problem_type": "mcq",
                   "difficulty": "medium",
                   "points": 1,
@@ -582,60 +532,11 @@
                     {
                       "text": "Verify: \\(a = 60\\), revenue = \\(8(60) + 5(140) = 480 + 700 = 1180\\) ✓."
                     }
-                  ]
-                },
-                {
-                  "question_html": "<p>The system of equations below has infinitely many solutions. What is the value of \\(b\\)?</p><p>\\[4x - 2y = 10\\]</p><p>\\[-6x + 3y = b\\]</p>",
-                  "question_raw": "The system 4x - 2y = 10 and -6x + 3y = b has infinitely many solutions. What is the value of b?",
-                  "problem_type": "mcq",
-                  "difficulty": "hard",
-                  "points": 1,
-                  "choices": [
-                    {
-                      "text": "\\(-15\\)",
-                      "is_correct": true
-                    },
-                    {
-                      "text": "\\(-10\\)",
-                      "is_correct": false
-                    },
-                    {
-                      "text": "\\(10\\)",
-                      "is_correct": false
-                    },
-                    {
-                      "text": "\\(15\\)",
-                      "is_correct": false
-                    }
                   ],
-                  "hints": [
-                    {
-                      "text": "For infinitely many solutions, one equation must be a <strong>scalar multiple</strong> of the other. What do you multiply the first equation by to match the second?",
-                      "cost_points": 0
-                    },
-                    {
-                      "text": "Multiply equation 1 by \\(-\\frac{3}{2}\\): \\(4 \\cdot (-\\frac{3}{2}) = -6\\) ✓ and \\(-2 \\cdot (-\\frac{3}{2}) = 3\\) ✓. So \\(b = 10 \\cdot (-\\frac{3}{2}) = -15\\).",
-                      "cost_points": 1
-                    }
-                  ],
-                  "solution_steps": [
-                    {
-                      "text": "For infinitely many solutions, the second equation must be a multiple of the first."
-                    },
-                    {
-                      "text": "Compare \\(x\\) coefficients: \\(\\dfrac{-6}{4} = -\\dfrac{3}{2}\\)."
-                    },
-                    {
-                      "text": "Check \\(y\\) coefficients: \\(\\dfrac{3}{-2} = -\\dfrac{3}{2}\\) ✓."
-                    },
-                    {
-                      "text": "Apply to constants: \\(b = 10 \\times \\left(-\\dfrac{3}{2}\\right) = -15\\)."
-                    }
-                  ]
+                  "access_tier": "premium"
                 },
                 {
                   "question_html": "<p>At a farmers' market, Elena buys 3 pounds of apples and 2 pounds of oranges for $11.50. Raj buys 1 pound of apples and 4 pounds of oranges for $10.50. What is the price per pound of apples?</p>",
-                  "question_raw": "Elena buys 3 pounds of apples and 2 pounds of oranges for $11.50. Raj buys 1 pound of apples and 4 pounds of oranges for $10.50. What is the price per pound of apples?",
                   "problem_type": "mcq",
                   "difficulty": "medium",
                   "points": 1,
@@ -683,11 +584,109 @@
                     {
                       "text": "The answer is <strong>C</strong>: $2.50 per pound."
                     }
-                  ]
+                  ],
+                  "access_tier": "premium"
+                },
+                {
+                  "question_html": "<p>For what value of \\(k\\) does the following system have no solution?</p><p>\\[3x + 6y = 12\\]</p><p>\\[kx + 2y = 5\\]</p>",
+                  "problem_type": "mcq",
+                  "difficulty": "hard",
+                  "points": 1,
+                  "choices": [
+                    {
+                      "text": "\\(1\\)",
+                      "is_correct": true
+                    },
+                    {
+                      "text": "\\(2\\)",
+                      "is_correct": false
+                    },
+                    {
+                      "text": "\\(3\\)",
+                      "is_correct": false
+                    },
+                    {
+                      "text": "\\(6\\)",
+                      "is_correct": false
+                    }
+                  ],
+                  "hints": [
+                    {
+                      "text": "For no solution, the lines must be <strong>parallel</strong>: same slope but different y-intercepts. Compare the ratios of the coefficients.",
+                      "cost_points": 0
+                    },
+                    {
+                      "text": "Rewrite the first equation: divide by 3 → \\(x + 2y = 4\\). For parallel lines, we need \\(k = 1\\) so both have the form \\(x + 2y = \\text{something}\\), but \\(4 \\neq 5\\).",
+                      "cost_points": 1
+                    }
+                  ],
+                  "solution_steps": [
+                    {
+                      "text": "For no solution, the ratio of coefficients must be equal but the constant ratio must differ."
+                    },
+                    {
+                      "text": "\\(\\dfrac{3}{k} = \\dfrac{6}{2}\\) → \\(\\dfrac{3}{k} = 3\\) → \\(k = 1\\)."
+                    },
+                    {
+                      "text": "Check constants: \\(\\dfrac{12}{5} \\neq 3\\) ✓ (so no solution, not infinitely many)."
+                    },
+                    {
+                      "text": "The answer is <strong>A</strong>: \\(k = 1\\)."
+                    }
+                  ],
+                  "access_tier": "premium"
+                },
+                {
+                  "question_html": "<p>The system of equations below has infinitely many solutions. What is the value of \\(b\\)?</p><p>\\[4x - 2y = 10\\]</p><p>\\[-6x + 3y = b\\]</p>",
+                  "problem_type": "mcq",
+                  "difficulty": "hard",
+                  "points": 1,
+                  "choices": [
+                    {
+                      "text": "\\(-15\\)",
+                      "is_correct": true
+                    },
+                    {
+                      "text": "\\(-10\\)",
+                      "is_correct": false
+                    },
+                    {
+                      "text": "\\(10\\)",
+                      "is_correct": false
+                    },
+                    {
+                      "text": "\\(15\\)",
+                      "is_correct": false
+                    }
+                  ],
+                  "hints": [
+                    {
+                      "text": "For infinitely many solutions, one equation must be a <strong>scalar multiple</strong> of the other. What do you multiply the first equation by to match the second?",
+                      "cost_points": 0
+                    },
+                    {
+                      "text": "Multiply equation 1 by \\(-\\frac{3}{2}\\): \\(4 \\cdot (-\\frac{3}{2}) = -6\\) ✓ and \\(-2 \\cdot (-\\frac{3}{2}) = 3\\) ✓. So \\(b = 10 \\cdot (-\\frac{3}{2}) = -15\\).",
+                      "cost_points": 1
+                    }
+                  ],
+                  "solution_steps": [
+                    {
+                      "text": "For infinitely many solutions, the second equation must be a multiple of the first."
+                    },
+                    {
+                      "text": "Compare \\(x\\) coefficients: \\(\\dfrac{-6}{4} = -\\dfrac{3}{2}\\)."
+                    },
+                    {
+                      "text": "Check \\(y\\) coefficients: \\(\\dfrac{3}{-2} = -\\dfrac{3}{2}\\) ✓."
+                    },
+                    {
+                      "text": "Apply to constants: \\(b = 10 \\times \\left(-\\dfrac{3}{2}\\right) = -15\\)."
+                    }
+                  ],
+                  "access_tier": "premium"
                 },
                 {
                   "question_html": "<p>If \\(x - 2y = 5\\) and \\(3x + 2y = 19\\), what is the value of \\(2x - y\\)?</p>",
-                  "question_raw": "If x - 2y = 5 and 3x + 2y = 19, what is the value of 2x - y?",
                   "problem_type": "ftb",
                   "correct_answer": "11.5",
                   "difficulty": "hard",
@@ -713,7 +712,8 @@
                     {
                       "text": "Compute: \\(2x - y = 12 - 0.5 = 11.5\\)."
                     }
-                  ]
+                  ],
+                  "access_tier": "free"
                 }
               ]
             }
@@ -735,7 +735,6 @@
               "problems": [
                 {
                   "question_html": "<p>A plumber charges a flat service fee of $75 plus $50 per hour of labor. Which function \\(C(h)\\) represents the total cost for \\(h\\) hours of labor?</p>",
-                  "question_raw": "A plumber charges a flat service fee of $75 plus $50 per hour. Which function C(h) represents the total cost for h hours?",
                   "problem_type": "mcq",
                   "difficulty": "easy",
                   "points": 1,
@@ -777,11 +776,57 @@
                     {
                       "text": "\\(C(h) = 50h + 75\\). The answer is <strong>B</strong>."
                     }
-                  ]
+                  ],
+                  "access_tier": "free"
+                },
+                {
+                  "question_html": "<p>A scatterplot shows a linear trend. The line of best fit passes through approximately \\((10, 40)\\) and \\((30, 120)\\). Based on this line, what is the predicted value of \\(y\\) when \\(x = 20\\)?</p>",
+                  "problem_type": "mcq",
+                  "difficulty": "easy",
+                  "points": 1,
+                  "choices": [
+                    {
+                      "text": "\\(60\\)",
+                      "is_correct": false
+                    },
+                    {
+                      "text": "\\(70\\)",
+                      "is_correct": false
+                    },
+                    {
+                      "text": "\\(80\\)",
+                      "is_correct": true
+                    },
+                    {
+                      "text": "\\(90\\)",
+                      "is_correct": false
+                    }
+                  ],
+                  "hints": [
+                    {
+                      "text": "Find the slope using the two given points. Notice that \\(x = 20\\) is exactly the midpoint of \\(x = 10\\) and \\(x = 30\\).",
+                      "cost_points": 0
+                    },
+                    {
+                      "text": "Since \\(x = 20\\) is the midpoint, \\(y\\) is the average of the \\(y\\)-values: \\(\\frac{40 + 120}{2} = 80\\).",
+                      "cost_points": 1
+                    }
+                  ],
+                  "solution_steps": [
+                    {
+                      "text": "Slope: \\(m = \\frac{120 - 40}{30 - 10} = \\frac{80}{20} = 4\\)."
+                    },
+                    {
+                      "text": "Since \\(x = 20\\) is the midpoint of 10 and 30, the predicted \\(y\\) is the midpoint of 40 and 120."
+                    },
+                    {
+                      "text": "\\(y = \\frac{40 + 120}{2} = 80\\). The answer is <strong>C</strong>."
+                    }
+                  ],
+                  "access_tier": "free"
                 },
                 {
                   "question_html": "<p>The equation \\(y = -2x + 100\\) models the number of pages remaining in a book after \\(x\\) minutes of reading. What does the slope \\(-2\\) represent in this context?</p>",
-                  "question_raw": "The equation y = -2x + 100 models pages remaining after x minutes. What does the slope -2 represent?",
                   "problem_type": "mcq",
                   "difficulty": "medium",
                   "points": 1,
@@ -823,11 +868,11 @@
                     {
                       "text": "In context: the reader finishes 2 pages per minute. The answer is <strong>B</strong>."
                     }
-                  ]
+                  ],
+                  "access_tier": "premium"
                 },
                 {
                   "question_html": "<p>Line \\(\\ell\\) passes through the points \\((2, 5)\\) and \\((6, 13)\\). Which of the following is the equation of a line parallel to \\(\\ell\\)?</p>",
-                  "question_raw": "Line l passes through (2, 5) and (6, 13). Which equation is parallel to l?",
                   "problem_type": "mcq",
                   "difficulty": "medium",
                   "points": 1,
@@ -869,11 +914,11 @@
                     {
                       "text": "Only \\(y = 2x + 1\\) has slope 2. The answer is <strong>B</strong>."
                     }
-                  ]
+                  ],
+                  "access_tier": "premium"
                 },
                 {
                   "question_html": "<p>The table below shows the relationship between hours worked and total earnings:</p><table><thead><tr><th>Hours (\\(h\\))</th><th>Earnings ($)</th></tr></thead><tbody><tr><td>0</td><td>20</td></tr><tr><td>3</td><td>56</td></tr><tr><td>5</td><td>80</td></tr><tr><td>8</td><td>116</td></tr></tbody></table><p>What does the value 20 represent in this relationship?</p>",
-                  "question_raw": "A table shows Hours: 0,3,5,8 and Earnings: $20,$56,$80,$116. What does the value 20 represent?",
                   "problem_type": "mcq",
                   "difficulty": "medium",
                   "points": 1,
@@ -915,11 +960,11 @@
                     {
                       "text": "This is a fixed payment like a signing bonus or base pay. The answer is <strong>B</strong>."
                     }
-                  ]
+                  ],
+                  "access_tier": "premium"
                 },
                 {
                   "question_html": "<p>Line \\(p\\) has the equation \\(y = 3x - 7\\). Line \\(q\\) is perpendicular to line \\(p\\) and passes through the point \\((6, 1)\\). What is the y-intercept of line \\(q\\)?</p>",
-                  "question_raw": "Line p: y = 3x - 7. Line q is perpendicular to p and passes through (6, 1). What is the y-intercept of q?",
                   "problem_type": "mcq",
                   "difficulty": "hard",
                   "points": 1,
@@ -964,53 +1009,8 @@
                     {
                       "text": "Solve for \\(y\\): \\(y = -\\frac{1}{3}x + 3\\). The y-intercept is 3."
                     }
-                  ]
-                },
-                {
-                  "question_html": "<p>A scatterplot shows a linear trend. The line of best fit passes through approximately \\((10, 40)\\) and \\((30, 120)\\). Based on this line, what is the predicted value of \\(y\\) when \\(x = 20\\)?</p>",
-                  "question_raw": "A line of best fit passes through (10, 40) and (30, 120). What is the predicted y when x = 20?",
-                  "problem_type": "mcq",
-                  "difficulty": "easy",
-                  "points": 1,
-                  "choices": [
-                    {
-                      "text": "\\(60\\)",
-                      "is_correct": false
-                    },
-                    {
-                      "text": "\\(70\\)",
-                      "is_correct": false
-                    },
-                    {
-                      "text": "\\(80\\)",
-                      "is_correct": true
-                    },
-                    {
-                      "text": "\\(90\\)",
-                      "is_correct": false
-                    }
                   ],
-                  "hints": [
-                    {
-                      "text": "Find the slope using the two given points. Notice that \\(x = 20\\) is exactly the midpoint of \\(x = 10\\) and \\(x = 30\\).",
-                      "cost_points": 0
-                    },
-                    {
-                      "text": "Since \\(x = 20\\) is the midpoint, \\(y\\) is the average of the \\(y\\)-values: \\(\\frac{40 + 120}{2} = 80\\).",
-                      "cost_points": 1
-                    }
-                  ],
-                  "solution_steps": [
-                    {
-                      "text": "Slope: \\(m = \\frac{120 - 40}{30 - 10} = \\frac{80}{20} = 4\\)."
-                    },
-                    {
-                      "text": "Since \\(x = 20\\) is the midpoint of 10 and 30, the predicted \\(y\\) is the midpoint of 40 and 120."
-                    },
-                    {
-                      "text": "\\(y = \\frac{40 + 120}{2} = 80\\). The answer is <strong>C</strong>."
-                    }
-                  ]
+                  "access_tier": "premium"
                 }
               ]
             }

@@ -145,10 +145,6 @@
           "type": "string",
           "description": "HTML question text. Supports LaTeX and data-bucket-key images."
         },
-        "question_raw": {
-          "type": "string",
-          "description": "Plain text version of the question."
-        },
         "problem_type": {
           "type": "string",
           "enum": ["mcq", "ftb", "frq", "code"],

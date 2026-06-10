@@ -34,7 +34,7 @@
                         <button class="quiz-filter-btn active" data-filter="all">All</button>
                         <button class="quiz-filter-btn" data-filter="mcq">MCQ</button>
                         <button class="quiz-filter-btn" data-filter="ftb">Fill in Blank</button>
-                        <button class="quiz-filter-btn" data-filter="frq" style="display:none">Written</button>
+                        <button class="quiz-filter-btn" data-filter="frq" style="display:none">FRQ</button>
                         <button class="quiz-filter-btn" data-filter="code" style="display:none">Code</button>
                     </div>
                     <div class="quiz-meta">
@@ -44,6 +44,15 @@
                     <div class="quiz-progress">
                         <div class="quiz-progress-fill" id="quizProgressFill" style="width: 0%"></div>
                     </div>
+                    <div class="quiz-nav-toolbar" id="quizNavToolbar">
+                        <button class="quiz-nav-arrow quiz-nav-prev" id="navPrevBtn" disabled aria-label="Previous problem">
+                            <svg width="20" height="20" viewBox="0 0 20 20"><polyline points="13,4 7,10 13,16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                        </button>
+                        <div class="quiz-nav-shapes" id="navShapesContainer"></div>
+                        <button class="quiz-nav-arrow quiz-nav-next" id="navNextBtn" aria-label="Next problem">
+                            <svg width="20" height="20" viewBox="0 0 20 20"><polyline points="7,4 13,10 7,16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                        </button>
+                    </div>
                 </div>
 
                 <div class="quiz-body" id="quizBody">
@@ -51,6 +60,7 @@
                     <div class="quiz-choices" id="choicesArea"></div>
                     <div class="quiz-actions" id="actionsArea">
                         <button class="btn btn-primary" id="submitBtn" disabled>Submit Answer</button>
+                        <button class="btn btn-outline" id="saveBtn" style="display:none">Save</button>
                         <button class="btn btn-outline" id="hintBtn" style="display:none">Show Hint</button>
                         <button class="btn btn-outline" id="solutionBtn" style="display:none">Show Solution</button>
                     </div>

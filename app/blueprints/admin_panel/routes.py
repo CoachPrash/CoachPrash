@@ -789,8 +789,8 @@ def upload_image():
     except Exception:
         logger.exception('Failed to list bucket images')
 
-    subjects = Subject.query.order_by(Subject.display_order).all()
-    courses = Course.query.order_by(Course.display_order).all()
+    subjects = Subject.query.order_by(Subject.name).all()
+    courses = Course.query.order_by(Course.name).all()
 
     return render_template(
         'admin/upload_image.html',
@@ -978,8 +978,7 @@ def bulk_import():
                             problem_type = 'mcq'
                         problem = Problem(
                             problem_set_id=ps.id,
-                            question_html=sanitize_html(pdata.get('question_html', pdata.get('question_raw', ''))),
-                            question_raw=pdata.get('question_raw', ''),
+                            question_html=sanitize_html(pdata.get('question_html', '')),
                             problem_type=problem_type,
                             correct_answer=pdata.get('correct_answer', ''),
                             difficulty=pdata.get('difficulty', 'medium'),
@@ -1211,7 +1210,6 @@ def new_problem(ps_id):
     problem = Problem(
         problem_set_id=ps.id,
         question_html='<p>New question</p>',
-        question_raw='<p>New question</p>',
         problem_type='mcq',
         difficulty='medium',
         points=1,
@@ -1231,12 +1229,12 @@ def edit_problem(problem_id):
         abort(404)
 
     # Core fields
-    problem.question_raw = request.form.get('question_raw', '')
-    problem.question_html = sanitize_html(problem.question_raw)
+    problem.question_html = sanitize_html(request.form.get('question_html', ''))
     problem.problem_type = request.form.get('problem_type', 'mcq')
     problem.correct_answer = request.form.get('correct_answer', '')
     problem.difficulty = request.form.get('difficulty', 'medium')
     problem.points = int(request.form.get('points', 1) or 1)
+    problem.access_tier = request.form.get('access_tier', 'free')
 
     # --- Choices (delete and recreate) ---
     Choice.query.filter_by(problem_id=problem.id).delete()

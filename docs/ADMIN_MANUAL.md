@@ -1,6 +1,6 @@
 # CoachPrash Admin Manual
 
-> **Version:** 23.0 (2024 Released FRQs + Filter Label Fix)
+> **Version:** 24.0 (Per-Problem Access Tier + Navigator + question_raw Removal)
 > **Last Updated:** June 2026
 > **Platform:** Flask + PostgreSQL, deployed on Railway
 
@@ -694,10 +694,10 @@ If the subject or course slug doesn't match an existing record, the import will 
               "problems": [
                 {
                   "question_html": "<p>Which of the following is a linear equation?</p>",
-                  "question_raw": "Which of the following is a linear equation?",
                   "problem_type": "mcq",
                   "difficulty": "easy",
                   "points": 1,
+                  "access_tier": "free",
                   "choices": [
                     {"text": "\\(x^2 + 3x = 10\\)", "is_correct": false},
                     {"text": "\\(2x + 5 = 11\\)", "is_correct": true},
@@ -754,6 +754,7 @@ If the subject or course slug doesn't match an existing record, the import will 
 | `problems[].problem_type` | No | `"mcq"` | `"mcq"`, `"ftb"`, or `"frq"` |
 | `problems[].difficulty` | No | `"medium"` | `"easy"`, `"medium"`, or `"hard"` |
 | `problems[].points` | No | `1` | Point value |
+| `problems[].access_tier` | No | `"free"` | `"free"` or `"premium"` |
 | `problems[].correct_answer` | Required for `ftb` | — | Use `\|\|` for multiple accepted answers |
 | `choices[].text` | Yes (MCQ) | — | Choice text (supports LaTeX) |
 | `choices[].is_correct` | Yes (MCQ) | — | Exactly one must be `true` |
@@ -831,7 +832,8 @@ TOPICS & CONCEPTS: [e.g., Topic: "Linear Equations" with concepts: "What is a Li
 GRADE LEVEL: [e.g., 9th-10th grade]
 DIFFICULTY MIX: [e.g., 3 easy, 4 medium, 3 hard per concept]
 PROBLEM TYPES: [e.g., 7 MCQ, 2 FTB, 1 FRQ per concept]
-ACCESS TIER: [free or premium]
+PROBLEM ORDER: MCQ (easy→hard), then FTB (easy→hard), then FRQ (easy→hard)
+ACCESS TIER: 2 MCQ free + 2 FTB free; all FRQs premium
 
 LEARNING OBJECTIVES:
 1. [e.g., Students can solve a 2-variable system using substitution]
@@ -999,7 +1001,7 @@ CoachPrash uses a tiered access system to provide value to free users while ince
 | Feature | Anonymous | Free (Logged In) | Premium |
 |---------|-----------|-------------------|---------|
 | Concept reading content | Full access | Full access | Full access |
-| Problems per quiz | First 3 | First 3 | All |
+| Problems per quiz | Free-tier only | Free-tier only | All |
 | Hint #1 | Yes | Yes | Yes |
 | Hints #2+ | No | No | Yes |
 | Step-by-step solutions | No | No | Yes |
@@ -1016,9 +1018,11 @@ CoachPrash uses a tiered access system to provide value to free users while ince
 - Resources like Google Slides can be set to `premium` individually while the concept itself stays `free`
 
 #### Problem Gating
-- Free users get the **first 3 problems** of any quiz, regardless of the problem set's `access_tier`
-- After 3 problems, a "More problems available with Premium" card appears
-- This is enforced server-side — the practice page only sends 3 problems in the JSON for free users
+- Each problem has its own `access_tier` field: `free` or `premium`
+- Free users see **only free-tier problems**; premium users see all problems
+- The standard split is **2 MCQ free + 2 FTB free** per problem set; all FRQs are premium
+- This is enforced server-side — the practice page only sends free-tier problems for free users
+- The API endpoints (`/api/practice/check`, `/api/practice/run-code`) also enforce tier gating, returning 403 for premium problems accessed by free users
 
 #### Hint Gating
 - Hint at index 0 (`cost_points: 0`) is available to everyone
@@ -1030,7 +1034,7 @@ CoachPrash uses a tiered access system to provide value to free users while ince
 - The solution API endpoint checks the user's tier before sending solution data
 
 #### Anonymous User Prompts
-- Anonymous users see a "Create a free account" prompt after every 3rd problem
+- Anonymous users see a "Create a free account" prompt after completing free-tier problems
 - This encourages registration without blocking access
 
 ### Setting Access Tiers
@@ -2053,10 +2057,11 @@ Each expanded panel contains:
 
 | Field | Description |
 |-------|-------------|
-| Question (raw) | HTML + LaTeX text with **live KaTeX preview** (updates as you type) |
+| Question (HTML + LaTeX) | HTML + LaTeX text with **live KaTeX preview** (updates as you type) |
 | Problem Type | MCQ, FTB, or FRQ — changing type shows/hides the choices section |
 | Difficulty | easy, medium, or hard |
 | Points | Point value (default: 1) |
+| Access Tier | `free` or `premium` — controls per-problem freemium gating |
 | Correct Answer | For FTB: the accepted answer(s). For MCQ: auto-synced from the correct choice |
 
 ### Managing Choices (MCQ only)
@@ -2427,7 +2432,7 @@ The practice page now has filter buttons that let students jump directly to the 
 
 ### Freemium Interaction
 
-Freemium gating (first 3 problems free) happens server-side before problems are sent to the client. Filtering operates on the already-gated set. If a free user's 3 problems are all MCQ, filtering to "Code" shows an empty message — this is correct behavior.
+Freemium gating uses per-problem `access_tier` and happens server-side before problems are sent to the client. Free users receive only `access_tier: "free"` problems (typically 2 MCQ + 2 FTB). Filtering operates on the already-gated set. If a free user has no FRQ problems, filtering to "FRQ" shows an empty message — this is correct behavior.
 
 ### Mastery Tracking
 

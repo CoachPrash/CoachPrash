@@ -8,11 +8,11 @@ def can_access_concept(user, concept):
     return user.is_authenticated and user.is_premium
 
 
-def can_access_problem(user, problem_index):
-    """Check if user can access a problem by its 0-based index in the set."""
-    if user.is_authenticated and user.is_premium:
+def can_access_problem(user, problem):
+    """Check if user can access a problem based on its access tier."""
+    if problem.access_tier == 'free':
         return True
-    return problem_index < 3
+    return user.is_authenticated and user.is_premium
 
 
 def can_access_hint(user, hint_index):

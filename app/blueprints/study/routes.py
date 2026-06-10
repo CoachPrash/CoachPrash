@@ -25,6 +25,10 @@ def check_answer():
     if not problem:
         return jsonify({'error': 'Problem not found'}), 404
 
+    if problem.access_tier == 'premium':
+        if not current_user.is_authenticated or not current_user.is_premium:
+            return jsonify({'error': 'Premium required'}), 403
+
     submitted = data['submitted_answer'].strip()
     is_correct = False
     correct_display = ''
@@ -85,6 +89,10 @@ def run_code():
     problem = db.session.get(Problem, data['problem_id'])
     if not problem or problem.problem_type != 'code':
         return jsonify({'error': 'Problem not found'}), 404
+
+    if problem.access_tier == 'premium':
+        if not current_user.is_authenticated or not current_user.is_premium:
+            return jsonify({'error': 'Premium required'}), 403
 
     code = data['code'].strip()
     if not code:

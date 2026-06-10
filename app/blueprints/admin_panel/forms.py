@@ -85,7 +85,7 @@ class ProblemSetForm(FlaskForm):
 
 
 class ProblemForm(FlaskForm):
-    question_raw = TextAreaField('Question (supports LaTeX)', validators=[DataRequired()])
+    question_html = TextAreaField('Question (HTML + LaTeX)', validators=[DataRequired()])
     problem_type = SelectField(
         'Type', choices=[('mcq', 'Multiple Choice (MCQ)'), ('ftb', 'Fill The Blank (FTB)'), ('frq', 'Free Response (FRQ)')]
     )
@@ -95,6 +95,7 @@ class ProblemForm(FlaskForm):
     )
     points = IntegerField('Points', default=1, validators=[NumberRange(min=1)])
     display_order = IntegerField('Display Order', default=0)
+    access_tier = SelectField('Access Tier', choices=[('free', 'Free'), ('premium', 'Premium')])
 
 
 class AccessCodeForm(FlaskForm):

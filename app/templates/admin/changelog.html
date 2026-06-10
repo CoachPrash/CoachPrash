@@ -11,6 +11,78 @@
 
             <div class="changelog-entry">
                 <div class="changelog-date">
+                    <span class="changelog-date-day">10</span>
+                    <span class="changelog-date-month">Jun 2026</span>
+                    <span class="changelog-phase-badge">Feature</span>
+                </div>
+                <div class="changelog-body">
+                    <h2>Per-Problem Access Tier &amp; Content Ordering</h2>
+                    <p class="changelog-summary">Freemium gating now uses per-problem <code>access_tier</code> instead of index-based slicing. Problems are ordered by type and difficulty for a clean navigator experience.</p>
+
+                    <div class="changelog-section">
+                        <h3>Per-Problem Freemium Gating</h3>
+                        <ul>
+                            <li><strong>Per-problem <code>access_tier</code>:</strong> Each problem is individually tagged <code>free</code> or <code>premium</code> (replaces old &ldquo;first N problems&rdquo; approach)</li>
+                            <li><strong>Standard split:</strong> 2 MCQ free + 2 FTB free per problem set; all FRQs premium</li>
+                            <li><strong>Admin control:</strong> Access tier dropdown on each problem in the Problem Set Detail editor</li>
+                            <li><strong>API enforcement:</strong> <code>/api/practice/check</code> and <code>/api/practice/run-code</code> return 403 for free users on premium problems</li>
+                        </ul>
+                    </div>
+
+                    <div class="changelog-section">
+                        <h3>Content Ordering</h3>
+                        <ul>
+                            <li><strong>Type-grouped display:</strong> Problems sorted MCQ &rarr; FTB &rarr; FRQ &rarr; Code in navigator</li>
+                            <li><strong>Difficulty progression:</strong> Within each type: easy &rarr; medium &rarr; hard</li>
+                            <li><strong>All content JSON files reordered</strong> to match this convention</li>
+                        </ul>
+                    </div>
+
+                    <div class="changelog-section">
+                        <h3>Cleanup</h3>
+                        <ul>
+                            <li><strong>Removed <code>question_raw</code></strong> &mdash; redundant field eliminated from model, loader, admin UI, all content files, and schema</li>
+                            <li><strong>Upload Image page:</strong> Course dropdown now filters by selected subject; both dropdowns alphabetically sorted</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="changelog-entry">
+                <div class="changelog-date">
+                    <span class="changelog-date-day">9</span>
+                    <span class="changelog-date-month">Jun 2026</span>
+                    <span class="changelog-phase-badge">Feature</span>
+                </div>
+                <div class="changelog-body">
+                    <h2>Question Navigation Toolbar</h2>
+                    <p class="changelog-summary">Students can now freely navigate between practice questions using a visual toolbar inspired by AP Classroom. Shape-coded indicators show problem type at a glance, and colored borders track answer status.</p>
+
+                    <div class="changelog-section">
+                        <h3>What&rsquo;s New</h3>
+                        <ul>
+                            <li><strong>Shape-coded navigator:</strong> Circle = MCQ, Triangle = FTB, Square = FRQ/Code &mdash; each shape shows the question number</li>
+                            <li><strong>Color-coded status:</strong> Gray (unattempted), Green (correct), Red (incorrect), Amber (skipped/visited), Bold border (current question)</li>
+                            <li><strong>Free navigation:</strong> Click any shape to jump to any question; Prev/Next arrows for sequential movement</li>
+                            <li><strong>Save button:</strong> Students can save draft answers without submitting &mdash; drafts are preserved when navigating away and restored on return</li>
+                            <li><strong>Read-only revisit:</strong> Answered questions show compact feedback with inputs disabled (no reattempts)</li>
+                            <li><strong>Progress bar:</strong> Now completion-based (% of questions answered) instead of position-based</li>
+                        </ul>
+                    </div>
+
+                    <div class="changelog-section">
+                        <h3>Filter Improvements</h3>
+                        <ul>
+                            <li><strong>Renamed &ldquo;Written&rdquo; &rarr; &ldquo;FRQ&rdquo;</strong> in filter buttons to match AP terminology</li>
+                            <li><strong>Filters preserve progress:</strong> Switching between All/MCQ/FTB/FRQ no longer resets score or answer tracking</li>
+                            <li>Filters jump to the first unanswered question of the selected type</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="changelog-entry">
+                <div class="changelog-date">
                     <span class="changelog-date-day">9</span>
                     <span class="changelog-date-month">Jun 2026</span>
                     <span class="changelog-phase-badge">Content</span>

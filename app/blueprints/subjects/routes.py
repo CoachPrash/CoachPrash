@@ -358,9 +358,13 @@ def practice_page(subject_slug, course_slug, topic_slug, concept_slug):
     is_premium = current_user.is_authenticated and current_user.is_premium
     total_available = len(problems)
 
-    # Apply freemium gating: free users get first 4
+    # Apply freemium gating: free users see only free-tier problems
     if not is_premium:
-        problems = problems[:4]
+        problems = [p for p in problems if p.access_tier == 'free']
+
+    # Sort by problem type: MCQ first, then FTB, then FRQ, then code
+    type_order = {'mcq': 0, 'ftb': 1, 'frq': 2, 'code': 3}
+    problems.sort(key=lambda p: (type_order.get(p.problem_type, 99), p.display_order))
 
     # Serialize problems for the client — NEVER include correct answers
     from app.utils.bucket_filter import resolve_bucket_keys_str

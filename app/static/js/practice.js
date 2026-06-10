@@ -18,7 +18,11 @@ document.addEventListener('DOMContentLoaded', function () {
     var problemStartTime = Date.now();
     var timerInterval = null;
     var signupPromptCount = 0;
-    var codeEditorInstance = null;  // CodeMirror editor for 'code' problems
+    var codeEditorInstance = null;
+
+    // Navigation state
+    var visited = {};
+    var draftAnswers = {};
 
     // Filter state
     var allProblems = problems;
@@ -34,6 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var choicesArea = document.getElementById('choicesArea');
     var actionsArea = document.getElementById('actionsArea');
     var submitBtn = document.getElementById('submitBtn');
+    var saveBtn = document.getElementById('saveBtn');
     var hintBtn = document.getElementById('hintBtn');
     var solutionBtn = document.getElementById('solutionBtn');
     var feedbackArea = document.getElementById('feedbackArea');
@@ -46,6 +51,11 @@ document.addEventListener('DOMContentLoaded', function () {
     var filterBar = document.getElementById('quizFilterBar');
     var emptyFilter = document.getElementById('quizEmptyFilter');
     var quizBody = document.getElementById('quizBody');
+
+    // Navigator DOM refs
+    var navPrevBtn = document.getElementById('navPrevBtn');
+    var navNextBtn = document.getElementById('navNextBtn');
+    var navShapesContainer = document.getElementById('navShapesContainer');
 
     // Filter bar: show/hide buttons based on available types, hide bar if only 1 type
     if (filterBar) {
@@ -86,29 +96,19 @@ document.addEventListener('DOMContentLoaded', function () {
     function textToLatex(text) {
         if (!text) return '';
         var s = text;
-        // sqrt(X) → \sqrt{X}
         s = s.replace(/sqrt\(([^)]*)\)/g, '\\sqrt{$1}');
-        // trig / log functions
         s = s.replace(/\b(ln|log|sin|cos|tan)\(/g, '\\$1(');
-        // |X| → \left|X\right|
         s = s.replace(/\|([^|]+)\|/g, '\\left|$1\\right|');
-        // e^(X) → e^{X}
         s = s.replace(/e\^\(([^)]*)\)/g, 'e^{$1}');
-        // e^X (single token) → e^{X}
         s = s.replace(/e\^([a-zA-Z0-9])/g, 'e^{$1}');
-        // ^(X) → ^{X}
         s = s.replace(/\^\(([^)]*)\)/g, '^{$1}');
-        // ^X (single token) → ^{X}
         s = s.replace(/\^([a-zA-Z0-9])/g, '^{$1}');
-        // Full-string simple fraction A/B → \frac{A}{B}
         if (/^[^/]+\/[^/]+$/.test(s) && !/\\/.test(text)) {
             var parts = s.split('/');
             s = '\\frac{' + parts[0].trim() + '}{' + parts[1].trim() + '}';
         }
-        // pi → \pi, infinity → \infty
         s = s.replace(/\binfinity\b/g, '\\infty');
         s = s.replace(/\bpi\b/g, '\\pi');
-        // N*\pi → N\pi (cleaner)
         s = s.replace(/\*\\pi/g, '\\pi');
         return s;
     }
@@ -119,9 +119,8 @@ document.addEventListener('DOMContentLoaded', function () {
         var val = inputEl.value;
 
         if (start !== end && cursorOffset < 0) {
-            // Wrap selection: e.g. sqrt() wraps to sqrt(selection)
             var wrapper = text;
-            var insertPos = wrapper.length + cursorOffset; // position of closing char
+            var insertPos = wrapper.length + cursorOffset;
             var before = wrapper.substring(0, insertPos);
             var after = wrapper.substring(insertPos);
             var selected = val.substring(start, end);
@@ -156,14 +155,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function createMathToolbar(inputEl, container) {
         var buttons = [
-            { label: '√', text: 'sqrt()', offset: -1, aria: 'Square root' },
-            { label: 'π', text: 'pi', offset: 0, aria: 'Pi' },
-            { label: '∞', text: 'infinity', offset: 0, aria: 'Infinity' },
-            { label: 'xⁿ', text: '^', offset: 0, aria: 'Exponent' },
+            { label: '\u221A', text: 'sqrt()', offset: -1, aria: 'Square root' },
+            { label: '\u03C0', text: 'pi', offset: 0, aria: 'Pi' },
+            { label: '\u221E', text: 'infinity', offset: 0, aria: 'Infinity' },
+            { label: 'x\u207F', text: '^', offset: 0, aria: 'Exponent' },
             { label: 'a/b', text: '/', offset: 0, aria: 'Fraction' },
             { label: '|x|', text: '||', offset: -1, aria: 'Absolute value' },
             { label: 'ln', text: 'ln()', offset: -1, aria: 'Natural log' },
-            { label: 'eˣ', text: 'e^', offset: 0, aria: 'Exponential' },
+            { label: 'e\u02E3', text: 'e^', offset: 0, aria: 'Exponential' },
             { label: 'sin', text: 'sin()', offset: -1, aria: 'Sine' },
             { label: 'cos', text: 'cos()', offset: -1, aria: 'Cosine' },
             { label: 'tan', text: 'tan()', offset: -1, aria: 'Tangent' }
@@ -179,7 +178,7 @@ document.addEventListener('DOMContentLoaded', function () {
             btn.textContent = b.label;
             btn.setAttribute('aria-label', b.aria);
             btn.addEventListener('mousedown', function (e) {
-                e.preventDefault(); // prevent input blur on mobile
+                e.preventDefault();
             });
             btn.addEventListener('click', function () {
                 insertAtCursor(inputEl, b.text, b.offset);
@@ -191,19 +190,128 @@ document.addEventListener('DOMContentLoaded', function () {
         var preview = document.createElement('div');
         preview.className = 'math-preview';
 
-        // Insert toolbar before input, preview after input
         container.insertBefore(toolbar, inputEl);
         inputEl.parentNode.insertBefore(preview, inputEl.nextSibling);
 
-        // Live preview on typing
         inputEl.addEventListener('input', function () {
             updateMathPreview(inputEl, preview);
         });
     }
 
+    // ── Navigator functions ──
+
+    function getShapeSVG(type, index) {
+        var num = index + 1;
+        if (type === 'mcq') {
+            // Circle
+            return '<svg width="28" height="28" viewBox="0 0 28 28">'
+                + '<circle cx="14" cy="14" r="12" class="nav-shape"/>'
+                + '<text x="14" y="14" class="nav-num" text-anchor="middle" dy="0.35em">' + num + '</text>'
+                + '</svg>';
+        } else if (type === 'ftb') {
+            // Triangle
+            return '<svg width="28" height="28" viewBox="0 0 28 28">'
+                + '<polygon points="14,2 26,26 2,26" class="nav-shape"/>'
+                + '<text x="14" y="19" class="nav-num" text-anchor="middle" dy="0.35em">' + num + '</text>'
+                + '</svg>';
+        } else {
+            // Square for FRQ and code
+            return '<svg width="28" height="28" viewBox="0 0 28 28">'
+                + '<rect x="2" y="2" width="24" height="24" rx="3" class="nav-shape"/>'
+                + '<text x="14" y="14" class="nav-num" text-anchor="middle" dy="0.35em">' + num + '</text>'
+                + '</svg>';
+        }
+    }
+
+    function buildNavigator() {
+        if (!navShapesContainer) return;
+        navShapesContainer.innerHTML = '';
+        problems.forEach(function(p, i) {
+            var item = document.createElement('button');
+            item.className = 'quiz-nav-item';
+            item.setAttribute('data-index', i);
+            item.setAttribute('aria-label', 'Problem ' + (i + 1) + ' (' + p.problem_type.toUpperCase() + ')');
+            item.innerHTML = getShapeSVG(p.problem_type, i);
+            item.addEventListener('click', function() {
+                navigateTo(i);
+            });
+            navShapesContainer.appendChild(item);
+        });
+        updateNavigator();
+    }
+
+    function updateNavigator() {
+        var items = document.querySelectorAll('.quiz-nav-item');
+        var answeredCount = 0;
+        items.forEach(function(item, i) {
+            var p = problems[i];
+            item.classList.remove('nav-current', 'nav-correct', 'nav-incorrect', 'nav-skipped');
+            if (i === currentIndex) {
+                item.classList.add('nav-current');
+            }
+            if (p.id in answers) {
+                answeredCount++;
+                if (answers[p.id] === true) {
+                    item.classList.add('nav-correct');
+                } else if (answers[p.id] === false) {
+                    item.classList.add('nav-incorrect');
+                }
+                // answers[p.id] === null means FRQ pending self-grade — treat as skipped
+                if (answers[p.id] === null) {
+                    item.classList.add('nav-skipped');
+                }
+            } else if (visited[p.id] && i !== currentIndex) {
+                item.classList.add('nav-skipped');
+            }
+        });
+
+        // Update prev/next arrows
+        if (navPrevBtn) navPrevBtn.disabled = (currentIndex <= 0);
+        if (navNextBtn) navNextBtn.disabled = (currentIndex >= problems.length - 1);
+
+        // Scroll active item into view on mobile
+        var activeItem = document.querySelector('.quiz-nav-item.nav-current');
+        if (activeItem) activeItem.scrollIntoView({ inline: 'center', block: 'nearest', behavior: 'smooth' });
+
+        // Update progress bar — completion-based
+        var completionPct = problems.length > 0 ? (answeredCount / problems.length * 100) : 0;
+        progressFill.style.width = completionPct + '%';
+    }
+
+    function saveDraftForCurrent() {
+        var currentP = problems[currentIndex];
+        if (!currentP) return;
+        if (currentP.id in answers) return; // already submitted, no draft needed
+
+        if (currentP.problem_type === 'code' && codeEditorInstance && window._getEditorCode) {
+            var code = window._getEditorCode(codeEditorInstance);
+            if (code && code.trim()) {
+                draftAnswers[currentP.id] = code;
+            }
+        } else if (selectedAnswer !== null) {
+            draftAnswers[currentP.id] = selectedAnswer;
+        }
+    }
+
+    function navigateTo(index) {
+        if (index < 0 || index >= problems.length || index === currentIndex) return;
+
+        // Save draft for current problem if unanswered
+        saveDraftForCurrent();
+
+        // Mark current as visited if not already answered
+        var currentP = problems[currentIndex];
+        if (currentP && !(currentP.id in answers)) {
+            visited[currentP.id] = true;
+        }
+
+        currentIndex = index;
+        showProblem(index);
+        updateNavigator();
+    }
+
     function showProblem(index) {
         var p = problems[index];
-        answered = false;
         selectedAnswer = null;
         problemStartTime = Date.now();
 
@@ -213,8 +321,14 @@ document.addEventListener('DOMContentLoaded', function () {
             codeEditorInstance = null;
         }
 
+        // Check if this problem was already answered
+        var wasAnswered = (p.id in answers);
+        answered = wasAnswered;
+
+        // Mark as visited
+        visited[p.id] = true;
+
         counter.textContent = 'Problem ' + (index + 1) + ' of ' + problems.length;
-        progressFill.style.width = (index / problems.length * 100) + '%';
 
         problemDisplay.innerHTML = '<div class="problem-question">' + p.question_html + '</div>';
         if (p.difficulty) {
@@ -227,9 +341,12 @@ document.addEventListener('DOMContentLoaded', function () {
         hintsArea.innerHTML = '';
         solutionArea.innerHTML = '';
         nextBtn.style.display = 'none';
+        nextBtn.textContent = 'Next Problem';
+        nextBtn.onclick = nextProblem;
         submitBtn.disabled = true;
         submitBtn.style.display = '';
         submitBtn.textContent = 'Submit Answer';
+        saveBtn.style.display = 'none';
         hintBtn.style.display = p.hint_count > 0 ? '' : 'none';
         hintBtn.textContent = 'Show Hint';
         solutionBtn.style.display = 'none';
@@ -250,20 +367,18 @@ document.addEventListener('DOMContentLoaded', function () {
                     btn.classList.add('selected');
                     selectedAnswer = c.id;
                     submitBtn.disabled = false;
+                    saveBtn.style.display = '';
                 });
                 choicesArea.appendChild(btn);
             });
         } else if (p.problem_type === 'code') {
-            // YouCode: render CodeMirror editor + Run Code button
-            submitBtn.style.display = 'none';  // hide standard submit
+            submitBtn.style.display = 'none';
 
-            // Editor container
             var editorWrapper = document.createElement('div');
             editorWrapper.className = 'code-editor-wrapper';
             editorWrapper.id = 'codeEditorContainer';
             choicesArea.appendChild(editorWrapper);
 
-            // Actions: Run Code button + spinner
             var actionsDiv = document.createElement('div');
             actionsDiv.className = 'code-actions';
             actionsDiv.innerHTML = '<button class="btn-run-code" id="runCodeBtn">'
@@ -273,7 +388,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 + '<div class="code-spinner" id="codeSpinner"></div>';
             choicesArea.appendChild(actionsDiv);
 
-            // Output panel
             var outputPanel = document.createElement('div');
             outputPanel.className = 'code-output-panel';
             outputPanel.id = 'codeOutputPanel';
@@ -281,25 +395,27 @@ document.addEventListener('DOMContentLoaded', function () {
                 + '<div class="code-output-body"></div>';
             choicesArea.appendChild(outputPanel);
 
-            // Initialize CodeMirror (loaded as ES module — may not be ready yet)
             function mountEditor() {
                 if (codeEditorInstance) {
                     codeEditorInstance.destroy();
                 }
+                var initialCode = p.starter_code || '';
+                // Restore draft code if available
+                if (!wasAnswered && draftAnswers[p.id] !== undefined) {
+                    initialCode = draftAnswers[p.id];
+                }
                 codeEditorInstance = window._initCodeEditor(
                     editorWrapper,
-                    p.starter_code || '',
+                    initialCode,
                     { onRunCode: function () { runCode(p); } }
                 );
             }
             if (window._initCodeEditor) {
                 mountEditor();
             } else {
-                // ES module not loaded yet — poll until ready
                 var cmPoll = setInterval(function() {
                     if (window._initCodeEditor) {
                         clearInterval(cmPoll);
-                        // Only mount if this editor wrapper is still in the DOM
                         if (document.contains(editorWrapper)) {
                             mountEditor();
                         }
@@ -307,7 +423,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 }, 100);
             }
 
-            // Run Code button click
             var runBtn = document.getElementById('runCodeBtn');
             runBtn.addEventListener('click', function () { runCode(p); });
 
@@ -319,6 +434,7 @@ document.addEventListener('DOMContentLoaded', function () {
             textarea.addEventListener('input', function () {
                 selectedAnswer = textarea.value.trim();
                 submitBtn.disabled = !selectedAnswer;
+                if (selectedAnswer) saveBtn.style.display = '';
             });
             choicesArea.appendChild(textarea);
             submitBtn.textContent = 'Submit Response';
@@ -330,6 +446,7 @@ document.addEventListener('DOMContentLoaded', function () {
             input.addEventListener('input', function () {
                 selectedAnswer = input.value.trim();
                 submitBtn.disabled = !selectedAnswer;
+                if (selectedAnswer) saveBtn.style.display = '';
             });
             input.addEventListener('keydown', function (e) {
                 if (e.key === 'Enter' && selectedAnswer && !answered) {
@@ -340,8 +457,64 @@ document.addEventListener('DOMContentLoaded', function () {
             createMathToolbar(input, choicesArea);
         }
 
+        // Restore state for already-answered problems
+        if (wasAnswered) {
+            submitBtn.style.display = 'none';
+            saveBtn.style.display = 'none';
+
+            if (answers[p.id] === true) {
+                feedbackArea.innerHTML = '<strong>Correct!</strong>';
+                feedbackArea.className = 'quiz-feedback feedback-correct';
+            } else if (answers[p.id] === false) {
+                feedbackArea.innerHTML = '<strong>Incorrect.</strong>';
+                feedbackArea.className = 'quiz-feedback feedback-incorrect';
+            } else if (answers[p.id] === null) {
+                feedbackArea.innerHTML = '<strong>Response submitted.</strong> (Pending self-grade)';
+                feedbackArea.className = 'quiz-feedback feedback-frq';
+            }
+            feedbackArea.style.display = 'block';
+
+            // Show next/results button
+            if (currentIndex < problems.length - 1) {
+                nextBtn.style.display = '';
+            } else {
+                nextBtn.textContent = 'View Results';
+                nextBtn.style.display = '';
+                nextBtn.onclick = function() { showResults(); };
+            }
+
+            // Disable inputs
+            choicesArea.querySelectorAll('.choice-btn').forEach(function(b) { b.style.pointerEvents = 'none'; });
+            var fi = choicesArea.querySelector('.fill-blank-input');
+            if (fi) fi.disabled = true;
+            var mt = choicesArea.querySelector('.math-toolbar');
+            if (mt) { mt.style.pointerEvents = 'none'; mt.style.opacity = '0.5'; }
+            var ft = choicesArea.querySelector('.frq-textarea');
+            if (ft) ft.disabled = true;
+
+            if (p.has_solution) solutionBtn.style.display = '';
+        }
+
+        // Restore draft for unanswered problems
+        if (!wasAnswered && draftAnswers[p.id] !== undefined) {
+            selectedAnswer = draftAnswers[p.id];
+            if (p.problem_type === 'mcq') {
+                var draftBtn = choicesArea.querySelector('.choice-btn[data-id="' + selectedAnswer + '"]');
+                if (draftBtn) { draftBtn.classList.add('selected'); submitBtn.disabled = false; }
+            } else if (p.problem_type === 'frq') {
+                var ta = choicesArea.querySelector('.frq-textarea');
+                if (ta) { ta.value = selectedAnswer; submitBtn.disabled = !selectedAnswer; }
+            } else if (p.problem_type === 'ftb') {
+                var inp = choicesArea.querySelector('.fill-blank-input');
+                if (inp) { inp.value = selectedAnswer; submitBtn.disabled = !selectedAnswer; }
+            }
+            // Code drafts handled in mountEditor above
+            if (selectedAnswer) saveBtn.style.display = '';
+        }
+
         renderKaTeX(problemDisplay);
         renderKaTeX(choicesArea);
+        updateNavigator();
     }
 
     function submitAnswer() {
@@ -349,6 +522,7 @@ document.addEventListener('DOMContentLoaded', function () {
         answered = true;
         submitBtn.disabled = true;
         submitBtn.innerHTML = '<span class="spinner"></span>Checking...';
+        saveBtn.style.display = 'none';
 
         var p = problems[currentIndex];
         var timeSpent = Math.floor((Date.now() - problemStartTime) / 1000);
@@ -370,6 +544,7 @@ document.addEventListener('DOMContentLoaded', function () {
         .then(function (r) { return r.json(); })
         .then(function (data) {
             answers[p.id] = data.correct;
+            delete draftAnswers[p.id];
 
             if (data.correct === null) {
                 // FRQ: show model answer then ask student to self-grade
@@ -382,7 +557,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     + '<button class="btn btn-sm btn-success frq-grade-btn" data-grade="yes">Yes, I got it right</button> '
                     + '<button class="btn btn-sm btn-danger frq-grade-btn" data-grade="no">No, I got it wrong</button></div>';
 
-                // Hide Next button until student self-grades
                 nextBtn.style.display = 'none';
 
                 feedbackArea.querySelectorAll('.frq-grade-btn').forEach(function (btn) {
@@ -394,7 +568,6 @@ document.addEventListener('DOMContentLoaded', function () {
                         } else {
                             answers[p.id] = false;
                         }
-                        // Replace self-grade buttons with result
                         var gradeDiv = feedbackArea.querySelector('.frq-self-grade');
                         if (gotIt) {
                             gradeDiv.innerHTML = '<p class="frq-grade-result frq-grade-correct">Marked as correct!</p>';
@@ -402,7 +575,14 @@ document.addEventListener('DOMContentLoaded', function () {
                         } else {
                             gradeDiv.innerHTML = '<p class="frq-grade-result frq-grade-incorrect">Marked as incorrect. Review the model answer above.</p>';
                         }
-                        nextBtn.style.display = '';
+                        if (currentIndex < problems.length - 1) {
+                            nextBtn.style.display = '';
+                        } else {
+                            nextBtn.textContent = 'View Results';
+                            nextBtn.style.display = '';
+                            nextBtn.onclick = function() { showResults(); };
+                        }
+                        updateNavigator();
                     });
                 });
             } else if (data.correct) {
@@ -411,7 +591,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 feedbackArea.className = 'quiz-feedback feedback-correct';
                 showConfetti();
 
-                // Highlight correct choice
                 if (p.problem_type === 'mcq') {
                     var sel = choicesArea.querySelector('.choice-btn.selected');
                     if (sel) sel.classList.add('correct');
@@ -428,17 +607,21 @@ document.addEventListener('DOMContentLoaded', function () {
 
             feedbackArea.style.display = 'block';
             submitBtn.style.display = 'none';
-            // For FRQ, Next button is shown after self-grading (handled above)
+
             if (data.correct !== null) {
-                nextBtn.style.display = '';
+                if (currentIndex < problems.length - 1) {
+                    nextBtn.style.display = '';
+                } else {
+                    nextBtn.textContent = 'View Results';
+                    nextBtn.style.display = '';
+                    nextBtn.onclick = function() { showResults(); };
+                }
             }
 
-            // Show solution button after answering
             if (p.has_solution) {
                 solutionBtn.style.display = '';
             }
 
-            // Disable choice buttons
             choicesArea.querySelectorAll('.choice-btn').forEach(function (b) {
                 b.style.pointerEvents = 'none';
             });
@@ -450,8 +633,8 @@ document.addEventListener('DOMContentLoaded', function () {
             if (frqTextarea) frqTextarea.disabled = true;
 
             renderKaTeX(feedbackArea);
+            updateNavigator();
 
-            // Signup prompt for unauthenticated users
             signupPromptCount++;
             if (signupPrompt && signupPromptCount % 3 === 0) {
                 signupPrompt.style.display = 'block';
@@ -467,56 +650,63 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function applyFilter(type) {
-        activeFilter = type;
-        if (type === 'all') {
-            problems = allProblems;
-        } else {
-            problems = allProblems.filter(function(p) { return p.problem_type === type; });
+        // Save draft for current problem before switching
+        saveDraftForCurrent();
+        var currentP = problems[currentIndex];
+        if (currentP && !(currentP.id in answers)) {
+            visited[currentP.id] = true;
         }
 
-        // Reset quiz state
-        currentIndex = 0;
-        score = 0;
-        answers = {};
-        hintsRevealed = {};
-        startTime = Date.now();
-        signupPromptCount = 0;
+        activeFilter = type;
 
         // Update active button styling
         document.querySelectorAll('.quiz-filter-btn').forEach(function(btn) {
             btn.classList.toggle('active', btn.getAttribute('data-filter') === type);
         });
 
-        // Handle empty result
-        if (problems.length === 0) {
-            if (quizBody) quizBody.style.display = 'none';
-            if (emptyFilter) emptyFilter.style.display = 'block';
-            counter.textContent = 'Problem 0 of 0';
-            progressFill.style.width = '0%';
-            return;
+        // Find the first unanswered problem of this type, or first of this type
+        var targetIdx = -1;
+        if (type === 'all') {
+            // Jump to first unanswered overall
+            for (var i = 0; i < problems.length; i++) {
+                if (!(problems[i].id in answers)) { targetIdx = i; break; }
+            }
+            if (targetIdx === -1) targetIdx = 0;
+        } else {
+            // Jump to first unanswered of this type
+            for (var i = 0; i < problems.length; i++) {
+                if (problems[i].problem_type === type && !(problems[i].id in answers)) {
+                    targetIdx = i;
+                    break;
+                }
+            }
+            // If all of this type are answered, jump to first of this type
+            if (targetIdx === -1) {
+                for (var i = 0; i < problems.length; i++) {
+                    if (problems[i].problem_type === type) { targetIdx = i; break; }
+                }
+            }
+            // If none of this type exist, show empty message
+            if (targetIdx === -1) {
+                if (quizBody) quizBody.style.display = 'none';
+                if (emptyFilter) emptyFilter.style.display = 'block';
+                return;
+            }
         }
 
         if (quizBody) quizBody.style.display = '';
         if (emptyFilter) emptyFilter.style.display = 'none';
 
-        // Restart timer
-        clearInterval(timerInterval);
-        timerInterval = setInterval(function () {
-            var elapsed = Math.floor((Date.now() - startTime) / 1000);
-            var mins = Math.floor(elapsed / 60);
-            var secs = elapsed % 60;
-            timer.textContent = mins + ':' + (secs < 10 ? '0' : '') + secs;
-        }, 1000);
-
-        showProblem(0);
+        currentIndex = targetIdx;
+        showProblem(currentIndex);
+        updateNavigator();
     }
 
     function nextProblem() {
-        currentIndex++;
-        if (currentIndex >= problems.length) {
+        if (currentIndex >= problems.length - 1) {
             showResults();
         } else {
-            showProblem(currentIndex);
+            navigateTo(currentIndex + 1);
         }
     }
 
@@ -529,14 +719,17 @@ document.addEventListener('DOMContentLoaded', function () {
         var mins = Math.floor(elapsed / 60);
         var secs = elapsed % 60;
 
-        document.getElementById('resultsScore').textContent = score;
-        document.getElementById('resultsTotal').textContent = problems.length;
-        document.getElementById('resultsAccuracy').textContent = Math.round(score / problems.length * 100) + '%';
+        // Calculate total score across ALL problems (not just filtered view)
+        var totalScore = 0;
+        allProblems.forEach(function(p) { if (answers[p.id] === true) totalScore++; });
+
+        document.getElementById('resultsScore').textContent = totalScore;
+        document.getElementById('resultsTotal').textContent = allProblems.length;
+        document.getElementById('resultsAccuracy').textContent = Math.round(totalScore / allProblems.length * 100) + '%';
         document.getElementById('resultsTime').textContent = mins + ':' + (secs < 10 ? '0' : '') + secs;
 
         progressFill.style.width = '100%';
 
-        // Report quiz completion to update StudentProgress
         if (quizMeta.concept_id) {
             fetch('/api/practice/complete', {
                 method: 'POST',
@@ -672,6 +865,24 @@ document.addEventListener('DOMContentLoaded', function () {
         }, 2500);
     }
 
+    function saveDraft() {
+        var p = problems[currentIndex];
+        if (!p || answered || (p.id in answers)) return;
+
+        saveDraftForCurrent();
+        visited[p.id] = true;
+
+        // Brief "Saved!" feedback on button
+        saveBtn.textContent = 'Saved!';
+        saveBtn.disabled = true;
+        setTimeout(function() {
+            saveBtn.textContent = 'Save';
+            saveBtn.disabled = false;
+        }, 1000);
+
+        updateNavigator();
+    }
+
     function runCode(problem) {
         if (!codeEditorInstance || !window._getEditorCode) return;
         var code = window._getEditorCode(codeEditorInstance);
@@ -683,7 +894,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         runBtn.disabled = true;
         spinner.classList.add('active');
-        panel.className = 'code-output-panel';  // reset
+        panel.className = 'code-output-panel';
 
         fetch('/api/practice/run-code', {
             method: 'POST',
@@ -713,7 +924,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 header.textContent = 'Runtime Error';
                 body.textContent = data.error;
             } else if (data.test_results) {
-                // Method test results (Tier 2)
                 var passed = data.test_results.passed;
                 var total = data.test_results.total;
                 var allPass = passed === total;
@@ -738,19 +948,26 @@ document.addEventListener('DOMContentLoaded', function () {
                 body.innerHTML = tableHtml;
 
                 if (allPass) {
-                    // Auto-grade as correct
                     answered = true;
                     score++;
                     answers[problem.id] = true;
+                    delete draftAnswers[problem.id];
                     showConfetti();
                     feedbackArea.innerHTML = '<strong>All tests passed!</strong>';
                     feedbackArea.className = 'quiz-feedback feedback-correct';
                     feedbackArea.style.display = 'block';
-                    nextBtn.style.display = '';
+                    saveBtn.style.display = 'none';
+                    if (currentIndex < problems.length - 1) {
+                        nextBtn.style.display = '';
+                    } else {
+                        nextBtn.textContent = 'View Results';
+                        nextBtn.style.display = '';
+                        nextBtn.onclick = function() { showResults(); };
+                    }
                     if (problem.has_solution) solutionBtn.style.display = '';
+                    updateNavigator();
                 }
             } else {
-                // Output match (Tier 1)
                 if (data.passed) {
                     panel.className = 'code-output-panel visible success';
                     header.textContent = 'Output Correct!';
@@ -759,12 +976,21 @@ document.addEventListener('DOMContentLoaded', function () {
                     answered = true;
                     score++;
                     answers[problem.id] = true;
+                    delete draftAnswers[problem.id];
                     showConfetti();
                     feedbackArea.innerHTML = '<strong>Correct!</strong>';
                     feedbackArea.className = 'quiz-feedback feedback-correct';
                     feedbackArea.style.display = 'block';
-                    nextBtn.style.display = '';
+                    saveBtn.style.display = 'none';
+                    if (currentIndex < problems.length - 1) {
+                        nextBtn.style.display = '';
+                    } else {
+                        nextBtn.textContent = 'View Results';
+                        nextBtn.style.display = '';
+                        nextBtn.onclick = function() { showResults(); };
+                    }
                     if (problem.has_solution) solutionBtn.style.display = '';
+                    updateNavigator();
                 } else {
                     panel.className = 'code-output-panel visible fail';
                     header.textContent = 'Output Incorrect';
@@ -792,11 +1018,23 @@ document.addEventListener('DOMContentLoaded', function () {
     nextBtn.addEventListener('click', nextProblem);
     hintBtn.addEventListener('click', requestHint);
     solutionBtn.addEventListener('click', requestSolution);
+    saveBtn.addEventListener('click', saveDraft);
+
+    // Navigator arrow buttons
+    if (navPrevBtn) {
+        navPrevBtn.addEventListener('click', function() {
+            navigateTo(currentIndex - 1);
+        });
+    }
+    if (navNextBtn) {
+        navNextBtn.addEventListener('click', function() {
+            navigateTo(currentIndex + 1);
+        });
+    }
 
     var retryBtn = document.getElementById('retryBtn');
     if (retryBtn) {
         retryBtn.addEventListener('click', function () {
-            // Reset to ALL filter on retry
             activeFilter = 'all';
             problems = allProblems;
             document.querySelectorAll('.quiz-filter-btn').forEach(function(btn) {
@@ -806,6 +1044,8 @@ document.addEventListener('DOMContentLoaded', function () {
             score = 0;
             answers = {};
             hintsRevealed = {};
+            visited = {};
+            draftAnswers = {};
             startTime = Date.now();
             signupPromptCount = 0;
             quizResults.style.display = 'none';
@@ -819,6 +1059,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 timer.textContent = mins + ':' + (secs < 10 ? '0' : '') + secs;
             }, 1000);
             showProblem(0);
+            buildNavigator();
         });
     }
 
@@ -827,7 +1068,6 @@ document.addEventListener('DOMContentLoaded', function () {
         btn.addEventListener('click', function() {
             var type = btn.getAttribute('data-filter');
             if (type === activeFilter) return;
-            // If results are showing, switch back to quiz view
             quizResults.style.display = 'none';
             quizContainer.style.display = '';
             applyFilter(type);
@@ -836,4 +1076,5 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Start
     showProblem(0);
+    buildNavigator();
 });

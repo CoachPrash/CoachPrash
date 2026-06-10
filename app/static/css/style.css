@@ -1933,6 +1933,140 @@ body.sidebar-collapsed .sidebar-footer {
     transition: width 0.3s ease;
 }
 
+/* Question Navigation Toolbar */
+.quiz-nav-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0.75rem 0 1rem;
+    padding: 0.5rem 0;
+}
+.quiz-nav-arrow {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    border: 1px solid #D1D5DB;
+    border-radius: 6px;
+    background: #fff;
+    color: var(--primary);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+.quiz-nav-arrow:hover:not(:disabled) {
+    background: var(--primary);
+    color: #fff;
+    border-color: var(--primary);
+}
+.quiz-nav-arrow:disabled {
+    opacity: 0.35;
+    cursor: default;
+}
+.quiz-nav-shapes {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    flex: 1;
+    justify-content: center;
+    padding: 2px 0;
+}
+.quiz-nav-shapes::-webkit-scrollbar {
+    display: none;
+}
+.quiz-nav-item {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    padding: 2px;
+    border-radius: 4px;
+    transition: transform 0.15s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.quiz-nav-item:hover {
+    transform: scale(1.15);
+}
+
+/* Shape base styling */
+.quiz-nav-item .nav-shape {
+    fill: transparent;
+    stroke: #9CA3AF;
+    stroke-width: 2;
+    transition: fill 0.2s, stroke 0.2s, stroke-width 0.2s;
+}
+.quiz-nav-item .nav-num {
+    font-size: 10px;
+    font-weight: 600;
+    fill: #6B7280;
+    font-family: inherit;
+    transition: fill 0.2s;
+}
+
+/* Current question (unanswered) — navy border */
+.quiz-nav-item.nav-current .nav-shape {
+    stroke-width: 3;
+    filter: drop-shadow(0 0 3px rgba(27, 54, 93, 0.3));
+}
+.quiz-nav-item.nav-current:not(.nav-correct):not(.nav-incorrect):not(.nav-skipped) .nav-shape {
+    stroke: var(--primary);
+    fill: rgba(27, 54, 93, 0.08);
+}
+.quiz-nav-item.nav-current:not(.nav-correct):not(.nav-incorrect):not(.nav-skipped) .nav-num {
+    fill: var(--primary);
+    font-weight: 700;
+}
+
+/* Correct — green border */
+.quiz-nav-item.nav-correct .nav-shape {
+    stroke: var(--success);
+    stroke-width: 2.5;
+    fill: rgba(45, 134, 89, 0.1);
+}
+.quiz-nav-item.nav-correct .nav-num {
+    fill: var(--success);
+}
+
+/* Incorrect — red border */
+.quiz-nav-item.nav-incorrect .nav-shape {
+    stroke: var(--danger);
+    stroke-width: 2.5;
+    fill: rgba(196, 30, 58, 0.1);
+}
+.quiz-nav-item.nav-incorrect .nav-num {
+    fill: var(--danger);
+}
+
+/* Skipped — amber border */
+.quiz-nav-item.nav-skipped .nav-shape {
+    stroke: var(--accent);
+    stroke-width: 2.5;
+    fill: rgba(244, 161, 0, 0.1);
+}
+.quiz-nav-item.nav-skipped .nav-num {
+    fill: var(--accent);
+}
+
+/* Current + answered/skipped combo — bold border with glow, retain answer color */
+.quiz-nav-item.nav-current.nav-correct .nav-shape,
+.quiz-nav-item.nav-current.nav-incorrect .nav-shape,
+.quiz-nav-item.nav-current.nav-skipped .nav-shape {
+    stroke-width: 3;
+    filter: drop-shadow(0 0 3px rgba(27, 54, 93, 0.3));
+}
+.quiz-nav-item.nav-current .nav-num {
+    font-weight: 700;
+}
+
 .quiz-body {
     background: #fff;
     border: 1px solid #E5E7EB;
@@ -2447,6 +2581,7 @@ figure.concept-diagram figcaption {
     .concept-nav { flex-direction: column; }
     .concept-nav-link { max-width: 100%; }
     .quiz-body { padding: 1.25rem; }
+    .quiz-nav-shapes { justify-content: flex-start; }
     .results-stats { flex-direction: column; gap: 1rem; }
     .results-actions { flex-direction: column; }
     .activity-body { flex-direction: column; align-items: flex-start; gap: 0.25rem; }
@@ -2457,6 +2592,9 @@ figure.concept-diagram figcaption {
 @media (max-width: 480px) {
     .progress-stats-grid { grid-template-columns: 1fr; }
     .quiz-actions { flex-direction: column; }
+    .quiz-nav-item { width: 28px; height: 28px; }
+    .quiz-nav-item svg { width: 24px; height: 24px; }
+    .quiz-nav-arrow { width: 28px; height: 28px; }
     .quiz-meta { flex-direction: column; align-items: flex-start; gap: 0.25rem; }
 }
 

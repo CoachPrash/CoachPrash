@@ -160,7 +160,6 @@ def load_content_json(file_path):
                     problem = Problem(
                         problem_set_id=ps.id,
                         question_html=sanitize_html(q_html),
-                        question_raw=pdata.get('question_raw', ''),
                         problem_type=problem_type,
                         correct_answer=pdata.get('correct_answer', ''),
                         starter_code=pdata.get('starter_code'),
@@ -171,6 +170,7 @@ def load_content_json(file_path):
                         difficulty=pdata.get('difficulty', 'medium'),
                         points=pdata.get('points', 1),
                         display_order=pdata.get('display_order', pi),
+                        access_tier=pdata.get('access_tier', 'free'),
                     )
                     db.session.add(problem)
                     db.session.flush()

@@ -365,32 +365,6 @@
                   "access_tier": "free"
                 },
                 {
-                  "question_html": "<p>How many moles of an ideal gas are contained in a 0.020 m\\(^3\\) container at 1.013 \\(\\times 10^5\\) Pa and 400 K? Use \\( R = 8.314 \\) J/(mol·K). Round to two decimal places.</p>",
-                  "problem_type": "ftb",
-                  "correct_answer": "0.61",
-                  "difficulty": "medium",
-                  "points": 1,
-                  "hints": [
-                    {
-                      "text": "Rearrange \\( PV = nRT \\) to solve for \\( n \\).",
-                      "cost_points": 0
-                    },
-                    {
-                      "text": "\\( n = \\frac{PV}{RT} = \\frac{(1.013 \\times 10^5)(0.020)}{(8.314)(400)} = 0.61 \\) mol.",
-                      "cost_points": 1
-                    }
-                  ],
-                  "solution_steps": [
-                    {
-                      "text": "\\( n = \\frac{PV}{RT} = \\frac{(1.013 \\times 10^5)(0.020)}{(8.314)(400)} \\)"
-                    },
-                    {
-                      "text": "\\( = \\frac{2026}{3325.6} = 0.61 \\) mol."
-                    }
-                  ],
-                  "access_tier": "free"
-                },
-                {
                   "question_html": "<p>A gas occupies 3.0 L at 300 K. If the pressure is kept constant and the temperature is raised to 600 K, what is the new volume in liters?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "6",
@@ -412,6 +386,32 @@
                     },
                     {
                       "text": "\\( V_2 = 3.0 \\times \\frac{600}{300} = 6.0 \\) L."
+                    }
+                  ],
+                  "access_tier": "free"
+                },
+                {
+                  "question_html": "<p>How many moles of an ideal gas are contained in a 0.020 m\\(^3\\) container at 1.013 \\(\\times 10^5\\) Pa and 400 K? Use \\( R = 8.314 \\) J/(mol·K). Round to two decimal places.</p>",
+                  "problem_type": "ftb",
+                  "correct_answer": "0.61",
+                  "difficulty": "medium",
+                  "points": 1,
+                  "hints": [
+                    {
+                      "text": "Rearrange \\( PV = nRT \\) to solve for \\( n \\).",
+                      "cost_points": 0
+                    },
+                    {
+                      "text": "\\( n = \\frac{PV}{RT} = \\frac{(1.013 \\times 10^5)(0.020)}{(8.314)(400)} = 0.61 \\) mol.",
+                      "cost_points": 1
+                    }
+                  ],
+                  "solution_steps": [
+                    {
+                      "text": "\\( n = \\frac{PV}{RT} = \\frac{(1.013 \\times 10^5)(0.020)}{(8.314)(400)} \\)"
+                    },
+                    {
+                      "text": "\\( = \\frac{2026}{3325.6} = 0.61 \\) mol."
                     }
                   ],
                   "access_tier": "free"
@@ -994,6 +994,52 @@
               "display_order": 1,
               "problems": [
                 {
+                  "question_html": "<p>An ideal gas is compressed adiabatically. Which of the following must be true?</p>",
+                  "problem_type": "mcq",
+                  "difficulty": "medium",
+                  "points": 1,
+                  "choices": [
+                    {
+                      "text": "The temperature of the gas decreases",
+                      "is_correct": false
+                    },
+                    {
+                      "text": "The internal energy of the gas decreases",
+                      "is_correct": false
+                    },
+                    {
+                      "text": "The temperature of the gas increases",
+                      "is_correct": true
+                    },
+                    {
+                      "text": "The pressure of the gas decreases",
+                      "is_correct": false
+                    }
+                  ],
+                  "hints": [
+                    {
+                      "text": "Adiabatic means \\( Q = 0 \\). If work is done ON the gas, what happens to \\( \\Delta U \\)?",
+                      "cost_points": 0
+                    },
+                    {
+                      "text": "\\( \\Delta U = Q - W = 0 - W \\). Compression → \\( W < 0 \\) (work BY gas is negative) → \\( \\Delta U > 0 \\) → temperature increases.",
+                      "cost_points": 1
+                    }
+                  ],
+                  "solution_steps": [
+                    {
+                      "text": "Adiabatic: \\( Q = 0 \\). Compression: work is done ON the gas, so \\( W_{\\text{by gas}} < 0 \\)."
+                    },
+                    {
+                      "text": "\\( \\Delta U = 0 - W = -W > 0 \\). Internal energy increases, so temperature increases."
+                    },
+                    {
+                      "text": "This is why a bicycle pump gets hot when you compress air quickly."
+                    }
+                  ],
+                  "access_tier": "premium"
+                },
+                {
                   "question_html": "<p>A monatomic ideal gas undergoes a process where 600 J of heat is removed and 200 J of work is done on the gas. What is the change in temperature if the gas contains 0.50 mol? Use \\( R = 8.314 \\) J/(mol·K).</p>",
                   "problem_type": "mcq",
                   "difficulty": "hard",
@@ -1151,52 +1197,6 @@
                   ],
                   "access_tier": "premium",
                   "correct_answer": "Step 1 (A→B, isochoric): W₁ = 0 (no volume change). ΔU₁ = Q₁. Step 2 (B→C, isobaric at 3.0×10⁵ Pa): W₂ = PΔV = (3.0×10⁵)(0.060 - 0.020) = 12000 J. Total work W = 0 + 12000 = 12000 J. For the total ΔU, we use ΔU = (3/2)nRΔT. Using PV = nRT: nRT_A = (1.0×10⁵)(0.020) = 2000 J, nRT_C = (3.0×10⁵)(0.060) = 18000 J. ΔU = (3/2)(nRT_C - nRT_A) = (3/2)(18000 - 2000) = 24000 J."
-                },
-                {
-                  "question_html": "<p>An ideal gas is compressed adiabatically. Which of the following must be true?</p>",
-                  "problem_type": "mcq",
-                  "difficulty": "medium",
-                  "points": 1,
-                  "choices": [
-                    {
-                      "text": "The temperature of the gas decreases",
-                      "is_correct": false
-                    },
-                    {
-                      "text": "The internal energy of the gas decreases",
-                      "is_correct": false
-                    },
-                    {
-                      "text": "The temperature of the gas increases",
-                      "is_correct": true
-                    },
-                    {
-                      "text": "The pressure of the gas decreases",
-                      "is_correct": false
-                    }
-                  ],
-                  "hints": [
-                    {
-                      "text": "Adiabatic means \\( Q = 0 \\). If work is done ON the gas, what happens to \\( \\Delta U \\)?",
-                      "cost_points": 0
-                    },
-                    {
-                      "text": "\\( \\Delta U = Q - W = 0 - W \\). Compression → \\( W < 0 \\) (work BY gas is negative) → \\( \\Delta U > 0 \\) → temperature increases.",
-                      "cost_points": 1
-                    }
-                  ],
-                  "solution_steps": [
-                    {
-                      "text": "Adiabatic: \\( Q = 0 \\). Compression: work is done ON the gas, so \\( W_{\\text{by gas}} < 0 \\)."
-                    },
-                    {
-                      "text": "\\( \\Delta U = 0 - W = -W > 0 \\). Internal energy increases, so temperature increases."
-                    },
-                    {
-                      "text": "This is why a bicycle pump gets hot when you compress air quickly."
-                    }
-                  ],
-                  "access_tier": "premium"
                 }
               ]
             }
@@ -1638,6 +1638,29 @@
                   "access_tier": "free"
                 },
                 {
+                  "question_html": "<p>500 J of heat is added to a system at a constant temperature of 250 K. What is the change in entropy of the system, in J/K?</p>",
+                  "problem_type": "ftb",
+                  "correct_answer": "2",
+                  "difficulty": "easy",
+                  "points": 1,
+                  "hints": [
+                    {
+                      "text": "Use \\( \\Delta S = Q/T \\).",
+                      "cost_points": 0
+                    },
+                    {
+                      "text": "\\( \\Delta S = 500/250 = 2 \\) J/K.",
+                      "cost_points": 1
+                    }
+                  ],
+                  "solution_steps": [
+                    {
+                      "text": "\\( \\Delta S = Q/T = 500/250 = 2 \\) J/K."
+                    }
+                  ],
+                  "access_tier": "free"
+                },
+                {
                   "question_html": "<p>What is the maximum theoretical efficiency (in percent) of a heat engine operating between a hot reservoir at 600 K and a cold reservoir at 300 K?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "50",
@@ -1659,29 +1682,6 @@
                     },
                     {
                       "text": "Maximum efficiency is 50%."
-                    }
-                  ],
-                  "access_tier": "free"
-                },
-                {
-                  "question_html": "<p>500 J of heat is added to a system at a constant temperature of 250 K. What is the change in entropy of the system, in J/K?</p>",
-                  "problem_type": "ftb",
-                  "correct_answer": "2",
-                  "difficulty": "easy",
-                  "points": 1,
-                  "hints": [
-                    {
-                      "text": "Use \\( \\Delta S = Q/T \\).",
-                      "cost_points": 0
-                    },
-                    {
-                      "text": "\\( \\Delta S = 500/250 = 2 \\) J/K.",
-                      "cost_points": 1
-                    }
-                  ],
-                  "solution_steps": [
-                    {
-                      "text": "\\( \\Delta S = Q/T = 500/250 = 2 \\) J/K."
                     }
                   ],
                   "access_tier": "free"
@@ -3160,6 +3160,49 @@
               "display_order": 1,
               "problems": [
                 {
+                  "question_html": "<p>An electron moves from a point where \\( V = 100 \\) V to a point where \\( V = 0 \\) V. What is the change in kinetic energy of the electron, in eV?</p>",
+                  "problem_type": "mcq",
+                  "difficulty": "medium",
+                  "points": 1,
+                  "choices": [
+                    {
+                      "text": "+100 eV",
+                      "is_correct": false
+                    },
+                    {
+                      "text": "−100 eV",
+                      "is_correct": true
+                    },
+                    {
+                      "text": "+50 eV",
+                      "is_correct": false
+                    },
+                    {
+                      "text": "−50 eV",
+                      "is_correct": false
+                    }
+                  ],
+                  "hints": [
+                    {
+                      "text": "\\( \\Delta K = -q\\Delta V \\). Remember the electron has charge \\( q = -e \\).",
+                      "cost_points": 0
+                    },
+                    {
+                      "text": "\\( \\Delta K = -(-e)(0 - 100) = -e \\times 100 = -100 \\) eV. The electron loses kinetic energy (slows down) moving from low to high potential for a negative charge.",
+                      "cost_points": 1
+                    }
+                  ],
+                  "solution_steps": [
+                    {
+                      "text": "\\( \\Delta K = -q\\Delta V = -(-1.6 \\times 10^{-19})(0 - 100) = -(1.6 \\times 10^{-19})(100) = -1.6 \\times 10^{-17} \\) J."
+                    },
+                    {
+                      "text": "In eV: \\( -1.6 \\times 10^{-17} / 1.6 \\times 10^{-19} = -100 \\) eV. The electron slows down because it's moving against the electric force."
+                    }
+                  ],
+                  "access_tier": "premium"
+                },
+                {
                   "question_html": "<p>At what point along the x-axis (other than infinity) is the electric potential zero due to charges \\( q_1 = +4.0 \\) μC at the origin and \\( q_2 = -2.0 \\) μC at \\( x = 0.60 \\) m?</p>",
                   "problem_type": "mcq",
                   "difficulty": "hard",
@@ -3201,49 +3244,6 @@
                     },
                     {
                       "text": "\\( 2.4 - 4x = 2x \\), so \\( 6x = 2.4 \\), giving \\( x = 0.40 \\) m."
-                    }
-                  ],
-                  "access_tier": "premium"
-                },
-                {
-                  "question_html": "<p>An electron moves from a point where \\( V = 100 \\) V to a point where \\( V = 0 \\) V. What is the change in kinetic energy of the electron, in eV?</p>",
-                  "problem_type": "mcq",
-                  "difficulty": "medium",
-                  "points": 1,
-                  "choices": [
-                    {
-                      "text": "+100 eV",
-                      "is_correct": false
-                    },
-                    {
-                      "text": "−100 eV",
-                      "is_correct": true
-                    },
-                    {
-                      "text": "+50 eV",
-                      "is_correct": false
-                    },
-                    {
-                      "text": "−50 eV",
-                      "is_correct": false
-                    }
-                  ],
-                  "hints": [
-                    {
-                      "text": "\\( \\Delta K = -q\\Delta V \\). Remember the electron has charge \\( q = -e \\).",
-                      "cost_points": 0
-                    },
-                    {
-                      "text": "\\( \\Delta K = -(-e)(0 - 100) = -e \\times 100 = -100 \\) eV. The electron loses kinetic energy (slows down) moving from low to high potential for a negative charge.",
-                      "cost_points": 1
-                    }
-                  ],
-                  "solution_steps": [
-                    {
-                      "text": "\\( \\Delta K = -q\\Delta V = -(-1.6 \\times 10^{-19})(0 - 100) = -(1.6 \\times 10^{-19})(100) = -1.6 \\times 10^{-17} \\) J."
-                    },
-                    {
-                      "text": "In eV: \\( -1.6 \\times 10^{-17} / 1.6 \\times 10^{-19} = -100 \\) eV. The electron slows down because it's moving against the electric force."
                     }
                   ],
                   "access_tier": "premium"
@@ -3474,6 +3474,46 @@
               "display_order": 1,
               "problems": [
                 {
+                  "question_html": "<p>Three capacitors of 4 μF, 6 μF, and 12 μF are connected in parallel. What is the equivalent capacitance in μF?</p>",
+                  "problem_type": "mcq",
+                  "difficulty": "easy",
+                  "points": 1,
+                  "choices": [
+                    {
+                      "text": "22 μF",
+                      "is_correct": true
+                    },
+                    {
+                      "text": "2 μF",
+                      "is_correct": false
+                    },
+                    {
+                      "text": "7.3 μF",
+                      "is_correct": false
+                    },
+                    {
+                      "text": "12 μF",
+                      "is_correct": false
+                    }
+                  ],
+                  "hints": [
+                    {
+                      "text": "For parallel capacitors: \\( C_{\\text{eq}} = C_1 + C_2 + C_3 \\).",
+                      "cost_points": 0
+                    },
+                    {
+                      "text": "\\( C_{\\text{eq}} = 4 + 6 + 12 = 22 \\) μF.",
+                      "cost_points": 1
+                    }
+                  ],
+                  "solution_steps": [
+                    {
+                      "text": "Parallel: \\( C_{\\text{eq}} = C_1 + C_2 + C_3 = 4 + 6 + 12 = 22 \\) μF."
+                    }
+                  ],
+                  "access_tier": "premium"
+                },
+                {
                   "question_html": "<p>A 5 μF capacitor is charged to 200 V, then disconnected from the battery. A dielectric with \\( \\kappa = 4 \\) is inserted between the plates. What is the new voltage across the capacitor?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -3515,46 +3555,6 @@
                     },
                     {
                       "text": "New voltage: \\( V' = Q/C' = 1.0 \\times 10^{-3}/20 \\times 10^{-6} = 50 \\) V."
-                    }
-                  ],
-                  "access_tier": "premium"
-                },
-                {
-                  "question_html": "<p>Three capacitors of 4 μF, 6 μF, and 12 μF are connected in parallel. What is the equivalent capacitance in μF?</p>",
-                  "problem_type": "mcq",
-                  "difficulty": "easy",
-                  "points": 1,
-                  "choices": [
-                    {
-                      "text": "22 μF",
-                      "is_correct": true
-                    },
-                    {
-                      "text": "2 μF",
-                      "is_correct": false
-                    },
-                    {
-                      "text": "7.3 μF",
-                      "is_correct": false
-                    },
-                    {
-                      "text": "12 μF",
-                      "is_correct": false
-                    }
-                  ],
-                  "hints": [
-                    {
-                      "text": "For parallel capacitors: \\( C_{\\text{eq}} = C_1 + C_2 + C_3 \\).",
-                      "cost_points": 0
-                    },
-                    {
-                      "text": "\\( C_{\\text{eq}} = 4 + 6 + 12 = 22 \\) μF.",
-                      "cost_points": 1
-                    }
-                  ],
-                  "solution_steps": [
-                    {
-                      "text": "Parallel: \\( C_{\\text{eq}} = C_1 + C_2 + C_3 = 4 + 6 + 12 = 22 \\) μF."
                     }
                   ],
                   "access_tier": "premium"
@@ -3731,29 +3731,6 @@
                   "access_tier": "free"
                 },
                 {
-                  "question_html": "<p>A \\( +4.0 \\) μC charge moves from a point where \\( V = 300 \\) V to a point where \\( V = 100 \\) V. How much kinetic energy (in joules) does the charge gain if it starts from rest?</p>",
-                  "problem_type": "ftb",
-                  "correct_answer": "0.0008",
-                  "difficulty": "medium",
-                  "points": 1,
-                  "hints": [
-                    {
-                      "text": "\\( \\Delta KE = q(V_i - V_f) = q\\Delta V \\) where the charge moves from higher to lower V.",
-                      "cost_points": 0
-                    },
-                    {
-                      "text": "\\( \\Delta KE = (4 \\times 10^{-6})(300 - 100) = (4 \\times 10^{-6})(200) = 8 \\times 10^{-4} \\) J.",
-                      "cost_points": 1
-                    }
-                  ],
-                  "solution_steps": [
-                    {
-                      "text": "\\( \\Delta KE = q(V_i - V_f) = (4 \\times 10^{-6})(300 - 100) = 8 \\times 10^{-4} \\) J = 0.0008 J."
-                    }
-                  ],
-                  "access_tier": "free"
-                },
-                {
                   "question_html": "<p>Convert 500 eV to joules.</p>",
                   "problem_type": "ftb",
                   "correct_answer": "8e-17",
@@ -3772,6 +3749,29 @@
                   "solution_steps": [
                     {
                       "text": "\\( 500 \\text{ eV} \\times 1.6 \\times 10^{-19} \\text{ J/eV} = 8.0 \\times 10^{-17} \\) J."
+                    }
+                  ],
+                  "access_tier": "free"
+                },
+                {
+                  "question_html": "<p>A \\( +4.0 \\) μC charge moves from a point where \\( V = 300 \\) V to a point where \\( V = 100 \\) V. How much kinetic energy (in joules) does the charge gain if it starts from rest?</p>",
+                  "problem_type": "ftb",
+                  "correct_answer": "0.0008",
+                  "difficulty": "medium",
+                  "points": 1,
+                  "hints": [
+                    {
+                      "text": "\\( \\Delta KE = q(V_i - V_f) = q\\Delta V \\) where the charge moves from higher to lower V.",
+                      "cost_points": 0
+                    },
+                    {
+                      "text": "\\( \\Delta KE = (4 \\times 10^{-6})(300 - 100) = (4 \\times 10^{-6})(200) = 8 \\times 10^{-4} \\) J.",
+                      "cost_points": 1
+                    }
+                  ],
+                  "solution_steps": [
+                    {
+                      "text": "\\( \\Delta KE = q(V_i - V_f) = (4 \\times 10^{-6})(300 - 100) = 8 \\times 10^{-4} \\) J = 0.0008 J."
                     }
                   ],
                   "access_tier": "free"
@@ -3873,6 +3873,52 @@
                   "access_tier": "premium"
                 },
                 {
+                  "question_html": "<p>Two identical \\( +1.0 \\) μC charges are released from rest at a separation of 0.50 m. Each has mass \\( 1.0 \\times 10^{-3} \\) kg. What is the speed of each charge when they are very far apart?</p>",
+                  "problem_type": "mcq",
+                  "difficulty": "hard",
+                  "points": 1,
+                  "choices": [
+                    {
+                      "text": "4.2 m/s",
+                      "is_correct": true
+                    },
+                    {
+                      "text": "3.0 m/s",
+                      "is_correct": false
+                    },
+                    {
+                      "text": "6.0 m/s",
+                      "is_correct": false
+                    },
+                    {
+                      "text": "8.5 m/s",
+                      "is_correct": false
+                    }
+                  ],
+                  "hints": [
+                    {
+                      "text": "Initial PE converts to KE of both charges. By symmetry, each gets half the total KE.",
+                      "cost_points": 0
+                    },
+                    {
+                      "text": "\\( U_i = kq^2/r = 0.018 \\) J. Each charge gets half: \\( \\frac{1}{2}mv^2 = 0.009 \\) J. \\( v = \\sqrt{2(0.009)/0.001} = \\sqrt{18} \\approx 4.2 \\) m/s.",
+                      "cost_points": 1
+                    }
+                  ],
+                  "solution_steps": [
+                    {
+                      "text": "\\( U_i = kq^2/r = (9 \\times 10^9)(1 \\times 10^{-6})^2/0.50 = 0.018 \\) J. At infinity, \\( U_f = 0 \\)."
+                    },
+                    {
+                      "text": "By symmetry each charge has the same speed: \\( 2 \\times \\frac{1}{2}mv^2 = 0.018 \\), so \\( mv^2 = 0.018 \\)."
+                    },
+                    {
+                      "text": "\\( v = \\sqrt{0.018/0.001} = \\sqrt{18} \\approx 4.2 \\) m/s."
+                    }
+                  ],
+                  "access_tier": "premium"
+                },
+                {
                   "question_html": "<p>An alpha particle (\\( q = 3.2 \\times 10^{-19} \\) C, \\( m = 6.64 \\times 10^{-27} \\) kg) is accelerated from rest through a potential difference of 2.0 \\times 10^6 V. What is its final speed in m/s?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "1.39e7",
@@ -3935,52 +3981,6 @@
                   ],
                   "access_tier": "premium",
                   "correct_answer": "(a) For a negative charge, ΔU = qΔV = (−e)(+2.0) = −3.2×10⁻¹⁹ J. PE decreases, so KE increases — the electron speeds up. (b) ΔKE = +3.2×10⁻¹⁹ J. KE_i = ½mv² = ½(9.11×10⁻³¹)(5.0×10⁵)² = 1.14×10⁻¹⁹ J. KE_f = 1.14×10⁻¹⁹ + 3.2×10⁻¹⁹ = 4.34×10⁻¹⁹ J. v_f = √(2×4.34×10⁻¹⁹/9.11×10⁻³¹) ≈ 9.8×10⁵ m/s."
-                },
-                {
-                  "question_html": "<p>Two identical \\( +1.0 \\) μC charges are released from rest at a separation of 0.50 m. Each has mass \\( 1.0 \\times 10^{-3} \\) kg. What is the speed of each charge when they are very far apart?</p>",
-                  "problem_type": "mcq",
-                  "difficulty": "hard",
-                  "points": 1,
-                  "choices": [
-                    {
-                      "text": "4.2 m/s",
-                      "is_correct": true
-                    },
-                    {
-                      "text": "3.0 m/s",
-                      "is_correct": false
-                    },
-                    {
-                      "text": "6.0 m/s",
-                      "is_correct": false
-                    },
-                    {
-                      "text": "8.5 m/s",
-                      "is_correct": false
-                    }
-                  ],
-                  "hints": [
-                    {
-                      "text": "Initial PE converts to KE of both charges. By symmetry, each gets half the total KE.",
-                      "cost_points": 0
-                    },
-                    {
-                      "text": "\\( U_i = kq^2/r = 0.018 \\) J. Each charge gets half: \\( \\frac{1}{2}mv^2 = 0.009 \\) J. \\( v = \\sqrt{2(0.009)/0.001} = \\sqrt{18} \\approx 4.2 \\) m/s.",
-                      "cost_points": 1
-                    }
-                  ],
-                  "solution_steps": [
-                    {
-                      "text": "\\( U_i = kq^2/r = (9 \\times 10^9)(1 \\times 10^{-6})^2/0.50 = 0.018 \\) J. At infinity, \\( U_f = 0 \\)."
-                    },
-                    {
-                      "text": "By symmetry each charge has the same speed: \\( 2 \\times \\frac{1}{2}mv^2 = 0.018 \\), so \\( mv^2 = 0.018 \\)."
-                    },
-                    {
-                      "text": "\\( v = \\sqrt{0.018/0.001} = \\sqrt{18} \\approx 4.2 \\) m/s."
-                    }
-                  ],
-                  "access_tier": "premium"
                 }
               ]
             }
@@ -4560,6 +4560,29 @@
                   "access_tier": "free"
                 },
                 {
+                  "question_html": "<p>What current flows through a 100 Ω resistor connected to a 9.0 V battery? Give your answer in amperes.</p>",
+                  "problem_type": "ftb",
+                  "correct_answer": "0.09",
+                  "difficulty": "easy",
+                  "points": 1,
+                  "hints": [
+                    {
+                      "text": "\\( I = V/R \\).",
+                      "cost_points": 0
+                    },
+                    {
+                      "text": "\\( I = 9.0/100 = 0.090 \\) A.",
+                      "cost_points": 1
+                    }
+                  ],
+                  "solution_steps": [
+                    {
+                      "text": "\\( I = V/R = 9.0/100 = 0.090 \\) A = 90 mA."
+                    }
+                  ],
+                  "access_tier": "free"
+                },
+                {
                   "question_html": "<p>A wire of length \\( L \\) and cross-sectional area \\( A \\) has resistance \\( R \\). If the wire is stretched to twice its original length (keeping volume constant), what is the new resistance?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "4R",
@@ -4581,29 +4604,6 @@
                     },
                     {
                       "text": "\\( R' = \\rho(2L)/(A/2) = 4 \\rho L/A = 4R \\)."
-                    }
-                  ],
-                  "access_tier": "free"
-                },
-                {
-                  "question_html": "<p>What current flows through a 100 Ω resistor connected to a 9.0 V battery? Give your answer in amperes.</p>",
-                  "problem_type": "ftb",
-                  "correct_answer": "0.09",
-                  "difficulty": "easy",
-                  "points": 1,
-                  "hints": [
-                    {
-                      "text": "\\( I = V/R \\).",
-                      "cost_points": 0
-                    },
-                    {
-                      "text": "\\( I = 9.0/100 = 0.090 \\) A.",
-                      "cost_points": 1
-                    }
-                  ],
-                  "solution_steps": [
-                    {
-                      "text": "\\( I = V/R = 9.0/100 = 0.090 \\) A = 90 mA."
                     }
                   ],
                   "access_tier": "free"
@@ -4864,29 +4864,6 @@
                   "access_tier": "free"
                 },
                 {
-                  "question_html": "<p>A 200 Ω resistor is connected to a 100 V source. What power does it dissipate, in watts?</p>",
-                  "problem_type": "ftb",
-                  "correct_answer": "50",
-                  "difficulty": "medium",
-                  "points": 1,
-                  "hints": [
-                    {
-                      "text": "Use \\( P = V^2/R \\).",
-                      "cost_points": 0
-                    },
-                    {
-                      "text": "\\( P = (100)^2/200 = 10000/200 = 50 \\) W.",
-                      "cost_points": 1
-                    }
-                  ],
-                  "solution_steps": [
-                    {
-                      "text": "\\( P = V^2/R = 10000/200 = 50 \\) W."
-                    }
-                  ],
-                  "access_tier": "free"
-                },
-                {
                   "question_html": "<p>A 1500 W heater runs for 2 hours. How much energy does it consume, in kWh?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "3",
@@ -4905,6 +4882,29 @@
                   "solution_steps": [
                     {
                       "text": "\\( E = Pt = (1.5 \\text{ kW})(2 \\text{ h}) = 3 \\) kWh."
+                    }
+                  ],
+                  "access_tier": "free"
+                },
+                {
+                  "question_html": "<p>A 200 Ω resistor is connected to a 100 V source. What power does it dissipate, in watts?</p>",
+                  "problem_type": "ftb",
+                  "correct_answer": "50",
+                  "difficulty": "medium",
+                  "points": 1,
+                  "hints": [
+                    {
+                      "text": "Use \\( P = V^2/R \\).",
+                      "cost_points": 0
+                    },
+                    {
+                      "text": "\\( P = (100)^2/200 = 10000/200 = 50 \\) W.",
+                      "cost_points": 1
+                    }
+                  ],
+                  "solution_steps": [
+                    {
+                      "text": "\\( P = V^2/R = 10000/200 = 50 \\) W."
                     }
                   ],
                   "access_tier": "free"
@@ -5323,6 +5323,52 @@
                   "access_tier": "premium"
                 },
                 {
+                  "question_html": "<p>A light bulb rated at 100 W, 120 V is connected to a 120 V source. A second identical bulb is then connected in series with the first (still 120 V source). Does each bulb get brighter or dimmer compared to a single bulb? Explain.</p>",
+                  "problem_type": "mcq",
+                  "difficulty": "hard",
+                  "points": 1,
+                  "choices": [
+                    {
+                      "text": "Each bulb gets dimmer",
+                      "is_correct": true
+                    },
+                    {
+                      "text": "Each bulb gets brighter",
+                      "is_correct": false
+                    },
+                    {
+                      "text": "Brightness stays the same",
+                      "is_correct": false
+                    },
+                    {
+                      "text": "One gets brighter and one gets dimmer",
+                      "is_correct": false
+                    }
+                  ],
+                  "hints": [
+                    {
+                      "text": "Each bulb has \\( R = V^2/P = 144 \\) Ω. In series, total \\( R \\) doubles, so total current decreases.",
+                      "cost_points": 0
+                    },
+                    {
+                      "text": "With one bulb: \\( I = 120/144 = 0.83 \\) A, \\( P = 100 \\) W. With two in series: \\( I = 120/288 = 0.42 \\) A. Each gets \\( P = I^2R = (0.42)^2(144) = 25 \\) W — much dimmer.",
+                      "cost_points": 1
+                    }
+                  ],
+                  "solution_steps": [
+                    {
+                      "text": "Bulb resistance: \\( R = V^2/P = 14400/100 = 144 \\) Ω."
+                    },
+                    {
+                      "text": "Two in series: \\( R_{\\text{eq}} = 288 \\) Ω. \\( I = 120/288 = 0.417 \\) A."
+                    },
+                    {
+                      "text": "Each bulb: \\( P = I^2R = (0.417)^2(144) = 25 \\) W. Much dimmer (25 W vs 100 W)."
+                    }
+                  ],
+                  "access_tier": "premium"
+                },
+                {
                   "question_html": "<p>In a circuit, a voltmeter reads 8.0 V across a 20 Ω resistor. What is the current through the resistor, in amperes?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "0.4",
@@ -5382,52 +5428,6 @@
                   ],
                   "access_tier": "premium",
                   "correct_answer": "R_p = (12)(24)/(12+24) = 288/36 = 8 Ω. R_eq = 8 + 8 = 16 Ω. I_total = 48/16 = 3 A through R₁. V_p = I×R_p = 3×8 = 24 V. I₂ = 24/12 = 2 A. I₃ = 24/24 = 1 A. P₂ = I₂²R₂ = (2)²(12) = 48 W."
-                },
-                {
-                  "question_html": "<p>A light bulb rated at 100 W, 120 V is connected to a 120 V source. A second identical bulb is then connected in series with the first (still 120 V source). Does each bulb get brighter or dimmer compared to a single bulb? Explain.</p>",
-                  "problem_type": "mcq",
-                  "difficulty": "hard",
-                  "points": 1,
-                  "choices": [
-                    {
-                      "text": "Each bulb gets dimmer",
-                      "is_correct": true
-                    },
-                    {
-                      "text": "Each bulb gets brighter",
-                      "is_correct": false
-                    },
-                    {
-                      "text": "Brightness stays the same",
-                      "is_correct": false
-                    },
-                    {
-                      "text": "One gets brighter and one gets dimmer",
-                      "is_correct": false
-                    }
-                  ],
-                  "hints": [
-                    {
-                      "text": "Each bulb has \\( R = V^2/P = 144 \\) Ω. In series, total \\( R \\) doubles, so total current decreases.",
-                      "cost_points": 0
-                    },
-                    {
-                      "text": "With one bulb: \\( I = 120/144 = 0.83 \\) A, \\( P = 100 \\) W. With two in series: \\( I = 120/288 = 0.42 \\) A. Each gets \\( P = I^2R = (0.42)^2(144) = 25 \\) W — much dimmer.",
-                      "cost_points": 1
-                    }
-                  ],
-                  "solution_steps": [
-                    {
-                      "text": "Bulb resistance: \\( R = V^2/P = 14400/100 = 144 \\) Ω."
-                    },
-                    {
-                      "text": "Two in series: \\( R_{\\text{eq}} = 288 \\) Ω. \\( I = 120/288 = 0.417 \\) A."
-                    },
-                    {
-                      "text": "Each bulb: \\( P = I^2R = (0.417)^2(144) = 25 \\) W. Much dimmer (25 W vs 100 W)."
-                    }
-                  ],
-                  "access_tier": "premium"
                 }
               ]
             }
@@ -5544,6 +5544,29 @@
                   "access_tier": "free"
                 },
                 {
+                  "question_html": "<p>A circuit loop contains a 20 V battery and three resistors. The voltage drops across two of them are 8 V and 5 V. What is the voltage drop across the third resistor, in volts?</p>",
+                  "problem_type": "ftb",
+                  "correct_answer": "7",
+                  "difficulty": "easy",
+                  "points": 1,
+                  "hints": [
+                    {
+                      "text": "By the loop rule, all voltage drops must sum to the EMF.",
+                      "cost_points": 0
+                    },
+                    {
+                      "text": "\\( V_3 = 20 - 8 - 5 = 7 \\) V.",
+                      "cost_points": 1
+                    }
+                  ],
+                  "solution_steps": [
+                    {
+                      "text": "\\( \\mathcal{E} = V_1 + V_2 + V_3 \\). \\( V_3 = 20 - 8 - 5 = 7 \\) V."
+                    }
+                  ],
+                  "access_tier": "free"
+                },
+                {
                   "question_html": "<p>In a single-loop circuit with a 15 V battery and three resistors in series (3 Ω, 5 Ω, 7 Ω), what is the voltage drop across the 5 Ω resistor, in volts?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "5",
@@ -5565,29 +5588,6 @@
                     },
                     {
                       "text": "Check: \\( V_3 + V_5 + V_7 = 3 + 5 + 7 = 15 \\) V = EMF ✓."
-                    }
-                  ],
-                  "access_tier": "free"
-                },
-                {
-                  "question_html": "<p>A circuit loop contains a 20 V battery and three resistors. The voltage drops across two of them are 8 V and 5 V. What is the voltage drop across the third resistor, in volts?</p>",
-                  "problem_type": "ftb",
-                  "correct_answer": "7",
-                  "difficulty": "easy",
-                  "points": 1,
-                  "hints": [
-                    {
-                      "text": "By the loop rule, all voltage drops must sum to the EMF.",
-                      "cost_points": 0
-                    },
-                    {
-                      "text": "\\( V_3 = 20 - 8 - 5 = 7 \\) V.",
-                      "cost_points": 1
-                    }
-                  ],
-                  "solution_steps": [
-                    {
-                      "text": "\\( \\mathcal{E} = V_1 + V_2 + V_3 \\). \\( V_3 = 20 - 8 - 5 = 7 \\) V."
                     }
                   ],
                   "access_tier": "free"
@@ -6266,6 +6266,49 @@
                   "access_tier": "premium"
                 },
                 {
+                  "question_html": "<p>A charged RC circuit is discharging. The initial voltage is 24 V and the time constant is 2.0 s. After 2.0 seconds, approximately what percentage of the initial voltage remains on the capacitor?</p>",
+                  "problem_type": "mcq",
+                  "difficulty": "medium",
+                  "points": 1,
+                  "choices": [
+                    {
+                      "text": "37%",
+                      "is_correct": true
+                    },
+                    {
+                      "text": "63%",
+                      "is_correct": false
+                    },
+                    {
+                      "text": "50%",
+                      "is_correct": false
+                    },
+                    {
+                      "text": "13%",
+                      "is_correct": false
+                    }
+                  ],
+                  "hints": [
+                    {
+                      "text": "After one time constant, the voltage drops to \\( 1/e \\) of the initial value.",
+                      "cost_points": 0
+                    },
+                    {
+                      "text": "\\( V = V_0 e^{-1} \\approx 0.37 V_0 \\). About 37% remains.",
+                      "cost_points": 1
+                    }
+                  ],
+                  "solution_steps": [
+                    {
+                      "text": "After \\( t = \\tau \\): \\( V = V_0 e^{-t/\\tau} = V_0 e^{-1} \\approx 0.37 V_0 \\)."
+                    },
+                    {
+                      "text": "About 37% of the initial voltage remains (\\( \\approx 8.8 \\) V out of 24 V)."
+                    }
+                  ],
+                  "access_tier": "premium"
+                },
+                {
                   "question_html": "<p>A fully charged 50 μF capacitor at 20 V is discharged through a 4000 Ω resistor. After how many time constants has the voltage dropped to about 5 V?</p>",
                   "problem_type": "mcq",
                   "difficulty": "hard",
@@ -6365,49 +6408,6 @@
                   ],
                   "access_tier": "premium",
                   "correct_answer": "(a) τ = RC = (10000)(100 × 10⁻⁶) = 1.0 s. (b) At t = 0: current is maximum (I₀ = 12/10000 = 1.2 mA), V_C = 0. Over time, current decreases exponentially while V_C increases exponentially toward 12 V. After ~5τ = 5 s, current ≈ 0 and V_C ≈ 12 V. (c) U = ½CV² = ½(100 × 10⁻⁶)(12)² = 7.2 × 10⁻³ J = 7.2 mJ."
-                },
-                {
-                  "question_html": "<p>A charged RC circuit is discharging. The initial voltage is 24 V and the time constant is 2.0 s. After 2.0 seconds, approximately what percentage of the initial voltage remains on the capacitor?</p>",
-                  "problem_type": "mcq",
-                  "difficulty": "medium",
-                  "points": 1,
-                  "choices": [
-                    {
-                      "text": "37%",
-                      "is_correct": true
-                    },
-                    {
-                      "text": "63%",
-                      "is_correct": false
-                    },
-                    {
-                      "text": "50%",
-                      "is_correct": false
-                    },
-                    {
-                      "text": "13%",
-                      "is_correct": false
-                    }
-                  ],
-                  "hints": [
-                    {
-                      "text": "After one time constant, the voltage drops to \\( 1/e \\) of the initial value.",
-                      "cost_points": 0
-                    },
-                    {
-                      "text": "\\( V = V_0 e^{-1} \\approx 0.37 V_0 \\). About 37% remains.",
-                      "cost_points": 1
-                    }
-                  ],
-                  "solution_steps": [
-                    {
-                      "text": "After \\( t = \\tau \\): \\( V = V_0 e^{-t/\\tau} = V_0 e^{-1} \\approx 0.37 V_0 \\)."
-                    },
-                    {
-                      "text": "About 37% of the initial voltage remains (\\( \\approx 8.8 \\) V out of 24 V)."
-                    }
-                  ],
-                  "access_tier": "premium"
                 }
               ]
             }
@@ -6698,49 +6698,6 @@
               "display_order": 0,
               "problems": [
                 {
-                  "question_html": "<p>A proton moves at \\( 3.0 \\times 10^6 \\) m/s perpendicular to a 0.50 T magnetic field. What is the magnitude of the magnetic force on the proton? (\\( q_p = 1.6 \\times 10^{-19} \\) C)</p>",
-                  "problem_type": "mcq",
-                  "difficulty": "medium",
-                  "points": 1,
-                  "choices": [
-                    {
-                      "text": "\\( 2.4 \\times 10^{-13} \\) N",
-                      "is_correct": true
-                    },
-                    {
-                      "text": "\\( 2.4 \\times 10^{-19} \\) N",
-                      "is_correct": false
-                    },
-                    {
-                      "text": "\\( 1.5 \\times 10^{6} \\) N",
-                      "is_correct": false
-                    },
-                    {
-                      "text": "\\( 4.8 \\times 10^{-13} \\) N",
-                      "is_correct": false
-                    }
-                  ],
-                  "hints": [
-                    {
-                      "text": "Use \\( F = qvB\\sin\\theta \\). Since the charge moves perpendicular to the field, \\( \\sin 90° = 1 \\).",
-                      "cost_points": 0
-                    },
-                    {
-                      "text": "\\( F = (1.6 \\times 10^{-19})(3.0 \\times 10^6)(0.50) = 2.4 \\times 10^{-13} \\) N.",
-                      "cost_points": 1
-                    }
-                  ],
-                  "solution_steps": [
-                    {
-                      "text": "\\( F = qvB\\sin\\theta = (1.6 \\times 10^{-19})(3.0 \\times 10^6)(0.50)(1) \\)."
-                    },
-                    {
-                      "text": "\\( F = 2.4 \\times 10^{-13} \\) N."
-                    }
-                  ],
-                  "access_tier": "free"
-                },
-                {
                   "question_html": "<p>A charged particle moves parallel to a uniform magnetic field. The magnetic force on the particle is:</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -6784,30 +6741,44 @@
                   "access_tier": "free"
                 },
                 {
-                  "question_html": "<p>A proton moves at \\( 1.0 \\times 10^6 \\) m/s perpendicular to a 0.20 T field. What is the radius of its circular path, in centimeters? (\\( m_p = 1.67 \\times 10^{-27} \\) kg, \\( e = 1.6 \\times 10^{-19} \\) C)</p>",
-                  "problem_type": "ftb",
-                  "correct_answer": "5.2",
+                  "question_html": "<p>A proton moves at \\( 3.0 \\times 10^6 \\) m/s perpendicular to a 0.50 T magnetic field. What is the magnitude of the magnetic force on the proton? (\\( q_p = 1.6 \\times 10^{-19} \\) C)</p>",
+                  "problem_type": "mcq",
                   "difficulty": "medium",
                   "points": 1,
+                  "choices": [
+                    {
+                      "text": "\\( 2.4 \\times 10^{-13} \\) N",
+                      "is_correct": true
+                    },
+                    {
+                      "text": "\\( 2.4 \\times 10^{-19} \\) N",
+                      "is_correct": false
+                    },
+                    {
+                      "text": "\\( 1.5 \\times 10^{6} \\) N",
+                      "is_correct": false
+                    },
+                    {
+                      "text": "\\( 4.8 \\times 10^{-13} \\) N",
+                      "is_correct": false
+                    }
+                  ],
                   "hints": [
                     {
-                      "text": "Use \\( r = mv/(qB) \\).",
+                      "text": "Use \\( F = qvB\\sin\\theta \\). Since the charge moves perpendicular to the field, \\( \\sin 90° = 1 \\).",
                       "cost_points": 0
                     },
                     {
-                      "text": "\\( r = (1.67 \\times 10^{-27})(1.0 \\times 10^6)/[(1.6 \\times 10^{-19})(0.20)] = 1.67 \\times 10^{-21}/(3.2 \\times 10^{-20}) = 0.052 \\) m = 5.2 cm.",
+                      "text": "\\( F = (1.6 \\times 10^{-19})(3.0 \\times 10^6)(0.50) = 2.4 \\times 10^{-13} \\) N.",
                       "cost_points": 1
                     }
                   ],
                   "solution_steps": [
                     {
-                      "text": "\\( r = \\frac{mv}{qB} = \\frac{(1.67 \\times 10^{-27})(1.0 \\times 10^6)}{(1.6 \\times 10^{-19})(0.20)} \\)."
+                      "text": "\\( F = qvB\\sin\\theta = (1.6 \\times 10^{-19})(3.0 \\times 10^6)(0.50)(1) \\)."
                     },
                     {
-                      "text": "Numerator: \\( 1.67 \\times 10^{-21} \\). Denominator: \\( 3.2 \\times 10^{-20} \\)."
-                    },
-                    {
-                      "text": "\\( r = 0.052 \\) m = 5.2 cm."
+                      "text": "\\( F = 2.4 \\times 10^{-13} \\) N."
                     }
                   ],
                   "access_tier": "free"
@@ -6834,6 +6805,35 @@
                     },
                     {
                       "text": "Since \\( W = Fd\\cos\\theta \\) and \\( \\theta = 90° \\), \\( W = 0 \\). Speed and KE remain constant."
+                    }
+                  ],
+                  "access_tier": "free"
+                },
+                {
+                  "question_html": "<p>A proton moves at \\( 1.0 \\times 10^6 \\) m/s perpendicular to a 0.20 T field. What is the radius of its circular path, in centimeters? (\\( m_p = 1.67 \\times 10^{-27} \\) kg, \\( e = 1.6 \\times 10^{-19} \\) C)</p>",
+                  "problem_type": "ftb",
+                  "correct_answer": "5.2",
+                  "difficulty": "medium",
+                  "points": 1,
+                  "hints": [
+                    {
+                      "text": "Use \\( r = mv/(qB) \\).",
+                      "cost_points": 0
+                    },
+                    {
+                      "text": "\\( r = (1.67 \\times 10^{-27})(1.0 \\times 10^6)/[(1.6 \\times 10^{-19})(0.20)] = 1.67 \\times 10^{-21}/(3.2 \\times 10^{-20}) = 0.052 \\) m = 5.2 cm.",
+                      "cost_points": 1
+                    }
+                  ],
+                  "solution_steps": [
+                    {
+                      "text": "\\( r = \\frac{mv}{qB} = \\frac{(1.67 \\times 10^{-27})(1.0 \\times 10^6)}{(1.6 \\times 10^{-19})(0.20)} \\)."
+                    },
+                    {
+                      "text": "Numerator: \\( 1.67 \\times 10^{-21} \\). Denominator: \\( 3.2 \\times 10^{-20} \\)."
+                    },
+                    {
+                      "text": "\\( r = 0.052 \\) m = 5.2 cm."
                     }
                   ],
                   "access_tier": "free"
@@ -7021,46 +7021,6 @@
               "display_order": 0,
               "problems": [
                 {
-                  "question_html": "<p>A 0.50 m wire carrying 3.0 A of current is placed perpendicular to a 0.40 T magnetic field. What is the force on the wire?</p>",
-                  "problem_type": "mcq",
-                  "difficulty": "medium",
-                  "points": 1,
-                  "choices": [
-                    {
-                      "text": "0.60 N",
-                      "is_correct": true
-                    },
-                    {
-                      "text": "0.12 N",
-                      "is_correct": false
-                    },
-                    {
-                      "text": "6.0 N",
-                      "is_correct": false
-                    },
-                    {
-                      "text": "1.5 N",
-                      "is_correct": false
-                    }
-                  ],
-                  "hints": [
-                    {
-                      "text": "Use \\( F = BIL\\sin\\theta \\). Perpendicular means \\( \\theta = 90° \\).",
-                      "cost_points": 0
-                    },
-                    {
-                      "text": "\\( F = (0.40)(3.0)(0.50)(1) = 0.60 \\) N.",
-                      "cost_points": 1
-                    }
-                  ],
-                  "solution_steps": [
-                    {
-                      "text": "\\( F = BIL\\sin 90° = (0.40)(3.0)(0.50)(1) = 0.60 \\) N."
-                    }
-                  ],
-                  "access_tier": "free"
-                },
-                {
                   "question_html": "<p>Two long parallel wires carry currents in the same direction. The wires will:</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -7099,6 +7059,46 @@
                     },
                     {
                       "text": "Parallel wires with same-direction currents attract each other."
+                    }
+                  ],
+                  "access_tier": "free"
+                },
+                {
+                  "question_html": "<p>A 0.50 m wire carrying 3.0 A of current is placed perpendicular to a 0.40 T magnetic field. What is the force on the wire?</p>",
+                  "problem_type": "mcq",
+                  "difficulty": "medium",
+                  "points": 1,
+                  "choices": [
+                    {
+                      "text": "0.60 N",
+                      "is_correct": true
+                    },
+                    {
+                      "text": "0.12 N",
+                      "is_correct": false
+                    },
+                    {
+                      "text": "6.0 N",
+                      "is_correct": false
+                    },
+                    {
+                      "text": "1.5 N",
+                      "is_correct": false
+                    }
+                  ],
+                  "hints": [
+                    {
+                      "text": "Use \\( F = BIL\\sin\\theta \\). Perpendicular means \\( \\theta = 90° \\).",
+                      "cost_points": 0
+                    },
+                    {
+                      "text": "\\( F = (0.40)(3.0)(0.50)(1) = 0.60 \\) N.",
+                      "cost_points": 1
+                    }
+                  ],
+                  "solution_steps": [
+                    {
+                      "text": "\\( F = BIL\\sin 90° = (0.40)(3.0)(0.50)(1) = 0.60 \\) N."
                     }
                   ],
                   "access_tier": "free"
@@ -7428,6 +7428,32 @@
                   "access_tier": "free"
                 },
                 {
+                  "question_html": "<p>A loop of wire is in a constant, uniform magnetic field. No EMF is induced because:</p>",
+                  "problem_type": "ftb",
+                  "correct_answer": "the flux is not changing",
+                  "difficulty": "easy",
+                  "points": 1,
+                  "hints": [
+                    {
+                      "text": "Faraday's law involves the <em>change</em> in flux.",
+                      "cost_points": 0
+                    },
+                    {
+                      "text": "If \\( B \\), \\( A \\), and \\( \\theta \\) are all constant, \\( \\Delta\\Phi_B = 0 \\), so \\( \\mathcal{E} = 0 \\). No change in flux means no induced EMF.",
+                      "cost_points": 1
+                    }
+                  ],
+                  "solution_steps": [
+                    {
+                      "text": "\\( \\mathcal{E} = N|\\Delta\\Phi_B/\\Delta t| \\). If \\( \\Phi_B \\) is constant, \\( \\Delta\\Phi_B = 0 \\) and \\( \\mathcal{E} = 0 \\)."
+                    },
+                    {
+                      "text": "A constant flux — no matter how large — produces no induced EMF. Only a <em>changing</em> flux induces EMF."
+                    }
+                  ],
+                  "access_tier": "free"
+                },
+                {
                   "question_html": "<p>A north pole of a bar magnet is pushed toward a conducting loop. By Lenz's law, the induced current in the loop (as viewed from the magnet's side) flows:</p>",
                   "problem_type": "ftb",
                   "correct_answer": "counterclockwise",
@@ -7455,32 +7481,6 @@
                     }
                   ],
                   "access_tier": "free"
-                },
-                {
-                  "question_html": "<p>A loop of wire is in a constant, uniform magnetic field. No EMF is induced because:</p>",
-                  "problem_type": "ftb",
-                  "correct_answer": "the flux is not changing",
-                  "difficulty": "easy",
-                  "points": 1,
-                  "hints": [
-                    {
-                      "text": "Faraday's law involves the <em>change</em> in flux.",
-                      "cost_points": 0
-                    },
-                    {
-                      "text": "If \\( B \\), \\( A \\), and \\( \\theta \\) are all constant, \\( \\Delta\\Phi_B = 0 \\), so \\( \\mathcal{E} = 0 \\). No change in flux means no induced EMF.",
-                      "cost_points": 1
-                    }
-                  ],
-                  "solution_steps": [
-                    {
-                      "text": "\\( \\mathcal{E} = N|\\Delta\\Phi_B/\\Delta t| \\). If \\( \\Phi_B \\) is constant, \\( \\Delta\\Phi_B = 0 \\) and \\( \\mathcal{E} = 0 \\)."
-                    },
-                    {
-                      "text": "A constant flux — no matter how large — produces no induced EMF. Only a <em>changing</em> flux induces EMF."
-                    }
-                  ],
-                  "access_tier": "free"
                 }
               ]
             },
@@ -7489,6 +7489,52 @@
               "access_tier": "premium",
               "display_order": 1,
               "problems": [
+                {
+                  "question_html": "<p>A north pole of a magnet is pulled <em>away</em> from a conducting loop. By Lenz's law, does the loop attract or repel the magnet?</p>",
+                  "problem_type": "mcq",
+                  "difficulty": "medium",
+                  "points": 1,
+                  "choices": [
+                    {
+                      "text": "The loop attracts the magnet (opposes it being pulled away)",
+                      "is_correct": true
+                    },
+                    {
+                      "text": "The loop repels the magnet (pushes it further away)",
+                      "is_correct": false
+                    },
+                    {
+                      "text": "The loop exerts no force on the magnet",
+                      "is_correct": false
+                    },
+                    {
+                      "text": "The force depends on the speed of removal",
+                      "is_correct": false
+                    }
+                  ],
+                  "hints": [
+                    {
+                      "text": "Lenz's law says the induced current opposes the <em>change</em> in flux. If the magnet is being pulled away, flux is decreasing.",
+                      "cost_points": 0
+                    },
+                    {
+                      "text": "Flux is decreasing → induced current tries to maintain the flux → induced field points in the same direction as the magnet's field → the loop acts like a south pole facing the departing north pole → attraction. The loop opposes the magnet being pulled away.",
+                      "cost_points": 1
+                    }
+                  ],
+                  "solution_steps": [
+                    {
+                      "text": "North pole moving away → flux through loop is decreasing."
+                    },
+                    {
+                      "text": "Lenz's law: induced current opposes the decrease → current creates a field in the same direction as the magnet's → loop's near face becomes a south pole."
+                    },
+                    {
+                      "text": "South pole (loop) facing north pole (magnet) → attraction. The loop tries to keep the magnet from leaving."
+                    }
+                  ],
+                  "access_tier": "premium"
+                },
                 {
                   "question_html": "<p>A square loop (side 0.20 m) is pulled at constant velocity out of a region of uniform magnetic field \\( B = 0.80 \\) T (perpendicular to the loop). The loop has resistance 2.0 Ω. If it takes 0.10 s for the loop to exit the field, what is the induced current?</p>",
                   "problem_type": "mcq",
@@ -7644,52 +7690,6 @@
                   ],
                   "access_tier": "premium",
                   "correct_answer": "As the magnet falls, the magnetic flux through each cross-section of the tube changes. By Faraday's law, this changing flux induces circular (eddy) currents in the tube walls. By Lenz's law, these induced currents create magnetic fields that oppose the change in flux — which means they oppose the magnet's motion. The resulting force acts upward on the falling magnet, creating a braking effect. The magnet reaches a terminal velocity where this magnetic braking force equals gravity."
-                },
-                {
-                  "question_html": "<p>A north pole of a magnet is pulled <em>away</em> from a conducting loop. By Lenz's law, does the loop attract or repel the magnet?</p>",
-                  "problem_type": "mcq",
-                  "difficulty": "medium",
-                  "points": 1,
-                  "choices": [
-                    {
-                      "text": "The loop attracts the magnet (opposes it being pulled away)",
-                      "is_correct": true
-                    },
-                    {
-                      "text": "The loop repels the magnet (pushes it further away)",
-                      "is_correct": false
-                    },
-                    {
-                      "text": "The loop exerts no force on the magnet",
-                      "is_correct": false
-                    },
-                    {
-                      "text": "The force depends on the speed of removal",
-                      "is_correct": false
-                    }
-                  ],
-                  "hints": [
-                    {
-                      "text": "Lenz's law says the induced current opposes the <em>change</em> in flux. If the magnet is being pulled away, flux is decreasing.",
-                      "cost_points": 0
-                    },
-                    {
-                      "text": "Flux is decreasing → induced current tries to maintain the flux → induced field points in the same direction as the magnet's field → the loop acts like a south pole facing the departing north pole → attraction. The loop opposes the magnet being pulled away.",
-                      "cost_points": 1
-                    }
-                  ],
-                  "solution_steps": [
-                    {
-                      "text": "North pole moving away → flux through loop is decreasing."
-                    },
-                    {
-                      "text": "Lenz's law: induced current opposes the decrease → current creates a field in the same direction as the magnet's → loop's near face becomes a south pole."
-                    },
-                    {
-                      "text": "South pole (loop) facing north pole (magnet) → attraction. The loop tries to keep the magnet from leaving."
-                    }
-                  ],
-                  "access_tier": "premium"
                 }
               ]
             }
@@ -7867,6 +7867,46 @@
               "display_order": 1,
               "problems": [
                 {
+                  "question_html": "<p>An image formed by a plane mirror is always:</p>",
+                  "problem_type": "mcq",
+                  "difficulty": "easy",
+                  "points": 1,
+                  "choices": [
+                    {
+                      "text": "Virtual, upright, and same size as the object",
+                      "is_correct": true
+                    },
+                    {
+                      "text": "Real, inverted, and same size",
+                      "is_correct": false
+                    },
+                    {
+                      "text": "Virtual, inverted, and magnified",
+                      "is_correct": false
+                    },
+                    {
+                      "text": "Real, upright, and diminished",
+                      "is_correct": false
+                    }
+                  ],
+                  "hints": [
+                    {
+                      "text": "Think about what you see in a bathroom mirror.",
+                      "cost_points": 0
+                    },
+                    {
+                      "text": "Plane mirrors always produce virtual (behind the mirror), upright, same-size images. They are laterally inverted (left-right swap) but not vertically inverted.",
+                      "cost_points": 1
+                    }
+                  ],
+                  "solution_steps": [
+                    {
+                      "text": "A plane mirror produces a virtual, upright image that is the same size as the object, located the same distance behind the mirror."
+                    }
+                  ],
+                  "access_tier": "premium"
+                },
+                {
                   "question_html": "<p>Two plane mirrors are placed at 90° to each other. A light ray enters parallel to one mirror and hits the other at 45°. After reflecting off both mirrors, the ray exits:</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -7908,46 +7948,6 @@
                     },
                     {
                       "text": "The exit ray is antiparallel (180° reversal) to the incoming ray. This is the principle behind retroreflectors."
-                    }
-                  ],
-                  "access_tier": "premium"
-                },
-                {
-                  "question_html": "<p>An image formed by a plane mirror is always:</p>",
-                  "problem_type": "mcq",
-                  "difficulty": "easy",
-                  "points": 1,
-                  "choices": [
-                    {
-                      "text": "Virtual, upright, and same size as the object",
-                      "is_correct": true
-                    },
-                    {
-                      "text": "Real, inverted, and same size",
-                      "is_correct": false
-                    },
-                    {
-                      "text": "Virtual, inverted, and magnified",
-                      "is_correct": false
-                    },
-                    {
-                      "text": "Real, upright, and diminished",
-                      "is_correct": false
-                    }
-                  ],
-                  "hints": [
-                    {
-                      "text": "Think about what you see in a bathroom mirror.",
-                      "cost_points": 0
-                    },
-                    {
-                      "text": "Plane mirrors always produce virtual (behind the mirror), upright, same-size images. They are laterally inverted (left-right swap) but not vertically inverted.",
-                      "cost_points": 1
-                    }
-                  ],
-                  "solution_steps": [
-                    {
-                      "text": "A plane mirror produces a virtual, upright image that is the same size as the object, located the same distance behind the mirror."
                     }
                   ],
                   "access_tier": "premium"
@@ -8065,6 +8065,29 @@
                   "access_tier": "free"
                 },
                 {
+                  "question_html": "<p>A convex mirror always produces images that are:</p>",
+                  "problem_type": "ftb",
+                  "correct_answer": "virtual",
+                  "difficulty": "easy",
+                  "points": 1,
+                  "hints": [
+                    {
+                      "text": "Think about a car's passenger-side mirror (\"Objects in mirror are closer than they appear\").",
+                      "cost_points": 0
+                    },
+                    {
+                      "text": "Convex mirrors always produce virtual, upright, diminished images regardless of object position.",
+                      "cost_points": 1
+                    }
+                  ],
+                  "solution_steps": [
+                    {
+                      "text": "Convex mirrors always produce virtual, upright, diminished images. The image forms behind the mirror (\\( d_i < 0 \\))."
+                    }
+                  ],
+                  "access_tier": "free"
+                },
+                {
                   "question_html": "<p>For the problem above (object at 30 cm, \\( f = 15 \\) cm concave mirror), what is the magnification?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "-1",
@@ -8086,29 +8109,6 @@
                     },
                     {
                       "text": "\\( |M| = 1 \\): same size. Negative sign: inverted. (Object at \\( 2f \\) → image at \\( 2f \\), inverted, same size.)"
-                    }
-                  ],
-                  "access_tier": "free"
-                },
-                {
-                  "question_html": "<p>A convex mirror always produces images that are:</p>",
-                  "problem_type": "ftb",
-                  "correct_answer": "virtual",
-                  "difficulty": "easy",
-                  "points": 1,
-                  "hints": [
-                    {
-                      "text": "Think about a car's passenger-side mirror (\"Objects in mirror are closer than they appear\").",
-                      "cost_points": 0
-                    },
-                    {
-                      "text": "Convex mirrors always produce virtual, upright, diminished images regardless of object position.",
-                      "cost_points": 1
-                    }
-                  ],
-                  "solution_steps": [
-                    {
-                      "text": "Convex mirrors always produce virtual, upright, diminished images. The image forms behind the mirror (\\( d_i < 0 \\))."
                     }
                   ],
                   "access_tier": "free"
@@ -8302,6 +8302,46 @@
               "display_order": 0,
               "problems": [
                 {
+                  "question_html": "<p>When light enters a medium with a higher index of refraction, it bends:</p>",
+                  "problem_type": "mcq",
+                  "difficulty": "easy",
+                  "points": 1,
+                  "choices": [
+                    {
+                      "text": "Toward the normal",
+                      "is_correct": true
+                    },
+                    {
+                      "text": "Away from the normal",
+                      "is_correct": false
+                    },
+                    {
+                      "text": "Parallel to the surface",
+                      "is_correct": false
+                    },
+                    {
+                      "text": "It does not bend",
+                      "is_correct": false
+                    }
+                  ],
+                  "hints": [
+                    {
+                      "text": "Higher \\( n \\) means slower speed. Light bends when it slows down.",
+                      "cost_points": 0
+                    },
+                    {
+                      "text": "Light bends toward the normal when entering a denser (higher \\( n \\)) medium.",
+                      "cost_points": 1
+                    }
+                  ],
+                  "solution_steps": [
+                    {
+                      "text": "Entering a denser medium (higher \\( n \\)): light slows down and bends toward the normal."
+                    }
+                  ],
+                  "access_tier": "free"
+                },
+                {
                   "question_html": "<p>Light passes from air (\\( n = 1.00 \\)) into water (\\( n = 1.33 \\)) at an angle of incidence of 45°. What is the angle of refraction?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -8340,46 +8380,6 @@
                     },
                     {
                       "text": "\\( \\theta_2 = \\sin^{-1}(0.532) = 32° \\). The light bends toward the normal (entering denser medium)."
-                    }
-                  ],
-                  "access_tier": "free"
-                },
-                {
-                  "question_html": "<p>When light enters a medium with a higher index of refraction, it bends:</p>",
-                  "problem_type": "mcq",
-                  "difficulty": "easy",
-                  "points": 1,
-                  "choices": [
-                    {
-                      "text": "Toward the normal",
-                      "is_correct": true
-                    },
-                    {
-                      "text": "Away from the normal",
-                      "is_correct": false
-                    },
-                    {
-                      "text": "Parallel to the surface",
-                      "is_correct": false
-                    },
-                    {
-                      "text": "It does not bend",
-                      "is_correct": false
-                    }
-                  ],
-                  "hints": [
-                    {
-                      "text": "Higher \\( n \\) means slower speed. Light bends when it slows down.",
-                      "cost_points": 0
-                    },
-                    {
-                      "text": "Light bends toward the normal when entering a denser (higher \\( n \\)) medium.",
-                      "cost_points": 1
-                    }
-                  ],
-                  "solution_steps": [
-                    {
-                      "text": "Entering a denser medium (higher \\( n \\)): light slows down and bends toward the normal."
                     }
                   ],
                   "access_tier": "free"
@@ -8441,49 +8441,6 @@
               "display_order": 1,
               "problems": [
                 {
-                  "question_html": "<p>Light passes from glass (\\( n = 1.50 \\)) into water (\\( n = 1.33 \\)) at an angle of incidence of 30°. What is the angle of refraction?</p>",
-                  "problem_type": "mcq",
-                  "difficulty": "medium",
-                  "points": 1,
-                  "choices": [
-                    {
-                      "text": "34°",
-                      "is_correct": true
-                    },
-                    {
-                      "text": "26°",
-                      "is_correct": false
-                    },
-                    {
-                      "text": "30°",
-                      "is_correct": false
-                    },
-                    {
-                      "text": "42°",
-                      "is_correct": false
-                    }
-                  ],
-                  "hints": [
-                    {
-                      "text": "Use Snell's law: \\( n_1 \\sin\\theta_1 = n_2 \\sin\\theta_2 \\).",
-                      "cost_points": 0
-                    },
-                    {
-                      "text": "\\( \\sin\\theta_2 = (1.50)(\\sin 30°)/(1.33) = (1.50)(0.500)/1.33 = 0.564 \\). \\( \\theta_2 = \\sin^{-1}(0.564) = 34° \\).",
-                      "cost_points": 1
-                    }
-                  ],
-                  "solution_steps": [
-                    {
-                      "text": "\\( \\sin\\theta_2 = \\frac{n_1 \\sin\\theta_1}{n_2} = \\frac{(1.50)(0.500)}{1.33} = \\frac{0.750}{1.33} = 0.564 \\)."
-                    },
-                    {
-                      "text": "\\( \\theta_2 = \\sin^{-1}(0.564) = 34° \\). Light bends away from normal (entering less dense medium)."
-                    }
-                  ],
-                  "access_tier": "premium"
-                },
-                {
                   "question_html": "<p>Total internal reflection can only occur when light travels from:</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -8522,6 +8479,49 @@
                     },
                     {
                       "text": "At the critical angle, the refracted ray grazes the surface (90°). Beyond it, all light reflects."
+                    }
+                  ],
+                  "access_tier": "premium"
+                },
+                {
+                  "question_html": "<p>Light passes from glass (\\( n = 1.50 \\)) into water (\\( n = 1.33 \\)) at an angle of incidence of 30°. What is the angle of refraction?</p>",
+                  "problem_type": "mcq",
+                  "difficulty": "medium",
+                  "points": 1,
+                  "choices": [
+                    {
+                      "text": "34°",
+                      "is_correct": true
+                    },
+                    {
+                      "text": "26°",
+                      "is_correct": false
+                    },
+                    {
+                      "text": "30°",
+                      "is_correct": false
+                    },
+                    {
+                      "text": "42°",
+                      "is_correct": false
+                    }
+                  ],
+                  "hints": [
+                    {
+                      "text": "Use Snell's law: \\( n_1 \\sin\\theta_1 = n_2 \\sin\\theta_2 \\).",
+                      "cost_points": 0
+                    },
+                    {
+                      "text": "\\( \\sin\\theta_2 = (1.50)(\\sin 30°)/(1.33) = (1.50)(0.500)/1.33 = 0.564 \\). \\( \\theta_2 = \\sin^{-1}(0.564) = 34° \\).",
+                      "cost_points": 1
+                    }
+                  ],
+                  "solution_steps": [
+                    {
+                      "text": "\\( \\sin\\theta_2 = \\frac{n_1 \\sin\\theta_1}{n_2} = \\frac{(1.50)(0.500)}{1.33} = \\frac{0.750}{1.33} = 0.564 \\)."
+                    },
+                    {
+                      "text": "\\( \\theta_2 = \\sin^{-1}(0.564) = 34° \\). Light bends away from normal (entering less dense medium)."
                     }
                   ],
                   "access_tier": "premium"
@@ -8617,6 +8617,46 @@
               "display_order": 0,
               "problems": [
                 {
+                  "question_html": "<p>A diverging lens always produces images that are:</p>",
+                  "problem_type": "mcq",
+                  "difficulty": "easy",
+                  "points": 1,
+                  "choices": [
+                    {
+                      "text": "Virtual, upright, and diminished",
+                      "is_correct": true
+                    },
+                    {
+                      "text": "Real, inverted, and magnified",
+                      "is_correct": false
+                    },
+                    {
+                      "text": "Virtual, inverted, and same size",
+                      "is_correct": false
+                    },
+                    {
+                      "text": "Real, upright, and diminished",
+                      "is_correct": false
+                    }
+                  ],
+                  "hints": [
+                    {
+                      "text": "Diverging lenses spread rays apart. Can spread-out rays meet to form a real image?",
+                      "cost_points": 0
+                    },
+                    {
+                      "text": "No — diverging lenses always produce virtual, upright, diminished images, regardless of object position.",
+                      "cost_points": 1
+                    }
+                  ],
+                  "solution_steps": [
+                    {
+                      "text": "A diverging lens always produces virtual (same side as object), upright (\\( M > 0 \\)), diminished (\\( |M| < 1 \\)) images."
+                    }
+                  ],
+                  "access_tier": "free"
+                },
+                {
                   "question_html": "<p>An object is placed 30 cm from a converging lens with focal length 10 cm. Where does the image form?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -8655,46 +8695,6 @@
                     },
                     {
                       "text": "\\( d_i = 15 \\) cm. Positive → real image, 15 cm on the far side of the lens."
-                    }
-                  ],
-                  "access_tier": "free"
-                },
-                {
-                  "question_html": "<p>A diverging lens always produces images that are:</p>",
-                  "problem_type": "mcq",
-                  "difficulty": "easy",
-                  "points": 1,
-                  "choices": [
-                    {
-                      "text": "Virtual, upright, and diminished",
-                      "is_correct": true
-                    },
-                    {
-                      "text": "Real, inverted, and magnified",
-                      "is_correct": false
-                    },
-                    {
-                      "text": "Virtual, inverted, and same size",
-                      "is_correct": false
-                    },
-                    {
-                      "text": "Real, upright, and diminished",
-                      "is_correct": false
-                    }
-                  ],
-                  "hints": [
-                    {
-                      "text": "Diverging lenses spread rays apart. Can spread-out rays meet to form a real image?",
-                      "cost_points": 0
-                    },
-                    {
-                      "text": "No — diverging lenses always produce virtual, upright, diminished images, regardless of object position.",
-                      "cost_points": 1
-                    }
-                  ],
-                  "solution_steps": [
-                    {
-                      "text": "A diverging lens always produces virtual (same side as object), upright (\\( M > 0 \\)), diminished (\\( |M| < 1 \\)) images."
                     }
                   ],
                   "access_tier": "free"
@@ -9497,6 +9497,29 @@
                   "access_tier": "free"
                 },
                 {
+                  "question_html": "<p>Which type of wave can be polarized — transverse or longitudinal?</p>",
+                  "problem_type": "ftb",
+                  "correct_answer": "transverse",
+                  "difficulty": "easy",
+                  "points": 1,
+                  "hints": [
+                    {
+                      "text": "Polarization means restricting oscillation to one direction perpendicular to travel.",
+                      "cost_points": 0
+                    },
+                    {
+                      "text": "Only transverse waves can be polarized, because they oscillate perpendicular to the travel direction. Longitudinal waves oscillate along the travel direction — there's nothing to \"filter.\"",
+                      "cost_points": 1
+                    }
+                  ],
+                  "solution_steps": [
+                    {
+                      "text": "Only transverse waves can be polarized. This is because polarization selects one oscillation direction perpendicular to travel, which only exists for transverse waves."
+                    }
+                  ],
+                  "access_tier": "free"
+                },
+                {
                   "question_html": "<p>Polarized light of intensity \\( I_0 \\) passes through a second polarizer at 60° to the first. What fraction of \\( I_0 \\) is transmitted?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "0.25",
@@ -9518,29 +9541,6 @@
                     },
                     {
                       "text": "25% of the polarized light intensity passes through."
-                    }
-                  ],
-                  "access_tier": "free"
-                },
-                {
-                  "question_html": "<p>Which type of wave can be polarized — transverse or longitudinal?</p>",
-                  "problem_type": "ftb",
-                  "correct_answer": "transverse",
-                  "difficulty": "easy",
-                  "points": 1,
-                  "hints": [
-                    {
-                      "text": "Polarization means restricting oscillation to one direction perpendicular to travel.",
-                      "cost_points": 0
-                    },
-                    {
-                      "text": "Only transverse waves can be polarized, because they oscillate perpendicular to the travel direction. Longitudinal waves oscillate along the travel direction — there's nothing to \"filter.\"",
-                      "cost_points": 1
-                    }
-                  ],
-                  "solution_steps": [
-                    {
-                      "text": "Only transverse waves can be polarized. This is because polarization selects one oscillation direction perpendicular to travel, which only exists for transverse waves."
                     }
                   ],
                   "access_tier": "free"
@@ -10053,29 +10053,6 @@
                   "access_tier": "free"
                 },
                 {
-                  "question_html": "<p>The same car horn (500 Hz) now moves <em>away</em> from the observer at 30 m/s. What frequency is heard?</p>",
-                  "problem_type": "ftb",
-                  "correct_answer": "459",
-                  "difficulty": "medium",
-                  "points": 1,
-                  "hints": [
-                    {
-                      "text": "Source receding: \\( f' = f \\cdot v/(v + v_s) \\).",
-                      "cost_points": 0
-                    },
-                    {
-                      "text": "\\( f' = 500 \\times 340/(340 + 30) = 500 \\times 340/370 = 459 \\) Hz.",
-                      "cost_points": 1
-                    }
-                  ],
-                  "solution_steps": [
-                    {
-                      "text": "\\( f' = f \\cdot \\frac{v}{v + v_s} = 500 \\times \\frac{340}{370} = 459 \\) Hz."
-                    }
-                  ],
-                  "access_tier": "free"
-                },
-                {
                   "question_html": "<p>Light from a distant galaxy is observed to be redshifted. This means the galaxy is:</p>",
                   "problem_type": "ftb",
                   "correct_answer": "moving away",
@@ -10094,6 +10071,29 @@
                   "solution_steps": [
                     {
                       "text": "Redshift → longer wavelength → source is moving away from the observer. This is how Hubble discovered the expansion of the universe."
+                    }
+                  ],
+                  "access_tier": "free"
+                },
+                {
+                  "question_html": "<p>The same car horn (500 Hz) now moves <em>away</em> from the observer at 30 m/s. What frequency is heard?</p>",
+                  "problem_type": "ftb",
+                  "correct_answer": "459",
+                  "difficulty": "medium",
+                  "points": 1,
+                  "hints": [
+                    {
+                      "text": "Source receding: \\( f' = f \\cdot v/(v + v_s) \\).",
+                      "cost_points": 0
+                    },
+                    {
+                      "text": "\\( f' = 500 \\times 340/(340 + 30) = 500 \\times 340/370 = 459 \\) Hz.",
+                      "cost_points": 1
+                    }
+                  ],
+                  "solution_steps": [
+                    {
+                      "text": "\\( f' = f \\cdot \\frac{v}{v + v_s} = 500 \\times \\frac{340}{370} = 459 \\) Hz."
                     }
                   ],
                   "access_tier": "free"
@@ -10669,32 +10669,6 @@
                   "access_tier": "free"
                 },
                 {
-                  "question_html": "<p>If the slit width is halved (made narrower), the central diffraction maximum becomes:</p>",
-                  "problem_type": "ftb",
-                  "correct_answer": "wider",
-                  "difficulty": "medium",
-                  "points": 1,
-                  "hints": [
-                    {
-                      "text": "The angle of the first minimum is \\( \\sin\\theta = \\lambda/a \\). What happens when \\( a \\) decreases?",
-                      "cost_points": 0
-                    },
-                    {
-                      "text": "Smaller \\( a \\) → larger \\( \\theta \\) → wider central maximum. Counterintuitively, a narrower slit produces a wider diffraction pattern.",
-                      "cost_points": 1
-                    }
-                  ],
-                  "solution_steps": [
-                    {
-                      "text": "\\( \\sin\\theta = \\lambda/a \\). If \\( a \\) halves, \\( \\theta \\) doubles → the central maximum becomes wider."
-                    },
-                    {
-                      "text": "Narrower slit → more spreading → wider diffraction pattern."
-                    }
-                  ],
-                  "access_tier": "free"
-                },
-                {
                   "question_html": "<p>You can hear someone around a corner but can't see them. This is because:</p>",
                   "problem_type": "ftb",
                   "correct_answer": "sound has a longer wavelength",
@@ -10716,6 +10690,32 @@
                     },
                     {
                       "text": "Light wavelengths (~500 nm) are millions of times smaller than doorways → negligible diffraction."
+                    }
+                  ],
+                  "access_tier": "free"
+                },
+                {
+                  "question_html": "<p>If the slit width is halved (made narrower), the central diffraction maximum becomes:</p>",
+                  "problem_type": "ftb",
+                  "correct_answer": "wider",
+                  "difficulty": "medium",
+                  "points": 1,
+                  "hints": [
+                    {
+                      "text": "The angle of the first minimum is \\( \\sin\\theta = \\lambda/a \\). What happens when \\( a \\) decreases?",
+                      "cost_points": 0
+                    },
+                    {
+                      "text": "Smaller \\( a \\) → larger \\( \\theta \\) → wider central maximum. Counterintuitively, a narrower slit produces a wider diffraction pattern.",
+                      "cost_points": 1
+                    }
+                  ],
+                  "solution_steps": [
+                    {
+                      "text": "\\( \\sin\\theta = \\lambda/a \\). If \\( a \\) halves, \\( \\theta \\) doubles → the central maximum becomes wider."
+                    },
+                    {
+                      "text": "Narrower slit → more spreading → wider diffraction pattern."
                     }
                   ],
                   "access_tier": "free"
@@ -10983,29 +10983,6 @@
                   "access_tier": "free"
                 },
                 {
-                  "question_html": "<p>If the slit separation is doubled in a double-slit experiment (everything else stays the same), the fringe spacing:</p>",
-                  "problem_type": "ftb",
-                  "correct_answer": "halves",
-                  "difficulty": "medium",
-                  "points": 1,
-                  "hints": [
-                    {
-                      "text": "\\( \\Delta y = \\lambda L/d \\). What happens when \\( d \\) doubles?",
-                      "cost_points": 0
-                    },
-                    {
-                      "text": "\\( \\Delta y \\propto 1/d \\). If \\( d \\) doubles, \\( \\Delta y \\) halves. Fringes get closer together.",
-                      "cost_points": 1
-                    }
-                  ],
-                  "solution_steps": [
-                    {
-                      "text": "\\( \\Delta y = \\lambda L/d \\). Doubling \\( d \\) → \\( \\Delta y \\) halves. Fringes become half as far apart."
-                    }
-                  ],
-                  "access_tier": "free"
-                },
-                {
                   "question_html": "<p>A diffraction grating has 500 lines per mm. What is the slit spacing \\( d \\) in micrometers (μm)?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "2.0",
@@ -11027,6 +11004,29 @@
                     }
                   ],
                   "access_tier": "free"
+                },
+                {
+                  "question_html": "<p>If the slit separation is doubled in a double-slit experiment (everything else stays the same), the fringe spacing:</p>",
+                  "problem_type": "ftb",
+                  "correct_answer": "halves",
+                  "difficulty": "medium",
+                  "points": 1,
+                  "hints": [
+                    {
+                      "text": "\\( \\Delta y = \\lambda L/d \\). What happens when \\( d \\) doubles?",
+                      "cost_points": 0
+                    },
+                    {
+                      "text": "\\( \\Delta y \\propto 1/d \\). If \\( d \\) doubles, \\( \\Delta y \\) halves. Fringes get closer together.",
+                      "cost_points": 1
+                    }
+                  ],
+                  "solution_steps": [
+                    {
+                      "text": "\\( \\Delta y = \\lambda L/d \\). Doubling \\( d \\) → \\( \\Delta y \\) halves. Fringes become half as far apart."
+                    }
+                  ],
+                  "access_tier": "free"
                 }
               ]
             },
@@ -11035,6 +11035,49 @@
               "access_tier": "premium",
               "display_order": 1,
               "problems": [
+                {
+                  "question_html": "<p>How does a diffraction grating produce sharper maxima than a double slit, even though the same equation \\( d\\sin\\theta = m\\lambda \\) applies?</p>",
+                  "problem_type": "mcq",
+                  "difficulty": "medium",
+                  "points": 1,
+                  "choices": [
+                    {
+                      "text": "More slits means more waves must be in phase, creating narrower peaks",
+                      "is_correct": true
+                    },
+                    {
+                      "text": "The grating has smaller slit spacing",
+                      "is_correct": false
+                    },
+                    {
+                      "text": "The grating uses different physics",
+                      "is_correct": false
+                    },
+                    {
+                      "text": "The grating blocks more light",
+                      "is_correct": false
+                    }
+                  ],
+                  "hints": [
+                    {
+                      "text": "What happens when many waves (not just two) must simultaneously be in phase?",
+                      "cost_points": 0
+                    },
+                    {
+                      "text": "With N slits, all N waves must be in phase for a maximum. Even a slight deviation from the correct angle causes destructive interference among the many waves. More slits → sharper (narrower, brighter) peaks.",
+                      "cost_points": 1
+                    }
+                  ],
+                  "solution_steps": [
+                    {
+                      "text": "A grating has many slits (N >> 2). All N waves must be in phase for constructive interference."
+                    },
+                    {
+                      "text": "At angles slightly off from \\( d\\sin\\theta = m\\lambda \\), the N waves destructively interfere → very narrow, sharp peaks."
+                    }
+                  ],
+                  "access_tier": "premium"
+                },
                 {
                   "question_html": "<p>In a double-slit experiment with 500 nm light, the 3rd-order bright fringe occurs at 0.15° from the central maximum. What is the slit separation?</p>",
                   "problem_type": "mcq",
@@ -11181,49 +11224,6 @@
                   ],
                   "access_tier": "premium",
                   "correct_answer": "y_m = mλL/d. For the same m, d, and L, the position is proportional to λ. Red (700 nm) has a longer wavelength than violet (400 nm), so red fringes are farther from the center. Ratio: y_red/y_violet = 700/400 = 1.75. Red fringes are 1.75 times farther from the center than violet fringes."
-                },
-                {
-                  "question_html": "<p>How does a diffraction grating produce sharper maxima than a double slit, even though the same equation \\( d\\sin\\theta = m\\lambda \\) applies?</p>",
-                  "problem_type": "mcq",
-                  "difficulty": "medium",
-                  "points": 1,
-                  "choices": [
-                    {
-                      "text": "More slits means more waves must be in phase, creating narrower peaks",
-                      "is_correct": true
-                    },
-                    {
-                      "text": "The grating has smaller slit spacing",
-                      "is_correct": false
-                    },
-                    {
-                      "text": "The grating uses different physics",
-                      "is_correct": false
-                    },
-                    {
-                      "text": "The grating blocks more light",
-                      "is_correct": false
-                    }
-                  ],
-                  "hints": [
-                    {
-                      "text": "What happens when many waves (not just two) must simultaneously be in phase?",
-                      "cost_points": 0
-                    },
-                    {
-                      "text": "With N slits, all N waves must be in phase for a maximum. Even a slight deviation from the correct angle causes destructive interference among the many waves. More slits → sharper (narrower, brighter) peaks.",
-                      "cost_points": 1
-                    }
-                  ],
-                  "solution_steps": [
-                    {
-                      "text": "A grating has many slits (N >> 2). All N waves must be in phase for constructive interference."
-                    },
-                    {
-                      "text": "At angles slightly off from \\( d\\sin\\theta = m\\lambda \\), the N waves destructively interfere → very narrow, sharp peaks."
-                    }
-                  ],
-                  "access_tier": "premium"
                 }
               ]
             }
@@ -11403,6 +11403,95 @@
               "display_order": 1,
               "problems": [
                 {
+                  "question_html": "<p>A glass plate (\\( n = 1.50 \\)) has a thin coating (\\( n = 1.25 \\)) in air. How many phase changes occur for reflected light?</p>",
+                  "problem_type": "mcq",
+                  "difficulty": "medium",
+                  "points": 1,
+                  "choices": [
+                    {
+                      "text": "2",
+                      "is_correct": true
+                    },
+                    {
+                      "text": "0",
+                      "is_correct": false
+                    },
+                    {
+                      "text": "1",
+                      "is_correct": false
+                    },
+                    {
+                      "text": "3",
+                      "is_correct": false
+                    }
+                  ],
+                  "hints": [
+                    {
+                      "text": "Check each reflection surface: is light going to higher or lower \\( n \\)?",
+                      "cost_points": 0
+                    },
+                    {
+                      "text": "Top: air (1.00) → coating (1.25): higher \\( n \\) → 180°. Bottom: coating (1.25) → glass (1.50): higher \\( n \\) → 180°. Total: 2 phase changes.",
+                      "cost_points": 1
+                    }
+                  ],
+                  "solution_steps": [
+                    {
+                      "text": "Air → coating: 1.00 < 1.25 → phase change. Coating → glass: 1.25 < 1.50 → phase change."
+                    },
+                    {
+                      "text": "Total: 2 phase changes (net zero effective shift)."
+                    }
+                  ],
+                  "access_tier": "premium"
+                },
+                {
+                  "question_html": "<p>Why does an anti-reflective coating need both the correct thickness AND the correct index of refraction to work effectively?</p>",
+                  "problem_type": "mcq",
+                  "difficulty": "medium",
+                  "points": 1,
+                  "choices": [
+                    {
+                      "text": "The thickness controls the path difference and the index determines the number of phase changes",
+                      "is_correct": true
+                    },
+                    {
+                      "text": "Only the thickness matters; the index is irrelevant",
+                      "is_correct": false
+                    },
+                    {
+                      "text": "Only the index matters; the thickness is irrelevant",
+                      "is_correct": false
+                    },
+                    {
+                      "text": "The coating absorbs light, and both properties affect absorption",
+                      "is_correct": false
+                    }
+                  ],
+                  "hints": [
+                    {
+                      "text": "Anti-reflective coatings work by destructive interference of reflected rays. What two things determine whether interference is constructive or destructive?",
+                      "cost_points": 0
+                    },
+                    {
+                      "text": "The index determines (1) the number of phase changes at each surface and (2) the wavelength inside the film (\\( \\lambda_n = \\lambda/n \\)). The thickness determines the path difference (\\( 2t \\)). Both must be right for destructive interference of reflected light.",
+                      "cost_points": 1
+                    }
+                  ],
+                  "solution_steps": [
+                    {
+                      "text": "The coating's index determines phase changes on reflection and the effective wavelength inside the film."
+                    },
+                    {
+                      "text": "The thickness controls the path difference between the two reflected rays."
+                    },
+                    {
+                      "text": "Both must be chosen correctly to achieve destructive interference (cancellation) of reflected light."
+                    }
+                  ],
+                  "access_tier": "premium"
+                },
+                {
                   "question_html": "<p>An anti-reflective coating (\\( n = 1.38 \\)) is applied to glass (\\( n = 1.50 \\)). For 550 nm light, what is the minimum coating thickness for destructive interference in the reflected light?</p>",
                   "problem_type": "mcq",
                   "difficulty": "hard",
@@ -11444,49 +11533,6 @@
                     },
                     {
                       "text": "Minimum (\\( m = 0 \\)): \\( t = \\lambda_n/4 = 99.6 \\) nm."
-                    }
-                  ],
-                  "access_tier": "premium"
-                },
-                {
-                  "question_html": "<p>A glass plate (\\( n = 1.50 \\)) has a thin coating (\\( n = 1.25 \\)) in air. How many phase changes occur for reflected light?</p>",
-                  "problem_type": "mcq",
-                  "difficulty": "medium",
-                  "points": 1,
-                  "choices": [
-                    {
-                      "text": "2",
-                      "is_correct": true
-                    },
-                    {
-                      "text": "0",
-                      "is_correct": false
-                    },
-                    {
-                      "text": "1",
-                      "is_correct": false
-                    },
-                    {
-                      "text": "3",
-                      "is_correct": false
-                    }
-                  ],
-                  "hints": [
-                    {
-                      "text": "Check each reflection surface: is light going to higher or lower \\( n \\)?",
-                      "cost_points": 0
-                    },
-                    {
-                      "text": "Top: air (1.00) → coating (1.25): higher \\( n \\) → 180°. Bottom: coating (1.25) → glass (1.50): higher \\( n \\) → 180°. Total: 2 phase changes.",
-                      "cost_points": 1
-                    }
-                  ],
-                  "solution_steps": [
-                    {
-                      "text": "Air → coating: 1.00 < 1.25 → phase change. Coating → glass: 1.25 < 1.50 → phase change."
-                    },
-                    {
-                      "text": "Total: 2 phase changes (net zero effective shift)."
                     }
                   ],
                   "access_tier": "premium"
@@ -11557,52 +11603,6 @@
                   ],
                   "access_tier": "premium",
                   "correct_answer": "With 1 phase change, constructive: 2t = (m + 1/2)λₙ where λₙ = 480/1.45 = 331 nm. For m = 0: 2t = (0.5)(331) = 166 nm → t = 83 nm. For m = 1: 2t = (1.5)(331) = 497 nm → t = 248 nm."
-                },
-                {
-                  "question_html": "<p>Why does an anti-reflective coating need both the correct thickness AND the correct index of refraction to work effectively?</p>",
-                  "problem_type": "mcq",
-                  "difficulty": "medium",
-                  "points": 1,
-                  "choices": [
-                    {
-                      "text": "The thickness controls the path difference and the index determines the number of phase changes",
-                      "is_correct": true
-                    },
-                    {
-                      "text": "Only the thickness matters; the index is irrelevant",
-                      "is_correct": false
-                    },
-                    {
-                      "text": "Only the index matters; the thickness is irrelevant",
-                      "is_correct": false
-                    },
-                    {
-                      "text": "The coating absorbs light, and both properties affect absorption",
-                      "is_correct": false
-                    }
-                  ],
-                  "hints": [
-                    {
-                      "text": "Anti-reflective coatings work by destructive interference of reflected rays. What two things determine whether interference is constructive or destructive?",
-                      "cost_points": 0
-                    },
-                    {
-                      "text": "The index determines (1) the number of phase changes at each surface and (2) the wavelength inside the film (\\( \\lambda_n = \\lambda/n \\)). The thickness determines the path difference (\\( 2t \\)). Both must be right for destructive interference of reflected light.",
-                      "cost_points": 1
-                    }
-                  ],
-                  "solution_steps": [
-                    {
-                      "text": "The coating's index determines phase changes on reflection and the effective wavelength inside the film."
-                    },
-                    {
-                      "text": "The thickness controls the path difference between the two reflected rays."
-                    },
-                    {
-                      "text": "Both must be chosen correctly to achieve destructive interference (cancellation) of reflected light."
-                    }
-                  ],
-                  "access_tier": "premium"
                 }
               ]
             }
@@ -12076,6 +12076,49 @@
               "display_order": 1,
               "problems": [
                 {
+                  "question_html": "<p>Which hydrogen transition produces the longest wavelength in the Balmer series (transitions to \\( n = 2 \\))?</p>",
+                  "problem_type": "mcq",
+                  "difficulty": "medium",
+                  "points": 1,
+                  "choices": [
+                    {
+                      "text": "\\( n = 3 \\to n = 2 \\)",
+                      "is_correct": true
+                    },
+                    {
+                      "text": "\\( n = 4 \\to n = 2 \\)",
+                      "is_correct": false
+                    },
+                    {
+                      "text": "\\( n = \\infty \\to n = 2 \\)",
+                      "is_correct": false
+                    },
+                    {
+                      "text": "\\( n = 2 \\to n = 1 \\)",
+                      "is_correct": false
+                    }
+                  ],
+                  "hints": [
+                    {
+                      "text": "Longest wavelength = smallest energy difference. Which transition has the smallest \\( \\Delta E \\)?",
+                      "cost_points": 0
+                    },
+                    {
+                      "text": "\\( n = 3 \\to 2 \\): smallest energy gap in the Balmer series → longest wavelength (656 nm, red).",
+                      "cost_points": 1
+                    }
+                  ],
+                  "solution_steps": [
+                    {
+                      "text": "Longest wavelength = lowest energy photon = smallest \\( \\Delta E \\)."
+                    },
+                    {
+                      "text": "\\( n = 3 \\to 2 \\) has the smallest gap: 1.89 eV → \\( \\lambda = 656 \\) nm (red). This is the H-alpha line."
+                    }
+                  ],
+                  "access_tier": "premium"
+                },
+                {
                   "question_html": "<p>A hydrogen atom absorbs a photon and its electron jumps from \\( n = 1 \\) to \\( n = 4 \\). What is the wavelength of the photon? (1 eV = \\( 1.6 \\times 10^{-19} \\) J)</p>",
                   "problem_type": "mcq",
                   "difficulty": "hard",
@@ -12117,49 +12160,6 @@
                     },
                     {
                       "text": "\\( \\lambda = hc/E = 1.989 \\times 10^{-25}/2.04 \\times 10^{-18} = 9.73 \\times 10^{-8} \\) m = 97.3 nm (UV)."
-                    }
-                  ],
-                  "access_tier": "premium"
-                },
-                {
-                  "question_html": "<p>Which hydrogen transition produces the longest wavelength in the Balmer series (transitions to \\( n = 2 \\))?</p>",
-                  "problem_type": "mcq",
-                  "difficulty": "medium",
-                  "points": 1,
-                  "choices": [
-                    {
-                      "text": "\\( n = 3 \\to n = 2 \\)",
-                      "is_correct": true
-                    },
-                    {
-                      "text": "\\( n = 4 \\to n = 2 \\)",
-                      "is_correct": false
-                    },
-                    {
-                      "text": "\\( n = \\infty \\to n = 2 \\)",
-                      "is_correct": false
-                    },
-                    {
-                      "text": "\\( n = 2 \\to n = 1 \\)",
-                      "is_correct": false
-                    }
-                  ],
-                  "hints": [
-                    {
-                      "text": "Longest wavelength = smallest energy difference. Which transition has the smallest \\( \\Delta E \\)?",
-                      "cost_points": 0
-                    },
-                    {
-                      "text": "\\( n = 3 \\to 2 \\): smallest energy gap in the Balmer series → longest wavelength (656 nm, red).",
-                      "cost_points": 1
-                    }
-                  ],
-                  "solution_steps": [
-                    {
-                      "text": "Longest wavelength = lowest energy photon = smallest \\( \\Delta E \\)."
-                    },
-                    {
-                      "text": "\\( n = 3 \\to 2 \\) has the smallest gap: 1.89 eV → \\( \\lambda = 656 \\) nm (red). This is the H-alpha line."
                     }
                   ],
                   "access_tier": "premium"
@@ -12941,6 +12941,89 @@
               "display_order": 1,
               "problems": [
                 {
+                  "question_html": "<p>A graph of \\( K_{\\max} \\) vs. \\( f \\) for the photoelectric effect is a straight line. The slope equals:</p>",
+                  "problem_type": "mcq",
+                  "difficulty": "medium",
+                  "points": 1,
+                  "choices": [
+                    {
+                      "text": "Planck's constant \\( h \\)",
+                      "is_correct": true
+                    },
+                    {
+                      "text": "The work function \\( \\phi \\)",
+                      "is_correct": false
+                    },
+                    {
+                      "text": "The speed of light \\( c \\)",
+                      "is_correct": false
+                    },
+                    {
+                      "text": "The threshold frequency \\( f_0 \\)",
+                      "is_correct": false
+                    }
+                  ],
+                  "hints": [
+                    {
+                      "text": "\\( K_{\\max} = hf - \\phi \\) is in the form \\( y = mx + b \\).",
+                      "cost_points": 0
+                    },
+                    {
+                      "text": "Slope = \\( h \\) (Planck's constant). y-intercept = \\( -\\phi \\). x-intercept = \\( f_0 = \\phi/h \\).",
+                      "cost_points": 1
+                    }
+                  ],
+                  "solution_steps": [
+                    {
+                      "text": "\\( K_{\\max} = hf - \\phi \\). This is \\( y = mx + b \\) with slope = \\( h \\) and y-intercept = \\( -\\phi \\)."
+                    }
+                  ],
+                  "access_tier": "premium"
+                },
+                {
+                  "question_html": "<p>Two light sources — one red (650 nm) and one violet (400 nm) — shine on a metal with \\( \\phi = 2.5 \\) eV. Which ejects electrons? (\\( hc = 1240 \\) eV·nm)</p>",
+                  "problem_type": "mcq",
+                  "difficulty": "medium",
+                  "points": 1,
+                  "choices": [
+                    {
+                      "text": "Only the violet light",
+                      "is_correct": true
+                    },
+                    {
+                      "text": "Only the red light",
+                      "is_correct": false
+                    },
+                    {
+                      "text": "Both",
+                      "is_correct": false
+                    },
+                    {
+                      "text": "Neither",
+                      "is_correct": false
+                    }
+                  ],
+                  "hints": [
+                    {
+                      "text": "Calculate each photon's energy and compare to \\( \\phi \\).",
+                      "cost_points": 0
+                    },
+                    {
+                      "text": "Red: \\( E = 1240/650 = 1.91 \\) eV < 2.5 eV (no ejection). Violet: \\( E = 1240/400 = 3.10 \\) eV > 2.5 eV (ejection!). Only violet works.",
+                      "cost_points": 1
+                    }
+                  ],
+                  "solution_steps": [
+                    {
+                      "text": "Red: \\( E = 1240/650 = 1.91 \\) eV < \\( \\phi = 2.5 \\) eV → no ejection."
+                    },
+                    {
+                      "text": "Violet: \\( E = 1240/400 = 3.10 \\) eV > \\( \\phi = 2.5 \\) eV → electrons ejected."
+                    }
+                  ],
+                  "access_tier": "premium"
+                },
+                {
                   "question_html": "<p>The stopping potential for photoelectrons is 1.5 V when light of frequency \\( 8.0 \\times 10^{14} \\) Hz is used. What is the work function of the metal?</p>",
                   "problem_type": "mcq",
                   "difficulty": "hard",
@@ -12982,46 +13065,6 @@
                     },
                     {
                       "text": "\\( \\phi = hf - K_{\\max} = 3.31 - 1.5 = 1.81 \\) eV."
-                    }
-                  ],
-                  "access_tier": "premium"
-                },
-                {
-                  "question_html": "<p>A graph of \\( K_{\\max} \\) vs. \\( f \\) for the photoelectric effect is a straight line. The slope equals:</p>",
-                  "problem_type": "mcq",
-                  "difficulty": "medium",
-                  "points": 1,
-                  "choices": [
-                    {
-                      "text": "Planck's constant \\( h \\)",
-                      "is_correct": true
-                    },
-                    {
-                      "text": "The work function \\( \\phi \\)",
-                      "is_correct": false
-                    },
-                    {
-                      "text": "The speed of light \\( c \\)",
-                      "is_correct": false
-                    },
-                    {
-                      "text": "The threshold frequency \\( f_0 \\)",
-                      "is_correct": false
-                    }
-                  ],
-                  "hints": [
-                    {
-                      "text": "\\( K_{\\max} = hf - \\phi \\) is in the form \\( y = mx + b \\).",
-                      "cost_points": 0
-                    },
-                    {
-                      "text": "Slope = \\( h \\) (Planck's constant). y-intercept = \\( -\\phi \\). x-intercept = \\( f_0 = \\phi/h \\).",
-                      "cost_points": 1
-                    }
-                  ],
-                  "solution_steps": [
-                    {
-                      "text": "\\( K_{\\max} = hf - \\phi \\). This is \\( y = mx + b \\) with slope = \\( h \\) and y-intercept = \\( -\\phi \\)."
                     }
                   ],
                   "access_tier": "premium"
@@ -13083,49 +13126,6 @@
                   ],
                   "access_tier": "premium",
                   "correct_answer": "E_photon = hc/λ = 1240/200 = 6.2 eV. K_max = E_photon − φ = 6.2 − 3.0 = 3.2 eV. Stopping potential: eV₀ = K_max, so V₀ = 3.2 V."
-                },
-                {
-                  "question_html": "<p>Two light sources — one red (650 nm) and one violet (400 nm) — shine on a metal with \\( \\phi = 2.5 \\) eV. Which ejects electrons? (\\( hc = 1240 \\) eV·nm)</p>",
-                  "problem_type": "mcq",
-                  "difficulty": "medium",
-                  "points": 1,
-                  "choices": [
-                    {
-                      "text": "Only the violet light",
-                      "is_correct": true
-                    },
-                    {
-                      "text": "Only the red light",
-                      "is_correct": false
-                    },
-                    {
-                      "text": "Both",
-                      "is_correct": false
-                    },
-                    {
-                      "text": "Neither",
-                      "is_correct": false
-                    }
-                  ],
-                  "hints": [
-                    {
-                      "text": "Calculate each photon's energy and compare to \\( \\phi \\).",
-                      "cost_points": 0
-                    },
-                    {
-                      "text": "Red: \\( E = 1240/650 = 1.91 \\) eV < 2.5 eV (no ejection). Violet: \\( E = 1240/400 = 3.10 \\) eV > 2.5 eV (ejection!). Only violet works.",
-                      "cost_points": 1
-                    }
-                  ],
-                  "solution_steps": [
-                    {
-                      "text": "Red: \\( E = 1240/650 = 1.91 \\) eV < \\( \\phi = 2.5 \\) eV → no ejection."
-                    },
-                    {
-                      "text": "Violet: \\( E = 1240/400 = 3.10 \\) eV > \\( \\phi = 2.5 \\) eV → electrons ejected."
-                    }
-                  ],
-                  "access_tier": "premium"
                 }
               ]
             }
@@ -13235,29 +13235,6 @@
                   "access_tier": "free"
                 },
                 {
-                  "question_html": "<p>The maximum wavelength shift in Compton scattering occurs when the photon is scattered at what angle?</p>",
-                  "problem_type": "ftb",
-                  "correct_answer": "180",
-                  "difficulty": "medium",
-                  "points": 1,
-                  "hints": [
-                    {
-                      "text": "\\( \\Delta\\lambda = \\frac{h}{m_e c}(1 - \\cos\\theta) \\). Maximum when \\( 1 - \\cos\\theta \\) is largest.",
-                      "cost_points": 0
-                    },
-                    {
-                      "text": "\\( \\cos 180° = -1 \\), so \\( 1 - (-1) = 2 \\). Maximum shift at 180° (backscatter): \\( \\Delta\\lambda = 2h/(m_e c) = 0.00486 \\) nm.",
-                      "cost_points": 1
-                    }
-                  ],
-                  "solution_steps": [
-                    {
-                      "text": "\\( \\Delta\\lambda \\) is maximum when \\( 1 - \\cos\\theta \\) is maximum: at \\( \\theta = 180° \\), \\( \\Delta\\lambda = 2h/(m_e c) \\)."
-                    }
-                  ],
-                  "access_tier": "free"
-                },
-                {
                   "question_html": "<p>Compton scattering provides evidence that photons have:</p>",
                   "problem_type": "ftb",
                   "correct_answer": "momentum",
@@ -13276,6 +13253,29 @@
                   "solution_steps": [
                     {
                       "text": "Compton scattering demonstrates that photons have momentum (\\( p = h/\\lambda = E/c \\)). The scattering is analyzed as a particle collision with conservation of both energy and momentum."
+                    }
+                  ],
+                  "access_tier": "free"
+                },
+                {
+                  "question_html": "<p>The maximum wavelength shift in Compton scattering occurs when the photon is scattered at what angle?</p>",
+                  "problem_type": "ftb",
+                  "correct_answer": "180",
+                  "difficulty": "medium",
+                  "points": 1,
+                  "hints": [
+                    {
+                      "text": "\\( \\Delta\\lambda = \\frac{h}{m_e c}(1 - \\cos\\theta) \\). Maximum when \\( 1 - \\cos\\theta \\) is largest.",
+                      "cost_points": 0
+                    },
+                    {
+                      "text": "\\( \\cos 180° = -1 \\), so \\( 1 - (-1) = 2 \\). Maximum shift at 180° (backscatter): \\( \\Delta\\lambda = 2h/(m_e c) = 0.00486 \\) nm.",
+                      "cost_points": 1
+                    }
+                  ],
+                  "solution_steps": [
+                    {
+                      "text": "\\( \\Delta\\lambda \\) is maximum when \\( 1 - \\cos\\theta \\) is maximum: at \\( \\theta = 180° \\), \\( \\Delta\\lambda = 2h/(m_e c) \\)."
                     }
                   ],
                   "access_tier": "free"
@@ -13596,49 +13596,6 @@
               "display_order": 1,
               "problems": [
                 {
-                  "question_html": "<p>In the fusion reaction ²H + ³H → ⁴He + n, the mass of the reactants is 5.03005 u and the mass of the products is 5.01140 u. How much energy is released, in MeV?</p>",
-                  "problem_type": "mcq",
-                  "difficulty": "hard",
-                  "points": 1,
-                  "choices": [
-                    {
-                      "text": "17.4 MeV",
-                      "is_correct": true
-                    },
-                    {
-                      "text": "1.74 MeV",
-                      "is_correct": false
-                    },
-                    {
-                      "text": "174 MeV",
-                      "is_correct": false
-                    },
-                    {
-                      "text": "0.174 MeV",
-                      "is_correct": false
-                    }
-                  ],
-                  "hints": [
-                    {
-                      "text": "Mass defect × 931.5 MeV/u = energy released.",
-                      "cost_points": 0
-                    },
-                    {
-                      "text": "\\( \\Delta m = 5.03005 - 5.01140 = 0.01865 \\) u. \\( E = 0.01865 \\times 931.5 = 17.4 \\) MeV.",
-                      "cost_points": 1
-                    }
-                  ],
-                  "solution_steps": [
-                    {
-                      "text": "Mass defect: \\( \\Delta m = 5.03005 - 5.01140 = 0.01865 \\) u."
-                    },
-                    {
-                      "text": "\\( E = \\Delta m \\times 931.5 = 0.01865 \\times 931.5 = 17.4 \\) MeV."
-                    }
-                  ],
-                  "access_tier": "premium"
-                },
-                {
                   "question_html": "<p>Why does nuclear fusion require extremely high temperatures (millions of kelvins)?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -13677,6 +13634,49 @@
                     },
                     {
                       "text": "At millions of kelvins, kinetic energy is sufficient to overcome the Coulomb barrier, allowing the strong nuclear force (very short range) to bind the nuclei."
+                    }
+                  ],
+                  "access_tier": "premium"
+                },
+                {
+                  "question_html": "<p>In the fusion reaction ²H + ³H → ⁴He + n, the mass of the reactants is 5.03005 u and the mass of the products is 5.01140 u. How much energy is released, in MeV?</p>",
+                  "problem_type": "mcq",
+                  "difficulty": "hard",
+                  "points": 1,
+                  "choices": [
+                    {
+                      "text": "17.4 MeV",
+                      "is_correct": true
+                    },
+                    {
+                      "text": "1.74 MeV",
+                      "is_correct": false
+                    },
+                    {
+                      "text": "174 MeV",
+                      "is_correct": false
+                    },
+                    {
+                      "text": "0.174 MeV",
+                      "is_correct": false
+                    }
+                  ],
+                  "hints": [
+                    {
+                      "text": "Mass defect × 931.5 MeV/u = energy released.",
+                      "cost_points": 0
+                    },
+                    {
+                      "text": "\\( \\Delta m = 5.03005 - 5.01140 = 0.01865 \\) u. \\( E = 0.01865 \\times 931.5 = 17.4 \\) MeV.",
+                      "cost_points": 1
+                    }
+                  ],
+                  "solution_steps": [
+                    {
+                      "text": "Mass defect: \\( \\Delta m = 5.03005 - 5.01140 = 0.01865 \\) u."
+                    },
+                    {
+                      "text": "\\( E = \\Delta m \\times 931.5 = 0.01865 \\times 931.5 = 17.4 \\) MeV."
                     }
                   ],
                   "access_tier": "premium"
@@ -13849,6 +13849,29 @@
                   "access_tier": "free"
                 },
                 {
+                  "question_html": "<p>Which type of radiation is most penetrating?</p>",
+                  "problem_type": "ftb",
+                  "correct_answer": "gamma",
+                  "difficulty": "easy",
+                  "points": 1,
+                  "hints": [
+                    {
+                      "text": "Compare alpha (stopped by paper), beta (stopped by aluminum), gamma (stopped by ...).",
+                      "cost_points": 0
+                    },
+                    {
+                      "text": "Gamma radiation is most penetrating — it requires thick lead or concrete to stop. Alpha is least penetrating (stopped by paper).",
+                      "cost_points": 1
+                    }
+                  ],
+                  "solution_steps": [
+                    {
+                      "text": "Penetration order: alpha (least) < beta < gamma (most). Gamma rays require thick lead or concrete shielding."
+                    }
+                  ],
+                  "access_tier": "free"
+                },
+                {
                   "question_html": "<p>A sample of a radioactive isotope has a half-life of 10 days. After 30 days, what fraction of the original sample remains?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "1/8",
@@ -13870,29 +13893,6 @@
                     },
                     {
                       "text": "Remaining fraction: \\( (1/2)^3 = 1/8 \\)."
-                    }
-                  ],
-                  "access_tier": "free"
-                },
-                {
-                  "question_html": "<p>Which type of radiation is most penetrating?</p>",
-                  "problem_type": "ftb",
-                  "correct_answer": "gamma",
-                  "difficulty": "easy",
-                  "points": 1,
-                  "hints": [
-                    {
-                      "text": "Compare alpha (stopped by paper), beta (stopped by aluminum), gamma (stopped by ...).",
-                      "cost_points": 0
-                    },
-                    {
-                      "text": "Gamma radiation is most penetrating — it requires thick lead or concrete to stop. Alpha is least penetrating (stopped by paper).",
-                      "cost_points": 1
-                    }
-                  ],
-                  "solution_steps": [
-                    {
-                      "text": "Penetration order: alpha (least) < beta < gamma (most). Gamma rays require thick lead or concrete shielding."
                     }
                   ],
                   "access_tier": "free"

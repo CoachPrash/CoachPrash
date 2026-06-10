@@ -32,9 +32,9 @@
                 </div>
                 <div class="form-group form-group-half">
                     <label for="course_slug">Course Slug</label>
-                    <select name="course_slug" class="form-control">
+                    <select name="course_slug" id="courseSlugSelect" class="form-control">
                         {% for c in courses %}
-                            <option value="{{ c.slug }}">{{ c.subject.name }} &rarr; {{ c.name }}</option>
+                            <option value="{{ c.slug }}" data-subject="{{ c.subject.slug }}">{{ c.name }}</option>
                         {% endfor %}
                     </select>
                 </div>
@@ -72,4 +72,27 @@
         {% endif %}
     </div>
 </section>
+
+<script>
+(function() {
+    var subjectSelect = document.querySelector('select[name="subject_slug"]');
+    var courseSelect = document.getElementById('courseSlugSelect');
+    if (!subjectSelect || !courseSelect) return;
+
+    var allOptions = Array.from(courseSelect.options);
+
+    function filterCourses() {
+        var selected = subjectSelect.value;
+        courseSelect.innerHTML = '';
+        allOptions.forEach(function(opt) {
+            if (opt.getAttribute('data-subject') === selected) {
+                courseSelect.appendChild(opt.cloneNode(true));
+            }
+        });
+    }
+
+    subjectSelect.addEventListener('change', filterCourses);
+    filterCourses();
+})();
+</script>
 {% endblock %}

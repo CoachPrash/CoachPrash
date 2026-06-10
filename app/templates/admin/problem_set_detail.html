@@ -65,10 +65,11 @@
             <div class="problem-panel" data-problem-id="{{ problem.id }}">
                 <div class="problem-panel-header" onclick="togglePanel(this)">
                     <span class="problem-number">#{{ loop.index }}</span>
-                    <span class="problem-preview">{{ problem.question_raw[:100]|e }}{% if problem.question_raw|length > 100 %}...{% endif %}</span>
+                    <span class="problem-preview">{{ problem.question_html[:100]|e }}{% if problem.question_html|length > 100 %}...{% endif %}</span>
                     <span class="badge badge-{{ problem.difficulty }}">{{ problem.difficulty }}</span>
                     <span class="badge">{{ problem.problem_type.upper() }}</span>
                     <span class="badge">{{ problem.points }} pt{{ 's' if problem.points != 1 }}</span>
+                    <span class="badge badge-{{ 'success' if problem.access_tier == 'free' else 'warning' }}">{{ problem.access_tier|upper }}</span>
                     <span class="expand-icon">&#9656;</span>
                 </div>
                 <div class="problem-panel-body">
@@ -78,7 +79,7 @@
                         <!-- Question -->
                         <div class="form-group">
                             <label>Question (HTML + LaTeX)</label>
-                            <textarea name="question_raw" class="form-control form-textarea latex-input" rows="5">{{ problem.question_raw }}</textarea>
+                            <textarea name="question_html" class="form-control form-textarea latex-input" rows="5">{{ problem.question_html }}</textarea>
                             <div class="latex-preview"></div>
                         </div>
 
@@ -103,6 +104,13 @@
                             <div class="form-group">
                                 <label>Points</label>
                                 <input type="number" name="points" value="{{ problem.points }}" class="form-control" min="1" style="width:80px">
+                            </div>
+                            <div class="form-group">
+                                <label>Access Tier</label>
+                                <select name="access_tier" class="form-control">
+                                    <option value="free" {{ 'selected' if problem.access_tier == 'free' }}>Free</option>
+                                    <option value="premium" {{ 'selected' if problem.access_tier == 'premium' }}>Premium</option>
+                                </select>
                             </div>
                             <div class="form-group correct-answer-group" style="{{ 'display:none' if problem.problem_type == 'mcq' }}">
                                 <label>Correct Answer <span class="form-help">(FTB: use || for alternates)</span></label>

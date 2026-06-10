@@ -31,7 +31,6 @@ class Problem(db.Model):
     id = db.Column(db.String(36), primary_key=True, default=lambda: str(uuid.uuid4()))
     problem_set_id = db.Column(db.String(36), db.ForeignKey('problem_sets.id'), nullable=False, index=True)
     question_html = db.Column(db.Text, nullable=False, default='')
-    question_raw = db.Column(db.Text, nullable=False, default='')
     problem_type = db.Column(db.String(20), nullable=False, default='mcq')
     correct_answer = db.Column(db.Text, nullable=True)
     starter_code = db.Column(db.Text, nullable=True)
@@ -42,6 +41,7 @@ class Problem(db.Model):
     points = db.Column(db.Integer, nullable=False, default=1)
     difficulty = db.Column(db.String(20), nullable=False, default='medium')
     display_order = db.Column(db.Integer, nullable=False, default=0)
+    access_tier = db.Column(db.String(20), nullable=False, default='free')
     created_at = db.Column(db.DateTime, default=lambda: datetime.now(timezone.utc))
     updated_at = db.Column(
         db.DateTime,

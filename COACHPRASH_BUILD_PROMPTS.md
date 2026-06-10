@@ -178,7 +178,6 @@ Design these models with SQLAlchemy. Use UUIDs for primary keys. Add created_at/
    - id (UUID, PK)
    - problem_set_id (FK -> ProblemSet)
    - question_html (text — supports LaTeX)
-   - question_raw (text)
    - problem_type ENUM('mcq', 'fill_in_blank')
    - correct_answer (string — for fill-in-blank; for MCQ, marked on Choice)
    - points (int, default 1)
@@ -701,7 +700,7 @@ Content editor improvements:
             "access_tier": "free",
             "problems": [
               {
-                "question_raw": "...",
+                "question_html": "<p>...</p>",
                 "problem_type": "mcq",
                 "difficulty": "easy",
                 "choices": [
@@ -1075,7 +1074,6 @@ Return ONLY valid JSON matching this structure (no markdown fencing, no commenta
           "problems": [
             {
               "question_html": "<p>Question with \\( LaTeX \\)...</p>",
-              "question_raw": "Plain text question...",
               "problem_type": "mcq",
               "difficulty": "easy",
               "points": 1,

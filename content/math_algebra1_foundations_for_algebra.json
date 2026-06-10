@@ -22,35 +22,7 @@
               "display_order": 0,
               "problems": [
                 {
-                  "question_html": "<p>Write an algebraic expression for: \"the quotient of a number \\(n\\) and 7, decreased by 2\".</p>",
-                  "question_raw": "Write an algebraic expression for: the quotient of n and 7, decreased by 2",
-                  "problem_type": "ftb",
-                  "difficulty": "easy",
-                  "points": 1,
-                  "correct_answer": "n/7 - 2||n÷7 - 2||(n/7)-2",
-                  "choices": [],
-                  "hints": [
-                    {
-                      "text": "\"Quotient of n and 7\" means \\(n \\div 7\\) or \\(\\frac{n}{7}\\).",
-                      "cost_points": 0
-                    },
-                    {
-                      "text": "\"Decreased by 2\" means subtract 2 from that quotient.",
-                      "cost_points": 1
-                    }
-                  ],
-                  "solution_steps": [
-                    {
-                      "text": "Translate \"quotient of n and 7\" → \\(\\frac{n}{7}\\)."
-                    },
-                    {
-                      "text": "\"Decreased by 2\" means subtract 2 → \\(\\frac{n}{7} - 2\\)."
-                    }
-                  ]
-                },
-                {
                   "question_html": "<p>Which word phrase best represents the expression \\(4x - 9\\)?</p>",
-                  "question_raw": "Which phrase represents 4x - 9?",
                   "problem_type": "mcq",
                   "difficulty": "easy",
                   "points": 1,
@@ -92,11 +64,38 @@
                     {
                       "text": "The other options change the order of operations."
                     }
-                  ]
+                  ],
+                  "access_tier": "free"
+                },
+                {
+                  "question_html": "<p>Write an algebraic expression for: \"the quotient of a number \\(n\\) and 7, decreased by 2\".</p>",
+                  "problem_type": "ftb",
+                  "difficulty": "easy",
+                  "points": 1,
+                  "correct_answer": "n/7 - 2||n÷7 - 2||(n/7)-2",
+                  "choices": [],
+                  "hints": [
+                    {
+                      "text": "\"Quotient of n and 7\" means \\(n \\div 7\\) or \\(\\frac{n}{7}\\).",
+                      "cost_points": 0
+                    },
+                    {
+                      "text": "\"Decreased by 2\" means subtract 2 from that quotient.",
+                      "cost_points": 1
+                    }
+                  ],
+                  "solution_steps": [
+                    {
+                      "text": "Translate \"quotient of n and 7\" → \\(\\frac{n}{7}\\)."
+                    },
+                    {
+                      "text": "\"Decreased by 2\" means subtract 2 → \\(\\frac{n}{7} - 2\\)."
+                    }
+                  ],
+                  "access_tier": "free"
                 },
                 {
                   "question_html": "<p>A rectangle has width \\(w\\) and length that is 5 more than twice the width. Write an expression for the perimeter.</p>",
-                  "question_raw": "Rectangle: width w, length = 5 + 2w. Perimeter expression?",
                   "problem_type": "ftb",
                   "difficulty": "medium",
                   "points": 1,
@@ -122,7 +121,8 @@
                     {
                       "text": "Simplify: \\(4w + 10 + 2w = 6w + 10\\) or \\(2(3w+5)\\)."
                     }
-                  ]
+                  ],
+                  "access_tier": "free"
                 }
               ]
             }
@@ -144,7 +144,6 @@
               "problems": [
                 {
                   "question_html": "<p>Simplify: \\(4 + 3 \\times (2^3 - 5)\\)</p>",
-                  "question_raw": "Simplify 4 + 3 * (2^3 - 5)",
                   "problem_type": "ftb",
                   "difficulty": "easy",
                   "points": 1,
@@ -170,11 +169,11 @@
                     {
                       "text": "Addition: \\(4 + 9 = 13\\)."
                     }
-                  ]
+                  ],
+                  "access_tier": "free"
                 },
                 {
                   "question_html": "<p>Evaluate \\(\\frac{5x^2 - 3y}{2}\\) for \\(x = 4\\) and \\(y = 7\\).</p>",
-                  "question_raw": "Evaluate (5x^2 - 3y)/2 for x=4, y=7",
                   "problem_type": "ftb",
                   "difficulty": "medium",
                   "points": 1,
@@ -200,11 +199,11 @@
                     {
                       "text": "Divide: \\(\\frac{59}{2} = 29.5\\)."
                     }
-                  ]
+                  ],
+                  "access_tier": "free"
                 },
                 {
                   "question_html": "<p>Simplify: \\(8 - 2[3 - (5 - 4 \\div 2)]\\).</p>",
-                  "question_raw": "Simplify 8 - 2[3 - (5 - 4 ÷ 2)]",
                   "problem_type": "ftb",
                   "difficulty": "hard",
                   "points": 1,
@@ -236,7 +235,8 @@
                     {
                       "text": "Finally \\(8 - 0 = 8\\)."
                     }
-                  ]
+                  ],
+                  "access_tier": "premium"
                 }
               ]
             }
@@ -258,7 +258,6 @@
               "problems": [
                 {
                   "question_html": "<p>Which of the following is an irrational number?</p>",
-                  "question_raw": "Which is irrational?",
                   "problem_type": "mcq",
                   "difficulty": "easy",
                   "points": 1,
@@ -303,11 +302,11 @@
                     {
                       "text": "\\(9/4\\) fraction → rational."
                     }
-                  ]
+                  ],
+                  "access_tier": "free"
                 },
                 {
                   "question_html": "<p>Order from least to greatest: \\(-\\frac{5}{2},\\ \\sqrt{7},\\ -2.4,\\ 0\\)</p>",
-                  "question_raw": "Order -5/2, √7, -2.4, 0",
                   "problem_type": "ftb",
                   "difficulty": "medium",
                   "points": 1,
@@ -336,11 +335,11 @@
                     {
                       "text": "So order: \\(-\\frac{5}{2},\\ -2.4,\\ 0,\\ \\sqrt{7}\\)."
                     }
-                  ]
+                  ],
+                  "access_tier": "free"
                 },
                 {
                   "question_html": "<p>A square garden has an area of 45 square meters. Estimate the side length to the nearest integer.</p>",
-                  "question_raw": "Area 45 m^2, estimate side length to nearest integer",
                   "problem_type": "ftb",
                   "difficulty": "medium",
                   "points": 1,
@@ -366,7 +365,8 @@
                     {
                       "text": "Nearest integer: 7."
                     }
-                  ]
+                  ],
+                  "access_tier": "free"
                 }
               ]
             }
@@ -388,7 +388,6 @@
               "problems": [
                 {
                   "question_html": "<p>Which property is illustrated by \\((3 + 4) + 5 = 3 + (4 + 5)\\)?</p>",
-                  "question_raw": "Identify property: (3+4)+5 = 3+(4+5)",
                   "problem_type": "mcq",
                   "difficulty": "easy",
                   "points": 1,
@@ -427,11 +426,11 @@
                     {
                       "text": "This is the Associative Property of Addition."
                     }
-                  ]
+                  ],
+                  "access_tier": "free"
                 },
                 {
                   "question_html": "<p>Simplify \\(\\frac{12ab}{3a}\\) using properties of real numbers. Assume \\(a \\neq 0\\).</p>",
-                  "question_raw": "Simplify (12ab)/(3a)",
                   "problem_type": "ftb",
                   "difficulty": "medium",
                   "points": 1,
@@ -457,11 +456,11 @@
                     {
                       "text": "So \\(4 \\cdot 1 \\cdot b = 4b\\)."
                     }
-                  ]
+                  ],
+                  "access_tier": "free"
                 },
                 {
                   "question_html": "<p>Is the statement \\(a \\div (b \\div c) = (a \\div b) \\div c\\) true for all real numbers? If false, give a counterexample.</p>",
-                  "question_raw": "Is division associative? If false, counterexample.",
                   "problem_type": "frq",
                   "difficulty": "hard",
                   "points": 2,
@@ -490,7 +489,8 @@
                     {
                       "text": "8 ≠ 2, so division is not associative."
                     }
-                  ]
+                  ],
+                  "access_tier": "premium"
                 }
               ]
             }
@@ -512,7 +512,6 @@
               "problems": [
                 {
                   "question_html": "<p>Find the sum: \\(-15 + (-7)\\)</p>",
-                  "question_raw": "-15 + (-7)",
                   "problem_type": "ftb",
                   "difficulty": "easy",
                   "points": 1,
@@ -535,11 +534,11 @@
                     {
                       "text": "Keep negative sign: -22."
                     }
-                  ]
+                  ],
+                  "access_tier": "free"
                 },
                 {
                   "question_html": "<p>Simplify: \\(-4.8 - 9.3\\)</p>",
-                  "question_raw": "-4.8 - 9.3",
                   "problem_type": "ftb",
                   "difficulty": "easy",
                   "points": 1,
@@ -565,11 +564,11 @@
                     {
                       "text": "Result: -14.1."
                     }
-                  ]
+                  ],
+                  "access_tier": "free"
                 },
                 {
                   "question_html": "<p>A submarine is at -350 ft (below sea level). It rises 120 ft, then descends 45 ft. What is its final depth?</p>",
-                  "question_raw": "Submarine: -350 ft, rise 120, descend 45. Final depth?",
                   "problem_type": "ftb",
                   "difficulty": "medium",
                   "points": 1,
@@ -595,7 +594,8 @@
                     {
                       "text": "After descent: -230 + (-45) = -275 ft."
                     }
-                  ]
+                  ],
+                  "access_tier": "premium"
                 }
               ]
             }
@@ -617,7 +617,6 @@
               "problems": [
                 {
                   "question_html": "<p>Calculate: \\((-8) \\times (-12)\\)</p>",
-                  "question_raw": "(-8)*(-12)",
                   "problem_type": "ftb",
                   "difficulty": "easy",
                   "points": 1,
@@ -640,11 +639,11 @@
                     {
                       "text": "8 × 12 = 96, so answer 96."
                     }
-                  ]
+                  ],
+                  "access_tier": "free"
                 },
                 {
                   "question_html": "<p>Simplify: \\(\\frac{-3.6}{0.9}\\)</p>",
-                  "question_raw": "-3.6 / 0.9",
                   "problem_type": "ftb",
                   "difficulty": "easy",
                   "points": 1,
@@ -667,11 +666,11 @@
                     {
                       "text": "3.6 / 0.9 = 4, so result -4."
                     }
-                  ]
+                  ],
+                  "access_tier": "free"
                 },
                 {
                   "question_html": "<p>A stock price changes by \\(-\\$1.25\\) each day for 5 consecutive days. What is the total change in price?</p>",
-                  "question_raw": "Change -1.25 per day for 5 days, total change?",
                   "problem_type": "ftb",
                   "difficulty": "medium",
                   "points": 1,
@@ -694,7 +693,8 @@
                     {
                       "text": "5 × (-1.25) = -6.25."
                     }
-                  ]
+                  ],
+                  "access_tier": "premium"
                 }
               ]
             }
@@ -716,7 +716,6 @@
               "problems": [
                 {
                   "question_html": "<p>Simplify: \\(3(2x - 5) + 4x\\)</p>",
-                  "question_raw": "Simplify 3(2x-5)+4x",
                   "problem_type": "ftb",
                   "difficulty": "easy",
                   "points": 1,
@@ -742,11 +741,11 @@
                     {
                       "text": "Combine like terms: \\(10x - 15\\)."
                     }
-                  ]
+                  ],
+                  "access_tier": "free"
                 },
                 {
                   "question_html": "<p>Use mental math to find \\(8 \\times 49\\) using the distributive property.</p>",
-                  "question_raw": "8 × 49 using distributive property mentally",
                   "problem_type": "ftb",
                   "difficulty": "medium",
                   "points": 1,
@@ -772,11 +771,11 @@
                     {
                       "text": "400 - 8 = 392."
                     }
-                  ]
+                  ],
+                  "access_tier": "free"
                 },
                 {
                   "question_html": "<p>Simplify: \\(-(4y - 3z + 2)\\)</p>",
-                  "question_raw": "Simplify -(4y - 3z + 2)",
                   "problem_type": "ftb",
                   "difficulty": "medium",
                   "points": 1,
@@ -802,7 +801,8 @@
                     {
                       "text": "Result: \\(-4y + 3z - 2\\)."
                     }
-                  ]
+                  ],
+                  "access_tier": "premium"
                 }
               ]
             }
@@ -824,7 +824,6 @@
               "problems": [
                 {
                   "question_html": "<p>Is \\(y = -2\\) a solution of \\(4y + 3 = -5\\)?</p>",
-                  "question_raw": "Is y=-2 a solution of 4y+3=-5?",
                   "problem_type": "mcq",
                   "difficulty": "easy",
                   "points": 1,
@@ -855,11 +854,11 @@
                     {
                       "text": "Right side is -5. Both sides equal, so it is a solution."
                     }
-                  ]
+                  ],
+                  "access_tier": "free"
                 },
                 {
                   "question_html": "<p>Use mental math to solve: \\(x - 7 = 15\\)</p>",
-                  "question_raw": "Solve x - 7 = 15 mentally",
                   "problem_type": "ftb",
                   "difficulty": "easy",
                   "points": 1,
@@ -882,11 +881,11 @@
                     {
                       "text": "So \\(x = 22\\)."
                     }
-                  ]
+                  ],
+                  "access_tier": "free"
                 },
                 {
                   "question_html": "<p>Use a table to find the solution of \\(3n + 5 = 26\\). Start with n=5,6,7,...</p>",
-                  "question_raw": "Solve 3n+5=26 using a table",
                   "problem_type": "ftb",
                   "difficulty": "medium",
                   "points": 1,
@@ -909,7 +908,8 @@
                     {
                       "text": "When n=7, equation holds. Solution: n=7."
                     }
-                  ]
+                  ],
+                  "access_tier": "free"
                 }
               ]
             }
@@ -930,38 +930,7 @@
               "display_order": 0,
               "problems": [
                 {
-				  "question_html": "<p>The table shows the cost of buying x muffins at a bakery. Each muffin costs the same. Complete the table and write an equation.</p><table><tr><th>x (muffins)</th><th>Cost ($)</th></tr><tr><td>1</td><td>1.75</td></tr><tr><td>2</td><td>3.50</td></tr><tr><td>3</td><td>?</td></tr><tr><td>4</td><td>?</td></tr></table>",
-				  "question_raw": "Complete table and write equation: muffins cost $1.75 each",
-				  "problem_type": "frq",
-				  "difficulty": "easy",
-				  "points": 1,
-				  "correct_answer": "For x=3, cost = 5.25; for x=4, cost = 7.00. Equation: y = 1.75x.",
-				  "choices": [],
-				  "hints": [
-					{
-					  "text": "Cost per muffin is constant ($1.75). Multiply number of muffins by 1.75.",
-					  "cost_points": 0
-					},
-					{
-					  "text": "So for 3 muffins: 3 × 1.75 = 5.25; for 4: 4 × 1.75 = 7.00. Equation y = 1.75x.",
-					  "cost_points": 1
-					}
-				  ],
-				  "solution_steps": [
-					{
-					  "text": "Find unit rate: $1.75 per muffin."
-					},
-					{
-					  "text": "Cost = 1.75 × number of muffins, so y = 1.75x."
-					},
-					{
-					  "text": "Fill table: x=3 → 5.25, x=4 → 7.00."
-					}
-				  ]
-				},
-                {
                   "question_html": "<p>Is the ordered pair \\((3, 9)\\) a solution of the equation \\(y = 2x + 3\\)?</p>",
-                  "question_raw": "Is (3,9) a solution of y=2x+3?",
                   "problem_type": "mcq",
                   "difficulty": "easy",
                   "points": 1,
@@ -988,11 +957,11 @@
                     {
                       "text": "The y-coordinate in the pair is 9, so yes, it satisfies the equation."
                     }
-                  ]
+                  ],
+                  "access_tier": "free"
                 },
                 {
                   "question_html": "<p>Use the pattern in the table to predict the value of y when x = 8.</p><table><tr><th>x</th><th>y</th></tr><tr><td>1</td><td>3</td></tr><tr><td>2</td><td>5</td></tr><tr><td>3</td><td>7</td></tr><tr><td>4</td><td>9</td></tr></table>",
-                  "question_raw": "Extend pattern: find y when x=8",
                   "problem_type": "ftb",
                   "difficulty": "medium",
                   "points": 1,
@@ -1018,7 +987,38 @@
                     {
                       "text": "For x=8: y = 2*8+1 = 17."
                     }
-                  ]
+                  ],
+                  "access_tier": "free"
+                },
+                {
+                  "question_html": "<p>The table shows the cost of buying x muffins at a bakery. Each muffin costs the same. Complete the table and write an equation.</p><table><tr><th>x (muffins)</th><th>Cost ($)</th></tr><tr><td>1</td><td>1.75</td></tr><tr><td>2</td><td>3.50</td></tr><tr><td>3</td><td>?</td></tr><tr><td>4</td><td>?</td></tr></table>",
+                  "problem_type": "frq",
+                  "difficulty": "easy",
+                  "points": 1,
+                  "correct_answer": "For x=3, cost = 5.25; for x=4, cost = 7.00. Equation: y = 1.75x.",
+                  "choices": [],
+                  "hints": [
+                    {
+                      "text": "Cost per muffin is constant ($1.75). Multiply number of muffins by 1.75.",
+                      "cost_points": 0
+                    },
+                    {
+                      "text": "So for 3 muffins: 3 × 1.75 = 5.25; for 4: 4 × 1.75 = 7.00. Equation y = 1.75x.",
+                      "cost_points": 1
+                    }
+                  ],
+                  "solution_steps": [
+                    {
+                      "text": "Find unit rate: $1.75 per muffin."
+                    },
+                    {
+                      "text": "Cost = 1.75 × number of muffins, so y = 1.75x."
+                    },
+                    {
+                      "text": "Fill table: x=3 → 5.25, x=4 → 7.00."
+                    }
+                  ],
+                  "access_tier": "premium"
                 }
               ]
             }
