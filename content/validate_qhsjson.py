@@ -8,14 +8,16 @@ Usage:
     python content/validate_qhsjson.py content/foo.json     # validate specific file(s)
     python content/validate_qhsjson.py --no-warnings        # errors only
     python content/validate_qhsjson.py --verbose            # show per-concept stats
+    python content/validate_qhsjson.py --strict             # AI artifacts become errors
 
 Exit codes:
     0 = no errors (warnings are OK)
-    1 = errors found
+    1 = errors found (or AI artifacts with --strict)
     2 = script failure (no files, bad args, etc.)
 """
 
 import json
+import re
 import sys
 import os
 import glob
@@ -51,6 +53,43 @@ def green(t):  return _c("32", t)
 def yellow(t): return _c("33", t)
 def bold(t):   return _c("1", t)
 def dim(t):    return _c("2", t)
+
+
+# ──────────────────────────────────────────────────────────────
+# AI artifact patterns (Pass 3)
+# ──────────────────────────────────────────────────────────────
+
+AI_ARTIFACT_PATTERNS = [
+    # Thinking phrases
+    ("thinking", re.compile(r"\bwait,", re.I), "Thinking phrase: 'wait,'"),
+    ("thinking", re.compile(r"\bactually,", re.I), "Thinking phrase: 'actually,'"),
+    ("thinking", re.compile(r"\bhmm\b", re.I), "Thinking phrase: 'hmm'"),
+    ("thinking", re.compile(r"\blet me reconsider\b", re.I), "Thinking: 'let me reconsider'"),
+    ("thinking", re.compile(r"\blet me recalculate\b", re.I), "Thinking: 'let me recalculate'"),
+    ("thinking", re.compile(r"\bI think\b", re.I), "Thinking phrase: 'I think'"),
+    ("thinking", re.compile(r"\bI believe\b", re.I), "Thinking phrase: 'I believe'"),
+    ("thinking", re.compile(r"\bupon reflection\b", re.I), "Thinking: 'upon reflection'"),
+    ("thinking", re.compile(r"\bon second thought\b", re.I), "Thinking: 'on second thought'"),
+    ("thinking", re.compile(r"\blooking at this again\b", re.I), "Thinking: 'looking at this again'"),
+    # Self-correction
+    ("self-correction", re.compile(r"\bthe correct answer should be\b", re.I), "Self-correction remnant"),
+    ("self-correction", re.compile(r"\bthe answer is actually\b", re.I), "Self-correction remnant"),
+    ("self-correction", re.compile(r"\bI made an error\b", re.I), "Self-correction remnant"),
+    ("self-correction", re.compile(r"\bI made a mistake\b", re.I), "Self-correction remnant"),
+    ("self-correction", re.compile(r"\bcorrection:", re.I), "Self-correction remnant"),
+    ("self-correction", re.compile(r"\bcorrected:", re.I), "Self-correction remnant"),
+    # Hedging
+    ("hedging", re.compile(r"\bclosest to\b", re.I), "Hedging: 'closest to'"),
+    ("hedging", re.compile(r"\bclosest answer\b", re.I), "Hedging: 'closest answer'"),
+    ("hedging", re.compile(r"\bbest approximation\b", re.I), "Hedging: 'best approximation'"),
+    ("hedging", re.compile(r"\bapproximately matches\b", re.I), "Hedging: 'approximately matches'"),
+    ("hedging", re.compile(r"\bnone of the above exactly\b", re.I), "Hedging: 'none of the above exactly'"),
+    # AI persona leaks
+    ("persona", re.compile(r"\bas an AI\b", re.I), "AI persona leak"),
+    ("persona", re.compile(r"\bas a language model\b", re.I), "AI persona leak"),
+    ("persona", re.compile(r"\bI cannot\b", re.I), "AI persona leak: 'I cannot'"),
+    ("persona", re.compile(r"\bI'm sorry\b", re.I), "AI persona leak: 'I'm sorry'"),
+]
 
 
 # ──────────────────────────────────────────────────────────────
@@ -280,10 +319,123 @@ def validate_semantics(data, filename):
 
 
 # ──────────────────────────────────────────────────────────────
-# File validation (combines both passes)
+# AI artifact detection (Pass 3)
 # ──────────────────────────────────────────────────────────────
 
-def validate_file(filepath, schema, show_warnings=True, verbose=False):
+def _extract_text_fields(problem):
+    """Yield (field_name, text) tuples for all scannable text in a problem."""
+    # Question
+    q = problem.get("question_html", "")
+    if q:
+        yield ("question_html", str(q))
+
+    # Correct answer
+    ca = problem.get("correct_answer", "")
+    if ca:
+        yield ("correct_answer", str(ca))
+
+    # MCQ choices
+    for ci, ch in enumerate(problem.get("choices", [])):
+        text = ch.get("text") or ch.get("choice_text", "") if isinstance(ch, dict) else ""
+        if text:
+            yield (f"Choice {ci+1}", str(text))
+
+    # Hints
+    for hi, h in enumerate(problem.get("hints", [])):
+        if isinstance(h, str):
+            text = h
+        elif isinstance(h, dict):
+            text = h.get("text") or h.get("hint_text", "")
+        else:
+            text = ""
+        if text:
+            yield (f"Hint {hi+1}", str(text))
+
+    # Solution steps
+    steps = problem.get("solution_steps", problem.get("solution", []))
+    if isinstance(steps, list):
+        for si, s in enumerate(steps):
+            if isinstance(s, str):
+                text = s
+            elif isinstance(s, dict):
+                text = s.get("text") or s.get("text_html", "")
+            else:
+                text = ""
+            if text:
+                yield (f"Step {si+1}", str(text))
+
+
+def _check_latex_balance(text):
+    """Return list of issues with unmatched LaTeX delimiters."""
+    issues = []
+    # Inline math: \( ... \)
+    opens = len(re.findall(r"\\\(", text))
+    closes = len(re.findall(r"\\\)", text))
+    if opens != closes:
+        issues.append(f"Unmatched inline LaTeX: {opens} \\( vs {closes} \\)")
+    # Display math: \[ ... \]
+    opens = len(re.findall(r"\\\[", text))
+    closes = len(re.findall(r"\\\]", text))
+    if opens != closes:
+        issues.append(f"Unmatched display LaTeX: {opens} \\[ vs {closes} \\]")
+    return issues
+
+
+def validate_ai_artifacts(data):
+    """Pass 3: Detect AI-generated content artifacts.
+
+    Returns (issues: list[str], count: int).
+    """
+    issues = []
+    count = 0
+
+    topics = data.get("topics", [])
+    if not isinstance(topics, list):
+        return issues, count
+
+    for ti, topic in enumerate(topics):
+        tname = topic.get("name", topic.get("title", f"Topic {ti+1}"))
+        tloc = f"Topic {ti+1} ({tname})"
+
+        for ci, concept in enumerate(topic.get("concepts", [])):
+            ctitle = concept.get("title", f"Concept {ci+1}")
+            cloc = f"{tloc} > Concept {ci+1} ({ctitle})"
+
+            for psi, ps in enumerate(concept.get("problem_sets", [])):
+                pstitle = ps.get("title", ps.get("name", f"PS {psi+1}"))
+                psloc = f"{cloc} > PS {psi+1} ({pstitle})"
+
+                for pi, prob in enumerate(ps.get("problems", [])):
+                    ploc = f"{psloc} > Problem {pi+1}"
+
+                    for field_name, text in _extract_text_fields(prob):
+                        # Pattern matching
+                        for _cat, pattern, desc in AI_ARTIFACT_PATTERNS:
+                            match = pattern.search(text)
+                            if match:
+                                snippet = match.group()
+                                issues.append(
+                                    f"  {{LEVEL}}  [ai-artifact] {ploc} > "
+                                    f"{field_name}: {desc} (matched: '{snippet}')"
+                                )
+                                count += 1
+
+                        # LaTeX balance
+                        for latex_issue in _check_latex_balance(text):
+                            issues.append(
+                                f"  {{LEVEL}}  [ai-artifact] {ploc} > "
+                                f"{field_name}: {latex_issue}"
+                            )
+                            count += 1
+
+    return issues, count
+
+
+# ──────────────────────────────────────────────────────────────
+# File validation (combines all passes)
+# ──────────────────────────────────────────────────────────────
+
+def validate_file(filepath, schema, show_warnings=True, verbose=False, strict=False):
     """Validate a single qhsJSON file. Returns (error_count, warning_count)."""
     filename = os.path.basename(filepath)
     print(f"\n{bold('===')} {bold(filename)} {bold('===')}")
@@ -329,6 +481,24 @@ def validate_file(filepath, schema, show_warnings=True, verbose=False):
         for w in sem_warnings:
             print(w)
 
+    # Pass 3: AI artifact detection
+    ai_issues, ai_count = validate_ai_artifacts(data)
+    if ai_count == 0:
+        print(f"  {green('PASS')}  AI artifact scan")
+    else:
+        if strict:
+            error_count += ai_count
+            label = red('FAIL')
+            level_str = red('ERROR')
+        else:
+            warning_count += ai_count
+            label = yellow('WARN')
+            level_str = yellow('WARN')
+        print(f"  {label}  AI artifact scan ({ai_count} issues)")
+        if show_warnings or strict:
+            for issue in ai_issues:
+                print(issue.replace("{LEVEL}", level_str))
+
     # Stats line
     if stats["topics"] > 0:
         type_breakdown = f"{stats['mcq']} MCQ, {stats['ftb']} FTB, {stats['frq']} FRQ"
@@ -340,6 +510,8 @@ def validate_file(filepath, schema, show_warnings=True, verbose=False):
             print(
                 f"         {stats['hints']} hints, {stats['solutions']} solution steps"
             )
+            if ai_count > 0:
+                print(f"         {ai_count} AI artifact warnings")
 
     # Result line
     if error_count == 0 and warning_count == 0:
@@ -374,6 +546,11 @@ def main():
         "--verbose",
         action="store_true",
         help="Show detailed stats per file.",
+    )
+    parser.add_argument(
+        "--strict",
+        action="store_true",
+        help="Promote AI artifact warnings to errors (useful for CI/pre-commit).",
     )
     args = parser.parse_args()
 
@@ -417,6 +594,7 @@ def main():
             schema,
             show_warnings=not args.no_warnings,
             verbose=args.verbose,
+            strict=args.strict,
         )
         total_errors += errs
         total_warnings += warns

@@ -11,6 +11,38 @@
 
             <div class="changelog-entry">
                 <div class="changelog-date">
+                    <span class="changelog-date-day">11</span>
+                    <span class="changelog-date-month">Jun 2026</span>
+                    <span class="changelog-phase-badge">Tooling</span>
+                </div>
+                <div class="changelog-body">
+                    <h2>AI Artifact Detection in Content Validator</h2>
+                    <p class="changelog-summary">Added Pass 3 to <code>validate_qhsjson.py</code> that automatically detects AI-generated content artifacts before they reach production.</p>
+
+                    <div class="changelog-section">
+                        <h3>What It Catches</h3>
+                        <ul>
+                            <li><strong>Thinking phrases:</strong> &ldquo;wait,&rdquo; &ldquo;actually,&rdquo; &ldquo;I think,&rdquo; &ldquo;let me reconsider&rdquo;</li>
+                            <li><strong>Self-correction remnants:</strong> &ldquo;the answer is actually,&rdquo; &ldquo;correction:&rdquo; &ldquo;I made a mistake&rdquo;</li>
+                            <li><strong>Hedging language:</strong> &ldquo;closest to,&rdquo; &ldquo;best approximation,&rdquo; &ldquo;approximately matches&rdquo;</li>
+                            <li><strong>AI persona leaks:</strong> &ldquo;as an AI,&rdquo; &ldquo;as a language model&rdquo;</li>
+                            <li><strong>Unbalanced LaTeX:</strong> mismatched <code>\(</code>/<code>\)</code> and <code>\[</code>/<code>\]</code> delimiters</li>
+                        </ul>
+                    </div>
+
+                    <div class="changelog-section">
+                        <h3>Usage</h3>
+                        <ul>
+                            <li><strong><code>--strict</code> flag:</strong> promotes AI artifact warnings to errors (exit code 1)</li>
+                            <li><strong>Scans all text fields:</strong> question_html, correct_answer, choices, hints, solution steps</li>
+                            <li><strong>Integrated into content creation workflow:</strong> always run before committing new content</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="changelog-entry">
+                <div class="changelog-date">
                     <span class="changelog-date-day">10</span>
                     <span class="changelog-date-month">Jun 2026</span>
                     <span class="changelog-phase-badge">Feature</span>

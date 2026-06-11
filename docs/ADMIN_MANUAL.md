@@ -1,6 +1,6 @@
 # CoachPrash Admin Manual
 
-> **Version:** 24.0 (Per-Problem Access Tier + Navigator + question_raw Removal)
+> **Version:** 25.0 (AI Artifact Detection in Content Validator)
 > **Last Updated:** June 2026
 > **Platform:** Flask + PostgreSQL, deployed on Railway
 
@@ -864,12 +864,17 @@ OUTPUT FORMAT (qhsJSON v4):
 
 1. **Fill in** the template with your subject/course/topic/concept details
 2. **Paste** into Claude (Pro or Claude Code)
-3. **Review** the output for accuracy — especially:
+3. **Run the validator** against the generated file:
+   ```
+   python content/validate_qhsjson.py content/<filename>.json --strict --verbose
+   ```
+   This checks schema, semantics, AND AI artifacts (thinking phrases, self-correction remnants, hedging language, broken LaTeX). Fix any errors before proceeding.
+4. **Review** the output for accuracy — especially:
    - Correct answers (verify the math!)
    - LaTeX syntax (check `\(` and `\)` are balanced)
    - `is_correct` flags (exactly one `true` per MCQ)
-4. **Validate** via `/admin/content/import` → click **Validate**
-5. **Import** once validated
+5. **Validate** via `/admin/content/import` → click **Validate**
+6. **Import** once validated
 
 ### Tips for Better Output
 
@@ -880,6 +885,7 @@ OUTPUT FORMAT (qhsJSON v4):
 - For CS content, specify the language: "Use Java code blocks, NOT LaTeX for code"
 - Generate one concept at a time for better quality
 - Always verify mathematical accuracy before importing
+- Always run `validate_qhsjson.py --strict` before committing — it catches AI artifacts that manual review can miss
 
 ---
 
@@ -1658,14 +1664,15 @@ Subject → Course → Topic → Concept → Problem Set → Problem
 1. [ ] Subject exists (or create at `/admin/content`)
 2. [ ] Course exists under the subject (or create)
 3. [ ] Generate qhsJSON v4 using Claude AI prompt template (includes topics + concepts)
-4. [ ] Verify math accuracy in the generated content
-5. [ ] Validate JSON at `/admin/content/import`
-6. [ ] Import the validated JSON (topics are auto-created under the course)
-7. [ ] Verify all concepts are `access_tier: "free"`
-8. [ ] Upload any images via `/admin/images`
-9. [ ] Test the content on the live site as both free and premium users
-10. [ ] Check LaTeX renders correctly
-11. [ ] Verify hints and solutions work
+4. [ ] Run `python content/validate_qhsjson.py content/<file>.json --strict --verbose`
+5. [ ] Verify math accuracy in the generated content
+6. [ ] Validate JSON at `/admin/content/import`
+7. [ ] Import the validated JSON (topics are auto-created under the course)
+8. [ ] Verify all concepts are `access_tier: "free"`
+9. [ ] Upload any images via `/admin/images`
+10. [ ] Test the content on the live site as both free and premium users
+11. [ ] Check LaTeX renders correctly
+12. [ ] Verify hints and solutions work
 
 ### Problem Type Quick Reference
 
