@@ -437,6 +437,8 @@ def _render_implicit_curve(ax, params):
     from sympy.parsing.sympy_parser import parse_expr as pe
     from sympy import lambdify as lb
 
+    ax.set_aspect('equal')
+
     expr_str = params.get('expression', 'x**2 + y**2 - 1')
     x_range = params.get('x_range', [-5, 5])
     y_range = params.get('y_range', [-5, 5])
