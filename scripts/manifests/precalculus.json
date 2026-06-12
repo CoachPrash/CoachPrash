@@ -1558,7 +1558,7 @@
       "id": "precalc-063",
       "bucket_key": "images/mathematics/ap-precalculus/vector-valued-function-trace.svg",
       "category": "parametric_polar",
-      "concept_slug": "vector-valued-functions",
+      "concept_slug": "precalc-vector-valued-functions",
       "alt_text": "Curve traced by vector-valued function r(t) = (cos(t), sin(t)/2) with position vectors drawn from origin to points on the curve",
       "caption": "Vector-valued function r(t) tracing a path in the plane",
       "params": {

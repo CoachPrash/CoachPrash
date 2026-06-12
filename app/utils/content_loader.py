@@ -48,11 +48,40 @@ def load_content_json(file_path):
 
     subject = Subject.query.filter_by(slug=data['subject_slug']).first()
     if not subject:
-        raise ValueError(f"Subject '{data['subject_slug']}' not found")
+        subject = Subject(
+            name=data['subject_slug'].replace('-', ' ').title(),
+            slug=data['subject_slug'],
+        )
+        db.session.add(subject)
+        db.session.flush()
+        logger.info('Auto-created subject: %s', subject.name)
 
     course = Course.query.filter_by(subject_id=subject.id, slug=data['course_slug']).first()
     if not course:
-        raise ValueError(f"Course '{data['course_slug']}' not found in {subject.name}")
+        course = Course(
+            subject_id=subject.id,
+            name=data.get('course_name', data['course_slug'].replace('-', ' ').title()),
+            slug=data['course_slug'],
+            description=data.get('course_description', ''),
+            difficulty_level=data.get('difficulty_level', 'high_school'),
+            course_type=data.get('course_type', 'standard'),
+        )
+        db.session.add(course)
+        db.session.flush()
+        logger.info('Auto-created course: %s', course.name)
+
+    # Apply course metadata from JSON on every reseed
+    if 'course_name' in data:
+        course.name = data['course_name']
+    if 'course_description' in data:
+        course.description = data['course_description']
+    if 'difficulty_level' in data:
+        course.difficulty_level = data['difficulty_level']
+    if 'course_type' in data:
+        course.course_type = data['course_type']
+    if 'course_info' in data:
+        course.course_info = data['course_info']
+    db.session.flush()
 
     counts = {'topics': 0, 'concepts': 0, 'problem_sets': 0, 'problems': 0,
               'choices': 0, 'hints': 0, 'solutions': 0}
@@ -62,6 +91,10 @@ def load_content_json(file_path):
     for tdata in data.get('topics', []):
         slug = tdata.get('slug', tdata.get('name', '').lower().replace(' ', '-'))
         json_topic_slugs.add(slug)
+
+    # Cache concepts found/created in this load (handles same slug in multiple topics
+    # within one course before TopicConcept links are flushed)
+    course_concepts = {}
 
     for ti, tdata in enumerate(data.get('topics', [])):
         topic_slug = tdata.get('slug', tdata.get('name', f'topic-{ti+1}').lower().replace(' ', '-'))
@@ -87,7 +120,14 @@ def load_content_json(file_path):
         for ci, cdata in enumerate(tdata.get('concepts', [])):
             slug = cdata.get('slug', cdata.get('title', f'concept-{ci+1}').lower().replace(' ', '-'))
 
-            concept = Concept.query.filter_by(slug=slug).first()
+            # Scope lookup to this course (avoid clobbering concepts in other courses)
+            if slug in course_concepts:
+                concept = course_concepts[slug]
+            else:
+                concept = Concept.query.join(TopicConcept).join(Topic).filter(
+                    Concept.slug == slug,
+                    Topic.course_id == course.id,
+                ).first()
             content_html = cdata.get('content_html', '')
             # Append concept-level diagrams from "diagrams" array
             for diag in cdata.get('diagrams', []):
@@ -127,6 +167,7 @@ def load_content_json(file_path):
                 )
                 db.session.add(concept)
                 db.session.flush()
+            course_concepts[slug] = concept
             counts['concepts'] += 1
 
             # Create problem sets

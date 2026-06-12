@@ -19310,7 +19310,7 @@
         },
         {
           "title": "Vector-Valued Functions",
-          "slug": "vector-valued-functions",
+          "slug": "precalc-vector-valued-functions",
           "subject_area": "precalculus",
           "difficulty": "medium",
           "tags": [
@@ -21510,5 +21510,72 @@
         }
       ]
     }
-  ]
+  ],
+  "course_info": {
+    "introduction_html": "<p><strong>AP Precalculus</strong> prepares students for college-level mathematics and science courses. Through regular practice, students build deep mastery of modeling and functions, examining scenarios through multiple representations.</p><p>This course covers <strong>4 units</strong> aligned with the College Board’s Course and Exam Description (CED): Polynomial &amp; Rational Functions, Exponential &amp; Logarithmic Functions, Trigonometric &amp; Polar Functions, and Functions Involving Parameters, Vectors, &amp; Matrices. Unit 4 is not assessed on the AP Exam but is essential for calculus readiness.</p><p>Every concept includes clear explanations with worked examples, AP exam tips, and practice problems that mirror the format of the AP exam.</p>",
+    "college_equivalent": "College precalculus or precalculus and trigonometry",
+    "credit_info": "A score of 3 or higher may earn precalculus credit at participating institutions. Policies vary.",
+    "skills": [
+      {
+        "name": "Procedural and Symbolic Fluency",
+        "icon": "🔧",
+        "description": "Algebraically manipulate functions, equations, and expressions."
+      },
+      {
+        "name": "Multiple Representations",
+        "icon": "🔗",
+        "description": "Translate mathematical information between analytical, graphical, tabular, and verbal representations."
+      },
+      {
+        "name": "Communication and Reasoning",
+        "icon": "📝",
+        "description": "Communicate with precise language and provide rationales for conclusions."
+      }
+    ],
+    "prerequisites": [
+      {
+        "name": "Algebra 2",
+        "description": "Proficiency with polynomials, rational expressions, exponentials, and logarithms"
+      }
+    ],
+    "exam_structure": {
+      "description": "3 hours total. Section I is ~63% and Section II is ~37% of the exam score.",
+      "sections": [
+        {
+          "name": "Section I: Multiple Choice",
+          "duration": "2 hr",
+          "questions": "40 questions",
+          "weight": "~63%",
+          "calculator": "Part A: No calculator (28 Q, 1 hr 20 min, ~44%) | Part B: Graphing calculator required (12 Q, 40 min, ~19%)"
+        },
+        {
+          "name": "Section II: Free Response",
+          "duration": "1 hr",
+          "questions": "4 questions",
+          "weight": "~37%",
+          "calculator": "Part A: Graphing calculator required (2 Q, 30 min, ~19%) | Part B: No calculator (2 Q, 30 min, ~19%)"
+        }
+      ]
+    },
+    "official_links": [
+      {
+        "title": "AP Precalculus Course Page",
+        "url": "https://apstudents.collegeboard.org/courses/ap-precalculus",
+        "description": "Official College Board course information"
+      },
+      {
+        "title": "Course and Exam Description (CED)",
+        "url": "https://apcentral.collegeboard.org/courses/ap-precalculus/course",
+        "description": "Full CED with unit outlines, topic descriptions, and sample questions"
+      },
+      {
+        "title": "AP Classroom",
+        "url": "https://myap.collegeboard.org/",
+        "description": "Practice questions and progress checks (requires College Board account)"
+      }
+    ]
+  },
+  "course_name": "AP Precalculus",
+  "difficulty_level": "ap",
+  "course_type": "ap"
 }

@@ -727,5 +727,8 @@
         }
       ]
     }
-  ]
+  ],
+  "course_name": "Honors Chemistry",
+  "difficulty_level": "high_school",
+  "course_type": "honors"
 }

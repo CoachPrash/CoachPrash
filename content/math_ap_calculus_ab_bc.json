@@ -31398,5 +31398,91 @@
         }
       ]
     }
-  ]
+  ],
+  "course_info": {
+    "introduction_html": "<p><strong>AP Calculus AB/BC</strong> is a unified course covering both the AB and BC curricula. AB topics (Units 1-8) form a complete first-semester college calculus course. BC-exclusive topics -- marked with a <span class='badge-bc'>BC</span> badge -- add integration techniques, parametric/polar/vector functions, and infinite series, equivalent to a full year of college calculus.</p><p>This course covers <strong>10 units</strong> aligned with the College Board’s Course and Exam Description (CED). Units 1-8 are shared by both exams. Units 9 (Parametric, Polar, Vector) and 10 (Infinite Series) are BC-only. Additional BC-only concepts appear within Units 6, 7, and 8.</p><p><strong>AB students:</strong> Study Units 1-8, skipping concepts marked BC. <strong>BC students:</strong> Study all 10 units. Every concept includes clear explanations, worked examples, and AP exam tips.</p>",
+    "college_equivalent": "AB: One semester of college calculus | BC: Two semesters (full year)",
+    "credit_info": "AB: Score of 3+ may earn one semester of credit. BC: Score of 3+ may earn two semesters. BC also reports an AB subscore.",
+    "skills": [
+      {
+        "name": "Implementing Mathematical Processes",
+        "icon": "🔧",
+        "description": "Determine expressions and values using mathematical procedures and rules."
+      },
+      {
+        "name": "Connecting Representations",
+        "icon": "🔗",
+        "description": "Translate mathematical information between analytical, graphical, tabular, and verbal representations."
+      },
+      {
+        "name": "Justification",
+        "icon": "📝",
+        "description": "Justify reasoning and solutions using definitions, theorems, and mathematical evidence."
+      },
+      {
+        "name": "Communication and Notation",
+        "icon": "💬",
+        "description": "Use correct notation, language, and mathematical conventions to communicate results."
+      }
+    ],
+    "prerequisites": [
+      {
+        "name": "Algebra 2",
+        "description": "Proficiency with polynomials, rational expressions, exponentials, and logarithms"
+      },
+      {
+        "name": "Precalculus",
+        "description": "Trigonometric functions, function analysis, and an introduction to limits"
+      }
+    ],
+    "exam_structure": {
+      "description": "Both exams: 3 hours 15 minutes, two sections, each worth 50%",
+      "sections": [
+        {
+          "name": "Section I: Multiple Choice",
+          "duration": "1 hr 45 min",
+          "questions": "45 questions",
+          "weight": "50%",
+          "calculator": "Part A: No calculator (30 Q, 60 min) | Part B: Calculator required (15 Q, 45 min)"
+        },
+        {
+          "name": "Section II: Free Response",
+          "duration": "1 hr 30 min",
+          "questions": "6 questions",
+          "weight": "50%",
+          "calculator": "Part A: Calculator required (2 Q, 30 min) | Part B: No calculator (4 Q, 60 min)"
+        }
+      ]
+    },
+    "official_links": [
+      {
+        "title": "AP Calculus AB Course Page",
+        "url": "https://apstudents.collegeboard.org/courses/ap-calculus-ab",
+        "description": "Official College Board AB course information"
+      },
+      {
+        "title": "AP Calculus BC Course Page",
+        "url": "https://apstudents.collegeboard.org/courses/ap-calculus-bc",
+        "description": "Official College Board BC course information"
+      },
+      {
+        "title": "AB Course and Exam Description",
+        "url": "https://apcentral.collegeboard.org/courses/ap-calculus-ab/course",
+        "description": "Full AB CED with topic outlines and sample questions"
+      },
+      {
+        "title": "BC Course and Exam Description",
+        "url": "https://apcentral.collegeboard.org/courses/ap-calculus-bc/course",
+        "description": "Full BC CED with topic outlines and sample questions"
+      },
+      {
+        "title": "AP Classroom",
+        "url": "https://myap.collegeboard.org/",
+        "description": "Practice questions and progress checks (requires College Board account)"
+      }
+    ]
+  },
+  "course_name": "AP Calculus AB/BC",
+  "difficulty_level": "ap",
+  "course_type": "ap"
 }

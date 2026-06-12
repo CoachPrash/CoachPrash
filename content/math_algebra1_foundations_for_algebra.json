@@ -1026,5 +1026,8 @@
         }
       ]
     }
-  ]
+  ],
+  "course_name": "Algebra 1",
+  "difficulty_level": "high_school",
+  "course_type": "standard"
 }

@@ -20488,5 +20488,77 @@
         }
       ]
     }
-  ]
+  ],
+  "course_info": {
+    "introduction_html": "<p><strong>AP Statistics</strong> introduces students to the major concepts and tools for collecting, analyzing, and drawing conclusions from data. The course is equivalent to a one-semester introductory college statistics course.</p><p>This course covers <strong>9 units</strong> aligned with the College Board’s Course and Exam Description (CED): Exploring One-Variable Data, Exploring Two-Variable Data, Collecting Data, Probability &amp; Random Variables, Sampling Distributions, and four units on statistical inference covering proportions, means, chi-square, and regression slopes.</p><p>Every concept includes clear explanations with real-world data examples, AP exam tips, and practice problems that mirror the format of the AP exam. Calculator instructions are included where applicable.</p>",
+    "college_equivalent": "One semester of introductory college-level statistics",
+    "credit_info": "A score of 3 or higher may earn one semester of college statistics credit. Policies vary by institution.",
+    "skills": [
+      {
+        "name": "Selecting Statistical Methods",
+        "icon": "📐",
+        "description": "Select methods for collecting and analyzing data for statistical inference."
+      },
+      {
+        "name": "Data Analysis",
+        "icon": "📊",
+        "description": "Describe patterns, trends, associations, and relationships in data."
+      },
+      {
+        "name": "Using Probability and Simulation",
+        "icon": "🎲",
+        "description": "Explore random phenomena using probability and simulation."
+      },
+      {
+        "name": "Statistical Argumentation",
+        "icon": "📝",
+        "description": "Develop an explanation or justify a conclusion using evidence from data, definitions, or statistical inference."
+      }
+    ],
+    "prerequisites": [
+      {
+        "name": "Algebra 2",
+        "description": "Proficiency with algebraic manipulation, linear and quadratic functions, and basic probability"
+      }
+    ],
+    "exam_structure": {
+      "description": "3 hours total, two sections, each worth 50%. Calculator allowed on both sections.",
+      "sections": [
+        {
+          "name": "Section I: Multiple Choice",
+          "duration": "1 hr 30 min",
+          "questions": "40 questions",
+          "weight": "50%",
+          "calculator": "Calculator allowed"
+        },
+        {
+          "name": "Section II: Free Response",
+          "duration": "1 hr 30 min",
+          "questions": "6 questions (5 multipart + 1 investigative task)",
+          "weight": "50%",
+          "calculator": "Calculator allowed"
+        }
+      ]
+    },
+    "official_links": [
+      {
+        "title": "AP Statistics Course Page",
+        "url": "https://apstudents.collegeboard.org/courses/ap-statistics",
+        "description": "Official College Board course information"
+      },
+      {
+        "title": "Course and Exam Description (CED)",
+        "url": "https://apcentral.collegeboard.org/courses/ap-statistics/course",
+        "description": "Full CED with unit outlines, topic descriptions, and sample questions"
+      },
+      {
+        "title": "AP Classroom",
+        "url": "https://myap.collegeboard.org/",
+        "description": "Practice questions and progress checks (requires College Board account)"
+      }
+    ]
+  },
+  "course_name": "AP Statistics",
+  "difficulty_level": "ap",
+  "course_type": "ap"
 }

@@ -603,6 +603,33 @@ def main():
         if warns > 0:
             files_with_warnings += 1
 
+    # Cross-file slug collision check (only when validating multiple files)
+    if len(files) > 1:
+        slug_sources = {}
+        collision_count = 0
+        for filepath in files:
+            if not os.path.exists(filepath):
+                continue
+            try:
+                with open(filepath, 'r', encoding='utf-8') as f:
+                    fdata = json.load(f)
+                course = fdata.get('course_slug', os.path.basename(filepath))
+                for t in fdata.get('topics', []):
+                    for c in t.get('concepts', []):
+                        s = c.get('slug', '')
+                        if s in slug_sources and slug_sources[s] != course:
+                            print(f"  {red('ERROR')} Slug collision: '{s}' in both '{slug_sources[s]}' and '{course}'")
+                            collision_count += 1
+                        else:
+                            slug_sources[s] = course
+            except (json.JSONDecodeError, OSError):
+                pass
+        if collision_count > 0:
+            total_errors += collision_count
+            files_with_errors += 1  # At least one file is affected
+        else:
+            print(f"\n  {green('PASS')}  Cross-file slug collision check ({len(slug_sources)} unique slugs)")
+
     # Summary
     print(f"\n{bold('============ Summary ============')}")
     print(f"  Files:    {len(files)} checked | {files_with_errors} with errors | {files_with_warnings} with warnings")

@@ -4,7 +4,7 @@ import json
 import logging
 import os
 
-from app.models.content import Subject, Course, Concept
+from app.models.content import Subject, Course, Topic, Concept, TopicConcept
 from app.models.practice import ProblemSet, Problem
 
 logger = logging.getLogger(__name__)
@@ -45,6 +45,7 @@ def scan_seed_files(content_dir):
             'course_slug': course_slug,
             'subject_name': subject.name if subject else None,
             'course_name': course.name if course else None,
+            'course_type': course.course_type if course else data.get('course_type'),
             'file_stats': {'topics': 0, 'concepts': 0, 'problems': 0},
             'db_stats': {'problems': 0},
             'topics': [],
@@ -78,7 +79,10 @@ def scan_seed_files(content_dir):
                 exists_in_db = False
 
                 if db_available:
-                    db_concept = Concept.query.filter_by(slug=concept_slug).first()
+                    db_concept = Concept.query.join(TopicConcept).join(Topic).filter(
+                        Concept.slug == concept_slug,
+                        Topic.course_id == course.id,
+                    ).first()
                     if db_concept:
                         exists_in_db = True
                         db_problems = Problem.query.join(ProblemSet).filter(
@@ -110,8 +114,7 @@ def scan_seed_files(content_dir):
 
         # Determine status
         if not db_available:
-            entry['status'] = 'error'
-            entry['error'] = 'Subject or course not found in database'
+            entry['status'] = 'not_loaded'
         elif not all_exist and db_total_problems == 0:
             entry['status'] = 'not_loaded'
         elif all_exist and not any_differ:

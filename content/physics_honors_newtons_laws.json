@@ -994,5 +994,8 @@
         }
       ]
     }
-  ]
+  ],
+  "course_name": "Honors Physics",
+  "difficulty_level": "high_school",
+  "course_type": "honors"
 }

@@ -931,7 +931,10 @@ def bulk_import():
 
             for ci, cdata in enumerate(tdata.get('concepts', [])):
                 slug = cdata.get('slug', cdata.get('title', f'concept-{ci+1}').lower().replace(' ', '-'))
-                concept = Concept.query.filter_by(slug=slug).first()
+                concept = Concept.query.join(TopicConcept).join(Topic).filter(
+                    Concept.slug == slug,
+                    Topic.course_id == course.id,
+                ).first()
                 if concept:
                     # Update existing concept and replace its problems
                     concept.title = cdata.get('title', concept.title)
@@ -1073,11 +1076,27 @@ def bulk_import():
 @admin_required
 def manage_seeds():
     import os
+    from collections import OrderedDict
     from app.utils.seed_scanner import scan_seed_files
     content_dir = os.path.abspath(os.path.join(
         os.path.dirname(os.path.dirname(os.path.dirname(__file__))), '..', 'content'))
     seed_files = scan_seed_files(content_dir)
-    return render_template('admin/manage_seeds.html', seed_files=seed_files)
+
+    # Group by subject for structured display
+    subjects_map = OrderedDict()
+    for seed in seed_files:
+        key = seed['subject_slug']
+        if key not in subjects_map:
+            subjects_map[key] = {
+                'name': seed['subject_name'] or seed['subject_slug'].replace('-', ' ').title(),
+                'slug': seed['subject_slug'],
+                'seeds': [],
+            }
+        subjects_map[key]['seeds'].append(seed)
+
+    return render_template('admin/manage_seeds.html',
+                           seed_files=seed_files,
+                           subjects_grouped=list(subjects_map.values()))
 
 
 @admin_bp.route('/seeds/run-full-seed', methods=['POST'])
