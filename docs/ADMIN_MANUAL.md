@@ -1,6 +1,6 @@
 # CoachPrash Admin Manual
 
-> **Version:** 25.0 (AI Artifact Detection in Content Validator)
+> **Version:** 27.0 (Course Metadata in Content JSON + Seed Page Redesign)
 > **Last Updated:** June 2026
 > **Platform:** Flask + PostgreSQL, deployed on Railway
 
@@ -2246,9 +2246,10 @@ Navigate to **Admin Dashboard → Seed Files** or go directly to `/admin/seeds`.
 
 ### What You See
 
-Each qhsJSON file in the `content/` folder is shown as a collapsible card with:
+The page is organized by **Subject** (Mathematics, Physics, Chemistry, etc.), with each subject as a section heading showing its course count. Within each subject, courses are listed as collapsible cards with:
 
-- **Filename** and the Subject/Course it targets
+- **Course name** with a course-type badge (AP, HONORS, TEST PREP)
+- **Filename** shown below in smaller text
 - **File stats**: topic count, concept count, problem count (from the file)
 - **Status badge**:
   - **In Sync** (green) — all concepts exist in DB and problem counts match
@@ -2256,7 +2257,7 @@ Each qhsJSON file in the `content/` folder is shown as a collapsible card with:
   - **Not Loaded** (gray) — no concepts from this file exist in DB yet
   - **Error** (red) — the target subject or course doesn't exist in the database
 
-### Expanding a File
+### Expanding a Course
 
 Click any card to see the full Topic → Concept breakdown with a comparison table:
 
@@ -2271,26 +2272,49 @@ The **Fewer in file** warning appears when the seed file has fewer problems than
 
 ### Reseeding a File
 
-Click the **Reseed** button on any file card. A confirmation dialog shows the file and DB problem counts. On confirmation:
+Click the **Reseed** button on any course card. A confirmation dialog shows the file and DB problem counts. On confirmation:
 
 1. All existing problems for each concept in the file are **deleted**
 2. New problems from the file are **created** (nuclear replace)
 3. Topics and concepts are created or updated as needed
-4. A success flash shows the counts of loaded topics, concepts, and problems
+4. Course metadata (`course_name`, `course_type`, `difficulty_level`, `course_info`) is updated from the JSON
+5. A success flash shows the counts of loaded topics, concepts, and problems
+
+A progress overlay displays elapsed time while seeding runs (individual file: ~30 seconds, full seed: 2–3 minutes).
 
 > **Important:** Reseeding is destructive — it replaces all problems for affected concepts. Always check the comparison table before reseeding.
 
+### Course Metadata in Content JSON
+
+Every content JSON file **must** include these top-level keys:
+
+```json
+{
+  "subject_slug": "mathematics",
+  "course_slug": "ap-precalculus",
+  "course_name": "AP Precalculus",
+  "course_type": "ap",
+  "difficulty_level": "ap"
+}
+```
+
+- `course_type` controls the badge on the subject listing page (`ap`, `honors`, `test_prep`, `college`, or `standard`)
+- `difficulty_level` sets the course difficulty (`middle_school`, `high_school`, `ap`, `college`)
+- These fields are applied on **every** seed/reseed, keeping the database in sync with the JSON
+
+AP courses must also include a `course_info` object (see Chapter 7 or existing AP JSON files for structure).
+
 ### Auto-Discovery in `flask seed`
 
-The `flask seed` CLI command now auto-discovers all `*.json` files in the `content/` folder instead of using a hardcoded list. Files are validated by checking for `subject_slug` and `course_slug` keys — non-content JSON files are skipped with a warning.
+The `flask seed` CLI command auto-discovers all `*.json` files in the `content/` folder. Files are validated by checking for `subject_slug` and `course_slug` keys — non-content JSON files are skipped with a warning.
 
 To add a new content file, simply place it in `content/` and run `flask seed`. No code changes needed.
 
 ### Adding New Seed Files
 
-1. Create a qhsJSON file in `content/` (e.g., `physics_ap_mechanics.json`)
-2. Ensure the target Subject and Course already exist in the database
-3. Navigate to `/admin/seeds` to verify the file appears with correct mapping
+1. Register the course in `seed.py` under the correct subject
+2. Create a qhsJSON file in `content/` with required metadata keys (`course_name`, `course_type`, `difficulty_level`)
+3. Navigate to `/admin/seeds` to verify the file appears under the correct subject with the right badge
 4. Click **Reseed** to load it, or include it in the next `flask seed` run
 
 ---

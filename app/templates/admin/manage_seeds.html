@@ -19,8 +19,9 @@
         </div>
 
         <p class="section-description">
-            Discovered <strong>{{ seed_files|length }}</strong> qhsJSON seed file(s) in <code>content/</code>.
-            Click a file to expand its topic/concept breakdown. Use <strong>Reseed</strong> to reload a file (replaces all problems).
+            Discovered <strong>{{ seed_files|length }}</strong> qhsJSON seed file(s) across
+            <strong>{{ subjects_grouped|length }}</strong> subject(s) in <code>content/</code>.
+            Click a course to expand its topic/concept breakdown. Use <strong>Reseed</strong> to reload a file.
         </p>
 
         {% if not seed_files %}
@@ -29,96 +30,109 @@
         </div>
         {% endif %}
 
-        {% for seed in seed_files %}
-        <div class="seed-card" id="seed-{{ loop.index }}">
-            <div class="seed-header" onclick="toggleSeedDetail(this)">
-                <span class="expand-icon">&#9656;</span>
-                <div class="seed-info">
-                    <strong class="seed-filename">{{ seed.filename }}</strong>
-                    <span class="seed-path">{{ seed.subject_name or seed.subject_slug }} / {{ seed.course_name or seed.course_slug }}</span>
-                </div>
-                <div class="seed-badges">
-                    <span class="badge">{{ seed.file_stats.topics }} topics</span>
-                    <span class="badge">{{ seed.file_stats.concepts }} concepts</span>
-                    <span class="badge">{{ seed.file_stats.problems }} problems</span>
-                    {% if seed.status == 'in_sync' %}
-                        <span class="badge badge-in-sync">In Sync</span>
-                    {% elif seed.status == 'differs' %}
-                        <span class="badge badge-differs">Differs</span>
-                    {% elif seed.status == 'not_loaded' %}
-                        <span class="badge badge-not-loaded">Not Loaded</span>
-                    {% elif seed.status == 'error' %}
-                        <span class="badge badge-error">Error</span>
+        {% for subj in subjects_grouped %}
+        <div class="seed-subject-group">
+            <div class="seed-subject-header">
+                <h2>{{ subj.name }}</h2>
+                <span class="seed-subject-count">{{ subj.seeds|length }} course{{ 's' if subj.seeds|length != 1 }}</span>
+            </div>
+
+            {% for seed in subj.seeds %}
+            <div class="seed-card" id="seed-{{ subj.slug }}-{{ loop.index }}">
+                <div class="seed-header" onclick="toggleSeedDetail(this)">
+                    <span class="expand-icon">&#9656;</span>
+                    <div class="seed-info">
+                        <strong class="seed-filename">{{ seed.course_name or seed.course_slug }}
+                            {% if seed.course_type and seed.course_type != 'standard' %}
+                                <span class="badge badge-{{ seed.course_type }}">{{ seed.course_type | replace('_', ' ') | upper }}</span>
+                            {% endif %}
+                        </strong>
+                        <span class="seed-path">{{ seed.filename }}</span>
+                    </div>
+                    <div class="seed-badges">
+                        <span class="badge">{{ seed.file_stats.topics }} topics</span>
+                        <span class="badge">{{ seed.file_stats.concepts }} concepts</span>
+                        <span class="badge">{{ seed.file_stats.problems }} problems</span>
+                        {% if seed.status == 'in_sync' %}
+                            <span class="badge badge-in-sync">In Sync</span>
+                        {% elif seed.status == 'differs' %}
+                            <span class="badge badge-differs">Differs</span>
+                        {% elif seed.status == 'not_loaded' %}
+                            <span class="badge badge-not-loaded">Not Loaded</span>
+                        {% elif seed.status == 'error' %}
+                            <span class="badge badge-error">Error</span>
+                        {% endif %}
+                    </div>
+                    {% if seed.status != 'error' %}
+                    <form method="POST" action="{{ url_for('admin_panel.reseed_file') }}"
+                          class="inline-form" onclick="event.stopPropagation()"
+                          onsubmit="return confirm('Reseed {{ seed.course_name or seed.filename }}?\n\nThis will DELETE and RECREATE all problems for every concept in this file.\n\nFile: {{ seed.file_stats.problems }} problems\nDB: {{ seed.db_stats.problems }} problems')">
+                        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                        <input type="hidden" name="filename" value="{{ seed.filename }}">
+                        <button type="submit" class="btn btn-sm btn-warning">Reseed</button>
+                    </form>
                     {% endif %}
                 </div>
-                {% if seed.status != 'error' %}
-                <form method="POST" action="{{ url_for('admin_panel.reseed_file') }}"
-                      class="inline-form" onclick="event.stopPropagation()"
-                      onsubmit="return confirm('Reseed {{ seed.filename }}?\n\nThis will DELETE and RECREATE all problems for every concept in this file.\n\nFile: {{ seed.file_stats.problems }} problems\nDB: {{ seed.db_stats.problems }} problems')">
-                    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
-                    <input type="hidden" name="filename" value="{{ seed.filename }}">
-                    <button type="submit" class="btn btn-sm btn-warning">Reseed</button>
-                </form>
-                {% endif %}
-            </div>
 
-            <div class="seed-detail">
-                {% if seed.error %}
-                <div class="alert alert-danger">{{ seed.error }}</div>
-                {% endif %}
+                <div class="seed-detail">
+                    {% if seed.error %}
+                    <div class="alert alert-danger">{{ seed.error }}</div>
+                    {% endif %}
 
-                <div class="seed-summary">
-                    <table class="seed-summary-table">
-                        <tr>
-                            <th></th><th>File</th><th>Database</th>
-                        </tr>
-                        <tr>
-                            <td>Problems</td>
-                            <td>{{ seed.file_stats.problems }}</td>
-                            <td>{{ seed.db_stats.problems }}</td>
-                        </tr>
-                    </table>
-                </div>
-
-                {% for topic in seed.topics %}
-                <div class="seed-topic">
-                    <h4>{{ topic.name }} <span class="seed-topic-slug">{{ topic.slug }}</span></h4>
-                    <table class="seed-concept-table">
-                        <thead>
+                    <div class="seed-summary">
+                        <table class="seed-summary-table">
                             <tr>
-                                <th>Concept</th>
-                                <th>File Problems</th>
-                                <th>DB Problems</th>
-                                <th>Status</th>
+                                <th></th><th>File</th><th>Database</th>
                             </tr>
-                        </thead>
-                        <tbody>
-                            {% for concept in topic.concepts %}
                             <tr>
-                                <td>
-                                    {{ concept.title }}
-                                    <span class="seed-slug">{{ concept.slug }}</span>
-                                </td>
-                                <td>{{ concept.file_problems }}</td>
-                                <td>{{ concept.db_problems if concept.exists_in_db else '—' }}</td>
-                                <td>
-                                    {% if not concept.exists_in_db %}
-                                        <span class="badge badge-not-loaded">New</span>
-                                    {% elif concept.file_problems == concept.db_problems %}
-                                        <span class="badge badge-in-sync">In Sync</span>
-                                    {% elif concept.file_problems < concept.db_problems %}
-                                        <span class="badge badge-warning-seed">Fewer in file (-{{ concept.db_problems - concept.file_problems }})</span>
-                                    {% else %}
-                                        <span class="badge badge-differs">Differs (+{{ concept.file_problems - concept.db_problems }})</span>
-                                    {% endif %}
-                                </td>
+                                <td>Problems</td>
+                                <td>{{ seed.file_stats.problems }}</td>
+                                <td>{{ seed.db_stats.problems }}</td>
                             </tr>
-                            {% endfor %}
-                        </tbody>
-                    </table>
+                        </table>
+                    </div>
+
+                    {% for topic in seed.topics %}
+                    <div class="seed-topic">
+                        <h4>{{ topic.name }} <span class="seed-topic-slug">{{ topic.slug }}</span></h4>
+                        <table class="seed-concept-table">
+                            <thead>
+                                <tr>
+                                    <th>Concept</th>
+                                    <th>File Problems</th>
+                                    <th>DB Problems</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for concept in topic.concepts %}
+                                <tr>
+                                    <td>
+                                        {{ concept.title }}
+                                        <span class="seed-slug">{{ concept.slug }}</span>
+                                    </td>
+                                    <td>{{ concept.file_problems }}</td>
+                                    <td>{{ concept.db_problems if concept.exists_in_db else '—' }}</td>
+                                    <td>
+                                        {% if not concept.exists_in_db %}
+                                            <span class="badge badge-not-loaded">New</span>
+                                        {% elif concept.file_problems == concept.db_problems %}
+                                            <span class="badge badge-in-sync">In Sync</span>
+                                        {% elif concept.file_problems < concept.db_problems %}
+                                            <span class="badge badge-warning-seed">Fewer in file (-{{ concept.db_problems - concept.file_problems }})</span>
+                                        {% else %}
+                                            <span class="badge badge-differs">Differs (+{{ concept.file_problems - concept.db_problems }})</span>
+                                        {% endif %}
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    {% endfor %}
                 </div>
-                {% endfor %}
             </div>
+            {% endfor %}
         </div>
         {% endfor %}
 
@@ -128,9 +142,46 @@
     </div>
 </section>
 
+<div id="seed-overlay" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.6); z-index:9999; align-items:center; justify-content:center;">
+    <div style="background:#fff; border-radius:12px; padding:2.5rem 3rem; text-align:center; box-shadow:0 4px 24px rgba(0,0,0,0.3); max-width:400px;">
+        <div class="spinner" style="margin:0 auto 1rem; width:40px; height:40px; border:4px solid #e0e0e0; border-top-color:#4a6cf7; border-radius:50%; animation:spin 0.8s linear infinite;"></div>
+        <h3 style="margin:0 0 0.5rem;" id="seed-overlay-title">Seeding in progress...</h3>
+        <p style="color:#666; margin:0 0 0.5rem;" id="seed-overlay-file"></p>
+        <p style="color:#999; margin:0 0 0.5rem; font-variant-numeric:tabular-nums;" id="seed-overlay-timer">0s</p>
+        <p style="color:#aaa; margin:0; font-size:0.85rem;" id="seed-overlay-hint"></p>
+    </div>
+</div>
+<style>@keyframes spin { to { transform: rotate(360deg); } }</style>
+
 <script>
 function toggleSeedDetail(header) {
     header.closest('.seed-card').classList.toggle('expanded');
 }
+
+document.querySelectorAll('form.inline-form').forEach(function(form) {
+    form.addEventListener('submit', function(e) {
+        var filename = form.querySelector('input[name="filename"]');
+        var isFullSeed = !filename;
+        var overlay = document.getElementById('seed-overlay');
+        var title = document.getElementById('seed-overlay-title');
+        var fileEl = document.getElementById('seed-overlay-file');
+        var timer = document.getElementById('seed-overlay-timer');
+
+        title.textContent = isFullSeed ? 'Running full seed...' : 'Reseeding...';
+        fileEl.textContent = filename ? filename.value : 'All content files';
+        document.getElementById('seed-overlay-hint').textContent = isFullSeed
+            ? 'This usually takes 2\u20133 minutes. Sit tight!'
+            : 'This usually takes up to 30 seconds.';
+
+        var start = Date.now();
+        overlay.style.display = 'flex';
+        var interval = setInterval(function() {
+            var elapsed = Math.round((Date.now() - start) / 1000);
+            var min = Math.floor(elapsed / 60);
+            var sec = elapsed % 60;
+            timer.textContent = min > 0 ? min + 'm ' + sec + 's' : sec + 's';
+        }, 1000);
+    });
+});
 </script>
 {% endblock %}

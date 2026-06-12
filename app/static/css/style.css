@@ -564,7 +564,13 @@ body.sidebar-collapsed .sidebar-footer {
 .badge-error { background: #F8D7DA; color: var(--danger); }
 .badge-warning-seed { background: #FFE0CC; color: #C35A00; }
 
-.seed-card { border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 1rem; overflow: hidden; }
+.seed-subject-group { margin-bottom: 2.5rem; }
+.seed-subject-group:last-child { margin-bottom: 0; }
+.seed-subject-header { display: flex; align-items: baseline; gap: 0.75rem; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--primary-color, #4a6cf7); }
+.seed-subject-header h2 { margin: 0; font-size: 1.25rem; font-weight: 700; color: var(--text-color); }
+.seed-subject-count { font-size: 0.85rem; color: var(--text-light); font-weight: 400; }
+
+.seed-card { border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 0.75rem; overflow: hidden; }
 .seed-header { display: flex; align-items: center; gap: 0.75rem; padding: 1rem 1.25rem; cursor: pointer; flex-wrap: wrap; background: var(--card-bg); }
 .seed-header:hover { background: var(--hover-bg, #f8f9fa); }
 .seed-info { flex: 1; min-width: 200px; }
