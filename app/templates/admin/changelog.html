@@ -13,6 +13,47 @@
                 <div class="changelog-date">
                     <span class="changelog-date-day">12</span>
                     <span class="changelog-date-month">Jun 2026</span>
+                    <span class="changelog-phase-badge">Platform</span>
+                </div>
+                <div class="changelog-body">
+                    <h2>Course Metadata, Seed Page Redesign &amp; Bug Fixes</h2>
+                    <p class="changelog-summary">Moved course metadata into content JSON files, redesigned the seed page, and fixed concept slug scoping to prevent cross-course data corruption.</p>
+
+                    <div class="changelog-section">
+                        <h3>Course Metadata in Content JSON</h3>
+                        <ul>
+                            <li>All 10 content JSON files now include <code>course_name</code>, <code>course_type</code>, and <code>difficulty_level</code></li>
+                            <li>Content loader applies these on every seed/reseed &mdash; keeps DB in sync with JSON</li>
+                            <li>Moved <code>course_info</code> from <code>seed.py</code> into content JSON files (applied on every reseed, not just full seed)</li>
+                            <li>AP Precalculus registered in <code>seed.py</code> subjects_data</li>
+                        </ul>
+                    </div>
+
+                    <div class="changelog-section">
+                        <h3>Seed Page Redesign</h3>
+                        <ul>
+                            <li>Courses grouped by Subject with headings and course counts</li>
+                            <li>Course-type badges (AP, HONORS, TEST PREP) on each card</li>
+                            <li>Course name shown as primary label, filename as secondary</li>
+                            <li>Progress overlay with elapsed timer during seeding</li>
+                        </ul>
+                    </div>
+
+                    <div class="changelog-section">
+                        <h3>Bug Fixes</h3>
+                        <ul>
+                            <li><strong>Concept slug scoping:</strong> Content loader, seed scanner, and bulk import now scope concept lookups to the current course &mdash; prevents reseeding one course from clobbering another course's problems</li>
+                            <li><strong>Implicit curve aspect ratio:</strong> Fixed <code>_render_implicit_curve()</code> to use equal axis scaling so circles render as circles, not ellipses</li>
+                            <li><strong>Cross-file slug collision check:</strong> Validator now detects duplicate concept slugs across content files</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="changelog-entry">
+                <div class="changelog-date">
+                    <span class="changelog-date-day">12</span>
+                    <span class="changelog-date-month">Jun 2026</span>
                     <span class="changelog-phase-badge">Content</span>
                 </div>
                 <div class="changelog-body">
