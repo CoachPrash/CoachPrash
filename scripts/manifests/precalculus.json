@@ -415,6 +415,9 @@
       "id": "precalc-016",
       "bucket_key": "images/mathematics/ap-precalculus/function-model-comparison.svg",
       "category": "function_graph",
+      "concept_slug": "function-model-selection-and-assumption-articulation",
+      "alt_text": "Three functions overlaid: linear 2x, quadratic x², and exponential 2^x showing how exponential growth dominates",
+      "caption": "Comparing Growth: Linear vs Quadratic vs Exponential",
       "params": {
         "functions": [
           {
@@ -480,6 +483,9 @@
       "id": "precalc-018",
       "bucket_key": "images/mathematics/ap-precalculus/concavity-second-differences.svg",
       "category": "function_graph",
+      "concept_slug": "rates-of-change-in-linear-and-quadratic-functions",
+      "alt_text": "Two parabolas showing concave up (increasing rate of change) and concave down (decreasing rate of change)",
+      "caption": "Concavity: Increasing vs Decreasing Rate of Change",
       "params": {
         "functions": [
           {
@@ -1499,13 +1505,13 @@
       "bucket_key": "images/mathematics/ap-precalculus/parametrization-implicit-ellipse.svg",
       "category": "parametric_polar",
       "concept_slug": "parametrization-of-implicitly-defined-functions",
-      "alt_text": "Ellipse parametrized as x = 4cos(t), y = 2sin(t), showing directed motion along the ellipse with arrows",
-      "caption": "Parametrization of ellipse: x = 4cos(t), y = 2sin(t)",
+      "alt_text": "Ellipse parametrized as x = 4cos(t), y = 3sin(t), showing directed motion along the ellipse with arrows",
+      "caption": "Parametrization of ellipse: x = 4cos(t), y = 3sin(t)",
       "params": {
         "type": "parametric",
         "parametric": {
           "x_expr": "4*cos(t)",
-          "y_expr": "2*sin(t)",
+          "y_expr": "3*sin(t)",
           "t_range": [0, "2*pi"]
         },
         "n_arrows": 6,

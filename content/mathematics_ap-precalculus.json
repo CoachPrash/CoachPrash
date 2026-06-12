@@ -1112,6 +1112,11 @@
               "bucket_key": "images/mathematics/ap-precalculus/roc-linear-vs-quadratic.svg",
               "alt_text": "Linear function f(x) = 2x and quadratic function g(x) = x squared plotted on the same axes for comparison",
               "caption": "Comparing constant rate of change (linear) with changing rate of change (quadratic)"
+            },
+            {
+              "bucket_key": "images/mathematics/ap-precalculus/concavity-second-differences.svg",
+              "alt_text": "Two parabolas showing concave up (increasing rate of change) and concave down (decreasing rate of change)",
+              "caption": "Concavity: Increasing vs Decreasing Rate of Change"
             }
           ]
         },
@@ -4876,6 +4881,11 @@
               "bucket_key": "images/mathematics/ap-precalculus/model-selection-linear-vs-quadratic.svg",
               "alt_text": "Scatter plot with both linear and quadratic regression curves fitted to data showing the quadratic is a better fit",
               "caption": "Comparing linear and quadratic models — the quadratic captures the curvature in the data"
+            },
+            {
+              "bucket_key": "images/mathematics/ap-precalculus/function-model-comparison.svg",
+              "alt_text": "Three functions overlaid: linear 2x, quadratic x², and exponential 2^x showing how exponential growth dominates",
+              "caption": "Comparing Growth: Linear vs Quadratic vs Exponential"
             }
           ]
         },
