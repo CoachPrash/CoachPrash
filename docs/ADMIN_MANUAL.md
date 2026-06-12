@@ -1,6 +1,6 @@
 # CoachPrash Admin Manual
 
-> **Version:** 26.0 (AP PreCalculus Course Content)
+> **Version:** 25.0 (AI Artifact Detection in Content Validator)
 > **Last Updated:** June 2026
 > **Platform:** Flask + PostgreSQL, deployed on Railway
 
