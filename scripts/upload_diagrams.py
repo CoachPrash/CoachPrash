@@ -37,7 +37,7 @@ def main():
     manifest_path = Path(args.manifest)
     output_dir = Path(args.output)
 
-    with open(manifest_path) as f:
+    with open(manifest_path, encoding='utf-8') as f:
         manifest = json.load(f)
 
     images = manifest['images']

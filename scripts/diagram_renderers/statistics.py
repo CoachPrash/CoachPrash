@@ -429,6 +429,38 @@ def _render_ci(params):
     return fig, ax
 
 
+def _render_semi_log(params):
+    """Scatter plot with logarithmic y-axis to linearize exponential data."""
+    fig, ax = create_figure()
+    points = params.get('points', [])
+
+    xs = [p['x'] for p in points]
+    ys = [p['y'] for p in points]
+
+    ax.scatter(xs, ys, color=PRIMARY, s=50, alpha=0.7, edgecolors='white',
+              linewidth=0.5, zorder=4)
+    ax.set_yscale('log')
+
+    # Optional regression line on log scale
+    if params.get('show_regression', True) and len(xs) >= 2:
+        log_ys = np.log10(np.array(ys, dtype=float))
+        coeffs = np.polyfit(xs, log_ys, 1)
+        x_line = np.linspace(min(xs), max(xs), 100)
+        y_line = 10 ** (coeffs[0] * x_line + coeffs[1])
+        ax.plot(x_line, y_line, color=SECONDARY, linewidth=2, zorder=3,
+                label=f'Linear fit (log scale)')
+
+    labels = params.get('labels', {})
+    ax.set_xlabel(labels.get('x', ''), fontsize=LABEL_SIZE)
+    ax.set_ylabel(labels.get('y', ''), fontsize=LABEL_SIZE)
+
+    if ax.get_legend_handles_labels()[1]:
+        ax.legend(fontsize=LABEL_SIZE - 2, loc='best')
+
+    add_title(ax, params.get('title', ''))
+    return fig, ax
+
+
 # Dispatch table
 _DISPATCH = {
     'normal_curve': _render_normal,
@@ -440,6 +472,7 @@ _DISPATCH = {
     'dotplot': _render_dotplot,
     'sampling_distribution': _render_sampling,
     'confidence_interval': _render_ci,
+    'semi_log': _render_semi_log,
 }
 
 

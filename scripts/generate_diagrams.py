@@ -49,7 +49,7 @@ def main():
     output_dir = Path(args.output)
     output_dir.mkdir(parents=True, exist_ok=True)
 
-    with open(manifest_path) as f:
+    with open(manifest_path, encoding='utf-8') as f:
         manifest = json.load(f)
 
     images = manifest['images']

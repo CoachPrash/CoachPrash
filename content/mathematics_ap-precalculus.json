@@ -368,6 +368,13 @@
                 }
               ]
             }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/mathematics/ap-precalculus/change-in-tandem-parabola.svg",
+              "alt_text": "Graph of f(x) = x squared minus 4 showing zeros at x = -2 and x = 2, vertex at (0, -4), with regions of increase and decrease annotated",
+              "caption": "A parabola showing zeros, vertex, and intervals of increase and decrease"
+            }
           ]
         },
         {
@@ -733,6 +740,13 @@
                 }
               ]
             }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/mathematics/ap-precalculus/rates-of-change-secant.svg",
+              "alt_text": "Graph of f(x) with a secant line drawn between two points, showing the average rate of change",
+              "caption": "Average rate of change represented by the slope of a secant line"
+            }
           ]
         },
         {
@@ -1092,6 +1106,13 @@
                 }
               ]
             }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/mathematics/ap-precalculus/roc-linear-vs-quadratic.svg",
+              "alt_text": "Linear function f(x) = 2x and quadratic function g(x) = x squared plotted on the same axes for comparison",
+              "caption": "Comparing constant rate of change (linear) with changing rate of change (quadratic)"
+            }
           ]
         },
         {
@@ -1450,6 +1471,13 @@
                   "access_tier": "premium"
                 }
               ]
+            }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/mathematics/ap-precalculus/polynomial-cubic-roc.svg",
+              "alt_text": "Cubic polynomial with local maximum, local minimum, and inflection point marked",
+              "caption": "A cubic polynomial showing local extrema and point of inflection"
             }
           ]
         },
@@ -1813,6 +1841,13 @@
                 }
               ]
             }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/mathematics/ap-precalculus/polynomial-real-complex-zeros.svg",
+              "alt_text": "Graph of x to the fourth minus 1 showing real zeros at x = -1 and x = 1",
+              "caption": "A polynomial with both real zeros (visible x-intercepts) and complex zeros (no x-intercepts)"
+            }
           ]
         },
         {
@@ -2172,6 +2207,13 @@
                 }
               ]
             }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/mathematics/ap-precalculus/polynomial-end-behavior.svg",
+              "alt_text": "Four panels showing polynomial end behavior for positive and negative leading coefficients with even and odd degrees",
+              "caption": "End behavior depends on the degree and sign of the leading coefficient"
+            }
           ]
         },
         {
@@ -2530,6 +2572,13 @@
                   "access_tier": "premium"
                 }
               ]
+            }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/mathematics/ap-precalculus/rational-end-behavior.svg",
+              "alt_text": "Rational function with horizontal asymptote at y = 2 and vertical asymptote at x = 1",
+              "caption": "Rational function approaching its horizontal asymptote as x increases or decreases without bound"
             }
           ]
         },
@@ -2917,6 +2966,13 @@
                 }
               ]
             }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/mathematics/ap-precalculus/rational-zeros.svg",
+              "alt_text": "Rational function with x-intercepts at x = -2 and x = 2, and vertical asymptotes at x = -1 and x = 1",
+              "caption": "Zeros of a rational function occur where the numerator equals zero"
+            }
           ]
         },
         {
@@ -3299,6 +3355,13 @@
                   "access_tier": "premium"
                 }
               ]
+            }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/mathematics/ap-precalculus/rational-vertical-asymptotes.svg",
+              "alt_text": "Graph of 1 over x squared minus 4 with vertical asymptotes at x = -2 and x = 2 shown as dashed lines",
+              "caption": "Vertical asymptotes occur at zeros of the denominator that are not cancelled"
             }
           ]
         },
@@ -3683,6 +3746,13 @@
                 }
               ]
             }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/mathematics/ap-precalculus/rational-hole.svg",
+              "alt_text": "Graph of (x squared minus 1) over (x minus 1) showing a hole at the point (1, 2)",
+              "caption": "A removable discontinuity (hole) where numerator and denominator share a common factor"
+            }
           ]
         },
         {
@@ -4054,6 +4124,13 @@
                 }
               ]
             }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/mathematics/ap-precalculus/equivalent-representations-factored.svg",
+              "alt_text": "Polynomial in factored form with x-intercepts labeled at x = -2, x = 1, and x = 3",
+              "caption": "Factored form reveals the zeros of a polynomial function"
+            }
           ]
         },
         {
@@ -4422,6 +4499,18 @@
                 }
               ]
             }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/mathematics/ap-precalculus/transformations-quadratic-shift.svg",
+              "alt_text": "Parent function y = x squared and transformed function y = (x minus 2) squared plus 3 shown together",
+              "caption": "Horizontal shift right 2 and vertical shift up 3"
+            },
+            {
+              "bucket_key": "images/mathematics/ap-precalculus/transformations-abs-reflect-stretch.svg",
+              "alt_text": "Parent function y = absolute value of x and transformed function y = -2 times absolute value of (x minus 1) plus 4",
+              "caption": "Vertical stretch by 2, reflection over x-axis, horizontal shift right 1, vertical shift up 4"
+            }
           ]
         },
         {
@@ -4780,6 +4869,13 @@
                   "access_tier": "premium"
                 }
               ]
+            }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/mathematics/ap-precalculus/model-selection-linear-vs-quadratic.svg",
+              "alt_text": "Scatter plot with both linear and quadratic regression curves fitted to data showing the quadratic is a better fit",
+              "caption": "Comparing linear and quadratic models — the quadratic captures the curvature in the data"
             }
           ]
         },
@@ -5155,6 +5251,13 @@
                 }
               ]
             }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/mathematics/ap-precalculus/model-construction-polynomial-fit.svg",
+              "alt_text": "Scatter plot with a polynomial regression curve fitted to the data points",
+              "caption": "Constructing a polynomial model from data using regression"
+            }
           ]
         }
       ]
@@ -5528,6 +5631,18 @@
                 }
               ]
             }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/mathematics/ap-precalculus/arithmetic-sequence-stem.svg",
+              "alt_text": "Stem plot of arithmetic sequence a_n = 2 + 3n showing evenly spaced discrete points",
+              "caption": "Arithmetic sequence: constant common difference between successive terms"
+            },
+            {
+              "bucket_key": "images/mathematics/ap-precalculus/geometric-sequence-stem.svg",
+              "alt_text": "Stem plot of geometric sequence g_n = 2 times 1.5 to the n showing exponentially growing discrete points",
+              "caption": "Geometric sequence: constant common ratio between successive terms"
+            }
           ]
         },
         {
@@ -5886,6 +6001,13 @@
                   "access_tier": "premium"
                 }
               ]
+            }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/mathematics/ap-precalculus/linear-vs-exponential.svg",
+              "alt_text": "Linear function f(x) = 2x + 1 and exponential function g(x) = 2 to the x plotted together",
+              "caption": "Linear growth (constant rate) vs exponential growth (constant ratio)"
             }
           ]
         },
@@ -6246,6 +6368,13 @@
                 }
               ]
             }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/mathematics/ap-precalculus/exponential-growth-decay.svg",
+              "alt_text": "Exponential growth curve 2 to the x and decay curve one-half to the x, both passing through (0, 1)",
+              "caption": "Exponential growth (base > 1) and decay (0 < base < 1)"
+            }
           ]
         },
         {
@@ -6604,6 +6733,13 @@
                   "access_tier": "premium"
                 }
               ]
+            }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/mathematics/ap-precalculus/exponential-parameter-effects.svg",
+              "alt_text": "Three exponential curves with bases 1.5, 2, and 3 showing different growth rates",
+              "caption": "Larger bases produce steeper exponential growth"
             }
           ]
         },
@@ -6964,6 +7100,13 @@
                 }
               ]
             }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/mathematics/ap-precalculus/exponential-data-modeling.svg",
+              "alt_text": "Scatter plot of data with exponential growth pattern and fitted curve",
+              "caption": "Fitting an exponential model to data"
+            }
           ]
         },
         {
@@ -7322,6 +7465,13 @@
                   "access_tier": "premium"
                 }
               ]
+            }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/mathematics/ap-precalculus/residual-plot-linear-fit.svg",
+              "alt_text": "Residual plot showing a curved pattern indicating a linear model is not appropriate",
+              "caption": "A pattern in residuals suggests the model is not a good fit"
             }
           ]
         },
@@ -7682,6 +7832,13 @@
                 }
               ]
             }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/mathematics/ap-precalculus/composition-flow.svg",
+              "alt_text": "Flow diagram showing function composition: input x enters g, output enters f, producing f of g of x",
+              "caption": "Function composition: the output of g becomes the input of f"
+            }
           ]
         },
         {
@@ -8040,6 +8197,13 @@
                   "access_tier": "premium"
                 }
               ]
+            }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/mathematics/ap-precalculus/inverse-functions-cubic.svg",
+              "alt_text": "Graph of f(x) = x cubed and its inverse f inverse of x = cube root of x reflected over y = x",
+              "caption": "A function and its inverse are reflections over the line y = x"
             }
           ]
         },
@@ -8765,6 +8929,13 @@
                 }
               ]
             }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/mathematics/ap-precalculus/exponential-log-inverse.svg",
+              "alt_text": "Graphs of 2 to the x and log base 2 of x reflected over the line y = x",
+              "caption": "The logarithmic function is the inverse of the exponential function"
+            }
           ]
         },
         {
@@ -9123,6 +9294,13 @@
                   "access_tier": "premium"
                 }
               ]
+            }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/mathematics/ap-precalculus/log-functions-comparison.svg",
+              "alt_text": "Three logarithmic curves log base 2, log base 3, and natural log passing through (1, 0)",
+              "caption": "Logarithmic functions with different bases all pass through (1, 0) with vertical asymptote x = 0"
             }
           ]
         },
@@ -9486,6 +9664,13 @@
                 }
               ]
             }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/mathematics/ap-precalculus/log-transformations.svg",
+              "alt_text": "Parent log base 2 of x and transformed log base 2 of (x minus 1) plus 2 shown together",
+              "caption": "Transformations shift and translate the logarithmic graph"
+            }
           ]
         },
         {
@@ -9848,6 +10033,13 @@
                 }
               ]
             }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/mathematics/ap-precalculus/exp-log-equation-intersection.svg",
+              "alt_text": "Graph of 2 to the x with horizontal line y = 8, intersection marked at x = 3",
+              "caption": "Solving 2 to the x = 8 graphically: the solution is x = 3"
+            }
           ]
         },
         {
@@ -10207,6 +10399,13 @@
                 }
               ]
             }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/mathematics/ap-precalculus/log-data-modeling.svg",
+              "alt_text": "Scatter plot of data with logarithmic growth pattern",
+              "caption": "Data with rapid initial growth that levels off can be modeled by a logarithmic function"
+            }
           ]
         },
         {
@@ -10565,6 +10764,18 @@
                   "access_tier": "premium"
                 }
               ]
+            }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/mathematics/ap-precalculus/semi-log-raw-data.svg",
+              "alt_text": "Scatter plot of exponential data on a standard linear scale showing a curved pattern",
+              "caption": "Exponential data appears curved on a standard scale"
+            },
+            {
+              "bucket_key": "images/mathematics/ap-precalculus/semi-log-linearized.svg",
+              "alt_text": "Same exponential data on a semi-log plot with logarithmic y-axis showing a linear pattern",
+              "caption": "On a semi-log plot, exponential data becomes linear"
             }
           ]
         }
@@ -10939,6 +11150,13 @@
                 }
               ]
             }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/mathematics/ap-precalculus/periodic-wave-period-labeled.svg",
+              "alt_text": "Sine wave with one full period labeled from 0 to 2π",
+              "caption": "A periodic wave showing one complete period of length 2π"
+            }
           ]
         },
         {
@@ -11297,6 +11515,13 @@
                   "access_tier": "premium"
                 }
               ]
+            }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/mathematics/ap-precalculus/unit-circle-special-angles.svg",
+              "alt_text": "Unit circle with special angles at 0, 30, 45, 60, 90, and other key degree measures labeled",
+              "caption": "Special angles on the unit circle used to evaluate trigonometric functions exactly"
             }
           ]
         },
@@ -11657,6 +11882,13 @@
                 }
               ]
             }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/mathematics/ap-precalculus/unit-circle-coordinate-values.svg",
+              "alt_text": "Unit circle with (cos θ, sin θ) coordinate values at special angles",
+              "caption": "The unit circle showing exact coordinate values at each special angle"
+            }
           ]
         },
         {
@@ -12015,6 +12247,18 @@
                   "access_tier": "premium"
                 }
               ]
+            }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/mathematics/ap-precalculus/sine-graph.svg",
+              "alt_text": "Graph of y = sin(x) over two full periods with key points at (0,0), (π/2,1), (π,0), (3π/2,−1), (2π,0) labeled",
+              "caption": "The sine function over two periods with intercepts, maxima, and minima marked"
+            },
+            {
+              "bucket_key": "images/mathematics/ap-precalculus/cosine-graph.svg",
+              "alt_text": "Graph of y = cos(x) over two full periods with key points at (0,1), (π/2,0), (π,−1), (3π/2,0), (2π,1) labeled",
+              "caption": "The cosine function over two periods with intercepts, maxima, and minima marked"
             }
           ]
         },
@@ -12375,6 +12619,13 @@
                 }
               ]
             }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/mathematics/ap-precalculus/sinusoidal-general-labeled.svg",
+              "alt_text": "Graph of y = 2sin(x) + 1 with amplitude 2, midline y = 1, and period 2π annotated",
+              "caption": "A general sinusoidal function with amplitude, midline, and period labeled"
+            }
           ]
         },
         {
@@ -12733,6 +12984,18 @@
                   "access_tier": "premium"
                 }
               ]
+            }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/mathematics/ap-precalculus/sinusoidal-amplitude-transform.svg",
+              "alt_text": "Two sine curves: y = sin(x) with amplitude 1 and y = 2sin(x) with amplitude 2 shown together",
+              "caption": "Vertical stretch by a factor of 2 doubles the amplitude of the sine function"
+            },
+            {
+              "bucket_key": "images/mathematics/ap-precalculus/sinusoidal-period-transform.svg",
+              "alt_text": "Two sine curves: y = sin(x) with period 2π and y = sin(2x) with period π shown together",
+              "caption": "Multiplying the argument by 2 compresses the period by half"
             }
           ]
         },
@@ -13096,6 +13359,13 @@
                 }
               ]
             }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/mathematics/ap-precalculus/sinusoidal-data-modeling.svg",
+              "alt_text": "Scatter plot of periodic data points with a fitted sinusoidal regression curve",
+              "caption": "Periodic real-world data modeled by a sinusoidal function"
+            }
           ]
         },
         {
@@ -13454,6 +13724,13 @@
                   "access_tier": "premium"
                 }
               ]
+            }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/mathematics/ap-precalculus/tangent-function.svg",
+              "alt_text": "Graph of y = tan(x) with vertical asymptotes at x = ±π/2 and x = ±3π/2 shown as dashed lines",
+              "caption": "The tangent function with its characteristic vertical asymptotes and period π"
             }
           ]
         },
@@ -13822,6 +14099,13 @@
                   "access_tier": "premium"
                 }
               ]
+            }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/mathematics/ap-precalculus/inverse-trig-arcsin.svg",
+              "alt_text": "Graph of y = arcsin(x) on domain [−1, 1] with range [−π/2, π/2] and key points (−1, −π/2), (0, 0), (1, π/2) labeled",
+              "caption": "The arcsine function is the inverse of sine restricted to [−π/2, π/2]"
             }
           ]
         },
@@ -14200,6 +14484,13 @@
                 }
               ]
             }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/mathematics/ap-precalculus/trig-equation-solutions.svg",
+              "alt_text": "Graph of y = sin(x) and horizontal line y = 0.5 on [0, 4π] with four intersection points at π/6, 5π/6, π/6 + 2π, 5π/6 + 2π labeled",
+              "caption": "Solving sin(x) = 0.5 graphically reveals all solutions in a given interval"
+            }
           ]
         },
         {
@@ -14568,6 +14859,13 @@
                 }
               ]
             }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/mathematics/ap-precalculus/cosecant-function.svg",
+              "alt_text": "Graph of y = csc(x) = 1/sin(x) with the reference sine curve in gray and vertical asymptotes at multiples of π",
+              "caption": "The cosecant function with vertical asymptotes where sine equals zero"
+            }
           ]
         },
         {
@@ -14930,6 +15228,13 @@
                 }
               ]
             }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/mathematics/ap-precalculus/equivalent-trig-identity.svg",
+              "alt_text": "Graphs of y = sin(2x) in blue and y = 2sin(x)cos(x) in red overlapping perfectly",
+              "caption": "The double angle identity sin(2x) = 2sin(x)cos(x) confirmed graphically by identical curves"
+            }
           ]
         },
         {
@@ -15289,6 +15594,13 @@
                 }
               ]
             }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/mathematics/ap-precalculus/polar-coordinate-grid.svg",
+              "alt_text": "Polar coordinate grid with a point at (3, π/4) marked and labeled",
+              "caption": "A point in polar coordinates (r, θ) plotted on a polar grid"
+            }
           ]
         },
         {
@@ -15647,6 +15959,18 @@
                   "access_tier": "premium"
                 }
               ]
+            }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/mathematics/ap-precalculus/polar-cardioid.svg",
+              "alt_text": "Cardioid r = 1 + cos(θ) plotted in polar coordinates",
+              "caption": "The cardioid is a classic polar curve formed by r = 1 + cos(θ)"
+            },
+            {
+              "bucket_key": "images/mathematics/ap-precalculus/polar-rose-curve.svg",
+              "alt_text": "Four-petal rose curve r = 3cos(2θ) plotted in polar coordinates",
+              "caption": "A rose curve with 4 petals formed by r = 3cos(2θ)"
             }
           ]
         },
@@ -16012,6 +16336,13 @@
                   "access_tier": "premium"
                 }
               ]
+            }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/mathematics/ap-precalculus/polar-limacon-roc.svg",
+              "alt_text": "Limaçon r = 2 + sin(θ) plotted in polar coordinates",
+              "caption": "A limaçon used to analyze rates of change in polar functions"
             }
           ]
         }
@@ -16380,6 +16711,13 @@
                 }
               ]
             }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/mathematics/ap-precalculus/parametric-functions-curve.svg",
+              "alt_text": "Parametric curve x = t + 1, y = 3 − t traced with direction arrows showing orientation as t increases",
+              "caption": "Parametric curve x = t + 1, y = 3 − t"
+            }
           ]
         },
         {
@@ -16738,6 +17076,13 @@
                   "access_tier": "premium"
                 }
               ]
+            }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/mathematics/ap-precalculus/parametric-planar-motion-projectile.svg",
+              "alt_text": "Projectile path as a parametric curve x = 20t, y = 30t − 4.9t² with time labels at t = 1, 2, 3 seconds",
+              "caption": "Projectile path: x = 20t, y = 30t − 4.9t²"
             }
           ]
         },
@@ -17098,6 +17443,13 @@
                 }
               ]
             }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/mathematics/ap-precalculus/parametric-roc-tangent-vector.svg",
+              "alt_text": "Parametric curve x = t², y = t³ − t with a tangent vector highlighted at a specific point showing instantaneous rate of change",
+              "caption": "Parametric curve with tangent vector at a point"
+            }
           ]
         },
         {
@@ -17456,6 +17808,13 @@
                   "access_tier": "premium"
                 }
               ]
+            }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/mathematics/ap-precalculus/parametric-circle-x3cost-y3sint.svg",
+              "alt_text": "Circle traced parametrically with x = 3 cos(t), y = 3 sin(t) showing direction of travel with arrows",
+              "caption": "Parametric circle: x = 3cos(t), y = 3sin(t)"
             }
           ]
         },
@@ -17816,6 +18175,13 @@
                 }
               ]
             }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/mathematics/ap-precalculus/implicit-curve-circle-x2y2-25.svg",
+              "alt_text": "Implicit curve x² + y² = 25 plotted as a contour of F(x, y) = x² + y² − 25 = 0, forming a circle of radius 5",
+              "caption": "Implicit curve: x² + y² = 25"
+            }
           ]
         },
         {
@@ -18175,6 +18541,18 @@
                 }
               ]
             }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/mathematics/ap-precalculus/conic-section-ellipse-foci.svg",
+              "alt_text": "Ellipse with semi-major axis a = 4, semi-minor axis b = 2, with foci and major/minor axes labeled",
+              "caption": "Ellipse with foci and axes labeled"
+            },
+            {
+              "bucket_key": "images/mathematics/ap-precalculus/conic-section-hyperbola-asymptotes.svg",
+              "alt_text": "Hyperbola with a = 2, b = 1.5, opening horizontally, with foci and asymptote lines shown as dashed",
+              "caption": "Hyperbola with foci and asymptotes"
+            }
           ]
         },
         {
@@ -18533,6 +18911,13 @@
                   "access_tier": "premium"
                 }
               ]
+            }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/mathematics/ap-precalculus/parametrization-implicit-ellipse.svg",
+              "alt_text": "Ellipse parametrized as x = 4cos(t), y = 2sin(t), showing directed motion along the ellipse with arrows",
+              "caption": "Parametrization of ellipse: x = 4cos(t), y = 2sin(t)"
             }
           ]
         },
@@ -18899,6 +19284,18 @@
                 }
               ]
             }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/mathematics/ap-precalculus/vector-components-decomposition.svg",
+              "alt_text": "Vector of magnitude 5 at 53 degrees above horizontal, decomposed into horizontal component v_x = 3 and vertical component v_y = 4",
+              "caption": "Vector decomposition into x and y components"
+            },
+            {
+              "bucket_key": "images/mathematics/ap-precalculus/vector-addition-head-to-tail.svg",
+              "alt_text": "Head-to-tail vector addition showing vectors A and B added to produce resultant vector R",
+              "caption": "Vector addition: A + B = R (head-to-tail method)"
+            }
           ]
         },
         {
@@ -19257,6 +19654,13 @@
                   "access_tier": "premium"
                 }
               ]
+            }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/mathematics/ap-precalculus/vector-valued-function-trace.svg",
+              "alt_text": "Curve traced by vector-valued function r(t) = (cos(t), sin(t)/2) with position vectors drawn from origin to points on the curve",
+              "caption": "Vector-valued function r(t) tracing a path in the plane"
             }
           ]
         },
@@ -19979,6 +20383,13 @@
                 }
               ]
             }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/mathematics/ap-precalculus/matrix-inverse-determinant-transform.svg",
+              "alt_text": "Unit square transformed by matrix [[2, 1], [0, 3]] into a parallelogram, with determinant = 6 shown as the area scale factor",
+              "caption": "Matrix transformation: unit square → parallelogram, det = 6"
+            }
           ]
         },
         {
@@ -20338,6 +20749,18 @@
                 }
               ]
             }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/mathematics/ap-precalculus/linear-transformation-rotation.svg",
+              "alt_text": "Unit square before and after 90-degree rotation transformation by matrix [[0, -1], [1, 0]]",
+              "caption": "Linear transformation: 90° rotation matrix"
+            },
+            {
+              "bucket_key": "images/mathematics/ap-precalculus/linear-transformation-reflection.svg",
+              "alt_text": "Unit square before and after reflection across the x-axis by matrix [[1, 0], [0, -1]]",
+              "caption": "Linear transformation: reflection across the x-axis"
+            }
           ]
         },
         {
@@ -20696,6 +21119,13 @@
                   "access_tier": "premium"
                 }
               ]
+            }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/mathematics/ap-precalculus/matrices-as-functions-input-output.svg",
+              "alt_text": "Box-and-arrow diagram showing a vector input x mapped through matrix M to produce output M·x, illustrating matrices as linear functions",
+              "caption": "Matrix as a function: input vector → M → output vector"
             }
           ]
         },
@@ -21058,6 +21488,13 @@
                   "access_tier": "premium"
                 }
               ]
+            }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/mathematics/ap-precalculus/matrices-modeling-transition.svg",
+              "alt_text": "Box-and-arrow transition diagram showing state vector at time n mapped through transition matrix T to state at time n+1, modeling a real-world context",
+              "caption": "Transition matrix: state₁ → T → state₂"
             }
           ]
         }

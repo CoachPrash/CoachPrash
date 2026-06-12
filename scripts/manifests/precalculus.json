@@ -1,0 +1,1648 @@
+{
+  "course": "ap-precalculus",
+  "subject": "mathematics",
+  "images": [
+    {
+      "id": "precalc-001",
+      "bucket_key": "images/mathematics/ap-precalculus/change-in-tandem-parabola.svg",
+      "category": "function_graph",
+      "params": {
+        "functions": [
+          {
+            "expr": "x**2 - 4",
+            "color": "blue",
+            "label": "f(x) = x² − 4"
+          }
+        ],
+        "x_range": [-4, 4],
+        "y_range": [-6, 12],
+        "points": [
+          { "x": -2, "y": 0, "style": "filled" },
+          { "x": 2, "y": 0, "style": "filled" },
+          { "x": 0, "y": -4, "style": "filled" }
+        ],
+        "asymptotes": [],
+        "annotations": [
+          { "text": "zero (−2, 0)", "xy": [-2, 0] },
+          { "text": "zero (2, 0)", "xy": [2, 0] },
+          { "text": "vertex (0, −4)", "xy": [0, -4] },
+          { "text": "← decreasing", "xy": [-2.5, 4] },
+          { "text": "increasing →", "xy": [2.5, 4] }
+        ],
+        "title": "Change in Tandem: f(x) = x² − 4"
+      }
+    },
+    {
+      "id": "precalc-002",
+      "bucket_key": "images/mathematics/ap-precalculus/rates-of-change-secant.svg",
+      "category": "function_graph",
+      "params": {
+        "functions": [
+          {
+            "expr": "x**2",
+            "color": "blue",
+            "label": "f(x) = x²"
+          },
+          {
+            "expr": "5*x - 4",
+            "color": "red",
+            "label": "secant line"
+          }
+        ],
+        "x_range": [-1, 5],
+        "y_range": [-1, 18],
+        "points": [
+          { "x": 1, "y": 1, "style": "filled" },
+          { "x": 4, "y": 16, "style": "filled" }
+        ],
+        "asymptotes": [],
+        "annotations": [
+          { "text": "(1, 1)", "xy": [1, 1] },
+          { "text": "(4, 16)", "xy": [4, 16] },
+          { "text": "slope = 5", "xy": [2.5, 8] }
+        ],
+        "title": "Average Rate of Change: Secant Line"
+      }
+    },
+    {
+      "id": "precalc-003",
+      "bucket_key": "images/mathematics/ap-precalculus/roc-linear-vs-quadratic.svg",
+      "category": "function_graph",
+      "params": {
+        "functions": [
+          {
+            "expr": "2*x",
+            "color": "blue",
+            "label": "f(x) = 2x (constant ROC)"
+          },
+          {
+            "expr": "x**2",
+            "color": "red",
+            "label": "g(x) = x² (changing ROC)"
+          }
+        ],
+        "x_range": [0, 4],
+        "y_range": [-1, 17],
+        "points": [],
+        "asymptotes": [],
+        "annotations": [
+          { "text": "constant slope = 2", "xy": [3, 6.5] },
+          { "text": "slope increasing", "xy": [3, 12] }
+        ],
+        "title": "Linear vs Quadratic Rates of Change"
+      }
+    },
+    {
+      "id": "precalc-004",
+      "bucket_key": "images/mathematics/ap-precalculus/polynomial-cubic-roc.svg",
+      "category": "function_graph",
+      "params": {
+        "functions": [
+          {
+            "expr": "x**3 - 3*x**2 + 2",
+            "color": "blue",
+            "label": "f(x) = x³ − 3x² + 2"
+          }
+        ],
+        "x_range": [-2, 4],
+        "y_range": [-4, 4],
+        "points": [
+          { "x": 0, "y": 2, "style": "filled" },
+          { "x": 2, "y": -2, "style": "filled" },
+          { "x": 1, "y": 0, "style": "filled" }
+        ],
+        "asymptotes": [],
+        "annotations": [
+          { "text": "local max (0, 2)", "xy": [0, 2] },
+          { "text": "local min (2, −2)", "xy": [2, -2] },
+          { "text": "inflection (1, 0)", "xy": [1, 0] }
+        ],
+        "title": "Cubic Polynomial: Local Extrema and Inflection"
+      }
+    },
+    {
+      "id": "precalc-005",
+      "bucket_key": "images/mathematics/ap-precalculus/polynomial-real-complex-zeros.svg",
+      "category": "function_graph",
+      "params": {
+        "functions": [
+          {
+            "expr": "x**4 - 1",
+            "color": "blue",
+            "label": "f(x) = x⁴ − 1"
+          }
+        ],
+        "x_range": [-2.5, 2.5],
+        "y_range": [-3, 8],
+        "points": [
+          { "x": -1, "y": 0, "style": "filled" },
+          { "x": 1, "y": 0, "style": "filled" }
+        ],
+        "asymptotes": [],
+        "annotations": [
+          { "text": "real zero (−1, 0)", "xy": [-1, 0] },
+          { "text": "real zero (1, 0)", "xy": [1, 0] },
+          { "text": "complex zeros: ±i (not on graph)", "xy": [0, 4] }
+        ],
+        "title": "Real and Complex Zeros: (x²−1)(x²+1)"
+      }
+    },
+    {
+      "id": "precalc-006",
+      "bucket_key": "images/mathematics/ap-precalculus/polynomial-end-behavior.svg",
+      "category": "concept_diagram",
+      "params": {
+        "type": "end_behavior",
+        "title": "Polynomial End Behavior"
+      }
+    },
+    {
+      "id": "precalc-007",
+      "bucket_key": "images/mathematics/ap-precalculus/rational-end-behavior.svg",
+      "category": "function_graph",
+      "params": {
+        "functions": [
+          {
+            "expr": "(3*x**2 + 1)/(x**2 - 4)",
+            "color": "blue",
+            "label": "f(x) = (3x²+1)/(x²−4)"
+          }
+        ],
+        "x_range": [-7, 7],
+        "y_range": [-10, 15],
+        "points": [],
+        "asymptotes": [
+          { "type": "horizontal", "value": 3 },
+          { "type": "vertical", "value": -2 },
+          { "type": "vertical", "value": 2 }
+        ],
+        "annotations": [
+          { "text": "HA: y = 3", "xy": [5, 3] },
+          { "text": "VA: x = −2", "xy": [-2, 10] },
+          { "text": "VA: x = 2", "xy": [2, 10] }
+        ],
+        "title": "Rational Function: Horizontal and Vertical Asymptotes"
+      }
+    },
+    {
+      "id": "precalc-008",
+      "bucket_key": "images/mathematics/ap-precalculus/rational-zeros.svg",
+      "category": "function_graph",
+      "params": {
+        "functions": [
+          {
+            "expr": "(x**2 - 4)/(x**2 - x - 6)",
+            "color": "blue",
+            "label": "r(x) = (x²−4)/(x²−x−6)"
+          }
+        ],
+        "x_range": [-5, 6],
+        "y_range": [-8, 8],
+        "points": [
+          { "x": 2, "y": 0, "style": "filled" },
+          { "x": -2, "y": 0.8, "style": "open" }
+        ],
+        "asymptotes": [
+          { "type": "vertical", "value": 3 },
+          { "type": "horizontal", "value": 1 }
+        ],
+        "annotations": [
+          { "text": "zero (2, 0)", "xy": [2, 0] },
+          { "text": "hole (−2, 4/5)", "xy": [-2, 0.8] },
+          { "text": "VA: x = 3", "xy": [3, 5] },
+          { "text": "HA: y = 1", "xy": [5, 1] }
+        ],
+        "title": "Rational Function Zeros and Asymptotes"
+      }
+    },
+    {
+      "id": "precalc-009",
+      "bucket_key": "images/mathematics/ap-precalculus/rational-vertical-asymptotes.svg",
+      "category": "function_graph",
+      "params": {
+        "functions": [
+          {
+            "expr": "(x + 1)/((x - 2)*(x + 3))",
+            "color": "blue",
+            "label": "f(x) = (x+1)/((x−2)(x+3))"
+          }
+        ],
+        "x_range": [-6, 5],
+        "y_range": [-5, 5],
+        "points": [],
+        "asymptotes": [
+          { "type": "vertical", "value": 2 },
+          { "type": "vertical", "value": -3 },
+          { "type": "horizontal", "value": 0 }
+        ],
+        "annotations": [
+          { "text": "VA: x = 2", "xy": [2, 3] },
+          { "text": "VA: x = −3", "xy": [-3, 3] },
+          { "text": "HA: y = 0", "xy": [4, 0.3] }
+        ],
+        "title": "Vertical Asymptotes: (x+1)/((x−2)(x+3))"
+      }
+    },
+    {
+      "id": "precalc-010",
+      "bucket_key": "images/mathematics/ap-precalculus/rational-hole.svg",
+      "category": "function_graph",
+      "params": {
+        "functions": [
+          {
+            "expr": "(x**2 - 4*x + 3)/(x**2 - 3*x + 2)",
+            "color": "blue",
+            "label": "f(x) = (x²−4x+3)/(x²−3x+2)"
+          }
+        ],
+        "x_range": [-2, 5],
+        "y_range": [-6, 8],
+        "points": [
+          { "x": 1, "y": 2, "style": "open" }
+        ],
+        "asymptotes": [
+          { "type": "vertical", "value": 2 }
+        ],
+        "annotations": [
+          { "text": "hole at (1, 2)", "xy": [1, 2] },
+          { "text": "VA: x = 2", "xy": [2, 5] }
+        ],
+        "title": "Rational Function with Removable Discontinuity (Hole)"
+      }
+    },
+    {
+      "id": "precalc-011",
+      "bucket_key": "images/mathematics/ap-precalculus/equivalent-representations-factored.svg",
+      "category": "function_graph",
+      "params": {
+        "functions": [
+          {
+            "expr": "(x - 1)*(x + 2)*(x - 3)",
+            "color": "blue",
+            "label": "f(x) = (x−1)(x+2)(x−3)"
+          }
+        ],
+        "x_range": [-4, 5],
+        "y_range": [-15, 15],
+        "points": [
+          { "x": 1, "y": 0, "style": "filled" },
+          { "x": -2, "y": 0, "style": "filled" },
+          { "x": 3, "y": 0, "style": "filled" }
+        ],
+        "asymptotes": [],
+        "annotations": [
+          { "text": "x = −2", "xy": [-2, 0] },
+          { "text": "x = 1", "xy": [1, 0] },
+          { "text": "x = 3", "xy": [3, 0] }
+        ],
+        "title": "Factored Form: x-Intercepts from Factors"
+      }
+    },
+    {
+      "id": "precalc-012",
+      "bucket_key": "images/mathematics/ap-precalculus/transformations-quadratic-shift.svg",
+      "category": "function_graph",
+      "params": {
+        "functions": [
+          {
+            "expr": "x**2",
+            "color": "#999999",
+            "label": "y = x² (parent)"
+          },
+          {
+            "expr": "(x - 2)**2 + 3",
+            "color": "blue",
+            "label": "y = (x−2)² + 3"
+          }
+        ],
+        "x_range": [-3, 6],
+        "y_range": [-2, 14],
+        "points": [
+          { "x": 0, "y": 0, "style": "filled" },
+          { "x": 2, "y": 3, "style": "filled" }
+        ],
+        "asymptotes": [],
+        "annotations": [
+          { "text": "parent vertex (0, 0)", "xy": [0, 0] },
+          { "text": "shifted vertex (2, 3)", "xy": [2, 3] },
+          { "text": "right 2, up 3", "xy": [1, 1.5] }
+        ],
+        "title": "Transformation: Horizontal and Vertical Shift"
+      }
+    },
+    {
+      "id": "precalc-013",
+      "bucket_key": "images/mathematics/ap-precalculus/transformations-abs-reflect-stretch.svg",
+      "category": "function_graph",
+      "params": {
+        "functions": [
+          {
+            "expr": "Abs(x)",
+            "color": "#999999",
+            "label": "y = |x| (parent)"
+          },
+          {
+            "expr": "-2*Abs(x - 1) + 4",
+            "color": "blue",
+            "label": "y = −2|x−1| + 4"
+          }
+        ],
+        "x_range": [-3, 5],
+        "y_range": [-6, 6],
+        "points": [
+          { "x": 0, "y": 0, "style": "filled" },
+          { "x": 1, "y": 4, "style": "filled" }
+        ],
+        "asymptotes": [],
+        "annotations": [
+          { "text": "parent vertex (0, 0)", "xy": [0, 0] },
+          { "text": "vertex (1, 4)", "xy": [1, 4] },
+          { "text": "reflected, stretched ×2, right 1, up 4", "xy": [3, -2] }
+        ],
+        "title": "Transformation: Reflect, Stretch, and Shift"
+      }
+    },
+    {
+      "id": "precalc-014",
+      "bucket_key": "images/mathematics/ap-precalculus/model-selection-linear-vs-quadratic.svg",
+      "category": "statistics",
+      "params": {
+        "type": "scatter_regression",
+        "points": [
+          { "x": 1, "y": 2 },
+          { "x": 2, "y": 5 },
+          { "x": 3, "y": 10 },
+          { "x": 4, "y": 17 },
+          { "x": 5, "y": 26 },
+          { "x": 6, "y": 37 }
+        ],
+        "regression_line": {
+          "slope": 6.86,
+          "intercept": -6.47
+        },
+        "labels": {
+          "x": "x",
+          "y": "y"
+        },
+        "title": "Model Selection: Linear vs Quadratic Fit"
+      }
+    },
+    {
+      "id": "precalc-015",
+      "bucket_key": "images/mathematics/ap-precalculus/model-construction-polynomial-fit.svg",
+      "category": "statistics",
+      "params": {
+        "type": "scatter_regression",
+        "points": [
+          { "x": 0, "y": 1 },
+          { "x": 1, "y": 3 },
+          { "x": 2, "y": 9 },
+          { "x": 3, "y": 19 },
+          { "x": 4, "y": 33 }
+        ],
+        "regression_line": {
+          "slope": 8.0,
+          "intercept": -3.0
+        },
+        "labels": {
+          "x": "x",
+          "y": "y"
+        },
+        "title": "Model Construction: Polynomial Regression Fit"
+      }
+    },
+    {
+      "id": "precalc-016",
+      "bucket_key": "images/mathematics/ap-precalculus/function-model-comparison.svg",
+      "category": "function_graph",
+      "params": {
+        "functions": [
+          {
+            "expr": "2**x",
+            "color": "red",
+            "label": "exponential: 2^x"
+          },
+          {
+            "expr": "x**2",
+            "color": "blue",
+            "label": "quadratic: x²"
+          },
+          {
+            "expr": "2*x",
+            "color": "green",
+            "label": "linear: 2x"
+          }
+        ],
+        "x_range": [-2, 5],
+        "y_range": [-2, 20],
+        "points": [],
+        "asymptotes": [],
+        "annotations": [
+          { "text": "exponential dominates", "xy": [4, 16] },
+          { "text": "linear", "xy": [4, 8.5] }
+        ],
+        "title": "Comparing Growth: Linear vs Quadratic vs Exponential"
+      }
+    },
+    {
+      "id": "precalc-017",
+      "bucket_key": "images/mathematics/ap-precalculus/average-roc-table.svg",
+      "category": "function_graph",
+      "params": {
+        "functions": [
+          {
+            "expr": "x**3 - 2*x + 1",
+            "color": "blue",
+            "label": "f(x) = x³ − 2x + 1"
+          },
+          {
+            "expr": "17*x - 29",
+            "color": "red",
+            "label": "secant [2, 3]"
+          }
+        ],
+        "x_range": [-1, 4],
+        "y_range": [-3, 25],
+        "points": [
+          { "x": 2, "y": 5, "style": "filled" },
+          { "x": 3, "y": 22, "style": "filled" }
+        ],
+        "asymptotes": [],
+        "annotations": [
+          { "text": "(2, 5)", "xy": [2, 5] },
+          { "text": "(3, 22)", "xy": [3, 22] },
+          { "text": "AROC = 17", "xy": [2.5, 16] }
+        ],
+        "title": "Average Rate of Change on [2, 3]"
+      }
+    },
+    {
+      "id": "precalc-018",
+      "bucket_key": "images/mathematics/ap-precalculus/concavity-second-differences.svg",
+      "category": "function_graph",
+      "params": {
+        "functions": [
+          {
+            "expr": "0.5*x**2 - 2*x + 3",
+            "color": "blue",
+            "label": "f(x) = 0.5x² − 2x + 3 (concave up)"
+          },
+          {
+            "expr": "-0.5*x**2 + 4*x - 3",
+            "color": "red",
+            "label": "g(x) = −0.5x² + 4x − 3 (concave down)"
+          }
+        ],
+        "x_range": [-1, 7],
+        "y_range": [-3, 8],
+        "points": [
+          { "x": 2, "y": 1, "style": "filled" },
+          { "x": 4, "y": 5, "style": "filled" }
+        ],
+        "asymptotes": [],
+        "annotations": [
+          { "text": "concave up: ROC increasing", "xy": [5, 3] },
+          { "text": "concave down: ROC decreasing", "xy": [5, 6] }
+        ],
+        "title": "Concavity: Increasing vs Decreasing Rate of Change"
+      }
+    },
+    {
+      "id": "precalc-019",
+      "bucket_key": "images/mathematics/ap-precalculus/arithmetic-sequence-stem.svg",
+      "category": "series_visual",
+      "params": {
+        "type": "partial_sum",
+        "series_type": "arithmetic",
+        "first_term": 2,
+        "common_difference": 3,
+        "n_terms": 7,
+        "title": "Arithmetic Sequence: a_n = 2 + 3n"
+      }
+    },
+    {
+      "id": "precalc-020",
+      "bucket_key": "images/mathematics/ap-precalculus/geometric-sequence-stem.svg",
+      "category": "series_visual",
+      "params": {
+        "type": "partial_sum",
+        "series_type": "geometric",
+        "ratio": 3,
+        "first_term": 3,
+        "n_terms": 7,
+        "title": "Geometric Sequence: gₙ = 3·3ⁿ"
+      }
+    },
+    {
+      "id": "precalc-021",
+      "bucket_key": "images/mathematics/ap-precalculus/linear-vs-exponential.svg",
+      "category": "function_graph",
+      "params": {
+        "functions": [
+          {
+            "expr": "2*x + 1",
+            "color": "blue",
+            "label": "f(x) = 2x + 1 (linear)"
+          },
+          {
+            "expr": "2**x",
+            "color": "red",
+            "label": "g(x) = 2^x (exponential)"
+          }
+        ],
+        "x_range": [0, 5],
+        "y_range": [-1, 35],
+        "points": [],
+        "asymptotes": [],
+        "annotations": [
+          { "text": "linear growth", "xy": [4, 9.5] },
+          { "text": "exponential growth", "xy": [4, 20] }
+        ],
+        "title": "Linear vs Exponential Growth"
+      }
+    },
+    {
+      "id": "precalc-022",
+      "bucket_key": "images/mathematics/ap-precalculus/exponential-growth-decay.svg",
+      "category": "function_graph",
+      "params": {
+        "functions": [
+          {
+            "expr": "2**x",
+            "color": "blue",
+            "label": "f(x) = 2^x (growth)"
+          },
+          {
+            "expr": "(1/2)**x",
+            "color": "red",
+            "label": "g(x) = (1/2)^x (decay)"
+          }
+        ],
+        "x_range": [-3, 3],
+        "y_range": [-0.5, 9],
+        "points": [
+          { "x": 0, "y": 1, "style": "filled" }
+        ],
+        "asymptotes": [
+          { "type": "horizontal", "value": 0 }
+        ],
+        "annotations": [
+          { "text": "(0, 1)", "xy": [0, 1] },
+          { "text": "growth: b > 1", "xy": [2, 4.5] },
+          { "text": "decay: 0 < b < 1", "xy": [-2, 4.5] }
+        ],
+        "title": "Exponential Growth and Decay"
+      }
+    },
+    {
+      "id": "precalc-023",
+      "bucket_key": "images/mathematics/ap-precalculus/exponential-parameter-effects.svg",
+      "category": "function_graph",
+      "params": {
+        "functions": [
+          {
+            "expr": "(3/2)**x",
+            "color": "green",
+            "label": "y = 1.5^x"
+          },
+          {
+            "expr": "2**x",
+            "color": "blue",
+            "label": "y = 2^x"
+          },
+          {
+            "expr": "3**x",
+            "color": "red",
+            "label": "y = 3^x"
+          }
+        ],
+        "x_range": [-2, 4],
+        "y_range": [-0.5, 20],
+        "points": [
+          { "x": 0, "y": 1, "style": "filled" }
+        ],
+        "asymptotes": [
+          { "type": "horizontal", "value": 0 }
+        ],
+        "annotations": [
+          { "text": "all pass through (0, 1)", "xy": [0, 1] },
+          { "text": "larger base = faster growth", "xy": [3, 15] }
+        ],
+        "title": "Exponential Base Effects: 1.5^x, 2^x, 3^x"
+      }
+    },
+    {
+      "id": "precalc-024",
+      "bucket_key": "images/mathematics/ap-precalculus/exponential-data-modeling.svg",
+      "category": "statistics",
+      "params": {
+        "type": "scatter_regression",
+        "points": [
+          { "x": 0, "y": 100 },
+          { "x": 2, "y": 400 },
+          { "x": 4, "y": 1600 },
+          { "x": 6, "y": 6400 }
+        ],
+        "regression_line": {
+          "slope": 1005.00,
+          "intercept": -890.00
+        },
+        "labels": {
+          "x": "x",
+          "y": "y"
+        },
+        "title": "Exponential-Shaped Data with Linear Fit"
+      }
+    },
+    {
+      "id": "precalc-025",
+      "bucket_key": "images/mathematics/ap-precalculus/residual-plot-linear-fit.svg",
+      "category": "statistics",
+      "params": {
+        "type": "residual_plot",
+        "points": [
+          { "x": 0, "residual": 990.00 },
+          { "x": 2, "residual": -720.00 },
+          { "x": 4, "residual": -1530.00 },
+          { "x": 6, "residual": 1260.00 }
+        ],
+        "labels": {
+          "x": "x",
+          "y": "Residual"
+        },
+        "title": "Residual Plot: Pattern Indicates Poor Linear Fit"
+      }
+    },
+    {
+      "id": "precalc-026",
+      "bucket_key": "images/mathematics/ap-precalculus/composition-flow.svg",
+      "category": "concept_diagram",
+      "params": {
+        "type": "composition_flow",
+        "boxes": [
+          { "label": "x", "x": 0.5 },
+          { "label": "g(x) = x²", "x": 3.5 },
+          { "label": "f(g(x)) = |x|", "x": 7.0 }
+        ],
+        "arrow_labels": ["apply g", "apply f = √( )"],
+        "title": "Function Composition: f(g(x)) = √(x²) = |x|"
+      }
+    },
+    {
+      "id": "precalc-027",
+      "bucket_key": "images/mathematics/ap-precalculus/inverse-functions-cubic.svg",
+      "category": "function_graph",
+      "params": {
+        "functions": [
+          {
+            "expr": "3*x - 7",
+            "color": "blue",
+            "label": "f(x) = 3x − 7"
+          },
+          {
+            "expr": "(x + 7)/3",
+            "color": "red",
+            "label": "f⁻¹(x) = (x+7)/3"
+          },
+          {
+            "expr": "x",
+            "color": "#999999",
+            "label": "y = x"
+          }
+        ],
+        "x_range": [-5, 8],
+        "y_range": [-5, 8],
+        "points": [
+          { "x": 2, "y": -1, "style": "filled" },
+          { "x": -1, "y": 2, "style": "filled" }
+        ],
+        "asymptotes": [],
+        "annotations": [
+          { "text": "(2, −1)", "xy": [2, -1] },
+          { "text": "(−1, 2)", "xy": [-1, 2] },
+          { "text": "f and f⁻¹ reflect over y = x", "xy": [4, 6] }
+        ],
+        "title": "Inverse Functions: f(x) = 3x − 7 and f⁻¹(x) = (x+7)/3"
+      }
+    },
+    {
+      "id": "precalc-028",
+      "bucket_key": "images/mathematics/ap-precalculus/exponential-log-inverse.svg",
+      "category": "function_graph",
+      "params": {
+        "functions": [
+          {
+            "expr": "3**x",
+            "color": "blue",
+            "label": "f(x) = 3^x"
+          },
+          {
+            "expr": "log(x, 3)",
+            "color": "red",
+            "label": "g(x) = log₃(x)"
+          },
+          {
+            "expr": "x",
+            "color": "#999999",
+            "label": "y = x"
+          }
+        ],
+        "x_range": [-3, 10],
+        "y_range": [-3, 10],
+        "points": [
+          { "x": 0, "y": 1, "style": "filled" },
+          { "x": 2, "y": 9, "style": "filled" },
+          { "x": 1, "y": 0, "style": "filled" },
+          { "x": 9, "y": 2, "style": "filled" }
+        ],
+        "asymptotes": [
+          { "type": "horizontal", "value": 0 },
+          { "type": "vertical", "value": 0 }
+        ],
+        "annotations": [
+          { "text": "(0, 1)", "xy": [0, 1] },
+          { "text": "(2, 9)", "xy": [2, 9] },
+          { "text": "(1, 0)", "xy": [1, 0] },
+          { "text": "(9, 2)", "xy": [9, 2] },
+          { "text": "reflected over y = x", "xy": [6, 7] }
+        ],
+        "title": "Exponential and Logarithmic as Inverses"
+      }
+    },
+    {
+      "id": "precalc-029",
+      "bucket_key": "images/mathematics/ap-precalculus/log-functions-comparison.svg",
+      "category": "function_graph",
+      "params": {
+        "functions": [
+          {
+            "expr": "log(x, 2)",
+            "color": "blue",
+            "label": "y = log₂(x)"
+          },
+          {
+            "expr": "log(x, 3)",
+            "color": "red",
+            "label": "y = log₃(x)"
+          },
+          {
+            "expr": "log(x)",
+            "color": "green",
+            "label": "y = ln(x)"
+          }
+        ],
+        "x_range": [0.1, 10],
+        "y_range": [-3, 4],
+        "points": [
+          { "x": 1, "y": 0, "style": "filled" }
+        ],
+        "asymptotes": [
+          { "type": "vertical", "value": 0 }
+        ],
+        "annotations": [
+          { "text": "all pass through (1, 0)", "xy": [1, 0] },
+          { "text": "smaller base = faster growth", "xy": [6, 3] }
+        ],
+        "title": "Comparing Logarithmic Functions"
+      }
+    },
+    {
+      "id": "precalc-030",
+      "bucket_key": "images/mathematics/ap-precalculus/log-transformations.svg",
+      "category": "function_graph",
+      "params": {
+        "functions": [
+          {
+            "expr": "log(x, 2)",
+            "color": "#999999",
+            "label": "y = log₂(x) (parent)"
+          },
+          {
+            "expr": "log(x - 3, 2) + 1",
+            "color": "blue",
+            "label": "g(x) = log₂(x−3) + 1"
+          }
+        ],
+        "x_range": [-0.5, 12],
+        "y_range": [-3, 6],
+        "points": [
+          { "x": 1, "y": 0, "style": "filled" },
+          { "x": 4, "y": 1, "style": "filled" }
+        ],
+        "asymptotes": [
+          { "type": "vertical", "value": 0 },
+          { "type": "vertical", "value": 3 }
+        ],
+        "annotations": [
+          { "text": "parent VA: x=0", "xy": [0.3, -2] },
+          { "text": "shifted VA: x=3", "xy": [3.3, -2] },
+          { "text": "right 3, up 1", "xy": [6, 4] }
+        ],
+        "title": "Log Transformations: Shift Right 3, Up 1"
+      }
+    },
+    {
+      "id": "precalc-031",
+      "bucket_key": "images/mathematics/ap-precalculus/exp-log-equation-intersection.svg",
+      "category": "function_graph",
+      "params": {
+        "functions": [
+          {
+            "expr": "2**x",
+            "color": "blue",
+            "label": "f(x) = 2^x"
+          },
+          {
+            "expr": "8",
+            "color": "red",
+            "label": "y = 8"
+          }
+        ],
+        "x_range": [-2, 5],
+        "y_range": [-1, 20],
+        "points": [
+          { "x": 3, "y": 8, "style": "filled" }
+        ],
+        "asymptotes": [
+          { "type": "horizontal", "value": 0 }
+        ],
+        "annotations": [
+          { "text": "intersection (3, 8)", "xy": [3, 8] },
+          { "text": "2^x = 8 → x = 3", "xy": [3.5, 12] }
+        ],
+        "title": "Solving Exponential Equations: 2^x = 8"
+      }
+    },
+    {
+      "id": "precalc-032",
+      "bucket_key": "images/mathematics/ap-precalculus/log-data-modeling.svg",
+      "category": "statistics",
+      "params": {
+        "type": "scatter_regression",
+        "points": [
+          { "x": 1, "y": 5 },
+          { "x": 10, "y": 15 },
+          { "x": 100, "y": 25 },
+          { "x": 1000, "y": 35 }
+        ],
+        "regression_line": {
+          "slope": 0.02,
+          "intercept": 13.89
+        },
+        "labels": {
+          "x": "x",
+          "y": "y"
+        },
+        "title": "Logarithmic-Shaped Data with Linear Fit"
+      }
+    },
+    {
+      "id": "precalc-033",
+      "bucket_key": "images/mathematics/ap-precalculus/semi-log-raw-data.svg",
+      "category": "statistics",
+      "params": {
+        "type": "scatter_regression",
+        "points": [
+          { "x": 0, "y": 100 },
+          { "x": 1, "y": 200 },
+          { "x": 2, "y": 400 },
+          { "x": 3, "y": 800 },
+          { "x": 4, "y": 1600 }
+        ],
+        "regression_line": {
+          "slope": 360.00,
+          "intercept": -100.00
+        },
+        "labels": {
+          "x": "x",
+          "y": "y"
+        },
+        "title": "Exponential Data: Raw Scale (Non-Linear Pattern)"
+      }
+    },
+    {
+      "id": "precalc-034",
+      "bucket_key": "images/mathematics/ap-precalculus/semi-log-linearized.svg",
+      "category": "statistics",
+      "params": {
+        "type": "semi_log",
+        "points": [
+          { "x": 0, "y": 100 },
+          { "x": 1, "y": 200 },
+          { "x": 2, "y": 400 },
+          { "x": 3, "y": 800 },
+          { "x": 4, "y": 1600 }
+        ],
+        "show_regression": true,
+        "labels": {
+          "x": "x",
+          "y": "y (log scale)"
+        },
+        "title": "Semi-Log Plot: Linearized Exponential Data"
+      }
+    },
+    {
+      "id": "precalc-035",
+      "bucket_key": "images/mathematics/ap-precalculus/periodic-wave-period-labeled.svg",
+      "category": "function_graph",
+      "params": {
+        "functions": [
+          {
+            "expr": "sin(x)",
+            "color": "blue",
+            "label": "y = sin(x)"
+          }
+        ],
+        "x_range": [0, 12.5664],
+        "y_range": [-1.5, 1.5],
+        "points": [],
+        "asymptotes": [],
+        "annotations": [
+          { "text": "period = 2\u03c0", "xy": [3.1416, -1.3] },
+          { "text": "\u2190 2\u03c0 \u2192", "xy": [3.1416, -1.1] },
+          { "text": "\u2190 2\u03c0 \u2192", "xy": [9.4248, -1.1] }
+        ],
+        "title": "Periodic Wave with Period Labeled"
+      }
+    },
+    {
+      "id": "precalc-036",
+      "bucket_key": "images/mathematics/ap-precalculus/unit-circle-special-angles.svg",
+      "category": "concept_diagram",
+      "params": {
+        "type": "unit_circle",
+        "title": "Unit Circle with Special Angles"
+      }
+    },
+    {
+      "id": "precalc-037",
+      "bucket_key": "images/mathematics/ap-precalculus/unit-circle-coordinate-values.svg",
+      "category": "concept_diagram",
+      "params": {
+        "type": "unit_circle",
+        "title": "Unit Circle: Coordinate Values"
+      }
+    },
+    {
+      "id": "precalc-038",
+      "bucket_key": "images/mathematics/ap-precalculus/sine-graph.svg",
+      "category": "function_graph",
+      "params": {
+        "functions": [
+          {
+            "expr": "sin(x)",
+            "color": "blue",
+            "label": "y = sin(x)"
+          }
+        ],
+        "x_range": [-6.2832, 6.2832],
+        "y_range": [-1.5, 1.5],
+        "points": [
+          { "x": 0, "y": 0, "style": "filled" },
+          { "x": 1.5708, "y": 1, "style": "filled" },
+          { "x": 3.1416, "y": 0, "style": "filled" },
+          { "x": 4.7124, "y": -1, "style": "filled" },
+          { "x": 6.2832, "y": 0, "style": "filled" }
+        ],
+        "asymptotes": [],
+        "annotations": [
+          { "text": "(0, 0)", "xy": [0, 0] },
+          { "text": "(\u03c0/2, 1)", "xy": [1.5708, 1] },
+          { "text": "(\u03c0, 0)", "xy": [3.1416, 0] },
+          { "text": "(3\u03c0/2, \u22121)", "xy": [4.7124, -1] },
+          { "text": "(2\u03c0, 0)", "xy": [6.2832, 0] }
+        ],
+        "title": "Sine Function: y = sin(x)"
+      }
+    },
+    {
+      "id": "precalc-039",
+      "bucket_key": "images/mathematics/ap-precalculus/cosine-graph.svg",
+      "category": "function_graph",
+      "params": {
+        "functions": [
+          {
+            "expr": "cos(x)",
+            "color": "blue",
+            "label": "y = cos(x)"
+          }
+        ],
+        "x_range": [-6.2832, 6.2832],
+        "y_range": [-1.5, 1.5],
+        "points": [
+          { "x": 0, "y": 1, "style": "filled" },
+          { "x": 1.5708, "y": 0, "style": "filled" },
+          { "x": 3.1416, "y": -1, "style": "filled" },
+          { "x": 4.7124, "y": 0, "style": "filled" },
+          { "x": 6.2832, "y": 1, "style": "filled" }
+        ],
+        "asymptotes": [],
+        "annotations": [
+          { "text": "(0, 1)", "xy": [0, 1] },
+          { "text": "(\u03c0/2, 0)", "xy": [1.5708, 0] },
+          { "text": "(\u03c0, \u22121)", "xy": [3.1416, -1] },
+          { "text": "(3\u03c0/2, 0)", "xy": [4.7124, 0] },
+          { "text": "(2\u03c0, 1)", "xy": [6.2832, 1] }
+        ],
+        "title": "Cosine Function: y = cos(x)"
+      }
+    },
+    {
+      "id": "precalc-040",
+      "bucket_key": "images/mathematics/ap-precalculus/sinusoidal-general-labeled.svg",
+      "category": "function_graph",
+      "params": {
+        "functions": [
+          {
+            "expr": "3*sin(2*(x - pi/4)) - 2",
+            "color": "blue",
+            "label": "y = 3sin(2(x\u2212\u03c0/4)) \u2212 2"
+          }
+        ],
+        "x_range": [0, 6.2832],
+        "y_range": [-6, 2],
+        "points": [],
+        "asymptotes": [
+          { "type": "horizontal", "value": -2 }
+        ],
+        "annotations": [
+          { "text": "amplitude = 3", "xy": [1.5708, 0.5] },
+          { "text": "midline y = \u22122", "xy": [5, -2] },
+          { "text": "period = \u03c0", "xy": [3.1416, -5.5] }
+        ],
+        "title": "General Sinusoidal: y = 3sin(2(x\u2212\u03c0/4)) \u2212 2"
+      }
+    },
+    {
+      "id": "precalc-041",
+      "bucket_key": "images/mathematics/ap-precalculus/sinusoidal-amplitude-transform.svg",
+      "category": "function_graph",
+      "params": {
+        "functions": [
+          {
+            "expr": "sin(x)",
+            "color": "#999999",
+            "label": "y = sin(x)"
+          },
+          {
+            "expr": "2*sin(x)",
+            "color": "blue",
+            "label": "y = 2sin(x)"
+          }
+        ],
+        "x_range": [0, 6.2832],
+        "y_range": [-2.5, 2.5],
+        "points": [],
+        "asymptotes": [],
+        "annotations": [
+          { "text": "amplitude = 1", "xy": [1.5708, 1] },
+          { "text": "amplitude = 2", "xy": [1.5708, 2] }
+        ],
+        "title": "Sinusoidal Transformation: Amplitude"
+      }
+    },
+    {
+      "id": "precalc-042",
+      "bucket_key": "images/mathematics/ap-precalculus/sinusoidal-period-transform.svg",
+      "category": "function_graph",
+      "params": {
+        "functions": [
+          {
+            "expr": "sin(x)",
+            "color": "#999999",
+            "label": "y = sin(x), period 2\u03c0"
+          },
+          {
+            "expr": "sin(2*x)",
+            "color": "blue",
+            "label": "y = sin(2x), period \u03c0"
+          }
+        ],
+        "x_range": [0, 6.2832],
+        "y_range": [-1.5, 1.5],
+        "points": [],
+        "asymptotes": [],
+        "annotations": [
+          { "text": "period = 2\u03c0", "xy": [5, 0.8] },
+          { "text": "period = \u03c0", "xy": [2.5, -1.2] }
+        ],
+        "title": "Sinusoidal Transformation: Period Change"
+      }
+    },
+    {
+      "id": "precalc-043",
+      "bucket_key": "images/mathematics/ap-precalculus/sinusoidal-data-modeling.svg",
+      "category": "statistics",
+      "params": {
+        "type": "scatter_regression",
+        "points": [
+          { "x": 0, "y": 5 },
+          { "x": 1, "y": 8 },
+          { "x": 2, "y": 10 },
+          { "x": 3, "y": 8 },
+          { "x": 4, "y": 5 },
+          { "x": 5, "y": 2 },
+          { "x": 6, "y": 0 },
+          { "x": 7, "y": 2 },
+          { "x": 8, "y": 5 },
+          { "x": 9, "y": 8 },
+          { "x": 10, "y": 10 },
+          { "x": 11, "y": 8 }
+        ],
+        "regression_line": {
+          "slope": 0.14,
+          "intercept": 4.58
+        },
+        "labels": {
+          "x": "x",
+          "y": "y"
+        },
+        "title": "Sinusoidal Data Modeling: Periodic Scatter"
+      }
+    },
+    {
+      "id": "precalc-044",
+      "bucket_key": "images/mathematics/ap-precalculus/tangent-function.svg",
+      "category": "function_graph",
+      "params": {
+        "functions": [
+          {
+            "expr": "tan(x)",
+            "color": "blue",
+            "label": "y = tan(x)"
+          }
+        ],
+        "x_range": [-4.7124, 4.7124],
+        "y_range": [-8, 8],
+        "points": [],
+        "asymptotes": [
+          { "type": "vertical", "value": -4.7124 },
+          { "type": "vertical", "value": -1.5708 },
+          { "type": "vertical", "value": 1.5708 },
+          { "type": "vertical", "value": 4.7124 }
+        ],
+        "annotations": [
+          { "text": "VA: x = \u2212\u03c0/2", "xy": [-1.5708, 6] },
+          { "text": "VA: x = \u03c0/2", "xy": [1.5708, 6] },
+          { "text": "VA: x = \u22123\u03c0/2", "xy": [-4.7124, 6] },
+          { "text": "VA: x = 3\u03c0/2", "xy": [4.7124, 6] }
+        ],
+        "title": "Tangent Function: y = tan(x)"
+      }
+    },
+    {
+      "id": "precalc-045",
+      "bucket_key": "images/mathematics/ap-precalculus/inverse-trig-arcsin.svg",
+      "category": "function_graph",
+      "params": {
+        "functions": [
+          {
+            "expr": "asin(x)",
+            "color": "blue",
+            "label": "y = arcsin(x)"
+          }
+        ],
+        "x_range": [-1, 1],
+        "y_range": [-1.8, 1.8],
+        "points": [
+          { "x": -1, "y": -1.5708, "style": "filled" },
+          { "x": 0, "y": 0, "style": "filled" },
+          { "x": 1, "y": 1.5708, "style": "filled" }
+        ],
+        "asymptotes": [],
+        "annotations": [
+          { "text": "(\u22121, \u2212\u03c0/2)", "xy": [-1, -1.5708] },
+          { "text": "(0, 0)", "xy": [0, 0] },
+          { "text": "(1, \u03c0/2)", "xy": [1, 1.5708] },
+          { "text": "range: [\u2212\u03c0/2, \u03c0/2]", "xy": [0, 1.3] }
+        ],
+        "title": "Inverse Trigonometric Function: y = arcsin(x)"
+      }
+    },
+    {
+      "id": "precalc-046",
+      "bucket_key": "images/mathematics/ap-precalculus/trig-equation-solutions.svg",
+      "category": "function_graph",
+      "params": {
+        "functions": [
+          {
+            "expr": "sin(x)",
+            "color": "blue",
+            "label": "y = sin(x)"
+          },
+          {
+            "expr": "0.5",
+            "color": "red",
+            "label": "y = 0.5"
+          }
+        ],
+        "x_range": [0, 12.5664],
+        "y_range": [-1.5, 1.5],
+        "points": [
+          { "x": 0.5236, "y": 0.5, "style": "filled" },
+          { "x": 2.6180, "y": 0.5, "style": "filled" },
+          { "x": 6.8068, "y": 0.5, "style": "filled" },
+          { "x": 8.9012, "y": 0.5, "style": "filled" }
+        ],
+        "asymptotes": [],
+        "annotations": [
+          { "text": "\u03c0/6", "xy": [0.5236, 0.5] },
+          { "text": "5\u03c0/6", "xy": [2.6180, 0.5] },
+          { "text": "\u03c0/6 + 2\u03c0", "xy": [6.8068, 0.5] },
+          { "text": "5\u03c0/6 + 2\u03c0", "xy": [8.9012, 0.5] }
+        ],
+        "title": "Trigonometric Equation: sin(x) = 0.5 on [0, 4\u03c0]"
+      }
+    },
+    {
+      "id": "precalc-047",
+      "bucket_key": "images/mathematics/ap-precalculus/cosecant-function.svg",
+      "category": "function_graph",
+      "params": {
+        "functions": [
+          {
+            "expr": "sin(x)",
+            "color": "#999999",
+            "label": "y = sin(x) (reference)"
+          },
+          {
+            "expr": "1/sin(x)",
+            "color": "blue",
+            "label": "y = csc(x)"
+          }
+        ],
+        "x_range": [-6.2832, 6.2832],
+        "y_range": [-6, 6],
+        "points": [],
+        "asymptotes": [
+          { "type": "vertical", "value": -6.2832 },
+          { "type": "vertical", "value": -3.1416 },
+          { "type": "vertical", "value": 0 },
+          { "type": "vertical", "value": 3.1416 },
+          { "type": "vertical", "value": 6.2832 }
+        ],
+        "annotations": [
+          { "text": "VA at multiples of \u03c0", "xy": [3.1416, 4] },
+          { "text": "sin(x) dashed ref", "xy": [-4, 0.7] }
+        ],
+        "title": "Cosecant Function: y = csc(x) = 1/sin(x)"
+      }
+    },
+    {
+      "id": "precalc-048",
+      "bucket_key": "images/mathematics/ap-precalculus/equivalent-trig-identity.svg",
+      "category": "function_graph",
+      "params": {
+        "functions": [
+          {
+            "expr": "sin(2*x)",
+            "color": "blue",
+            "label": "y = sin(2x)"
+          },
+          {
+            "expr": "2*sin(x)*cos(x)",
+            "color": "red",
+            "label": "y = 2sin(x)cos(x)"
+          }
+        ],
+        "x_range": [-6.2832, 6.2832],
+        "y_range": [-1.5, 1.5],
+        "points": [],
+        "asymptotes": [],
+        "annotations": [
+          { "text": "sin(2x) \u2261 2sin(x)cos(x)", "xy": [0, 1.2] },
+          { "text": "curves overlap perfectly", "xy": [3, -1.2] }
+        ],
+        "title": "Equivalent Trigonometric Forms: Double Angle Identity"
+      }
+    },
+    {
+      "id": "precalc-049",
+      "bucket_key": "images/mathematics/ap-precalculus/polar-coordinate-grid.svg",
+      "category": "concept_diagram",
+      "params": {
+        "type": "polar_grid",
+        "r": 3,
+        "theta": 0.7854,
+        "point_label": "(3, \u03c0/4)",
+        "r_max": 4,
+        "title": "Polar Coordinate Grid"
+      }
+    },
+    {
+      "id": "precalc-050",
+      "bucket_key": "images/mathematics/ap-precalculus/polar-cardioid.svg",
+      "category": "parametric_polar",
+      "params": {
+        "type": "polar",
+        "polar": {
+          "r_expr": "1 + cos(theta)",
+          "theta_range": [0, "2*pi"]
+        },
+        "title": "Cardioid: r = 1 + cos(\u03b8)"
+      }
+    },
+    {
+      "id": "precalc-051",
+      "bucket_key": "images/mathematics/ap-precalculus/polar-rose-curve.svg",
+      "category": "parametric_polar",
+      "params": {
+        "type": "polar",
+        "polar": {
+          "r_expr": "3*cos(2*theta)",
+          "theta_range": [0, "2*pi"]
+        },
+        "title": "Rose Curve: r = 3cos(2\u03b8) (4-Petal)"
+      }
+    },
+    {
+      "id": "precalc-052",
+      "bucket_key": "images/mathematics/ap-precalculus/polar-limacon-roc.svg",
+      "category": "parametric_polar",
+      "params": {
+        "type": "polar",
+        "polar": {
+          "r_expr": "3 + 2*cos(theta)",
+          "theta_range": [0, "2*pi"]
+        },
+        "title": "Polar Rate of Change: r = 3 + 2cos(\u03b8) (Lima\u00e7on)"
+      }
+    },
+    {
+      "id": "precalc-053",
+      "bucket_key": "images/mathematics/ap-precalculus/parametric-functions-curve.svg",
+      "category": "parametric_polar",
+      "concept_slug": "parametric-functions",
+      "alt_text": "Parametric curve x = t + 1, y = 3 − t traced with direction arrows showing orientation as t increases",
+      "caption": "Parametric curve x = t + 1, y = 3 − t",
+      "params": {
+        "type": "parametric",
+        "parametric": {
+          "x_expr": "t + 1",
+          "y_expr": "3 - t",
+          "t_range": [0, 4]
+        },
+        "n_arrows": 3,
+        "title": "Parametric Curve: x = t + 1, y = 3 − t (0 ≤ t ≤ 4)"
+      }
+    },
+    {
+      "id": "precalc-054",
+      "bucket_key": "images/mathematics/ap-precalculus/parametric-planar-motion-projectile.svg",
+      "category": "parametric_polar",
+      "concept_slug": "parametric-functions-modeling-planar-motion",
+      "alt_text": "Projectile path as a parametric curve x = 20t, y = 30t − 4.9t² with time labels at t = 1, 2, 3 seconds",
+      "caption": "Projectile path: x = 20t, y = 30t \u2212 4.9t\u00b2",
+      "params": {
+        "type": "parametric",
+        "parametric": {
+          "x_expr": "5*t",
+          "y_expr": "20 - t**2",
+          "t_range": [0, 4]
+        },
+        "n_arrows": 5,
+        "title": "Parametric Planar Motion: Projectile Path"
+      }
+    },
+    {
+      "id": "precalc-055",
+      "bucket_key": "images/mathematics/ap-precalculus/parametric-roc-tangent-vector.svg",
+      "category": "parametric_polar",
+      "concept_slug": "parametric-functions-and-rates-of-change",
+      "alt_text": "Parametric curve x = t², y = t³ − t with a tangent vector highlighted at a specific point showing instantaneous rate of change",
+      "caption": "Parametric curve with tangent vector at a point",
+      "params": {
+        "type": "parametric",
+        "parametric": {
+          "x_expr": "t**2",
+          "y_expr": "3*t + 1",
+          "t_range": [1, 4]
+        },
+        "n_arrows": 5,
+        "title": "Parametric Rate of Change: Tangent Vector"
+      }
+    },
+    {
+      "id": "precalc-056",
+      "bucket_key": "images/mathematics/ap-precalculus/parametric-circle-x3cost-y3sint.svg",
+      "category": "parametric_polar",
+      "concept_slug": "parametrically-defined-circles-and-lines",
+      "alt_text": "Circle traced parametrically with x = 3 cos(t), y = 3 sin(t) showing direction of travel with arrows",
+      "caption": "Parametric circle: x = 3cos(t), y = 3sin(t)",
+      "params": {
+        "type": "parametric",
+        "parametric": {
+          "x_expr": "2 + 3*cos(t)",
+          "y_expr": "-1 + 3*sin(t)",
+          "t_range": [0, "2*pi"]
+        },
+        "n_arrows": 6,
+        "title": "Parametric Circle: x = 2+3cos(t), y = \u22121+3sin(t)"
+      }
+    },
+    {
+      "id": "precalc-057",
+      "bucket_key": "images/mathematics/ap-precalculus/implicit-curve-circle-x2y2-25.svg",
+      "category": "concept_diagram",
+      "concept_slug": "implicitly-defined-functions",
+      "alt_text": "Implicit curve x\u00b2 + y\u00b2 = 25 plotted as a contour of F(x, y) = x\u00b2 + y\u00b2 \u2212 25 = 0, forming a circle of radius 5",
+      "caption": "Implicit curve: x\u00b2 + y\u00b2 = 25",
+      "params": {
+        "type": "implicit_curve",
+        "expression": "x**2 + y**2 - 25",
+        "x_range": [-7, 7],
+        "y_range": [-7, 7],
+        "points": [
+          { "x": 5, "y": 0, "label": "(5, 0)", "style": "filled" },
+          { "x": 0, "y": 5, "label": "(0, 5)", "style": "filled" }
+        ],
+        "title": "Implicitly Defined Function: x\u00b2 + y\u00b2 = 25"
+      }
+    },
+    {
+      "id": "precalc-058",
+      "bucket_key": "images/mathematics/ap-precalculus/conic-section-ellipse-foci.svg",
+      "category": "concept_diagram",
+      "concept_slug": "conic-sections",
+      "alt_text": "Ellipse with semi-major axis a = 4, semi-minor axis b = 2, with foci and major/minor axes labeled",
+      "caption": "Ellipse with foci and axes labeled",
+      "params": {
+        "type": "conic_section",
+        "conic_type": "ellipse",
+        "a": 4,
+        "b": 2,
+        "h": 0,
+        "k": 0,
+        "title": "Conic Section: Ellipse with Foci and Axes"
+      }
+    },
+    {
+      "id": "precalc-059",
+      "bucket_key": "images/mathematics/ap-precalculus/conic-section-hyperbola-asymptotes.svg",
+      "category": "concept_diagram",
+      "concept_slug": "conic-sections",
+      "alt_text": "Hyperbola with a = 2, b = 1.5, opening horizontally, with foci and asymptote lines shown as dashed",
+      "caption": "Hyperbola with foci and asymptotes",
+      "params": {
+        "type": "conic_section",
+        "conic_type": "hyperbola",
+        "a": 2,
+        "b": 1.5,
+        "h": 0,
+        "k": 0,
+        "orientation": "horizontal",
+        "title": "Conic Section: Hyperbola with Asymptotes"
+      }
+    },
+    {
+      "id": "precalc-060",
+      "bucket_key": "images/mathematics/ap-precalculus/parametrization-implicit-ellipse.svg",
+      "category": "parametric_polar",
+      "concept_slug": "parametrization-of-implicitly-defined-functions",
+      "alt_text": "Ellipse parametrized as x = 4cos(t), y = 2sin(t), showing directed motion along the ellipse with arrows",
+      "caption": "Parametrization of ellipse: x = 4cos(t), y = 2sin(t)",
+      "params": {
+        "type": "parametric",
+        "parametric": {
+          "x_expr": "4*cos(t)",
+          "y_expr": "2*sin(t)",
+          "t_range": [0, "2*pi"]
+        },
+        "n_arrows": 6,
+        "title": "Parametrization of Implicit Curve: Ellipse"
+      }
+    },
+    {
+      "id": "precalc-061",
+      "bucket_key": "images/mathematics/ap-precalculus/vector-components-decomposition.svg",
+      "category": "mechanics",
+      "concept_slug": "vectors",
+      "alt_text": "Vector of magnitude 5 at 53 degrees above horizontal, decomposed into horizontal component v_x = 3 and vertical component v_y = 4",
+      "caption": "Vector decomposition into x and y components",
+      "params": {
+        "type": "vector_diagram",
+        "style": "components",
+        "vectors": [
+          { "magnitude": 5, "angle_deg": 53, "label": "v", "color": "#2563EB" }
+        ],
+        "origin": [0, 0],
+        "title": "Vector Components: v = \u27e83, 4\u27e9"
+      }
+    },
+    {
+      "id": "precalc-062",
+      "bucket_key": "images/mathematics/ap-precalculus/vector-addition-head-to-tail.svg",
+      "category": "mechanics",
+      "concept_slug": "vectors",
+      "alt_text": "Head-to-tail vector addition showing vectors A and B added to produce resultant vector R",
+      "caption": "Vector addition: A + B = R (head-to-tail method)",
+      "params": {
+        "type": "vector_diagram",
+        "style": "addition",
+        "vectors": [
+          { "magnitude": 3, "angle_deg": 0, "label": "A", "color": "#2563EB" },
+          { "magnitude": 2, "angle_deg": 90, "label": "B", "color": "#16A34A" }
+        ],
+        "origin": [0, 0],
+        "resultant_label": "R = A + B",
+        "title": "Vector Addition: Head-to-Tail"
+      }
+    },
+    {
+      "id": "precalc-063",
+      "bucket_key": "images/mathematics/ap-precalculus/vector-valued-function-trace.svg",
+      "category": "parametric_polar",
+      "concept_slug": "vector-valued-functions",
+      "alt_text": "Curve traced by vector-valued function r(t) = (cos(t), sin(t)/2) with position vectors drawn from origin to points on the curve",
+      "caption": "Vector-valued function r(t) tracing a path in the plane",
+      "params": {
+        "type": "parametric",
+        "parametric": {
+          "x_expr": "2*cos(t)",
+          "y_expr": "2*sin(t)",
+          "t_range": [0, "2*pi"]
+        },
+        "n_arrows": 5,
+        "title": "Vector-Valued Function: r(t) Trace"
+      }
+    },
+    {
+      "id": "precalc-064",
+      "bucket_key": "images/mathematics/ap-precalculus/matrix-inverse-determinant-transform.svg",
+      "category": "concept_diagram",
+      "concept_slug": "inverse-and-determinant-of-a-matrix",
+      "alt_text": "Unit square transformed by matrix [[2, 1], [0, 3]] into a parallelogram, with determinant = 6 shown as the area scale factor",
+      "caption": "Matrix transformation: unit square \u2192 parallelogram, det = 6",
+      "params": {
+        "type": "matrix_transform",
+        "matrix": [[2, 1], [0, 3]],
+        "vertex_labels": ["O", "A\u2019", "B\u2019", "C\u2019"],
+        "title": "Inverse and Determinant: Area Scale Factor"
+      }
+    },
+    {
+      "id": "precalc-065",
+      "bucket_key": "images/mathematics/ap-precalculus/linear-transformation-rotation.svg",
+      "category": "concept_diagram",
+      "concept_slug": "linear-transformations-and-matrices",
+      "alt_text": "Unit square before and after 90-degree rotation transformation by matrix [[0, -1], [1, 0]]",
+      "caption": "Linear transformation: 90\u00b0 rotation matrix",
+      "params": {
+        "type": "matrix_transform",
+        "matrix": [[0, -1], [1, 0]],
+        "vertex_labels": ["O", "A\u2019", "B\u2019", "C\u2019"],
+        "title": "Linear Transformation: 90\u00b0 Rotation"
+      }
+    },
+    {
+      "id": "precalc-066",
+      "bucket_key": "images/mathematics/ap-precalculus/linear-transformation-reflection.svg",
+      "category": "concept_diagram",
+      "concept_slug": "linear-transformations-and-matrices",
+      "alt_text": "Unit square before and after reflection across the x-axis by matrix [[1, 0], [0, -1]]",
+      "caption": "Linear transformation: reflection across the x-axis",
+      "params": {
+        "type": "matrix_transform",
+        "matrix": [[1, 0], [0, -1]],
+        "vertex_labels": ["O", "A\u2019", "B\u2019", "C\u2019"],
+        "title": "Linear Transformation: Reflection Across x-Axis"
+      }
+    },
+    {
+      "id": "precalc-067",
+      "bucket_key": "images/mathematics/ap-precalculus/matrices-as-functions-input-output.svg",
+      "category": "concept_diagram",
+      "concept_slug": "matrices-as-functions",
+      "alt_text": "Box-and-arrow diagram showing a vector input x mapped through matrix M to produce output M\u00b7x, illustrating matrices as linear functions",
+      "caption": "Matrix as a function: input vector \u2192 M \u2192 output vector",
+      "params": {
+        "type": "composition_flow",
+        "boxes": [
+          { "label": "x\u20d7 (input)", "x": 0.5 },
+          { "label": "M (matrix)", "x": 3.5 },
+          { "label": "Mx\u20d7 (output)", "x": 7.0 }
+        ],
+        "arrow_labels": ["multiply by M", "linear map"],
+        "title": "Matrix as a Function: Input \u2192 Transform \u2192 Output"
+      }
+    },
+    {
+      "id": "precalc-068",
+      "bucket_key": "images/mathematics/ap-precalculus/matrices-modeling-transition.svg",
+      "category": "concept_diagram",
+      "concept_slug": "matrices-modeling-contexts",
+      "alt_text": "Box-and-arrow transition diagram showing state vector at time n mapped through transition matrix T to state at time n+1, modeling a real-world context",
+      "caption": "Transition matrix: state\u2081 \u2192 T \u2192 state\u2082",
+      "params": {
+        "type": "composition_flow",
+        "boxes": [
+          { "label": "State n", "x": 0.5 },
+          { "label": "T (transition)", "x": 3.5 },
+          { "label": "State n+1", "x": 7.0 }
+        ],
+        "arrow_labels": ["apply T", "next state"],
+        "title": "Matrices Modeling Contexts: Transition Diagram"
+      }
+    }
+  ]
+}
