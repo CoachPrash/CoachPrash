@@ -17,11 +17,13 @@
           "display_order": 0,
           "problem_sets": [
             {
+              "id": "7dfcb196-18f3-492e-bda7-d2e8e45ad781",
               "title": "Practice: Linear Equations and Inequalities",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "d41b2e66-99b3-4ce2-9562-546aae911484",
                   "question_html": "<p>A gym charges a one-time registration fee of $25 plus $40 per month. If Marcus has budgeted $345 for gym expenses, which equation can be used to find the maximum number of months, \\(m\\), he can afford?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -71,6 +73,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "009a649f-8114-4e70-b000-5c795547fd09",
                   "question_html": "<p>If \\(3(2x - 5) = 4x + 7\\), what is the value of \\(x\\)?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -120,6 +123,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "0a2c1ff6-3179-44ea-9c54-4c6f06a527dd",
                   "question_html": "<p>Which of the following values of \\(x\\) satisfies the inequality \\(-3x + 7 > 19\\)?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -169,6 +173,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "72e85f41-97d7-47c3-a08d-2182955c18fe",
                   "question_html": "<p>If \\(|2x - 5| = 11\\), what is the sum of all possible values of \\(x\\)?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -218,6 +223,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "7a6cc8d5-0577-4348-b15f-9659773cec3d",
                   "question_html": "<p>For what value of \\(a\\) does the equation \\(a(x + 3) = 4x + 12\\) have infinitely many solutions?</p>",
                   "problem_type": "mcq",
                   "difficulty": "hard",
@@ -267,6 +273,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "92f32939-cfc5-4071-a7b9-ef444d119da7",
                   "question_html": "<p>A phone plan charges $0.10 per text message and $0.05 per minute of talk time. Last month, Priya sent 3 times as many text messages as minutes she talked. If her total bill was $17.50, how many text messages did she send?</p>",
                   "problem_type": "mcq",
                   "difficulty": "hard",
@@ -332,11 +339,13 @@
           "display_order": 1,
           "problem_sets": [
             {
+              "id": "8b325e03-2a38-436f-aa80-7fcbdb4b5da9",
               "title": "Practice: Systems of Linear Equations",
               "access_tier": "premium",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "fd9030b8-573a-4761-9b3f-ba03ad31a157",
                   "question_html": "<p>If \\(x + y = 10\\) and \\(3x - y = 14\\), what is the value of \\(x\\)?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -386,6 +395,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "41159889-78f4-4ed7-846a-54aee22e56fd",
                   "question_html": "<p>A coffee shop sells lattes for $5 and cappuccinos for $4. On Monday, the shop sold a total of 80 drinks and earned $350. How many lattes were sold?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -438,6 +448,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "f631b6af-7756-4846-84c7-907c473a4714",
                   "question_html": "<p>If \\(2x + 3y = 12\\) and \\(4x - 3y = 6\\), what is the value of \\(x + y\\)?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -487,6 +498,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "ead34a0a-a9e3-4117-a717-02ed5a93f9ed",
                   "question_html": "<p>Tickets to a school play cost $8 for adults and $5 for students. A total of 200 tickets were sold, and the revenue was $1,180. How many student tickets were sold?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -536,6 +548,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "5dceb42a-5f5f-4201-bc14-cfd753385fcb",
                   "question_html": "<p>At a farmers' market, Elena buys 3 pounds of apples and 2 pounds of oranges for $11.50. Raj buys 1 pound of apples and 4 pounds of oranges for $10.50. What is the price per pound of apples?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -588,6 +601,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "bf15ec85-0ad4-416a-a005-94ab5723c8ab",
                   "question_html": "<p>For what value of \\(k\\) does the following system have no solution?</p><p>\\[3x + 6y = 12\\]</p><p>\\[kx + 2y = 5\\]</p>",
                   "problem_type": "mcq",
                   "difficulty": "hard",
@@ -637,6 +651,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "56745344-3bc5-40d3-a812-ca13ea92eba2",
                   "question_html": "<p>The system of equations below has infinitely many solutions. What is the value of \\(b\\)?</p><p>\\[4x - 2y = 10\\]</p><p>\\[-6x + 3y = b\\]</p>",
                   "problem_type": "mcq",
                   "difficulty": "hard",
@@ -686,6 +701,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "9740a4fd-6581-4d71-943a-74c4679da8bf",
                   "question_html": "<p>If \\(x - 2y = 5\\) and \\(3x + 2y = 19\\), what is the value of \\(2x - y\\)?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "11.5",
@@ -729,11 +745,13 @@
           "display_order": 2,
           "problem_sets": [
             {
+              "id": "1dd967c9-5fb5-4860-9193-0df1f75c87e0",
               "title": "Practice: Linear Functions and Graphs",
               "access_tier": "premium",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "8690c264-054e-4e60-95e6-0bbdb43bae84",
                   "question_html": "<p>A plumber charges a flat service fee of $75 plus $50 per hour of labor. Which function \\(C(h)\\) represents the total cost for \\(h\\) hours of labor?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -780,6 +798,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "fc2046dd-5026-4987-9bd3-e62ea78c518f",
                   "question_html": "<p>A scatterplot shows a linear trend. The line of best fit passes through approximately \\((10, 40)\\) and \\((30, 120)\\). Based on this line, what is the predicted value of \\(y\\) when \\(x = 20\\)?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -826,6 +845,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "8bb53d22-a22f-4029-b631-914009db8d12",
                   "question_html": "<p>The equation \\(y = -2x + 100\\) models the number of pages remaining in a book after \\(x\\) minutes of reading. What does the slope \\(-2\\) represent in this context?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -872,6 +892,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "66c12b31-4772-4d76-87da-140788d61c2e",
                   "question_html": "<p>Line \\(\\ell\\) passes through the points \\((2, 5)\\) and \\((6, 13)\\). Which of the following is the equation of a line parallel to \\(\\ell\\)?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -918,6 +939,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "706d743e-be07-4cc7-9060-22779c822761",
                   "question_html": "<p>The table below shows the relationship between hours worked and total earnings:</p><table><thead><tr><th>Hours (\\(h\\))</th><th>Earnings ($)</th></tr></thead><tbody><tr><td>0</td><td>20</td></tr><tr><td>3</td><td>56</td></tr><tr><td>5</td><td>80</td></tr><tr><td>8</td><td>116</td></tr></tbody></table><p>What does the value 20 represent in this relationship?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -964,6 +986,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "b1467352-e051-4d39-b430-ac77a706b3b7",
                   "question_html": "<p>Line \\(p\\) has the equation \\(y = 3x - 7\\). Line \\(q\\) is perpendicular to line \\(p\\) and passes through the point \\((6, 1)\\). What is the y-intercept of line \\(q\\)?</p>",
                   "problem_type": "mcq",
                   "difficulty": "hard",

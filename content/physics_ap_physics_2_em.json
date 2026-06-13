@@ -27,11 +27,13 @@
           "display_order": 0,
           "problem_sets": [
             {
+              "id": "6a8e66a1-fdf8-4e16-a589-758d8f2197da",
               "title": "Practice: Kinetic Theory of Temperature and Pressure",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "53788b27-7c15-4c08-8ea2-19010605a905",
                   "question_html": "<p>According to kinetic theory, the temperature of an ideal gas is directly proportional to which of the following?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -76,6 +78,7 @@
                   "display_order": 0
                 },
                 {
+                  "id": "aed8327a-7edb-4797-9dac-0816a2fccdc5",
                   "question_html": "<p>Two containers hold the same ideal gas at the same temperature. Container A has twice the volume of Container B but the same number of molecules. Which container has the higher pressure?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -123,6 +126,7 @@
                   "display_order": 1
                 },
                 {
+                  "id": "88e71e1d-dd88-47d3-be95-d8716dbaf9d9",
                   "question_html": "<p>The temperature of an ideal gas is increased from 200 K to 400 K. By what factor does the average translational kinetic energy of the molecules change?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "2",
@@ -150,6 +154,7 @@
                   "display_order": 2
                 },
                 {
+                  "id": "ca1fe276-b560-4777-aaca-741d6cc1b3f5",
                   "question_html": "<p>At 300 K, what is the average translational kinetic energy of a single gas molecule? Use \\( k_B = 1.38 \\times 10^{-23} \\) J/K. Give your answer in units of \\( 10^{-21} \\) J, rounded to two decimal places.</p>",
                   "problem_type": "ftb",
                   "correct_answer": "6.21",
@@ -179,11 +184,13 @@
               ]
             },
             {
+              "id": "d0e800d1-e4d8-46ae-87f3-8bc6efc35b4f",
               "title": "Premium: Kinetic Theory of Temperature and Pressure",
               "access_tier": "premium",
               "display_order": 1,
               "problems": [
                 {
+                  "id": "6dea4171-d7c5-4c99-bf89-89dd62933315",
                   "question_html": "<p>Oxygen (\\( O_2 \\), molar mass 32 g/mol) and hydrogen (\\( H_2 \\), molar mass 2 g/mol) are at the same temperature. What is the ratio \\( v_{\\text{rms, H}_2} / v_{\\text{rms, O}_2} \\)?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -231,6 +238,7 @@
                   "display_order": 0
                 },
                 {
+                  "id": "2c179a13-580e-4918-af0c-6fe12a493ed0",
                   "question_html": "<p>A gas at 27°C has an rms speed of 500 m/s. If the temperature is raised to 927°C, what is the new rms speed in m/s?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "1000",
@@ -280,11 +288,13 @@
           "display_order": 1,
           "problem_sets": [
             {
+              "id": "06c0682a-6471-441f-8dc1-465d2d8c941a",
               "title": "Practice: The Ideal Gas Law",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "56185044-1627-4100-aa0e-c31e52d70845",
                   "question_html": "<p>A fixed amount of ideal gas is in a sealed container. If the temperature is doubled while the volume remains constant, what happens to the pressure?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -329,6 +339,7 @@
                   "display_order": 0
                 },
                 {
+                  "id": "38f80e65-7fc5-443b-8813-69e3731a8be5",
                   "question_html": "<p>An ideal gas at 2.0 atm occupies 4.0 L. If the gas is compressed isothermally to 1.0 L, what is the new pressure in atm?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -373,6 +384,7 @@
                   "display_order": 1
                 },
                 {
+                  "id": "af79f8cd-bae2-48ff-ac25-2fd319d3558b",
                   "question_html": "<p>A gas occupies 3.0 L at 300 K. If the pressure is kept constant and the temperature is raised to 600 K, what is the new volume in liters?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "6",
@@ -400,6 +412,7 @@
                   "display_order": 2
                 },
                 {
+                  "id": "de9420c8-36f9-4dfc-bac6-1bc8c3b26e5f",
                   "question_html": "<p>How many moles of an ideal gas are contained in a 0.020 m\\(^3\\) container at 1.013 \\(\\times 10^5\\) Pa and 400 K? Use \\( R = 8.314 \\) J/(mol·K). Round to two decimal places.</p>",
                   "problem_type": "ftb",
                   "correct_answer": "0.61",
@@ -429,11 +442,13 @@
               ]
             },
             {
+              "id": "8a3a7a6b-7cc7-4f41-b6ea-e0879ea4b6d2",
               "title": "Premium: The Ideal Gas Law",
               "access_tier": "premium",
               "display_order": 1,
               "problems": [
                 {
+                  "id": "6f087b4a-3ceb-452e-9b24-cf70ffb31ef1",
                   "question_html": "<p>A sealed rigid container holds an ideal gas at 1.5 atm and 27°C. The gas is heated until the pressure reaches 3.0 atm. What is the final temperature in °C?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -481,6 +496,7 @@
                   "display_order": 0
                 },
                 {
+                  "id": "c6c2b7f0-040a-4d51-9747-83ae279ca6e1",
                   "question_html": "<p>A weather balloon with a volume of 1.0 m\\(^3\\) is released at sea level (\\( P = 1.0 \\times 10^5 \\) Pa, \\( T = 300 \\) K). At a certain altitude the pressure is \\( 5.0 \\times 10^4 \\) Pa and the temperature is 250 K. What is the volume of the balloon at that altitude, in m\\(^3\\)? Round to one decimal place.</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -525,6 +541,7 @@
                   "display_order": 1
                 },
                 {
+                  "id": "e5f08a96-765c-4552-b5d3-8372305cf12b",
                   "question_html": "<p>An ideal gas in a cylinder with a movable piston undergoes an isobaric expansion. The initial volume is 2.0 L at 350 K. If the volume increases to 5.0 L, what is the final temperature in K?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "875",
@@ -552,6 +569,7 @@
                   "display_order": 2
                 },
                 {
+                  "id": "7b28f5c9-db5a-425b-8b42-72c1e0db081e",
                   "question_html": "<p>A rigid container holds 2.0 mol of an ideal gas at 400 K. The gas exerts a pressure of \\( 3.0 \\times 10^5 \\) Pa. Determine the volume of the container in m\\(^3\\). Use \\( R = 8.314 \\) J/(mol·K). Express your answer and explain how the ideal gas law applies.</p>",
                   "problem_type": "frq",
                   "difficulty": "medium",
@@ -612,11 +630,13 @@
           "display_order": 2,
           "problem_sets": [
             {
+              "id": "6a66e925-b7bf-498f-87c1-6864e22f664c",
               "title": "Practice: Thermal Energy Transfer and Equilibrium",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "1b8d0922-5b02-4ee5-84bf-50ec6563582f",
                   "question_html": "<p>Which method of heat transfer can occur through a vacuum?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -661,6 +681,7 @@
                   "display_order": 0
                 },
                 {
+                  "id": "4358ea0f-3d1a-4add-af7c-7b925ac74899",
                   "question_html": "<p>Object A at 80°C is placed in contact with Object B at 20°C. They are isolated from everything else. After a long time, what are their temperatures?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -705,6 +726,7 @@
                   "display_order": 1
                 },
                 {
+                  "id": "5a578f89-9e33-4384-bbb5-87900e9f87bf",
                   "question_html": "<p>According to the zeroth law of thermodynamics, if object A is in thermal equilibrium with object C, and object B is also in thermal equilibrium with object C, what can be said about A and B?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "thermal equilibrium",
@@ -732,6 +754,7 @@
                   "display_order": 2
                 },
                 {
+                  "id": "93f6d0f1-b57f-4a79-81cf-d56fa8d4be18",
                   "question_html": "<p>Warm air rising from a heater and cool air sinking near a window is an example of what type of heat transfer?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "convection",
@@ -758,11 +781,13 @@
               ]
             },
             {
+              "id": "2111545f-c426-4924-adf1-c9e7c7f0cbfb",
               "title": "Premium: Thermal Energy Transfer and Equilibrium",
               "access_tier": "premium",
               "display_order": 1,
               "problems": [
                 {
+                  "id": "4f41e765-c37b-483c-b7d4-a16d0a0beccc",
                   "question_html": "<p>A 200 g aluminum block at 100°C is placed in 500 g of water at 20°C. The specific heat of aluminum is 900 J/(kg·°C) and water is 4186 J/(kg·°C). Which statement is true at thermal equilibrium?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -810,6 +835,7 @@
                   "display_order": 0
                 },
                 {
+                  "id": "ad4f5a61-80d0-411b-9630-0a0c4881d8c7",
                   "question_html": "<p>A 0.50 kg copper block (\\( c = 385 \\) J/(kg·°C)) at 90°C is placed in 1.0 kg of water (\\( c = 4186 \\) J/(kg·°C)) at 10°C. What is the equilibrium temperature in °C? Round to the nearest whole number.</p>",
                   "problem_type": "ftb",
                   "correct_answer": "14",
@@ -864,11 +890,13 @@
           "display_order": 3,
           "problem_sets": [
             {
+              "id": "cfae654d-56c3-43cf-9dce-271f6b6665ac",
               "title": "Practice: The First Law of Thermodynamics",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "1d74ec5b-38ac-41fe-afbb-bc4025221bbd",
                   "question_html": "<p>In an isochoric process, 500 J of heat is added to a gas. How much work is done by the gas?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -913,6 +941,7 @@
                   "display_order": 0
                 },
                 {
+                  "id": "8930362a-3d11-4877-9126-ab0983f9a814",
                   "question_html": "<p>An ideal gas undergoes an isothermal expansion. Which of the following is true?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -957,6 +986,7 @@
                   "display_order": 1
                 },
                 {
+                  "id": "e1f95986-3eb4-4568-bd7b-07c1f15e5c43",
                   "question_html": "<p>A gas at constant pressure \\( P = 1.5 \\times 10^5 \\) Pa expands from 0.020 m\\(^3\\) to 0.050 m\\(^3\\). How much work (in joules) does the gas do?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "4500",
@@ -984,6 +1014,7 @@
                   "display_order": 2
                 },
                 {
+                  "id": "3bd4373f-32e3-4fbb-92ca-6cd0a98a3243",
                   "question_html": "<p>An adiabatic compression is performed on a gas, doing 300 J of work on the gas. What is the change in internal energy of the gas, in joules?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "300",
@@ -1013,11 +1044,13 @@
               ]
             },
             {
+              "id": "dbadb65c-49d8-4eb1-a7d5-d5157c88a6c7",
               "title": "Premium: The First Law of Thermodynamics",
               "access_tier": "premium",
               "display_order": 1,
               "problems": [
                 {
+                  "id": "1983bf74-7f2b-4a05-baf7-c7d51e2d6d26",
                   "question_html": "<p>An ideal gas is compressed adiabatically. Which of the following must be true?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -1065,6 +1098,7 @@
                   "display_order": 0
                 },
                 {
+                  "id": "83992dbf-d297-4c77-9ff7-7e77935dcf55",
                   "question_html": "<p>A monatomic ideal gas undergoes a process where 600 J of heat is removed and 200 J of work is done on the gas. What is the change in temperature if the gas contains 0.50 mol? Use \\( R = 8.314 \\) J/(mol·K).</p>",
                   "problem_type": "mcq",
                   "difficulty": "hard",
@@ -1112,6 +1146,7 @@
                   "display_order": 1
                 },
                 {
+                  "id": "04df8663-80fa-4388-bb99-b619a43baeaa",
                   "question_html": "<p>On a PV diagram, a gas goes from state A (\\( P = 3.0 \\times 10^5 \\) Pa, \\( V = 0.010 \\) m\\(^3\\)) to state B (\\( P = 1.0 \\times 10^5 \\) Pa, \\( V = 0.030 \\) m\\(^3\\)) along a straight line. How much work does the gas do, in joules?</p>",
                   "problem_type": "mcq",
                   "difficulty": "hard",
@@ -1159,6 +1194,7 @@
                   "display_order": 2
                 },
                 {
+                  "id": "c8238347-670e-4cfe-8a51-5f655d92be07",
                   "question_html": "<p>A gas undergoes a cyclic process on a PV diagram, returning to its initial state. The cycle encloses an area of 1500 J. During the cycle, 4000 J of heat is absorbed by the gas. How much heat is rejected by the gas during the cycle? Express your answer in joules.</p>",
                   "problem_type": "ftb",
                   "correct_answer": "2500",
@@ -1189,6 +1225,7 @@
                   "display_order": 3
                 },
                 {
+                  "id": "4397d95d-f187-4540-a389-380eec6a83c1",
                   "question_html": "<p>A monatomic ideal gas undergoes the following two-step process: (1) isochoric heating from state A (\\( P_A = 1.0 \\times 10^5 \\) Pa, \\( V_A = 0.020 \\) m\\(^3\\)) to state B (\\( P_B = 3.0 \\times 10^5 \\) Pa), then (2) isobaric expansion from state B to state C (\\( V_C = 0.060 \\) m\\(^3\\)). Determine the total work done by the gas and the total change in internal energy. Explain each step.</p>",
                   "problem_type": "frq",
                   "difficulty": "hard",
@@ -1250,11 +1287,13 @@
           "display_order": 4,
           "problem_sets": [
             {
+              "id": "49d425f1-c8c2-4036-96af-8ed8e78fd4fb",
               "title": "Practice: Specific Heat and Thermal Conductivity",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "d1938266-7e8c-4dfd-84c7-d9a2f6ed4e61",
                   "question_html": "<p>Two blocks of equal mass, one made of copper (\\( c = 385 \\) J/(kg·K)) and one of aluminum (\\( c = 900 \\) J/(kg·K)), both start at 100°C and are placed on identical ice blocks. Which melts more ice?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -1299,6 +1338,7 @@
                   "display_order": 0
                 },
                 {
+                  "id": "de8679f6-f178-4c00-84d4-033c8b71d133",
                   "question_html": "<p>A 0.30 kg iron block (\\( c = 450 \\) J/(kg·K)) at 200°C is dropped into 0.50 kg of water at 25°C. Assuming no heat loss, what is the equilibrium temperature in °C? Round to the nearest whole number.</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -1346,6 +1386,7 @@
                   "display_order": 1
                 },
                 {
+                  "id": "da241115-6840-4dd3-b8fa-3197a9caa0df",
                   "question_html": "<p>How much heat (in joules) is needed to raise the temperature of 2.0 kg of water from 20°C to 80°C? Use \\( c = 4186 \\) J/(kg·K).</p>",
                   "problem_type": "ftb",
                   "correct_answer": "502320",
@@ -1370,6 +1411,7 @@
                   "display_order": 2
                 },
                 {
+                  "id": "c58800c8-a453-45fa-8d50-42072a537f65",
                   "question_html": "<p>A glass window has thermal conductivity \\( k = 0.80 \\) W/(m·K), area \\( A = 2.0 \\) m\\(^2\\), and thickness \\( L = 0.005 \\) m. If the inside surface is at 20°C and the outside at 0°C, what is the rate of heat loss through the window in watts?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "6400",
@@ -1399,11 +1441,13 @@
               ]
             },
             {
+              "id": "af239dcc-970b-42a8-9965-038f6c8b9c85",
               "title": "Premium: Specific Heat and Thermal Conductivity",
               "access_tier": "premium",
               "display_order": 1,
               "problems": [
                 {
+                  "id": "6cce5ed2-839b-4f36-bf7c-db5afada42b5",
                   "question_html": "<p>A 0.10 kg piece of unknown metal at 200°C is placed in 0.40 kg of water at 20°C. The equilibrium temperature is 23°C. What is the specific heat of the metal in J/(kg·K)? Round to the nearest whole number.</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -1451,6 +1495,7 @@
                   "display_order": 0
                 },
                 {
+                  "id": "adcee761-f8e6-4082-b873-8437f810a898",
                   "question_html": "<p>Two rods of the same length and cross-section are made of different materials. Rod A has \\( k_A = 400 \\) W/(m·K) and Rod B has \\( k_B = 50 \\) W/(m·K). If both have the same temperature difference across their ends, what is the ratio of heat flow rate through A to that through B?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -1495,6 +1540,7 @@
                   "display_order": 1
                 },
                 {
+                  "id": "69edb905-d58c-4170-b69c-0a7930b71a77",
                   "question_html": "<p>A styrofoam cooler wall has \\( k = 0.033 \\) W/(m·K), area 0.50 m\\(^2\\), and thickness 0.03 m. The inside is at 5°C and outside is at 35°C. How much heat leaks into the cooler in 1 hour, in joules?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "59400",
@@ -1522,6 +1568,7 @@
                   "display_order": 2
                 },
                 {
+                  "id": "6173dc72-cfdb-4182-b10d-aa1b9b27fa76",
                   "question_html": "<p>A student performs a calorimetry experiment. She places a 150 g metal sample heated to 95°C into 300 g of water at 22°C in an insulated cup. The final temperature is 25°C. Determine the specific heat of the metal, identify a possible metal, and explain one source of error that could affect the result.</p>",
                   "problem_type": "frq",
                   "difficulty": "medium",
@@ -1584,11 +1631,13 @@
           "display_order": 5,
           "problem_sets": [
             {
+              "id": "280e5a48-5a6f-4e4a-8296-3fc0a6b50c4e",
               "title": "Practice: Entropy and the Second Law",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "c4241e67-f97f-4087-88cd-1f326a599dee",
                   "question_html": "<p>Which of the following statements is consistent with the second law of thermodynamics?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -1633,6 +1682,7 @@
                   "display_order": 0
                 },
                 {
+                  "id": "74a8a402-2b8a-43c5-a335-67916cc562f8",
                   "question_html": "<p>A heat engine absorbs 1000 J from a hot reservoir and exhausts 600 J to a cold reservoir. What is the efficiency of the engine?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -1677,6 +1727,7 @@
                   "display_order": 1
                 },
                 {
+                  "id": "591efde3-23bc-4f48-bf79-8b97c735586c",
                   "question_html": "<p>500 J of heat is added to a system at a constant temperature of 250 K. What is the change in entropy of the system, in J/K?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "2",
@@ -1701,6 +1752,7 @@
                   "display_order": 2
                 },
                 {
+                  "id": "8c5d877f-d1f1-413e-8c14-413cfd0ef648",
                   "question_html": "<p>What is the maximum theoretical efficiency (in percent) of a heat engine operating between a hot reservoir at 600 K and a cold reservoir at 300 K?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "50",
@@ -1730,11 +1782,13 @@
               ]
             },
             {
+              "id": "a63daab4-d235-4278-9190-daebb21dcb16",
               "title": "Premium: Entropy and the Second Law",
               "access_tier": "premium",
               "display_order": 1,
               "problems": [
                 {
+                  "id": "6d138994-678f-454b-b734-238831261044",
                   "question_html": "<p>A heat engine operates between a hot reservoir at 800 K and a cold reservoir at 200 K. If the engine absorbs 2000 J per cycle, what is the maximum work it can produce per cycle?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -1779,6 +1833,7 @@
                   "display_order": 0
                 },
                 {
+                  "id": "c6abf940-bc3b-45ae-ac8a-5a2d4045028b",
                   "question_html": "<p>1000 J of heat flows from a reservoir at 500 K to a reservoir at 250 K. What is the total entropy change of the two-reservoir system, in J/K?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -1826,6 +1881,7 @@
                   "display_order": 1
                 },
                 {
+                  "id": "c881322f-15e0-4cf4-a601-acadf0e67264",
                   "question_html": "<p>A power plant operates at 35% efficiency and produces 500 MW of electrical power. How much heat (in MW) must be rejected to the cold reservoir per second?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "929",
@@ -1853,6 +1909,7 @@
                   "display_order": 2
                 },
                 {
+                  "id": "f84b7b29-41a1-4614-832c-0ee9c0aacb6e",
                   "question_html": "<p>A Carnot engine operates between 700 K and 350 K and does 500 J of work per cycle. Determine (a) the efficiency, (b) the heat absorbed from the hot reservoir, and (c) the heat rejected to the cold reservoir. Show your reasoning for each part.</p>",
                   "problem_type": "frq",
                   "difficulty": "medium",
@@ -1919,11 +1976,13 @@
           "display_order": 0,
           "problem_sets": [
             {
+              "id": "02d20465-2766-4dbb-b797-7fb3bc5b5c2b",
               "title": "Practice: Electric Charge and Electric Force",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "0159b384-454b-4d89-be30-6e7390849a65",
                   "question_html": "<p>Two point charges of \\( +3 \\) μC and \\( -3 \\) μC are separated by 0.10 m. Is the force between them attractive or repulsive, and what is its magnitude? (Use \\( k = 9.0 \\times 10^9 \\) N·m²/C².)</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -1968,6 +2027,7 @@
                   "display_order": 0
                 },
                 {
+                  "id": "5cf12066-b8ae-4cf8-bb65-856a655779f7",
                   "question_html": "<p>If the distance between two point charges is tripled, by what factor does the electric force between them change?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -2012,6 +2072,7 @@
                   "display_order": 1
                 },
                 {
+                  "id": "497a6fa0-7c36-4cfa-ba1f-ecbdbf55b3bb",
                   "question_html": "<p>Two identical positive charges of 4.0 μC are separated by 0.20 m. What is the magnitude of the electric force between them, in newtons? Use \\( k = 9.0 \\times 10^9 \\) N·m²/C².</p>",
                   "problem_type": "ftb",
                   "correct_answer": "3.6",
@@ -2039,6 +2100,7 @@
                   "display_order": 2
                 },
                 {
+                  "id": "42396a48-4811-439e-8507-63f718b78c7e",
                   "question_html": "<p>An object has a net charge of \\( -4.8 \\times 10^{-19} \\) C. How many excess electrons does it have?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "3",
@@ -2065,11 +2127,13 @@
               ]
             },
             {
+              "id": "f44b1374-60cc-43c2-b226-82bb65d53fb7",
               "title": "Premium: Electric Charge and Electric Force",
               "access_tier": "premium",
               "display_order": 1,
               "problems": [
                 {
+                  "id": "bec576c8-b730-4a52-a817-746f79d45a90",
                   "question_html": "<p>Three charges are placed along the x-axis: \\( q_1 = +2 \\) μC at \\( x = 0 \\), \\( q_2 = -4 \\) μC at \\( x = 0.30 \\) m, and \\( q_3 = +2 \\) μC at \\( x = 0.60 \\) m. What is the direction of the net force on \\( q_2 \\)?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -2117,6 +2181,7 @@
                   "display_order": 0
                 },
                 {
+                  "id": "6f22dd38-252e-4f0c-84d7-db5104537da1",
                   "question_html": "<p>Two charges \\( q_1 = +5.0 \\) μC and \\( q_2 = +5.0 \\) μC are 0.40 m apart. What is the magnitude of the force on each charge, in newtons? Round to two decimal places.</p>",
                   "problem_type": "ftb",
                   "correct_answer": "1.41",
@@ -2167,11 +2232,13 @@
           "display_order": 1,
           "problem_sets": [
             {
+              "id": "24997ab4-d4c8-4b52-9cd7-abad923ed9c9",
               "title": "Practice: Conservation of Charge and Charging",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "25db10d0-2000-4863-93fa-4b227eafdf97",
                   "question_html": "<p>Two identical conducting spheres carry charges of \\( +8 \\) μC and \\( -2 \\) μC. They are brought into contact and then separated. What is the charge on each sphere after separation?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -2216,6 +2283,7 @@
                   "display_order": 0
                 },
                 {
+                  "id": "4c6bee79-3d66-4666-b50e-488dd063e2e8",
                   "question_html": "<p>A negatively charged rod is brought near a neutral metal sphere without touching it. What happens to the charge distribution on the sphere?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -2260,6 +2328,7 @@
                   "display_order": 1
                 },
                 {
+                  "id": "fa114d43-526e-4792-89e6-c89f3fa7fa54",
                   "question_html": "<p>When a glass rod is rubbed with silk, the rod becomes positively charged. What happened at the atomic level?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "electrons transferred",
@@ -2284,6 +2353,7 @@
                   "display_order": 2
                 },
                 {
+                  "id": "f95204fb-4683-4b05-8ff3-1aacf5ae155a",
                   "question_html": "<p>In charging by induction, the object being charged ends up with what sign of charge relative to the inducing charge?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "opposite",
@@ -2313,11 +2383,13 @@
               ]
             },
             {
+              "id": "8b77068a-1025-41b7-b4d6-d3a887cf3e97",
               "title": "Premium: Conservation of Charge and Charging",
               "access_tier": "premium",
               "display_order": 1,
               "problems": [
                 {
+                  "id": "3b60259b-8b5e-4bec-9de2-ef7a0f131c2d",
                   "question_html": "<p>Sphere A has charge \\( +12 \\) μC and sphere B has charge \\( -4 \\) μC. They touch, separate, then sphere B touches neutral sphere C (identical to A and B). What is the final charge on sphere C?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -2365,6 +2437,7 @@
                   "display_order": 0
                 },
                 {
+                  "id": "301c6c63-4846-4522-a839-d2de9118d219",
                   "question_html": "<p>A neutral metal sphere is placed on an insulating stand. A positively charged rod is brought near (but not touching) the left side. While the rod is still nearby, the sphere is grounded momentarily, then the ground connection is removed, then the rod is removed. What is the final charge on the sphere?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "negative",
@@ -2417,11 +2490,13 @@
           "display_order": 2,
           "problem_sets": [
             {
+              "id": "4ffbc321-2337-417c-84f7-9f3a9fd1684f",
               "title": "Practice: Electric Fields",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "b4ce1889-9563-40c6-b766-b9c3389101cc",
                   "question_html": "<p>A charge of \\( +2.0 \\) μC creates an electric field. At a distance of 0.50 m from the charge, what is the magnitude of the electric field? (Use \\( k = 9.0 \\times 10^9 \\) N·m²/C².)</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -2466,6 +2541,7 @@
                   "display_order": 0
                 },
                 {
+                  "id": "0aebbfab-b834-4d92-9f24-8acbb1b48dd0",
                   "question_html": "<p>A positive test charge is placed in an electric field and experiences a force pointing to the right. In what direction does the electric field point at that location?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -2510,6 +2586,7 @@
                   "display_order": 1
                 },
                 {
+                  "id": "d87f6666-837d-4333-8e33-a1bae12963e2",
                   "question_html": "<p>The electric field at a point is 500 N/C. What force (in newtons) acts on a \\( -3.0 \\) μC charge placed at that point? Give the magnitude.</p>",
                   "problem_type": "ftb",
                   "correct_answer": "0.0015",
@@ -2537,6 +2614,7 @@
                   "display_order": 2
                 },
                 {
+                  "id": "ae0551cd-369d-4938-898f-3016ed5784af",
                   "question_html": "<p>At what distance (in meters) from a \\( +8.0 \\) μC point charge is the electric field equal to \\( 2.0 \\times 10^6 \\) N/C? Round to two decimal places.</p>",
                   "problem_type": "ftb",
                   "correct_answer": "0.19",
@@ -2566,11 +2644,13 @@
               ]
             },
             {
+              "id": "9f3420cf-af59-4f3a-8099-48ee8ecc1ab1",
               "title": "Premium: Electric Fields",
               "access_tier": "premium",
               "display_order": 1,
               "problems": [
                 {
+                  "id": "936ae85a-79f1-4552-9452-cd98c431df78",
                   "question_html": "<p>Two charges \\( q_1 = +4.0 \\) μC at the origin and \\( q_2 = -4.0 \\) μC at \\( x = 0.40 \\) m. What is the electric field at the midpoint (\\( x = 0.20 \\) m)?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -2618,6 +2698,7 @@
                   "display_order": 0
                 },
                 {
+                  "id": "88a33237-883d-4b99-9218-215608d24a59",
                   "question_html": "<p>Two large parallel plates are separated by 0.02 m and have a potential difference of 500 V across them. What is the magnitude of the uniform electric field between the plates, in V/m?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -2659,6 +2740,7 @@
                   "display_order": 1
                 },
                 {
+                  "id": "644a3799-c705-40a7-b33a-a7a31049cc31",
                   "question_html": "<p>A \\( +6.0 \\) μC charge is at the origin. At what distance from the charge (in meters) is the electric field strength \\( 5400 \\) N/C?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "3.16",
@@ -2686,6 +2768,7 @@
                   "display_order": 2
                 },
                 {
+                  "id": "1d298cdb-f089-46f6-b63b-0db2af0d751c",
                   "question_html": "<p>A proton (\\( m = 1.67 \\times 10^{-27} \\) kg, \\( q = 1.6 \\times 10^{-19} \\) C) is placed in a uniform electric field of \\( E = 2.0 \\times 10^4 \\) N/C. Determine the acceleration of the proton and explain why the electron would have a much larger acceleration in the same field.</p>",
                   "problem_type": "frq",
                   "difficulty": "medium",
@@ -2744,11 +2827,13 @@
           "display_order": 3,
           "problem_sets": [
             {
+              "id": "3aa9d63b-55ad-4a32-80dd-b5b9487c0749",
               "title": "Practice: Electric Potential Energy",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "8bc1ebe0-a342-488f-bd89-7be1663e2752",
                   "question_html": "<p>Two protons are separated by \\( 1.0 \\times 10^{-10} \\) m. What is the sign of their electric potential energy?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -2793,6 +2878,7 @@
                   "display_order": 0
                 },
                 {
+                  "id": "cbcfc854-5c68-4f12-96e0-722fa741488c",
                   "question_html": "<p>What is the electric potential energy (in joules) of a system of two charges, \\( q_1 = +3.0 \\) μC and \\( q_2 = -6.0 \\) μC, separated by 0.30 m?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -2837,6 +2923,7 @@
                   "display_order": 1
                 },
                 {
+                  "id": "34b386d5-c3c6-4beb-bad8-f554b484080e",
                   "question_html": "<p>A \\( +2.0 \\) μC charge is released from rest at a point where the electric potential energy is 0.010 J. It moves to a point where \\( U = 0.002 \\) J. What is its kinetic energy at the second point, in joules?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "0.008",
@@ -2864,6 +2951,7 @@
                   "display_order": 2
                 },
                 {
+                  "id": "83e64aba-82ac-4b8c-8188-1430b096b9e6",
                   "question_html": "<p>Two charges, \\( q_1 = +4.0 \\) μC and \\( q_2 = +4.0 \\) μC, are initially 0.10 m apart. How much work must an external agent do to bring them to 0.05 m apart, in joules? Round to two decimal places.</p>",
                   "problem_type": "ftb",
                   "correct_answer": "1.44",
@@ -2896,11 +2984,13 @@
               ]
             },
             {
+              "id": "54e68b9c-a96f-43e7-8080-bafdaabbcc6a",
               "title": "Premium: Electric Potential Energy",
               "access_tier": "premium",
               "display_order": 1,
               "problems": [
                 {
+                  "id": "4dfde459-532b-40a3-964e-5c1a54e664ac",
                   "question_html": "<p>An electron (\\( m = 9.11 \\times 10^{-31} \\) kg) is released from rest in a uniform electric field and gains \\( 4.8 \\times 10^{-18} \\) J of kinetic energy. Through what potential energy change (in eV) did it pass?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -2945,6 +3035,7 @@
                   "display_order": 0
                 },
                 {
+                  "id": "1b8b7c45-4199-46e3-adec-74ace01e39e6",
                   "question_html": "<p>Three charges are at the corners of an equilateral triangle with side 0.20 m: \\( q_1 = +1.0 \\) μC, \\( q_2 = +1.0 \\) μC, \\( q_3 = -1.0 \\) μC. What is the total electric potential energy of the system, in joules? Round to three decimal places.</p>",
                   "problem_type": "mcq",
                   "difficulty": "hard",
@@ -2995,6 +3086,7 @@
                   "display_order": 1
                 },
                 {
+                  "id": "4f24d4b3-febe-4e4b-b552-c30870428233",
                   "question_html": "<p>A proton (\\( q = 1.6 \\times 10^{-19} \\) C, \\( m = 1.67 \\times 10^{-27} \\) kg) is released from rest at 0.50 m from a fixed \\( +2.0 \\) nC charge. What is the proton's speed (in m/s) when it is 5.0 m away? Round to the nearest thousand.</p>",
                   "problem_type": "ftb",
                   "correct_answer": "79000",
@@ -3028,6 +3120,7 @@
                   "display_order": 2
                 },
                 {
+                  "id": "77cb1a3b-91ae-4401-b908-ee501dff8640",
                   "question_html": "<p>Two point charges \\( q_1 = +3.0 \\) μC and \\( q_2 = -5.0 \\) μC are separated by 0.40 m. Determine the total electric potential energy of the system and explain what the sign of the result means physically.</p>",
                   "problem_type": "frq",
                   "difficulty": "medium",
@@ -3086,11 +3179,13 @@
           "display_order": 4,
           "problem_sets": [
             {
+              "id": "de494352-7f7d-4126-8e11-961571303b5e",
               "title": "Practice: Electric Potential",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "a3aeff43-4365-44d2-bd46-e0c834a2abd9",
                   "question_html": "<p>What is the electric potential at a distance of 0.30 m from a \\( +6.0 \\) μC point charge? (Use \\( k = 9.0 \\times 10^9 \\) N·m²/C².)</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -3132,6 +3227,7 @@
                   "display_order": 0
                 },
                 {
+                  "id": "5b35f58b-2cee-4ee7-8f4e-013333744954",
                   "question_html": "<p>A charge of \\( +2.0 \\) μC moves through a potential difference of \\( \\Delta V = -500 \\) V. How much work is done by the electric force, in joules?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -3176,6 +3272,7 @@
                   "display_order": 1
                 },
                 {
+                  "id": "f377a158-ca3f-4841-a555-525322396e4f",
                   "question_html": "<p>Two large parallel plates have a potential difference of 200 V and are separated by 0.04 m. What is the electric field between them, in V/m?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "5000",
@@ -3200,6 +3297,7 @@
                   "display_order": 2
                 },
                 {
+                  "id": "78dc1924-947d-4dd1-9f8d-1681359e89ef",
                   "question_html": "<p>A \\( -3.0 \\) μC charge is at \\( x = 0 \\) and a \\( +3.0 \\) μC charge is at \\( x = 0.60 \\) m. What is the electric potential at the midpoint \\( x = 0.30 \\) m, in volts?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "0",
@@ -3232,11 +3330,13 @@
               ]
             },
             {
+              "id": "ac103584-789f-4e83-8951-cc585716ce6f",
               "title": "Premium: Electric Potential",
               "access_tier": "premium",
               "display_order": 1,
               "problems": [
                 {
+                  "id": "561076f2-d797-4537-b24f-490757375896",
                   "question_html": "<p>An electron moves from a point where \\( V = 100 \\) V to a point where \\( V = 0 \\) V. What is the change in kinetic energy of the electron, in eV?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -3281,6 +3381,7 @@
                   "display_order": 0
                 },
                 {
+                  "id": "68348d8e-457f-4141-8fb8-ad12c95100c5",
                   "question_html": "<p>At what point along the x-axis (other than infinity) is the electric potential zero due to charges \\( q_1 = +4.0 \\) μC at the origin and \\( q_2 = -2.0 \\) μC at \\( x = 0.60 \\) m?</p>",
                   "problem_type": "mcq",
                   "difficulty": "hard",
@@ -3328,6 +3429,7 @@
                   "display_order": 1
                 },
                 {
+                  "id": "0110e918-5948-44ad-8e61-77416265b3fa",
                   "question_html": "<p>A uniform electric field of 3000 V/m points from left to right. What is the potential difference between two points separated by 0.15 m along the field direction? (Give \\( V_B - V_A \\) where A is on the left and B is on the right.)</p>",
                   "problem_type": "ftb",
                   "correct_answer": "-450",
@@ -3355,6 +3457,7 @@
                   "display_order": 2
                 },
                 {
+                  "id": "9f62914f-6a38-49d9-9fca-016ba503c18e",
                   "question_html": "<p>A \\( +5.0 \\) μC charge is at the origin. (a) Calculate the electric potential at \\( r = 0.20 \\) m and at \\( r = 0.50 \\) m. (b) Determine the work done by the electric force in moving a \\( +2.0 \\) μC charge from \\( r = 0.20 \\) m to \\( r = 0.50 \\) m.</p>",
                   "problem_type": "frq",
                   "difficulty": "medium",
@@ -3414,11 +3517,13 @@
           "display_order": 5,
           "problem_sets": [
             {
+              "id": "f7544ab2-1356-427d-ab04-a13ea6e9b3ba",
               "title": "Practice: Capacitors",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "e4aab00a-7394-469d-b978-df2bea030e22",
                   "question_html": "<p>A 10 μF capacitor is charged to 100 V. What charge is stored on each plate?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -3460,6 +3565,7 @@
                   "display_order": 0
                 },
                 {
+                  "id": "1edab7cb-5ce5-4cf8-ad44-be2603b85f4e",
                   "question_html": "<p>A parallel-plate capacitor has plate area \\( A = 0.010 \\) m² and separation \\( d = 0.002 \\) m. What is its capacitance? (Use \\( \\varepsilon_0 = 8.85 \\times 10^{-12} \\) F/m.)</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -3501,6 +3607,7 @@
                   "display_order": 1
                 },
                 {
+                  "id": "8ea049e4-0f11-407d-855e-da334b1e448b",
                   "question_html": "<p>How much energy is stored in a 20 μF capacitor charged to 50 V? Give your answer in joules.</p>",
                   "problem_type": "ftb",
                   "correct_answer": "0.025",
@@ -3525,6 +3632,7 @@
                   "display_order": 2
                 },
                 {
+                  "id": "0898dd22-6382-4658-a493-867d9e8d0d23",
                   "question_html": "<p>Two capacitors, 6 μF and 3 μF, are connected in series. What is their equivalent capacitance in μF?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "2",
@@ -3554,11 +3662,13 @@
               ]
             },
             {
+              "id": "ae2b0162-31f9-44a8-8859-b1f1714e6da1",
               "title": "Premium: Capacitors",
               "access_tier": "premium",
               "display_order": 1,
               "problems": [
                 {
+                  "id": "a1e7beb7-26c0-43c1-8819-8c031905cdb0",
                   "question_html": "<p>Three capacitors of 4 μF, 6 μF, and 12 μF are connected in parallel. What is the equivalent capacitance in μF?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -3600,6 +3710,7 @@
                   "display_order": 0
                 },
                 {
+                  "id": "103f85cb-ff9b-43e7-aa89-1fd64979e4b8",
                   "question_html": "<p>A 5 μF capacitor is charged to 200 V, then disconnected from the battery. A dielectric with \\( \\kappa = 4 \\) is inserted between the plates. What is the new voltage across the capacitor?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -3647,6 +3758,7 @@
                   "display_order": 1
                 },
                 {
+                  "id": "ed269f0e-939a-4f32-aec8-1e71e5dc531f",
                   "question_html": "<p>A 100 μF capacitor stores 0.50 J of energy. What is the voltage across it, in volts?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "100",
@@ -3671,6 +3783,7 @@
                   "display_order": 2
                 },
                 {
+                  "id": "baf8c303-12b6-40bd-a732-1c78209a629b",
                   "question_html": "<p>A parallel-plate capacitor with capacitance \\( C = 50 \\) pF is connected to a 12 V battery. (a) How much charge is stored? (b) How much energy is stored? (c) If the plate separation is doubled while the battery remains connected, what happens to the charge and energy? Explain using the relevant equations.</p>",
                   "problem_type": "frq",
                   "difficulty": "medium",
@@ -3729,11 +3842,13 @@
           "display_order": 6,
           "problem_sets": [
             {
+              "id": "e625d5ee-4956-4f98-a39e-0f830d0608ab",
               "title": "Practice: Conservation of Electric Energy",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "43076134-d4b4-4365-a27e-25cf071be54b",
                   "question_html": "<p>An electron is accelerated from rest through a potential difference of 100 V. What kinetic energy does it gain, in eV?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -3778,6 +3893,7 @@
                   "display_order": 0
                 },
                 {
+                  "id": "b26bc18f-01c6-4052-92c2-ded3a21f4d25",
                   "question_html": "<p>A proton is released from rest in a uniform electric field. It accelerates through a potential difference of 200 V. Which is true about its kinetic energy?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -3822,6 +3938,7 @@
                   "display_order": 1
                 },
                 {
+                  "id": "a5f7ed32-64ba-4264-ab67-8cd5dba41994",
                   "question_html": "<p>Convert 500 eV to joules.</p>",
                   "problem_type": "ftb",
                   "correct_answer": "8e-17",
@@ -3846,6 +3963,7 @@
                   "display_order": 2
                 },
                 {
+                  "id": "db795fca-fbc1-48b7-a64e-b1a711d8eb21",
                   "question_html": "<p>A \\( +4.0 \\) μC charge moves from a point where \\( V = 300 \\) V to a point where \\( V = 100 \\) V. How much kinetic energy (in joules) does the charge gain if it starts from rest?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "0.0008",
@@ -3872,11 +3990,13 @@
               ]
             },
             {
+              "id": "c331c75a-001f-4f83-acbc-e35c6988388c",
               "title": "Premium: Conservation of Electric Energy",
               "access_tier": "premium",
               "display_order": 1,
               "problems": [
                 {
+                  "id": "a9f5c60c-8e7f-4001-96e2-1d98a611849b",
                   "question_html": "<p>A proton (\\( m = 1.67 \\times 10^{-27} \\) kg) is accelerated from rest through 1000 V. What is its final speed in m/s?</p>",
                   "problem_type": "mcq",
                   "difficulty": "hard",
@@ -3921,6 +4041,7 @@
                   "display_order": 0
                 },
                 {
+                  "id": "8473677d-26aa-488e-a92a-528dd78c7c0c",
                   "question_html": "<p>A 10 μF capacitor charged to 100 V is connected to an uncharged 10 μF capacitor. What is the final voltage across each capacitor, and how much energy is lost?</p>",
                   "problem_type": "mcq",
                   "difficulty": "hard",
@@ -3968,6 +4089,7 @@
                   "display_order": 1
                 },
                 {
+                  "id": "0a78c7d0-ce1b-4b70-974f-5420cd51f66a",
                   "question_html": "<p>Two identical \\( +1.0 \\) μC charges are released from rest at a separation of 0.50 m. Each has mass \\( 1.0 \\times 10^{-3} \\) kg. What is the speed of each charge when they are very far apart?</p>",
                   "problem_type": "mcq",
                   "difficulty": "hard",
@@ -4015,6 +4137,7 @@
                   "display_order": 2
                 },
                 {
+                  "id": "536d5fef-e7eb-4650-8469-28bafb24b980",
                   "question_html": "<p>An alpha particle (\\( q = 3.2 \\times 10^{-19} \\) C, \\( m = 6.64 \\times 10^{-27} \\) kg) is accelerated from rest through a potential difference of 2.0 \\times 10^6 V. What is its final speed in m/s?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "1.39e7",
@@ -4042,6 +4165,7 @@
                   "display_order": 3
                 },
                 {
+                  "id": "4fe6cf7a-7157-4cb7-b418-ba1ba7c726be",
                   "question_html": "<p>An electron with initial speed \\( 5.0 \\times 10^5 \\) m/s enters a region where the electric potential increases by 2.0 V. (a) Does the electron speed up or slow down? Explain. (b) Determine the final speed of the electron. (\\( m_e = 9.11 \\times 10^{-31} \\) kg, \\( e = 1.6 \\times 10^{-19} \\) C.)</p>",
                   "problem_type": "frq",
                   "difficulty": "hard",
@@ -4111,11 +4235,13 @@
           "display_order": 0,
           "problem_sets": [
             {
+              "id": "75b060fb-dc8a-4f3e-94a3-3697fa80190d",
               "title": "Practice: Electric Current",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "74a361a2-20ca-4e08-941d-3f7e5be4ea51",
                   "question_html": "<p>A wire carries a current of 2.0 A. How much charge passes a point in the wire in 30 seconds?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -4157,6 +4283,7 @@
                   "display_order": 0
                 },
                 {
+                  "id": "bc42fd8d-4422-409a-b653-278aa5084484",
                   "question_html": "<p>In a metallic conductor, which particles actually move to create the current?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -4201,6 +4328,7 @@
                   "display_order": 1
                 },
                 {
+                  "id": "078bdc42-7299-4a1a-82c8-fe47c3ff2349",
                   "question_html": "<p>A current of 0.50 A flows through a wire. How many electrons pass a given point per second? (\\( e = 1.6 \\times 10^{-19} \\) C)</p>",
                   "problem_type": "ftb",
                   "correct_answer": "3.125e18",
@@ -4225,6 +4353,7 @@
                   "display_order": 2
                 },
                 {
+                  "id": "b26238c8-164f-4205-aa1e-f54cde38f517",
                   "question_html": "<p>If 180 C of charge passes through a wire in 1 minute, what is the current in amperes?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "3",
@@ -4251,11 +4380,13 @@
               ]
             },
             {
+              "id": "a7e6df77-0f01-49ca-bce2-88f3a34274fc",
               "title": "Premium: Electric Current",
               "access_tier": "premium",
               "display_order": 1,
               "problems": [
                 {
+                  "id": "fafc59f4-0482-45ab-bbf9-fe62627125dd",
                   "question_html": "<p>A copper wire has a cross-sectional area of \\( 3.0 \\times 10^{-6} \\) m² and carries a current of 10 A. If copper has \\( n = 8.5 \\times 10^{28} \\) free electrons per m³, what is the drift velocity?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -4300,6 +4431,7 @@
                   "display_order": 0
                 },
                 {
+                  "id": "d4a00a8b-0d0f-45e7-9b24-90d9864b6034",
                   "question_html": "<p>A battery delivers a constant current of 0.80 A for 2.5 hours. How much total charge (in coulombs) does it deliver?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "7200",
@@ -4347,11 +4479,13 @@
           "display_order": 1,
           "problem_sets": [
             {
+              "id": "0ddeb499-58c9-4704-b3d8-e3a29272a5ec",
               "title": "Practice: Simple Circuits",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "ebea359b-5ca2-49c9-80fa-80e8265b5f03",
                   "question_html": "<p>A battery with EMF 9.0 V and internal resistance 0.50 Ω is connected to a 4.0 Ω resistor. What is the current in the circuit?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -4393,6 +4527,7 @@
                   "display_order": 0
                 },
                 {
+                  "id": "787d0a77-e81a-482d-b05c-71aba06a0ac1",
                   "question_html": "<p>What is the terminal voltage of the battery in the previous problem?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -4437,6 +4572,7 @@
                   "display_order": 1
                 },
                 {
+                  "id": "e1ddcc1a-9062-45d8-9c67-0e12b7a95a62",
                   "question_html": "<p>A 6.0 V battery with negligible internal resistance is connected to a 12 Ω resistor. What is the current, in amperes?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "0.5",
@@ -4461,6 +4597,7 @@
                   "display_order": 2
                 },
                 {
+                  "id": "6bc87132-8afa-4231-aecd-d476d9cee0d9",
                   "question_html": "<p>A circuit consists of a switch, a battery, and a light bulb. The switch is open. Is current flowing through the bulb?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "no",
@@ -4487,11 +4624,13 @@
               ]
             },
             {
+              "id": "baace0e7-35e2-4935-b041-93aed585b151",
               "title": "Premium: Simple Circuits",
               "access_tier": "premium",
               "display_order": 1,
               "problems": [
                 {
+                  "id": "adba7761-c2f7-4be9-b6d2-8a4576a418d1",
                   "question_html": "<p>A battery has an EMF of 12.0 V. When a 5.0 Ω resistor is connected, the terminal voltage is 10.0 V. What is the internal resistance of the battery?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -4536,6 +4675,7 @@
                   "display_order": 0
                 },
                 {
+                  "id": "ec8823c2-1d6e-4b22-ad7d-1a13fc67934c",
                   "question_html": "<p>A 9.0 V battery with internal resistance 0.30 Ω delivers 3.0 A. What fraction of the total power is dissipated internally?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "0.1",
@@ -4585,11 +4725,13 @@
           "display_order": 2,
           "problem_sets": [
             {
+              "id": "59010b08-ba0f-4d64-a100-ad3522e2fc1f",
               "title": "Practice: Resistance, Resistivity, and Ohm's Law",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "767d0a25-cc00-421d-bc46-0f97a01e8568",
                   "question_html": "<p>A resistor has a voltage of 12 V across it and carries a current of 3.0 A. What is its resistance?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -4631,6 +4773,7 @@
                   "display_order": 0
                 },
                 {
+                  "id": "37534001-d203-4474-a461-6b386188a3a6",
                   "question_html": "<p>A copper wire has a resistivity of \\( 1.7 \\times 10^{-8} \\) Ω·m, length 2.0 m, and cross-sectional area \\( 1.0 \\times 10^{-6} \\) m². What is its resistance?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -4672,6 +4815,7 @@
                   "display_order": 1
                 },
                 {
+                  "id": "a7980a8b-5f2e-4fd1-8db4-cd8446fb2e9e",
                   "question_html": "<p>What current flows through a 100 Ω resistor connected to a 9.0 V battery? Give your answer in amperes.</p>",
                   "problem_type": "ftb",
                   "correct_answer": "0.09",
@@ -4696,6 +4840,7 @@
                   "display_order": 2
                 },
                 {
+                  "id": "73aa0272-2e5c-4476-b658-ee8419dcd7ac",
                   "question_html": "<p>A wire of length \\( L \\) and cross-sectional area \\( A \\) has resistance \\( R \\). If the wire is stretched to twice its original length (keeping volume constant), what is the new resistance?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "4R",
@@ -4725,11 +4870,13 @@
               ]
             },
             {
+              "id": "e23c5fa3-c377-4e06-b8f7-80d94d2003d2",
               "title": "Premium: Resistance, Resistivity, and Ohm's Law",
               "access_tier": "premium",
               "display_order": 1,
               "problems": [
                 {
+                  "id": "0a584fd7-7d5d-446d-bde0-d3e601b6cb6a",
                   "question_html": "<p>Two wires are made of the same material. Wire A has twice the length and three times the cross-sectional area of Wire B. What is the ratio \\( R_A / R_B \\)?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -4771,6 +4918,7 @@
                   "display_order": 0
                 },
                 {
+                  "id": "dd27323d-7479-41aa-9ef4-32bd2ed947fc",
                   "question_html": "<p>A nichrome wire (\\( \\rho = 1.1 \\times 10^{-6} \\) Ω·m) is used in a heater. If the wire is 5.0 m long and has a diameter of 0.50 mm, what is its resistance? Round to the nearest ohm.</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -4815,6 +4963,7 @@
                   "display_order": 1
                 },
                 {
+                  "id": "4a9ada4b-1a8d-4cc8-9874-f6bdfe19db0d",
                   "question_html": "<p>A student measures the voltage across and current through a device at several settings. The V-I data is: (2V, 0.1A), (4V, 0.2A), (6V, 0.3A), (8V, 0.4A). Is this device ohmic? What is its resistance?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "20",
@@ -4842,6 +4991,7 @@
                   "display_order": 2
                 },
                 {
+                  "id": "5a376384-1acf-4e67-ac6e-c557f00eab50",
                   "question_html": "<p>A wire of resistivity \\( \\rho \\), length \\( L \\), and radius \\( r \\) has resistance \\( R \\). A second wire of the same material has length \\( 2L \\) and radius \\( 2r \\). Derive the resistance of the second wire in terms of \\( R \\), and explain how both length and radius affect resistance.</p>",
                   "problem_type": "frq",
                   "difficulty": "medium",
@@ -4897,11 +5047,13 @@
           "display_order": 3,
           "problem_sets": [
             {
+              "id": "25881cd0-461e-43f9-b75e-986274920e90",
               "title": "Practice: Electric Power",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "6af99f23-c96b-4b79-bc0c-12d92f20a838",
                   "question_html": "<p>A 60 W light bulb operates at 120 V. What current does it draw?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -4943,6 +5095,7 @@
                   "display_order": 0
                 },
                 {
+                  "id": "02a3c2b4-746f-4756-b379-d2ae6fac8105",
                   "question_html": "<p>A 10 Ω resistor carries a current of 3.0 A. How much power does it dissipate?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -4984,6 +5137,7 @@
                   "display_order": 1
                 },
                 {
+                  "id": "7b8c5b72-d944-4b98-9179-21c3eff3cc49",
                   "question_html": "<p>A 1500 W heater runs for 2 hours. How much energy does it consume, in kWh?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "3",
@@ -5008,6 +5162,7 @@
                   "display_order": 2
                 },
                 {
+                  "id": "1704b7f1-32bf-4e47-890e-88b1823c4662",
                   "question_html": "<p>A 200 Ω resistor is connected to a 100 V source. What power does it dissipate, in watts?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "50",
@@ -5034,11 +5189,13 @@
               ]
             },
             {
+              "id": "3df557e9-6437-41e5-9633-525f676946fe",
               "title": "Premium: Electric Power",
               "access_tier": "premium",
               "display_order": 1,
               "problems": [
                 {
+                  "id": "c2f0feb6-0ecd-40cc-84da-b8709b054f67",
                   "question_html": "<p>Two resistors, 4 Ω and 12 Ω, are connected in series to a 24 V battery. Which resistor dissipates more power, and how much?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -5086,6 +5243,7 @@
                   "display_order": 0
                 },
                 {
+                  "id": "bce34439-7a32-4952-89b3-b264df51d97b",
                   "question_html": "<p>Two resistors, 4 Ω and 12 Ω, are connected in parallel to a 24 V battery. Which dissipates more power?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -5130,6 +5288,7 @@
                   "display_order": 1
                 },
                 {
+                  "id": "e0f70066-2036-4b8b-82cf-7f23ba6c9524",
                   "question_html": "<p>A household circuit breaker trips at 15 A. If the circuit operates at 120 V, what is the maximum power (in watts) that can be drawn from this circuit?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "1800",
@@ -5154,6 +5313,7 @@
                   "display_order": 2
                 },
                 {
+                  "id": "ec8b4c63-e9dd-4e28-87d6-95c2ac7941c7",
                   "question_html": "<p>A student connects a resistor to a variable power supply. At 6 V, the current is 0.30 A and the power is 1.8 W. At 12 V, the current is 0.55 A and the power is 6.6 W. (a) Is this resistor ohmic? Justify. (b) Calculate the resistance at each voltage.</p>",
                   "problem_type": "frq",
                   "difficulty": "medium",
@@ -5213,11 +5373,13 @@
           "display_order": 4,
           "problem_sets": [
             {
+              "id": "b5c40504-a65f-45de-8ac7-84bccc29d7ce",
               "title": "Practice: Compound DC Circuits",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "73569a59-54a6-4aad-9cda-5860f7296031",
                   "question_html": "<p>Three resistors of 2 Ω, 3 Ω, and 5 Ω are connected in series. What is the equivalent resistance?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -5259,6 +5421,7 @@
                   "display_order": 0
                 },
                 {
+                  "id": "eaf0b8d2-c972-4aa5-a71c-43df721eeec5",
                   "question_html": "<p>Two resistors, 6 Ω and 3 Ω, are connected in parallel. What is the equivalent resistance?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -5300,6 +5463,7 @@
                   "display_order": 1
                 },
                 {
+                  "id": "0b247d69-8876-418b-b7a0-7a2e8de27a52",
                   "question_html": "<p>A 4 Ω resistor is in series with a parallel combination of 6 Ω and 12 Ω. What is the total equivalent resistance, in Ω?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "8",
@@ -5327,6 +5491,7 @@
                   "display_order": 2
                 },
                 {
+                  "id": "8380fef0-b5ad-4071-a01b-45379395809f",
                   "question_html": "<p>In the circuit above (4 Ω in series with 6 Ω ∥ 12 Ω), connected to a 24 V battery, what is the current through the 6 Ω resistor, in amperes?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "2",
@@ -5359,11 +5524,13 @@
               ]
             },
             {
+              "id": "c8fdbb7b-2a15-4a53-a732-7b378fb58615",
               "title": "Premium: Compound DC Circuits",
               "access_tier": "premium",
               "display_order": 1,
               "problems": [
                 {
+                  "id": "9ca46416-7487-4fd2-89c6-4da90fb44c17",
                   "question_html": "<p>Three 12 Ω resistors are connected: two in parallel, and that combination in series with the third. Connected to a 12 V battery, what is the total current?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -5408,6 +5575,7 @@
                   "display_order": 0
                 },
                 {
+                  "id": "ae426b31-eb4a-4797-bcb7-25f332827da2",
                   "question_html": "<p>A circuit has a 10 Ω and a 15 Ω resistor in parallel. This combination is in series with a 4 Ω resistor and a 30 V battery. What is the voltage across the parallel combination?</p>",
                   "problem_type": "mcq",
                   "difficulty": "hard",
@@ -5455,6 +5623,7 @@
                   "display_order": 1
                 },
                 {
+                  "id": "5219454d-97ae-47a4-b902-f71711edd758",
                   "question_html": "<p>A light bulb rated at 100 W, 120 V is connected to a 120 V source. A second identical bulb is then connected in series with the first (still 120 V source). Does each bulb get brighter or dimmer compared to a single bulb? Explain.</p>",
                   "problem_type": "mcq",
                   "difficulty": "hard",
@@ -5502,6 +5671,7 @@
                   "display_order": 2
                 },
                 {
+                  "id": "d5e40d4c-9c23-4e66-8104-6019865455cc",
                   "question_html": "<p>In a circuit, a voltmeter reads 8.0 V across a 20 Ω resistor. What is the current through the resistor, in amperes?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "0.4",
@@ -5526,6 +5696,7 @@
                   "display_order": 3
                 },
                 {
+                  "id": "adbaa572-7526-4b55-bac5-c70854876092",
                   "question_html": "<p>A 48 V battery is connected to three resistors: \\( R_1 = 8 \\) Ω in series with a parallel combination of \\( R_2 = 12 \\) Ω and \\( R_3 = 24 \\) Ω. Determine the current through each resistor and the power dissipated by \\( R_2 \\).</p>",
                   "problem_type": "frq",
                   "difficulty": "hard",
@@ -5588,11 +5759,13 @@
           "display_order": 5,
           "problem_sets": [
             {
+              "id": "a6d2729a-de8d-44f5-b6cc-ca863880fcc7",
               "title": "Practice: Kirchhoff's Loop Rule",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "a40f3b82-00fe-40d2-af1e-bd945a9ad334",
                   "question_html": "<p>A simple loop has a 12 V battery and two resistors (4 Ω and 8 Ω) in series. Using the loop rule, find the current.</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -5637,6 +5810,7 @@
                   "display_order": 0
                 },
                 {
+                  "id": "1b2351ab-4b12-4dc2-b443-929472b36f57",
                   "question_html": "<p>A loop contains a 9 V battery and a 6 V battery (opposing each other) with a 6 Ω resistor. What is the current?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -5681,6 +5855,7 @@
                   "display_order": 1
                 },
                 {
+                  "id": "df2b27a5-a0bc-4aa1-b69f-472430c95519",
                   "question_html": "<p>A circuit loop contains a 20 V battery and three resistors. The voltage drops across two of them are 8 V and 5 V. What is the voltage drop across the third resistor, in volts?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "7",
@@ -5705,6 +5880,7 @@
                   "display_order": 2
                 },
                 {
+                  "id": "6e8e6297-a927-41bb-a33d-763f42a59ea7",
                   "question_html": "<p>In a single-loop circuit with a 15 V battery and three resistors in series (3 Ω, 5 Ω, 7 Ω), what is the voltage drop across the 5 Ω resistor, in volts?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "5",
@@ -5734,11 +5910,13 @@
               ]
             },
             {
+              "id": "2f02510c-e80b-466d-bc7c-7e5a30b99f5e",
               "title": "Premium: Kirchhoff's Loop Rule",
               "access_tier": "premium",
               "display_order": 1,
               "problems": [
                 {
+                  "id": "5b725963-da5d-41bb-b002-268a4e29131b",
                   "question_html": "<p>Two batteries, \\( \\mathcal{E}_1 = 12 \\) V and \\( \\mathcal{E}_2 = 8 \\) V, are connected in the same direction with a 10 Ω resistor in the loop. What is the current?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -5780,6 +5958,7 @@
                   "display_order": 0
                 },
                 {
+                  "id": "5109af7b-4142-4ab1-ac26-bb245f8b5601",
                   "question_html": "<p>A circuit has two loops sharing a common resistor. The left loop has a 10 V battery and resistors 2 Ω and 3 Ω (the shared one). The right loop has a 6 V battery and resistors 3 Ω (shared) and 4 Ω. Using the loop rule for the left loop (assuming current \\( I_1 \\) through the left and \\( I_2 \\) through the right), write the loop equation.</p>",
                   "problem_type": "mcq",
                   "difficulty": "hard",
@@ -5824,6 +6003,7 @@
                   "display_order": 1
                 },
                 {
+                  "id": "a6d72b9b-42ef-4363-97f9-e9629b0f00aa",
                   "question_html": "<p>A single loop has a 24 V battery with internal resistance 1 Ω and an external resistance of 11 Ω. What voltage does a voltmeter read across the battery terminals?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "22",
@@ -5851,6 +6031,7 @@
                   "display_order": 2
                 },
                 {
+                  "id": "ecd3d9fc-762c-4bd9-ba9a-2f864599409e",
                   "question_html": "<p>A circuit has two batteries (\\( \\mathcal{E}_1 = 18 \\) V, \\( r_1 = 1 \\) Ω and \\( \\mathcal{E}_2 = 12 \\) V, \\( r_2 = 2 \\) Ω) opposing each other, with an external resistor \\( R = 3 \\) Ω. Use the loop rule to find the current and determine which battery is charging.</p>",
                   "problem_type": "frq",
                   "difficulty": "medium",
@@ -5910,11 +6091,13 @@
           "display_order": 6,
           "problem_sets": [
             {
+              "id": "b4f47480-733a-409b-a585-1cbf9be1f8b9",
               "title": "Practice: Kirchhoff's Junction Rule",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "ce9fd266-dde5-4385-8d27-2effd3fde7af",
                   "question_html": "<p>At a junction, 5.0 A enters from one wire and the current splits into two branches. If one branch carries 3.0 A, what current flows in the other branch?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -5956,6 +6139,7 @@
                   "display_order": 0
                 },
                 {
+                  "id": "3f629c48-16df-4278-80f6-5294e3fc2e52",
                   "question_html": "<p>Three wires meet at a junction. Wire A carries 4 A into the junction, Wire B carries 6 A into the junction. What current flows out through Wire C?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -5997,6 +6181,7 @@
                   "display_order": 1
                 },
                 {
+                  "id": "c11aa2c9-ff99-4e6f-bd39-f59c51fead14",
                   "question_html": "<p>A 12 A current splits into two parallel branches. One branch has 4 Ω and the other has 12 Ω. What current flows through the 4 Ω branch?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "9",
@@ -6024,6 +6209,7 @@
                   "display_order": 2
                 },
                 {
+                  "id": "e5b045b8-7687-49d3-a68f-df8892bd44c0",
                   "question_html": "<p>At a junction, three currents meet: 2 A flows in, 5 A flows in, and an unknown current \\( I_3 \\) flows out. A fourth wire also exits with 3 A. What is \\( I_3 \\)?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "4",
@@ -6050,11 +6236,13 @@
               ]
             },
             {
+              "id": "198acf83-aa38-4f2e-ae05-b53dd89f38ab",
               "title": "Premium: Kirchhoff's Junction Rule",
               "access_tier": "premium",
               "display_order": 1,
               "problems": [
                 {
+                  "id": "1a6f8f36-4de9-4419-8ae8-1d4f12730d4f",
                   "question_html": "<p>Three resistors (2 Ω, 4 Ω, 6 Ω) are connected in parallel to a 12 V battery. What is the total current supplied by the battery?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -6099,6 +6287,7 @@
                   "display_order": 0
                 },
                 {
+                  "id": "b4a2b14c-4175-4665-b4f1-847d5cd29e01",
                   "question_html": "<p>In a Wheatstone bridge, if \\( R_1 = 100 \\) Ω, \\( R_2 = 200 \\) Ω, \\( R_3 = 300 \\) Ω, and \\( R_4 \\) is unknown, what value of \\( R_4 \\) balances the bridge (zero current through the galvanometer)?</p>",
                   "problem_type": "mcq",
                   "difficulty": "hard",
@@ -6143,6 +6332,7 @@
                   "display_order": 1
                 },
                 {
+                  "id": "2dd3d5fb-8557-426e-b879-6d2c7c6e416f",
                   "question_html": "<p>Two 6 Ω resistors are in parallel, and this combination is in series with a 3 Ω resistor. If the total current from the battery is 4 A, what is the current through each 6 Ω resistor?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "2",
@@ -6170,6 +6360,7 @@
                   "display_order": 2
                 },
                 {
+                  "id": "2b709c51-ac8f-403e-9c4f-5e388351c038",
                   "question_html": "<p>A circuit has a 24 V battery and three branches in parallel: Branch A has 8 Ω, Branch B has 12 Ω, and Branch C has 24 Ω. Using both Kirchhoff's rules, find the current in each branch and verify that the junction rule is satisfied.</p>",
                   "problem_type": "frq",
                   "difficulty": "medium",
@@ -6230,11 +6421,13 @@
           "display_order": 7,
           "problem_sets": [
             {
+              "id": "80cedc69-50fa-423e-bf92-0b7ea9bd6307",
               "title": "Practice: RC Circuits",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "1a45d09d-a0f0-4919-a27d-c925b3ad4f92",
                   "question_html": "<p>An RC circuit has \\( R = 1000 \\) Ω and \\( C = 500 \\) μF. What is the time constant?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -6276,6 +6469,7 @@
                   "display_order": 0
                 },
                 {
+                  "id": "bcd76951-1fc7-4e40-93f7-fb1e1817fbc9",
                   "question_html": "<p>An uncharged capacitor is connected in series with a resistor and a battery. At \\( t = 0 \\), what is the current?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -6320,6 +6514,7 @@
                   "display_order": 1
                 },
                 {
+                  "id": "faee8bbd-3570-4ad2-9b2a-958004f63cd3",
                   "question_html": "<p>After a very long time, a charging RC circuit reaches steady state. What is the current through the circuit?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "0",
@@ -6347,6 +6542,7 @@
                   "display_order": 2
                 },
                 {
+                  "id": "1a2b902f-7f27-4f5e-9ea2-f6c7e248f2ff",
                   "question_html": "<p>If the resistance in an RC circuit is doubled, how does the time constant change?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "doubles",
@@ -6373,11 +6569,13 @@
               ]
             },
             {
+              "id": "2bebd008-ab35-4876-b082-aedb336bf843",
               "title": "Premium: RC Circuits",
               "access_tier": "premium",
               "display_order": 1,
               "problems": [
                 {
+                  "id": "26e1e2e3-4b98-4ac8-87c3-d58ca4215bfb",
                   "question_html": "<p>A 10 V battery charges a 100 μF capacitor through a 2000 Ω resistor. What is the initial current, and what fraction of the maximum voltage is on the capacitor after one time constant?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -6422,6 +6620,7 @@
                   "display_order": 0
                 },
                 {
+                  "id": "a5ebbfc3-dd84-48cf-97c1-eda1efae5be7",
                   "question_html": "<p>A charged RC circuit is discharging. The initial voltage is 24 V and the time constant is 2.0 s. After 2.0 seconds, approximately what percentage of the initial voltage remains on the capacitor?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -6466,6 +6665,7 @@
                   "display_order": 1
                 },
                 {
+                  "id": "303dcec4-ec95-4cec-8889-6f9024109ce9",
                   "question_html": "<p>A fully charged 50 μF capacitor at 20 V is discharged through a 4000 Ω resistor. After how many time constants has the voltage dropped to about 5 V?</p>",
                   "problem_type": "mcq",
                   "difficulty": "hard",
@@ -6510,6 +6710,7 @@
                   "display_order": 2
                 },
                 {
+                  "id": "a23ca59e-2d30-4a28-9a10-01e33a77fa67",
                   "question_html": "<p>An RC circuit has \\( R = 5000 \\) Ω and \\( C = 200 \\) μF. What is the time constant in seconds?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "1",
@@ -6534,6 +6735,7 @@
                   "display_order": 3
                 },
                 {
+                  "id": "ef4b6f2e-ef69-446a-88e8-96ad10b82315",
                   "question_html": "<p>An uncharged 100 μF capacitor is connected to a 12 V battery through a 10 kΩ resistor. (a) What is the time constant? (b) Describe qualitatively how the current and voltage across the capacitor change with time. (c) What is the energy stored in the capacitor when fully charged?</p>",
                   "problem_type": "frq",
                   "difficulty": "hard",
@@ -6600,11 +6802,13 @@
           "display_order": 0,
           "problem_sets": [
             {
+              "id": "2b9915f8-f34e-4c36-9487-f109c0ee312f",
               "title": "Practice: Magnetic Fields",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "99215add-475e-4dd4-8f72-0971dcd906b0",
                   "question_html": "<p>Magnetic field lines outside a bar magnet point from:</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -6649,6 +6853,7 @@
                   "display_order": 0
                 },
                 {
+                  "id": "c61efed7-551b-4b87-bf13-bf4c1f612b94",
                   "question_html": "<p>Which statement about magnetic monopoles is correct?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -6693,6 +6898,7 @@
                   "display_order": 1
                 },
                 {
+                  "id": "3b366cee-209a-47bb-8dda-30ecd26f70d7",
                   "question_html": "<p>The SI unit of magnetic field strength is the:</p>",
                   "problem_type": "ftb",
                   "correct_answer": "tesla",
@@ -6717,6 +6923,7 @@
                   "display_order": 2
                 },
                 {
+                  "id": "b8417d5d-9bd0-40fc-8496-2be5ade95417",
                   "question_html": "<p>Earth's magnetic field at the surface is approximately \\( 5 \\times 10^{-5} \\) T. Express this in microtesla (μT).</p>",
                   "problem_type": "ftb",
                   "correct_answer": "50",
@@ -6743,11 +6950,13 @@
               ]
             },
             {
+              "id": "de69ef44-fd74-48e1-9110-23b1f3ff016f",
               "title": "Premium: Magnetic Fields",
               "access_tier": "premium",
               "display_order": 1,
               "problems": [
                 {
+                  "id": "0de5733a-385a-4eba-b5f9-bf7f307e21c2",
                   "question_html": "<p>A compass needle placed near a bar magnet aligns with the magnetic field. The north pole of the compass points:</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -6792,6 +7001,7 @@
                   "display_order": 0
                 },
                 {
+                  "id": "95a612cc-3ee7-42d7-baa3-ed6319d36f8c",
                   "question_html": "<p>How do magnetic field lines differ from electric field lines? Select the correct statement.</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -6859,11 +7069,13 @@
           "display_order": 1,
           "problem_sets": [
             {
+              "id": "444e01e3-c8c6-4748-8afb-c374f7042d13",
               "title": "Practice: Magnetism and Moving Charges",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "f32f158b-2032-4346-8d33-a758447f60fe",
                   "question_html": "<p>A charged particle moves parallel to a uniform magnetic field. The magnetic force on the particle is:</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -6908,6 +7120,7 @@
                   "display_order": 0
                 },
                 {
+                  "id": "7d878c02-e808-4557-bf19-076a5f368bb5",
                   "question_html": "<p>A proton moves at \\( 3.0 \\times 10^6 \\) m/s perpendicular to a 0.50 T magnetic field. What is the magnitude of the magnetic force on the proton? (\\( q_p = 1.6 \\times 10^{-19} \\) C)</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -6952,6 +7165,7 @@
                   "display_order": 1
                 },
                 {
+                  "id": "9291bebc-e676-4f24-831e-4ddac2ae834f",
                   "question_html": "<p>Does the magnetic force on a moving charged particle do work? Explain why or why not.</p>",
                   "problem_type": "ftb",
                   "correct_answer": "no",
@@ -6979,6 +7193,7 @@
                   "display_order": 2
                 },
                 {
+                  "id": "0818ebd3-5962-451e-b885-e8dc40046168",
                   "question_html": "<p>A proton moves at \\( 1.0 \\times 10^6 \\) m/s perpendicular to a 0.20 T field. What is the radius of its circular path, in centimeters? (\\( m_p = 1.67 \\times 10^{-27} \\) kg, \\( e = 1.6 \\times 10^{-19} \\) C)</p>",
                   "problem_type": "ftb",
                   "correct_answer": "5.2",
@@ -7011,11 +7226,13 @@
               ]
             },
             {
+              "id": "b85d72be-c9e0-44ed-a46e-9bdc7d0b4191",
               "title": "Premium: Magnetism and Moving Charges",
               "access_tier": "premium",
               "display_order": 1,
               "problems": [
                 {
+                  "id": "836e817d-72ca-4fe9-80e3-d3be1f7bb366",
                   "question_html": "<p>A proton and an alpha particle (\\( q = 2e \\), \\( m = 4m_p \\)) enter the same magnetic field with the same speed. What is the ratio of their orbital radii \\( r_\\alpha / r_p \\)?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -7060,6 +7277,7 @@
                   "display_order": 0
                 },
                 {
+                  "id": "3e065e03-4143-451c-be29-d63335a25c20",
                   "question_html": "<p>An electron moves at \\( 2.0 \\times 10^7 \\) m/s at 30° to a 0.10 T magnetic field. What is the magnetic force on the electron?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -7104,6 +7322,7 @@
                   "display_order": 1
                 },
                 {
+                  "id": "265e77df-0585-4c92-a31b-08168259f8f3",
                   "question_html": "<p>A proton moves at \\( 4.0 \\times 10^6 \\) m/s perpendicular to a 0.80 T field. What is the period of its circular motion, in seconds? (\\( m_p = 1.67 \\times 10^{-27} \\) kg)</p>",
                   "problem_type": "ftb",
                   "correct_answer": "8.2e-8",
@@ -7131,6 +7350,7 @@
                   "display_order": 2
                 },
                 {
+                  "id": "c029a434-598a-4c4f-83cd-b46e175a04ae",
                   "question_html": "<p>A charged particle enters a region of uniform magnetic field and follows the semicircular path shown. The particle enters from the left moving to the right, curves upward, and exits moving to the left. The field points into the page. Determine the sign of the charge and explain your reasoning.</p>",
                   "problem_type": "frq",
                   "difficulty": "hard",
@@ -7190,11 +7410,13 @@
           "display_order": 2,
           "problem_sets": [
             {
+              "id": "07ca0bc9-0a18-4351-b8a3-33d7d2fca5df",
               "title": "Practice: Magnetism and Current-Carrying Wires",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "33d3d8e0-c1df-4568-98d4-f416bb23f997",
                   "question_html": "<p>Two long parallel wires carry currents in the same direction. The wires will:</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -7239,6 +7461,7 @@
                   "display_order": 0
                 },
                 {
+                  "id": "95bbf8d3-f5bc-4da8-86b6-e0607c714715",
                   "question_html": "<p>A 0.50 m wire carrying 3.0 A of current is placed perpendicular to a 0.40 T magnetic field. What is the force on the wire?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -7280,6 +7503,7 @@
                   "display_order": 1
                 },
                 {
+                  "id": "e5d0a3c2-c554-4887-9231-ff002969b4dd",
                   "question_html": "<p>What is the magnetic field 0.10 m from a long straight wire carrying 5.0 A? (\\( \\mu_0 = 4\\pi \\times 10^{-7} \\) T·m/A). Give your answer in microtesla (μT).</p>",
                   "problem_type": "ftb",
                   "correct_answer": "10",
@@ -7307,6 +7531,7 @@
                   "display_order": 2
                 },
                 {
+                  "id": "13193637-9c3f-4f94-9c34-62b171ec67c4",
                   "question_html": "<p>A solenoid has 200 turns, is 0.25 m long, and carries 4.0 A. What is the magnetic field inside the solenoid, in millitesla (mT)?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "4.0",
@@ -7336,11 +7561,13 @@
               ]
             },
             {
+              "id": "cdff06af-8099-4117-9d01-a065a6feaa50",
               "title": "Premium: Magnetism and Current-Carrying Wires",
               "access_tier": "premium",
               "display_order": 1,
               "problems": [
                 {
+                  "id": "7f2a511b-84a3-44cb-aab0-12679ab87104",
                   "question_html": "<p>A 0.30 m wire carrying 2.0 A makes a 60° angle with a 0.50 T field. What is the force on the wire?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -7385,6 +7612,7 @@
                   "display_order": 0
                 },
                 {
+                  "id": "b0a5cf1a-9ede-4d5d-8747-a36388ada898",
                   "question_html": "<p>Two parallel wires separated by 0.20 m each carry 10 A in opposite directions. What is the force per meter between them? Is it attractive or repulsive?</p>",
                   "problem_type": "mcq",
                   "difficulty": "hard",
@@ -7432,6 +7660,7 @@
                   "display_order": 1
                 },
                 {
+                  "id": "91bdd8a0-940a-4f95-9b01-7c6d1504e1a3",
                   "question_html": "<p>At what distance from a long straight wire carrying 8.0 A is the magnetic field equal to \\( 4.0 \\times 10^{-5} \\) T? Give your answer in meters.</p>",
                   "problem_type": "ftb",
                   "correct_answer": "0.04",
@@ -7459,6 +7688,7 @@
                   "display_order": 2
                 },
                 {
+                  "id": "f2e64314-3ff6-4940-9dca-c7ef18e2651e",
                   "question_html": "<p>A horizontal wire of mass 0.050 kg and length 0.40 m carries a current in a region where the magnetic field is 0.30 T directed horizontally. What current is needed to levitate the wire (magnetic force balances gravity)? (\\( g = 9.8 \\) m/s²)</p>",
                   "problem_type": "frq",
                   "difficulty": "hard",
@@ -7519,11 +7749,13 @@
           "display_order": 3,
           "problem_sets": [
             {
+              "id": "e98c0ef2-be94-49f7-b51d-b6fcaf4b07b0",
               "title": "Practice: Electromagnetic Induction",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "9304af95-ece2-478b-8c26-2de603620980",
                   "question_html": "<p>A circular loop of radius 0.10 m is in a uniform magnetic field of 0.50 T perpendicular to the loop. What is the magnetic flux through the loop, in Wb?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -7568,6 +7800,7 @@
                   "display_order": 0
                 },
                 {
+                  "id": "e73e72ed-3fa0-4bff-96b6-2ad6d42821dd",
                   "question_html": "<p>A magnetic field through a 50-turn coil changes from 0.40 T to 0.10 T in 0.20 s. The coil has an area of 0.030 m². What is the magnitude of the induced EMF?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -7612,6 +7845,7 @@
                   "display_order": 1
                 },
                 {
+                  "id": "bf13c5ba-ae31-4930-a356-b2fbb069c3eb",
                   "question_html": "<p>A loop of wire is in a constant, uniform magnetic field. No EMF is induced because:</p>",
                   "problem_type": "ftb",
                   "correct_answer": "the flux is not changing",
@@ -7639,6 +7873,7 @@
                   "display_order": 2
                 },
                 {
+                  "id": "dd4d143e-fdd0-4353-9850-7785c7be2e75",
                   "question_html": "<p>A north pole of a bar magnet is pushed toward a conducting loop. By Lenz's law, the induced current in the loop (as viewed from the magnet's side) flows:</p>",
                   "problem_type": "ftb",
                   "correct_answer": "counterclockwise",
@@ -7671,11 +7906,13 @@
               ]
             },
             {
+              "id": "67ae7824-abcc-4387-affb-f0384c54668c",
               "title": "Premium: Electromagnetic Induction",
               "access_tier": "premium",
               "display_order": 1,
               "problems": [
                 {
+                  "id": "c3e49399-9b05-431a-bce1-6f5517d6dc45",
                   "question_html": "<p>A north pole of a magnet is pulled <em>away</em> from a conducting loop. By Lenz's law, does the loop attract or repel the magnet?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -7723,6 +7960,7 @@
                   "display_order": 0
                 },
                 {
+                  "id": "87102851-c3f1-41c9-aa9f-910e7f85140b",
                   "question_html": "<p>A square loop (side 0.20 m) is pulled at constant velocity out of a region of uniform magnetic field \\( B = 0.80 \\) T (perpendicular to the loop). The loop has resistance 2.0 Ω. If it takes 0.10 s for the loop to exit the field, what is the induced current?</p>",
                   "problem_type": "mcq",
                   "difficulty": "hard",
@@ -7770,6 +8008,7 @@
                   "display_order": 1
                 },
                 {
+                  "id": "c3a58999-4030-45bd-96c1-8fe436a3d831",
                   "question_html": "<p>A 200-turn coil with area 0.05 m² is in a field that changes from 0 to 0.60 T in 0.30 s. If the coil has a resistance of 10 Ω, what is the average induced current?</p>",
                   "problem_type": "mcq",
                   "difficulty": "hard",
@@ -7817,6 +8056,7 @@
                   "display_order": 2
                 },
                 {
+                  "id": "edbabea2-d3a7-4980-b021-56bc887401fa",
                   "question_html": "<p>A conducting rod of length 0.50 m slides at 4.0 m/s along frictionless rails in a 0.30 T field (perpendicular to the plane of the rails). What is the induced EMF, in volts?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "0.6",
@@ -7844,6 +8084,7 @@
                   "display_order": 3
                 },
                 {
+                  "id": "232286d2-5de7-4e77-9c36-ce1b236f82a8",
                   "question_html": "<p>A bar magnet is dropped through a vertical conducting tube. The magnet falls much slower than it would in free fall. Explain why, using Faraday's and Lenz's laws.</p>",
                   "problem_type": "frq",
                   "difficulty": "hard",
@@ -7914,11 +8155,13 @@
           "display_order": 0,
           "problem_sets": [
             {
+              "id": "85317597-585c-49a6-a44d-bd2dff5e8790",
               "title": "Practice: Reflection",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "08dcdaed-4473-4f84-8309-63327707079e",
                   "question_html": "<p>A light ray strikes a plane mirror at an angle of 35° from the normal. What is the angle of reflection?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -7960,6 +8203,7 @@
                   "display_order": 0
                 },
                 {
+                  "id": "ede69472-b548-47ce-93fb-20c9f2efa0b8",
                   "question_html": "<p>A light ray hits a mirror at 20° from the surface (not from the normal). What is the angle of reflection from the normal?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -8004,6 +8248,7 @@
                   "display_order": 1
                 },
                 {
+                  "id": "b0a9be12-4baf-473e-ad10-cb3323f16b5a",
                   "question_html": "<p>You stand 2.0 m in front of a plane mirror. How far behind the mirror does your image appear, in meters?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "2.0",
@@ -8031,6 +8276,7 @@
                   "display_order": 2
                 },
                 {
+                  "id": "559018ba-edc4-4134-b0e8-22fe7f733397",
                   "question_html": "<p>Which type of reflection produces a clear image — specular or diffuse?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "specular",
@@ -8057,11 +8303,13 @@
               ]
             },
             {
+              "id": "3fc24af5-66ce-4ba2-96cd-2b50596a467c",
               "title": "Premium: Reflection",
               "access_tier": "premium",
               "display_order": 1,
               "problems": [
                 {
+                  "id": "695855d9-89ae-44f7-a24d-7fe9d5e5b457",
                   "question_html": "<p>An image formed by a plane mirror is always:</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -8103,6 +8351,7 @@
                   "display_order": 0
                 },
                 {
+                  "id": "2f91f530-9a33-4dbb-bcd8-073f69cd2d86",
                   "question_html": "<p>Two plane mirrors are placed at 90° to each other. A light ray enters parallel to one mirror and hits the other at 45°. After reflecting off both mirrors, the ray exits:</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -8174,11 +8423,13 @@
           "display_order": 1,
           "problem_sets": [
             {
+              "id": "aaf0c10d-1ba6-4f5c-b50e-5e4c9b253011",
               "title": "Practice: Images Formed by Mirrors",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "69cc3ea7-3d3f-4384-97e0-d9d230a2b78e",
                   "question_html": "<p>A concave mirror has a radius of curvature of 40 cm. What is its focal length, in cm?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -8220,6 +8471,7 @@
                   "display_order": 0
                 },
                 {
+                  "id": "9ecde397-02d5-4b63-b8df-5852e01d7f1a",
                   "question_html": "<p>An object is placed 30 cm from a concave mirror with focal length 15 cm. Where does the image form?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -8264,6 +8516,7 @@
                   "display_order": 1
                 },
                 {
+                  "id": "94055ece-1d17-42b1-98aa-c23bff75cc9b",
                   "question_html": "<p>A convex mirror always produces images that are:</p>",
                   "problem_type": "ftb",
                   "correct_answer": "virtual",
@@ -8288,6 +8541,7 @@
                   "display_order": 2
                 },
                 {
+                  "id": "a87ad879-6b5e-4f13-8c71-0f58c72933aa",
                   "question_html": "<p>For the problem above (object at 30 cm, \\( f = 15 \\) cm concave mirror), what is the magnification?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "-1",
@@ -8317,11 +8571,13 @@
               ]
             },
             {
+              "id": "edc543fa-b67d-4de8-8247-27a12fccb616",
               "title": "Premium: Images Formed by Mirrors",
               "access_tier": "premium",
               "display_order": 1,
               "problems": [
                 {
+                  "id": "252b6c64-6dc8-4a3b-bed3-e2cd3f638e16",
                   "question_html": "<p>An object is placed 10 cm from a concave mirror with focal length 15 cm. Where does the image form, and what type of image is it?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -8369,6 +8625,7 @@
                   "display_order": 0
                 },
                 {
+                  "id": "725e0407-ca37-4666-a635-763247d28e21",
                   "question_html": "<p>A convex mirror has a focal length of −20 cm. An object is placed 60 cm from the mirror. What is the image distance, in cm?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -8413,6 +8670,7 @@
                   "display_order": 1
                 },
                 {
+                  "id": "5d53904b-7af7-42a3-9fe0-a46869fafde4",
                   "question_html": "<p>An object is placed 45 cm from a concave mirror with \\( f = 15 \\) cm. What is the image distance, in cm?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "22.5",
@@ -8440,6 +8698,7 @@
                   "display_order": 2
                 },
                 {
+                  "id": "f8da4abb-906c-495c-8769-7b4a5d7a0649",
                   "question_html": "<p>A 5.0 cm tall object is placed 20 cm from a concave mirror with focal length 10 cm. Determine the image distance, image height, and whether the image is real or virtual, upright or inverted.</p>",
                   "problem_type": "frq",
                   "difficulty": "hard",
@@ -8502,11 +8761,13 @@
           "display_order": 2,
           "problem_sets": [
             {
+              "id": "47e0e57a-36c9-4b77-82f5-78adc6adfd30",
               "title": "Practice: Refraction",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "9d522387-894e-4d7a-a602-78509b12dc64",
                   "question_html": "<p>When light enters a medium with a higher index of refraction, it bends:</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -8548,6 +8809,7 @@
                   "display_order": 0
                 },
                 {
+                  "id": "f809fbcb-d49b-45c9-a63b-68ff55f2d163",
                   "question_html": "<p>Light passes from air (\\( n = 1.00 \\)) into water (\\( n = 1.33 \\)) at an angle of incidence of 45°. What is the angle of refraction?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -8592,6 +8854,7 @@
                   "display_order": 1
                 },
                 {
+                  "id": "3c556f45-e4a2-49d7-8b52-ac6b21e66549",
                   "question_html": "<p>The speed of light in glass is \\( 2.0 \\times 10^8 \\) m/s. What is the index of refraction of this glass?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "1.5",
@@ -8616,6 +8879,7 @@
                   "display_order": 2
                 },
                 {
+                  "id": "d8500906-fd71-47c2-af62-456befecd08d",
                   "question_html": "<p>What is the critical angle for total internal reflection at a water-air interface? (\\( n_{\\text{water}} = 1.33 \\)). Round to the nearest degree.</p>",
                   "problem_type": "ftb",
                   "correct_answer": "49",
@@ -8645,11 +8909,13 @@
               ]
             },
             {
+              "id": "aaf32291-cfd4-436e-90be-5ed38648ecc9",
               "title": "Premium: Refraction",
               "access_tier": "premium",
               "display_order": 1,
               "problems": [
                 {
+                  "id": "f4d93c44-a717-4def-a1c9-8ef403599f4b",
                   "question_html": "<p>Total internal reflection can only occur when light travels from:</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -8694,6 +8960,7 @@
                   "display_order": 0
                 },
                 {
+                  "id": "cd55b893-1ef5-4dd9-a5f8-df2e44eaa56a",
                   "question_html": "<p>Light passes from glass (\\( n = 1.50 \\)) into water (\\( n = 1.33 \\)) at an angle of incidence of 30°. What is the angle of refraction?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -8738,6 +9005,7 @@
                   "display_order": 1
                 },
                 {
+                  "id": "417acb99-874d-4bdc-9f29-edd876a702f4",
                   "question_html": "<p>What is the critical angle for total internal reflection at a diamond-air interface? (\\( n_{\\text{diamond}} = 2.42 \\)). Round to the nearest degree.</p>",
                   "problem_type": "ftb",
                   "correct_answer": "24",
@@ -8765,6 +9033,7 @@
                   "display_order": 2
                 },
                 {
+                  "id": "3d00d678-f49f-4d10-95ab-75ce472d210a",
                   "question_html": "<p>A light ray travels from air into a glass slab (\\( n = 1.50 \\)) at 60° and then exits from the other parallel face back into air. Show that the exiting ray is parallel to the incident ray, and find the lateral displacement if the slab is 2.0 cm thick.</p>",
                   "problem_type": "frq",
                   "difficulty": "hard",
@@ -8825,11 +9094,13 @@
           "display_order": 3,
           "problem_sets": [
             {
+              "id": "b521c0fa-5d96-4cbd-a648-8af82f33dfa4",
               "title": "Practice: Images Formed by Lenses",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "60e843cb-bcff-4225-aaca-7a862a4c0ba2",
                   "question_html": "<p>A diverging lens always produces images that are:</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -8871,6 +9142,7 @@
                   "display_order": 0
                 },
                 {
+                  "id": "e36e7d58-fa95-4876-8947-a2a4cf966cff",
                   "question_html": "<p>An object is placed 30 cm from a converging lens with focal length 10 cm. Where does the image form?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -8915,6 +9187,7 @@
                   "display_order": 1
                 },
                 {
+                  "id": "c71f2045-1a85-4e04-98cb-50721c3330c8",
                   "question_html": "<p>An object is placed 20 cm from a converging lens with \\( f = 20 \\) cm. Where does the image form?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "infinity",
@@ -8942,6 +9215,7 @@
                   "display_order": 2
                 },
                 {
+                  "id": "97b76c6c-1609-4d09-88b9-26e8c83724bd",
                   "question_html": "<p>For the converging lens problem (\\( d_o = 30 \\) cm, \\( f = 10 \\) cm, \\( d_i = 15 \\) cm), what is the magnification?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "-0.5",
@@ -8971,11 +9245,13 @@
               ]
             },
             {
+              "id": "16db7b1c-778b-48ff-a2ff-b07c7b5a7c96",
               "title": "Premium: Images Formed by Lenses",
               "access_tier": "premium",
               "display_order": 1,
               "problems": [
                 {
+                  "id": "b9c67a1c-3f44-4052-81c7-9d9f005ca131",
                   "question_html": "<p>An object is placed 8.0 cm from a converging lens with focal length 12 cm. Where does the image form and what are its characteristics?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -9023,6 +9299,7 @@
                   "display_order": 0
                 },
                 {
+                  "id": "0e5eff31-14a6-4686-bf6a-5f6ab537c46c",
                   "question_html": "<p>A diverging lens has \\( f = -15 \\) cm. An object is placed 30 cm from the lens. What is the image distance?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -9067,6 +9344,7 @@
                   "display_order": 1
                 },
                 {
+                  "id": "30e4fc74-2fe6-4d1f-9ab2-f696e0f5a966",
                   "question_html": "<p>An object is placed 40 cm from a converging lens with \\( f = 25 \\) cm. What is the image distance, in cm? Round to the nearest whole number.</p>",
                   "problem_type": "ftb",
                   "correct_answer": "67",
@@ -9094,6 +9372,7 @@
                   "display_order": 2
                 },
                 {
+                  "id": "4d66c468-6b8d-485e-ac3e-243ec4c0e94d",
                   "question_html": "<p>A 3.0 cm tall object is placed 24 cm from a converging lens with focal length 8.0 cm. Determine the image distance, magnification, image height, and whether the image is real or virtual.</p>",
                   "problem_type": "frq",
                   "difficulty": "hard",
@@ -9164,11 +9443,13 @@
           "display_order": 0,
           "problem_sets": [
             {
+              "id": "97f589f5-114e-43b9-b9e6-53a6dd8fa5ba",
               "title": "Practice: Wave Pulses and Properties",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "3197adb7-08b1-4013-9ffd-ce1cc2462c40",
                   "question_html": "<p>In a transverse wave, the particles of the medium move:</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -9210,6 +9491,7 @@
                   "display_order": 0
                 },
                 {
+                  "id": "dd9da3df-ba4f-445a-ac89-5ee84f75722d",
                   "question_html": "<p>Sound waves are an example of:</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -9251,6 +9533,7 @@
                   "display_order": 1
                 },
                 {
+                  "id": "a8488876-7453-4db9-a774-a32a3dfb67d6",
                   "question_html": "<p>Two wave pulses with amplitudes of +3 cm and +2 cm meet. At the instant they fully overlap, the resulting displacement is ____ cm.</p>",
                   "problem_type": "ftb",
                   "correct_answer": "5",
@@ -9275,6 +9558,7 @@
                   "display_order": 2
                 },
                 {
+                  "id": "fabed9aa-408f-48e9-862b-741d5a6af0d8",
                   "question_html": "<p>Two pulses of amplitudes +4 cm and −4 cm meet. At the instant of full overlap, the displacement is ____ cm.</p>",
                   "problem_type": "ftb",
                   "correct_answer": "0",
@@ -9301,11 +9585,13 @@
               ]
             },
             {
+              "id": "884f651d-8026-4c32-ac69-2c6cbcb5ebaa",
               "title": "Premium: Wave Pulses and Properties",
               "access_tier": "premium",
               "display_order": 1,
               "problems": [
                 {
+                  "id": "0a39517c-43db-46bf-95ae-43ab200e5a12",
                   "question_html": "<p>A wave pulse travels along a string. Which statement is correct?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -9347,6 +9633,7 @@
                   "display_order": 0
                 },
                 {
+                  "id": "6bc25120-d6f4-4dff-a51c-5b9f80363d14",
                   "question_html": "<p>After two wave pulses pass through each other, each pulse:</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -9412,11 +9699,13 @@
           "display_order": 1,
           "problem_sets": [
             {
+              "id": "8312497c-ffcb-45b3-9d7e-02c83b552271",
               "title": "Practice: Periodic Waves",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "035015c6-b540-47f6-8bb5-612a24e7d784",
                   "question_html": "<p>A wave has a frequency of 500 Hz and a wavelength of 0.68 m. What is the wave speed?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -9458,6 +9747,7 @@
                   "display_order": 0
                 },
                 {
+                  "id": "b7023e38-c371-470f-92f7-8d605da56d5c",
                   "question_html": "<p>A wave has a period of 0.020 s. What is its frequency, in Hz?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -9499,6 +9789,7 @@
                   "display_order": 1
                 },
                 {
+                  "id": "b6495eb7-94c1-4733-99bf-5d359fabb85a",
                   "question_html": "<p>A sound wave in air (\\( v = 343 \\) m/s) has a frequency of 440 Hz (concert A). What is its wavelength, in meters? Round to two decimal places.</p>",
                   "problem_type": "ftb",
                   "correct_answer": "0.78",
@@ -9523,6 +9814,7 @@
                   "display_order": 2
                 },
                 {
+                  "id": "cc78cdbf-07e9-411c-815b-a9a10b48cc37",
                   "question_html": "<p>If a wave's amplitude is doubled, by what factor does its energy increase?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "4",
@@ -9549,11 +9841,13 @@
               ]
             },
             {
+              "id": "a70162fb-8fff-4f7c-ab0e-32d49b701980",
               "title": "Premium: Periodic Waves",
               "access_tier": "premium",
               "display_order": 1,
               "problems": [
                 {
+                  "id": "62055efd-33da-4289-9133-fbbfc7b8d02a",
                   "question_html": "<p>A wave enters a new medium where the speed is half the original speed. What happens to the wavelength?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -9598,6 +9892,7 @@
                   "display_order": 0
                 },
                 {
+                  "id": "d38d77f0-3faf-4d4e-ab52-7ee6281b5f63",
                   "question_html": "<p>The highest frequency a young human can hear is about 20,000 Hz. If the speed of sound in air is 343 m/s, what is the wavelength of this sound, in cm? Round to the nearest whole number.</p>",
                   "problem_type": "ftb",
                   "correct_answer": "2",
@@ -9645,11 +9940,13 @@
           "display_order": 2,
           "problem_sets": [
             {
+              "id": "7d2c8c3e-0c28-4465-bbd1-4ad089da36b0",
               "title": "Practice: Boundaries and Polarization",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "d62d159d-ec70-4b93-b340-53a092ba0088",
                   "question_html": "<p>A wave pulse on a string reaches a fixed (rigid) end. The reflected pulse is:</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -9691,6 +9988,7 @@
                   "display_order": 0
                 },
                 {
+                  "id": "0b123739-bd40-4336-83e0-a32e04abd9de",
                   "question_html": "<p>Unpolarized light passes through a polarizing filter. The intensity of the transmitted light is:</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -9732,6 +10030,7 @@
                   "display_order": 1
                 },
                 {
+                  "id": "13c27b6c-8ff5-42a5-8c89-fc66031ae8cc",
                   "question_html": "<p>Which type of wave can be polarized — transverse or longitudinal?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "transverse",
@@ -9756,6 +10055,7 @@
                   "display_order": 2
                 },
                 {
+                  "id": "2bde0b00-cd3d-45a7-a533-52ad27c62059",
                   "question_html": "<p>Polarized light of intensity \\( I_0 \\) passes through a second polarizer at 60° to the first. What fraction of \\( I_0 \\) is transmitted?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "0.25",
@@ -9785,11 +10085,13 @@
               ]
             },
             {
+              "id": "d2300e6c-40c8-4b81-991f-88e33e95c08f",
               "title": "Premium: Boundaries and Polarization",
               "access_tier": "premium",
               "display_order": 1,
               "problems": [
                 {
+                  "id": "468bc0cd-e7ff-4baa-be08-ef6c9e9d4675",
                   "question_html": "<p>A wave pulse on a thin string reaches a boundary with a thicker, heavier string. The reflected pulse will be:</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -9834,6 +10136,7 @@
                   "display_order": 0
                 },
                 {
+                  "id": "88046b32-b08f-456a-ac3f-509773427001",
                   "question_html": "<p>Unpolarized light passes through two crossed polarizers (90° apart). What is the transmitted intensity?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -9878,6 +10181,7 @@
                   "display_order": 1
                 },
                 {
+                  "id": "8ad2b309-54a4-4b2d-bbf2-1a2763f99f84",
                   "question_html": "<p>Unpolarized light of intensity \\( I_0 \\) passes through three polarizers: the first vertical, the second at 30° from vertical, and the third horizontal. What fraction of \\( I_0 \\) exits the third polarizer?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "0.094",
@@ -9908,6 +10212,7 @@
                   "display_order": 2
                 },
                 {
+                  "id": "d15ef6ab-a6d3-45ba-9d59-9c98b5b22bca",
                   "question_html": "<p>Explain why sound waves cannot be polarized but light waves can.</p>",
                   "problem_type": "frq",
                   "difficulty": "medium",
@@ -9966,11 +10271,13 @@
           "display_order": 3,
           "problem_sets": [
             {
+              "id": "89f01464-3b3a-4a5e-bdc5-6387dae53e98",
               "title": "Practice: Electromagnetic Waves",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "b81c0985-ea1f-4cd1-8e5c-efe8c6d4ef4c",
                   "question_html": "<p>What is the wavelength of an EM wave with frequency \\( 6.0 \\times 10^{14} \\) Hz? (This is visible light.)</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -10012,6 +10319,7 @@
                   "display_order": 0
                 },
                 {
+                  "id": "97b1112a-8963-49b7-a09e-1672ae69f619",
                   "question_html": "<p>Which type of electromagnetic wave has the highest frequency?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -10053,6 +10361,7 @@
                   "display_order": 1
                 },
                 {
+                  "id": "20d8e7a8-3ff7-48f1-8651-ad136e5498d2",
                   "question_html": "<p>All electromagnetic waves in vacuum travel at a speed of ____ m/s.</p>",
                   "problem_type": "ftb",
                   "correct_answer": "3.0e8",
@@ -10077,6 +10386,7 @@
                   "display_order": 2
                 },
                 {
+                  "id": "ab952361-9e7f-483f-8f7b-55e061379e0c",
                   "question_html": "<p>EM waves are transverse waves. The electric field \\( \\vec{E} \\) and magnetic field \\( \\vec{B} \\) oscillate _______ to each other and to the direction of propagation.</p>",
                   "problem_type": "ftb",
                   "correct_answer": "perpendicular",
@@ -10103,11 +10413,13 @@
               ]
             },
             {
+              "id": "a2ddfd31-bba2-495e-9e78-04024d184f7b",
               "title": "Premium: Electromagnetic Waves",
               "access_tier": "premium",
               "display_order": 1,
               "problems": [
                 {
+                  "id": "4f2413d6-5dab-41e3-87c9-334372c6d1b5",
                   "question_html": "<p>A radio station broadcasts at 100 MHz (\\( 1.0 \\times 10^8 \\) Hz). What is the wavelength of the signal?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -10149,6 +10461,7 @@
                   "display_order": 0
                 },
                 {
+                  "id": "8ae3d56d-5ced-4a0a-8187-0bf4b6aac404",
                   "question_html": "<p>Which of the following correctly lists EM waves from longest wavelength to shortest?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -10212,11 +10525,13 @@
           "display_order": 4,
           "problem_sets": [
             {
+              "id": "4ab4d0a0-4089-4447-b87b-f712149e126f",
               "title": "Practice: The Doppler Effect",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "49e617c2-b671-4f25-bc34-60cfe009c435",
                   "question_html": "<p>A fire truck with its siren on approaches you. Compared to the siren's actual frequency, the frequency you hear is:</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -10258,6 +10573,7 @@
                   "display_order": 0
                 },
                 {
+                  "id": "d96bfd5a-d678-434a-ab40-3e663636211b",
                   "question_html": "<p>A car horn has a frequency of 500 Hz. The car approaches a stationary observer at 30 m/s. What frequency does the observer hear? (\\( v_{\\text{sound}} = 340 \\) m/s)</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -10302,6 +10618,7 @@
                   "display_order": 1
                 },
                 {
+                  "id": "ceeae6ed-5470-4965-864c-77f7948b4d34",
                   "question_html": "<p>Light from a distant galaxy is observed to be redshifted. This means the galaxy is:</p>",
                   "problem_type": "ftb",
                   "correct_answer": "moving away",
@@ -10326,6 +10643,7 @@
                   "display_order": 2
                 },
                 {
+                  "id": "0ee77700-9c32-4284-8f3e-8ac13f0a2a57",
                   "question_html": "<p>The same car horn (500 Hz) now moves <em>away</em> from the observer at 30 m/s. What frequency is heard?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "459",
@@ -10352,11 +10670,13 @@
               ]
             },
             {
+              "id": "770bc43b-fe8a-46bb-9fc0-f358104b0afb",
               "title": "Premium: The Doppler Effect",
               "access_tier": "premium",
               "display_order": 1,
               "problems": [
                 {
+                  "id": "838e3990-c1ea-4932-8a60-450136942bea",
                   "question_html": "<p>An observer moves toward a stationary 600 Hz source at 20 m/s. What frequency does the observer hear? (\\( v = 343 \\) m/s)</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -10398,6 +10718,7 @@
                   "display_order": 0
                 },
                 {
+                  "id": "e418de08-bbd2-4bc5-b49b-3e74b067a6ff",
                   "question_html": "<p>Two cars approach each other. Car A (source) blows its horn at 400 Hz and moves at 25 m/s. Car B (observer) moves at 20 m/s toward Car A. What frequency does Car B hear? (\\( v = 340 \\) m/s)</p>",
                   "problem_type": "mcq",
                   "difficulty": "hard",
@@ -10442,6 +10763,7 @@
                   "display_order": 1
                 },
                 {
+                  "id": "a3971098-85d0-4951-af00-ab16e5641729",
                   "question_html": "<p>An ambulance siren emits a 700 Hz tone. As it passes you, the frequency drops from 750 Hz to 656 Hz. What is the ambulance's speed? (\\( v = 343 \\) m/s). Round to the nearest whole number.</p>",
                   "problem_type": "ftb",
                   "correct_answer": "23",
@@ -10472,6 +10794,7 @@
                   "display_order": 2
                 },
                 {
+                  "id": "7051e5a5-6676-43ed-99f3-13d3e41cbb8e",
                   "question_html": "<p>Explain the difference between the Doppler effect for sound and for light.</p>",
                   "problem_type": "frq",
                   "difficulty": "medium",
@@ -10532,11 +10855,13 @@
           "display_order": 5,
           "problem_sets": [
             {
+              "id": "e84b50c3-fcc3-4415-90be-9e7c7a53d126",
               "title": "Practice: Interference and Standing Waves",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "7d73e6a1-b371-4061-8443-861a0683f73b",
                   "question_html": "<p>Two waves interfere constructively when the path difference between them is:</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -10578,6 +10903,7 @@
                   "display_order": 0
                 },
                 {
+                  "id": "d1f79ad2-2af3-47fe-ad3f-35efd239879d",
                   "question_html": "<p>A guitar string of length 0.60 m vibrates in its fundamental mode. What is the wavelength of the standing wave?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -10619,6 +10945,7 @@
                   "display_order": 1
                 },
                 {
+                  "id": "dba1e2f8-5f1b-4dcb-97ae-da63aac8bddc",
                   "question_html": "<p>A pipe open at both ends has a length of 0.85 m. What is its fundamental frequency? (\\( v_{\\text{sound}} = 340 \\) m/s). Round to the nearest whole number.</p>",
                   "problem_type": "ftb",
                   "correct_answer": "200",
@@ -10643,6 +10970,7 @@
                   "display_order": 2
                 },
                 {
+                  "id": "0321ed68-fd24-42f1-9c0a-59790f3d7e25",
                   "question_html": "<p>A pipe closed at one end and open at the other has a length of 0.50 m. What is its fundamental frequency? (\\( v = 340 \\) m/s). Round to the nearest whole number.</p>",
                   "problem_type": "ftb",
                   "correct_answer": "170",
@@ -10669,11 +10997,13 @@
               ]
             },
             {
+              "id": "b0ffa842-bd79-4457-bac9-61db2cb0cd33",
               "title": "Premium: Interference and Standing Waves",
               "access_tier": "premium",
               "display_order": 1,
               "problems": [
                 {
+                  "id": "d1f447c4-076e-461d-8472-d0a4a22f2ce4",
                   "question_html": "<p>A pipe closed at one end produces a fundamental at 170 Hz. What is the frequency of the next harmonic it can produce?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -10718,6 +11048,7 @@
                   "display_order": 0
                 },
                 {
+                  "id": "85d97a04-3316-4d2d-8f4c-6c3dd4bba258",
                   "question_html": "<p>A string vibrating in its 3rd harmonic has how many nodes and antinodes?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -10762,6 +11093,7 @@
                   "display_order": 1
                 },
                 {
+                  "id": "564cb574-3c9c-4d25-bce9-8bb56bd07af6",
                   "question_html": "<p>A string of length 1.0 m has a wave speed of 200 m/s. What is the frequency of the 4th harmonic, in Hz?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "400",
@@ -10786,6 +11118,7 @@
                   "display_order": 2
                 },
                 {
+                  "id": "17d5eea4-5867-4d09-827b-846a9c019fe6",
                   "question_html": "<p>A tube is initially open at both ends and has a fundamental frequency of 300 Hz. If one end is now closed, what is the new fundamental frequency?</p>",
                   "problem_type": "frq",
                   "difficulty": "hard",
@@ -10844,11 +11177,13 @@
           "display_order": 6,
           "problem_sets": [
             {
+              "id": "2d766b5b-5ef8-4912-b9ea-7428d67ad248",
               "title": "Practice: Diffraction",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "8bc679d0-aa31-46c8-8a9e-de77d5553193",
                   "question_html": "<p>If a wave's wavelength is much smaller than an opening it passes through, the amount of diffraction is:</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -10890,6 +11225,7 @@
                   "display_order": 0
                 },
                 {
+                  "id": "303bbb39-0b53-4ce2-b01c-87a667994500",
                   "question_html": "<p>A single slit of width \\( a = 0.10 \\) mm is illuminated by 500 nm light. At what angle does the first minimum occur?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -10934,6 +11270,7 @@
                   "display_order": 1
                 },
                 {
+                  "id": "1c4181a5-3b3e-4930-9514-3ad80b087bd2",
                   "question_html": "<p>You can hear someone around a corner but can't see them. This is because:</p>",
                   "problem_type": "ftb",
                   "correct_answer": "sound has a longer wavelength",
@@ -10961,6 +11298,7 @@
                   "display_order": 2
                 },
                 {
+                  "id": "59c6e1b4-2378-4108-8a99-870b7c92fd0a",
                   "question_html": "<p>If the slit width is halved (made narrower), the central diffraction maximum becomes:</p>",
                   "problem_type": "ftb",
                   "correct_answer": "wider",
@@ -10990,11 +11328,13 @@
               ]
             },
             {
+              "id": "edce794c-c93d-40a7-bf52-39d824388c20",
               "title": "Premium: Diffraction",
               "access_tier": "premium",
               "display_order": 1,
               "problems": [
                 {
+                  "id": "d5e2c08f-78f1-4fb3-b961-bdacc35cac31",
                   "question_html": "<p>In single-slit diffraction, the central maximum is:</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -11039,6 +11379,7 @@
                   "display_order": 0
                 },
                 {
+                  "id": "7f1b8f56-504e-4c65-81a2-6e6f590ecd51",
                   "question_html": "<p>Light of wavelength 600 nm passes through a 0.15 mm slit. What is the angle to the second minimum?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -11083,6 +11424,7 @@
                   "display_order": 1
                 },
                 {
+                  "id": "49c16f61-ed15-42e9-8e70-95d16c5f64e9",
                   "question_html": "<p>How does the single-slit diffraction pattern change if the wavelength is increased while keeping the slit width constant?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "pattern gets wider",
@@ -11110,6 +11452,7 @@
                   "display_order": 2
                 },
                 {
+                  "id": "afc68a34-b801-402a-9c20-c27cce3dec53",
                   "question_html": "<p>A single slit produces a diffraction pattern on a screen 2.0 m away. The slit width is 0.10 mm and the light wavelength is 500 nm. How wide is the central maximum on the screen, in cm? (Use small angle: \\( y \\approx L\\tan\\theta \\approx L\\sin\\theta \\).)</p>",
                   "problem_type": "frq",
                   "difficulty": "hard",
@@ -11169,11 +11512,13 @@
           "display_order": 7,
           "problem_sets": [
             {
+              "id": "caf395d5-c265-4a8b-abc4-dfd11780dd7e",
               "title": "Practice: Double-Slit and Gratings",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "8da56fda-8a52-403a-a345-509770b615e2",
                   "question_html": "<p>In Young's double-slit experiment, the condition for a bright fringe (constructive interference) is:</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -11215,6 +11560,7 @@
                   "display_order": 0
                 },
                 {
+                  "id": "25d52475-ddec-4da6-abdd-f3b6e73fc161",
                   "question_html": "<p>Two slits separated by 0.50 mm are illuminated by 600 nm light. A screen is 1.5 m away. What is the distance between adjacent bright fringes on the screen?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -11256,6 +11602,7 @@
                   "display_order": 1
                 },
                 {
+                  "id": "6ae138e0-f282-4f38-a677-ed3a22c02364",
                   "question_html": "<p>A diffraction grating has 500 lines per mm. What is the slit spacing \\( d \\) in micrometers (μm)?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "2.0",
@@ -11280,6 +11627,7 @@
                   "display_order": 2
                 },
                 {
+                  "id": "49bd5185-edc5-4b02-878c-99cbbc525aac",
                   "question_html": "<p>If the slit separation is doubled in a double-slit experiment (everything else stays the same), the fringe spacing:</p>",
                   "problem_type": "ftb",
                   "correct_answer": "halves",
@@ -11306,11 +11654,13 @@
               ]
             },
             {
+              "id": "06e523d3-a644-4394-a723-e8562eb1ed8f",
               "title": "Premium: Double-Slit and Gratings",
               "access_tier": "premium",
               "display_order": 1,
               "problems": [
                 {
+                  "id": "7ac64151-a5b6-4f2f-a7aa-e4893ff5e155",
                   "question_html": "<p>How does a diffraction grating produce sharper maxima than a double slit, even though the same equation \\( d\\sin\\theta = m\\lambda \\) applies?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -11355,6 +11705,7 @@
                   "display_order": 0
                 },
                 {
+                  "id": "d23bc7ae-90a5-4a39-afbd-07cfac0a172d",
                   "question_html": "<p>In a double-slit experiment with 500 nm light, the 3rd-order bright fringe occurs at 0.15° from the central maximum. What is the slit separation?</p>",
                   "problem_type": "mcq",
                   "difficulty": "hard",
@@ -11399,6 +11750,7 @@
                   "display_order": 1
                 },
                 {
+                  "id": "dab70309-ba2d-4ffb-a660-8cd3b0062ce3",
                   "question_html": "<p>A diffraction grating with 600 lines/mm is used to observe 550 nm light. At what angle does the first-order maximum occur?</p>",
                   "problem_type": "mcq",
                   "difficulty": "hard",
@@ -11446,6 +11798,7 @@
                   "display_order": 2
                 },
                 {
+                  "id": "347cdc79-6cbc-4480-bd50-3d4c341a1b9a",
                   "question_html": "<p>In the double-slit experiment above (\\( d = 0.50 \\) mm, \\( \\lambda = 600 \\) nm, \\( L = 1.5 \\) m), at what distance from the central maximum on the screen is the second bright fringe, in mm?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "3.6",
@@ -11470,6 +11823,7 @@
                   "display_order": 3
                 },
                 {
+                  "id": "838eab27-573c-4510-95a0-56170e49fe6e",
                   "question_html": "<p>White light (400–700 nm) passes through a double slit. The first-order fringes of red (700 nm) and violet (400 nm) light are at different positions. Which color's fringe is farther from the center, and by what factor?</p>",
                   "problem_type": "frq",
                   "difficulty": "hard",
@@ -11530,11 +11884,13 @@
           "display_order": 8,
           "problem_sets": [
             {
+              "id": "c74aa10b-8a58-4294-9726-c48165a33565",
               "title": "Practice: Thin-Film Interference",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "a92858ca-716e-4f50-a387-b961f2aaf78e",
                   "question_html": "<p>When light reflects off a surface with a higher index of refraction, it undergoes a phase change of:</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -11576,6 +11932,7 @@
                   "display_order": 0
                 },
                 {
+                  "id": "4afccadc-cafc-4e2b-a31b-f3a9cdec4496",
                   "question_html": "<p>A soap film (\\( n = 1.33 \\)) in air appears bright (constructive reflection) for 532 nm light. If there is one net phase change, what is the minimum thickness of the film?</p>",
                   "problem_type": "mcq",
                   "difficulty": "hard",
@@ -11623,6 +11980,7 @@
                   "display_order": 1
                 },
                 {
+                  "id": "b2e0362d-6007-4892-a774-6ba3e4cf5f19",
                   "question_html": "<p>A thin oil film (\\( n = 1.45 \\)) floats on water (\\( n = 1.33 \\)). Light reflects from both the top surface (air→oil) and bottom surface (oil→water). How many 180° phase changes occur?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "1",
@@ -11653,6 +12011,7 @@
                   "display_order": 2
                 },
                 {
+                  "id": "91e52d9f-320e-4186-89c9-33f97eaf4c17",
                   "question_html": "<p>Why do soap bubbles show rainbow colors?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "different thicknesses constructively reflect different wavelengths",
@@ -11682,11 +12041,13 @@
               ]
             },
             {
+              "id": "8d3c7ff0-6e01-4397-985e-4ec50c1554c6",
               "title": "Premium: Thin-Film Interference",
               "access_tier": "premium",
               "display_order": 1,
               "problems": [
                 {
+                  "id": "29aac238-5133-4523-bfbe-e2711934cc27",
                   "question_html": "<p>A glass plate (\\( n = 1.50 \\)) has a thin coating (\\( n = 1.25 \\)) in air. How many phase changes occur for reflected light?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -11731,6 +12092,7 @@
                   "display_order": 0
                 },
                 {
+                  "id": "05ee9fa4-7e3d-49cd-b77a-9d33f47977b8",
                   "question_html": "<p>Why does an anti-reflective coating need both the correct thickness AND the correct index of refraction to work effectively?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -11778,6 +12140,7 @@
                   "display_order": 1
                 },
                 {
+                  "id": "d7f76e56-c822-4c0f-b3c7-a5a7756f5984",
                   "question_html": "<p>An anti-reflective coating (\\( n = 1.38 \\)) is applied to glass (\\( n = 1.50 \\)). For 550 nm light, what is the minimum coating thickness for destructive interference in the reflected light?</p>",
                   "problem_type": "mcq",
                   "difficulty": "hard",
@@ -11825,6 +12188,7 @@
                   "display_order": 2
                 },
                 {
+                  "id": "e4d089fd-e525-498e-9776-1b29181de58f",
                   "question_html": "<p>A soap film (\\( n = 1.33 \\)) in air has a thickness of 300 nm. What visible wavelength (400–700 nm) is most strongly reflected? (1 phase change occurs.)</p>",
                   "problem_type": "ftb",
                   "correct_answer": "532",
@@ -11855,6 +12219,7 @@
                   "display_order": 3
                 },
                 {
+                  "id": "f77c8a41-cf45-4a27-9d34-03226d481559",
                   "question_html": "<p>An oil film (\\( n = 1.45 \\)) on water (\\( n = 1.33 \\)) is illuminated by white light. The film appears blue (480 nm strongly reflected). If there is 1 phase change, determine two possible thicknesses of the oil film.</p>",
                   "problem_type": "frq",
                   "difficulty": "hard",
@@ -11925,11 +12290,13 @@
           "display_order": 0,
           "problem_sets": [
             {
+              "id": "3eab669f-2e8f-4118-9487-30c0e734d5da",
               "title": "Practice: Wave-Particle Duality",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "fae42cce-8d54-4471-b6e1-4d56409bd225",
                   "question_html": "<p>What is the energy of a photon of green light (\\( \\lambda = 500 \\) nm)? (\\( h = 6.63 \\times 10^{-34} \\) J·s, \\( c = 3.0 \\times 10^8 \\) m/s)</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -11971,6 +12338,7 @@
                   "display_order": 0
                 },
                 {
+                  "id": "28d95e83-e488-4121-b1cc-6069d74b029b",
                   "question_html": "<p>What is the de Broglie wavelength of an electron (\\( m = 9.11 \\times 10^{-31} \\) kg) moving at \\( 1.0 \\times 10^6 \\) m/s?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -12012,6 +12380,7 @@
                   "display_order": 1
                 },
                 {
+                  "id": "b62a9bba-c616-4cc9-8602-572e19b7f8bd",
                   "question_html": "<p>If an electron's speed doubles, its de Broglie wavelength:</p>",
                   "problem_type": "ftb",
                   "correct_answer": "halves",
@@ -12036,6 +12405,7 @@
                   "display_order": 2
                 },
                 {
+                  "id": "a206ca2f-cd2b-4670-8646-ad923e07d34c",
                   "question_html": "<p>Which experiment provides evidence that light behaves as particles?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "photoelectric effect",
@@ -12062,11 +12432,13 @@
               ]
             },
             {
+              "id": "06f8c0f8-a0b7-4f08-85b4-b5e3e25d716a",
               "title": "Premium: Wave-Particle Duality",
               "access_tier": "premium",
               "display_order": 1,
               "problems": [
                 {
+                  "id": "8e976bbb-32d4-4dad-bde2-0f7642cf0d3d",
                   "question_html": "<p>A neutron (\\( m = 1.67 \\times 10^{-27} \\) kg) has a de Broglie wavelength of 0.10 nm. What is its speed?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -12108,6 +12480,7 @@
                   "display_order": 0
                 },
                 {
+                  "id": "4bd09372-9255-4663-8298-40c5fb85a734",
                   "question_html": "<p>Compare the de Broglie wavelength of a proton and an electron moving at the same speed. Which has the longer wavelength?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -12152,6 +12525,7 @@
                   "display_order": 1
                 },
                 {
+                  "id": "00d9d62a-2b94-4385-8b93-6604633ac653",
                   "question_html": "<p>What is the momentum of a photon with wavelength 400 nm? (\\( h = 6.63 \\times 10^{-34} \\) J·s)</p>",
                   "problem_type": "ftb",
                   "correct_answer": "1.66e-27",
@@ -12176,6 +12550,7 @@
                   "display_order": 2
                 },
                 {
+                  "id": "5133db32-fba1-4650-8df2-4ce9d895785c",
                   "question_html": "<p>Explain how the double-slit experiment with single electrons demonstrates wave-particle duality.</p>",
                   "problem_type": "frq",
                   "difficulty": "hard",
@@ -12235,11 +12610,13 @@
           "display_order": 1,
           "problem_sets": [
             {
+              "id": "4ebb830a-6656-45d3-a48a-3004dba7c53b",
               "title": "Practice: Bohr Model",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "17ad0fde-1cbd-497c-88cf-9dc0225d917f",
                   "question_html": "<p>What is the energy of a hydrogen electron in the \\( n = 3 \\) level?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -12281,6 +12658,7 @@
                   "display_order": 0
                 },
                 {
+                  "id": "3c40cde0-8b58-47da-bb83-b3713e1deb49",
                   "question_html": "<p>A hydrogen electron transitions from \\( n = 3 \\) to \\( n = 2 \\). What is the energy of the emitted photon?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -12322,6 +12700,7 @@
                   "display_order": 1
                 },
                 {
+                  "id": "2856d31d-96b6-4ca5-92cb-779529c06130",
                   "question_html": "<p>What is the ionization energy of hydrogen from the ground state, in eV?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "13.6",
@@ -12346,6 +12725,7 @@
                   "display_order": 2
                 },
                 {
+                  "id": "394c9b3d-a573-4e32-947d-5c926631e73f",
                   "question_html": "<p>In the Bohr model, when an electron transitions to a <em>lower</em> energy level, what happens?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "a photon is emitted",
@@ -12372,11 +12752,13 @@
               ]
             },
             {
+              "id": "159a57c9-b3a3-4df4-9f13-1b40af39f9a8",
               "title": "Premium: Bohr Model",
               "access_tier": "premium",
               "display_order": 1,
               "problems": [
                 {
+                  "id": "847e6ac7-e2ac-4dd8-bf30-206bf47ef9a7",
                   "question_html": "<p>Which hydrogen transition produces the longest wavelength in the Balmer series (transitions to \\( n = 2 \\))?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -12421,6 +12803,7 @@
                   "display_order": 0
                 },
                 {
+                  "id": "0eb114da-1842-4c68-815f-efa415d64da8",
                   "question_html": "<p>A hydrogen atom absorbs a photon and its electron jumps from \\( n = 1 \\) to \\( n = 4 \\). What is the wavelength of the photon? (1 eV = \\( 1.6 \\times 10^{-19} \\) J)</p>",
                   "problem_type": "mcq",
                   "difficulty": "hard",
@@ -12468,6 +12851,7 @@
                   "display_order": 1
                 },
                 {
+                  "id": "a20aa039-010d-488f-ad00-9dda8d679ed9",
                   "question_html": "<p>A hydrogen atom in the \\( n = 4 \\) state can emit photons by transitioning to lower levels. How many different spectral lines can it produce?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "6",
@@ -12495,6 +12879,7 @@
                   "display_order": 2
                 },
                 {
+                  "id": "de52f556-a258-4e2a-8c45-14a153b30ff9",
                   "question_html": "<p>A hydrogen atom is in the \\( n = 2 \\) state. A photon of energy 2.55 eV strikes it. Can the atom absorb this photon? Explain.</p>",
                   "problem_type": "frq",
                   "difficulty": "hard",
@@ -12553,11 +12938,13 @@
           "display_order": 2,
           "problem_sets": [
             {
+              "id": "b2ab935f-d4a4-4bfa-a06d-a37b7c97ffad",
               "title": "Practice: Spectra",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "4b7b1bed-75bd-4ce6-ad15-3f0d354b2b20",
                   "question_html": "<p>A hot, low-density gas produces which type of spectrum?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -12599,6 +12986,7 @@
                   "display_order": 0
                 },
                 {
+                  "id": "8e8f3188-df27-4361-b3de-fd2244bc8dcb",
                   "question_html": "<p>An absorption spectrum shows:</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -12640,6 +13028,7 @@
                   "display_order": 1
                 },
                 {
+                  "id": "d8ea00ea-8660-40d9-b5fd-a21c6afc8a96",
                   "question_html": "<p>The emission spectrum lines of an element appear at the same wavelengths as its:</p>",
                   "problem_type": "ftb",
                   "correct_answer": "absorption spectrum lines",
@@ -12664,6 +13053,7 @@
                   "display_order": 2
                 },
                 {
+                  "id": "3080ce0d-82fc-457c-9b8e-d0549013e5d1",
                   "question_html": "<p>How do astronomers determine the chemical composition of a distant star?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "by analyzing its absorption spectrum",
@@ -12690,11 +13080,13 @@
               ]
             },
             {
+              "id": "255da54d-8478-47db-80ce-7fd35f3a5ab5",
               "title": "Premium: Spectra",
               "access_tier": "premium",
               "display_order": 1,
               "problems": [
                 {
+                  "id": "7a5cec9d-68cf-481d-bce3-6adaa598db3a",
                   "question_html": "<p>Two gas samples produce the same spectral lines but at different intensities. This indicates:</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -12739,6 +13131,7 @@
                   "display_order": 0
                 },
                 {
+                  "id": "7fc4324b-eb6d-4e38-bd87-3c1837ddcbad",
                   "question_html": "<p>Why can't hydrogen gas at room temperature produce emission lines in the visible range?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -12806,11 +13199,13 @@
           "display_order": 3,
           "problem_sets": [
             {
+              "id": "87e74915-7711-41ef-bb85-66f95a2b87da",
               "title": "Practice: Blackbody Radiation",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "4ba22daf-f2e1-4f25-9b0e-b5e4f3e91086",
                   "question_html": "<p>The Sun's surface temperature is about 5800 K. What is the peak wavelength of its radiation? (\\( b = 2.90 \\times 10^{-3} \\) m·K)</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -12855,6 +13250,7 @@
                   "display_order": 0
                 },
                 {
+                  "id": "5dc38b65-8529-4e9c-8ae9-0600806b4f08",
                   "question_html": "<p>If a star's temperature doubles from 3000 K to 6000 K, by what factor does its radiated power per unit area increase?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -12896,6 +13292,7 @@
                   "display_order": 1
                 },
                 {
+                  "id": "e364744a-cefd-430c-9556-b78617a7f9dd",
                   "question_html": "<p>A red star has a lower surface temperature than a blue star. According to Wien's law, the red star's peak wavelength is ______ than the blue star's.</p>",
                   "problem_type": "ftb",
                   "correct_answer": "longer",
@@ -12920,6 +13317,7 @@
                   "display_order": 2
                 },
                 {
+                  "id": "55ce7c6a-b8c7-4caf-b551-a7a8a57f489a",
                   "question_html": "<p>Planck resolved the ultraviolet catastrophe by proposing that energy is emitted in discrete packets called:</p>",
                   "problem_type": "ftb",
                   "correct_answer": "quanta",
@@ -12946,11 +13344,13 @@
               ]
             },
             {
+              "id": "e4e1586b-55f0-4f66-b9cb-386e79f01112",
               "title": "Premium: Blackbody Radiation",
               "access_tier": "premium",
               "display_order": 1,
               "problems": [
                 {
+                  "id": "5021c2a0-a637-4b78-a3f3-fee262422f41",
                   "question_html": "<p>A hot object at 1500 K has a peak wavelength of about 1.93 μm (infrared). If heated to 6000 K, what is its new peak wavelength?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -12992,6 +13392,7 @@
                   "display_order": 0
                 },
                 {
+                  "id": "46909ccb-84da-459d-bd81-ea182b592576",
                   "question_html": "<p>Star A has temperature 4000 K and Star B has temperature 8000 K. Both have the same radius. What is the ratio of Star B's luminosity to Star A's?</p>",
                   "problem_type": "mcq",
                   "difficulty": "hard",
@@ -13033,6 +13434,7 @@
                   "display_order": 1
                 },
                 {
+                  "id": "57bd745b-8932-4680-a250-babc3933e7b7",
                   "question_html": "<p>The cosmic microwave background radiation has a peak wavelength of about 1.1 mm. What is its temperature?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "2.6",
@@ -13060,6 +13462,7 @@
                   "display_order": 2
                 },
                 {
+                  "id": "ca040b0c-8272-4f4c-b526-28f2acd29e6c",
                   "question_html": "<p>Explain why classical physics fails to predict the blackbody spectrum (the \"ultraviolet catastrophe\") and how Planck's quantum hypothesis resolved it.</p>",
                   "problem_type": "frq",
                   "difficulty": "hard",
@@ -13119,11 +13522,13 @@
           "display_order": 4,
           "problem_sets": [
             {
+              "id": "39972a7c-4ee6-4490-82e1-5606cee9624c",
               "title": "Practice: Photoelectric Effect",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "3e80e5c5-5184-42e0-ba46-9df2aed93085",
                   "question_html": "<p>A metal has a work function of 2.0 eV. What is the threshold frequency? (\\( h = 4.14 \\times 10^{-15} \\) eV·s)</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -13165,6 +13570,7 @@
                   "display_order": 0
                 },
                 {
+                  "id": "15c06bad-0922-4f03-93c1-83a0c93b30c0",
                   "question_html": "<p>Light of frequency \\( 7.0 \\times 10^{14} \\) Hz strikes a metal with work function 2.0 eV. What is the maximum kinetic energy of the ejected electrons?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -13209,6 +13615,7 @@
                   "display_order": 1
                 },
                 {
+                  "id": "ac8d4575-804b-4c12-abcf-3140cf26d533",
                   "question_html": "<p>In the photoelectric effect, increasing the intensity of light above the threshold frequency increases the:</p>",
                   "problem_type": "ftb",
                   "correct_answer": "number of ejected electrons",
@@ -13233,6 +13640,7 @@
                   "display_order": 2
                 },
                 {
+                  "id": "09a9fa73-f522-4e62-b9a8-f2ba96265ca1",
                   "question_html": "<p>If light below the threshold frequency shines on a metal, electrons are ____ ejected, regardless of the light's intensity.</p>",
                   "problem_type": "ftb",
                   "correct_answer": "never",
@@ -13259,11 +13667,13 @@
               ]
             },
             {
+              "id": "79fceeb1-4940-4c66-8192-76c8da9555ff",
               "title": "Premium: Photoelectric Effect",
               "access_tier": "premium",
               "display_order": 1,
               "problems": [
                 {
+                  "id": "a6090692-10fb-4dd1-a455-9583d514f1ec",
                   "question_html": "<p>A graph of \\( K_{\\max} \\) vs. \\( f \\) for the photoelectric effect is a straight line. The slope equals:</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -13305,6 +13715,7 @@
                   "display_order": 0
                 },
                 {
+                  "id": "c0207df6-475b-413f-b715-f631cec4076e",
                   "question_html": "<p>Two light sources — one red (650 nm) and one violet (400 nm) — shine on a metal with \\( \\phi = 2.5 \\) eV. Which ejects electrons? (\\( hc = 1240 \\) eV·nm)</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -13349,6 +13760,7 @@
                   "display_order": 1
                 },
                 {
+                  "id": "b6a63bc1-1640-4e71-ad2d-2dc1ef6a6161",
                   "question_html": "<p>The stopping potential for photoelectrons is 1.5 V when light of frequency \\( 8.0 \\times 10^{14} \\) Hz is used. What is the work function of the metal?</p>",
                   "problem_type": "mcq",
                   "difficulty": "hard",
@@ -13396,6 +13808,7 @@
                   "display_order": 2
                 },
                 {
+                  "id": "65f4ffab-4bbd-4d17-9dd2-cafbf2a34cac",
                   "question_html": "<p>A metal has a work function of 4.5 eV. What is the maximum wavelength of light that can eject electrons? (Use \\( hc = 1240 \\) eV·nm.)</p>",
                   "problem_type": "ftb",
                   "correct_answer": "276",
@@ -13420,6 +13833,7 @@
                   "display_order": 3
                 },
                 {
+                  "id": "c8a24e06-8950-4861-9dfd-71924dbeef83",
                   "question_html": "<p>Light of wavelength 200 nm strikes a metal with work function 3.0 eV. Determine the maximum kinetic energy of the photoelectrons and the stopping potential. (Use \\( hc = 1240 \\) eV·nm.)</p>",
                   "problem_type": "frq",
                   "difficulty": "hard",
@@ -13478,11 +13892,13 @@
           "display_order": 5,
           "problem_sets": [
             {
+              "id": "f6959b6c-48ad-497c-a1f5-e32835c6fb94",
               "title": "Practice: Compton Scattering",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "ed0e4da0-991d-485b-97fa-cec9d05fc2fd",
                   "question_html": "<p>In Compton scattering, the scattered photon has a ______ wavelength than the incident photon.</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -13524,6 +13940,7 @@
                   "display_order": 0
                 },
                 {
+                  "id": "41ab1882-6bca-440d-a50c-1db033b0fefa",
                   "question_html": "<p>An X-ray photon scatters at 90° off a free electron. What is the wavelength shift? (\\( h/(m_e c) = 0.00243 \\) nm)</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -13565,6 +13982,7 @@
                   "display_order": 1
                 },
                 {
+                  "id": "99915ecf-66a3-479a-bc4f-5e977982daa0",
                   "question_html": "<p>Compton scattering provides evidence that photons have:</p>",
                   "problem_type": "ftb",
                   "correct_answer": "momentum",
@@ -13589,6 +14007,7 @@
                   "display_order": 2
                 },
                 {
+                  "id": "ca1024f1-aaeb-4dff-a9af-594f847623e3",
                   "question_html": "<p>The maximum wavelength shift in Compton scattering occurs when the photon is scattered at what angle?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "180",
@@ -13615,11 +14034,13 @@
               ]
             },
             {
+              "id": "1fcba701-1072-46c3-a672-2498aeb0ef12",
               "title": "Premium: Compton Scattering",
               "access_tier": "premium",
               "display_order": 1,
               "problems": [
                 {
+                  "id": "f692c568-bf8b-42d8-9efb-f68df952c983",
                   "question_html": "<p>An X-ray of wavelength 0.0500 nm undergoes Compton scattering at 180°. What is the wavelength of the scattered photon?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -13664,6 +14085,7 @@
                   "display_order": 0
                 },
                 {
+                  "id": "4df13ffc-6d51-42d7-82ff-ea6769f712b4",
                   "question_html": "<p>Why is Compton scattering significant for X-rays but negligible for visible light?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -13708,6 +14130,7 @@
                   "display_order": 1
                 },
                 {
+                  "id": "8e53fd08-01af-4fea-a2ad-05df6bb39a1e",
                   "question_html": "<p>In Compton scattering, a photon with wavelength 0.100 nm scatters at 60°. What is the scattered wavelength, in nm? (Use 4 significant figures.)</p>",
                   "problem_type": "ftb",
                   "correct_answer": "0.1012",
@@ -13735,6 +14158,7 @@
                   "display_order": 2
                 },
                 {
+                  "id": "fed87383-3264-457a-8fa3-4b1d56a6d623",
                   "question_html": "<p>An X-ray photon of wavelength 0.0400 nm scatters off a free electron at 90°. Find the energy transferred to the electron, in eV. (\\( hc = 1240 \\) eV·nm)</p>",
                   "problem_type": "frq",
                   "difficulty": "hard",
@@ -13794,11 +14218,13 @@
           "display_order": 6,
           "problem_sets": [
             {
+              "id": "a859919b-185b-476d-a921-0234b249346c",
               "title": "Practice: Fission, Fusion, and Nuclear Decay",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "6931f410-bd57-4116-9136-99bcbad0a4c8",
                   "question_html": "<p>In nuclear fission, a heavy nucleus:</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -13840,6 +14266,7 @@
                   "display_order": 0
                 },
                 {
+                  "id": "2b0887ce-e128-4133-b57b-d2ac0e473ff6",
                   "question_html": "<p>Nuclear fusion powers the Sun. In fusion, light nuclei:</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -13881,6 +14308,7 @@
                   "display_order": 1
                 },
                 {
+                  "id": "da3119b2-ba27-40cd-9b5f-1994faaa334b",
                   "question_html": "<p>According to \\( E = mc^2 \\), how much energy (in MeV) is equivalent to 1 atomic mass unit? (1 u = 1.66 × 10⁻²⁷ kg)</p>",
                   "problem_type": "ftb",
                   "correct_answer": "931.5",
@@ -13905,6 +14333,7 @@
                   "display_order": 2
                 },
                 {
+                  "id": "deb8d405-ac10-469c-a2b9-4b1ded204ac0",
                   "question_html": "<p>Which element has the highest binding energy per nucleon (most stable nucleus)?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "iron",
@@ -13931,11 +14360,13 @@
               ]
             },
             {
+              "id": "7edeb48e-3b60-4cb7-a9b9-e6d06143496a",
               "title": "Premium: Fission, Fusion, and Nuclear Decay",
               "access_tier": "premium",
               "display_order": 1,
               "problems": [
                 {
+                  "id": "1f130854-da3e-449f-8070-12cbf93e003f",
                   "question_html": "<p>Why does nuclear fusion require extremely high temperatures (millions of kelvins)?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -13980,6 +14411,7 @@
                   "display_order": 0
                 },
                 {
+                  "id": "464bf47c-1614-407e-9cdf-c42c5f77679d",
                   "question_html": "<p>In the fusion reaction ²H + ³H → ⁴He + n, the mass of the reactants is 5.03005 u and the mass of the products is 5.01140 u. How much energy is released, in MeV?</p>",
                   "problem_type": "mcq",
                   "difficulty": "hard",
@@ -14024,6 +14456,7 @@
                   "display_order": 1
                 },
                 {
+                  "id": "2d7db305-8bc2-4581-b684-50b80b109501",
                   "question_html": "<p>A nuclear reaction has a mass defect of 0.0050 u. How much energy is released, in MeV?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "4.66",
@@ -14048,6 +14481,7 @@
                   "display_order": 2
                 },
                 {
+                  "id": "11126340-987f-4e46-bddd-bd9caed0e5ae",
                   "question_html": "<p>Using the binding energy per nucleon curve, explain why fission of uranium releases energy but fission of iron does not.</p>",
                   "problem_type": "frq",
                   "difficulty": "hard",
@@ -14108,11 +14542,13 @@
           "display_order": 7,
           "problem_sets": [
             {
+              "id": "9a4b10e3-d6f4-4298-8ab6-84afb271eba6",
               "title": "Practice: Radioactive Decay",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "b3703994-7133-400f-9602-c94b13f1325b",
                   "question_html": "<p>In alpha decay, the mass number of the daughter nucleus decreases by:</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -14154,6 +14590,7 @@
                   "display_order": 0
                 },
                 {
+                  "id": "9b9b5623-1976-4ccb-b791-488fd4d9a7b0",
                   "question_html": "<p>In beta-minus (β⁻) decay, what happens to the atomic number?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -14195,6 +14632,7 @@
                   "display_order": 1
                 },
                 {
+                  "id": "1313e4b9-175f-471b-8293-e0d2b79eda34",
                   "question_html": "<p>Which type of radiation is most penetrating?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "gamma",
@@ -14219,6 +14657,7 @@
                   "display_order": 2
                 },
                 {
+                  "id": "47c0cc97-f20e-47f1-8a88-7db17afb3015",
                   "question_html": "<p>A sample of a radioactive isotope has a half-life of 10 days. After 30 days, what fraction of the original sample remains?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "1/8",
@@ -14248,11 +14687,13 @@
               ]
             },
             {
+              "id": "ec5fee11-1508-4db2-80bb-949f5bb4d53f",
               "title": "Premium: Radioactive Decay",
               "access_tier": "premium",
               "display_order": 1,
               "problems": [
                 {
+                  "id": "efc746ac-6702-4396-8473-6c8a502aecda",
                   "question_html": "<p>Radium-226 undergoes alpha decay. What is the daughter nucleus?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -14294,6 +14735,7 @@
                   "display_order": 0
                 },
                 {
+                  "id": "0e134146-045a-422a-bc85-bae1cabfd4e0",
                   "question_html": "<p>Carbon-14 undergoes β⁻ decay. What is the daughter nucleus?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",

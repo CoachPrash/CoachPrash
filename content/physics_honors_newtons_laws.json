@@ -17,11 +17,13 @@
           "display_order": 0,
           "problem_sets": [
             {
+              "id": "6d0f2815-dff8-435f-ab76-c9cd7df9abe1",
               "title": "Practice: Newton's First Law",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "9b2a7493-2641-45a8-b38c-b4e47869d59d",
                   "question_html": "<p>A ball rolls across a smooth floor and gradually slows down. What causes it to slow down?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -68,6 +70,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "f3755bf6-d86e-4a51-80ed-9d15202d2d4f",
                   "question_html": "<p>A 2000 kg car and a 200 kg motorcycle are both traveling at 30 m/s. Which has more inertia?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -114,6 +117,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "76374002-b088-4f9f-b178-0fd3fdfa3ef1",
                   "question_html": "<p>A person is standing in a bus that suddenly starts moving forward. The person stumbles backward. Which of Newton's Laws best explains this?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -160,6 +164,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "e9f344ce-8602-409e-b928-4c6646dd3f54",
                   "question_html": "<p>An astronaut floating in space throws a ball. What happens to the ball after it leaves the astronaut's hand? (Assume no nearby objects exert gravitational force.)</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -206,6 +211,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "2692db19-25b5-436f-98a9-60ae7bc05ae6",
                   "question_html": "<p>A skydiver has reached terminal velocity and is falling at a constant 55 m/s. What is the net force on the skydiver?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -252,6 +258,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "74d9701c-9eff-4d0a-b6fa-227da3477d23",
                   "question_html": "<p>True or False: An object can be in equilibrium while moving. Answer \"true\" or \"false\".</p>",
                   "problem_type": "ftb",
                   "difficulty": "medium",
@@ -295,11 +302,13 @@
           "display_order": 1,
           "problem_sets": [
             {
+              "id": "bc1b785d-237f-4fe2-9e2e-c6dfd0874ff1",
               "title": "Practice: F = ma Calculations",
               "access_tier": "premium",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "c7933175-1f82-44ed-ab20-1469a0873dff",
                   "question_html": "<p>If the same force is applied to two objects, one with mass \\(m\\) and another with mass \\(2m\\), how do their accelerations compare?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -346,6 +355,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "09de4760-60ab-44dd-8388-c09d929770b1",
                   "question_html": "<p>A 5 kg box is pushed with a net force of 20 N. What is its acceleration?</p>",
                   "problem_type": "ftb",
                   "difficulty": "easy",
@@ -376,6 +386,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "de219f1b-617f-4917-bca3-833ff785b67d",
                   "question_html": "<p>What net force is needed to accelerate a 1200 kg car at \\(3 \\text{ m/s}^2\\)?</p>",
                   "problem_type": "ftb",
                   "difficulty": "easy",
@@ -406,6 +417,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "0cf5868a-718c-48ca-8500-29529434b0ce",
                   "question_html": "<p>A force of 50 N accelerates an object at \\(10 \\text{ m/s}^2\\). What is the mass of the object?</p>",
                   "problem_type": "ftb",
                   "difficulty": "easy",
@@ -436,6 +448,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "e58786a5-7a47-4332-93c4-f3395db02511",
                   "question_html": "<p>Two forces act on a 4 kg block: 30 N to the right and 10 N to the left. What is the acceleration?</p>",
                   "problem_type": "ftb",
                   "difficulty": "medium",
@@ -466,6 +479,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "2f6f350a-8d83-4214-b871-32f03d0da74e",
                   "question_html": "<p>A 0.5 kg ball is dropped from rest. Ignoring air resistance, what is the net force on the ball? (Use \\(g = 10 \\text{ m/s}^2\\))</p>",
                   "problem_type": "ftb",
                   "difficulty": "medium",
@@ -496,6 +510,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "6b3d1858-9bf6-4c38-8d4b-5c8b8d6d2e3e",
                   "question_html": "<p>A 10 kg object accelerates from rest to \\(20 \\text{ m/s}\\) in 5 seconds. What net force was applied?</p>",
                   "problem_type": "ftb",
                   "difficulty": "hard",
@@ -539,11 +554,13 @@
           "display_order": 2,
           "problem_sets": [
             {
+              "id": "41094132-f602-48ee-8f31-ebdfee98c49f",
               "title": "Practice: Action-Reaction Pairs",
               "access_tier": "premium",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "c50af34d-375f-4b25-8c99-6fa7a3cac636",
                   "question_html": "<p>When you push against a wall with 50 N of force, the wall pushes back on you with:</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -590,6 +607,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "b1fb0ffc-8187-4ca4-9bf1-0179cc76245e",
                   "question_html": "<p>Which of the following is a correct action-reaction pair?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -636,6 +654,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "7c29b24a-7641-4d8e-80f9-bc87dd410f89",
                   "question_html": "<p>If action-reaction forces are always equal and opposite, why does a horse pulling a cart cause the cart to move?</p>",
                   "problem_type": "mcq",
                   "difficulty": "hard",
@@ -682,6 +701,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "8d0b1142-e1e2-4d02-9cba-ba1a63495886",
                   "question_html": "<p>A person weighing 700 N stands on the floor. Identify the reaction force to the gravitational force Earth exerts on the person.</p>",
                   "problem_type": "mcq",
                   "difficulty": "hard",
@@ -728,6 +748,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "3e77b7d8-b6bc-4b24-aba0-0a89fb400198",
                   "question_html": "<p>A hammer hits a nail with a force of 500 N. What force does the nail exert on the hammer?</p>",
                   "problem_type": "ftb",
                   "difficulty": "easy",
@@ -758,6 +779,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "559666b7-a7ad-4951-88d4-f1fff386cf5c",
                   "question_html": "<p>A rocket propels itself by pushing exhaust gases downward. Using Newton's Third Law, explain why the rocket moves upward. This is a self-graded question — compare your answer to the model answer.</p>",
                   "problem_type": "frq",
                   "difficulty": "medium",
@@ -801,11 +823,13 @@
           "display_order": 3,
           "problem_sets": [
             {
+              "id": "b9bc627e-e59c-4db7-9c39-43003c3f3f6c",
               "title": "Practice: Applying Newton's Laws",
               "access_tier": "premium",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "7350f353-85e3-4d9c-b074-a240e6dca061",
                   "question_html": "<p>A 10 kg box is pushed across a frictionless floor with a horizontal force of 40 N. What is the acceleration of the box?</p>",
                   "problem_type": "ftb",
                   "difficulty": "easy",
@@ -836,6 +860,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "0bd1aaab-fd7d-413f-a523-31dc2c2db01c",
                   "question_html": "<p>A 50 kg crate is on a floor with coefficient of kinetic friction \\(\\mu_k = 0.3\\). What force is needed to push it at constant velocity? (Use \\(g = 10 \\text{ m/s}^2\\))</p>",
                   "problem_type": "ftb",
                   "difficulty": "medium",
@@ -869,6 +894,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "3a920992-6d96-450a-a69f-379376103d2c",
                   "question_html": "<p>Two blocks are connected by a rope. Block A (3 kg) is on a frictionless table, and Block B (2 kg) hangs off the edge. What is the acceleration of the system? (Use \\(g = 10 \\text{ m/s}^2\\))</p>",
                   "problem_type": "ftb",
                   "difficulty": "hard",
@@ -899,6 +925,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "effc663d-1917-4111-886e-18eee2edc772",
                   "question_html": "<p>What is the tension in the rope in the previous problem (Block A = 3 kg, Block B = 2 kg, frictionless table)?</p>",
                   "problem_type": "ftb",
                   "difficulty": "hard",
@@ -929,6 +956,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "42b1def7-1043-4063-a990-8c3b11e136b0",
                   "question_html": "<p>A 5 kg block sits on a frictionless incline at \\(30°\\). What is its acceleration down the incline? (Use \\(g = 10 \\text{ m/s}^2\\))</p>",
                   "problem_type": "ftb",
                   "difficulty": "hard",
@@ -959,6 +987,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "416d9ea3-4397-4bd6-adfe-11fc8c888faa",
                   "question_html": "<p>An elevator carries a 60 kg person upward with an acceleration of \\(2 \\text{ m/s}^2\\). What does the scale under the person read? (Use \\(g = 10 \\text{ m/s}^2\\))</p>",
                   "problem_type": "ftb",
                   "difficulty": "hard",

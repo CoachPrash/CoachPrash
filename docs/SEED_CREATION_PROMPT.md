@@ -138,6 +138,7 @@ Each concept has exactly **one** problem set containing **exactly 10 problems**.
 
 ```json
 {
+  "id": "generate-a-uuid-v4-here",
   "title": "Practice: Solving One-Step Equations",
   "access_tier": "free",
   "display_order": 0,
@@ -147,6 +148,7 @@ Each concept has exactly **one** problem set containing **exactly 10 problems**.
 
 | Field | Required | Notes |
 |-------|----------|-------|
+| `id` | **Yes** | UUID v4 string — generate with `str(uuid.uuid4())`. Must be unique. See Section 8. |
 | `title` | Yes | Format: `"Practice: {Concept Title}"` |
 | `access_tier` | Yes | Always `"free"` (individual problems control their own gating) |
 | `display_order` | Optional | Default: 0 |
@@ -186,6 +188,7 @@ Every concept gets exactly **10 problems** grouped by type. Each problem has its
 
 ```json
 {
+  "id": "a1b2c3d4-e5f6-7a8b-9c0d-e1f2a3b4c5d6",
   "question_html": "<p>What is the solution to \\( 2x = 10 \\)?</p>",
   "problem_type": "mcq",
   "difficulty": "easy",
@@ -218,6 +221,7 @@ Every concept gets exactly **10 problems** grouped by type. Each problem has its
 
 ```json
 {
+  "id": "b2c3d4e5-f6a7-8b9c-0d1e-f2a3b4c5d6e7",
   "question_html": "<p>Solve for \\( x \\): \\( 3x + 7 = 22 \\). Enter your answer as a number.</p>",
   "problem_type": "ftb",
   "difficulty": "medium",
@@ -247,6 +251,7 @@ Every concept gets exactly **10 problems** grouped by type. Each problem has its
 
 ```json
 {
+  "id": "c3d4e5f6-a7b8-9c0d-1e2f-a3b4c5d6e7f8",
   "question_html": "<p>A store sells notebooks for $3 each and pens for $1.50 each.</p><p>(a) Write an equation for the total cost \\( C \\) of \\( n \\) notebooks and \\( p \\) pens.</p><p>(b) If you buy 4 notebooks and 6 pens, what is the total cost? Show your work.</p><p>(c) If you have $30, write and solve an inequality for the maximum number of notebooks you can buy if you also buy 4 pens.</p>",
   "problem_type": "frq",
   "difficulty": "hard",
@@ -338,7 +343,21 @@ Each concept's `content_html` should be **500-1500 words** of rich HTML containi
 
 ---
 
-## 8. Slug Rules
+## 8. Stable IDs (CRITICAL)
+
+Every **ProblemSet** and every **Problem** must have an `"id"` field containing a UUID v4 string. These become the database primary keys — student progress is linked to them, so they must never change once assigned.
+
+**How to generate:** Use Python's `uuid` module:
+```python
+import uuid
+print(str(uuid.uuid4()))  # e.g., "a3f1b2c4-5d6e-7f8a-9b0c-1d2e3f4a5b6c"
+```
+
+Generate a unique UUID for every ProblemSet and every Problem in your output. Place the `"id"` field as the **first key** in each object.
+
+---
+
+## 9. Slug Rules
 
 - **Format**: Lowercase letters, numbers, and hyphens only. No underscores, no spaces.
 - **Topic slugs**: Unique within the course (e.g., `unit-1-linear-equations`)
@@ -349,8 +368,11 @@ Each concept's `content_html` should be **500-1500 words** of rich HTML containi
 
 ---
 
-## 9. Quality Checklist (Read Before Generating)
+## 10. Quality Checklist (Read Before Generating)
 
+- [ ] Every ProblemSet has a unique UUID `"id"` field
+- [ ] Every Problem has a unique UUID `"id"` field
+- [ ] No duplicate IDs anywhere in the file
 - [ ] Every concept has exactly **1 problem set** with exactly **10 problems**
 - [ ] Problems are grouped by type: 4 MCQ, then 4 FTB, then 2 FRQ
 - [ ] Each problem has an explicit `access_tier`: 2 free MCQ + 2 free FTB = 4 free; the rest are premium
@@ -374,7 +396,7 @@ Each concept's `content_html` should be **500-1500 words** of rich HTML containi
 
 ---
 
-## 10. Output Instructions
+## 11. Output Instructions
 
 1. Output **valid JSON only** — no markdown code fences, no commentary before or after
 2. The JSON must parse without errors

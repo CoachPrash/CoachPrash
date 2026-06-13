@@ -153,12 +153,22 @@ Set `access_tier` explicitly on each problem.
 
 ```json
 {
+  "id": "a3f1b2c4-5d6e-7f8a-9b0c-1d2e3f4a5b6c",
   "title": "Practice: Concept Title Here",
   "access_tier": "free",
   "display_order": 0,
   "problems": [ ... ]
 }
 ```
+
+### Stable IDs (CRITICAL)
+
+Every **ProblemSet** and **Problem** must have a permanent `"id"` field containing a UUID v4 string. These IDs become the database primary keys and must never change once created — student progress (attempt logs) is linked to them.
+
+- Generate once using `str(uuid.uuid4())` during content creation
+- Never regenerate or change an existing ID
+- IDs must be globally unique across all content files
+- Run `scripts/add_stable_ids.py` to add IDs to files that lack them
 
 ---
 
@@ -168,6 +178,7 @@ Set `access_tier` explicitly on each problem.
 
 ```json
 {
+  "id": "fc6a8c36-0413-4209-b90c-fa0c400766c1",
   "question_html": "<p>Question text with \\( LaTeX \\) if needed.</p>",
   "problem_type": "mcq",
   "difficulty": "easy",
@@ -197,6 +208,7 @@ Set `access_tier` explicitly on each problem.
 
 ```json
 {
+  "id": "d7e8f9a0-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
   "question_html": "<p>What is the value of \\( 2 + 3 \\)?</p>",
   "problem_type": "ftb",
   "difficulty": "medium",
@@ -216,6 +228,7 @@ Set `access_tier` explicitly on each problem.
 
 ```json
 {
+  "id": "b1c2d3e4-5f6a-7b8c-9d0e-1f2a3b4c5d6e",
   "question_html": "<p>Multi-part question with (a), (b), (c)...</p>",
   "problem_type": "frq",
   "difficulty": "hard",
@@ -239,6 +252,7 @@ Released College Board FRQs are appended to existing problem sets (not replacing
 
 ```json
 {
+  "id": "e5f6a7b8-c9d0-1e2f-3a4b-5c6d7e8f9a0b",
   "question_html": "<p><strong>2024 AP Calculus AB FRQ #2</strong></p><p>[verbatim question]</p>",
   "problem_type": "frq",
   "difficulty": "hard",

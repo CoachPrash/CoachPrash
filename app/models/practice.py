@@ -6,7 +6,7 @@ from app.extensions import db
 class ProblemSet(db.Model):
     __tablename__ = 'problem_sets'
 
-    id = db.Column(db.String(36), primary_key=True, default=lambda: str(uuid.uuid4()))
+    id = db.Column(db.String(36), primary_key=True)
     concept_id = db.Column(db.String(36), db.ForeignKey('concepts.id'), nullable=False, index=True)
     title = db.Column(db.String(200), nullable=False)
     access_tier = db.Column(db.String(20), nullable=False, default='free')
@@ -28,7 +28,7 @@ class ProblemSet(db.Model):
 class Problem(db.Model):
     __tablename__ = 'problems'
 
-    id = db.Column(db.String(36), primary_key=True, default=lambda: str(uuid.uuid4()))
+    id = db.Column(db.String(36), primary_key=True)
     problem_set_id = db.Column(db.String(36), db.ForeignKey('problem_sets.id'), nullable=False, index=True)
     question_html = db.Column(db.Text, nullable=False, default='')
     problem_type = db.Column(db.String(20), nullable=False, default='mcq')

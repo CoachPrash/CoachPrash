@@ -1,6 +1,6 @@
 # CoachPrash Admin Manual
 
-> **Version:** 27.0 (Course Metadata in Content JSON + Seed Page Redesign)
+> **Version:** 28.0 (Stable Problem IDs — Reseed Without Losing Student Progress)
 > **Last Updated:** June 2026
 > **Platform:** Flask + PostgreSQL, deployed on Railway
 

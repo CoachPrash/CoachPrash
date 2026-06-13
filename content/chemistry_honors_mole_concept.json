@@ -17,11 +17,13 @@
           "display_order": 0,
           "problem_sets": [
             {
+              "id": "da635135-89a2-4156-860f-3ecfffd692da",
               "title": "Practice: Mole Basics",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "eea33971-3bb0-4d83-964c-56f6f61b2068",
                   "question_html": "<p>How many atoms are in 2 moles of carbon?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -68,6 +70,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "8064ef2e-e229-477a-8f3a-7272fc7ed841",
                   "question_html": "<p>How many molecules are in 0.5 moles of \\(\\text{H}_2\\text{O}\\)?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -114,6 +117,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "95ecaf50-1b37-4761-9490-dd244f4871b3",
                   "question_html": "<p>What is the molar mass of water (\\(\\text{H}_2\\text{O}\\))? Use H = 1.008 g/mol, O = 16.00 g/mol.</p>",
                   "problem_type": "ftb",
                   "difficulty": "easy",
@@ -144,6 +148,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "675d0242-a84a-491e-b101-22464ba40b03",
                   "question_html": "<p>How many grams are in 3 moles of carbon? (Molar mass of C = 12.01 g/mol)</p>",
                   "problem_type": "ftb",
                   "difficulty": "easy",
@@ -174,6 +179,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "878dd43c-2a6e-4a09-b31e-dc604a68b6a7",
                   "question_html": "<p>How many moles are in 44 grams of \\(\\text{CO}_2\\)? (Molar mass of \\(\\text{CO}_2\\) = 44.01 g/mol)</p>",
                   "problem_type": "ftb",
                   "difficulty": "medium",
@@ -204,6 +210,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "d0c48dca-2c7c-4c50-b82f-83fe659ccf33",
                   "question_html": "<p>A sample contains \\(1.806 \\times 10^{24}\\) atoms of iron. How many moles of iron is this?</p>",
                   "problem_type": "ftb",
                   "difficulty": "medium",
@@ -247,11 +254,13 @@
           "display_order": 1,
           "problem_sets": [
             {
+              "id": "f2275188-267c-48a2-b976-8eaee37b807d",
               "title": "Practice: Molar Mass",
               "access_tier": "premium",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "46ccd3ae-7f62-44a6-833d-2d21e52af428",
                   "question_html": "<p>Which compound has a greater molar mass: \\(\\text{CO}_2\\) or \\(\\text{H}_2\\text{O}\\)?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -298,6 +307,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "e971ed99-34f5-4a34-ac14-f47ac2c0ad32",
                   "question_html": "<p>Calculate the molar mass of \\(\\text{NaCl}\\). (Na = 22.99, Cl = 35.45)</p>",
                   "problem_type": "ftb",
                   "difficulty": "easy",
@@ -328,6 +338,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "7886a9ce-6419-487d-937c-0f3fc4f134fe",
                   "question_html": "<p>How many grams are in 2.5 moles of \\(\\text{NaCl}\\)? (Molar mass = 58.44 g/mol)</p>",
                   "problem_type": "ftb",
                   "difficulty": "easy",
@@ -358,6 +369,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "6c87e2a2-f016-4408-92da-ef32083384bb",
                   "question_html": "<p>Calculate the molar mass of sulfuric acid \\(\\text{H}_2\\text{SO}_4\\). (H = 1.008, S = 32.07, O = 16.00)</p>",
                   "problem_type": "ftb",
                   "difficulty": "medium",
@@ -388,6 +400,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "2d6e4758-a239-4b14-836a-bb84ef1a318d",
                   "question_html": "<p>What is the molar mass of calcium hydroxide \\(\\text{Ca(OH)}_2\\)? (Ca = 40.08, O = 16.00, H = 1.008)</p>",
                   "problem_type": "ftb",
                   "difficulty": "medium",
@@ -418,6 +431,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "704a25d3-0896-42ce-9454-9795f302abe4",
                   "question_html": "<p>How many moles are in 90 grams of water? (Molar mass of \\(\\text{H}_2\\text{O}\\) = 18.02 g/mol)</p>",
                   "problem_type": "ftb",
                   "difficulty": "medium",
@@ -461,11 +475,13 @@
           "display_order": 2,
           "problem_sets": [
             {
+              "id": "17bc8648-012a-4694-a038-e80bce021956",
               "title": "Practice: Stoichiometry",
               "access_tier": "premium",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "9ac52718-76f7-4c3a-808b-174d6ae0e216",
                   "question_html": "<p>Given: \\(4\\text{Fe} + 3\\text{O}_2 \\rightarrow 2\\text{Fe}_2\\text{O}_3\\)</p><p>What is the mole ratio of iron to iron(III) oxide?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -512,6 +528,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "0a35cbdd-d368-4264-9d89-5bb11da735b6",
                   "question_html": "<p>Given: \\(2\\text{H}_2 + \\text{O}_2 \\rightarrow 2\\text{H}_2\\text{O}\\)</p><p>How many moles of \\(\\text{O}_2\\) are needed to react with 6 moles of \\(\\text{H}_2\\)?</p>",
                   "problem_type": "ftb",
                   "difficulty": "easy",
@@ -542,6 +559,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "c21a2f18-11bf-43c7-a33f-f6a3f447ee57",
                   "question_html": "<p>Given: \\(\\text{N}_2 + 3\\text{H}_2 \\rightarrow 2\\text{NH}_3\\)</p><p>How many moles of \\(\\text{NH}_3\\) are produced from 4 moles of \\(\\text{N}_2\\)?</p>",
                   "problem_type": "ftb",
                   "difficulty": "easy",
@@ -572,6 +590,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "8de2a7fc-940b-46d2-a9ba-7a7d8be9117e",
                   "question_html": "<p>Given: \\(2\\text{Mg} + \\text{O}_2 \\rightarrow 2\\text{MgO}\\)</p><p>If 3 moles of \\(\\text{MgO}\\) are produced, how many moles of \\(\\text{Mg}\\) were used?</p>",
                   "problem_type": "ftb",
                   "difficulty": "easy",
@@ -602,6 +621,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "6d815509-2810-4dc0-8c98-e9a796b26e33",
                   "question_html": "<p>Given: \\(\\text{CH}_4 + 2\\text{O}_2 \\rightarrow \\text{CO}_2 + 2\\text{H}_2\\text{O}\\)</p><p>How many moles of \\(\\text{H}_2\\text{O}\\) are produced when 5 moles of \\(\\text{CH}_4\\) are burned?</p>",
                   "problem_type": "ftb",
                   "difficulty": "medium",
@@ -632,6 +652,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "6ff9518a-ed00-4a08-8acc-7127c3237d8d",
                   "question_html": "<p>Given: \\(\\text{N}_2 + 3\\text{H}_2 \\rightarrow 2\\text{NH}_3\\)</p><p>How many moles of \\(\\text{H}_2\\) are needed to produce 10 moles of \\(\\text{NH}_3\\)?</p>",
                   "problem_type": "ftb",
                   "difficulty": "medium",
@@ -662,6 +683,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "041c3460-e6a5-4944-8dff-25a7bb4667e4",
                   "question_html": "<p>Given: \\(2\\text{KClO}_3 \\rightarrow 2\\text{KCl} + 3\\text{O}_2\\)</p><p>If 0.5 moles of \\(\\text{KClO}_3\\) decompose, how many moles of \\(\\text{O}_2\\) are produced?</p>",
                   "problem_type": "ftb",
                   "difficulty": "medium",
@@ -692,6 +714,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "9aee4230-8b48-4c54-b3b7-3544f8d6268a",
                   "question_html": "<p>Given: \\(\\text{CaCO}_3 \\rightarrow \\text{CaO} + \\text{CO}_2\\)</p><p>How many grams of \\(\\text{CO}_2\\) are produced from 2 moles of \\(\\text{CaCO}_3\\)? (Molar mass of \\(\\text{CO}_2\\) = 44.01 g/mol)</p>",
                   "problem_type": "ftb",
                   "difficulty": "hard",

@@ -25,7 +25,7 @@ from app.utils.progress import compute_student_stats
 from app.utils.colors import derive_palette
 from app.extensions import db, limiter
 from app.utils.sanitize import sanitize_html
-from app.utils.content_loader import _delete_concept_problems
+from app.utils.content_loader import _delete_concept_problems, _upsert_problems_for_concept
 
 logger = logging.getLogger(__name__)
 
@@ -936,7 +936,7 @@ def bulk_import():
                     Topic.course_id == course.id,
                 ).first()
                 if concept:
-                    # Update existing concept and replace its problems
+                    # Update existing concept fields
                     concept.title = cdata.get('title', concept.title)
                     concept.content_html = sanitize_html(cdata.get('content_html', concept.content_html or ''))
                     concept.content_raw = cdata.get('content_raw', concept.content_raw or '')
@@ -945,7 +945,6 @@ def bulk_import():
                     concept.subject_area = cdata.get('subject_area', concept.subject_area)
                     concept.difficulty = cdata.get('difficulty', concept.difficulty)
                     concept.tags = cdata.get('tags', concept.tags)
-                    _delete_concept_problems(concept)
                 else:
                     concept = Concept(
                         title=cdata.get('title', f'Concept {ci + 1}'),
@@ -963,82 +962,8 @@ def bulk_import():
                     db.session.flush()
                 counts['concepts'] += 1
 
-                for psi, psdata in enumerate(cdata.get('problem_sets', [])):
-                    ps = ProblemSet(
-                        concept_id=concept.id,
-                        title=psdata.get('title', f'Problem Set {psi + 1}'),
-                        access_tier=psdata.get('access_tier', 'free'),
-                        display_order=psdata.get('display_order', psi),
-                        is_active=True,
-                    )
-                    db.session.add(ps)
-                    db.session.flush()
-                    counts['problem_sets'] += 1
-
-                    for pi, pdata in enumerate(psdata.get('problems', [])):
-                        problem_type = pdata.get('problem_type', 'mcq')
-                        if problem_type not in ('mcq', 'ftb', 'frq'):
-                            problem_type = 'mcq'
-                        problem = Problem(
-                            problem_set_id=ps.id,
-                            question_html=sanitize_html(pdata.get('question_html', '')),
-                            problem_type=problem_type,
-                            correct_answer=pdata.get('correct_answer', ''),
-                            difficulty=pdata.get('difficulty', 'medium'),
-                            points=pdata.get('points', 1),
-                            display_order=pdata.get('display_order', pi),
-                        )
-                        db.session.add(problem)
-                        db.session.flush()
-                        counts['problems'] += 1
-
-                        for chi, chdata in enumerate(pdata.get('choices', [])):
-                            choice = Choice(
-                                problem_id=problem.id,
-                                choice_text=chdata.get('text', chdata.get('choice_text', '')),
-                                is_correct=chdata.get('is_correct', False),
-                                display_order=chi,
-                            )
-                            db.session.add(choice)
-                            counts['choices'] += 1
-
-                        for hi, hdata in enumerate(pdata.get('hints', [])):
-                            hint_text = hdata if isinstance(hdata, str) else hdata.get('text', hdata.get('hint_text', ''))
-                            cost = 0 if isinstance(hdata, str) else hdata.get('cost_points', 0)
-                            hint = Hint(
-                                problem_id=problem.id,
-                                hint_text=hint_text,
-                                display_order=hi,
-                                cost_points=cost,
-                            )
-                            db.session.add(hint)
-                            counts['hints'] += 1
-
-                        solution_data = pdata.get('solution_steps', pdata.get('solution'))
-                        if solution_data:
-                            if isinstance(solution_data, list):
-                                steps = []
-                                for i, s in enumerate(solution_data):
-                                    if isinstance(s, str):
-                                        steps.append({'step_number': i + 1, 'text_html': s})
-                                    else:
-                                        steps.append({
-                                            'step_number': s.get('step_number', i + 1),
-                                            'text_html': s.get('text', s.get('text_html', '')),
-                                        })
-                            elif isinstance(solution_data, dict):
-                                steps = solution_data.get('steps_json', [])
-                            else:
-                                steps = []
-                            if steps:
-                                sol = StepByStepSolution(
-                                    problem_id=problem.id,
-                                    steps_json=steps,
-                                    access_tier=pdata.get('solution', {}).get('access_tier', 'premium')
-                                    if isinstance(pdata.get('solution'), dict) else 'premium',
-                                )
-                                db.session.add(sol)
-                                counts['solutions'] += 1
+                # Upsert problem sets and problems using stable IDs
+                _upsert_problems_for_concept(concept, cdata.get('problem_sets', []), counts)
 
                 # Link concept to topic via TopicConcept
                 existing_link = TopicConcept.query.filter_by(

@@ -147,6 +147,7 @@ def validate_semantics(data, filename):
     }
 
     concept_slugs = {}  # slug -> location string (for duplicate detection)
+    seen_ids = {}  # id -> location string (for duplicate ID detection)
 
     topics = data.get("topics", [])
     if not isinstance(topics, list) or len(topics) == 0:
@@ -212,6 +213,18 @@ def validate_semantics(data, filename):
                         f"at problem_set level"
                     )
 
+                # ERROR: missing stable ID
+                ps_id = ps.get("id")
+                if not ps_id:
+                    errors.append(f"  {red('ERROR')} {psloc}: missing 'id' (run scripts/add_stable_ids.py)")
+                elif ps_id in seen_ids:
+                    errors.append(
+                        f"  {red('ERROR')} {psloc}: duplicate id '{ps_id}' "
+                        f"(first used at {seen_ids[ps_id]})"
+                    )
+                else:
+                    seen_ids[ps_id] = psloc
+
                 problems = ps.get("problems", [])
                 if not isinstance(problems, list) or len(problems) == 0:
                     errors.append(f"  {red('ERROR')} {psloc}: 'problems' array is missing or empty")
@@ -220,6 +233,19 @@ def validate_semantics(data, filename):
                 for pi, prob in enumerate(problems):
                     ploc = f"{psloc} > Problem {pi+1}"
                     stats["problems"] += 1
+
+                    # ERROR: missing stable ID
+                    prob_id = prob.get("id")
+                    if not prob_id:
+                        errors.append(f"  {red('ERROR')} {ploc}: missing 'id' (run scripts/add_stable_ids.py)")
+                    elif prob_id in seen_ids:
+                        errors.append(
+                            f"  {red('ERROR')} {ploc}: duplicate id '{prob_id}' "
+                            f"(first used at {seen_ids[prob_id]})"
+                        )
+                    else:
+                        seen_ids[prob_id] = ploc
+
                     ptype = prob.get("problem_type", "mcq")
 
                     # Count by type
@@ -629,6 +655,42 @@ def main():
             files_with_errors += 1  # At least one file is affected
         else:
             print(f"\n  {green('PASS')}  Cross-file slug collision check ({len(slug_sources)} unique slugs)")
+
+        # Cross-file ID collision check (problem sets + problems)
+        id_sources = {}  # id -> (course, location)
+        id_collision_count = 0
+        for filepath in files:
+            if not os.path.exists(filepath):
+                continue
+            try:
+                with open(filepath, 'r', encoding='utf-8') as f:
+                    fdata = json.load(f)
+                course = fdata.get('course_slug', os.path.basename(filepath))
+                for t in fdata.get('topics', []):
+                    for c in t.get('concepts', []):
+                        for ps in c.get('problem_sets', []):
+                            ps_id = ps.get('id', '')
+                            if ps_id:
+                                if ps_id in id_sources and id_sources[ps_id][0] != course:
+                                    print(f"  {red('ERROR')} ID collision: ProblemSet '{ps_id}' in both '{id_sources[ps_id][0]}' and '{course}'")
+                                    id_collision_count += 1
+                                else:
+                                    id_sources[ps_id] = (course, 'problem_set')
+                            for p in ps.get('problems', []):
+                                p_id = p.get('id', '')
+                                if p_id:
+                                    if p_id in id_sources and id_sources[p_id][0] != course:
+                                        print(f"  {red('ERROR')} ID collision: Problem '{p_id}' in both '{id_sources[p_id][0]}' and '{course}'")
+                                        id_collision_count += 1
+                                    else:
+                                        id_sources[p_id] = (course, 'problem')
+            except (json.JSONDecodeError, OSError):
+                pass
+        if id_collision_count > 0:
+            total_errors += id_collision_count
+            files_with_errors += 1
+        else:
+            print(f"  {green('PASS')}  Cross-file ID collision check ({len(id_sources)} unique IDs)")
 
     # Summary
     print(f"\n{bold('============ Summary ============')}")

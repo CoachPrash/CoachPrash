@@ -17,11 +17,13 @@
           "display_order": 0,
           "problem_sets": [
             {
+              "id": "b5961f72-a5bf-40f2-800b-f8c87bc0e7ca",
               "title": "Practice: Writing and Interpreting Expressions",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "fc6a8c36-0413-4209-b90c-fa0c400766c1",
                   "question_html": "<p>Which word phrase best represents the expression \\(4x - 9\\)?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -68,6 +70,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "a62c4603-52d9-4450-b98e-c1dc27927f59",
                   "question_html": "<p>Write an algebraic expression for: \"the quotient of a number \\(n\\) and 7, decreased by 2\".</p>",
                   "problem_type": "ftb",
                   "difficulty": "easy",
@@ -95,6 +98,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "3707f876-94bb-4915-bc6a-b2a4397bf5f7",
                   "question_html": "<p>A rectangle has width \\(w\\) and length that is 5 more than twice the width. Write an expression for the perimeter.</p>",
                   "problem_type": "ftb",
                   "difficulty": "medium",
@@ -138,11 +142,13 @@
           "display_order": 1,
           "problem_sets": [
             {
+              "id": "58d491e0-2ad7-4c0f-8b37-3f23fd1dcbf4",
               "title": "Practice: Order of Operations",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "a1b05d52-61e3-453b-b02d-7a4c0033248e",
                   "question_html": "<p>Simplify: \\(4 + 3 \\times (2^3 - 5)\\)</p>",
                   "problem_type": "ftb",
                   "difficulty": "easy",
@@ -173,6 +179,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "0a0a757a-8231-4347-b0f3-6dec72f252df",
                   "question_html": "<p>Evaluate \\(\\frac{5x^2 - 3y}{2}\\) for \\(x = 4\\) and \\(y = 7\\).</p>",
                   "problem_type": "ftb",
                   "difficulty": "medium",
@@ -203,6 +210,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "22bc3c8d-b6a0-4683-a9f2-891dcbebb276",
                   "question_html": "<p>Simplify: \\(8 - 2[3 - (5 - 4 \\div 2)]\\).</p>",
                   "problem_type": "ftb",
                   "difficulty": "hard",
@@ -252,11 +260,13 @@
           "display_order": 2,
           "problem_sets": [
             {
+              "id": "5788bdf2-bbf6-4c8e-b1b0-7a25132b968f",
               "title": "Practice: Classifying and Ordering Real Numbers",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "1d4ce7d0-dedd-4526-a520-563cf073b2f8",
                   "question_html": "<p>Which of the following is an irrational number?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -306,6 +316,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "cfb418b4-3c42-4f22-a11a-0278102901ff",
                   "question_html": "<p>Order from least to greatest: \\(-\\frac{5}{2},\\ \\sqrt{7},\\ -2.4,\\ 0\\)</p>",
                   "problem_type": "ftb",
                   "difficulty": "medium",
@@ -339,6 +350,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "e507f841-044e-4cbd-8d37-97094415152a",
                   "question_html": "<p>A square garden has an area of 45 square meters. Estimate the side length to the nearest integer.</p>",
                   "problem_type": "ftb",
                   "difficulty": "medium",
@@ -382,11 +394,13 @@
           "display_order": 3,
           "problem_sets": [
             {
+              "id": "12abae18-4900-4fff-bcea-7d0f5ccd0092",
               "title": "Practice: Identifying and Applying Properties",
               "access_tier": "premium",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "4b62160b-8da1-43a2-8a6f-c4d8d6bbaada",
                   "question_html": "<p>Which property is illustrated by \\((3 + 4) + 5 = 3 + (4 + 5)\\)?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -430,6 +444,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "9ffdfaf4-7866-4116-a520-2706ef2646b0",
                   "question_html": "<p>Simplify \\(\\frac{12ab}{3a}\\) using properties of real numbers. Assume \\(a \\neq 0\\).</p>",
                   "problem_type": "ftb",
                   "difficulty": "medium",
@@ -460,6 +475,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "a0ba7549-f1de-4cc8-8516-b74f151c33b1",
                   "question_html": "<p>Is the statement \\(a \\div (b \\div c) = (a \\div b) \\div c\\) true for all real numbers? If false, give a counterexample.</p>",
                   "problem_type": "frq",
                   "difficulty": "hard",
@@ -506,11 +522,13 @@
           "display_order": 4,
           "problem_sets": [
             {
+              "id": "2e3dba05-ee14-472f-b943-5c23958c2d75",
               "title": "Practice: Adding and Subtracting",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "73b455d2-927e-46b0-b1a5-714e3822edfb",
                   "question_html": "<p>Find the sum: \\(-15 + (-7)\\)</p>",
                   "problem_type": "ftb",
                   "difficulty": "easy",
@@ -538,6 +556,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "9da67a5d-aaae-4e1f-b54e-0ee596dbe36b",
                   "question_html": "<p>Simplify: \\(-4.8 - 9.3\\)</p>",
                   "problem_type": "ftb",
                   "difficulty": "easy",
@@ -568,6 +587,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "f8379feb-8eda-4cdb-a4bd-1b65c73a9cd6",
                   "question_html": "<p>A submarine is at -350 ft (below sea level). It rises 120 ft, then descends 45 ft. What is its final depth?</p>",
                   "problem_type": "ftb",
                   "difficulty": "medium",
@@ -611,11 +631,13 @@
           "display_order": 5,
           "problem_sets": [
             {
+              "id": "674501e3-ddc1-4f6a-ba15-a286da346c73",
               "title": "Practice: Multiplying and Dividing",
               "access_tier": "premium",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "ebcb7ca3-4317-4d12-aace-91bc396ca34d",
                   "question_html": "<p>Calculate: \\((-8) \\times (-12)\\)</p>",
                   "problem_type": "ftb",
                   "difficulty": "easy",
@@ -643,6 +665,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "cd75ab56-bfc7-4bb3-b580-b00d3750470d",
                   "question_html": "<p>Simplify: \\(\\frac{-3.6}{0.9}\\)</p>",
                   "problem_type": "ftb",
                   "difficulty": "easy",
@@ -670,6 +693,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "3616115c-933f-4a02-919e-0c65965fae23",
                   "question_html": "<p>A stock price changes by \\(-\\$1.25\\) each day for 5 consecutive days. What is the total change in price?</p>",
                   "problem_type": "ftb",
                   "difficulty": "medium",
@@ -710,11 +734,13 @@
           "display_order": 6,
           "problem_sets": [
             {
+              "id": "fe81dd93-8dbf-48e5-a7a0-cfb0f26dad58",
               "title": "Practice: Distributive Property",
               "access_tier": "premium",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "21aae216-6b68-4114-a430-0e9825a66025",
                   "question_html": "<p>Simplify: \\(3(2x - 5) + 4x\\)</p>",
                   "problem_type": "ftb",
                   "difficulty": "easy",
@@ -745,6 +771,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "5e57183c-858d-4dd1-a934-147ad7e8e428",
                   "question_html": "<p>Use mental math to find \\(8 \\times 49\\) using the distributive property.</p>",
                   "problem_type": "ftb",
                   "difficulty": "medium",
@@ -775,6 +802,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "fc41a0e0-9518-41b5-8f34-319fee4030a6",
                   "question_html": "<p>Simplify: \\(-(4y - 3z + 2)\\)</p>",
                   "problem_type": "ftb",
                   "difficulty": "medium",
@@ -818,11 +846,13 @@
           "display_order": 7,
           "problem_sets": [
             {
+              "id": "76918571-9138-49f6-a92c-ac1228a7a69a",
               "title": "Practice: Solving Simple Equations",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "b2fc5858-303b-4b56-b827-009daa5434d5",
                   "question_html": "<p>Is \\(y = -2\\) a solution of \\(4y + 3 = -5\\)?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -858,6 +888,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "7e940499-45d3-4140-a529-a28951185aa8",
                   "question_html": "<p>Use mental math to solve: \\(x - 7 = 15\\)</p>",
                   "problem_type": "ftb",
                   "difficulty": "easy",
@@ -885,6 +916,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "3bee8a2c-62ca-4fd5-8fce-abc00b23be7f",
                   "question_html": "<p>Use a table to find the solution of \\(3n + 5 = 26\\). Start with n=5,6,7,...</p>",
                   "problem_type": "ftb",
                   "difficulty": "medium",
@@ -925,11 +957,13 @@
           "display_order": 8,
           "problem_sets": [
             {
+              "id": "0a052b71-b350-4507-8685-f987bda8930b",
               "title": "Practice: Representing Patterns",
               "access_tier": "premium",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "fa3eb094-8fb5-42cd-81d9-901d05a338fb",
                   "question_html": "<p>Is the ordered pair \\((3, 9)\\) a solution of the equation \\(y = 2x + 3\\)?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -961,6 +995,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "22a41ec2-aaed-42f3-b50d-cf11aef2b57b",
                   "question_html": "<p>Use the pattern in the table to predict the value of y when x = 8.</p><table><tr><th>x</th><th>y</th></tr><tr><td>1</td><td>3</td></tr><tr><td>2</td><td>5</td></tr><tr><td>3</td><td>7</td></tr><tr><td>4</td><td>9</td></tr></table>",
                   "problem_type": "ftb",
                   "difficulty": "medium",
@@ -991,6 +1026,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "677d09f3-1b3f-4345-af83-a4c168db332b",
                   "question_html": "<p>The table shows the cost of buying x muffins at a bakery. Each muffin costs the same. Complete the table and write an equation.</p><table><tr><th>x (muffins)</th><th>Cost ($)</th></tr><tr><td>1</td><td>1.75</td></tr><tr><td>2</td><td>3.50</td></tr><tr><td>3</td><td>?</td></tr><tr><td>4</td><td>?</td></tr></table>",
                   "problem_type": "frq",
                   "difficulty": "easy",

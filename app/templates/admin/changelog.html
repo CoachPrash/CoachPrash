@@ -13,6 +13,37 @@
                 <div class="changelog-date">
                     <span class="changelog-date-day">13</span>
                     <span class="changelog-date-month">Jun 2026</span>
+                    <span class="changelog-phase-badge">Core</span>
+                </div>
+                <div class="changelog-body">
+                    <h2>Stable Problem IDs &mdash; Reseed Without Losing Student Progress</h2>
+                    <p class="changelog-summary">Every Problem and ProblemSet now has a permanent UUID in the JSON content files. Reseeding upserts in place instead of delete/recreate, preserving AttemptLog foreign keys and student progress.</p>
+
+                    <div class="changelog-section">
+                        <h3>What Changed</h3>
+                        <ul>
+                            <li>Every ProblemSet and Problem in all 10 content JSON files now has a permanent <code>"id"</code> field (UUID v4)</li>
+                            <li>Content loader uses upsert pattern: existing rows updated in place, new rows created &mdash; no more delete/recreate</li>
+                            <li>Removed auto-generated UUID defaults from ProblemSet and Problem models &mdash; IDs must come from JSON</li>
+                            <li>Eliminated ~100 lines of duplicated problem-creation code between content loader and bulk import route</li>
+                            <li>Validator checks: ID presence per-file, cross-file collision detection (3420 unique IDs)</li>
+                        </ul>
+                    </div>
+
+                    <div class="changelog-section">
+                        <h3>New Scripts &amp; Docs</h3>
+                        <ul>
+                            <li><code>scripts/add_stable_ids.py</code> &mdash; one-time script to add UUIDs to content JSON (idempotent)</li>
+                            <li><code>docs/CONTENT_SPEC.md</code> and <code>docs/SEED_CREATION_PROMPT.md</code> updated with stable ID requirements</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="changelog-entry">
+                <div class="changelog-date">
+                    <span class="changelog-date-day">13</span>
+                    <span class="changelog-date-month">Jun 2026</span>
                     <span class="changelog-phase-badge">Content</span>
                 </div>
                 <div class="changelog-body">

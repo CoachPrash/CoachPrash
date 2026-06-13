@@ -27,11 +27,13 @@
           "display_order": 0,
           "problem_sets": [
             {
+              "id": "c57c1fb9-c4a4-4d47-99e8-e17d1b3fdfa5",
               "title": "Practice: Scalars and Vectors in One Dimension",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "23a1dcc2-83f4-4c1d-9910-cee40e045a1b",
                   "question_html": "<p>Which of the following is a vector quantity?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -76,6 +78,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "5aa21f50-1219-4d75-85f8-d1f676a6631e",
                   "question_html": "<p>A person walks 4 m east and then 3 m west. What is the magnitude of the person's displacement?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -123,6 +126,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "8c53a428-54eb-4f36-a07c-574ca675f9d7",
                   "question_html": "<p>A jogger runs 200 m north, then 150 m south, then 100 m north. What is the jogger's displacement?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -167,6 +171,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "af02c8f2-113f-4ecb-852a-d542b59054c1",
                   "question_html": "<p>A person walks 4 m east and then 3 m west. What is the total distance traveled?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "7",
@@ -194,6 +199,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "181376c2-55a3-4908-84d9-ebc142be0ccf",
                   "question_html": "<p>An object moves from position \\(x = -2\\) m to \\(x = +6\\) m. What is its displacement in meters?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "8",
@@ -218,6 +224,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "8e4e050a-2356-44bf-9c59-a15f1928a155",
                   "question_html": "<p>A car travels 30 km east in 0.5 hours, then 20 km west in 0.25 hours. What is the average velocity for the entire trip, in km/h? (Take east as positive.)</p>",
                   "problem_type": "ftb",
                   "correct_answer": "13.3",
@@ -277,11 +284,13 @@
           "display_order": 1,
           "problem_sets": [
             {
+              "id": "8fe8a162-6445-4ce8-98ef-c891b9367d93",
               "title": "Practice: Displacement, Velocity, and Acceleration",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "cedafb1e-06f8-4b16-b1ff-0ec77a21f1c2",
                   "question_html": "<p>A car accelerates from rest to 20 m/s in 5 seconds. What is its average acceleration?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -323,6 +332,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "cf6ef0a7-2bb9-4128-9db4-4aa6443d3a05",
                   "question_html": "<p>An object moves with velocity \\(v = -6\\) m/s and acceleration \\(a = -2\\) m/s². Is the object speeding up or slowing down?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -367,6 +377,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "8e5cc1fe-e6b3-4c97-a23a-67c742fedf02",
                   "question_html": "<p>A car travels 100 m in 10 s, stops for 5 s, then travels 50 m in 5 s, all in the same direction. What is the average velocity for the entire trip?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -414,6 +425,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "65a0a22d-a0e1-45ad-95c5-dd2f962f557d",
                   "question_html": "<p>A bicycle slows from 12 m/s to 4 m/s in 2 seconds. What is the average acceleration in m/s²?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "-4",
@@ -441,6 +453,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "e7a9bf3d-9940-49cb-9315-febd310c7c9c",
                   "question_html": "<p>An object has a velocity of 10 m/s and an acceleration of 0 m/s². What is the velocity after 5 seconds, in m/s?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "10",
@@ -465,6 +478,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "2c12fc54-6108-4bd4-bddd-3815385c8226",
                   "question_html": "<p>A ball is thrown straight up with an initial velocity of 15 m/s. At the top of its path, what are the velocity and acceleration? (Take upward as positive, \\(g = 10\\) m/s².)</p>",
                   "problem_type": "ftb",
                   "correct_answer": "0, -10",
@@ -529,11 +543,13 @@
           "display_order": 2,
           "problem_sets": [
             {
+              "id": "52d0bb3e-6a0e-46b0-a551-94d2e7482ed8",
               "title": "Practice: Representing Motion",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "87a61a89-7f5b-4d05-a1a2-698495059830",
                   "question_html": "<p>A car starts from rest and accelerates uniformly at \\(3 \\text{ m/s}^2\\) for 4 seconds. What is the car's final velocity?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -575,6 +591,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "8d089497-1457-4548-be73-7bf7d06d97d4",
                   "question_html": "<p>On a velocity-time graph, what does the area under the curve represent?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -619,6 +636,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "7136d9cd-7d3a-423d-ad44-5124169d0b71",
                   "question_html": "<p>A stone is thrown straight up with an initial velocity of 30 m/s. Using \\(g = 10\\) m/s², what maximum height does it reach?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -666,6 +684,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "dec9b19f-5493-46cb-b6fc-06e1d91016fb",
                   "question_html": "<p>A car accelerates from 10 m/s to 30 m/s over a distance of 200 m. What is the acceleration in m/s²?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -710,6 +729,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "c24d5974-f8ca-4f95-8bdc-2fa9e0ac3088",
                   "question_html": "<p>A ball is dropped from rest. How far does it fall in 3 seconds? Use \\(g = 10\\) m/s². Give your answer in meters.</p>",
                   "problem_type": "ftb",
                   "correct_answer": "45",
@@ -734,6 +754,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "cb8c2f2a-06ee-4ffe-872d-0ffa47affeb1",
                   "question_html": "<p>A car moving at 20 m/s brakes with a constant deceleration of \\(4 \\text{ m/s}^2\\). How far does it travel before stopping? Give your answer in meters.</p>",
                   "problem_type": "ftb",
                   "correct_answer": "50",
@@ -761,6 +782,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "823d4898-8b6d-4f17-b3e0-573fd4d1d6ea",
                   "question_html": "<p>A car starts at rest and accelerates at \\(2 \\text{ m/s}^2\\) for 6 seconds, then travels at constant velocity for 4 seconds. What is the total displacement? Give your answer in meters.</p>",
                   "problem_type": "ftb",
                   "correct_answer": "84",
@@ -791,6 +813,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "3ba1697a-6b14-4e1c-ab5c-040a2474e40e",
                   "question_html": "<p>A ball is thrown vertically upward at 25 m/s from ground level. Use \\(g = 10\\) m/s².</p><p>(a) How long does it take to reach the highest point?</p><p>(b) What is the total time in the air (until it returns to the launch height)?</p><p>(c) Explain why the time going up equals the time coming down.</p>",
                   "problem_type": "frq",
                   "difficulty": "medium",
@@ -856,11 +879,13 @@
           "display_order": 3,
           "problem_sets": [
             {
+              "id": "cb194d41-97b3-4178-8de3-1e0b3bbdfc14",
               "title": "Practice: Reference Frames and Relative Motion",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "a528888c-18be-4df2-ab18-e11f91ff6bc0",
                   "question_html": "<p>Two cars travel in the same direction. Car A moves at 25 m/s and Car B moves at 15 m/s. What is the velocity of Car A relative to Car B?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -905,6 +930,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "0404c87a-6881-4814-9f0e-17712e40fc69",
                   "question_html": "<p>Two trains approach each other, each traveling at 20 m/s. What is the velocity of one train relative to the other?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -949,6 +975,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "247ab09e-f06e-48b0-adc0-1ec53160b843",
                   "question_html": "<p>Car A travels north at 30 m/s. Car B travels south at 20 m/s. A passenger in Car B throws a ball forward (south) at 5 m/s relative to Car B. What is the velocity of the ball relative to Car A? (Take north as positive.)</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -996,6 +1023,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "12080752-0775-41a9-bda6-e0199e07bfc7",
                   "question_html": "<p>A boat travels at 5 m/s relative to the water. The river flows at 3 m/s. If the boat moves upstream, what is its speed relative to the ground, in m/s?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "2",
@@ -1023,6 +1051,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "d818d5c7-1e53-49d4-8320-42d0ef44d62c",
                   "question_html": "<p>A person walks at 1.5 m/s on a moving walkway that travels at 2.0 m/s in the same direction. What is the person's speed relative to the ground, in m/s?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "3.5",
@@ -1050,6 +1079,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "e4c90b80-6652-4843-a7ac-a1603d47f495",
                   "question_html": "<p>A plane flies at 200 m/s relative to the air. A wind blows at 50 m/s from west to east. If the plane flies directly east, what is its ground speed in m/s?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "250",
@@ -1077,6 +1107,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "42e24aaf-ca07-4dc1-bb90-c4446dccfa36",
                   "question_html": "<p>A passenger on a train moving at 25 m/s east drops a ball. Describe the path of the ball as seen by (a) the passenger and (b) a person standing on the ground. Explain why the descriptions differ.</p>",
                   "problem_type": "frq",
                   "difficulty": "medium",
@@ -1143,11 +1174,13 @@
           "display_order": 4,
           "problem_sets": [
             {
+              "id": "8d205707-545b-4258-b2b3-0e5e6ef18cb4",
               "title": "Practice: Vectors and Motion in Two Dimensions",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "cc135031-9195-4fb2-9361-73930dc07af6",
                   "question_html": "<p>A vector has magnitude 10 and makes a 30° angle with the positive x-axis. What is its x-component?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -1189,6 +1222,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "f4220946-606e-488d-a23b-57576aef5aa6",
                   "question_html": "<p>A ball is launched horizontally from a 20 m high cliff at 15 m/s. How long does it take to hit the ground? Use \\(g = 10\\) m/s².</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -1233,6 +1267,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "3d1e6b54-90e4-46e9-9784-1acb83eb26a7",
                   "question_html": "<p>A ball is launched at 60° above the horizontal with an initial speed of 40 m/s. Using \\(g = 10\\) m/s², what is the maximum height reached?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -1280,6 +1315,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "cf5f1e55-6bb0-4e90-aefd-a4ee18256d6a",
                   "question_html": "<p>A rescue package is dropped from a helicopter flying horizontally at 40 m/s at an altitude of 80 m. Using \\(g = 10\\) m/s², how far ahead of the target should the pilot release the package?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -1324,6 +1360,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "cafec019-be36-4807-b51d-c47ade3125f4",
                   "question_html": "<p>Two vectors have components \\(\\vec{A} = (3, 4)\\) and \\(\\vec{B} = (1, -2)\\). What is the magnitude of \\(\\vec{A} + \\vec{B}\\)? Give your answer to one decimal place.</p>",
                   "problem_type": "ftb",
                   "correct_answer": "4.5",
@@ -1351,6 +1388,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "cc341d35-9e99-43d6-a164-2baef1bbd271",
                   "question_html": "<p>A projectile is launched at 45° with initial speed 20 m/s. What is the initial horizontal velocity component, in m/s? Round to one decimal place.</p>",
                   "problem_type": "ftb",
                   "correct_answer": "14.1",
@@ -1375,6 +1413,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "b4cdb587-0cb4-465f-9ec8-885930f008bb",
                   "question_html": "<p>A ball is launched horizontally at 10 m/s from a 45 m high cliff. Using \\(g = 10\\) m/s², how far from the base of the cliff does it land? Give your answer in meters.</p>",
                   "problem_type": "ftb",
                   "correct_answer": "30",
@@ -1402,6 +1441,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "5d4027fc-ac14-4f41-8b80-9ca3d7106000",
                   "question_html": "<p>A projectile is launched at angle \\(\\theta\\) with initial speed \\(v_0\\) from level ground. Use \\(g = 10\\) m/s².</p><p>(a) Derive an expression for the range (horizontal distance) in terms of \\(v_0\\), \\(\\theta\\), and \\(g\\).</p><p>(b) At what angle is the range maximized?</p><p>(c) Explain why 30° and 60° give the same range.</p>",
                   "problem_type": "frq",
                   "difficulty": "medium",
@@ -1478,11 +1518,13 @@
           "display_order": 0,
           "problem_sets": [
             {
+              "id": "6b14ae48-a1fc-4bcd-82b9-9d64f30c55c8",
               "title": "Practice: Systems and Center of Mass",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "3ceec35b-0b66-4d0f-bec9-5763a24a7e22",
                   "question_html": "<p>A 2 kg object is at \\(x = 0\\) m and a 6 kg object is at \\(x = 4\\) m. Where is the center of mass?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -1527,6 +1569,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "700eaa08-eb3a-472e-9eef-43cab851fe79",
                   "question_html": "<p>Which forces affect the motion of the center of mass of a system?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -1571,6 +1614,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "cb937f38-9b9b-4196-b38e-4596681e62c8",
                   "question_html": "<p>A 60 kg person stands at one end of a 4 m long, 20 kg boat on frictionless water. The person walks 3 m toward the other end. How far does the boat move?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -1618,6 +1662,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "af767a5b-f7bb-4c34-abc2-42ba319757a6",
                   "question_html": "<p>A 4 kg object at \\(x = 0\\) and a 1 kg object at \\(x = 10\\) m are connected by a spring on a frictionless surface. If the 4 kg object moves to \\(x = 2\\) m, where is the 1 kg object?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -1662,6 +1707,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "7395f56d-162a-4113-9562-fdaf07f881f1",
                   "question_html": "<p>A 3 kg ball at \\(x = 1\\) m and a 5 kg ball at \\(x = 5\\) m. What is the x-coordinate of the center of mass, in meters?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "3.5",
@@ -1686,6 +1732,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "73e38cd3-236b-4f32-ab6f-4311f7ed62b7",
                   "question_html": "<p>Two objects with equal mass are located at \\(x = 2\\) m and \\(x = 8\\) m. Where is the center of mass, in meters?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "5",
@@ -1710,6 +1757,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "27fe1c0c-614f-4f8c-9c45-d8506d67bc0a",
                   "question_html": "<p>Three masses are arranged: 1 kg at (0, 0), 2 kg at (3, 0), and 3 kg at (0, 4). What is the y-coordinate of the center of mass?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "2",
@@ -1734,6 +1782,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "506e74f1-e8e6-45d0-96ec-8dcfe8f41e29",
                   "question_html": "<p>A firework of mass 2 kg is launched vertically. At its highest point (50 m), it explodes into two equal pieces. One piece has zero velocity immediately after the explosion. Where does the center of mass of the two pieces land relative to the launch point? Explain your reasoning.</p>",
                   "problem_type": "frq",
                   "difficulty": "medium",
@@ -1791,11 +1840,13 @@
           "display_order": 1,
           "problem_sets": [
             {
+              "id": "722122af-acf2-486d-b7d9-ac24bb64636e",
               "title": "Practice: Forces and Free-Body Diagrams",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "204ac759-97f4-4fd9-92cc-c35bebf309dc",
                   "question_html": "<p>A book sits on a table. How many forces act on the book?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -1840,6 +1891,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "abe42adb-9d7c-4adb-86d9-971e51155752",
                   "question_html": "<p>Which of the following is a non-contact force?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -1881,6 +1933,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "7ac223b4-f2e8-4b99-bf90-697724bac9ac",
                   "question_html": "<p>A 20 kg block hangs from two ropes that make angles of 30° and 60° with the horizontal ceiling. What is the tension in the rope at 60°? Use \\(g = 10\\) m/s².</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -1936,6 +1989,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "8534ebe0-b641-4333-925f-877d88c56a54",
                   "question_html": "<p>A 5 kg object rests on a flat surface. What is the normal force on the object, in newtons? Use \\(g = 10\\) m/s².</p>",
                   "problem_type": "ftb",
                   "correct_answer": "50",
@@ -1960,6 +2014,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "51631edd-71e3-4bc3-9789-a9f5d4d21910",
                   "question_html": "<p>A 10 kg box is pushed across a floor with an applied force of 40 N. Friction exerts 15 N opposing the motion. What is the net force on the box, in newtons?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "25",
@@ -1987,6 +2042,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "e7d78d8d-2768-461b-a551-0a5eebfec15b",
                   "question_html": "<p>A box is on a ramp inclined at 30°. The box has mass 10 kg. What is the component of gravity parallel to the ramp, in newtons? Use \\(g = 10\\) m/s².</p>",
                   "problem_type": "ftb",
                   "correct_answer": "50",
@@ -2045,11 +2101,13 @@
           "display_order": 2,
           "problem_sets": [
             {
+              "id": "49f2eec4-a05b-4433-b6f4-33996b5fd9b4",
               "title": "Practice: Newton's Third Law",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "e6c1ba1a-619c-4f31-b13c-5eb2c286c807",
                   "question_html": "<p>A person pushes on a wall with a force of 50 N. What force does the wall exert on the person?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -2091,6 +2149,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "8e86bc07-4a12-40aa-8bb4-bf9e5cb9b658",
                   "question_html": "<p>A 1000 kg car collides with a 3000 kg truck. Which vehicle experiences the greater force during the collision?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -2135,6 +2194,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "bc0ca4b6-61d5-4cf5-b455-dc34560e7476",
                   "question_html": "<p>A book rests on a table. The weight of the book and the normal force from the table are equal and opposite. Are they a Newton's Third Law pair? (Answer yes or no.)</p>",
                   "problem_type": "ftb",
                   "correct_answer": "no",
@@ -2165,6 +2225,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "7902bab2-f952-4b8a-b54f-0f6fa6471327",
                   "question_html": "<p>A horse pulls a cart forward. The cart pulls the horse backward with the same force. Why does the system move forward?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "friction",
@@ -2195,6 +2256,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "e0bd6715-dcac-4a36-b5b0-4b5e03136209",
                   "question_html": "<p>An astronaut (80 kg) pushes off a spacecraft (2000 kg) with a force of 100 N. What is the acceleration of the astronaut, in m/s²?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "1.25",
@@ -2225,6 +2287,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "ebd88ed1-3504-4344-8113-85bfc9dc0fc3",
                   "question_html": "<p>Two ice skaters face each other. Skater A (50 kg) pushes skater B (75 kg) and skater A accelerates at 3 m/s². What is skater B's acceleration, in m/s²?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "2",
@@ -2285,11 +2348,13 @@
           "display_order": 3,
           "problem_sets": [
             {
+              "id": "b26108d3-80b5-47f2-8fa4-86c44af482d8",
               "title": "Practice: Newton's First Law",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "48bb922e-c6bd-4c94-bae4-b36da27b6f7e",
                   "question_html": "<p>A car moves at a constant 25 m/s on a straight road. What is the net force on the car?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -2334,6 +2399,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "d2fecbc8-2185-4cd3-a274-44d823f122ea",
                   "question_html": "<p>Which of the following best describes inertia?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -2378,6 +2444,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "2bb1a988-0fc8-4470-a1a6-3649f1b0a70d",
                   "question_html": "<p>A 5 kg object moves in a straight line at 10 m/s. Three forces act on it: 20 N forward, 12 N backward, and 8 N backward. Is the object accelerating?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -2422,6 +2489,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "f6c2a7d1-a3fd-4c09-b815-1e0e43b8fdc4",
                   "question_html": "<p>A box is pushed across a floor at constant velocity by a 30 N horizontal force. What is the friction force, in newtons?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "30",
@@ -2446,6 +2514,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "e68cd269-48e7-4d4f-a986-70d89c35800d",
                   "question_html": "<p>An object at rest has no forces acting on it. True or false?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "false",
@@ -2470,6 +2539,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "93da186b-9f02-412c-a0d7-d69b7e056b4f",
                   "question_html": "<p>A 2000 kg elevator moves upward at constant speed. What is the tension in the cable, in newtons? Use \\(g = 10\\) m/s².</p>",
                   "problem_type": "ftb",
                   "correct_answer": "20000",
@@ -2523,11 +2593,13 @@
           "display_order": 4,
           "problem_sets": [
             {
+              "id": "01fef859-bddb-4058-8cbe-e253c0746383",
               "title": "Practice: Newton's Second Law",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "67333ce6-7541-4f37-a9fb-d4aed35d0368",
                   "question_html": "<p>A 10 kg box is pushed with a net force of 40 N. What is its acceleration?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -2569,6 +2641,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "2935d80d-d945-46c1-b79b-a4a1f0f2f45b",
                   "question_html": "<p>A 5 kg object accelerates at \\(3 \\text{ m/s}^2\\). A 15 kg object experiences the same net force. What is the 15 kg object's acceleration?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -2613,6 +2686,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "11705ff4-855f-4c95-bad0-e6d23db58d34",
                   "question_html": "<p>Two blocks are connected by a string. Block A (3 kg) sits on a frictionless table and is connected via a string over a pulley to Block B (2 kg) hanging vertically. What is the acceleration of the system? Use \\(g = 10\\) m/s².</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -2665,6 +2739,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "9011b12f-c1c7-4aa3-8b48-07b687def06c",
                   "question_html": "<p>If the net force on a 4 kg object is tripled while its mass is doubled, by what factor does the acceleration change?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -2709,6 +2784,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "39528383-f19b-4d8c-b323-c1fc00314a1c",
                   "question_html": "<p>What net force is needed to accelerate a 2000 kg car at \\(1.5 \\text{ m/s}^2\\)? Give your answer in newtons.</p>",
                   "problem_type": "ftb",
                   "correct_answer": "3000",
@@ -2733,6 +2809,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "858c57f0-e83e-4b0b-806b-549f3f3b1c69",
                   "question_html": "<p>A 50 kg person stands on a scale in an elevator accelerating upward at \\(2 \\text{ m/s}^2\\). What does the scale read, in newtons? Use \\(g = 10\\) m/s².</p>",
                   "problem_type": "ftb",
                   "correct_answer": "600",
@@ -2760,6 +2837,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "1891efe5-0b98-48b0-a91d-9f5b9697dc6f",
                   "question_html": "<p>A 1500 kg car experiences a 3000 N engine force and 1200 N friction force. What is the acceleration in m/s²?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "1.2",
@@ -2787,6 +2865,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "06e7c81b-2c4a-4635-949d-dfacb7e7e049",
                   "question_html": "<p>A 70 kg person rides an elevator. The scale reads 560 N. Is the elevator accelerating up, down, or not at all? What is the acceleration? Use \\(g = 10\\) m/s².</p>",
                   "problem_type": "frq",
                   "difficulty": "medium",
@@ -2852,11 +2931,13 @@
           "display_order": 5,
           "problem_sets": [
             {
+              "id": "6ea53d53-4d15-4a69-9637-b08e6ce23bb5",
               "title": "Practice: Gravitational Force",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "d028e80e-e558-4bba-9890-f91176dd5c66",
                   "question_html": "<p>What is the weight of a 70 kg person on Earth? Use \\(g = 10\\) m/s².</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -2898,6 +2979,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "9c76a386-be0d-4da0-9311-bd1261dde2bb",
                   "question_html": "<p>If the distance between two objects is tripled, by what factor does the gravitational force change?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -2942,6 +3024,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "a5cbc2f9-6595-4334-a888-af1a89627838",
                   "question_html": "<p>Two 50 kg masses are 2 m apart. What is the gravitational force between them? Use \\(G = 6.67 \\times 10^{-11}\\) N·m²/kg².</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -2983,6 +3066,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "84e56aa7-af7b-4aa1-b095-6dbef445f5ab",
                   "question_html": "<p>If Earth's mass stayed the same but its radius shrank to half, what would happen to \\(g\\) at the surface?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -3024,6 +3108,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "6299f940-c63e-44d5-8136-783debc8cc63",
                   "question_html": "<p>The Moon is about 60 Earth radii from Earth's center. What is the gravitational field strength at the Moon's distance, compared to Earth's surface? Express as a fraction of \\(g\\).</p>",
                   "problem_type": "ftb",
                   "correct_answer": "1/3600",
@@ -3051,6 +3136,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "bfe00a11-2ec2-4ec6-81bb-61a84c4016cd",
                   "question_html": "<p>A 60 kg person weighs 600 N on Earth. What is their weight on a planet where \\(g = 4\\) m/s²? Give your answer in newtons.</p>",
                   "problem_type": "ftb",
                   "correct_answer": "240",
@@ -3075,6 +3161,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "467764c9-8cae-48c7-8013-7201c11c2def",
                   "question_html": "<p>Planet X has twice Earth's mass and twice Earth's radius. What is the surface gravitational field strength on Planet X, compared to Earth's \\(g\\)?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "0.5g",
@@ -3102,6 +3189,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "f84a12c2-315f-44b3-bd6c-85e91e746e7f",
                   "question_html": "<p>Explain why astronauts on the International Space Station appear weightless even though gravity is about 90% of its surface value at that altitude.</p>",
                   "problem_type": "frq",
                   "difficulty": "medium",
@@ -3166,11 +3254,13 @@
           "display_order": 6,
           "problem_sets": [
             {
+              "id": "4378ea76-5182-4324-9a24-fa59408e82eb",
               "title": "Practice: Kinetic and Static Friction",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "1b5d5967-e464-4bd1-a79b-a71a0985f4b5",
                   "question_html": "<p>A 20 kg box sits on a floor with \\(\\mu_s = 0.4\\). What is the maximum static friction force? Use \\(g = 10\\) m/s².</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -3212,6 +3302,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "948943cd-8131-455d-9c0d-55f9cc2bbdb5",
                   "question_html": "<p>A 10 kg box slides across a floor with \\(\\mu_k = 0.3\\). What is the friction force? Use \\(g = 10\\) m/s².</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -3253,6 +3344,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "e7b608f1-de74-4ba6-9e7c-289670da66c4",
                   "question_html": "<p>A 10 kg box on a 30° incline has \\(\\mu_k = 0.2\\). What is the acceleration down the incline? Use \\(g = 10\\) m/s².</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -3302,6 +3394,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "8c471d23-f751-4ceb-abac-428e2e471275",
                   "question_html": "<p>A 15 kg box on a floor (\\(\\mu_s = 0.5\\)) is pushed with 60 N. Does it move? Use \\(g = 10\\) m/s². Answer yes or no.</p>",
                   "problem_type": "ftb",
                   "correct_answer": "no",
@@ -3329,6 +3422,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "01eeddd0-bb3c-4d68-bd21-af36cbbe67d8",
                   "question_html": "<p>A 25 kg crate is pushed at constant velocity across a floor by a 75 N horizontal force. What is \\(\\mu_k\\)? Use \\(g = 10\\) m/s².</p>",
                   "problem_type": "ftb",
                   "correct_answer": "0.3",
@@ -3356,6 +3450,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "88d58c17-9eaf-4452-81cd-32a1329de3fa",
                   "question_html": "<p>A 5 kg block on a flat surface (\\(\\mu_s = 0.6\\), \\(\\mu_k = 0.4\\)) is pushed with a force that increases from 0. At what force does the block start to slide? Use \\(g = 10\\) m/s². Give your answer in newtons.</p>",
                   "problem_type": "ftb",
                   "correct_answer": "30",
@@ -3383,6 +3478,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "febf175b-b618-4fdc-b22f-fbb318e152f6",
                   "question_html": "<p>A block sits on a ramp. The angle is slowly increased. At 25°, the block begins to slide. What is \\(\\mu_s\\)? Round to two decimal places.</p>",
                   "problem_type": "ftb",
                   "correct_answer": "0.47",
@@ -3407,6 +3503,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "4ce4a23c-6575-4f73-911f-fc298601b078",
                   "question_html": "<p>A 40 kg crate is pushed with 200 N at 30° below horizontal across a floor (\\(\\mu_k = 0.25\\)). Find the acceleration. Use \\(g = 10\\) m/s².</p>",
                   "problem_type": "frq",
                   "difficulty": "medium",
@@ -3480,11 +3577,13 @@
           "display_order": 7,
           "problem_sets": [
             {
+              "id": "7ddde823-37c1-40eb-8391-254a3ddd5f4b",
               "title": "Practice: Spring Forces",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "f23bab71-b485-4836-b77e-33f7f67b7091",
                   "question_html": "<p>A spring with \\(k = 200\\) N/m is stretched 0.1 m. What is the magnitude of the spring force?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -3526,6 +3625,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "dd2b73f7-081e-45c8-87bf-0813ae2c25c4",
                   "question_html": "<p>A spring stretches 0.05 m when a 10 N force is applied. What is the spring constant?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -3567,6 +3667,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "bcf57dd4-1f2a-402f-94ae-1592390c4f3a",
                   "question_html": "<p>Two springs (\\(k_1 = 100\\) N/m and \\(k_2 = 300\\) N/m) are connected end-to-end (in series) and a 10 N force is applied. What is the total extension?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -3614,6 +3715,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "fdc1b879-dc84-409d-8fae-0ee544ed6221",
                   "question_html": "<p>A spring (\\(k = 500\\) N/m) is compressed 0.04 m. What is the magnitude of the spring force, in newtons?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "20",
@@ -3638,6 +3740,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "c3bf39a2-217f-4b99-82d8-194a532e4c9b",
                   "question_html": "<p>A 2 kg mass hangs from a spring and stretches it 0.1 m at equilibrium. What is \\(k\\)? Use \\(g = 10\\) m/s². Give your answer in N/m.</p>",
                   "problem_type": "ftb",
                   "correct_answer": "200",
@@ -3662,6 +3765,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "4613d4c0-c26f-49b5-8a38-cb304e9fdb8d",
                   "question_html": "<p>A spring (\\(k = 400\\) N/m) is attached to a 2 kg block on a frictionless surface. The spring is compressed 0.15 m and released. What is the block's acceleration at the moment of release? Give your answer in m/s².</p>",
                   "problem_type": "ftb",
                   "correct_answer": "30",
@@ -3689,6 +3793,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "90efaae1-96db-4f2b-b9d9-927ab1a30754",
                   "question_html": "<p>A force vs. extension graph for a spring is a straight line passing through the origin with slope 250 N/m. What force is needed to stretch the spring 0.2 m? Give your answer in newtons.</p>",
                   "problem_type": "ftb",
                   "correct_answer": "50",
@@ -3713,6 +3818,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "b0d52ce8-dd61-4bca-9124-1263aaa2e5e8",
                   "question_html": "<p>A 3 kg block rests on a frictionless surface. It is attached to a wall by a spring (\\(k = 600\\) N/m). You push the block 0.08 m toward the wall and release it. Describe the block's motion. What is its maximum speed and where does it occur?</p>",
                   "problem_type": "frq",
                   "difficulty": "medium",
@@ -3778,11 +3884,13 @@
           "display_order": 8,
           "problem_sets": [
             {
+              "id": "a20b03e3-d593-4fbf-a33a-7ef6bd423f10",
               "title": "Practice: Circular Motion",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "68e324a5-ec3e-4b7b-bb02-e3d71c1f950d",
                   "question_html": "<p>A 0.5 kg ball moves in a circle of radius 2 m at a speed of 4 m/s. What is the centripetal acceleration?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -3824,6 +3932,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "9053acf4-812c-4b78-a7e5-90a7c6060983",
                   "question_html": "<p>A car rounds a flat curve of radius 50 m. The maximum static friction force is 8000 N and the car's mass is 1000 kg. What is the maximum speed the car can maintain without skidding?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -3865,6 +3974,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "e4dc720d-a2e2-4bd6-924c-b7581d826676",
                   "question_html": "<p>A 0.2 kg ball is attached to a 0.8 m string and swung in a vertical circle. What is the minimum speed at the top of the circle so the string stays taut? Use \\(g = 10\\) m/s².</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -3914,6 +4024,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "f6573fe1-2b33-4067-8af6-38eb80075566",
                   "question_html": "<p>If the speed of an object in circular motion is doubled while the radius remains the same, by what factor does the centripetal force change?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -3958,6 +4069,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "3eaa9ff0-380b-431d-a23f-6f42d5263c73",
                   "question_html": "<p>A ball on a string moves in a horizontal circle of radius 1.5 m with a period of 0.5 s. What is the speed of the ball, in m/s? Round to one decimal place.</p>",
                   "problem_type": "ftb",
                   "correct_answer": "18.8",
@@ -3982,6 +4094,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "d81dfbf3-ca1a-46a9-801e-ddae741ea05b",
                   "question_html": "<p>In uniform circular motion, is the net force zero or nonzero?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "nonzero",
@@ -4006,6 +4119,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "4e097b20-9177-400b-94ac-b180a09dd397",
                   "question_html": "<p>A satellite orbits Earth at altitude where \\(g = 4\\) m/s². If the orbital radius is \\(10^7\\) m, what is the orbital speed in m/s? Round to the nearest whole number.</p>",
                   "problem_type": "ftb",
                   "correct_answer": "6325",
@@ -4033,6 +4147,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "6da0695e-19e0-4f0f-ac73-0369622d7fd6",
                   "question_html": "<p>A 1500 kg car drives over a hill with radius of curvature 30 m at the top. At what speed will the car momentarily lose contact with the road? Use \\(g = 10\\) m/s². Give your answer in m/s. Round to one decimal place.</p>",
                   "problem_type": "ftb",
                   "correct_answer": "17.3",
@@ -4060,6 +4175,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "68dca9e6-3e1f-46c2-a83d-8823498d15da",
                   "question_html": "<p>A conical pendulum has a 0.5 kg bob on a 1 m string making a 30° angle with the vertical. Find (a) the tension in the string and (b) the speed of the bob. Use \\(g = 10\\) m/s².</p>",
                   "problem_type": "frq",
                   "difficulty": "hard",
@@ -4135,11 +4251,13 @@
           "display_order": 0,
           "problem_sets": [
             {
+              "id": "b7d3a3e7-ac6b-43bd-8268-4a30431c7334",
               "title": "Practice: Translational Kinetic Energy",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "0e2e129e-2b5b-402a-90b9-e59931cff575",
                   "question_html": "<p>What is the kinetic energy of a 2 kg ball moving at 5 m/s?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -4181,6 +4299,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "7d154801-bad8-4379-95c5-b96e149422b9",
                   "question_html": "<p>A car's speed doubles from 15 m/s to 30 m/s. By what factor does its kinetic energy change?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -4222,6 +4341,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "e1b309d4-98b7-4bff-8e91-8e2368b061e7",
                   "question_html": "<p>Object A has mass \\(m\\) and speed \\(2v\\). Object B has mass \\(2m\\) and speed \\(v\\). Which has more kinetic energy?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -4266,6 +4386,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "395e8659-2128-4132-a82b-3e7c930b6faa",
                   "question_html": "<p>A 1200 kg car has a kinetic energy of 150,000 J. What is its speed, in m/s? Round to one decimal place.</p>",
                   "problem_type": "ftb",
                   "correct_answer": "15.8",
@@ -4290,6 +4411,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "9583f246-ba38-4c76-b4c0-efa2b72f579f",
                   "question_html": "<p>What is the kinetic energy of a 0.05 kg bullet traveling at 400 m/s? Give your answer in joules.</p>",
                   "problem_type": "ftb",
                   "correct_answer": "4000",
@@ -4314,6 +4436,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "57720d5c-54fc-4aaf-8cfd-4d6272370ee9",
                   "question_html": "<p>A 0.15 kg baseball is pitched at 40 m/s and hit back at 50 m/s. What is the change in kinetic energy, in joules?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "67.5",
@@ -4366,11 +4489,13 @@
           "display_order": 1,
           "problem_sets": [
             {
+              "id": "fff35bca-1a57-48aa-add5-b96d175959a1",
               "title": "Practice: Work",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "f2262136-d59a-42d3-9560-9905d3759cd9",
                   "question_html": "<p>A 50 N force pushes a box 4 m across a floor in the direction of the force. How much work is done?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -4412,6 +4537,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "cc3d3727-3403-43ca-a1d5-464da42b2113",
                   "question_html": "<p>A person carries a 20 kg box horizontally for 10 m. How much work does the carrying force (upward) do on the box?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -4456,6 +4582,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "d7db71f5-26e0-4208-9a58-2eb374f36c85",
                   "question_html": "<p>A 100 N force is applied at 60° above the horizontal to push a box 5 m across the floor. How much work does this force do?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -4497,6 +4624,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "05ef5237-27f1-43ac-87ab-7f80c9738dad",
                   "question_html": "<p>A 3 kg object moving at 8 m/s is brought to rest by friction over 4 m. What is the friction force, in newtons?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -4541,6 +4669,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "2850cada-44fe-4d7e-a1fe-a505ddd90602",
                   "question_html": "<p>Friction of 25 N acts on a sliding box over a distance of 6 m. What work does friction do, in joules?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "-150",
@@ -4565,6 +4694,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "f935ddb9-68a2-486f-bb7d-58f9b32f55d6",
                   "question_html": "<p>A net force does 400 J of work on a 2 kg object initially at rest. What is the final speed, in m/s?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "20",
@@ -4589,6 +4719,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "e2161181-1a07-41eb-aae5-33e4a3aafdf0",
                   "question_html": "<p>A spring (\\(k = 400\\) N/m) is stretched from 0 to 0.2 m. How much work is done on the spring? Give your answer in joules.</p>",
                   "problem_type": "ftb",
                   "correct_answer": "8",
@@ -4618,6 +4749,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "309e89da-fa4c-46bd-a4fe-9ec84dbe6f93",
                   "question_html": "<p>A 5 kg block slides 3 m down a frictionless ramp inclined at 30°. Use \\(g = 10\\) m/s².</p><p>(a) How much work does gravity do?</p><p>(b) How much work does the normal force do?</p><p>(c) What is the block's speed at the bottom if it started from rest?</p>",
                   "problem_type": "frq",
                   "difficulty": "medium",
@@ -4682,11 +4814,13 @@
           "display_order": 2,
           "problem_sets": [
             {
+              "id": "a8b16c65-2263-4519-bf77-cf4f46798c49",
               "title": "Practice: Potential Energy",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "cf1ca0a2-89cc-4af3-9865-5ccdc2fb6d5c",
                   "question_html": "<p>A 3 kg ball is held 5 m above the ground. What is its gravitational PE relative to the ground? Use \\(g = 10\\) m/s².</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -4728,6 +4862,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "d6d4f23e-7d22-4fd0-9fa6-7503fea0dae7",
                   "question_html": "<p>A spring (\\(k = 800\\) N/m) is compressed 0.1 m. What is the elastic PE stored in the spring?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -4769,6 +4904,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "63546b50-1604-4287-a34c-a78eda23f0eb",
                   "question_html": "<p>A 2 kg ball is thrown upward at 15 m/s. Using energy methods, what maximum height does it reach? Use \\(g = 10\\) m/s². Give your answer in meters.</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -4810,6 +4946,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "62bab5a5-f8c6-4cf7-89e4-d8f54943b7a9",
                   "question_html": "<p>A 0.5 kg ball on a spring (\\(k = 200\\) N/m) is compressed 0.3 m and released on a frictionless surface. What is the ball's maximum speed? Give your answer in m/s. Round to one decimal place.</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -4851,6 +4988,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "7f8a52e9-b9e2-4faf-8e11-0d75230bca5c",
                   "question_html": "<p>A 5 kg object falls from 10 m to 4 m. What is the change in gravitational PE? Use \\(g = 10\\) m/s². Give your answer in joules.</p>",
                   "problem_type": "ftb",
                   "correct_answer": "-300",
@@ -4875,6 +5013,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "9f3ab298-d94b-4eea-881f-7eca2044db2c",
                   "question_html": "<p>A spring (\\(k = 500\\) N/m) is stretched from 0.1 m to 0.3 m. What is the change in elastic PE? Give your answer in joules.</p>",
                   "problem_type": "ftb",
                   "correct_answer": "20",
@@ -4899,6 +5038,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "b20b30b7-3c88-4e38-9ea2-ae70a3ed6f44",
                   "question_html": "<p>Gravity does −200 J of work on an object as it moves from point A to point B. What is the change in gravitational PE from A to B, in joules?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "200",
@@ -4926,6 +5066,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "497fa10b-526f-43d8-acb4-0a656be9f583",
                   "question_html": "<p>Is friction conservative or non-conservative? Explain why the distinction matters for energy conservation.</p>",
                   "problem_type": "frq",
                   "difficulty": "medium",
@@ -4990,11 +5131,13 @@
           "display_order": 3,
           "problem_sets": [
             {
+              "id": "55f8a9d7-f26a-474a-9f3a-be7e4d15ba57",
               "title": "Practice: Conservation of Energy",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "1b757521-73fe-473c-bb6c-29a2218768c7",
                   "question_html": "<p>A 2 kg ball is dropped from 20 m. What is its speed just before hitting the ground? Use \\(g = 10\\) m/s².</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -5039,6 +5182,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "fc33bbc9-b8bc-4bb5-bab9-9cc308a0ccde",
                   "question_html": "<p>A pendulum bob is released from a height of 0.8 m above its lowest point. What is its speed at the lowest point? Use \\(g = 10\\) m/s².</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -5080,6 +5224,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "0750080d-a81c-4365-bd9e-ca729329d5ab",
                   "question_html": "<p>A 3 kg block slides down a 5 m long ramp inclined at 37° with \\(\\mu_k = 0.25\\). What is its speed at the bottom? Use \\(g = 10\\) m/s², \\(\\sin 37° = 0.6\\), \\(\\cos 37° = 0.8\\).</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -5132,6 +5277,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "8b0f0645-6321-442b-8aa9-511fe51b621b",
                   "question_html": "<p>A 1 kg ball at the end of a 2 m string is released from horizontal position. What is its speed at the bottom of the swing? Use \\(g = 10\\) m/s².</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -5176,6 +5322,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "5754b5a5-efcd-45a7-b6f5-0f5a534cbdae",
                   "question_html": "<p>A roller coaster car (500 kg) starts at rest at a height of 40 m and reaches the bottom where its speed is 25 m/s. How much energy was lost to friction? Use \\(g = 10\\) m/s². Give your answer in joules.</p>",
                   "problem_type": "ftb",
                   "correct_answer": "43750",
@@ -5203,6 +5350,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "f8bfae77-75bf-4972-9a00-283dcd00bca6",
                   "question_html": "<p>A spring (\\(k = 1000\\) N/m) launches a 0.5 kg ball vertically. The spring is compressed 0.2 m. What height does the ball reach? Use \\(g = 10\\) m/s². Give your answer in meters.</p>",
                   "problem_type": "ftb",
                   "correct_answer": "4",
@@ -5227,6 +5375,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "87b76f02-0e41-4309-afc8-5518ebdc5ba2",
                   "question_html": "<p>A ball is launched from ground level at 30 m/s at 53° above horizontal. Using energy methods (not kinematics), find its speed at a height of 20 m. Use \\(g = 10\\) m/s². Give your answer in m/s.</p>",
                   "problem_type": "ftb",
                   "correct_answer": "22.4",
@@ -5259,6 +5408,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "f0cda61f-b95b-424d-8833-5c575603fcdc",
                   "question_html": "<p>A 4 kg block is released from the top of a frictionless curved track (height 3 m) that ends in a horizontal section. A spring (\\(k = 2000\\) N/m) at the bottom catches the block. How much does the spring compress? Use \\(g = 10\\) m/s². Give your answer in meters. Round to two decimal places.</p>",
                   "problem_type": "ftb",
                   "correct_answer": "0.35",
@@ -5283,6 +5433,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "569c17e6-7886-4ed6-a090-02dcdaf3823d",
                   "question_html": "<p>A loop-the-loop track has a loop of radius 5 m. What is the minimum height from which a frictionless car must be released to complete the loop? Use \\(g = 10\\) m/s². Explain your reasoning.</p>",
                   "problem_type": "frq",
                   "difficulty": "hard",
@@ -5350,11 +5501,13 @@
           "display_order": 4,
           "problem_sets": [
             {
+              "id": "89befc15-5c92-4d29-88ac-d24c2b33b845",
               "title": "Practice: Power",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "335e42ae-845d-42ab-b129-03a1d799644c",
                   "question_html": "<p>A motor does 6000 J of work in 3 seconds. What is its power output?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -5396,6 +5549,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "ee160352-a611-45ab-b02a-df076b222ff1",
                   "question_html": "<p>A car's engine provides 5000 N of force while the car moves at a constant 20 m/s. What is the engine power?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -5437,6 +5591,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "421a33b5-8291-4507-b23a-cff8058311fe",
                   "question_html": "<p>A car with 150 kW engine power drives at constant velocity against a 3000 N resistance force. What is the car's maximum speed at this power?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -5481,6 +5636,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "808c4642-adfe-4a0b-84b3-19110fda4809",
                   "question_html": "<p>A 75 kg cyclist pedals at 200 W up a 5° hill at constant velocity. What is the cyclist's speed? Use \\(g = 10\\) m/s², \\(\\sin 5° \\approx 0.087\\). Ignore friction. Give your answer in m/s to one decimal place.</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -5525,6 +5681,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "769c40da-ada4-47fa-b418-f36777553043",
                   "question_html": "<p>A 60 kg person climbs a 10 m staircase in 20 seconds. What power does the person exert against gravity? Use \\(g = 10\\) m/s². Give your answer in watts.</p>",
                   "problem_type": "ftb",
                   "correct_answer": "300",
@@ -5549,6 +5706,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "fc878862-53f8-4fcc-b0c5-b5320b0076dd",
                   "question_html": "<p>A 1500 W motor lifts a 50 kg load. How fast can it lift the load (in m/s)? Use \\(g = 10\\) m/s².</p>",
                   "problem_type": "ftb",
                   "correct_answer": "3",
@@ -5573,6 +5731,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "c0c37dd2-64e7-4649-ba22-72336f69f7a3",
                   "question_html": "<p>An elevator motor lifts a 1000 kg elevator and 200 kg of passengers from the ground floor to the 10th floor (30 m) in 25 seconds. What minimum power is needed? Use \\(g = 10\\) m/s². Give your answer in kW.</p>",
                   "problem_type": "ftb",
                   "correct_answer": "14.4",
@@ -5600,6 +5759,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "c89e105b-dbde-46ca-ab2a-14d6fff09a6c",
                   "question_html": "<p>Two cars have the same mass. Car A has twice the power of Car B. If both start from rest, compare their speeds after traveling the same distance on a level road (ignore friction). Is Car A's speed (a) twice, (b) \\(\\sqrt{2}\\) times, or (c) \\(2^{1/3}\\) times Car B's speed? Explain using the work-energy theorem.</p>",
                   "problem_type": "frq",
                   "difficulty": "medium",
@@ -5664,11 +5824,13 @@
           "display_order": 0,
           "problem_sets": [
             {
+              "id": "36d371e6-9c0d-44f7-99de-86721778c8cb",
               "title": "Practice: Linear Momentum",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "8b4b57ac-5db3-4472-b707-75da2f1aa592",
                   "question_html": "<p>What is the momentum of a 3 kg ball moving at 4 m/s?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -5710,6 +5872,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "69fafaca-c8ec-427b-b9d8-f91760d0fe27",
                   "question_html": "<p>A 0.01 kg bullet at 500 m/s and a 100 kg person at 0.05 m/s. Which has more momentum?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -5754,6 +5917,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "bb5b33c1-2761-492d-8775-afe8ebc027e5",
                   "question_html": "<p>If the velocity of an object is tripled while its mass is halved, by what factor does its momentum change?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -5795,6 +5959,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "241961b6-9794-458e-a6ae-9a7330510730",
                   "question_html": "<p>A 1500 kg car travels east at 20 m/s. What is the magnitude of its momentum, in kg·m/s?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "30000",
@@ -5819,6 +5984,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "181d9724-ac71-4ac8-b565-c12aead499c1",
                   "question_html": "<p>Two objects move in opposite directions: a 5 kg object at +3 m/s and a 2 kg object at −6 m/s. What is the total momentum of the system, in kg·m/s?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "3",
@@ -5843,6 +6009,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "7d501a3f-6e03-4707-9087-34affde8c3e1",
                   "question_html": "<p>A 2 kg object has momentum 10 kg·m/s. What is its kinetic energy, in joules?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "25",
@@ -5895,11 +6062,13 @@
           "display_order": 1,
           "problem_sets": [
             {
+              "id": "dba2b9e0-a88a-4628-b05e-ebaec5c1d6cf",
               "title": "Practice: Change in Momentum and Impulse",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "2b927198-ecaf-4e40-aaaa-350312d669d2",
                   "question_html": "<p>A 0.15 kg ball moving at 20 m/s is caught and brought to rest in 0.1 s. What is the average force on the ball?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -5944,6 +6113,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "565b7cfd-07a3-4ec7-badb-098b96bab8c1",
                   "question_html": "<p>A 2 kg ball moving at 5 m/s to the right bounces off a wall and returns at 4 m/s to the left. What is the impulse on the ball?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -5988,6 +6158,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "001e9484-1669-4cd9-ae61-30df4f7265e1",
                   "question_html": "<p>If an airbag increases the collision time from 0.05 s to 0.5 s, by what factor does it reduce the average force on the passenger?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -6029,6 +6200,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "5299f827-1c56-483f-a20c-a9406d88f728",
                   "question_html": "<p>A constant force of 60 N acts on an object for 0.5 seconds. What is the impulse delivered, in N·s?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "30",
@@ -6053,6 +6225,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "a4373c11-39ab-4e26-946a-2727d1fb3d20",
                   "question_html": "<p>A 1000 kg car crashes into a wall, going from 15 m/s to 0 in 0.1 s. What is the magnitude of the average force, in newtons?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "150000",
@@ -6077,6 +6250,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "fb0f6a1b-dff5-48ca-a08b-7fc43b3001cd",
                   "question_html": "<p>A 0.4 kg ball hits a wall at 10 m/s and bounces back at 8 m/s. If the collision lasts 0.02 s, what is the average force on the ball? Give your answer in newtons.</p>",
                   "problem_type": "ftb",
                   "correct_answer": "360",
@@ -6104,6 +6278,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "d101e537-3225-4b54-b328-4808eec2dd9c",
                   "question_html": "<p>A 5 kg object at rest is acted on by a force that increases linearly from 0 to 100 N over 4 seconds. What is the object's final velocity, in m/s?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "40",
@@ -6131,6 +6306,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "633a6d7a-41ca-43a3-90fd-2e5deed8163d",
                   "question_html": "<p>Explain why a bungee jumper experiences less force than someone who falls the same height and hits the ground. Use the impulse-momentum theorem in your explanation.</p>",
                   "problem_type": "frq",
                   "difficulty": "medium",
@@ -6195,11 +6371,13 @@
           "display_order": 2,
           "problem_sets": [
             {
+              "id": "b67cf119-556c-4a9a-b175-f2257125894c",
               "title": "Practice: Conservation of Linear Momentum",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "1d003741-3c1b-4770-8ac1-3923b683ec62",
                   "question_html": "<p>A 5 kg cart moving at 6 m/s collides with and sticks to a stationary 10 kg cart. What is the velocity of the combined carts after the collision?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -6246,6 +6424,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "9361d39d-9c6e-4eff-adeb-bd205a808050",
                   "question_html": "<p>A 2 kg rifle fires a 0.01 kg bullet at 300 m/s. What is the recoil velocity of the rifle?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -6290,6 +6469,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "c0d039e6-9d3a-4dcd-9698-486d30920e52",
                   "question_html": "<p>A 10 kg object moving at 4 m/s east collides with a 5 kg object moving at 2 m/s west. After the collision, the 10 kg object moves at 1 m/s east. What is the velocity of the 5 kg object after the collision?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -6331,6 +6511,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "ab428c38-14b2-48fd-8e8a-7baa4b9a0b12",
                   "question_html": "<p>Two 3 kg balls approach each other, one at +4 m/s and the other at −2 m/s. They stick together. What is the final velocity, in m/s?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "1",
@@ -6355,6 +6536,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "231290d0-458c-45d5-bce0-953d79aa54c2",
                   "question_html": "<p>A 60 kg astronaut floating in space throws a 5 kg tool at 8 m/s. What is the astronaut's resulting velocity, in m/s? Round to two decimal places.</p>",
                   "problem_type": "ftb",
                   "correct_answer": "0.67",
@@ -6379,6 +6561,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "8e573d37-3aa7-4a9a-bdfe-24281f85ca9a",
                   "question_html": "<p>A 100 kg cannon on wheels fires a 5 kg cannonball at 200 m/s. What is the cannon's recoil speed, in m/s?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "10",
@@ -6403,6 +6586,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "88e8f819-329d-47f0-84e9-143d30dd0584",
                   "question_html": "<p>A 6 kg object at rest explodes into two pieces. One piece (2 kg) moves at 9 m/s to the right. What is the velocity of the other piece? Give your answer in m/s (negative = left).</p>",
                   "problem_type": "ftb",
                   "correct_answer": "-4.5",
@@ -6430,6 +6614,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "d9787538-0d69-4ec9-8a2f-621840a4f85d",
                   "question_html": "<p>A 2 kg ball moving at 3 m/s east collides with a 1 kg ball at rest. After the collision, the 2 kg ball moves at 1 m/s at 30° north of east. Find the speed and direction of the 1 kg ball after the collision.</p>",
                   "problem_type": "frq",
                   "difficulty": "medium",
@@ -6499,11 +6684,13 @@
           "display_order": 3,
           "problem_sets": [
             {
+              "id": "99de7646-9644-49bc-9068-c1228354327e",
               "title": "Practice: Elastic and Inelastic Collisions",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "f9f67c0c-0063-49f1-963c-d558d449c9a1",
                   "question_html": "<p>In which type of collision is kinetic energy conserved?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -6548,6 +6735,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "cfb3b919-b0af-47de-8f57-fcac2d3615f0",
                   "question_html": "<p>A 3 kg block moving at 8 m/s collides with and sticks to a stationary 5 kg block. What is the final velocity?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -6589,6 +6777,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "b1d70a80-78e9-4ee2-816e-3a9fb3df2daf",
                   "question_html": "<p>A 1 kg ball at 10 m/s has a perfectly elastic collision with a stationary 3 kg ball. What are the final velocities of both balls?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -6636,6 +6825,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "ea8ec6c7-037a-42ae-b74d-e5c1d7b7ab00",
                   "question_html": "<p>A heavy ball (mass \\(M\\)) has a perfectly elastic collision with a very light ball (mass \\(m \\ll M\\)) initially at rest. Approximately what speed does the light ball acquire?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -6680,6 +6870,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "0e26351d-864b-40cf-a3a6-55cfb0a07c92",
                   "question_html": "<p>A 2 kg ball at 6 m/s has a perfectly elastic head-on collision with a stationary 2 kg ball. What is the velocity of the first ball after the collision, in m/s?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "0",
@@ -6712,6 +6903,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "95e3c4cb-2184-4d14-8444-a2d050a82289",
                   "question_html": "<p>A 4 kg object moving at 5 m/s collides with and sticks to a 1 kg object at rest. How much kinetic energy is lost, in joules?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "10",
@@ -6742,6 +6934,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "a1167c3b-4a6d-4ebf-a953-14bea4ebf25b",
                   "question_html": "<p>What fraction of kinetic energy is lost in a perfectly inelastic collision between a moving object (mass \\(m\\)) and a stationary object (mass \\(m\\))?</p>",
                   "problem_type": "ftb",
                   "correct_answer": "0.5",
@@ -6769,6 +6962,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "10ccf869-5e4c-433e-affb-82029479c70a",
                   "question_html": "<p>A ballistic pendulum: a 0.01 kg bullet at 400 m/s embeds in a 2 kg wooden block. The block+bullet swings up. What height does it reach? Use \\(g = 10\\) m/s². Give your answer in meters. Round to two decimal places.</p>",
                   "problem_type": "ftb",
                   "correct_answer": "0.20",
@@ -6796,6 +6990,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "0191aa90-3768-4f7c-9dc1-78e0c4816b88",
                   "question_html": "<p>A 3 kg ball at 4 m/s collides with a 2 kg ball at −1 m/s. After the collision, the 3 kg ball moves at 1 m/s. (a) Find the velocity of the 2 kg ball after collision. (b) Is this collision elastic? Show your work.</p>",
                   "problem_type": "frq",
                   "difficulty": "hard",
@@ -6875,11 +7070,13 @@
           "display_order": 1,
           "problem_sets": [
             {
+              "id": "2f23ac32-1b6e-48ae-912e-52c96351aa86",
               "title": "Practice: Rotational Kinematics",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "0061863e-20a0-407a-9c43-73fe7f44cf92",
                   "question_html": "<p>A disk starts from rest and reaches an angular velocity of \\( 20 \\) rad/s after \\( 4.0 \\) s. What is the angular acceleration?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -6924,6 +7121,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "641a67f8-da24-46ec-992a-cd348b278129",
                   "question_html": "<p>A wheel rotating at \\( 10 \\) rad/s undergoes constant angular acceleration of \\( 2.0 \\) rad/s² for \\( 5.0 \\) s. What is the angular displacement during this time?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -6968,6 +7166,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "b6e1efb7-70bb-4543-a5e9-b70164878b93",
                   "question_html": "<p>A motor increases its angular speed from \\( 100 \\) rad/s to \\( 300 \\) rad/s while rotating through \\( 1000 \\) rad. What is the angular acceleration?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -7015,6 +7214,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "9b0c4139-9b35-4f8e-9b3f-c5d3aec0260a",
                   "question_html": "<p>A wheel accelerates from rest at \\( 3.0 \\) rad/s². How many revolutions does it complete in the first \\( 4.0 \\) seconds?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -7059,6 +7259,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "b7156d23-734e-4d5a-9a52-d1abdc0792b8",
                   "question_html": "<p>A fan blade decelerates from \\( 30 \\) rad/s to \\( 10 \\) rad/s over \\( 4.0 \\) s. What is the angular acceleration?</p>",
                   "problem_type": "ftb",
                   "difficulty": "medium",
@@ -7086,6 +7287,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "d27dd07d-5db7-4745-a292-81bf83fe1f4b",
                   "question_html": "<p>A spinning top completes \\( 6\\pi \\) radians of angular displacement in \\( 3.0 \\) s with constant angular velocity. How many complete revolutions does it make?</p>",
                   "problem_type": "ftb",
                   "difficulty": "medium",
@@ -7113,6 +7315,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "22bbeb98-1abf-49f1-a363-7f8df3122bdb",
                   "question_html": "<p>A grinding wheel spinning at \\( 50 \\) rad/s is brought to rest in \\( 20 \\) revolutions. What is the magnitude of the angular acceleration?</p>",
                   "problem_type": "ftb",
                   "difficulty": "medium",
@@ -7143,6 +7346,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "863674b7-388c-4053-b6d7-ff543d573bc3",
                   "question_html": "<p>A centrifuge starts from rest and reaches an angular velocity of \\( 500 \\) rad/s in \\( 10 \\) s with constant acceleration. Describe how the angular displacement during the second half of the time interval (5 s to 10 s) compares to the first half (0 s to 5 s). Explain using kinematics.</p>",
                   "problem_type": "frq",
                   "difficulty": "medium",
@@ -7209,11 +7413,13 @@
           "display_order": 2,
           "problem_sets": [
             {
+              "id": "cb7bd083-5166-4e13-b29c-e4f971c9f573",
               "title": "Practice: Connecting Linear and Rotational Motion",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "c3abddbe-deb0-4400-8258-da5b646052cf",
                   "question_html": "<p>A merry-go-round has a radius of \\( 2.0 \\) m and rotates at \\( 3.0 \\) rad/s. What is the tangential speed of a child sitting on the edge?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -7255,6 +7461,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "fbe56a0d-2c99-4b48-8da4-42f156007ab4",
                   "question_html": "<p>Two points are on a spinning disk: point A at \\( r = 0.10 \\) m and point B at \\( r = 0.30 \\) m from the center. How does the tangential speed of B compare to that of A?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -7299,6 +7506,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "98544cb0-b03b-48d1-b593-519af4ced8c3",
                   "question_html": "<p>A bicycle wheel of radius \\( 0.35 \\) m accelerates from rest to \\( 10 \\) rad/s in \\( 2.0 \\) s. At \\( t = 2.0 \\) s, what is the magnitude of the total acceleration of a point on the rim?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -7349,6 +7557,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "b7cd12c8-a0b1-46af-92d7-8a979fd1eae5",
                   "question_html": "<p>The tip of a clock's second hand is \\( 0.15 \\) m from the center. What is the tangential speed of the tip, in m/s? (Round to three decimal places.)</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -7393,6 +7602,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "6cb618c4-e7ee-43a0-861f-fe3462fccb37",
                   "question_html": "<p>A wheel of radius \\( 0.50 \\) m rotates at \\( 12 \\) rad/s. What is the centripetal acceleration of a point on the rim, in m/s²?</p>",
                   "problem_type": "ftb",
                   "difficulty": "medium",
@@ -7417,6 +7627,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "08d1f44c-5aef-4ce9-9d3c-ff141f23295d",
                   "question_html": "<p>A point on a rotating wheel is \\( 0.20 \\) m from the center. If the wheel accelerates at \\( 5.0 \\) rad/s², what is the tangential acceleration of that point, in m/s²?</p>",
                   "problem_type": "ftb",
                   "difficulty": "medium",
@@ -7441,6 +7652,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "edad1992-648d-4c39-b062-d56067bdae42",
                   "question_html": "<p>A tire of radius \\( 0.40 \\) m rolls without slipping. If the car moves at \\( 20 \\) m/s, what is the angular velocity of the tire, in rad/s?</p>",
                   "problem_type": "ftb",
                   "difficulty": "medium",
@@ -7468,6 +7680,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "06061059-be2c-4a0b-9106-7b4ce4718319",
                   "question_html": "<p>A disk accelerates uniformly from rest. Explain why a point on the outer edge of the disk experiences both tangential and centripetal acceleration, and describe how the direction and magnitude of each component change over time.</p>",
                   "problem_type": "frq",
                   "difficulty": "medium",
@@ -7524,11 +7737,13 @@
           "display_order": 3,
           "problem_sets": [
             {
+              "id": "31df7aed-3a6c-4a44-be4b-2c5c338a9300",
               "title": "Practice: Torque",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "852d4569-e802-4b10-a621-2b0c16642c28",
                   "question_html": "<p>A \\( 40 \\) N force is applied perpendicular to a wrench at \\( 0.25 \\) m from the bolt. What is the torque about the bolt?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -7570,6 +7785,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "d97b3e36-8399-4b5c-9179-346c0fa6ea4f",
                   "question_html": "<p>A force of \\( 50 \\) N is applied at \\( 0.60 \\) m from a pivot at an angle of \\( 30° \\) to the lever arm. What is the torque about the pivot?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -7611,6 +7827,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "3169af61-2466-4d2c-9437-736ed64fa8fa",
                   "question_html": "<p>Two forces act on a beam pivoted at its center. Force \\( F_1 = 30 \\) N acts downward at \\( 0.40 \\) m to the left of the pivot. Force \\( F_2 = 20 \\) N acts downward at \\( 0.60 \\) m to the right. What is the net torque about the pivot?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -7658,6 +7875,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "a4b22ec1-7b4e-4aa3-afed-4efec6cceda5",
                   "question_html": "<p>You need to produce \\( 60 \\) N·m of torque on a bolt. You have a \\( 0.40 \\) m wrench and can only push perpendicular to it. What minimum force must you apply?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -7699,6 +7917,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "00a56bf6-472e-4cd5-a796-319ff67c55b0",
                   "question_html": "<p>A mechanic applies a \\( 100 \\) N force perpendicular to a wrench that is \\( 0.30 \\) m long. What is the torque in N·m?</p>",
                   "problem_type": "ftb",
                   "difficulty": "medium",
@@ -7723,6 +7942,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "f46501fd-a66b-4476-8eb4-63379ff18482",
                   "question_html": "<p>A force is applied at \\( 0.50 \\) m from a pivot. The force makes an angle of \\( 60° \\) with the position vector. If the force is \\( 20 \\) N, what is the torque? Round to one decimal place.</p>",
                   "problem_type": "ftb",
                   "difficulty": "medium",
@@ -7747,6 +7967,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "a8956709-d43c-454b-8581-04ab2de19862",
                   "question_html": "<p>A seesaw has a \\( 3.0 \\) m beam balanced at its center. A \\( 400 \\) N child sits \\( 1.2 \\) m from the pivot. How far from the pivot must a \\( 300 \\) N child sit to balance the seesaw? Answer in meters.</p>",
                   "problem_type": "ftb",
                   "difficulty": "medium",
@@ -7779,6 +8000,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "186a368d-3cb8-4285-8e20-a4f583f5f85b",
                   "question_html": "<p>Explain why door handles are placed far from the hinges rather than near them. Use the concept of torque in your answer, and discuss what would happen if you pushed at the same force closer to the hinge.</p>",
                   "problem_type": "frq",
                   "difficulty": "medium",
@@ -7843,11 +8065,13 @@
           "display_order": 4,
           "problem_sets": [
             {
+              "id": "b3c78f6e-b0b4-4d20-a434-6e0e14df29d0",
               "title": "Practice: Rotational Inertia",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "d8912325-e15b-4896-9db7-024ee7362782",
                   "question_html": "<p>Two objects have the same mass and radius: a solid disk and a thin ring. Which has the greater rotational inertia about its central axis?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -7892,6 +8116,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "fb1ca691-3b82-480e-bcb8-9ac1e3882d52",
                   "question_html": "<p>A solid sphere has mass \\( 3.0 \\) kg and radius \\( 0.10 \\) m. What is its rotational inertia about an axis through its center?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -7933,6 +8158,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "19f50c80-831d-4d31-af46-afc7cf2d703e",
                   "question_html": "<p>Three point masses are arranged on a horizontal rod of negligible mass: \\( 1.0 \\) kg at \\( 0 \\) m, \\( 2.0 \\) kg at \\( 0.30 \\) m, and \\( 3.0 \\) kg at \\( 0.60 \\) m. What is the rotational inertia about the left end (\\( x = 0 \\))?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -7977,6 +8203,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "f1c0e983-b9c4-4337-a9aa-3af238704735",
                   "question_html": "<p>A solid disk of mass \\( 5.0 \\) kg and radius \\( 0.20 \\) m has a \\( 1.0 \\) kg point mass attached to its rim. What is the total rotational inertia about the disk's central axis?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -8024,6 +8251,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "3c986f1d-99ed-4006-8db6-cbf3c1374680",
                   "question_html": "<p>A \\( 4.0 \\) kg point mass is located \\( 0.50 \\) m from an axis of rotation. What is its rotational inertia about that axis, in kg·m²?</p>",
                   "problem_type": "ftb",
                   "difficulty": "medium",
@@ -8048,6 +8276,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "1a0a10df-5cbe-455c-88d0-a3ec0883eea5",
                   "question_html": "<p>A thin rod of mass \\( 2.0 \\) kg and length \\( 0.60 \\) m rotates about its center. What is its rotational inertia, in kg·m²?</p>",
                   "problem_type": "ftb",
                   "difficulty": "medium",
@@ -8072,6 +8301,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "c98ad5ba-a1f5-4d11-80f5-03d83bc396a7",
                   "question_html": "<p>A thin rod of mass \\( 3.0 \\) kg and length \\( 1.2 \\) m rotates about one end. What is its rotational inertia, in kg·m²?</p>",
                   "problem_type": "ftb",
                   "difficulty": "medium",
@@ -8096,6 +8326,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "86e037c9-2df2-4a8f-b738-24bf182cc450",
                   "question_html": "<p>Two solid cylinders have the same mass \\( M \\). Cylinder A has radius \\( R \\) and cylinder B has radius \\( 2R \\). Explain how their rotational inertias compare and why mass distribution matters for rotation.</p>",
                   "problem_type": "frq",
                   "difficulty": "medium",
@@ -8152,11 +8383,13 @@
           "display_order": 5,
           "problem_sets": [
             {
+              "id": "625a7870-bdc2-4b19-903a-57e1677b925a",
               "title": "Practice: Rotational Equilibrium and Newton's First Law in Rotational Form",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "5665330d-c02c-4e27-b291-8fef03a6e4a7",
                   "question_html": "<p>A uniform \\( 2.0 \\) m beam of weight \\( 100 \\) N is supported at both ends. Where does the center of gravity act?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -8198,6 +8431,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "f718849e-5707-44cf-9c7d-cf2df66e1c44",
                   "question_html": "<p>Which of the following is a condition for static equilibrium?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -8239,6 +8473,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "c08caf00-9bcb-4a08-b6c9-8c9ecc0617a1",
                   "question_html": "<p>A \\( 4.0 \\) m uniform beam of weight \\( 200 \\) N is supported at both ends. Two loads are placed on it: \\( 100 \\) N at \\( 1.0 \\) m from the left and \\( 300 \\) N at \\( 3.0 \\) m from the left. What is the upward force at the right support?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -8283,6 +8518,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "a339c788-997c-4ddd-86a2-69382abfd5a8",
                   "question_html": "<p>A \\( 3.0 \\) m uniform beam of weight \\( 120 \\) N is supported at both ends. A \\( 180 \\) N weight hangs from the center. What is the force exerted by each support, in N?</p>",
                   "problem_type": "ftb",
                   "difficulty": "medium",
@@ -8310,6 +8546,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "0e9f397f-e56e-4c1e-86b0-b5b1cdce16ac",
                   "question_html": "<p>A \\( 4.0 \\) m uniform plank of weight \\( 200 \\) N is supported at both ends. A \\( 400 \\) N box sits \\( 1.0 \\) m from the left end. What is the upward force at the right support, in N?</p>",
                   "problem_type": "ftb",
                   "difficulty": "medium",
@@ -8342,6 +8579,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "621fe422-a7af-4827-963b-108192a0f3d1",
                   "question_html": "<p>A painter (weight \\( 700 \\) N) stands on a \\( 6.0 \\) m uniform scaffold of weight \\( 200 \\) N, supported by ropes at each end. How far from the left end can the painter walk before the tension in the right rope reaches \\( 550 \\) N? Answer in meters.</p>",
                   "problem_type": "ftb",
                   "difficulty": "medium",
@@ -8372,6 +8610,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "de52dd6c-00f4-46cb-b64d-c3791b862615",
                   "question_html": "<p>A student claims that an object can be in translational equilibrium (\\( \\sum F = 0 \\)) but not in rotational equilibrium. Is this possible? Explain with an example and describe the resulting motion.</p>",
                   "problem_type": "frq",
                   "difficulty": "medium",
@@ -8435,11 +8674,13 @@
           "display_order": 6,
           "problem_sets": [
             {
+              "id": "7d174d79-099a-4500-b2ce-3ca095fd2ecf",
               "title": "Practice: Newton's Second Law in Rotational Form",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "fc70c504-9342-49e7-a6e4-78937fde64f2",
                   "question_html": "<p>A net torque of \\( 12 \\) N·m acts on an object with rotational inertia \\( 3.0 \\) kg·m². What is the angular acceleration?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -8481,6 +8722,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "0c9e45d8-a1b0-4ad1-b5da-f2b05985d5a0",
                   "question_html": "<p>A solid cylinder of mass \\( 6.0 \\) kg and radius \\( 0.10 \\) m has a rope wrapped around it. A tension of \\( 15 \\) N is applied tangentially. What is the angular acceleration?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -8528,6 +8770,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "7b2248f8-0c3d-477c-9364-31a45dfd8e60",
                   "question_html": "<p>A \\( 2.0 \\) kg block hangs from a string wrapped around a solid pulley of mass \\( 4.0 \\) kg and radius \\( 0.10 \\) m. Find the angular acceleration of the pulley. (Assume the string does not slip.)</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -8583,6 +8826,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "5de2fcc8-ca6d-4875-bc11-4b361e395bcd",
                   "question_html": "<p>Two forces act on a disk of mass \\( 5.0 \\) kg and radius \\( 0.25 \\) m that rotates about its center. A \\( 20 \\) N force acts tangentially at the rim (clockwise), and a \\( 12 \\) N force acts tangentially at the rim (counterclockwise). What is the magnitude of the angular acceleration?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -8630,6 +8874,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "55404ae1-8aa9-4d00-8350-a575a65a8fd0",
                   "question_html": "<p>A wheel with rotational inertia \\( 0.50 \\) kg·m² needs to reach \\( 20 \\) rad/s from rest in \\( 4.0 \\) s. What net torque is required, in N·m?</p>",
                   "problem_type": "ftb",
                   "difficulty": "medium",
@@ -8657,6 +8902,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "26b89e47-42a2-4a6d-815a-a70fb18ff5b4",
                   "question_html": "<p>A torque of \\( 8.0 \\) N·m produces an angular acceleration of \\( 4.0 \\) rad/s² on a rotating disk. What is the disk's rotational inertia, in kg·m²?</p>",
                   "problem_type": "ftb",
                   "difficulty": "medium",
@@ -8681,6 +8927,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "20f3c989-c758-46db-872f-504b0cb2a5e5",
                   "question_html": "<p>A solid sphere of mass \\( 2.0 \\) kg and radius \\( 0.15 \\) m has a net torque of \\( 0.36 \\) N·m applied. What is the angular acceleration, in rad/s²?</p>",
                   "problem_type": "ftb",
                   "difficulty": "medium",
@@ -8708,6 +8955,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "76043ae3-1b4a-420d-b860-2b280c1cf202",
                   "question_html": "<p>A block of mass \\( m \\) hangs from a string wound around a solid disk pulley of mass \\( M \\) and radius \\( R \\). Derive an expression for the linear acceleration of the block in terms of \\( m \\), \\( M \\), and \\( g \\). Show your reasoning clearly.</p>",
                   "problem_type": "frq",
                   "difficulty": "medium",
@@ -8779,11 +9027,13 @@
           "display_order": 1,
           "problem_sets": [
             {
+              "id": "49ac0526-e778-49e9-8c35-1d92a417cffe",
               "title": "Practice: Rotational Kinetic Energy",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "b71cd971-1c61-44c6-8ef6-ad32bf01caf2",
                   "question_html": "<p>A wheel with rotational inertia \\( 0.40 \\) kg·m² spins at \\( 5.0 \\) rad/s. What is its rotational kinetic energy?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -8825,6 +9075,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "33efdd37-58e3-48a6-b0f4-bcc6b8097d6e",
                   "question_html": "<p>If the angular velocity of a spinning object is doubled while its rotational inertia remains constant, by what factor does its rotational kinetic energy change?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -8869,6 +9120,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "4a00ffb0-dfb5-4ca7-9253-75e3d559efcc",
                   "question_html": "<p>A solid sphere (mass \\( 4.0 \\) kg, radius \\( 0.15 \\) m) rolls along a surface at \\( 5.0 \\) m/s without slipping. What is the total kinetic energy (translational + rotational)?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -8916,6 +9168,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "50a024e9-b68c-46a1-8c2f-2d007fd4ded7",
                   "question_html": "<p>A flywheel with \\( I = 2.0 \\) kg·m² slows from \\( 100 \\) rad/s to \\( 60 \\) rad/s. How much rotational kinetic energy was lost?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -8963,6 +9216,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "538c7a0e-e5ff-42c4-8573-1ab0ae11aa3a",
                   "question_html": "<p>A solid cylinder of mass \\( 2.0 \\) kg and radius \\( 0.10 \\) m rotates at \\( 20 \\) rad/s. What is the rotational kinetic energy, in J?</p>",
                   "problem_type": "ftb",
                   "difficulty": "medium",
@@ -8990,6 +9244,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "5a77d7ee-6df5-4f20-9aab-d6cf3062b17d",
                   "question_html": "<p>A thin ring of mass \\( 1.5 \\) kg and radius \\( 0.20 \\) m spins at \\( 8.0 \\) rad/s. What is its rotational kinetic energy, in J?</p>",
                   "problem_type": "ftb",
                   "difficulty": "medium",
@@ -9017,6 +9272,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "f223fa41-b071-4816-bab3-7cc6ac35e313",
                   "question_html": "<p>A disk and a ring, both with mass \\( 2.0 \\) kg and radius \\( 0.10 \\) m, spin at the same \\( \\omega = 10 \\) rad/s. What is the difference in their rotational kinetic energies, in J?</p>",
                   "problem_type": "ftb",
                   "difficulty": "medium",
@@ -9047,6 +9303,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "1e13905b-5706-46bc-923e-fc42c9e19600",
                   "question_html": "<p>A solid cylinder rolls down a ramp of height \\( h \\) without slipping. Derive an expression for its speed at the bottom in terms of \\( g \\) and \\( h \\). Explain why it is slower than a box sliding without friction down the same ramp.</p>",
                   "problem_type": "frq",
                   "difficulty": "medium",
@@ -9110,11 +9367,13 @@
           "display_order": 2,
           "problem_sets": [
             {
+              "id": "39c5f00f-5abd-4996-af46-04a4bb68fe82",
               "title": "Practice: Torque and Work",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "495de058-d1aa-43c2-ae9e-2287a11cbdf1",
                   "question_html": "<p>A constant torque of \\( 4.0 \\) N·m acts on a wheel for \\( 5.0 \\) complete revolutions. How much work is done?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -9159,6 +9418,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "ff6730ec-3619-4887-bdec-e8a960257d69",
                   "question_html": "<p>A motor applies a torque of \\( 20 \\) N·m to a shaft rotating at \\( 15 \\) rad/s. What power does the motor deliver?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -9200,6 +9460,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "81f02544-83eb-4abd-8e4d-ae4f9f319b1c",
                   "question_html": "<p>A grinding wheel (\\( I = 0.80 \\) kg·m²) rotating at \\( 30 \\) rad/s is brought to rest by a braking torque. How much work does the braking torque do?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -9244,6 +9505,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "b4c3717d-68ce-4e30-95f9-d7ad6d4dd5fb",
                   "question_html": "<p>An engine delivers \\( 500 \\) W of power to a shaft at \\( 25 \\) rad/s. What torque does the engine provide?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -9285,6 +9547,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "72bf1acb-2ce2-40cb-860d-8d3f734cd1af",
                   "question_html": "<p>A torque of \\( 5.0 \\) N·m does \\( 40 \\) J of work on a wheel. Through how many radians did the wheel turn?</p>",
                   "problem_type": "ftb",
                   "difficulty": "medium",
@@ -9309,6 +9572,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "7bc618e2-e1cb-46d8-a670-107c7a53311d",
                   "question_html": "<p>A wheel with \\( I = 0.50 \\) kg·m² accelerates from rest to \\( 12 \\) rad/s. What is the net work done on the wheel, in J?</p>",
                   "problem_type": "ftb",
                   "difficulty": "medium",
@@ -9333,6 +9597,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "ab8c0267-eaac-4895-8e4e-471a13e4f1ef",
                   "question_html": "<p>A torque of \\( 8.0 \\) N·m accelerates a disk (\\( I = 0.40 \\) kg·m²) from rest through \\( 20 \\) rad. What is the final angular velocity, in rad/s?</p>",
                   "problem_type": "ftb",
                   "difficulty": "medium",
@@ -9360,6 +9625,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "5217ab6a-4004-4d98-8345-ebe321af2e4d",
                   "question_html": "<p>Explain the relationship between the work-energy theorem in translational form (\\( W_{\\text{net}} = \\Delta K_{\\text{trans}} \\)) and rotational form (\\( W_{\\text{net}} = \\Delta K_{\\text{rot}} \\)). For an object that both translates and rotates, how should the theorem be applied?</p>",
                   "problem_type": "frq",
                   "difficulty": "medium",
@@ -9417,11 +9683,13 @@
           "display_order": 3,
           "problem_sets": [
             {
+              "id": "3b7b88b0-ac33-461a-94bd-f4857564ab1b",
               "title": "Practice: Angular Momentum and Angular Impulse",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "691dff8c-dcd4-4273-a4ad-53cefa39e6b6",
                   "question_html": "<p>A solid cylinder of mass \\( 4.0 \\) kg and radius \\( 0.20 \\) m rotates at \\( 15 \\) rad/s. What is its angular momentum?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -9466,6 +9734,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "28bd21e4-0061-4016-a0ab-00130a8c9170",
                   "question_html": "<p>A torque of \\( 3.0 \\) N·m is applied to a wheel for \\( 4.0 \\) s. What is the angular impulse?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -9507,6 +9776,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "66f4747a-def8-4d38-a9c8-0424c6db227a",
                   "question_html": "<p>A figure skater has rotational inertia \\( 3.0 \\) kg·m² while spinning at \\( 2.0 \\) rad/s with arms extended. She pulls her arms in, changing her rotational inertia to \\( 1.0 \\) kg·m². What is her angular momentum after pulling in her arms?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -9551,6 +9821,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "afc1e724-167e-4f56-8752-5f435f38dd0d",
                   "question_html": "<p>A wheel (\\( I = 0.50 \\) kg·m²) is initially at rest. A torque that varies linearly from \\( 0 \\) to \\( 10 \\) N·m over \\( 4.0 \\) s is applied. What is the final angular momentum?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -9595,6 +9866,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "f8ea3015-ac88-4c32-8339-96854038f5b9",
                   "question_html": "<p>A wheel with \\( I = 2.0 \\) kg·m² spins at \\( 8.0 \\) rad/s. What is its angular momentum, in kg·m²/s?</p>",
                   "problem_type": "ftb",
                   "difficulty": "medium",
@@ -9619,6 +9891,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "f10a2ad2-199b-4b39-a82f-fbb78f1a4a77",
                   "question_html": "<p>A spinning disk (\\( I = 0.30 \\) kg·m², \\( \\omega = 20 \\) rad/s) is slowed to \\( 5.0 \\) rad/s by friction in \\( 3.0 \\) s. What is the average frictional torque, in N·m?</p>",
                   "problem_type": "ftb",
                   "difficulty": "medium",
@@ -9646,6 +9919,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "bb533448-9413-4511-871b-89129970b121",
                   "question_html": "<p>A solid disk (\\( I = 0.40 \\) kg·m²) rotates at \\( 25 \\) rad/s. A braking torque of \\( 5.0 \\) N·m brings it to rest. How long does this take, in s?</p>",
                   "problem_type": "ftb",
                   "difficulty": "medium",
@@ -9673,6 +9947,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "7ab9a001-ac3e-411d-9f8d-5fe1da2d3895",
                   "question_html": "<p>Compare and contrast angular impulse (\\( \\tau\\Delta t = \\Delta L \\)) with linear impulse (\\( F\\Delta t = \\Delta p \\)). Provide an example of each and explain what each tells us about the system.</p>",
                   "problem_type": "frq",
                   "difficulty": "medium",
@@ -9729,11 +10004,13 @@
           "display_order": 4,
           "problem_sets": [
             {
+              "id": "107da023-b99b-4833-8b4f-db602e7991cf",
               "title": "Practice: Conservation of Angular Momentum",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "6d1b17aa-55d6-432d-a4ad-5180e7f5ecf7",
                   "question_html": "<p>A merry-go-round (\\( I = 200 \\) kg·m²) spins at \\( 1.5 \\) rad/s. A child (\\( 40 \\) kg) jumps onto the edge (\\( r = 2.0 \\) m). What is the new angular velocity?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -9781,6 +10058,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "00c6cc6a-88c4-45da-846f-c23dd0bf876d",
                   "question_html": "<p>A diver tucks from \\( I = 15 \\) kg·m² to \\( I = 5.0 \\) kg·m² during a dive. If she was rotating at \\( 2.0 \\) rad/s before tucking, what is her angular velocity after?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -9825,6 +10103,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "e396a6e6-0993-45db-8527-6f3ef365bd14",
                   "question_html": "<p>Disk A (\\( I = 2.0 \\) kg·m²) rotates at \\( 6.0 \\) rad/s clockwise. Disk B (\\( I = 1.0 \\) kg·m²) rotates at \\( 3.0 \\) rad/s counterclockwise. They are combined. What is the final angular velocity and direction?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -9872,6 +10151,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "7a17cf92-f36e-4ff8-a48e-be81b8e23593",
                   "question_html": "<p>A turntable (\\( I = 0.20 \\) kg·m²) rotates freely at \\( 4.0 \\) rad/s. A \\( 0.50 \\) kg lump of clay is dropped onto it at \\( r = 0.30 \\) m from the center (clay was not rotating). What is the new angular velocity?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -9919,6 +10199,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "6d143079-b8f5-4c1b-a3b3-7fd22ea58674",
                   "question_html": "<p>A star collapses from \\( I_i \\) to \\( I_f = I_i / 100 \\). By what factor does its angular velocity increase?</p>",
                   "problem_type": "ftb",
                   "difficulty": "medium",
@@ -9946,6 +10227,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "4bda9242-3942-4963-94e1-4b53db243009",
                   "question_html": "<p>Two identical disks (each \\( I = 0.50 \\) kg·m²) rotate in the same direction. Disk A spins at \\( 10 \\) rad/s and disk B at \\( 4.0 \\) rad/s. They are pressed together and reach a common angular velocity. What is it, in rad/s?</p>",
                   "problem_type": "ftb",
                   "difficulty": "medium",
@@ -9973,6 +10255,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "64fcdb9d-538a-44f4-a285-bad72ae1473d",
                   "question_html": "<p>A skater (\\( I = 5.0 \\) kg·m², \\( \\omega = 2.0 \\) rad/s) pulls arms in to \\( I = 2.0 \\) kg·m². What is the ratio of final to initial rotational kinetic energy?</p>",
                   "problem_type": "ftb",
                   "difficulty": "medium",
@@ -10003,6 +10286,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "bbe49cfe-587a-4b2a-8c87-5a4750d506ca",
                   "question_html": "<p>Explain why angular momentum is conserved when a skater pulls in her arms, but kinetic energy is not. Where does the extra kinetic energy come from? Use specific equations in your explanation.</p>",
                   "problem_type": "frq",
                   "difficulty": "medium",
@@ -10059,11 +10343,13 @@
           "display_order": 5,
           "problem_sets": [
             {
+              "id": "8620e477-6ea4-4f7c-9c56-b90cad529914",
               "title": "Practice: Rolling",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "32813bcc-3d6c-4ab4-b22a-f98f75138190",
                   "question_html": "<p>A solid cylinder rolls without slipping at a center-of-mass speed of \\( 4.0 \\) m/s. If the radius is \\( 0.20 \\) m, what is the angular velocity?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -10105,6 +10391,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "f14e1abd-e01d-4caf-8ab9-f3fd26680bd5",
                   "question_html": "<p>Four objects of equal mass and radius roll down the same ramp: solid sphere, solid cylinder, hollow sphere, and thin ring. Which reaches the bottom first?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -10152,6 +10439,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "5dfa159e-7f95-4454-b9a1-7a1def49c119",
                   "question_html": "<p>A solid sphere of mass \\( 3.0 \\) kg rolls without slipping down a ramp of height \\( 2.0 \\) m. What is its speed at the bottom?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -10201,6 +10489,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "38ce1c22-ec88-44f8-83bb-409fb0bdd88a",
                   "question_html": "<p>A hollow cylinder and a solid cylinder of equal mass and radius start from rest and roll down identical ramps. What is the ratio of their speeds at the bottom (\\( v_{\\text{solid}} / v_{\\text{hollow}} \\))?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -10248,6 +10537,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "9d809588-a184-43b3-b804-023fe8ca110a",
                   "question_html": "<p>A ball of mass \\( 2.0 \\) kg rolls without slipping at \\( v = 3.0 \\) m/s. Its radius is \\( 0.10 \\) m and \\( I = 0.016 \\) kg·m². What is the total kinetic energy, in J?</p>",
                   "problem_type": "ftb",
                   "difficulty": "medium",
@@ -10275,6 +10565,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "184ab2b8-7422-4411-bffd-18b08f5e947f",
                   "question_html": "<p>In rolling without slipping, what type of friction acts at the contact point, and does it do work?</p>",
                   "problem_type": "ftb",
                   "difficulty": "medium",
@@ -10302,6 +10593,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "e6719e37-641a-4c08-952d-3957dd723976",
                   "question_html": "<p>A solid disk of radius \\( 0.25 \\) m rolls without slipping along a flat surface at \\( 6.0 \\) m/s and then rolls up a ramp. How high up the ramp does it go, in m?</p>",
                   "problem_type": "ftb",
                   "difficulty": "medium",
@@ -10329,6 +10621,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "1ad193bd-45d5-40f0-8bda-f4a2f88d3852",
                   "question_html": "<p>A solid sphere and a block of the same mass are released simultaneously from rest at the top of the same frictionless ramp. The sphere rolls without slipping and the block slides without friction. Compare their speeds at the bottom and explain why they differ.</p>",
                   "problem_type": "frq",
                   "difficulty": "medium",
@@ -10393,11 +10686,13 @@
           "display_order": 6,
           "problem_sets": [
             {
+              "id": "48e8b9ca-cf66-4878-a7db-3529b7825c9e",
               "title": "Practice: Motion of Orbiting Satellites",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "702c84ed-3b3e-45c6-82e2-e1988b300f60",
                   "question_html": "<p>What provides the centripetal force for a satellite in circular orbit around Earth?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -10442,6 +10737,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "1a997fc9-6540-43bf-ae66-5f92b15c3fa9",
                   "question_html": "<p>Satellite A orbits at radius \\( r \\) and satellite B orbits at radius \\( 4r \\) around the same planet. How does B's orbital speed compare to A's?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -10486,6 +10782,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "04932fe8-6d7d-4f13-9065-1feebf09eea9",
                   "question_html": "<p>A satellite orbits Earth at radius \\( r \\) with speed \\( v \\). It is moved to a new orbit at radius \\( 9r \\). What is its new speed?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -10530,6 +10827,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "7cbfa305-43fa-42f2-94b4-dbf6135d2e7c",
                   "question_html": "<p>Two satellites orbit the same planet. Satellite X has period \\( T \\) at radius \\( r \\). Satellite Y has period \\( 8T \\). What is Y's orbital radius?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -10577,6 +10875,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "afa94d66-e97f-488f-9177-e68a207bef7e",
                   "question_html": "<p>If you double the mass of a satellite while keeping its orbital radius the same, what happens to its orbital speed?</p>",
                   "problem_type": "ftb",
                   "difficulty": "medium",
@@ -10604,6 +10903,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "4942c681-9a08-4eb7-b7a9-897ebe824760",
                   "question_html": "<p>The orbital period depends on orbital radius as \\( T \\propto r^n \\). What is the value of \\( n \\)?</p>",
                   "problem_type": "ftb",
                   "difficulty": "medium",
@@ -10631,6 +10931,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "d7bb60d4-1118-4ef1-a275-b34a9b6f9014",
                   "question_html": "<p>A satellite in circular orbit has kinetic energy \\( K = 500 \\) J. What is its gravitational potential energy (in J)?</p>",
                   "problem_type": "ftb",
                   "difficulty": "medium",
@@ -10658,6 +10959,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "32709ebc-bda3-4468-b3db-5705bba2fb05",
                   "question_html": "<p>Explain why satellites in higher orbits move slower, even though intuition might suggest they need to go faster to stay up. Use Newton's law of gravitation and centripetal force in your explanation.</p>",
                   "problem_type": "frq",
                   "difficulty": "medium",
@@ -10729,11 +11031,13 @@
           "display_order": 1,
           "problem_sets": [
             {
+              "id": "9fc8345d-6b15-4954-938b-2244279e0231",
               "title": "Practice: Defining Simple Harmonic Motion (SHM)",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "ed3e5d34-414e-440e-9870-2219adab8962",
                   "question_html": "<p>What type of force is required for simple harmonic motion?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -10778,6 +11082,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "8dbf466d-ecda-4da8-9acc-f06e38998ad7",
                   "question_html": "<p>A mass on a spring oscillates with an amplitude of \\( 0.15 \\) m and a spring constant of \\( 40 \\) N/m. What is the magnitude of the maximum restoring force?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -10819,6 +11124,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "46a0adf6-8f87-4862-9679-457c665bd194",
                   "question_html": "<p>At which position during SHM is the velocity maximum and the acceleration zero?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -10868,6 +11174,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "53cfb25b-a150-477a-b8ed-0675a766c3cf",
                   "question_html": "<p>An oscillation has a period of \\( 0.50 \\) s. What is the frequency, in Hz?</p>",
                   "problem_type": "ftb",
                   "difficulty": "medium",
@@ -10892,6 +11199,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "8ca47ce3-b279-476f-95f6-e1454ed1962d",
                   "question_html": "<p>A mass on a spring is pulled \\( 0.08 \\) m from equilibrium (\\( k = 50 \\) N/m). The mass is \\( 0.20 \\) kg. What is the magnitude of the acceleration at maximum displacement, in m/s²?</p>",
                   "problem_type": "ftb",
                   "difficulty": "medium",
@@ -10916,6 +11224,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "a7ea02a9-7afe-4334-9727-25b0b0aa2da7",
                   "question_html": "<p>Explain why a pendulum undergoes approximately simple harmonic motion only for small angles. What happens to the restoring force at large angles?</p>",
                   "problem_type": "frq",
                   "difficulty": "medium",
@@ -10979,11 +11288,13 @@
           "display_order": 2,
           "problem_sets": [
             {
+              "id": "67af0091-0a8c-458e-a214-ef3b37fb2a32",
               "title": "Practice: Frequency and Period of SHM",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "52a7cdcd-9d83-4614-afdb-ebfca3f7d14d",
                   "question_html": "<p>A mass-spring system has \\( m = 2.0 \\) kg and \\( k = 50 \\) N/m. What is the period of oscillation?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -11025,6 +11336,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "63e84867-cfc5-4456-a775-0d5b2f379815",
                   "question_html": "<p>A simple pendulum has a length of \\( 1.0 \\) m. What is its period on Earth (\\( g = 9.8 \\) m/s²)?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -11066,6 +11378,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "60057ab7-5e88-466f-93a0-b5f874d3823e",
                   "question_html": "<p>A student doubles the amplitude of a mass-spring oscillator. What happens to the period?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -11110,6 +11423,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "cdc983e0-1c1d-4189-841f-bdd7eba45e92",
                   "question_html": "<p>Two pendulums have the same length but different masses. Pendulum A has mass \\( m \\) and pendulum B has mass \\( 3m \\). How do their periods compare?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -11154,6 +11468,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "a0bd937e-7246-4d47-bbc6-3d1708ba9bea",
                   "question_html": "<p>If the mass on a spring is quadrupled (\\( 4m \\)), by what factor does the period change?</p>",
                   "problem_type": "ftb",
                   "difficulty": "medium",
@@ -11181,6 +11496,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "6f151da8-d27d-4c01-9c9d-b26d90434962",
                   "question_html": "<p>A pendulum on the Moon (\\( g_{\\text{Moon}} = 1.6 \\) m/s²) has a length of \\( 0.50 \\) m. What is its period, in s? (Round to one decimal place.)</p>",
                   "problem_type": "ftb",
                   "difficulty": "medium",
@@ -11205,6 +11521,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "4bd2d46e-5c39-49f4-a0bb-c5272a2cd6fe",
                   "question_html": "<p>A spring system oscillates at \\( 4.0 \\) Hz. If the spring constant is \\( 320 \\) N/m, what is the mass, in kg?</p>",
                   "problem_type": "ftb",
                   "difficulty": "medium",
@@ -11232,6 +11549,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "e1a8c18d-7373-4193-b22d-4f09d2f9ad28",
                   "question_html": "<p>A student measures the period of a pendulum to be \\( 1.4 \\) s. They want to double the period. Explain what change they should make and why, referencing the pendulum period formula.</p>",
                   "problem_type": "frq",
                   "difficulty": "medium",
@@ -11295,11 +11613,13 @@
           "display_order": 3,
           "problem_sets": [
             {
+              "id": "57b1457f-1522-4d18-902a-4e85c1b932bf",
               "title": "Practice: Representing and Analyzing SHM",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "45e2b09e-5358-4eff-a2c2-cf96eebce902",
                   "question_html": "<p>In SHM, when the displacement is at its maximum value, the velocity is:</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -11344,6 +11664,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "f01809a1-16cd-4da5-a496-2f37513907c0",
                   "question_html": "<p>An oscillator has amplitude \\( 0.20 \\) m and angular frequency \\( 10 \\) rad/s. What is the maximum speed?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -11385,6 +11706,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "b773bd0b-1e64-4f2f-a132-b617f7f6808d",
                   "question_html": "<p>A mass oscillates with \\( x(t) = 0.10\\cos(5t) \\) (in meters). At \\( t = 0 \\), what are the velocity and acceleration?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -11429,6 +11751,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "8ab85e65-b0c2-4d02-8fa8-444599003352",
                   "question_html": "<p>A position-time graph of SHM shows a period of \\( 2.0 \\) s and amplitude of \\( 0.30 \\) m. At what time(s) in the first period is the speed maximum?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -11473,6 +11796,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "0ab31857-1094-4ca8-beb8-50506250d547",
                   "question_html": "<p>An oscillator has \\( A = 0.05 \\) m and \\( \\omega = 20 \\) rad/s. What is the maximum acceleration, in m/s²?</p>",
                   "problem_type": "ftb",
                   "difficulty": "medium",
@@ -11497,6 +11821,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "b7d87add-6380-48be-b2cb-b4b3e090bb8f",
                   "question_html": "<p>In SHM, acceleration and displacement are related by \\( a = -\\omega^2 x \\). What does the negative sign mean physically?</p>",
                   "problem_type": "ftb",
                   "difficulty": "medium",
@@ -11524,6 +11849,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "83c069c7-dda8-42a2-8f39-a3ad030416bd",
                   "question_html": "<p>An oscillator has \\( A = 0.12 \\) m and \\( T = 0.40 \\) s. What is the maximum speed, in m/s? (Round to one decimal place.)</p>",
                   "problem_type": "ftb",
                   "difficulty": "medium",
@@ -11551,6 +11877,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "4aec5248-519e-4b99-b5c8-c61a665af8ef",
                   "question_html": "<p>Describe how position, velocity, and acceleration graphs relate to each other in SHM. At what point in the cycle are velocity and acceleration both zero? Both at their maximums? Explain using the phase relationships.</p>",
                   "problem_type": "frq",
                   "difficulty": "medium",
@@ -11617,11 +11944,13 @@
           "display_order": 4,
           "problem_sets": [
             {
+              "id": "0a241e18-6a3a-40d0-bf1e-8faf24eae838",
               "title": "Practice: Energy of Simple Harmonic Oscillators",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "6024e0e5-cd6d-45e2-af9d-68af4adb592d",
                   "question_html": "<p>A spring with \\( k = 100 \\) N/m is stretched to an amplitude of \\( 0.20 \\) m. What is the total energy of the oscillation?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -11663,6 +11992,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "c9021c62-bb0a-4d41-833a-59d8c9c3d6e3",
                   "question_html": "<p>At what position in the oscillation is the kinetic energy equal to the potential energy?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -11707,6 +12037,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "613eba05-5bba-43e8-9899-3d481ab2d0a0",
                   "question_html": "<p>A \\( 0.40 \\) kg mass on a spring (\\( k = 160 \\) N/m) oscillates with \\( A = 0.10 \\) m. What is the speed of the mass when \\( x = 0.060 \\) m?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -11748,6 +12079,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "162b3519-92e4-4008-9dcd-3f6e61483517",
                   "question_html": "<p>A mass-spring system has total energy \\( 8.0 \\) J. At a certain position, the potential energy is \\( 2.0 \\) J. What fraction of the total energy is kinetic at this position?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -11792,6 +12124,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "25e6aac2-dc35-4978-91ab-116582796e66",
                   "question_html": "<p>If the amplitude of oscillation is tripled, by what factor does the total energy change?</p>",
                   "problem_type": "ftb",
                   "difficulty": "medium",
@@ -11819,6 +12152,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "dc855fb3-8aca-4eb5-b70f-c68ca11ffb7a",
                   "question_html": "<p>A \\( 1.0 \\) kg mass on a spring (\\( k = 400 \\) N/m) oscillates with \\( A = 0.050 \\) m. What is the maximum speed of the mass, in m/s?</p>",
                   "problem_type": "ftb",
                   "difficulty": "medium",
@@ -11843,6 +12177,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "ee2f3630-cc9c-4219-80c4-e61bd0c16759",
                   "question_html": "<p>A spring (\\( k = 200 \\) N/m) oscillates with \\( A = 0.10 \\) m. At what displacement (in m) is the potential energy equal to \\( 75\\% \\) of the total energy?</p>",
                   "problem_type": "ftb",
                   "difficulty": "medium",
@@ -11870,6 +12205,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "473338cd-6f66-4701-bc29-d994eb47d0c3",
                   "question_html": "<p>A mass-spring system oscillates on a frictionless surface. Explain how energy transforms between kinetic and potential forms during one complete cycle, and describe the energy at four key points: maximum positive displacement, equilibrium (moving in the negative direction), maximum negative displacement, and equilibrium (moving in the positive direction).</p>",
                   "problem_type": "frq",
                   "difficulty": "medium",
@@ -11945,11 +12281,13 @@
           "display_order": 1,
           "problem_sets": [
             {
+              "id": "b795c6a3-a4ca-4198-b2d0-eb3b212f43ce",
               "title": "Practice: Internal Structure and Density",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "18f1d213-fc8b-43a4-8c0e-77b84f1f6906",
                   "question_html": "<p>A cube of metal has mass \\( 2.7 \\) kg and volume \\( 0.001 \\) m³. What is its density?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -11991,6 +12329,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "82ef9387-cc13-4b42-953e-d33f4a3ebf61",
                   "question_html": "<p>An object has density \\( 800 \\) kg/m³. It is placed in water (\\( \\rho = 1000 \\) kg/m³). What happens?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -12035,6 +12374,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "3ea7a8fc-b3af-4d4c-9ba7-11e43270c04d",
                   "question_html": "<p>A solid ball of density \\( 3000 \\) kg/m³ and a hollow ball of the same outer radius but density \\( 500 \\) kg/m³ are placed in water. Describe what each ball does and explain why.</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -12082,6 +12422,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "b345213f-cc61-42be-931c-8e4d7553056f",
                   "question_html": "<p>A liquid has a mass of \\( 4.0 \\) kg and a volume of \\( 0.005 \\) m³. What is its density, in kg/m³?</p>",
                   "problem_type": "ftb",
                   "difficulty": "medium",
@@ -12106,6 +12447,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "9fb69fb9-8223-4b16-9630-6e5f0302e50f",
                   "question_html": "<p>A cylinder of radius \\( 0.05 \\) m and height \\( 0.20 \\) m has mass \\( 0.40 \\) kg. What is its density, in kg/m³? (Round to nearest whole number.)</p>",
                   "problem_type": "ftb",
                   "difficulty": "medium",
@@ -12133,6 +12475,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "c105459d-b9de-4b69-99c2-05d8259e15a7",
                   "question_html": "<p>Explain why a steel ship can float even though steel is much denser than water. Use the concept of average density in your explanation.</p>",
                   "problem_type": "frq",
                   "difficulty": "medium",
@@ -12190,11 +12533,13 @@
           "display_order": 2,
           "problem_sets": [
             {
+              "id": "d5ffecf6-2296-45d2-b16f-0cef30e7ee92",
               "title": "Practice: Pressure",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "91e850f5-0452-4262-8da4-2ebeed0fcd12",
                   "question_html": "<p>A force of \\( 200 \\) N is applied to an area of \\( 0.040 \\) m². What is the pressure?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -12236,6 +12581,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "c5184817-53a0-4134-b5bf-3315eef19de6",
                   "question_html": "<p>What is the gauge pressure at \\( 3.0 \\) m below the surface of a freshwater lake (\\( \\rho = 1000 \\) kg/m³)?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -12277,6 +12623,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "b5713413-680f-48bd-b866-1137e7b1db7d",
                   "question_html": "<p>A hydraulic lift has a small piston of area \\( 0.010 \\) m² and a large piston of area \\( 0.50 \\) m². A force of \\( 100 \\) N is applied to the small piston. What force is exerted by the large piston?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -12321,6 +12668,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "c9917695-4812-42c8-844a-5d12714a5450",
                   "question_html": "<p>Two containers with different shapes but the same base area are filled with the same fluid to the same height. How do the pressures at the bottom compare?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -12365,6 +12713,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "106243fd-7740-4612-aa6d-6e91f51c241b",
                   "question_html": "<p>Atmospheric pressure is approximately \\( 1.01 \\times 10^5 \\) Pa. If gauge pressure at a certain depth is \\( 4.9 \\times 10^4 \\) Pa, what is the absolute pressure, in Pa? (Give in scientific notation.)</p>",
                   "problem_type": "ftb",
                   "difficulty": "medium",
@@ -12389,6 +12738,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "37a47b6e-3352-4518-939d-d1b1138ee42c",
                   "question_html": "<p>At a depth of \\( 10 \\) m in fresh water, what is the gauge pressure, in Pa?</p>",
                   "problem_type": "ftb",
                   "difficulty": "medium",
@@ -12413,6 +12763,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "4aa466a9-7d15-4a64-a98a-804a3ab3937a",
                   "question_html": "<p>A submarine is at a depth of \\( 200 \\) m in seawater (\\( \\rho = 1025 \\) kg/m³). What is the absolute pressure on the submarine, in Pa?</p>",
                   "problem_type": "ftb",
                   "difficulty": "medium",
@@ -12440,6 +12791,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "773db8c7-9599-488e-90b5-57a4a3e590b1",
                   "question_html": "<p>Explain Pascal's principle and describe how a hydraulic lift uses it to multiply force. Does the hydraulic lift violate conservation of energy? Explain.</p>",
                   "problem_type": "frq",
                   "difficulty": "medium",
@@ -12504,11 +12856,13 @@
           "display_order": 3,
           "problem_sets": [
             {
+              "id": "aad216d7-7a13-447e-aef7-d08b326f8cc7",
               "title": "Practice: Fluids and Newton's Laws",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "d23564a9-dce7-41ce-97b7-f6400c9e9c58",
                   "question_html": "<p>A cube of volume \\( 0.008 \\) m³ is fully submerged in water (\\( \\rho = 1000 \\) kg/m³). What is the buoyant force?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -12550,6 +12904,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "0ddcd673-adbd-4345-b438-f22b548cfc12",
                   "question_html": "<p>A block of ice (density \\( 920 \\) kg/m³) floats in seawater (density \\( 1025 \\) kg/m³). What percentage of the ice is submerged?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -12599,6 +12954,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "ccad46bb-8453-40d1-8c31-cb9f4027bb73",
                   "question_html": "<p>A \\( 3.0 \\) kg aluminum block (density \\( 2700 \\) kg/m³) is suspended from a string in water. What is the tension in the string?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -12651,6 +13007,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "aec68444-907f-4103-890a-66eb18bf25e1",
                   "question_html": "<p>A balloon is filled with helium (\\( \\rho = 0.164 \\) kg/m³) and has a volume of \\( 0.030 \\) m³. The surrounding air has density \\( 1.2 \\) kg/m³. What is the net upward force on the balloon (ignoring the weight of the balloon material)?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -12698,6 +13055,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "9f0cf0e6-af8f-42d3-9d82-1f4ca84d3da1",
                   "question_html": "<p>A \\( 5.0 \\) kg object is fully submerged in water. Its volume is \\( 0.002 \\) m³. What is the apparent weight, in N?</p>",
                   "problem_type": "ftb",
                   "difficulty": "medium",
@@ -12728,6 +13086,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "2900711c-5b48-4cd9-9713-38754748df46",
                   "question_html": "<p>A wooden block of density \\( 750 \\) kg/m³ floats in water. What fraction of the block is above water?</p>",
                   "problem_type": "ftb",
                   "difficulty": "medium",
@@ -12755,6 +13114,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "9be9a5cc-b8b3-4942-b99e-d6ec147a5747",
                   "question_html": "<p>A solid metal sphere of mass \\( 2.0 \\) kg is submerged in water and hangs from a scale. The scale reads \\( 17.2 \\) N. What is the volume of the sphere, in m³?</p>",
                   "problem_type": "ftb",
                   "difficulty": "medium",
@@ -12782,6 +13142,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "b6f13486-d063-4e34-be25-866a05f24d37",
                   "question_html": "<p>Explain why buoyant force arises from pressure differences, not from a special 'buoyancy force.' Use a simple submerged cube as an example and show how the net upward force from pressure equals \\( \\rho_f V g \\).</p>",
                   "problem_type": "frq",
                   "difficulty": "medium",
@@ -12846,11 +13207,13 @@
           "display_order": 4,
           "problem_sets": [
             {
+              "id": "fa7307b9-7ce0-4393-9195-bf6e6cc42d43",
               "title": "Practice: Fluids and Conservation Laws",
               "access_tier": "free",
               "display_order": 0,
               "problems": [
                 {
+                  "id": "7d447e78-e6f8-4b9f-aba4-28cba04d4adc",
                   "question_html": "<p>Water flows at \\( 3.0 \\) m/s through a pipe of area \\( 0.020 \\) m². The pipe narrows to \\( 0.005 \\) m². What is the speed in the narrow section?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -12892,6 +13255,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "451f4ca9-d477-4c11-8c01-53c589611fd3",
                   "question_html": "<p>According to Bernoulli's principle, in a horizontal pipe where the fluid speeds up, what happens to the pressure?</p>",
                   "problem_type": "mcq",
                   "difficulty": "easy",
@@ -12936,6 +13300,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "2cde76ab-a6fe-4f84-8f97-eabb6e4b3449",
                   "question_html": "<p>Water flows horizontally through a pipe. At point 1 (area \\( 0.020 \\) m²), the speed is \\( 2.0 \\) m/s and the pressure is \\( 2.0 \\times 10^5 \\) Pa. At point 2, the area is \\( 0.005 \\) m². What is the pressure at point 2?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -12983,6 +13348,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "0744cbf8-8c1c-402a-834a-a95faf1aeadf",
                   "question_html": "<p>A tank of water has a small hole at \\( 2.0 \\) m below the surface. Assuming the surface is large and the hole is small, what is the speed of water exiting the hole?</p>",
                   "problem_type": "mcq",
                   "difficulty": "medium",
@@ -13027,6 +13393,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "5592338d-fc9e-4cc7-b278-cc06f43baa3b",
                   "question_html": "<p>Water flows through a pipe at \\( 4.0 \\) m/s. The pipe has an area of \\( 0.010 \\) m². What is the volume flow rate, in m³/s?</p>",
                   "problem_type": "ftb",
                   "difficulty": "medium",
@@ -13051,6 +13418,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "0e186429-5b85-440f-a859-2ddd2731696f",
                   "question_html": "<p>A pipe widens from area \\( 0.005 \\) m² to \\( 0.020 \\) m². If the speed in the narrow section is \\( 8.0 \\) m/s, what is the speed in the wide section, in m/s?</p>",
                   "problem_type": "ftb",
                   "difficulty": "medium",
@@ -13075,6 +13443,7 @@
                   "access_tier": "free"
                 },
                 {
+                  "id": "e3891cd5-afe6-4d23-93b0-a68286d15ebb",
                   "question_html": "<p>A horizontal pipe narrows from \\( 0.040 \\) m² to \\( 0.010 \\) m². Water enters at \\( 1.0 \\) m/s. By how much does the pressure drop between the wide and narrow sections, in Pa?</p>",
                   "problem_type": "ftb",
                   "difficulty": "medium",
@@ -13102,6 +13471,7 @@
                   "access_tier": "premium"
                 },
                 {
+                  "id": "410632b1-cd4f-48b3-8a42-9bc3aa38d383",
                   "question_html": "<p>Use the equation of continuity and Bernoulli's principle to explain why a garden hose sprays water faster when you partially cover the opening with your thumb. Include both the effect on speed and on pressure.</p>",
                   "problem_type": "frq",
                   "difficulty": "medium",

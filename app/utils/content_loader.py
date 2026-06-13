@@ -27,7 +27,11 @@ logger = logging.getLogger(__name__)
 
 
 def _delete_concept_problems(concept):
-    """Delete all problem sets, problems, choices, hints, and solutions for a concept."""
+    """Delete all problem sets, problems, choices, hints, and solutions for a concept.
+
+    Used for manual admin deletion (e.g., removing a concept entirely).
+    NOT used during reseed — reseed uses _upsert_problems_for_concept() instead.
+    """
     for ps in ProblemSet.query.filter_by(concept_id=concept.id).all():
         for problem in Problem.query.filter_by(problem_set_id=ps.id).all():
             Choice.query.filter_by(problem_id=problem.id).delete()
@@ -35,6 +39,183 @@ def _delete_concept_problems(concept):
             StepByStepSolution.query.filter_by(problem_id=problem.id).delete()
             db.session.delete(problem)
         db.session.delete(ps)
+    db.session.flush()
+
+
+def _upsert_problems_for_concept(concept, problem_sets_data, counts):
+    """Upsert problem sets and problems for a concept using stable IDs from JSON.
+
+    Problems are matched by their JSON "id" field — existing rows are updated
+    in place so that foreign keys (e.g., AttemptLog.problem_id) remain valid
+    across reseeds.  Children (choices, hints, solutions) are always replaced.
+    """
+    seen_ps_ids = set()
+    seen_problem_ids = set()
+
+    for psi, psdata in enumerate(problem_sets_data):
+        ps_id = psdata.get('id')
+        if not ps_id:
+            raise ValueError(
+                f"ProblemSet missing 'id' in concept '{concept.slug}'. "
+                "Run scripts/add_stable_ids.py to generate IDs."
+            )
+
+        ps = db.session.get(ProblemSet, ps_id)
+        if ps:
+            ps.concept_id = concept.id
+            ps.title = psdata.get('title', ps.title)
+            ps.access_tier = psdata.get('access_tier', ps.access_tier)
+            ps.display_order = psdata.get('display_order', psi)
+            ps.is_active = True
+        else:
+            ps = ProblemSet(
+                id=ps_id,
+                concept_id=concept.id,
+                title=psdata.get('title', f'Problem Set {psi + 1}'),
+                access_tier=psdata.get('access_tier', 'free'),
+                display_order=psdata.get('display_order', psi),
+                is_active=True,
+            )
+            db.session.add(ps)
+        db.session.flush()
+        seen_ps_ids.add(ps_id)
+        counts['problem_sets'] += 1
+
+        for pi, pdata in enumerate(psdata.get('problems', [])):
+            prob_id = pdata.get('id')
+            if not prob_id:
+                raise ValueError(
+                    f"Problem missing 'id' in problem set '{ps.title}'. "
+                    "Run scripts/add_stable_ids.py to generate IDs."
+                )
+
+            problem_type = pdata.get('problem_type', 'mcq')
+            if problem_type not in ('mcq', 'ftb', 'frq', 'code'):
+                problem_type = 'mcq'
+
+            # Build question_html with optional diagram prepended
+            q_html = pdata.get('question_html', '')
+            diag = pdata.get('diagram')
+            if diag:
+                q_html = (
+                    f'<figure class="concept-diagram">'
+                    f'<img data-bucket-key=\'{diag["bucket_key"]}\' '
+                    f'alt=\'{diag["alt_text"]}\' loading=\'lazy\' />'
+                    f'<figcaption>{diag.get("caption", "")}</figcaption>'
+                    f'</figure>\n'
+                ) + q_html
+
+            problem = db.session.get(Problem, prob_id)
+            if problem:
+                # Update in place — keeps AttemptLog foreign keys valid
+                problem.problem_set_id = ps.id
+                problem.question_html = sanitize_html(q_html)
+                problem.problem_type = problem_type
+                problem.correct_answer = pdata.get('correct_answer', '')
+                problem.starter_code = pdata.get('starter_code')
+                problem.test_harness = pdata.get('test_harness')
+                problem.rubric_json = pdata.get('rubric')
+                problem.parts_json = pdata.get('parts_json')
+                problem.frq_metadata = pdata.get('frq_metadata')
+                problem.difficulty = pdata.get('difficulty', 'medium')
+                problem.points = pdata.get('points', 1)
+                problem.display_order = pdata.get('display_order', pi)
+                problem.access_tier = pdata.get('access_tier', 'free')
+            else:
+                problem = Problem(
+                    id=prob_id,
+                    problem_set_id=ps.id,
+                    question_html=sanitize_html(q_html),
+                    problem_type=problem_type,
+                    correct_answer=pdata.get('correct_answer', ''),
+                    starter_code=pdata.get('starter_code'),
+                    test_harness=pdata.get('test_harness'),
+                    rubric_json=pdata.get('rubric'),
+                    parts_json=pdata.get('parts_json'),
+                    frq_metadata=pdata.get('frq_metadata'),
+                    difficulty=pdata.get('difficulty', 'medium'),
+                    points=pdata.get('points', 1),
+                    display_order=pdata.get('display_order', pi),
+                    access_tier=pdata.get('access_tier', 'free'),
+                )
+                db.session.add(problem)
+            db.session.flush()
+            seen_problem_ids.add(prob_id)
+            counts['problems'] += 1
+
+            # Children: delete and recreate (no external FKs reference these)
+            Choice.query.filter_by(problem_id=prob_id).delete()
+            Hint.query.filter_by(problem_id=prob_id).delete()
+            StepByStepSolution.query.filter_by(problem_id=prob_id).delete()
+
+            for chi, chdata in enumerate(pdata.get('choices', [])):
+                choice = Choice(
+                    problem_id=problem.id,
+                    choice_text=chdata.get('text', chdata.get('choice_text', '')),
+                    is_correct=chdata.get('is_correct', False),
+                    display_order=chi,
+                )
+                db.session.add(choice)
+                counts['choices'] += 1
+
+            for hi, hdata in enumerate(pdata.get('hints', [])):
+                hint_text = hdata if isinstance(hdata, str) else hdata.get('text', hdata.get('hint_text', ''))
+                cost = 0 if isinstance(hdata, str) else hdata.get('cost_points', 0)
+                hint = Hint(
+                    problem_id=problem.id,
+                    hint_text=hint_text,
+                    display_order=hi,
+                    cost_points=cost,
+                )
+                db.session.add(hint)
+                counts['hints'] += 1
+
+            solution_data = pdata.get('solution_steps', pdata.get('solution'))
+            if solution_data:
+                if isinstance(solution_data, list):
+                    steps = []
+                    for i, s in enumerate(solution_data):
+                        if isinstance(s, str):
+                            steps.append({'step_number': i + 1, 'text_html': s})
+                        else:
+                            steps.append({
+                                'step_number': s.get('step_number', i + 1),
+                                'text_html': s.get('text', s.get('text_html', '')),
+                            })
+                else:
+                    steps = []
+                if steps:
+                    sol = StepByStepSolution(
+                        problem_id=problem.id,
+                        steps_json=steps,
+                        access_tier='premium',
+                    )
+                    db.session.add(sol)
+                    counts['solutions'] += 1
+
+    # Clean up stale problems/problem_sets no longer in the JSON
+    for stale_ps in ProblemSet.query.filter(
+        ProblemSet.concept_id == concept.id,
+        ~ProblemSet.id.in_(seen_ps_ids) if seen_ps_ids else ProblemSet.id.isnot(None),
+    ).all():
+        for p in Problem.query.filter_by(problem_set_id=stale_ps.id).all():
+            Choice.query.filter_by(problem_id=p.id).delete()
+            Hint.query.filter_by(problem_id=p.id).delete()
+            StepByStepSolution.query.filter_by(problem_id=p.id).delete()
+            db.session.delete(p)
+        db.session.delete(stale_ps)
+
+    # Also clean up stale problems within kept problem sets
+    for ps_id in seen_ps_ids:
+        for stale_p in Problem.query.filter(
+            Problem.problem_set_id == ps_id,
+            ~Problem.id.in_(seen_problem_ids) if seen_problem_ids else Problem.id.isnot(None),
+        ).all():
+            Choice.query.filter_by(problem_id=stale_p.id).delete()
+            Hint.query.filter_by(problem_id=stale_p.id).delete()
+            StepByStepSolution.query.filter_by(problem_id=stale_p.id).delete()
+            db.session.delete(stale_p)
+
     db.session.flush()
 
 
@@ -149,9 +330,6 @@ def load_content_json(file_path):
                 concept.subject_area = cdata.get('subject_area', concept.subject_area)
                 concept.difficulty = cdata.get('difficulty', concept.difficulty)
                 concept.tags = cdata.get('tags', concept.tags)
-
-                # Delete old problem sets and their children, then re-create
-                _delete_concept_problems(concept)
             else:
                 concept = Concept(
                     title=cdata.get('title', f'Concept {ci + 1}'),
@@ -170,97 +348,8 @@ def load_content_json(file_path):
             course_concepts[slug] = concept
             counts['concepts'] += 1
 
-            # Create problem sets
-            for psi, psdata in enumerate(cdata.get('problem_sets', [])):
-                ps = ProblemSet(
-                    concept_id=concept.id,
-                    title=psdata.get('title', f'Problem Set {psi + 1}'),
-                    access_tier=psdata.get('access_tier', 'free'),
-                    display_order=psdata.get('display_order', psi),
-                    is_active=True,
-                )
-                db.session.add(ps)
-                db.session.flush()
-                counts['problem_sets'] += 1
-
-                for pi, pdata in enumerate(psdata.get('problems', [])):
-                    problem_type = pdata.get('problem_type', 'mcq')
-                    if problem_type not in ('mcq', 'ftb', 'frq', 'code'):
-                        problem_type = 'mcq'
-                    # Build question_html with optional diagram prepended
-                    q_html = pdata.get('question_html', '')
-                    diag = pdata.get('diagram')
-                    if diag:
-                        q_html = (
-                            f'<figure class="concept-diagram">'
-                            f'<img data-bucket-key=\'{diag["bucket_key"]}\' '
-                            f'alt=\'{diag["alt_text"]}\' loading=\'lazy\' />'
-                            f'<figcaption>{diag.get("caption", "")}</figcaption>'
-                            f'</figure>\n'
-                        ) + q_html
-                    problem = Problem(
-                        problem_set_id=ps.id,
-                        question_html=sanitize_html(q_html),
-                        problem_type=problem_type,
-                        correct_answer=pdata.get('correct_answer', ''),
-                        starter_code=pdata.get('starter_code'),
-                        test_harness=pdata.get('test_harness'),
-                        rubric_json=pdata.get('rubric'),
-                        parts_json=pdata.get('parts_json'),
-                        frq_metadata=pdata.get('frq_metadata'),
-                        difficulty=pdata.get('difficulty', 'medium'),
-                        points=pdata.get('points', 1),
-                        display_order=pdata.get('display_order', pi),
-                        access_tier=pdata.get('access_tier', 'free'),
-                    )
-                    db.session.add(problem)
-                    db.session.flush()
-                    counts['problems'] += 1
-
-                    for chi, chdata in enumerate(pdata.get('choices', [])):
-                        choice = Choice(
-                            problem_id=problem.id,
-                            choice_text=chdata.get('text', chdata.get('choice_text', '')),
-                            is_correct=chdata.get('is_correct', False),
-                            display_order=chi,
-                        )
-                        db.session.add(choice)
-                        counts['choices'] += 1
-
-                    for hi, hdata in enumerate(pdata.get('hints', [])):
-                        hint_text = hdata if isinstance(hdata, str) else hdata.get('text', hdata.get('hint_text', ''))
-                        cost = 0 if isinstance(hdata, str) else hdata.get('cost_points', 0)
-                        hint = Hint(
-                            problem_id=problem.id,
-                            hint_text=hint_text,
-                            display_order=hi,
-                            cost_points=cost,
-                        )
-                        db.session.add(hint)
-                        counts['hints'] += 1
-
-                    solution_data = pdata.get('solution_steps', pdata.get('solution'))
-                    if solution_data:
-                        if isinstance(solution_data, list):
-                            steps = []
-                            for i, s in enumerate(solution_data):
-                                if isinstance(s, str):
-                                    steps.append({'step_number': i + 1, 'text_html': s})
-                                else:
-                                    steps.append({
-                                        'step_number': s.get('step_number', i + 1),
-                                        'text_html': s.get('text', s.get('text_html', '')),
-                                    })
-                        else:
-                            steps = []
-                        if steps:
-                            sol = StepByStepSolution(
-                                problem_id=problem.id,
-                                steps_json=steps,
-                                access_tier='premium',
-                            )
-                            db.session.add(sol)
-                            counts['solutions'] += 1
+            # Upsert problem sets and problems using stable IDs
+            _upsert_problems_for_concept(concept, cdata.get('problem_sets', []), counts)
 
             # Link concept to topic
             existing_link = TopicConcept.query.filter_by(
