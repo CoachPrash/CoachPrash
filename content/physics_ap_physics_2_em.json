@@ -72,7 +72,8 @@
                       "text": "Temperature does not depend on the number of molecules, volume, or total mass — only on how fast the molecules are moving on average."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 0
                 },
                 {
                   "question_html": "<p>Two containers hold the same ideal gas at the same temperature. Container A has twice the volume of Container B but the same number of molecules. Which container has the higher pressure?</p>",
@@ -118,7 +119,8 @@
                       "text": "Therefore Container B has twice the pressure."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 1
                 },
                 {
                   "question_html": "<p>The temperature of an ideal gas is increased from 200 K to 400 K. By what factor does the average translational kinetic energy of the molecules change?</p>",
@@ -144,7 +146,8 @@
                       "text": "\\( \\frac{400}{200} = 2 \\). The average kinetic energy doubles."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 2
                 },
                 {
                   "question_html": "<p>At 300 K, what is the average translational kinetic energy of a single gas molecule? Use \\( k_B = 1.38 \\times 10^{-23} \\) J/K. Give your answer in units of \\( 10^{-21} \\) J, rounded to two decimal places.</p>",
@@ -170,7 +173,8 @@
                       "text": "\\( = 6.21 \\times 10^{-21} \\) J."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 3
                 }
               ]
             },
@@ -223,7 +227,8 @@
                       "text": "Hydrogen molecules move 4 times faster than oxygen molecules at the same temperature."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 0
                 },
                 {
                   "question_html": "<p>A gas at 27°C has an rms speed of 500 m/s. If the temperature is raised to 927°C, what is the new rms speed in m/s?</p>",
@@ -249,7 +254,8 @@
                       "text": "Since \\( v_{\\text{rms}} \\propto \\sqrt{T} \\): \\( v_2 = 500 \\sqrt{\\frac{1200}{300}} = 500 \\sqrt{4} = 1000 \\) m/s."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 1
                 }
               ]
             }
@@ -319,7 +325,8 @@
                       "text": "Doubling the temperature doubles the pressure."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 0
                 },
                 {
                   "question_html": "<p>An ideal gas at 2.0 atm occupies 4.0 L. If the gas is compressed isothermally to 1.0 L, what is the new pressure in atm?</p>",
@@ -362,7 +369,8 @@
                       "text": "\\( P_2 = \\frac{(2.0)(4.0)}{1.0} = 8.0 \\) atm."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 1
                 },
                 {
                   "question_html": "<p>A gas occupies 3.0 L at 300 K. If the pressure is kept constant and the temperature is raised to 600 K, what is the new volume in liters?</p>",
@@ -388,7 +396,8 @@
                       "text": "\\( V_2 = 3.0 \\times \\frac{600}{300} = 6.0 \\) L."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 2
                 },
                 {
                   "question_html": "<p>How many moles of an ideal gas are contained in a 0.020 m\\(^3\\) container at 1.013 \\(\\times 10^5\\) Pa and 400 K? Use \\( R = 8.314 \\) J/(mol·K). Round to two decimal places.</p>",
@@ -414,7 +423,8 @@
                       "text": "\\( = \\frac{2026}{3325.6} = 0.61 \\) mol."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 3
                 }
               ]
             },
@@ -467,7 +477,8 @@
                       "text": "Convert back: \\( 600 - 273 = 327 \\)°C."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 0
                 },
                 {
                   "question_html": "<p>A weather balloon with a volume of 1.0 m\\(^3\\) is released at sea level (\\( P = 1.0 \\times 10^5 \\) Pa, \\( T = 300 \\) K). At a certain altitude the pressure is \\( 5.0 \\times 10^4 \\) Pa and the temperature is 250 K. What is the volume of the balloon at that altitude, in m\\(^3\\)? Round to one decimal place.</p>",
@@ -510,7 +521,8 @@
                       "text": "\\( V_2 = 1.0 \\times \\frac{1.0 \\times 10^5}{5.0 \\times 10^4} \\times \\frac{250}{300} = 2.0 \\times 0.833 = 1.67 \\approx 1.7 \\) m\\(^3\\)."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 1
                 },
                 {
                   "question_html": "<p>An ideal gas in a cylinder with a movable piston undergoes an isobaric expansion. The initial volume is 2.0 L at 350 K. If the volume increases to 5.0 L, what is the final temperature in K?</p>",
@@ -536,7 +548,8 @@
                       "text": "\\( T_2 = 350 \\times \\frac{5.0}{2.0} = 875 \\) K."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 2
                 },
                 {
                   "question_html": "<p>A rigid container holds 2.0 mol of an ideal gas at 400 K. The gas exerts a pressure of \\( 3.0 \\times 10^5 \\) Pa. Determine the volume of the container in m\\(^3\\). Use \\( R = 8.314 \\) J/(mol·K). Express your answer and explain how the ideal gas law applies.</p>",
@@ -571,7 +584,8 @@
                     }
                   ],
                   "access_tier": "premium",
-                  "correct_answer": "Using PV = nRT: V = nRT/P = (2.0)(8.314)(400) / (3.0 × 10^5) = 6651.2 / 300000 = 0.0222 m³ ≈ 0.022 m³. The ideal gas law relates pressure, volume, temperature, and amount of gas. Since the container is rigid, V is fixed, and increasing T would increase P proportionally."
+                  "correct_answer": "Using PV = nRT: V = nRT/P = (2.0)(8.314)(400) / (3.0 × 10^5) = 6651.2 / 300000 = 0.0222 m³ ≈ 0.022 m³. The ideal gas law relates pressure, volume, temperature, and amount of gas. Since the container is rigid, V is fixed, and increasing T would increase P proportionally.",
+                  "display_order": 3
                 }
               ]
             }
@@ -643,7 +657,8 @@
                       "text": "Radiation transfers energy via electromagnetic waves, which can travel through vacuum. This is how the Sun's energy reaches Earth."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 0
                 },
                 {
                   "question_html": "<p>Object A at 80°C is placed in contact with Object B at 20°C. They are isolated from everything else. After a long time, what are their temperatures?</p>",
@@ -686,7 +701,8 @@
                       "text": "The final equilibrium temperature is between 20°C and 80°C (the exact value depends on their masses and specific heats)."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 1
                 },
                 {
                   "question_html": "<p>According to the zeroth law of thermodynamics, if object A is in thermal equilibrium with object C, and object B is also in thermal equilibrium with object C, what can be said about A and B?</p>",
@@ -712,7 +728,8 @@
                       "text": "This means A and B are at the same temperature."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 2
                 },
                 {
                   "question_html": "<p>Warm air rising from a heater and cool air sinking near a window is an example of what type of heat transfer?</p>",
@@ -735,7 +752,8 @@
                       "text": "Warm air is less dense and rises; cool air is denser and sinks. This bulk fluid circulation is convection."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 3
                 }
               ]
             },
@@ -788,7 +806,8 @@
                       "text": "Setting \\( Q_{\\text{lost}} = Q_{\\text{gained}} \\): \\( 180(100 - T_f) = 2093(T_f - 20) \\), solving gives \\( T_f \\approx 27 \\)°C, much closer to 20°C."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 0
                 },
                 {
                   "question_html": "<p>A 0.50 kg copper block (\\( c = 385 \\) J/(kg·°C)) at 90°C is placed in 1.0 kg of water (\\( c = 4186 \\) J/(kg·°C)) at 10°C. What is the equilibrium temperature in °C? Round to the nearest whole number.</p>",
@@ -817,7 +836,8 @@
                       "text": "\\( 59185 = 4378.5T_f \\), so \\( T_f = 13.5 \\approx 14 \\)°C."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 1
                 }
               ]
             }
@@ -889,7 +909,8 @@
                       "text": "Since \\( W = P\\Delta V = 0 \\), the gas does no work. All 500 J goes to increasing internal energy."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 0
                 },
                 {
                   "question_html": "<p>An ideal gas undergoes an isothermal expansion. Which of the following is true?</p>",
@@ -932,7 +953,8 @@
                       "text": "First law: \\( \\Delta U = Q - W \\Rightarrow 0 = Q - W \\Rightarrow Q = W \\). The heat added equals the work done."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 1
                 },
                 {
                   "question_html": "<p>A gas at constant pressure \\( P = 1.5 \\times 10^5 \\) Pa expands from 0.020 m\\(^3\\) to 0.050 m\\(^3\\). How much work (in joules) does the gas do?</p>",
@@ -958,7 +980,8 @@
                       "text": "\\( = (1.5 \\times 10^5)(0.030) = 4500 \\) J."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 2
                 },
                 {
                   "question_html": "<p>An adiabatic compression is performed on a gas, doing 300 J of work on the gas. What is the change in internal energy of the gas, in joules?</p>",
@@ -984,7 +1007,8 @@
                       "text": "\\( \\Delta U = Q - W = 0 - (-300) = +300 \\) J. The gas heats up."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 3
                 }
               ]
             },
@@ -1037,7 +1061,8 @@
                       "text": "This is why a bicycle pump gets hot when you compress air quickly."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 0
                 },
                 {
                   "question_html": "<p>A monatomic ideal gas undergoes a process where 600 J of heat is removed and 200 J of work is done on the gas. What is the change in temperature if the gas contains 0.50 mol? Use \\( R = 8.314 \\) J/(mol·K).</p>",
@@ -1083,7 +1108,8 @@
                       "text": "For monatomic ideal gas: \\( \\Delta U = \\frac{3}{2}nR\\Delta T \\). \\( \\Delta T = \\frac{-400}{\\frac{3}{2}(0.50)(8.314)} = \\frac{-400}{6.24} \\approx -64 \\) K."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 1
                 },
                 {
                   "question_html": "<p>On a PV diagram, a gas goes from state A (\\( P = 3.0 \\times 10^5 \\) Pa, \\( V = 0.010 \\) m\\(^3\\)) to state B (\\( P = 1.0 \\times 10^5 \\) Pa, \\( V = 0.030 \\) m\\(^3\\)) along a straight line. How much work does the gas do, in joules?</p>",
@@ -1129,7 +1155,8 @@
                       "text": "\\( = \\frac{1}{2}(4.0 \\times 10^5)(0.020) = 4000 \\) J."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "premium",
+                  "display_order": 2
                 },
                 {
                   "question_html": "<p>A gas undergoes a cyclic process on a PV diagram, returning to its initial state. The cycle encloses an area of 1500 J. During the cycle, 4000 J of heat is absorbed by the gas. How much heat is rejected by the gas during the cycle? Express your answer in joules.</p>",
@@ -1158,7 +1185,8 @@
                       "text": "\\( Q_{\\text{net}} = Q_{\\text{in}} - Q_{\\text{out}} = 1500 \\). So \\( Q_{\\text{out}} = 4000 - 1500 = 2500 \\) J."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 3
                 },
                 {
                   "question_html": "<p>A monatomic ideal gas undergoes the following two-step process: (1) isochoric heating from state A (\\( P_A = 1.0 \\times 10^5 \\) Pa, \\( V_A = 0.020 \\) m\\(^3\\)) to state B (\\( P_B = 3.0 \\times 10^5 \\) Pa), then (2) isobaric expansion from state B to state C (\\( V_C = 0.060 \\) m\\(^3\\)). Determine the total work done by the gas and the total change in internal energy. Explain each step.</p>",
@@ -1196,7 +1224,8 @@
                     }
                   ],
                   "access_tier": "premium",
-                  "correct_answer": "Step 1 (A→B, isochoric): W₁ = 0 (no volume change). ΔU₁ = Q₁. Step 2 (B→C, isobaric at 3.0×10⁵ Pa): W₂ = PΔV = (3.0×10⁵)(0.060 - 0.020) = 12000 J. Total work W = 0 + 12000 = 12000 J. For the total ΔU, we use ΔU = (3/2)nRΔT. Using PV = nRT: nRT_A = (1.0×10⁵)(0.020) = 2000 J, nRT_C = (3.0×10⁵)(0.060) = 18000 J. ΔU = (3/2)(nRT_C - nRT_A) = (3/2)(18000 - 2000) = 24000 J."
+                  "correct_answer": "Step 1 (A→B, isochoric): W₁ = 0 (no volume change). ΔU₁ = Q₁. Step 2 (B→C, isobaric at 3.0×10⁵ Pa): W₂ = PΔV = (3.0×10⁵)(0.060 - 0.020) = 12000 J. Total work W = 0 + 12000 = 12000 J. For the total ΔU, we use ΔU = (3/2)nRΔT. Using PV = nRT: nRT_A = (1.0×10⁵)(0.020) = 2000 J, nRT_C = (3.0×10⁵)(0.060) = 18000 J. ΔU = (3/2)(nRT_C - nRT_A) = (3/2)(18000 - 2000) = 24000 J.",
+                  "display_order": 4
                 }
               ]
             }
@@ -1266,7 +1295,8 @@
                       "text": "Since \\( c_{\\text{Al}} = 900 > c_{\\text{Cu}} = 385 \\), aluminum stores more thermal energy per degree and releases more heat, melting more ice."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 0
                 },
                 {
                   "question_html": "<p>A 0.30 kg iron block (\\( c = 450 \\) J/(kg·K)) at 200°C is dropped into 0.50 kg of water at 25°C. Assuming no heat loss, what is the equilibrium temperature in °C? Round to the nearest whole number.</p>",
@@ -1312,7 +1342,8 @@
                       "text": "\\( 27000 - 135T_f = 2093T_f - 52325 \\). \\( 79325 = 2228T_f \\). \\( T_f = 35.6 \\approx 36 \\)°C."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 1
                 },
                 {
                   "question_html": "<p>How much heat (in joules) is needed to raise the temperature of 2.0 kg of water from 20°C to 80°C? Use \\( c = 4186 \\) J/(kg·K).</p>",
@@ -1335,7 +1366,8 @@
                       "text": "\\( Q = mc\\Delta T = (2.0)(4186)(60) = 502320 \\) J \\( \\approx 502 \\) kJ."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 2
                 },
                 {
                   "question_html": "<p>A glass window has thermal conductivity \\( k = 0.80 \\) W/(m·K), area \\( A = 2.0 \\) m\\(^2\\), and thickness \\( L = 0.005 \\) m. If the inside surface is at 20°C and the outside at 0°C, what is the rate of heat loss through the window in watts?</p>",
@@ -1361,7 +1393,8 @@
                       "text": "\\( = \\frac{32}{0.005} = 6400 \\) W."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 3
                 }
               ]
             },
@@ -1414,7 +1447,8 @@
                       "text": "\\( 17.7 c_m = 5023.2 \\), so \\( c_m = 284 \\) J/(kg·K)."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 0
                 },
                 {
                   "question_html": "<p>Two rods of the same length and cross-section are made of different materials. Rod A has \\( k_A = 400 \\) W/(m·K) and Rod B has \\( k_B = 50 \\) W/(m·K). If both have the same temperature difference across their ends, what is the ratio of heat flow rate through A to that through B?</p>",
@@ -1457,7 +1491,8 @@
                       "text": "The ratio is \\( k_A/k_B = 400/50 = 8 \\). Rod A conducts heat 8 times faster."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 1
                 },
                 {
                   "question_html": "<p>A styrofoam cooler wall has \\( k = 0.033 \\) W/(m·K), area 0.50 m\\(^2\\), and thickness 0.03 m. The inside is at 5°C and outside is at 35°C. How much heat leaks into the cooler in 1 hour, in joules?</p>",
@@ -1483,7 +1518,8 @@
                       "text": "In 1 hour (3600 s): \\( Q = 16.5 \\times 3600 = 59400 \\) J."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 2
                 },
                 {
                   "question_html": "<p>A student performs a calorimetry experiment. She places a 150 g metal sample heated to 95°C into 300 g of water at 22°C in an insulated cup. The final temperature is 25°C. Determine the specific heat of the metal, identify a possible metal, and explain one source of error that could affect the result.</p>",
@@ -1521,7 +1557,8 @@
                     }
                   ],
                   "access_tier": "premium",
-                  "correct_answer": "Q_water = mcΔT = (0.300)(4186)(3) = 3767.4 J. Q_metal = mcΔT: 3767.4 = (0.150)(c)(70), so c = 3767.4/(10.5) = 358.8 ≈ 359 J/(kg·K). This is close to copper (385 J/(kg·K)). One source of error: heat could be lost to the cup and surroundings, making the measured specific heat lower than the actual value since less heat appears to transfer from the metal to the water."
+                  "correct_answer": "Q_water = mcΔT = (0.300)(4186)(3) = 3767.4 J. Q_metal = mcΔT: 3767.4 = (0.150)(c)(70), so c = 3767.4/(10.5) = 358.8 ≈ 359 J/(kg·K). This is close to copper (385 J/(kg·K)). One source of error: heat could be lost to the cup and surroundings, making the measured specific heat lower than the actual value since less heat appears to transfer from the metal to the water.",
+                  "display_order": 3
                 }
               ]
             }
@@ -1592,7 +1629,8 @@
                       "text": "Heat flows spontaneously from hot to cold (not the reverse). No engine is 100% efficient. Energy is conserved (first law), not created."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 0
                 },
                 {
                   "question_html": "<p>A heat engine absorbs 1000 J from a hot reservoir and exhausts 600 J to a cold reservoir. What is the efficiency of the engine?</p>",
@@ -1635,7 +1673,8 @@
                       "text": "\\( e = W/Q_H = 400/1000 = 0.40 = 40\\% \\)."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 1
                 },
                 {
                   "question_html": "<p>500 J of heat is added to a system at a constant temperature of 250 K. What is the change in entropy of the system, in J/K?</p>",
@@ -1658,7 +1697,8 @@
                       "text": "\\( \\Delta S = Q/T = 500/250 = 2 \\) J/K."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 2
                 },
                 {
                   "question_html": "<p>What is the maximum theoretical efficiency (in percent) of a heat engine operating between a hot reservoir at 600 K and a cold reservoir at 300 K?</p>",
@@ -1684,7 +1724,8 @@
                       "text": "Maximum efficiency is 50%."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 3
                 }
               ]
             },
@@ -1734,7 +1775,8 @@
                       "text": "\\( W_{\\text{max}} = e \\times Q_H = 0.75 \\times 2000 = 1500 \\) J."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 0
                 },
                 {
                   "question_html": "<p>1000 J of heat flows from a reservoir at 500 K to a reservoir at 250 K. What is the total entropy change of the two-reservoir system, in J/K?</p>",
@@ -1780,7 +1822,8 @@
                       "text": "Total: \\( \\Delta S_{\\text{total}} = -2 + 4 = +2 \\) J/K > 0. Entropy increases, as expected for an irreversible process."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 1
                 },
                 {
                   "question_html": "<p>A power plant operates at 35% efficiency and produces 500 MW of electrical power. How much heat (in MW) must be rejected to the cold reservoir per second?</p>",
@@ -1806,7 +1849,8 @@
                       "text": "\\( Q_C = Q_H - W = 1428.6 - 500 = 928.6 \\approx 929 \\) MW rejected."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 2
                 },
                 {
                   "question_html": "<p>A Carnot engine operates between 700 K and 350 K and does 500 J of work per cycle. Determine (a) the efficiency, (b) the heat absorbed from the hot reservoir, and (c) the heat rejected to the cold reservoir. Show your reasoning for each part.</p>",
@@ -1841,7 +1885,8 @@
                     }
                   ],
                   "access_tier": "premium",
-                  "correct_answer": "(a) e = 1 − T_C/T_H = 1 − 350/700 = 0.50 = 50%. (b) e = W/Q_H → Q_H = W/e = 500/0.50 = 1000 J. (c) Q_C = Q_H − W = 1000 − 500 = 500 J."
+                  "correct_answer": "(a) e = 1 − T_C/T_H = 1 − 350/700 = 0.50 = 50%. (b) e = W/Q_H → Q_H = W/e = 500/0.50 = 1000 J. (c) Q_C = Q_H − W = 1000 − 500 = 500 J.",
+                  "display_order": 3
                 }
               ]
             }
@@ -1919,7 +1964,8 @@
                       "text": "\\( F = (9.0 \\times 10^9)(3 \\times 10^{-6})(3 \\times 10^{-6})/(0.10)^2 = (9.0 \\times 10^9)(9 \\times 10^{-12})/0.01 = 8.1 \\) N."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 0
                 },
                 {
                   "question_html": "<p>If the distance between two point charges is tripled, by what factor does the electric force between them change?</p>",
@@ -1962,7 +2008,8 @@
                       "text": "The force decreases by a factor of 9."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 1
                 },
                 {
                   "question_html": "<p>Two identical positive charges of 4.0 μC are separated by 0.20 m. What is the magnitude of the electric force between them, in newtons? Use \\( k = 9.0 \\times 10^9 \\) N·m²/C².</p>",
@@ -1988,7 +2035,8 @@
                       "text": "\\( = (9.0 \\times 10^9)(16 \\times 10^{-12})/0.04 = 3.6 \\) N (repulsive)."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 2
                 },
                 {
                   "question_html": "<p>An object has a net charge of \\( -4.8 \\times 10^{-19} \\) C. How many excess electrons does it have?</p>",
@@ -2011,7 +2059,8 @@
                       "text": "\\( n = |q|/e = (4.8 \\times 10^{-19})/(1.6 \\times 10^{-19}) = 3 \\) excess electrons."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 3
                 }
               ]
             },
@@ -2064,7 +2113,8 @@
                       "text": "Since \\( |q_1| = |q_3| = 2 \\) μC and both are 0.30 m from \\( q_2 \\), the forces have equal magnitude and opposite direction. Net force = 0."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 0
                 },
                 {
                   "question_html": "<p>Two charges \\( q_1 = +5.0 \\) μC and \\( q_2 = +5.0 \\) μC are 0.40 m apart. What is the magnitude of the force on each charge, in newtons? Round to two decimal places.</p>",
@@ -2090,7 +2140,8 @@
                       "text": "\\( = (9.0 \\times 10^9)(25 \\times 10^{-12})/0.16 = 225 \\times 10^{-3}/0.16 = 1.41 \\) N."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 1
                 }
               ]
             }
@@ -2161,7 +2212,8 @@
                       "text": "Identical spheres share equally: \\( +6/2 = +3 \\) μC on each."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 0
                 },
                 {
                   "question_html": "<p>A negatively charged rod is brought near a neutral metal sphere without touching it. What happens to the charge distribution on the sphere?</p>",
@@ -2204,7 +2256,8 @@
                       "text": "The near side becomes positive (deficit of electrons) and the far side becomes negative (excess electrons). The sphere is still neutral overall — charges have only separated."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 1
                 },
                 {
                   "question_html": "<p>When a glass rod is rubbed with silk, the rod becomes positively charged. What happened at the atomic level?</p>",
@@ -2227,7 +2280,8 @@
                       "text": "Electrons were transferred from the glass rod to the silk. The rod lost electrons, giving it a net positive charge. The silk gained those electrons, becoming negatively charged."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 2
                 },
                 {
                   "question_html": "<p>In charging by induction, the object being charged ends up with what sign of charge relative to the inducing charge?</p>",
@@ -2253,7 +2307,8 @@
                       "text": "A positive rod induces a negative charge; a negative rod induces a positive charge."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 3
                 }
               ]
             },
@@ -2306,7 +2361,8 @@
                       "text": "Final charge on C: +2 μC."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 0
                 },
                 {
                   "question_html": "<p>A neutral metal sphere is placed on an insulating stand. A positively charged rod is brought near (but not touching) the left side. While the rod is still nearby, the sphere is grounded momentarily, then the ground connection is removed, then the rod is removed. What is the final charge on the sphere?</p>",
@@ -2335,7 +2391,8 @@
                       "text": "Ground removed → extra electrons are trapped. Rod removed → electrons redistribute. The sphere is now negatively charged."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 1
                 }
               ]
             }
@@ -2405,7 +2462,8 @@
                       "text": "\\( = 1.8 \\times 10^4/0.25 = 7.2 \\times 10^4 \\) N/C, directed radially outward from the positive charge."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 0
                 },
                 {
                   "question_html": "<p>A positive test charge is placed in an electric field and experiences a force pointing to the right. In what direction does the electric field point at that location?</p>",
@@ -2448,7 +2506,8 @@
                       "text": "The field points to the right."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 1
                 },
                 {
                   "question_html": "<p>The electric field at a point is 500 N/C. What force (in newtons) acts on a \\( -3.0 \\) μC charge placed at that point? Give the magnitude.</p>",
@@ -2474,7 +2533,8 @@
                       "text": "The force direction is opposite to \\( \\vec{E} \\) because the charge is negative."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 2
                 },
                 {
                   "question_html": "<p>At what distance (in meters) from a \\( +8.0 \\) μC point charge is the electric field equal to \\( 2.0 \\times 10^6 \\) N/C? Round to two decimal places.</p>",
@@ -2500,7 +2560,8 @@
                       "text": "\\( = \\sqrt{7.2 \\times 10^4 / 2.0 \\times 10^6} = \\sqrt{0.036} = 0.19 \\) m."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 3
                 }
               ]
             },
@@ -2553,7 +2614,8 @@
                       "text": "\\( E_{\\text{net}} = 9 \\times 10^5 + 9 \\times 10^5 = 1.8 \\times 10^6 \\) N/C to the right."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 0
                 },
                 {
                   "question_html": "<p>Two large parallel plates are separated by 0.02 m and have a potential difference of 500 V across them. What is the magnitude of the uniform electric field between the plates, in V/m?</p>",
@@ -2593,7 +2655,8 @@
                       "text": "\\( E = V/d = 500/0.02 = 25000 \\) V/m = 2.5 × 10⁴ N/C."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 1
                 },
                 {
                   "question_html": "<p>A \\( +6.0 \\) μC charge is at the origin. At what distance from the charge (in meters) is the electric field strength \\( 5400 \\) N/C?</p>",
@@ -2619,7 +2682,8 @@
                       "text": "\\( r = \\sqrt{10} \\approx 3.16 \\) m."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 2
                 },
                 {
                   "question_html": "<p>A proton (\\( m = 1.67 \\times 10^{-27} \\) kg, \\( q = 1.6 \\times 10^{-19} \\) C) is placed in a uniform electric field of \\( E = 2.0 \\times 10^4 \\) N/C. Determine the acceleration of the proton and explain why the electron would have a much larger acceleration in the same field.</p>",
@@ -2654,7 +2718,8 @@
                     }
                   ],
                   "access_tier": "premium",
-                  "correct_answer": "F = qE = (1.6 × 10⁻¹⁹)(2.0 × 10⁴) = 3.2 × 10⁻¹⁵ N. a = F/m = 3.2 × 10⁻¹⁵ / 1.67 × 10⁻²⁷ = 1.9 × 10¹² m/s². An electron has the same charge magnitude but much less mass (9.11 × 10⁻³¹ kg), so a = F/m would be about 1836 times larger."
+                  "correct_answer": "F = qE = (1.6 × 10⁻¹⁹)(2.0 × 10⁴) = 3.2 × 10⁻¹⁵ N. a = F/m = 3.2 × 10⁻¹⁵ / 1.67 × 10⁻²⁷ = 1.9 × 10¹² m/s². An electron has the same charge magnitude but much less mass (9.11 × 10⁻³¹ kg), so a = F/m would be about 1836 times larger.",
+                  "display_order": 3
                 }
               ]
             }
@@ -2724,7 +2789,8 @@
                       "text": "Positive PE means energy was required to bring them this close (they repel)."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 0
                 },
                 {
                   "question_html": "<p>What is the electric potential energy (in joules) of a system of two charges, \\( q_1 = +3.0 \\) μC and \\( q_2 = -6.0 \\) μC, separated by 0.30 m?</p>",
@@ -2767,7 +2833,8 @@
                       "text": "\\( = (9 \\times 10^9)(-18 \\times 10^{-12})/0.30 = -0.54 \\) J. Negative because unlike charges are bound."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 1
                 },
                 {
                   "question_html": "<p>A \\( +2.0 \\) μC charge is released from rest at a point where the electric potential energy is 0.010 J. It moves to a point where \\( U = 0.002 \\) J. What is its kinetic energy at the second point, in joules?</p>",
@@ -2793,7 +2860,8 @@
                       "text": "\\( 0 + 0.010 = K_f + 0.002 \\), so \\( K_f = 0.008 \\) J."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 2
                 },
                 {
                   "question_html": "<p>Two charges, \\( q_1 = +4.0 \\) μC and \\( q_2 = +4.0 \\) μC, are initially 0.10 m apart. How much work must an external agent do to bring them to 0.05 m apart, in joules? Round to two decimal places.</p>",
@@ -2822,7 +2890,8 @@
                       "text": "\\( W_{\\text{ext}} = U_f - U_i = 2.88 - 1.44 = 1.44 \\) J."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 3
                 }
               ]
             },
@@ -2872,7 +2941,8 @@
                       "text": "Converting: \\( 4.8 \\times 10^{-18} / 1.6 \\times 10^{-19} = 30 \\) eV."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 0
                 },
                 {
                   "question_html": "<p>Three charges are at the corners of an equilateral triangle with side 0.20 m: \\( q_1 = +1.0 \\) μC, \\( q_2 = +1.0 \\) μC, \\( q_3 = -1.0 \\) μC. What is the total electric potential energy of the system, in joules? Round to three decimal places.</p>",
@@ -2921,7 +2991,8 @@
                       "text": "Total: \\( +0.045 - 0.045 - 0.045 = -0.045 \\) J."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 1
                 },
                 {
                   "question_html": "<p>A proton (\\( q = 1.6 \\times 10^{-19} \\) C, \\( m = 1.67 \\times 10^{-27} \\) kg) is released from rest at 0.50 m from a fixed \\( +2.0 \\) nC charge. What is the proton's speed (in m/s) when it is 5.0 m away? Round to the nearest thousand.</p>",
@@ -2953,7 +3024,8 @@
                       "text": "\\( v = \\sqrt{2(5.18 \\times 10^{-18})/1.67 \\times 10^{-27}} = \\sqrt{6.20 \\times 10^{9}} \\approx 79000 \\) m/s."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 2
                 },
                 {
                   "question_html": "<p>Two point charges \\( q_1 = +3.0 \\) μC and \\( q_2 = -5.0 \\) μC are separated by 0.40 m. Determine the total electric potential energy of the system and explain what the sign of the result means physically.</p>",
@@ -2988,7 +3060,8 @@
                     }
                   ],
                   "access_tier": "premium",
-                  "correct_answer": "U = kq₁q₂/r = (9.0 × 10⁹)(3.0 × 10⁻⁶)(−5.0 × 10⁻⁶)/0.40 = −0.3375 J ≈ −0.34 J. The negative sign means the charges are bound to each other — you would need to do +0.34 J of work to separate them to infinity. This makes sense because opposite charges attract."
+                  "correct_answer": "U = kq₁q₂/r = (9.0 × 10⁹)(3.0 × 10⁻⁶)(−5.0 × 10⁻⁶)/0.40 = −0.3375 J ≈ −0.34 J. The negative sign means the charges are bound to each other — you would need to do +0.34 J of work to separate them to infinity. This makes sense because opposite charges attract.",
+                  "display_order": 3
                 }
               ]
             }
@@ -3055,7 +3128,8 @@
                       "text": "\\( V = kq/r = (9 \\times 10^9)(6 \\times 10^{-6})/0.30 = 54000/0.30 = 1.8 \\times 10^5 \\) V."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 0
                 },
                 {
                   "question_html": "<p>A charge of \\( +2.0 \\) μC moves through a potential difference of \\( \\Delta V = -500 \\) V. How much work is done by the electric force, in joules?</p>",
@@ -3098,7 +3172,8 @@
                       "text": "Positive work means the charge moved from high to low potential — the field did the pushing."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 1
                 },
                 {
                   "question_html": "<p>Two large parallel plates have a potential difference of 200 V and are separated by 0.04 m. What is the electric field between them, in V/m?</p>",
@@ -3121,7 +3196,8 @@
                       "text": "\\( E = |\\Delta V|/d = 200/0.04 = 5000 \\) V/m."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 2
                 },
                 {
                   "question_html": "<p>A \\( -3.0 \\) μC charge is at \\( x = 0 \\) and a \\( +3.0 \\) μC charge is at \\( x = 0.60 \\) m. What is the electric potential at the midpoint \\( x = 0.30 \\) m, in volts?</p>",
@@ -3150,7 +3226,8 @@
                       "text": "\\( V_{\\text{total}} = -9 \\times 10^4 + 9 \\times 10^4 = 0 \\) V."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 3
                 }
               ]
             },
@@ -3200,7 +3277,8 @@
                       "text": "In eV: \\( -1.6 \\times 10^{-17} / 1.6 \\times 10^{-19} = -100 \\) eV. The electron slows down because it's moving against the electric force."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 0
                 },
                 {
                   "question_html": "<p>At what point along the x-axis (other than infinity) is the electric potential zero due to charges \\( q_1 = +4.0 \\) μC at the origin and \\( q_2 = -2.0 \\) μC at \\( x = 0.60 \\) m?</p>",
@@ -3246,7 +3324,8 @@
                       "text": "\\( 2.4 - 4x = 2x \\), so \\( 6x = 2.4 \\), giving \\( x = 0.40 \\) m."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 1
                 },
                 {
                   "question_html": "<p>A uniform electric field of 3000 V/m points from left to right. What is the potential difference between two points separated by 0.15 m along the field direction? (Give \\( V_B - V_A \\) where A is on the left and B is on the right.)</p>",
@@ -3272,7 +3351,8 @@
                       "text": "Electric potential decreases in the direction of the electric field."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 2
                 },
                 {
                   "question_html": "<p>A \\( +5.0 \\) μC charge is at the origin. (a) Calculate the electric potential at \\( r = 0.20 \\) m and at \\( r = 0.50 \\) m. (b) Determine the work done by the electric force in moving a \\( +2.0 \\) μC charge from \\( r = 0.20 \\) m to \\( r = 0.50 \\) m.</p>",
@@ -3307,7 +3387,8 @@
                     }
                   ],
                   "access_tier": "premium",
-                  "correct_answer": "(a) V(0.20) = kq/r = (9×10⁹)(5×10⁻⁶)/0.20 = 2.25 × 10⁵ V. V(0.50) = (9×10⁹)(5×10⁻⁶)/0.50 = 9.0 × 10⁴ V. (b) W = -qΔV = -(2×10⁻⁶)(9.0×10⁴ - 2.25×10⁵) = -(2×10⁻⁶)(−1.35×10⁵) = +0.27 J."
+                  "correct_answer": "(a) V(0.20) = kq/r = (9×10⁹)(5×10⁻⁶)/0.20 = 2.25 × 10⁵ V. V(0.50) = (9×10⁹)(5×10⁻⁶)/0.50 = 9.0 × 10⁴ V. (b) W = -qΔV = -(2×10⁻⁶)(9.0×10⁴ - 2.25×10⁵) = -(2×10⁻⁶)(−1.35×10⁵) = +0.27 J.",
+                  "display_order": 3
                 }
               ]
             }
@@ -3375,7 +3456,8 @@
                       "text": "\\( Q = CV = (10 \\times 10^{-6})(100) = 1.0 \\times 10^{-3} \\) C."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 0
                 },
                 {
                   "question_html": "<p>A parallel-plate capacitor has plate area \\( A = 0.010 \\) m² and separation \\( d = 0.002 \\) m. What is its capacitance? (Use \\( \\varepsilon_0 = 8.85 \\times 10^{-12} \\) F/m.)</p>",
@@ -3415,7 +3497,8 @@
                       "text": "\\( C = \\varepsilon_0 A/d = (8.85 \\times 10^{-12})(0.010)/0.002 = 4.43 \\times 10^{-11} \\) F = 44.3 pF."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 1
                 },
                 {
                   "question_html": "<p>How much energy is stored in a 20 μF capacitor charged to 50 V? Give your answer in joules.</p>",
@@ -3438,7 +3521,8 @@
                       "text": "\\( U = \\frac{1}{2}CV^2 = \\frac{1}{2}(20 \\times 10^{-6})(2500) = 0.025 \\) J = 25 mJ."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 2
                 },
                 {
                   "question_html": "<p>Two capacitors, 6 μF and 3 μF, are connected in series. What is their equivalent capacitance in μF?</p>",
@@ -3464,7 +3548,8 @@
                       "text": "\\( C_{\\text{eq}} = 2 \\) μF. Series always gives less than the smallest individual capacitor."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 3
                 }
               ]
             },
@@ -3511,7 +3596,8 @@
                       "text": "Parallel: \\( C_{\\text{eq}} = C_1 + C_2 + C_3 = 4 + 6 + 12 = 22 \\) μF."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 0
                 },
                 {
                   "question_html": "<p>A 5 μF capacitor is charged to 200 V, then disconnected from the battery. A dielectric with \\( \\kappa = 4 \\) is inserted between the plates. What is the new voltage across the capacitor?</p>",
@@ -3557,7 +3643,8 @@
                       "text": "New voltage: \\( V' = Q/C' = 1.0 \\times 10^{-3}/20 \\times 10^{-6} = 50 \\) V."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 1
                 },
                 {
                   "question_html": "<p>A 100 μF capacitor stores 0.50 J of energy. What is the voltage across it, in volts?</p>",
@@ -3580,7 +3667,8 @@
                       "text": "\\( V = \\sqrt{2U/C} = \\sqrt{2(0.50)/(100 \\times 10^{-6})} = \\sqrt{10^4} = 100 \\) V."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 2
                 },
                 {
                   "question_html": "<p>A parallel-plate capacitor with capacitance \\( C = 50 \\) pF is connected to a 12 V battery. (a) How much charge is stored? (b) How much energy is stored? (c) If the plate separation is doubled while the battery remains connected, what happens to the charge and energy? Explain using the relevant equations.</p>",
@@ -3615,7 +3703,8 @@
                     }
                   ],
                   "access_tier": "premium",
-                  "correct_answer": "(a) Q = CV = (50 × 10⁻¹²)(12) = 600 × 10⁻¹² C = 600 pC. (b) U = ½CV² = ½(50 × 10⁻¹²)(144) = 3.6 × 10⁻⁹ J = 3.6 nJ. (c) Doubling d halves C (since C = ε₀A/d). Battery connected → V stays at 12 V. New Q = C'V = (25 pF)(12 V) = 300 pC (halved). New U = ½C'V² = ½(25 × 10⁻¹²)(144) = 1.8 nJ (halved). Charge and energy both decrease by half."
+                  "correct_answer": "(a) Q = CV = (50 × 10⁻¹²)(12) = 600 × 10⁻¹² C = 600 pC. (b) U = ½CV² = ½(50 × 10⁻¹²)(144) = 3.6 × 10⁻⁹ J = 3.6 nJ. (c) Doubling d halves C (since C = ε₀A/d). Battery connected → V stays at 12 V. New Q = C'V = (25 pF)(12 V) = 300 pC (halved). New U = ½C'V² = ½(25 × 10⁻¹²)(144) = 1.8 nJ (halved). Charge and energy both decrease by half.",
+                  "display_order": 3
                 }
               ]
             }
@@ -3685,7 +3774,8 @@
                       "text": "This is also \\( 100 \\times 1.6 \\times 10^{-19} = 1.6 \\times 10^{-17} \\) J."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 0
                 },
                 {
                   "question_html": "<p>A proton is released from rest in a uniform electric field. It accelerates through a potential difference of 200 V. Which is true about its kinetic energy?</p>",
@@ -3728,7 +3818,8 @@
                       "text": "The kinetic energy gained depends only on the charge and the potential difference, not on the field strength or path taken."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 1
                 },
                 {
                   "question_html": "<p>Convert 500 eV to joules.</p>",
@@ -3751,7 +3842,8 @@
                       "text": "\\( 500 \\text{ eV} \\times 1.6 \\times 10^{-19} \\text{ J/eV} = 8.0 \\times 10^{-17} \\) J."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 2
                 },
                 {
                   "question_html": "<p>A \\( +4.0 \\) μC charge moves from a point where \\( V = 300 \\) V to a point where \\( V = 100 \\) V. How much kinetic energy (in joules) does the charge gain if it starts from rest?</p>",
@@ -3774,7 +3866,8 @@
                       "text": "\\( \\Delta KE = q(V_i - V_f) = (4 \\times 10^{-6})(300 - 100) = 8 \\times 10^{-4} \\) J = 0.0008 J."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 3
                 }
               ]
             },
@@ -3824,7 +3917,8 @@
                       "text": "\\( v = \\sqrt{2(1.6 \\times 10^{-19})(1000)/1.67 \\times 10^{-27}} = \\sqrt{1.916 \\times 10^{11}} \\approx 4.4 \\times 10^5 \\) m/s."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 0
                 },
                 {
                   "question_html": "<p>A 10 μF capacitor charged to 100 V is connected to an uncharged 10 μF capacitor. What is the final voltage across each capacitor, and how much energy is lost?</p>",
@@ -3870,7 +3964,8 @@
                       "text": "Energy lost: \\( 0.05 - 0.025 = 0.025 \\) J (dissipated as heat in connecting wires)."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 1
                 },
                 {
                   "question_html": "<p>Two identical \\( +1.0 \\) μC charges are released from rest at a separation of 0.50 m. Each has mass \\( 1.0 \\times 10^{-3} \\) kg. What is the speed of each charge when they are very far apart?</p>",
@@ -3916,7 +4011,8 @@
                       "text": "\\( v = \\sqrt{0.018/0.001} = \\sqrt{18} \\approx 4.2 \\) m/s."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "premium",
+                  "display_order": 2
                 },
                 {
                   "question_html": "<p>An alpha particle (\\( q = 3.2 \\times 10^{-19} \\) C, \\( m = 6.64 \\times 10^{-27} \\) kg) is accelerated from rest through a potential difference of 2.0 \\times 10^6 V. What is its final speed in m/s?</p>",
@@ -3942,7 +4038,8 @@
                       "text": "\\( = \\sqrt{1.284 \\times 10^{-12}/6.64 \\times 10^{-27}} = \\sqrt{1.93 \\times 10^{14}} \\approx 1.39 \\times 10^7 \\) m/s."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 3
                 },
                 {
                   "question_html": "<p>An electron with initial speed \\( 5.0 \\times 10^5 \\) m/s enters a region where the electric potential increases by 2.0 V. (a) Does the electron speed up or slow down? Explain. (b) Determine the final speed of the electron. (\\( m_e = 9.11 \\times 10^{-31} \\) kg, \\( e = 1.6 \\times 10^{-19} \\) C.)</p>",
@@ -3980,7 +4077,8 @@
                     }
                   ],
                   "access_tier": "premium",
-                  "correct_answer": "(a) For a negative charge, ΔU = qΔV = (−e)(+2.0) = −3.2×10⁻¹⁹ J. PE decreases, so KE increases — the electron speeds up. (b) ΔKE = +3.2×10⁻¹⁹ J. KE_i = ½mv² = ½(9.11×10⁻³¹)(5.0×10⁵)² = 1.14×10⁻¹⁹ J. KE_f = 1.14×10⁻¹⁹ + 3.2×10⁻¹⁹ = 4.34×10⁻¹⁹ J. v_f = √(2×4.34×10⁻¹⁹/9.11×10⁻³¹) ≈ 9.8×10⁵ m/s."
+                  "correct_answer": "(a) For a negative charge, ΔU = qΔV = (−e)(+2.0) = −3.2×10⁻¹⁹ J. PE decreases, so KE increases — the electron speeds up. (b) ΔKE = +3.2×10⁻¹⁹ J. KE_i = ½mv² = ½(9.11×10⁻³¹)(5.0×10⁵)² = 1.14×10⁻¹⁹ J. KE_f = 1.14×10⁻¹⁹ + 3.2×10⁻¹⁹ = 4.34×10⁻¹⁹ J. v_f = √(2×4.34×10⁻¹⁹/9.11×10⁻³¹) ≈ 9.8×10⁵ m/s.",
+                  "display_order": 4
                 }
               ]
             }
@@ -4055,7 +4153,8 @@
                       "text": "\\( \\Delta Q = I \\Delta t = (2.0)(30) = 60 \\) C."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 0
                 },
                 {
                   "question_html": "<p>In a metallic conductor, which particles actually move to create the current?</p>",
@@ -4098,7 +4197,8 @@
                       "text": "Conventional current direction is opposite to electron flow, but electrons are the actual moving charges."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 1
                 },
                 {
                   "question_html": "<p>A current of 0.50 A flows through a wire. How many electrons pass a given point per second? (\\( e = 1.6 \\times 10^{-19} \\) C)</p>",
@@ -4121,7 +4221,8 @@
                       "text": "\\( n = \\Delta Q / e = 0.50 / 1.6 \\times 10^{-19} = 3.125 \\times 10^{18} \\) electrons per second."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 2
                 },
                 {
                   "question_html": "<p>If 180 C of charge passes through a wire in 1 minute, what is the current in amperes?</p>",
@@ -4144,7 +4245,8 @@
                       "text": "\\( I = \\Delta Q / \\Delta t = 180/60 = 3 \\) A."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 3
                 }
               ]
             },
@@ -4194,7 +4296,8 @@
                       "text": "\\( = 10/4.08 \\times 10^4 = 2.45 \\times 10^{-4} \\approx 2.5 \\times 10^{-4} \\) m/s."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 0
                 },
                 {
                   "question_html": "<p>A battery delivers a constant current of 0.80 A for 2.5 hours. How much total charge (in coulombs) does it deliver?</p>",
@@ -4217,7 +4320,8 @@
                       "text": "\\( t = 2.5 \\times 3600 = 9000 \\) s. \\( Q = It = (0.80)(9000) = 7200 \\) C."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 1
                 }
               ]
             }
@@ -4285,7 +4389,8 @@
                       "text": "\\( I = \\mathcal{E}/(R + r) = 9.0/(4.0 + 0.50) = 2.0 \\) A."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 0
                 },
                 {
                   "question_html": "<p>What is the terminal voltage of the battery in the previous problem?</p>",
@@ -4328,7 +4433,8 @@
                       "text": "The remaining 1.0 V is \"lost\" as heat inside the battery."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 1
                 },
                 {
                   "question_html": "<p>A 6.0 V battery with negligible internal resistance is connected to a 12 Ω resistor. What is the current, in amperes?</p>",
@@ -4351,7 +4457,8 @@
                       "text": "\\( I = V/R = 6.0/12 = 0.50 \\) A."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 2
                 },
                 {
                   "question_html": "<p>A circuit consists of a switch, a battery, and a light bulb. The switch is open. Is current flowing through the bulb?</p>",
@@ -4374,7 +4481,8 @@
                       "text": "An open switch breaks the circuit. Current requires a complete, closed loop to flow. No current flows."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 3
                 }
               ]
             },
@@ -4424,7 +4532,8 @@
                       "text": "\\( r = (\\mathcal{E} - V_{\\text{terminal}})/I = (12.0 - 10.0)/2.0 = 1.0 \\) Ω."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 0
                 },
                 {
                   "question_html": "<p>A 9.0 V battery with internal resistance 0.30 Ω delivers 3.0 A. What fraction of the total power is dissipated internally?</p>",
@@ -4450,7 +4559,8 @@
                       "text": "Fraction = \\( 2.7/27 = 0.10 \\) or 10%."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 1
                 }
               ]
             }
@@ -4517,7 +4627,8 @@
                       "text": "\\( R = V/I = 12/3.0 = 4.0 \\) Ω."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 0
                 },
                 {
                   "question_html": "<p>A copper wire has a resistivity of \\( 1.7 \\times 10^{-8} \\) Ω·m, length 2.0 m, and cross-sectional area \\( 1.0 \\times 10^{-6} \\) m². What is its resistance?</p>",
@@ -4557,7 +4668,8 @@
                       "text": "\\( R = \\rho L/A = (1.7 \\times 10^{-8})(2.0)/(1.0 \\times 10^{-6}) = 0.034 \\) Ω."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 1
                 },
                 {
                   "question_html": "<p>What current flows through a 100 Ω resistor connected to a 9.0 V battery? Give your answer in amperes.</p>",
@@ -4580,7 +4692,8 @@
                       "text": "\\( I = V/R = 9.0/100 = 0.090 \\) A = 90 mA."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 2
                 },
                 {
                   "question_html": "<p>A wire of length \\( L \\) and cross-sectional area \\( A \\) has resistance \\( R \\). If the wire is stretched to twice its original length (keeping volume constant), what is the new resistance?</p>",
@@ -4606,7 +4719,8 @@
                       "text": "\\( R' = \\rho(2L)/(A/2) = 4 \\rho L/A = 4R \\)."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 3
                 }
               ]
             },
@@ -4653,7 +4767,8 @@
                       "text": "\\( R_A/R_B = (\\rho \\cdot 2L / 3A) / (\\rho \\cdot L / A) = 2/3 \\)."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 0
                 },
                 {
                   "question_html": "<p>A nichrome wire (\\( \\rho = 1.1 \\times 10^{-6} \\) Ω·m) is used in a heater. If the wire is 5.0 m long and has a diameter of 0.50 mm, what is its resistance? Round to the nearest ohm.</p>",
@@ -4696,7 +4811,8 @@
                       "text": "\\( R = \\rho L/A = (1.1 \\times 10^{-6})(5.0)/(1.96 \\times 10^{-7}) = 28 \\) Ω."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 1
                 },
                 {
                   "question_html": "<p>A student measures the voltage across and current through a device at several settings. The V-I data is: (2V, 0.1A), (4V, 0.2A), (6V, 0.3A), (8V, 0.4A). Is this device ohmic? What is its resistance?</p>",
@@ -4722,7 +4838,8 @@
                       "text": "\\( R = 20 \\) Ω."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 2
                 },
                 {
                   "question_html": "<p>A wire of resistivity \\( \\rho \\), length \\( L \\), and radius \\( r \\) has resistance \\( R \\). A second wire of the same material has length \\( 2L \\) and radius \\( 2r \\). Derive the resistance of the second wire in terms of \\( R \\), and explain how both length and radius affect resistance.</p>",
@@ -4754,7 +4871,8 @@
                     }
                   ],
                   "access_tier": "premium",
-                  "correct_answer": "R₁ = ρL/(πr²). R₂ = ρ(2L)/(π(2r)²) = 2ρL/(4πr²) = ρL/(2πr²) = R/2. Doubling the length doubles resistance, but doubling the radius quadruples the area, which quarters the resistance. Net effect: R₂ = R/2."
+                  "correct_answer": "R₁ = ρL/(πr²). R₂ = ρ(2L)/(π(2r)²) = 2ρL/(4πr²) = ρL/(2πr²) = R/2. Doubling the length doubles resistance, but doubling the radius quadruples the area, which quarters the resistance. Net effect: R₂ = R/2.",
+                  "display_order": 3
                 }
               ]
             }
@@ -4821,7 +4939,8 @@
                       "text": "\\( I = P/V = 60/120 = 0.50 \\) A."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 0
                 },
                 {
                   "question_html": "<p>A 10 Ω resistor carries a current of 3.0 A. How much power does it dissipate?</p>",
@@ -4861,7 +4980,8 @@
                       "text": "\\( P = I^2R = (3.0)^2(10) = 90 \\) W."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 1
                 },
                 {
                   "question_html": "<p>A 1500 W heater runs for 2 hours. How much energy does it consume, in kWh?</p>",
@@ -4884,7 +5004,8 @@
                       "text": "\\( E = Pt = (1.5 \\text{ kW})(2 \\text{ h}) = 3 \\) kWh."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 2
                 },
                 {
                   "question_html": "<p>A 200 Ω resistor is connected to a 100 V source. What power does it dissipate, in watts?</p>",
@@ -4907,7 +5028,8 @@
                       "text": "\\( P = V^2/R = 10000/200 = 50 \\) W."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 3
                 }
               ]
             },
@@ -4960,7 +5082,8 @@
                       "text": "The 12 Ω resistor dissipates 27 W — in series, larger \\( R \\) gets more power."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 0
                 },
                 {
                   "question_html": "<p>Two resistors, 4 Ω and 12 Ω, are connected in parallel to a 24 V battery. Which dissipates more power?</p>",
@@ -5003,7 +5126,8 @@
                       "text": "\\( P_4 = 576/4 = 144 \\) W. \\( P_{12} = 576/12 = 48 \\) W. The 4 Ω resistor gets three times the power."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 1
                 },
                 {
                   "question_html": "<p>A household circuit breaker trips at 15 A. If the circuit operates at 120 V, what is the maximum power (in watts) that can be drawn from this circuit?</p>",
@@ -5026,7 +5150,8 @@
                       "text": "\\( P_{\\text{max}} = I_{\\text{max}} V = (15)(120) = 1800 \\) W = 1.8 kW."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 2
                 },
                 {
                   "question_html": "<p>A student connects a resistor to a variable power supply. At 6 V, the current is 0.30 A and the power is 1.8 W. At 12 V, the current is 0.55 A and the power is 6.6 W. (a) Is this resistor ohmic? Justify. (b) Calculate the resistance at each voltage.</p>",
@@ -5061,7 +5186,8 @@
                     }
                   ],
                   "access_tier": "premium",
-                  "correct_answer": "(a) R at 6V = V/I = 6/0.30 = 20 Ω. R at 12V = 12/0.55 = 21.8 Ω. Since R changes, the device is NOT perfectly ohmic (though close). An ohmic device has constant R. (b) R₁ = 20 Ω at 6 V; R₂ ≈ 21.8 Ω at 12 V."
+                  "correct_answer": "(a) R at 6V = V/I = 6/0.30 = 20 Ω. R at 12V = 12/0.55 = 21.8 Ω. Since R changes, the device is NOT perfectly ohmic (though close). An ohmic device has constant R. (b) R₁ = 20 Ω at 6 V; R₂ ≈ 21.8 Ω at 12 V.",
+                  "display_order": 3
                 }
               ]
             }
@@ -5129,7 +5255,8 @@
                       "text": "\\( R_{\\text{eq}} = 2 + 3 + 5 = 10 \\) Ω."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 0
                 },
                 {
                   "question_html": "<p>Two resistors, 6 Ω and 3 Ω, are connected in parallel. What is the equivalent resistance?</p>",
@@ -5169,7 +5296,8 @@
                       "text": "\\( R_{\\text{eq}} = R_1 R_2/(R_1 + R_2) = (6)(3)/9 = 2 \\) Ω."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 1
                 },
                 {
                   "question_html": "<p>A 4 Ω resistor is in series with a parallel combination of 6 Ω and 12 Ω. What is the total equivalent resistance, in Ω?</p>",
@@ -5195,7 +5323,8 @@
                       "text": "Total: \\( R_{\\text{eq}} = 4 + 4 = 8 \\) Ω."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 2
                 },
                 {
                   "question_html": "<p>In the circuit above (4 Ω in series with 6 Ω ∥ 12 Ω), connected to a 24 V battery, what is the current through the 6 Ω resistor, in amperes?</p>",
@@ -5224,7 +5353,8 @@
                       "text": "Current through 6 Ω: \\( I_6 = V_p/R_6 = 12/6 = 2 \\) A. (Check: \\( I_{12} = 12/12 = 1 \\) A. Total: \\( 2 + 1 = 3 \\) A ✓)"
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 3
                 }
               ]
             },
@@ -5274,7 +5404,8 @@
                       "text": "\\( I = V/R = 12/18 = 0.67 \\) A."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 0
                 },
                 {
                   "question_html": "<p>A circuit has a 10 Ω and a 15 Ω resistor in parallel. This combination is in series with a 4 Ω resistor and a 30 V battery. What is the voltage across the parallel combination?</p>",
@@ -5320,7 +5451,8 @@
                       "text": "\\( V_p = IR_p = (3.0)(6) = 18 \\) V."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 1
                 },
                 {
                   "question_html": "<p>A light bulb rated at 100 W, 120 V is connected to a 120 V source. A second identical bulb is then connected in series with the first (still 120 V source). Does each bulb get brighter or dimmer compared to a single bulb? Explain.</p>",
@@ -5366,7 +5498,8 @@
                       "text": "Each bulb: \\( P = I^2R = (0.417)^2(144) = 25 \\) W. Much dimmer (25 W vs 100 W)."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "premium",
+                  "display_order": 2
                 },
                 {
                   "question_html": "<p>In a circuit, a voltmeter reads 8.0 V across a 20 Ω resistor. What is the current through the resistor, in amperes?</p>",
@@ -5389,7 +5522,8 @@
                       "text": "\\( I = V/R = 8.0/20 = 0.40 \\) A."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 3
                 },
                 {
                   "question_html": "<p>A 48 V battery is connected to three resistors: \\( R_1 = 8 \\) Ω in series with a parallel combination of \\( R_2 = 12 \\) Ω and \\( R_3 = 24 \\) Ω. Determine the current through each resistor and the power dissipated by \\( R_2 \\).</p>",
@@ -5427,7 +5561,8 @@
                     }
                   ],
                   "access_tier": "premium",
-                  "correct_answer": "R_p = (12)(24)/(12+24) = 288/36 = 8 Ω. R_eq = 8 + 8 = 16 Ω. I_total = 48/16 = 3 A through R₁. V_p = I×R_p = 3×8 = 24 V. I₂ = 24/12 = 2 A. I₃ = 24/24 = 1 A. P₂ = I₂²R₂ = (2)²(12) = 48 W."
+                  "correct_answer": "R_p = (12)(24)/(12+24) = 288/36 = 8 Ω. R_eq = 8 + 8 = 16 Ω. I_total = 48/16 = 3 A through R₁. V_p = I×R_p = 3×8 = 24 V. I₂ = 24/12 = 2 A. I₃ = 24/24 = 1 A. P₂ = I₂²R₂ = (2)²(12) = 48 W.",
+                  "display_order": 4
                 }
               ]
             }
@@ -5498,7 +5633,8 @@
                       "text": "\\( 12 = 12I \\), so \\( I = 1.0 \\) A."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 0
                 },
                 {
                   "question_html": "<p>A loop contains a 9 V battery and a 6 V battery (opposing each other) with a 6 Ω resistor. What is the current?</p>",
@@ -5541,7 +5677,8 @@
                       "text": "\\( 3 = 6I \\), so \\( I = 0.50 \\) A."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 1
                 },
                 {
                   "question_html": "<p>A circuit loop contains a 20 V battery and three resistors. The voltage drops across two of them are 8 V and 5 V. What is the voltage drop across the third resistor, in volts?</p>",
@@ -5564,7 +5701,8 @@
                       "text": "\\( \\mathcal{E} = V_1 + V_2 + V_3 \\). \\( V_3 = 20 - 8 - 5 = 7 \\) V."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 2
                 },
                 {
                   "question_html": "<p>In a single-loop circuit with a 15 V battery and three resistors in series (3 Ω, 5 Ω, 7 Ω), what is the voltage drop across the 5 Ω resistor, in volts?</p>",
@@ -5590,7 +5728,8 @@
                       "text": "Check: \\( V_3 + V_5 + V_7 = 3 + 5 + 7 = 15 \\) V = EMF ✓."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 3
                 }
               ]
             },
@@ -5637,7 +5776,8 @@
                       "text": "Loop: \\( +12 + 8 - 10I = 0 \\). \\( I = 20/10 = 2.0 \\) A."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 0
                 },
                 {
                   "question_html": "<p>A circuit has two loops sharing a common resistor. The left loop has a 10 V battery and resistors 2 Ω and 3 Ω (the shared one). The right loop has a 6 V battery and resistors 3 Ω (shared) and 4 Ω. Using the loop rule for the left loop (assuming current \\( I_1 \\) through the left and \\( I_2 \\) through the right), write the loop equation.</p>",
@@ -5680,7 +5820,8 @@
                       "text": "The shared resistor carries \\( I_1 - I_2 \\) because both loop currents pass through it but in potentially different directions."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 1
                 },
                 {
                   "question_html": "<p>A single loop has a 24 V battery with internal resistance 1 Ω and an external resistance of 11 Ω. What voltage does a voltmeter read across the battery terminals?</p>",
@@ -5706,7 +5847,8 @@
                       "text": "Terminal voltage: \\( V = \\mathcal{E} - Ir = 24 - 2(1) = 22 \\) V."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 2
                 },
                 {
                   "question_html": "<p>A circuit has two batteries (\\( \\mathcal{E}_1 = 18 \\) V, \\( r_1 = 1 \\) Ω and \\( \\mathcal{E}_2 = 12 \\) V, \\( r_2 = 2 \\) Ω) opposing each other, with an external resistor \\( R = 3 \\) Ω. Use the loop rule to find the current and determine which battery is charging.</p>",
@@ -5741,7 +5883,8 @@
                     }
                   ],
                   "access_tier": "premium",
-                  "correct_answer": "Loop: +18 − 1·I − 3·I − 12 − 2·I = 0 → 6 = 6I → I = 1.0 A. Current flows from the 18 V battery through the circuit. The 12 V battery is being charged (current enters its positive terminal)."
+                  "correct_answer": "Loop: +18 − 1·I − 3·I − 12 − 2·I = 0 → 6 = 6I → I = 1.0 A. Current flows from the 18 V battery through the circuit. The 12 V battery is being charged (current enters its positive terminal).",
+                  "display_order": 3
                 }
               ]
             }
@@ -5809,7 +5952,8 @@
                       "text": "\\( I_{\\text{in}} = I_1 + I_2 \\). \\( 5.0 = 3.0 + I_2 \\). \\( I_2 = 2.0 \\) A."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 0
                 },
                 {
                   "question_html": "<p>Three wires meet at a junction. Wire A carries 4 A into the junction, Wire B carries 6 A into the junction. What current flows out through Wire C?</p>",
@@ -5849,7 +5993,8 @@
                       "text": "\\( I_C = I_A + I_B = 4 + 6 = 10 \\) A flowing out of the junction."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 1
                 },
                 {
                   "question_html": "<p>A 12 A current splits into two parallel branches. One branch has 4 Ω and the other has 12 Ω. What current flows through the 4 Ω branch?</p>",
@@ -5875,7 +6020,8 @@
                       "text": "Check: \\( I_{12\\Omega} = 12 \\times 4/16 = 3 \\) A. Total: \\( 9 + 3 = 12 \\) A ✓."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 2
                 },
                 {
                   "question_html": "<p>At a junction, three currents meet: 2 A flows in, 5 A flows in, and an unknown current \\( I_3 \\) flows out. A fourth wire also exits with 3 A. What is \\( I_3 \\)?</p>",
@@ -5898,7 +6044,8 @@
                       "text": "\\( 2 + 5 = I_3 + 3 \\). \\( 7 = I_3 + 3 \\). \\( I_3 = 4 \\) A."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 3
                 }
               ]
             },
@@ -5948,7 +6095,8 @@
                       "text": "By junction rule: \\( I_{\\text{total}} = 6 + 3 + 2 = 11 \\) A."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 0
                 },
                 {
                   "question_html": "<p>In a Wheatstone bridge, if \\( R_1 = 100 \\) Ω, \\( R_2 = 200 \\) Ω, \\( R_3 = 300 \\) Ω, and \\( R_4 \\) is unknown, what value of \\( R_4 \\) balances the bridge (zero current through the galvanometer)?</p>",
@@ -5991,7 +6139,8 @@
                       "text": "\\( R_4 = R_2 R_3/R_1 = (200)(300)/100 = 600 \\) Ω."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 1
                 },
                 {
                   "question_html": "<p>Two 6 Ω resistors are in parallel, and this combination is in series with a 3 Ω resistor. If the total current from the battery is 4 A, what is the current through each 6 Ω resistor?</p>",
@@ -6017,7 +6166,8 @@
                       "text": "Each carries \\( 4/2 = 2 \\) A."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 2
                 },
                 {
                   "question_html": "<p>A circuit has a 24 V battery and three branches in parallel: Branch A has 8 Ω, Branch B has 12 Ω, and Branch C has 24 Ω. Using both Kirchhoff's rules, find the current in each branch and verify that the junction rule is satisfied.</p>",
@@ -6052,7 +6202,8 @@
                     }
                   ],
                   "access_tier": "premium",
-                  "correct_answer": "Each branch has 24 V across it. I_A = 24/8 = 3 A. I_B = 24/12 = 2 A. I_C = 24/24 = 1 A. Junction: I_total = 3 + 2 + 1 = 6 A entering = 6 A leaving ✓. Loop check: 24 - 8(3) = 24 - 24 = 0 ✓."
+                  "correct_answer": "Each branch has 24 V across it. I_A = 24/8 = 3 A. I_B = 24/12 = 2 A. I_C = 24/24 = 1 A. Junction: I_total = 3 + 2 + 1 = 6 A entering = 6 A leaving ✓. Loop check: 24 - 8(3) = 24 - 24 = 0 ✓.",
+                  "display_order": 3
                 }
               ]
             }
@@ -6121,7 +6272,8 @@
                       "text": "\\( \\tau = RC = (1000)(500 \\times 10^{-6}) = 0.50 \\) s."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 0
                 },
                 {
                   "question_html": "<p>An uncharged capacitor is connected in series with a resistor and a battery. At \\( t = 0 \\), what is the current?</p>",
@@ -6164,7 +6316,8 @@
                       "text": "The full EMF drives current through \\( R \\): \\( I_0 = \\mathcal{E}/R \\) (maximum current)."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 1
                 },
                 {
                   "question_html": "<p>After a very long time, a charging RC circuit reaches steady state. What is the current through the circuit?</p>",
@@ -6190,7 +6343,8 @@
                       "text": "No potential difference remains to drive current, so \\( I = 0 \\)."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 2
                 },
                 {
                   "question_html": "<p>If the resistance in an RC circuit is doubled, how does the time constant change?</p>",
@@ -6213,7 +6367,8 @@
                       "text": "\\( \\tau = RC \\). Doubling \\( R \\): \\( \\tau' = 2RC = 2\\tau \\). The time constant doubles, meaning the circuit charges/discharges more slowly."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 3
                 }
               ]
             },
@@ -6263,7 +6418,8 @@
                       "text": "After one time constant (\\( \\tau = RC = 0.20 \\) s), the capacitor has charged to \\( 1 - 1/e \\approx 63\\% \\) of \\( \\mathcal{E} \\)."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 0
                 },
                 {
                   "question_html": "<p>A charged RC circuit is discharging. The initial voltage is 24 V and the time constant is 2.0 s. After 2.0 seconds, approximately what percentage of the initial voltage remains on the capacitor?</p>",
@@ -6306,7 +6462,8 @@
                       "text": "About 37% of the initial voltage remains (\\( \\approx 8.8 \\) V out of 24 V)."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 1
                 },
                 {
                   "question_html": "<p>A fully charged 50 μF capacitor at 20 V is discharged through a 4000 Ω resistor. After how many time constants has the voltage dropped to about 5 V?</p>",
@@ -6349,7 +6506,8 @@
                       "text": "\\( t/\\tau = \\ln(4) \\approx 1.39 \\). About 1.4 time constants."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "premium",
+                  "display_order": 2
                 },
                 {
                   "question_html": "<p>An RC circuit has \\( R = 5000 \\) Ω and \\( C = 200 \\) μF. What is the time constant in seconds?</p>",
@@ -6372,7 +6530,8 @@
                       "text": "\\( \\tau = RC = (5000)(200 \\times 10^{-6}) = 1.0 \\) s."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 3
                 },
                 {
                   "question_html": "<p>An uncharged 100 μF capacitor is connected to a 12 V battery through a 10 kΩ resistor. (a) What is the time constant? (b) Describe qualitatively how the current and voltage across the capacitor change with time. (c) What is the energy stored in the capacitor when fully charged?</p>",
@@ -6407,7 +6566,8 @@
                     }
                   ],
                   "access_tier": "premium",
-                  "correct_answer": "(a) τ = RC = (10000)(100 × 10⁻⁶) = 1.0 s. (b) At t = 0: current is maximum (I₀ = 12/10000 = 1.2 mA), V_C = 0. Over time, current decreases exponentially while V_C increases exponentially toward 12 V. After ~5τ = 5 s, current ≈ 0 and V_C ≈ 12 V. (c) U = ½CV² = ½(100 × 10⁻⁶)(12)² = 7.2 × 10⁻³ J = 7.2 mJ."
+                  "correct_answer": "(a) τ = RC = (10000)(100 × 10⁻⁶) = 1.0 s. (b) At t = 0: current is maximum (I₀ = 12/10000 = 1.2 mA), V_C = 0. Over time, current decreases exponentially while V_C increases exponentially toward 12 V. After ~5τ = 5 s, current ≈ 0 and V_C ≈ 12 V. (c) U = ½CV² = ½(100 × 10⁻⁶)(12)² = 7.2 × 10⁻³ J = 7.2 mJ.",
+                  "display_order": 4
                 }
               ]
             }
@@ -6485,7 +6645,8 @@
                       "text": "Inside the magnet, they travel from south to north, forming continuous closed loops."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 0
                 },
                 {
                   "question_html": "<p>Which statement about magnetic monopoles is correct?</p>",
@@ -6528,7 +6689,8 @@
                       "text": "Cutting a magnet in half creates two complete magnets, not isolated poles. No magnetic monopole has ever been observed."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 1
                 },
                 {
                   "question_html": "<p>The SI unit of magnetic field strength is the:</p>",
@@ -6551,7 +6713,8 @@
                       "text": "The SI unit of magnetic field \\( B \\) is the <strong>tesla</strong> (T), named after Nikola Tesla."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 2
                 },
                 {
                   "question_html": "<p>Earth's magnetic field at the surface is approximately \\( 5 \\times 10^{-5} \\) T. Express this in microtesla (μT).</p>",
@@ -6574,7 +6737,8 @@
                       "text": "\\( 5 \\times 10^{-5} \\) T \\( = 50 \\times 10^{-6} \\) T \\( = 50 \\) μT."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 3
                 }
               ]
             },
@@ -6624,7 +6788,8 @@
                       "text": "This means the compass N points away from the bar magnet's N pole (and toward the bar magnet's S pole)."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 0
                 },
                 {
                   "question_html": "<p>How do magnetic field lines differ from electric field lines? Select the correct statement.</p>",
@@ -6667,7 +6832,8 @@
                       "text": "Magnetic monopoles don't exist, so \\( \\vec{B} \\) lines always form continuous closed loops."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 1
                 }
               ]
             }
@@ -6738,7 +6904,8 @@
                       "text": "\\( F = qvB\\sin 0° = 0 \\). No magnetic force when moving parallel to the field."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 0
                 },
                 {
                   "question_html": "<p>A proton moves at \\( 3.0 \\times 10^6 \\) m/s perpendicular to a 0.50 T magnetic field. What is the magnitude of the magnetic force on the proton? (\\( q_p = 1.6 \\times 10^{-19} \\) C)</p>",
@@ -6781,7 +6948,8 @@
                       "text": "\\( F = 2.4 \\times 10^{-13} \\) N."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 1
                 },
                 {
                   "question_html": "<p>Does the magnetic force on a moving charged particle do work? Explain why or why not.</p>",
@@ -6807,7 +6975,8 @@
                       "text": "Since \\( W = Fd\\cos\\theta \\) and \\( \\theta = 90° \\), \\( W = 0 \\). Speed and KE remain constant."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 2
                 },
                 {
                   "question_html": "<p>A proton moves at \\( 1.0 \\times 10^6 \\) m/s perpendicular to a 0.20 T field. What is the radius of its circular path, in centimeters? (\\( m_p = 1.67 \\times 10^{-27} \\) kg, \\( e = 1.6 \\times 10^{-19} \\) C)</p>",
@@ -6836,7 +7005,8 @@
                       "text": "\\( r = 0.052 \\) m = 5.2 cm."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 3
                 }
               ]
             },
@@ -6886,7 +7056,8 @@
                       "text": "\\( r_\\alpha/r_p = (4m_p/2e)/(m_p/e) = (4/2)/(1/1) = 2 \\)."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 0
                 },
                 {
                   "question_html": "<p>An electron moves at \\( 2.0 \\times 10^7 \\) m/s at 30° to a 0.10 T magnetic field. What is the magnetic force on the electron?</p>",
@@ -6929,7 +7100,8 @@
                       "text": "\\( F = (1.6 \\times 10^{-19})(2.0 \\times 10^7)(0.10)(0.50) = 1.6 \\times 10^{-13} \\) N."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 1
                 },
                 {
                   "question_html": "<p>A proton moves at \\( 4.0 \\times 10^6 \\) m/s perpendicular to a 0.80 T field. What is the period of its circular motion, in seconds? (\\( m_p = 1.67 \\times 10^{-27} \\) kg)</p>",
@@ -6955,7 +7127,8 @@
                       "text": "\\( T = \\frac{1.049 \\times 10^{-26}}{1.28 \\times 10^{-19}} = 8.2 \\times 10^{-8} \\) s."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 2
                 },
                 {
                   "question_html": "<p>A charged particle enters a region of uniform magnetic field and follows the semicircular path shown. The particle enters from the left moving to the right, curves upward, and exits moving to the left. The field points into the page. Determine the sign of the charge and explain your reasoning.</p>",
@@ -6990,7 +7163,8 @@
                     }
                   ],
                   "access_tier": "premium",
-                  "correct_answer": "Using the right-hand rule: point fingers to the right (velocity), curl into the page (B field). The thumb points upward. Since the force is upward (matching the observed curve), the charge must be positive. If the charge were negative, the force would be downward."
+                  "correct_answer": "Using the right-hand rule: point fingers to the right (velocity), curl into the page (B field). The thumb points upward. Since the force is upward (matching the observed curve), the charge must be positive. If the charge were negative, the force would be downward.",
+                  "display_order": 3
                 }
               ]
             }
@@ -7061,7 +7235,8 @@
                       "text": "Parallel wires with same-direction currents attract each other."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 0
                 },
                 {
                   "question_html": "<p>A 0.50 m wire carrying 3.0 A of current is placed perpendicular to a 0.40 T magnetic field. What is the force on the wire?</p>",
@@ -7101,7 +7276,8 @@
                       "text": "\\( F = BIL\\sin 90° = (0.40)(3.0)(0.50)(1) = 0.60 \\) N."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 1
                 },
                 {
                   "question_html": "<p>What is the magnetic field 0.10 m from a long straight wire carrying 5.0 A? (\\( \\mu_0 = 4\\pi \\times 10^{-7} \\) T·m/A). Give your answer in microtesla (μT).</p>",
@@ -7127,7 +7303,8 @@
                       "text": "\\( B = \\frac{20\\pi \\times 10^{-7}}{0.2\\pi} = \\frac{20 \\times 10^{-7}}{0.2} = 1.0 \\times 10^{-5} \\) T = 10 μT."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 2
                 },
                 {
                   "question_html": "<p>A solenoid has 200 turns, is 0.25 m long, and carries 4.0 A. What is the magnetic field inside the solenoid, in millitesla (mT)?</p>",
@@ -7153,7 +7330,8 @@
                       "text": "\\( B = \\mu_0 n I = (4\\pi \\times 10^{-7})(800)(4.0) = 4.02 \\times 10^{-3} \\) T ≈ 4.0 mT."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 3
                 }
               ]
             },
@@ -7203,7 +7381,8 @@
                       "text": "\\( F = (0.30)(0.866) = 0.26 \\) N."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 0
                 },
                 {
                   "question_html": "<p>Two parallel wires separated by 0.20 m each carry 10 A in opposite directions. What is the force per meter between them? Is it attractive or repulsive?</p>",
@@ -7249,7 +7428,8 @@
                       "text": "Opposite-direction currents repel, so the force is \\( 1.0 \\times 10^{-4} \\) N/m, repulsive."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 1
                 },
                 {
                   "question_html": "<p>At what distance from a long straight wire carrying 8.0 A is the magnetic field equal to \\( 4.0 \\times 10^{-5} \\) T? Give your answer in meters.</p>",
@@ -7275,7 +7455,8 @@
                       "text": "\\( r = \\frac{32\\pi \\times 10^{-7}}{8\\pi \\times 10^{-5}} = \\frac{32 \\times 10^{-7}}{8 \\times 10^{-5}} = 4.0 \\times 10^{-2} \\) m = 0.04 m."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 2
                 },
                 {
                   "question_html": "<p>A horizontal wire of mass 0.050 kg and length 0.40 m carries a current in a region where the magnetic field is 0.30 T directed horizontally. What current is needed to levitate the wire (magnetic force balances gravity)? (\\( g = 9.8 \\) m/s²)</p>",
@@ -7310,7 +7491,8 @@
                     }
                   ],
                   "access_tier": "premium",
-                  "correct_answer": "For levitation, the upward magnetic force must equal the downward weight: F_B = mg. BIL = mg, so I = mg/(BL) = (0.050)(9.8)/[(0.30)(0.40)] = 0.49/0.12 = 4.1 A. The current must flow in a direction such that the right-hand rule gives an upward force."
+                  "correct_answer": "For levitation, the upward magnetic force must equal the downward weight: F_B = mg. BIL = mg, so I = mg/(BL) = (0.050)(9.8)/[(0.30)(0.40)] = 0.49/0.12 = 4.1 A. The current must flow in a direction such that the right-hand rule gives an upward force.",
+                  "display_order": 3
                 }
               ]
             }
@@ -7382,7 +7564,8 @@
                       "text": "\\( \\Phi_B = BA\\cos 0° = (0.50)(0.0314)(1) = 0.016 \\) Wb."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 0
                 },
                 {
                   "question_html": "<p>A magnetic field through a 50-turn coil changes from 0.40 T to 0.10 T in 0.20 s. The coil has an area of 0.030 m². What is the magnitude of the induced EMF?</p>",
@@ -7425,7 +7608,8 @@
                       "text": "\\( |\\mathcal{E}| = N\\frac{|\\Delta\\Phi_B|}{\\Delta t} = 50 \\times \\frac{0.009}{0.20} = 2.25 \\) V."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 1
                 },
                 {
                   "question_html": "<p>A loop of wire is in a constant, uniform magnetic field. No EMF is induced because:</p>",
@@ -7451,7 +7635,8 @@
                       "text": "A constant flux — no matter how large — produces no induced EMF. Only a <em>changing</em> flux induces EMF."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 2
                 },
                 {
                   "question_html": "<p>A north pole of a bar magnet is pushed toward a conducting loop. By Lenz's law, the induced current in the loop (as viewed from the magnet's side) flows:</p>",
@@ -7480,7 +7665,8 @@
                       "text": "Right-hand rule: current flows counterclockwise as seen from the magnet's side."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 3
                 }
               ]
             },
@@ -7533,7 +7719,8 @@
                       "text": "South pole (loop) facing north pole (magnet) → attraction. The loop tries to keep the magnet from leaving."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 0
                 },
                 {
                   "question_html": "<p>A square loop (side 0.20 m) is pulled at constant velocity out of a region of uniform magnetic field \\( B = 0.80 \\) T (perpendicular to the loop). The loop has resistance 2.0 Ω. If it takes 0.10 s for the loop to exit the field, what is the induced current?</p>",
@@ -7579,7 +7766,8 @@
                       "text": "\\( I = \\mathcal{E}/R = 0.32/2.0 = 0.16 \\) A."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 1
                 },
                 {
                   "question_html": "<p>A 200-turn coil with area 0.05 m² is in a field that changes from 0 to 0.60 T in 0.30 s. If the coil has a resistance of 10 Ω, what is the average induced current?</p>",
@@ -7625,7 +7813,8 @@
                       "text": "\\( I = \\mathcal{E}/R = 20/10 = 2.0 \\) A."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "premium",
+                  "display_order": 2
                 },
                 {
                   "question_html": "<p>A conducting rod of length 0.50 m slides at 4.0 m/s along frictionless rails in a 0.30 T field (perpendicular to the plane of the rails). What is the induced EMF, in volts?</p>",
@@ -7651,7 +7840,8 @@
                       "text": "\\( \\mathcal{E} = BLv = (0.30)(0.50)(4.0) = 0.60 \\) V."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 3
                 },
                 {
                   "question_html": "<p>A bar magnet is dropped through a vertical conducting tube. The magnet falls much slower than it would in free fall. Explain why, using Faraday's and Lenz's laws.</p>",
@@ -7689,7 +7879,8 @@
                     }
                   ],
                   "access_tier": "premium",
-                  "correct_answer": "As the magnet falls, the magnetic flux through each cross-section of the tube changes. By Faraday's law, this changing flux induces circular (eddy) currents in the tube walls. By Lenz's law, these induced currents create magnetic fields that oppose the change in flux — which means they oppose the magnet's motion. The resulting force acts upward on the falling magnet, creating a braking effect. The magnet reaches a terminal velocity where this magnetic braking force equals gravity."
+                  "correct_answer": "As the magnet falls, the magnetic flux through each cross-section of the tube changes. By Faraday's law, this changing flux induces circular (eddy) currents in the tube walls. By Lenz's law, these induced currents create magnetic fields that oppose the change in flux — which means they oppose the magnet's motion. The resulting force acts upward on the falling magnet, creating a braking effect. The magnet reaches a terminal velocity where this magnetic braking force equals gravity.",
+                  "display_order": 4
                 }
               ]
             }
@@ -7765,7 +7956,8 @@
                       "text": "By the law of reflection: \\( \\theta_r = \\theta_i = 35° \\)."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 0
                 },
                 {
                   "question_html": "<p>A light ray hits a mirror at 20° from the surface (not from the normal). What is the angle of reflection from the normal?</p>",
@@ -7808,7 +8000,8 @@
                       "text": "By law of reflection: \\( \\theta_r = \\theta_i = 70° \\)."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 1
                 },
                 {
                   "question_html": "<p>You stand 2.0 m in front of a plane mirror. How far behind the mirror does your image appear, in meters?</p>",
@@ -7834,7 +8027,8 @@
                       "text": "Image is 2.0 m behind the mirror (total apparent distance from you to your image = 4.0 m)."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 2
                 },
                 {
                   "question_html": "<p>Which type of reflection produces a clear image — specular or diffuse?</p>",
@@ -7857,7 +8051,8 @@
                       "text": "Specular reflection from smooth surfaces produces clear images because parallel incident rays remain parallel after reflection."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 3
                 }
               ]
             },
@@ -7904,7 +8099,8 @@
                       "text": "A plane mirror produces a virtual, upright image that is the same size as the object, located the same distance behind the mirror."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 0
                 },
                 {
                   "question_html": "<p>Two plane mirrors are placed at 90° to each other. A light ray enters parallel to one mirror and hits the other at 45°. After reflecting off both mirrors, the ray exits:</p>",
@@ -7950,7 +8146,8 @@
                       "text": "The exit ray is antiparallel (180° reversal) to the incoming ray. This is the principle behind retroreflectors."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 1
                 }
               ]
             }
@@ -8019,7 +8216,8 @@
                       "text": "\\( f = R/2 = 40/2 = 20 \\) cm."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 0
                 },
                 {
                   "question_html": "<p>An object is placed 30 cm from a concave mirror with focal length 15 cm. Where does the image form?</p>",
@@ -8062,7 +8260,8 @@
                       "text": "\\( d_i = 30 \\) cm. Positive sign → real image, 30 cm in front of the mirror."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 1
                 },
                 {
                   "question_html": "<p>A convex mirror always produces images that are:</p>",
@@ -8085,7 +8284,8 @@
                       "text": "Convex mirrors always produce virtual, upright, diminished images. The image forms behind the mirror (\\( d_i < 0 \\))."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 2
                 },
                 {
                   "question_html": "<p>For the problem above (object at 30 cm, \\( f = 15 \\) cm concave mirror), what is the magnification?</p>",
@@ -8111,7 +8311,8 @@
                       "text": "\\( |M| = 1 \\): same size. Negative sign: inverted. (Object at \\( 2f \\) → image at \\( 2f \\), inverted, same size.)"
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 3
                 }
               ]
             },
@@ -8164,7 +8365,8 @@
                       "text": "\\( M = -d_i/d_o = -(-30)/10 = +3 \\). Upright (positive) and magnified 3×. This is how a makeup mirror works."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 0
                 },
                 {
                   "question_html": "<p>A convex mirror has a focal length of −20 cm. An object is placed 60 cm from the mirror. What is the image distance, in cm?</p>",
@@ -8207,7 +8409,8 @@
                       "text": "\\( d_i = -15 \\) cm. Negative → virtual image, 15 cm behind the mirror."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 1
                 },
                 {
                   "question_html": "<p>An object is placed 45 cm from a concave mirror with \\( f = 15 \\) cm. What is the image distance, in cm?</p>",
@@ -8233,7 +8436,8 @@
                       "text": "\\( d_i = 45/2 = 22.5 \\) cm. Positive → real image, in front of the mirror."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 2
                 },
                 {
                   "question_html": "<p>A 5.0 cm tall object is placed 20 cm from a concave mirror with focal length 10 cm. Determine the image distance, image height, and whether the image is real or virtual, upright or inverted.</p>",
@@ -8271,7 +8475,8 @@
                     }
                   ],
                   "access_tier": "premium",
-                  "correct_answer": "1/d_i = 1/f − 1/d_o = 1/10 − 1/20 = 1/20. d_i = 20 cm (positive → real, in front). M = −d_i/d_o = −20/20 = −1. h_i = M × h_o = (−1)(5.0) = −5.0 cm. The image is real, inverted, and the same size as the object."
+                  "correct_answer": "1/d_i = 1/f − 1/d_o = 1/10 − 1/20 = 1/20. d_i = 20 cm (positive → real, in front). M = −d_i/d_o = −20/20 = −1. h_i = M × h_o = (−1)(5.0) = −5.0 cm. The image is real, inverted, and the same size as the object.",
+                  "display_order": 3
                 }
               ]
             }
@@ -8339,7 +8544,8 @@
                       "text": "Entering a denser medium (higher \\( n \\)): light slows down and bends toward the normal."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 0
                 },
                 {
                   "question_html": "<p>Light passes from air (\\( n = 1.00 \\)) into water (\\( n = 1.33 \\)) at an angle of incidence of 45°. What is the angle of refraction?</p>",
@@ -8382,7 +8588,8 @@
                       "text": "\\( \\theta_2 = \\sin^{-1}(0.532) = 32° \\). The light bends toward the normal (entering denser medium)."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 1
                 },
                 {
                   "question_html": "<p>The speed of light in glass is \\( 2.0 \\times 10^8 \\) m/s. What is the index of refraction of this glass?</p>",
@@ -8405,7 +8612,8 @@
                       "text": "\\( n = c/v = (3.0 \\times 10^8)/(2.0 \\times 10^8) = 1.5 \\)."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 2
                 },
                 {
                   "question_html": "<p>What is the critical angle for total internal reflection at a water-air interface? (\\( n_{\\text{water}} = 1.33 \\)). Round to the nearest degree.</p>",
@@ -8431,7 +8639,8 @@
                       "text": "\\( \\theta_c = \\sin^{-1}(0.752) = 48.8° \\approx 49° \\)."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 3
                 }
               ]
             },
@@ -8481,7 +8690,8 @@
                       "text": "At the critical angle, the refracted ray grazes the surface (90°). Beyond it, all light reflects."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 0
                 },
                 {
                   "question_html": "<p>Light passes from glass (\\( n = 1.50 \\)) into water (\\( n = 1.33 \\)) at an angle of incidence of 30°. What is the angle of refraction?</p>",
@@ -8524,7 +8734,8 @@
                       "text": "\\( \\theta_2 = \\sin^{-1}(0.564) = 34° \\). Light bends away from normal (entering less dense medium)."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 1
                 },
                 {
                   "question_html": "<p>What is the critical angle for total internal reflection at a diamond-air interface? (\\( n_{\\text{diamond}} = 2.42 \\)). Round to the nearest degree.</p>",
@@ -8550,7 +8761,8 @@
                       "text": "\\( \\theta_c = \\sin^{-1}(0.413) = 24° \\). The small critical angle means light is easily trapped inside the diamond, creating brilliant sparkle."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 2
                 },
                 {
                   "question_html": "<p>A light ray travels from air into a glass slab (\\( n = 1.50 \\)) at 60° and then exits from the other parallel face back into air. Show that the exiting ray is parallel to the incident ray, and find the lateral displacement if the slab is 2.0 cm thick.</p>",
@@ -8585,7 +8797,8 @@
                     }
                   ],
                   "access_tier": "premium",
-                  "correct_answer": "At entry: n₁sinθ₁ = n₂sinθ₂ → (1.00)(sin60°) = (1.50)(sinθ₂) → sinθ₂ = 0.866/1.50 = 0.577 → θ₂ = 35.3°. At exit (glass→air, same Snell's law in reverse): (1.50)(sin35.3°) = (1.00)(sinθ₃) → sinθ₃ = 0.866 → θ₃ = 60°. The exit angle equals the entry angle, so the ray is parallel to the original. Lateral displacement: d = t × sin(θ₁ − θ₂)/cosθ₂ = 2.0 × sin(24.7°)/cos(35.3°) = 2.0 × 0.418/0.816 = 1.0 cm."
+                  "correct_answer": "At entry: n₁sinθ₁ = n₂sinθ₂ → (1.00)(sin60°) = (1.50)(sinθ₂) → sinθ₂ = 0.866/1.50 = 0.577 → θ₂ = 35.3°. At exit (glass→air, same Snell's law in reverse): (1.50)(sin35.3°) = (1.00)(sinθ₃) → sinθ₃ = 0.866 → θ₃ = 60°. The exit angle equals the entry angle, so the ray is parallel to the original. Lateral displacement: d = t × sin(θ₁ − θ₂)/cosθ₂ = 2.0 × sin(24.7°)/cos(35.3°) = 2.0 × 0.418/0.816 = 1.0 cm.",
+                  "display_order": 3
                 }
               ]
             }
@@ -8654,7 +8867,8 @@
                       "text": "A diverging lens always produces virtual (same side as object), upright (\\( M > 0 \\)), diminished (\\( |M| < 1 \\)) images."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 0
                 },
                 {
                   "question_html": "<p>An object is placed 30 cm from a converging lens with focal length 10 cm. Where does the image form?</p>",
@@ -8697,7 +8911,8 @@
                       "text": "\\( d_i = 15 \\) cm. Positive → real image, 15 cm on the far side of the lens."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 1
                 },
                 {
                   "question_html": "<p>An object is placed 20 cm from a converging lens with \\( f = 20 \\) cm. Where does the image form?</p>",
@@ -8723,7 +8938,8 @@
                       "text": "\\( d_i \\to \\infty \\). When the object is at the focal point, rays exit parallel and no finite image forms."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 2
                 },
                 {
                   "question_html": "<p>For the converging lens problem (\\( d_o = 30 \\) cm, \\( f = 10 \\) cm, \\( d_i = 15 \\) cm), what is the magnification?</p>",
@@ -8749,7 +8965,8 @@
                       "text": "Image is inverted (\\( M < 0 \\)) and diminished to half size (\\( |M| = 0.5 \\))."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 3
                 }
               ]
             },
@@ -8802,7 +9019,8 @@
                       "text": "\\( M = +3 \\). Upright and magnified 3×. This is how a magnifying glass works."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 0
                 },
                 {
                   "question_html": "<p>A diverging lens has \\( f = -15 \\) cm. An object is placed 30 cm from the lens. What is the image distance?</p>",
@@ -8845,7 +9063,8 @@
                       "text": "\\( d_i = -10 \\) cm. Virtual image, 10 cm on the same side as the object."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 1
                 },
                 {
                   "question_html": "<p>An object is placed 40 cm from a converging lens with \\( f = 25 \\) cm. What is the image distance, in cm? Round to the nearest whole number.</p>",
@@ -8871,7 +9090,8 @@
                       "text": "\\( d_i = 200/3 = 66.7 \\approx 67 \\) cm. Positive → real image on the far side."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 2
                 },
                 {
                   "question_html": "<p>A 3.0 cm tall object is placed 24 cm from a converging lens with focal length 8.0 cm. Determine the image distance, magnification, image height, and whether the image is real or virtual.</p>",
@@ -8909,7 +9129,8 @@
                     }
                   ],
                   "access_tier": "premium",
-                  "correct_answer": "1/d_i = 1/8 − 1/24 = 3/24 − 1/24 = 2/24 = 1/12. d_i = 12 cm (positive → real). M = −d_i/d_o = −12/24 = −0.5. h_i = M × h_o = (−0.5)(3.0) = −1.5 cm. The image is real, inverted, and diminished."
+                  "correct_answer": "1/d_i = 1/8 − 1/24 = 3/24 − 1/24 = 2/24 = 1/12. d_i = 12 cm (positive → real). M = −d_i/d_o = −12/24 = −0.5. h_i = M × h_o = (−0.5)(3.0) = −1.5 cm. The image is real, inverted, and diminished.",
+                  "display_order": 3
                 }
               ]
             }
@@ -8985,7 +9206,8 @@
                       "text": "Transverse = perpendicular displacement. Example: waves on a string, light waves."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 0
                 },
                 {
                   "question_html": "<p>Sound waves are an example of:</p>",
@@ -9025,7 +9247,8 @@
                       "text": "Sound waves are longitudinal — air molecules oscillate back and forth parallel to the wave direction, creating compressions and rarefactions."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 1
                 },
                 {
                   "question_html": "<p>Two wave pulses with amplitudes of +3 cm and +2 cm meet. At the instant they fully overlap, the resulting displacement is ____ cm.</p>",
@@ -9048,7 +9271,8 @@
                       "text": "Superposition: total displacement = \\( +3 + (+2) = +5 \\) cm (constructive interference)."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 2
                 },
                 {
                   "question_html": "<p>Two pulses of amplitudes +4 cm and −4 cm meet. At the instant of full overlap, the displacement is ____ cm.</p>",
@@ -9071,7 +9295,8 @@
                       "text": "\\( +4 + (-4) = 0 \\) cm. Complete destructive interference. After passing through each other, both pulses continue unchanged."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 3
                 }
               ]
             },
@@ -9118,7 +9343,8 @@
                       "text": "Waves transfer energy through a medium. The medium's particles oscillate about their equilibrium positions but do not travel with the wave."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 0
                 },
                 {
                   "question_html": "<p>After two wave pulses pass through each other, each pulse:</p>",
@@ -9158,7 +9384,8 @@
                       "text": "Waves obey the principle of superposition: they add during overlap and then continue unchanged in shape and speed."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 1
                 }
               ]
             }
@@ -9227,7 +9454,8 @@
                       "text": "\\( v = f\\lambda = (500)(0.68) = 340 \\) m/s."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 0
                 },
                 {
                   "question_html": "<p>A wave has a period of 0.020 s. What is its frequency, in Hz?</p>",
@@ -9267,7 +9495,8 @@
                       "text": "\\( f = 1/T = 1/0.020 = 50 \\) Hz."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 1
                 },
                 {
                   "question_html": "<p>A sound wave in air (\\( v = 343 \\) m/s) has a frequency of 440 Hz (concert A). What is its wavelength, in meters? Round to two decimal places.</p>",
@@ -9290,7 +9519,8 @@
                       "text": "\\( \\lambda = v/f = 343/440 = 0.78 \\) m."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 2
                 },
                 {
                   "question_html": "<p>If a wave's amplitude is doubled, by what factor does its energy increase?</p>",
@@ -9313,7 +9543,8 @@
                       "text": "\\( E \\propto A^2 \\). Doubling \\( A \\) → \\( E \\) increases by factor \\( 2^2 = 4 \\)."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 3
                 }
               ]
             },
@@ -9363,7 +9594,8 @@
                       "text": "\\( \\lambda = v/f \\). If \\( v \\) halves and \\( f \\) is constant, \\( \\lambda \\) halves."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 0
                 },
                 {
                   "question_html": "<p>The highest frequency a young human can hear is about 20,000 Hz. If the speed of sound in air is 343 m/s, what is the wavelength of this sound, in cm? Round to the nearest whole number.</p>",
@@ -9386,7 +9618,8 @@
                       "text": "\\( \\lambda = v/f = 343/20000 = 0.017 \\) m ≈ 2 cm."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 1
                 }
               ]
             }
@@ -9454,7 +9687,8 @@
                       "text": "Fixed end → reflected pulse is inverted. The fixed boundary exerts a downward reaction force that flips the pulse."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 0
                 },
                 {
                   "question_html": "<p>Unpolarized light passes through a polarizing filter. The intensity of the transmitted light is:</p>",
@@ -9494,7 +9728,8 @@
                       "text": "Unpolarized light through one polarizer: \\( I = I_0/2 \\). Half the intensity passes through."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 1
                 },
                 {
                   "question_html": "<p>Which type of wave can be polarized — transverse or longitudinal?</p>",
@@ -9517,7 +9752,8 @@
                       "text": "Only transverse waves can be polarized. This is because polarization selects one oscillation direction perpendicular to travel, which only exists for transverse waves."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 2
                 },
                 {
                   "question_html": "<p>Polarized light of intensity \\( I_0 \\) passes through a second polarizer at 60° to the first. What fraction of \\( I_0 \\) is transmitted?</p>",
@@ -9543,7 +9779,8 @@
                       "text": "25% of the polarized light intensity passes through."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 3
                 }
               ]
             },
@@ -9593,7 +9830,8 @@
                       "text": "Some energy is transmitted into the thick string, so the reflected pulse has smaller amplitude than the incident pulse."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 0
                 },
                 {
                   "question_html": "<p>Unpolarized light passes through two crossed polarizers (90° apart). What is the transmitted intensity?</p>",
@@ -9636,7 +9874,8 @@
                       "text": "Crossed polarizers transmit zero light."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 1
                 },
                 {
                   "question_html": "<p>Unpolarized light of intensity \\( I_0 \\) passes through three polarizers: the first vertical, the second at 30° from vertical, and the third horizontal. What fraction of \\( I_0 \\) exits the third polarizer?</p>",
@@ -9665,7 +9904,8 @@
                       "text": "After 3rd (horizontal = 60° from the 2nd): \\( I_3 = 0.375 I_0 \\cos^2 60° = 0.375(0.25) I_0 = 0.094 I_0 \\)."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 2
                 },
                 {
                   "question_html": "<p>Explain why sound waves cannot be polarized but light waves can.</p>",
@@ -9700,7 +9940,8 @@
                     }
                   ],
                   "access_tier": "premium",
-                  "correct_answer": "Sound waves are longitudinal — air molecules oscillate back and forth along the direction of wave propagation. There is only one possible direction of oscillation (along the wave), so there is nothing to filter. Light waves are transverse electromagnetic waves — the electric and magnetic fields oscillate perpendicular to the direction of propagation. Since there are many possible perpendicular directions, a polarizer can select just one, reducing the light to a single oscillation plane."
+                  "correct_answer": "Sound waves are longitudinal — air molecules oscillate back and forth along the direction of wave propagation. There is only one possible direction of oscillation (along the wave), so there is nothing to filter. Light waves are transverse electromagnetic waves — the electric and magnetic fields oscillate perpendicular to the direction of propagation. Since there are many possible perpendicular directions, a polarizer can select just one, reducing the light to a single oscillation plane.",
+                  "display_order": 3
                 }
               ]
             }
@@ -9767,7 +10008,8 @@
                       "text": "\\( \\lambda = c/f = (3.0 \\times 10^8)/(6.0 \\times 10^{14}) = 5.0 \\times 10^{-7} \\) m = 500 nm (green light)."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 0
                 },
                 {
                   "question_html": "<p>Which type of electromagnetic wave has the highest frequency?</p>",
@@ -9807,7 +10049,8 @@
                       "text": "From lowest to highest frequency: Radio < Microwave < IR < Visible < UV < X-ray < Gamma. Gamma rays have the highest frequency."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 1
                 },
                 {
                   "question_html": "<p>All electromagnetic waves in vacuum travel at a speed of ____ m/s.</p>",
@@ -9830,7 +10073,8 @@
                       "text": "All EM waves travel at \\( c = 3.0 \\times 10^8 \\) m/s in vacuum."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 2
                 },
                 {
                   "question_html": "<p>EM waves are transverse waves. The electric field \\( \\vec{E} \\) and magnetic field \\( \\vec{B} \\) oscillate _______ to each other and to the direction of propagation.</p>",
@@ -9853,7 +10097,8 @@
                       "text": "In an EM wave, \\( \\vec{E} \\perp \\vec{B} \\perp \\vec{v} \\). All three are mutually perpendicular."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 3
                 }
               ]
             },
@@ -9900,7 +10145,8 @@
                       "text": "\\( \\lambda = c/f = (3.0 \\times 10^8)/(1.0 \\times 10^8) = 3.0 \\) m."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 0
                 },
                 {
                   "question_html": "<p>Which of the following correctly lists EM waves from longest wavelength to shortest?</p>",
@@ -9940,7 +10186,8 @@
                       "text": "Radio > Microwave > Infrared > Visible > Ultraviolet > X-ray > Gamma. Longest to shortest wavelength (lowest to highest frequency)."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 1
                 }
               ]
             }
@@ -10007,7 +10254,8 @@
                       "text": "Approaching source compresses wavefronts → shorter \\( \\lambda \\) → higher \\( f \\)."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 0
                 },
                 {
                   "question_html": "<p>A car horn has a frequency of 500 Hz. The car approaches a stationary observer at 30 m/s. What frequency does the observer hear? (\\( v_{\\text{sound}} = 340 \\) m/s)</p>",
@@ -10050,7 +10298,8 @@
                       "text": "\\( f' = 500 \\times 1.097 = 548 \\) Hz."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 1
                 },
                 {
                   "question_html": "<p>Light from a distant galaxy is observed to be redshifted. This means the galaxy is:</p>",
@@ -10073,7 +10322,8 @@
                       "text": "Redshift → longer wavelength → source is moving away from the observer. This is how Hubble discovered the expansion of the universe."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 2
                 },
                 {
                   "question_html": "<p>The same car horn (500 Hz) now moves <em>away</em> from the observer at 30 m/s. What frequency is heard?</p>",
@@ -10096,7 +10346,8 @@
                       "text": "\\( f' = f \\cdot \\frac{v}{v + v_s} = 500 \\times \\frac{340}{370} = 459 \\) Hz."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 3
                 }
               ]
             },
@@ -10143,7 +10394,8 @@
                       "text": "\\( f' = f \\cdot \\frac{v + v_o}{v} = 600 \\times \\frac{363}{343} = 635 \\) Hz."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 0
                 },
                 {
                   "question_html": "<p>Two cars approach each other. Car A (source) blows its horn at 400 Hz and moves at 25 m/s. Car B (observer) moves at 20 m/s toward Car A. What frequency does Car B hear? (\\( v = 340 \\) m/s)</p>",
@@ -10186,7 +10438,8 @@
                       "text": "\\( f' = 400 \\times 1.143 = 457 \\) Hz."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 1
                 },
                 {
                   "question_html": "<p>An ambulance siren emits a 700 Hz tone. As it passes you, the frequency drops from 750 Hz to 656 Hz. What is the ambulance's speed? (\\( v = 343 \\) m/s). Round to the nearest whole number.</p>",
@@ -10215,7 +10468,8 @@
                       "text": "\\( v_s \\approx 23 \\) m/s."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 2
                 },
                 {
                   "question_html": "<p>Explain the difference between the Doppler effect for sound and for light.</p>",
@@ -10250,7 +10504,8 @@
                     }
                   ],
                   "access_tier": "premium",
-                  "correct_answer": "For sound, the Doppler effect depends on the speeds of both the source and observer relative to the medium (air). Moving the source vs. moving the observer gives different formulas because the medium provides an absolute reference frame. For light, there is no medium — light travels through vacuum. The Doppler effect for light depends only on the relative velocity between source and observer, not on any medium. Also, for light at high speeds, relativistic effects must be considered."
+                  "correct_answer": "For sound, the Doppler effect depends on the speeds of both the source and observer relative to the medium (air). Moving the source vs. moving the observer gives different formulas because the medium provides an absolute reference frame. For light, there is no medium — light travels through vacuum. The Doppler effect for light depends only on the relative velocity between source and observer, not on any medium. Also, for light at high speeds, relativistic effects must be considered.",
+                  "display_order": 3
                 }
               ]
             }
@@ -10319,7 +10574,8 @@
                       "text": "Constructive interference occurs when the path difference is \\( m\\lambda \\) (\\( m = 0, 1, 2, ... \\)). Crests arrive together."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 0
                 },
                 {
                   "question_html": "<p>A guitar string of length 0.60 m vibrates in its fundamental mode. What is the wavelength of the standing wave?</p>",
@@ -10359,7 +10615,8 @@
                       "text": "Fundamental (n = 1): \\( L = \\lambda/2 \\). \\( \\lambda = 2L = 2(0.60) = 1.2 \\) m."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 1
                 },
                 {
                   "question_html": "<p>A pipe open at both ends has a length of 0.85 m. What is its fundamental frequency? (\\( v_{\\text{sound}} = 340 \\) m/s). Round to the nearest whole number.</p>",
@@ -10382,7 +10639,8 @@
                       "text": "\\( f_1 = v/(2L) = 340/(2 \\times 0.85) = 200 \\) Hz."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 2
                 },
                 {
                   "question_html": "<p>A pipe closed at one end and open at the other has a length of 0.50 m. What is its fundamental frequency? (\\( v = 340 \\) m/s). Round to the nearest whole number.</p>",
@@ -10405,7 +10663,8 @@
                       "text": "\\( f_1 = v/(4L) = 340/(4 \\times 0.50) = 170 \\) Hz."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 3
                 }
               ]
             },
@@ -10455,7 +10714,8 @@
                       "text": "Next after fundamental: 3rd harmonic = \\( 3 \\times 170 = 510 \\) Hz."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 0
                 },
                 {
                   "question_html": "<p>A string vibrating in its 3rd harmonic has how many nodes and antinodes?</p>",
@@ -10498,7 +10758,8 @@
                       "text": "3rd harmonic: 3 antinodes, 4 nodes."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 1
                 },
                 {
                   "question_html": "<p>A string of length 1.0 m has a wave speed of 200 m/s. What is the frequency of the 4th harmonic, in Hz?</p>",
@@ -10521,7 +10782,8 @@
                       "text": "\\( f_4 = 4 \\times v/(2L) = 4 \\times 200/(2.0) = 400 \\) Hz."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 2
                 },
                 {
                   "question_html": "<p>A tube is initially open at both ends and has a fundamental frequency of 300 Hz. If one end is now closed, what is the new fundamental frequency?</p>",
@@ -10556,7 +10818,8 @@
                     }
                   ],
                   "access_tier": "premium",
-                  "correct_answer": "Open pipe: f₁ = v/(2L) = 300 Hz. So v/(2L) = 300, meaning v = 600L. Closed pipe: f₁ = v/(4L) = 600L/(4L) = 150 Hz. The fundamental frequency is halved to 150 Hz. This is because the closed pipe has a wavelength of 4L (vs. 2L for open), so the fundamental wavelength doubles, and frequency halves."
+                  "correct_answer": "Open pipe: f₁ = v/(2L) = 300 Hz. So v/(2L) = 300, meaning v = 600L. Closed pipe: f₁ = v/(4L) = 600L/(4L) = 150 Hz. The fundamental frequency is halved to 150 Hz. This is because the closed pipe has a wavelength of 4L (vs. 2L for open), so the fundamental wavelength doubles, and frequency halves.",
+                  "display_order": 3
                 }
               ]
             }
@@ -10623,7 +10886,8 @@
                       "text": "When \\( \\lambda \\ll a \\) (wavelength much smaller than opening), diffraction is negligible. The wave passes through with minimal bending."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 0
                 },
                 {
                   "question_html": "<p>A single slit of width \\( a = 0.10 \\) mm is illuminated by 500 nm light. At what angle does the first minimum occur?</p>",
@@ -10666,7 +10930,8 @@
                       "text": "\\( \\theta = \\sin^{-1}(0.005) = 0.29° \\)."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 1
                 },
                 {
                   "question_html": "<p>You can hear someone around a corner but can't see them. This is because:</p>",
@@ -10692,7 +10957,8 @@
                       "text": "Light wavelengths (~500 nm) are millions of times smaller than doorways → negligible diffraction."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 2
                 },
                 {
                   "question_html": "<p>If the slit width is halved (made narrower), the central diffraction maximum becomes:</p>",
@@ -10718,7 +10984,8 @@
                       "text": "Narrower slit → more spreading → wider diffraction pattern."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 3
                 }
               ]
             },
@@ -10768,7 +11035,8 @@
                       "text": "Secondary maxima: angular width \\( \\lambda/a \\) each. Central is twice as wide."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 0
                 },
                 {
                   "question_html": "<p>Light of wavelength 600 nm passes through a 0.15 mm slit. What is the angle to the second minimum?</p>",
@@ -10811,7 +11079,8 @@
                       "text": "\\( \\theta = \\sin^{-1}(0.008) = 0.46° \\)."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 1
                 },
                 {
                   "question_html": "<p>How does the single-slit diffraction pattern change if the wavelength is increased while keeping the slit width constant?</p>",
@@ -10837,7 +11106,8 @@
                       "text": "The entire diffraction pattern gets wider (spreads out more)."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 2
                 },
                 {
                   "question_html": "<p>A single slit produces a diffraction pattern on a screen 2.0 m away. The slit width is 0.10 mm and the light wavelength is 500 nm. How wide is the central maximum on the screen, in cm? (Use small angle: \\( y \\approx L\\tan\\theta \\approx L\\sin\\theta \\).)</p>",
@@ -10872,7 +11142,8 @@
                     }
                   ],
                   "access_tier": "premium",
-                  "correct_answer": "First minimum at sinθ = λ/a = (500e-9)/(0.10e-3) = 5.0e-3. For small angles, y₁ = Lsinθ = (2.0)(5.0e-3) = 0.010 m = 1.0 cm. The central maximum extends from -y₁ to +y₁, so its total width is 2y₁ = 2.0 cm."
+                  "correct_answer": "First minimum at sinθ = λ/a = (500e-9)/(0.10e-3) = 5.0e-3. For small angles, y₁ = Lsinθ = (2.0)(5.0e-3) = 0.010 m = 1.0 cm. The central maximum extends from -y₁ to +y₁, so its total width is 2y₁ = 2.0 cm.",
+                  "display_order": 3
                 }
               ]
             }
@@ -10940,7 +11211,8 @@
                       "text": "Constructive (bright): \\( d\\sin\\theta = m\\lambda \\). Path difference = integer multiple of \\( \\lambda \\)."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 0
                 },
                 {
                   "question_html": "<p>Two slits separated by 0.50 mm are illuminated by 600 nm light. A screen is 1.5 m away. What is the distance between adjacent bright fringes on the screen?</p>",
@@ -10980,7 +11252,8 @@
                       "text": "\\( \\Delta y = \\frac{\\lambda L}{d} = \\frac{(600 \\times 10^{-9})(1.5)}{0.50 \\times 10^{-3}} = \\frac{9.0 \\times 10^{-7}}{5.0 \\times 10^{-4}} = 1.8 \\times 10^{-3} \\) m = 1.8 mm."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 1
                 },
                 {
                   "question_html": "<p>A diffraction grating has 500 lines per mm. What is the slit spacing \\( d \\) in micrometers (μm)?</p>",
@@ -11003,7 +11276,8 @@
                       "text": "\\( d = 1/500 \\) mm = 0.002 mm = 2.0 μm = \\( 2.0 \\times 10^{-6} \\) m."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 2
                 },
                 {
                   "question_html": "<p>If the slit separation is doubled in a double-slit experiment (everything else stays the same), the fringe spacing:</p>",
@@ -11026,7 +11300,8 @@
                       "text": "\\( \\Delta y = \\lambda L/d \\). Doubling \\( d \\) → \\( \\Delta y \\) halves. Fringes become half as far apart."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 3
                 }
               ]
             },
@@ -11076,7 +11351,8 @@
                       "text": "At angles slightly off from \\( d\\sin\\theta = m\\lambda \\), the N waves destructively interfere → very narrow, sharp peaks."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 0
                 },
                 {
                   "question_html": "<p>In a double-slit experiment with 500 nm light, the 3rd-order bright fringe occurs at 0.15° from the central maximum. What is the slit separation?</p>",
@@ -11119,7 +11395,8 @@
                       "text": "\\( d = 5.73 \\times 10^{-4} \\) m = 0.57 mm."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 1
                 },
                 {
                   "question_html": "<p>A diffraction grating with 600 lines/mm is used to observe 550 nm light. At what angle does the first-order maximum occur?</p>",
@@ -11165,7 +11442,8 @@
                       "text": "\\( \\theta = \\sin^{-1}(0.330) = 19.3° \\)."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "premium",
+                  "display_order": 2
                 },
                 {
                   "question_html": "<p>In the double-slit experiment above (\\( d = 0.50 \\) mm, \\( \\lambda = 600 \\) nm, \\( L = 1.5 \\) m), at what distance from the central maximum on the screen is the second bright fringe, in mm?</p>",
@@ -11188,7 +11466,8 @@
                       "text": "\\( y_2 = \\frac{m\\lambda L}{d} = \\frac{2(600 \\times 10^{-9})(1.5)}{0.50 \\times 10^{-3}} = 3.6 \\times 10^{-3} \\) m = 3.6 mm."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 3
                 },
                 {
                   "question_html": "<p>White light (400–700 nm) passes through a double slit. The first-order fringes of red (700 nm) and violet (400 nm) light are at different positions. Which color's fringe is farther from the center, and by what factor?</p>",
@@ -11223,7 +11502,8 @@
                     }
                   ],
                   "access_tier": "premium",
-                  "correct_answer": "y_m = mλL/d. For the same m, d, and L, the position is proportional to λ. Red (700 nm) has a longer wavelength than violet (400 nm), so red fringes are farther from the center. Ratio: y_red/y_violet = 700/400 = 1.75. Red fringes are 1.75 times farther from the center than violet fringes."
+                  "correct_answer": "y_m = mλL/d. For the same m, d, and L, the position is proportional to λ. Red (700 nm) has a longer wavelength than violet (400 nm), so red fringes are farther from the center. Ratio: y_red/y_violet = 700/400 = 1.75. Red fringes are 1.75 times farther from the center than violet fringes.",
+                  "display_order": 4
                 }
               ]
             }
@@ -11292,7 +11572,8 @@
                       "text": "Higher \\( n \\) → 180° phase change on reflection. Lower \\( n \\) → no phase change. Analogous to fixed vs. free end of a string."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 0
                 },
                 {
                   "question_html": "<p>A soap film (\\( n = 1.33 \\)) in air appears bright (constructive reflection) for 532 nm light. If there is one net phase change, what is the minimum thickness of the film?</p>",
@@ -11338,7 +11619,8 @@
                       "text": "\\( t = \\lambda_n/4 = 400/4 = 100 \\) nm."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 1
                 },
                 {
                   "question_html": "<p>A thin oil film (\\( n = 1.45 \\)) floats on water (\\( n = 1.33 \\)). Light reflects from both the top surface (air→oil) and bottom surface (oil→water). How many 180° phase changes occur?</p>",
@@ -11367,7 +11649,8 @@
                       "text": "Total: 1 phase change."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 2
                 },
                 {
                   "question_html": "<p>Why do soap bubbles show rainbow colors?</p>",
@@ -11393,7 +11676,8 @@
                       "text": "At each thickness, a specific wavelength satisfies constructive interference and is strongly reflected. Different thicknesses → different colors → rainbow appearance."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 3
                 }
               ]
             },
@@ -11443,7 +11727,8 @@
                       "text": "Total: 2 phase changes (net zero effective shift)."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 0
                 },
                 {
                   "question_html": "<p>Why does an anti-reflective coating need both the correct thickness AND the correct index of refraction to work effectively?</p>",
@@ -11489,7 +11774,8 @@
                       "text": "Both must be chosen correctly to achieve destructive interference (cancellation) of reflected light."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 1
                 },
                 {
                   "question_html": "<p>An anti-reflective coating (\\( n = 1.38 \\)) is applied to glass (\\( n = 1.50 \\)). For 550 nm light, what is the minimum coating thickness for destructive interference in the reflected light?</p>",
@@ -11535,7 +11821,8 @@
                       "text": "Minimum (\\( m = 0 \\)): \\( t = \\lambda_n/4 = 99.6 \\) nm."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "premium",
+                  "display_order": 2
                 },
                 {
                   "question_html": "<p>A soap film (\\( n = 1.33 \\)) in air has a thickness of 300 nm. What visible wavelength (400–700 nm) is most strongly reflected? (1 phase change occurs.)</p>",
@@ -11564,7 +11851,8 @@
                       "text": "\\( m = 2 \\): \\( \\lambda = 798/2.5 = 319 \\) nm (UV — not visible). Answer: 532 nm."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 3
                 },
                 {
                   "question_html": "<p>An oil film (\\( n = 1.45 \\)) on water (\\( n = 1.33 \\)) is illuminated by white light. The film appears blue (480 nm strongly reflected). If there is 1 phase change, determine two possible thicknesses of the oil film.</p>",
@@ -11602,7 +11890,8 @@
                     }
                   ],
                   "access_tier": "premium",
-                  "correct_answer": "With 1 phase change, constructive: 2t = (m + 1/2)λₙ where λₙ = 480/1.45 = 331 nm. For m = 0: 2t = (0.5)(331) = 166 nm → t = 83 nm. For m = 1: 2t = (1.5)(331) = 497 nm → t = 248 nm."
+                  "correct_answer": "With 1 phase change, constructive: 2t = (m + 1/2)λₙ where λₙ = 480/1.45 = 331 nm. For m = 0: 2t = (0.5)(331) = 166 nm → t = 83 nm. For m = 1: 2t = (1.5)(331) = 497 nm → t = 248 nm.",
+                  "display_order": 4
                 }
               ]
             }
@@ -11678,7 +11967,8 @@
                       "text": "\\( E = \\frac{hc}{\\lambda} = \\frac{(6.63 \\times 10^{-34})(3.0 \\times 10^8)}{500 \\times 10^{-9}} = 3.98 \\times 10^{-19} \\) J."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 0
                 },
                 {
                   "question_html": "<p>What is the de Broglie wavelength of an electron (\\( m = 9.11 \\times 10^{-31} \\) kg) moving at \\( 1.0 \\times 10^6 \\) m/s?</p>",
@@ -11718,7 +12008,8 @@
                       "text": "\\( \\lambda = \\frac{h}{mv} = \\frac{6.63 \\times 10^{-34}}{(9.11 \\times 10^{-31})(1.0 \\times 10^6)} = 7.28 \\times 10^{-10} \\) m = 0.73 nm."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 1
                 },
                 {
                   "question_html": "<p>If an electron's speed doubles, its de Broglie wavelength:</p>",
@@ -11741,7 +12032,8 @@
                       "text": "\\( \\lambda = h/(mv) \\propto 1/v \\). Doubling speed halves the wavelength."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 2
                 },
                 {
                   "question_html": "<p>Which experiment provides evidence that light behaves as particles?</p>",
@@ -11764,7 +12056,8 @@
                       "text": "The photoelectric effect demonstrates light's particle nature. Photon energy \\( E = hf \\) determines whether electrons are ejected, not light intensity."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 3
                 }
               ]
             },
@@ -11811,7 +12104,8 @@
                       "text": "\\( v = \\frac{h}{m\\lambda} = \\frac{6.63 \\times 10^{-34}}{(1.67 \\times 10^{-27})(1.0 \\times 10^{-10})} = 3970 \\) m/s."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 0
                 },
                 {
                   "question_html": "<p>Compare the de Broglie wavelength of a proton and an electron moving at the same speed. Which has the longer wavelength?</p>",
@@ -11854,7 +12148,8 @@
                       "text": "\\( \\lambda_e/\\lambda_p = m_p/m_e \\approx 1836 \\)."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 1
                 },
                 {
                   "question_html": "<p>What is the momentum of a photon with wavelength 400 nm? (\\( h = 6.63 \\times 10^{-34} \\) J·s)</p>",
@@ -11877,7 +12172,8 @@
                       "text": "\\( p = h/\\lambda = (6.63 \\times 10^{-34})/(4.00 \\times 10^{-7}) = 1.66 \\times 10^{-27} \\) kg·m/s."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 2
                 },
                 {
                   "question_html": "<p>Explain how the double-slit experiment with single electrons demonstrates wave-particle duality.</p>",
@@ -11912,7 +12208,8 @@
                     }
                   ],
                   "access_tier": "premium",
-                  "correct_answer": "When single electrons are sent one at a time through a double slit, each electron hits the detector screen at a single point (particle behavior). However, after many electrons have been detected, their positions form an interference pattern identical to the pattern produced by waves passing through two slits. This means each individual electron somehow interferes with itself — passing through both slits as a probability wave, but arriving as a discrete particle. This is the essence of wave-particle duality."
+                  "correct_answer": "When single electrons are sent one at a time through a double slit, each electron hits the detector screen at a single point (particle behavior). However, after many electrons have been detected, their positions form an interference pattern identical to the pattern produced by waves passing through two slits. This means each individual electron somehow interferes with itself — passing through both slits as a probability wave, but arriving as a discrete particle. This is the essence of wave-particle duality.",
+                  "display_order": 3
                 }
               ]
             }
@@ -11980,7 +12277,8 @@
                       "text": "\\( E_3 = -13.6/3^2 = -13.6/9 = -1.51 \\) eV."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 0
                 },
                 {
                   "question_html": "<p>A hydrogen electron transitions from \\( n = 3 \\) to \\( n = 2 \\). What is the energy of the emitted photon?</p>",
@@ -12020,7 +12318,8 @@
                       "text": "\\( E_{\\text{photon}} = |E_3 - E_2| = |-1.51 - (-3.40)| = |1.89| = 1.89 \\) eV."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 1
                 },
                 {
                   "question_html": "<p>What is the ionization energy of hydrogen from the ground state, in eV?</p>",
@@ -12043,7 +12342,8 @@
                       "text": "\\( E_{\\text{ion}} = E_\\infty - E_1 = 0 - (-13.6) = 13.6 \\) eV."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 2
                 },
                 {
                   "question_html": "<p>In the Bohr model, when an electron transitions to a <em>lower</em> energy level, what happens?</p>",
@@ -12066,7 +12366,8 @@
                       "text": "Transition to a lower energy level → energy is released as a photon with \\( E = hf = |E_i - E_f| \\)."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 3
                 }
               ]
             },
@@ -12116,7 +12417,8 @@
                       "text": "\\( n = 3 \\to 2 \\) has the smallest gap: 1.89 eV → \\( \\lambda = 656 \\) nm (red). This is the H-alpha line."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 0
                 },
                 {
                   "question_html": "<p>A hydrogen atom absorbs a photon and its electron jumps from \\( n = 1 \\) to \\( n = 4 \\). What is the wavelength of the photon? (1 eV = \\( 1.6 \\times 10^{-19} \\) J)</p>",
@@ -12162,7 +12464,8 @@
                       "text": "\\( \\lambda = hc/E = 1.989 \\times 10^{-25}/2.04 \\times 10^{-18} = 9.73 \\times 10^{-8} \\) m = 97.3 nm (UV)."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 1
                 },
                 {
                   "question_html": "<p>A hydrogen atom in the \\( n = 4 \\) state can emit photons by transitioning to lower levels. How many different spectral lines can it produce?</p>",
@@ -12188,7 +12491,8 @@
                       "text": "The 6 transitions: \\( 4 \\to 3 \\), \\( 4 \\to 2 \\), \\( 4 \\to 1 \\), \\( 3 \\to 2 \\), \\( 3 \\to 1 \\), \\( 2 \\to 1 \\)."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 2
                 },
                 {
                   "question_html": "<p>A hydrogen atom is in the \\( n = 2 \\) state. A photon of energy 2.55 eV strikes it. Can the atom absorb this photon? Explain.</p>",
@@ -12223,7 +12527,8 @@
                     }
                   ],
                   "access_tier": "premium",
-                  "correct_answer": "E₂ = −3.40 eV. The next level is n = 3: E₃ = −1.51 eV. ΔE = −1.51 − (−3.40) = 1.89 eV. The next is n = 4: E₄ = −0.85 eV. ΔE = −0.85 − (−3.40) = 2.55 eV. Yes! The 2.55 eV photon exactly matches the n=2 to n=4 transition, so it can be absorbed. The electron jumps to n = 4."
+                  "correct_answer": "E₂ = −3.40 eV. The next level is n = 3: E₃ = −1.51 eV. ΔE = −1.51 − (−3.40) = 1.89 eV. The next is n = 4: E₄ = −0.85 eV. ΔE = −0.85 − (−3.40) = 2.55 eV. Yes! The 2.55 eV photon exactly matches the n=2 to n=4 transition, so it can be absorbed. The electron jumps to n = 4.",
+                  "display_order": 3
                 }
               ]
             }
@@ -12290,7 +12595,8 @@
                       "text": "Hot, low-density gas → emission line spectrum (bright lines at wavelengths corresponding to energy level transitions)."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 0
                 },
                 {
                   "question_html": "<p>An absorption spectrum shows:</p>",
@@ -12330,7 +12636,8 @@
                       "text": "Absorption spectrum: continuous light minus specific wavelengths absorbed by the gas → dark lines on rainbow background."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 1
                 },
                 {
                   "question_html": "<p>The emission spectrum lines of an element appear at the same wavelengths as its:</p>",
@@ -12353,7 +12660,8 @@
                       "text": "An element's emission and absorption spectra have the same wavelengths, because both correspond to the same energy level transitions."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 2
                 },
                 {
                   "question_html": "<p>How do astronomers determine the chemical composition of a distant star?</p>",
@@ -12376,7 +12684,8 @@
                       "text": "Stars produce a continuous spectrum, modified by absorption in their atmospheres. The dark absorption lines reveal which elements are present — each element has a unique spectral fingerprint."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 3
                 }
               ]
             },
@@ -12426,7 +12735,8 @@
                       "text": "Different intensities indicate different temperatures, densities, or amounts of the gas."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 0
                 },
                 {
                   "question_html": "<p>Why can't hydrogen gas at room temperature produce emission lines in the visible range?</p>",
@@ -12469,7 +12779,8 @@
                       "text": "Virtually no atoms are excited → no downward transitions → no emission spectrum."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 1
                 }
               ]
             }
@@ -12540,7 +12851,8 @@
                       "text": "This is why sunlight appears white — it peaks in the middle of the visible spectrum."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 0
                 },
                 {
                   "question_html": "<p>If a star's temperature doubles from 3000 K to 6000 K, by what factor does its radiated power per unit area increase?</p>",
@@ -12580,7 +12892,8 @@
                       "text": "\\( P/A \\propto T^4 \\). Doubling \\( T \\): \\( 2^4 = 16 \\). Power increases by a factor of 16."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 1
                 },
                 {
                   "question_html": "<p>A red star has a lower surface temperature than a blue star. According to Wien's law, the red star's peak wavelength is ______ than the blue star's.</p>",
@@ -12603,7 +12916,8 @@
                       "text": "\\( \\lambda_{\\max} \\propto 1/T \\). Lower \\( T \\) → longer \\( \\lambda_{\\max} \\). Red stars are cooler with longer peak wavelengths."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 2
                 },
                 {
                   "question_html": "<p>Planck resolved the ultraviolet catastrophe by proposing that energy is emitted in discrete packets called:</p>",
@@ -12626,7 +12940,8 @@
                       "text": "Planck proposed that electromagnetic energy is quantized — emitted in discrete packets called quanta (singular: quantum), with \\( E = hf \\)."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 3
                 }
               ]
             },
@@ -12673,7 +12988,8 @@
                       "text": "\\( \\lambda_{\\max} \\propto 1/T \\). Temperature increases by factor 4: \\( \\lambda_{\\max} = 1930/4 = 483 \\) nm."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 0
                 },
                 {
                   "question_html": "<p>Star A has temperature 4000 K and Star B has temperature 8000 K. Both have the same radius. What is the ratio of Star B's luminosity to Star A's?</p>",
@@ -12713,7 +13029,8 @@
                       "text": "Same radius: \\( L \\propto T^4 \\). \\( L_B/L_A = (8000/4000)^4 = 16 \\)."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 1
                 },
                 {
                   "question_html": "<p>The cosmic microwave background radiation has a peak wavelength of about 1.1 mm. What is its temperature?</p>",
@@ -12739,7 +13056,8 @@
                       "text": "This is the temperature of the cosmic microwave background — the afterglow of the Big Bang."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 2
                 },
                 {
                   "question_html": "<p>Explain why classical physics fails to predict the blackbody spectrum (the \"ultraviolet catastrophe\") and how Planck's quantum hypothesis resolved it.</p>",
@@ -12774,7 +13092,8 @@
                     }
                   ],
                   "access_tier": "premium",
-                  "correct_answer": "Classical physics (the Rayleigh-Jeans law) treats electromagnetic oscillators as having any continuous energy. This predicts that the intensity increases without bound at short wavelengths (high frequencies), giving infinite total energy — the 'ultraviolet catastrophe.' Planck proposed that oscillators can only have energies in discrete multiples of hf (E = nhf). At high frequencies, hf is large, so few oscillators are excited, and the intensity drops to zero. This quantization correctly predicts the observed blackbody spectrum."
+                  "correct_answer": "Classical physics (the Rayleigh-Jeans law) treats electromagnetic oscillators as having any continuous energy. This predicts that the intensity increases without bound at short wavelengths (high frequencies), giving infinite total energy — the 'ultraviolet catastrophe.' Planck proposed that oscillators can only have energies in discrete multiples of hf (E = nhf). At high frequencies, hf is large, so few oscillators are excited, and the intensity drops to zero. This quantization correctly predicts the observed blackbody spectrum.",
+                  "display_order": 3
                 }
               ]
             }
@@ -12842,7 +13161,8 @@
                       "text": "\\( f_0 = \\phi/h = 2.0/(4.14 \\times 10^{-15}) = 4.83 \\times 10^{14} \\) Hz."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 0
                 },
                 {
                   "question_html": "<p>Light of frequency \\( 7.0 \\times 10^{14} \\) Hz strikes a metal with work function 2.0 eV. What is the maximum kinetic energy of the ejected electrons?</p>",
@@ -12885,7 +13205,8 @@
                       "text": "\\( K_{\\max} = hf - \\phi = 2.90 - 2.0 = 0.90 \\) eV."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 1
                 },
                 {
                   "question_html": "<p>In the photoelectric effect, increasing the intensity of light above the threshold frequency increases the:</p>",
@@ -12908,7 +13229,8 @@
                       "text": "Higher intensity = more photons/second = more electrons ejected = more current. Maximum KE is unchanged (depends only on frequency)."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 2
                 },
                 {
                   "question_html": "<p>If light below the threshold frequency shines on a metal, electrons are ____ ejected, regardless of the light's intensity.</p>",
@@ -12931,7 +13253,8 @@
                       "text": "Below threshold frequency, no electrons are ejected regardless of intensity. Each photon has insufficient energy (\\( hf < \\phi \\))."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 3
                 }
               ]
             },
@@ -12978,7 +13301,8 @@
                       "text": "\\( K_{\\max} = hf - \\phi \\). This is \\( y = mx + b \\) with slope = \\( h \\) and y-intercept = \\( -\\phi \\)."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 0
                 },
                 {
                   "question_html": "<p>Two light sources — one red (650 nm) and one violet (400 nm) — shine on a metal with \\( \\phi = 2.5 \\) eV. Which ejects electrons? (\\( hc = 1240 \\) eV·nm)</p>",
@@ -13021,7 +13345,8 @@
                       "text": "Violet: \\( E = 1240/400 = 3.10 \\) eV > \\( \\phi = 2.5 \\) eV → electrons ejected."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 1
                 },
                 {
                   "question_html": "<p>The stopping potential for photoelectrons is 1.5 V when light of frequency \\( 8.0 \\times 10^{14} \\) Hz is used. What is the work function of the metal?</p>",
@@ -13067,7 +13392,8 @@
                       "text": "\\( \\phi = hf - K_{\\max} = 3.31 - 1.5 = 1.81 \\) eV."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "premium",
+                  "display_order": 2
                 },
                 {
                   "question_html": "<p>A metal has a work function of 4.5 eV. What is the maximum wavelength of light that can eject electrons? (Use \\( hc = 1240 \\) eV·nm.)</p>",
@@ -13090,7 +13416,8 @@
                       "text": "\\( \\lambda_{\\max} = hc/\\phi = 1240/4.5 = 276 \\) nm (UV light)."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 3
                 },
                 {
                   "question_html": "<p>Light of wavelength 200 nm strikes a metal with work function 3.0 eV. Determine the maximum kinetic energy of the photoelectrons and the stopping potential. (Use \\( hc = 1240 \\) eV·nm.)</p>",
@@ -13125,7 +13452,8 @@
                     }
                   ],
                   "access_tier": "premium",
-                  "correct_answer": "E_photon = hc/λ = 1240/200 = 6.2 eV. K_max = E_photon − φ = 6.2 − 3.0 = 3.2 eV. Stopping potential: eV₀ = K_max, so V₀ = 3.2 V."
+                  "correct_answer": "E_photon = hc/λ = 1240/200 = 6.2 eV. K_max = E_photon − φ = 6.2 − 3.0 = 3.2 eV. Stopping potential: eV₀ = K_max, so V₀ = 3.2 V.",
+                  "display_order": 4
                 }
               ]
             }
@@ -13192,7 +13520,8 @@
                       "text": "The photon transfers some energy to the electron → photon energy decreases → wavelength increases (gets longer)."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 0
                 },
                 {
                   "question_html": "<p>An X-ray photon scatters at 90° off a free electron. What is the wavelength shift? (\\( h/(m_e c) = 0.00243 \\) nm)</p>",
@@ -13232,7 +13561,8 @@
                       "text": "\\( \\Delta\\lambda = \\frac{h}{m_e c}(1 - \\cos 90°) = 0.00243(1 - 0) = 0.00243 \\) nm."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 1
                 },
                 {
                   "question_html": "<p>Compton scattering provides evidence that photons have:</p>",
@@ -13255,7 +13585,8 @@
                       "text": "Compton scattering demonstrates that photons have momentum (\\( p = h/\\lambda = E/c \\)). The scattering is analyzed as a particle collision with conservation of both energy and momentum."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 2
                 },
                 {
                   "question_html": "<p>The maximum wavelength shift in Compton scattering occurs when the photon is scattered at what angle?</p>",
@@ -13278,7 +13609,8 @@
                       "text": "\\( \\Delta\\lambda \\) is maximum when \\( 1 - \\cos\\theta \\) is maximum: at \\( \\theta = 180° \\), \\( \\Delta\\lambda = 2h/(m_e c) \\)."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 3
                 }
               ]
             },
@@ -13328,7 +13660,8 @@
                       "text": "\\( \\lambda' = 0.0500 + 0.00486 = 0.0549 \\) nm."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 0
                 },
                 {
                   "question_html": "<p>Why is Compton scattering significant for X-rays but negligible for visible light?</p>",
@@ -13371,7 +13704,8 @@
                       "text": "For X-rays (\\( \\lambda \\sim 0.05 \\) nm), this is a significant fractional change. For visible light (\\( \\lambda \\sim 500 \\) nm), it's negligible."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 1
                 },
                 {
                   "question_html": "<p>In Compton scattering, a photon with wavelength 0.100 nm scatters at 60°. What is the scattered wavelength, in nm? (Use 4 significant figures.)</p>",
@@ -13397,7 +13731,8 @@
                       "text": "\\( \\lambda' = 0.100 + 0.00122 = 0.1012 \\) nm."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 2
                 },
                 {
                   "question_html": "<p>An X-ray photon of wavelength 0.0400 nm scatters off a free electron at 90°. Find the energy transferred to the electron, in eV. (\\( hc = 1240 \\) eV·nm)</p>",
@@ -13432,7 +13767,8 @@
                     }
                   ],
                   "access_tier": "premium",
-                  "correct_answer": "Δλ = h/(m_e c)(1 − cos90°) = 0.00243(1) = 0.00243 nm. λ' = 0.0400 + 0.00243 = 0.04243 nm. E_i = hc/λ = 1240/0.0400 = 31000 eV. E_f = 1240/0.04243 = 29228 eV. Energy transferred = 31000 − 29228 = 1772 eV ≈ 1770 eV."
+                  "correct_answer": "Δλ = h/(m_e c)(1 − cos90°) = 0.00243(1) = 0.00243 nm. λ' = 0.0400 + 0.00243 = 0.04243 nm. E_i = hc/λ = 1240/0.0400 = 31000 eV. E_f = 1240/0.04243 = 29228 eV. Energy transferred = 31000 − 29228 = 1772 eV ≈ 1770 eV.",
+                  "display_order": 3
                 }
               ]
             }
@@ -13500,7 +13836,8 @@
                       "text": "Fission: heavy nucleus splits into two lighter nuclei + neutrons + energy. Example: U-235 + neutron → Ba-141 + Kr-92 + 3 neutrons + energy."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 0
                 },
                 {
                   "question_html": "<p>Nuclear fusion powers the Sun. In fusion, light nuclei:</p>",
@@ -13540,7 +13877,8 @@
                       "text": "Fusion: light nuclei combine → heavier nucleus + energy. In the Sun: 4 protons → He-4 + 2 positrons + 2 neutrinos + energy."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 1
                 },
                 {
                   "question_html": "<p>According to \\( E = mc^2 \\), how much energy (in MeV) is equivalent to 1 atomic mass unit? (1 u = 1.66 × 10⁻²⁷ kg)</p>",
@@ -13563,7 +13901,8 @@
                       "text": "\\( E = mc^2 = (1.66 \\times 10^{-27})(3.0 \\times 10^8)^2 = 1.49 \\times 10^{-10} \\) J = 931.5 MeV."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 2
                 },
                 {
                   "question_html": "<p>Which element has the highest binding energy per nucleon (most stable nucleus)?</p>",
@@ -13586,7 +13925,8 @@
                       "text": "Iron-56 has the highest binding energy per nucleon. This is why fission of heavy elements and fusion of light elements both release energy — they both move toward iron on the binding energy curve."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 3
                 }
               ]
             },
@@ -13636,7 +13976,8 @@
                       "text": "At millions of kelvins, kinetic energy is sufficient to overcome the Coulomb barrier, allowing the strong nuclear force (very short range) to bind the nuclei."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 0
                 },
                 {
                   "question_html": "<p>In the fusion reaction ²H + ³H → ⁴He + n, the mass of the reactants is 5.03005 u and the mass of the products is 5.01140 u. How much energy is released, in MeV?</p>",
@@ -13679,7 +14020,8 @@
                       "text": "\\( E = \\Delta m \\times 931.5 = 0.01865 \\times 931.5 = 17.4 \\) MeV."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 1
                 },
                 {
                   "question_html": "<p>A nuclear reaction has a mass defect of 0.0050 u. How much energy is released, in MeV?</p>",
@@ -13702,7 +14044,8 @@
                       "text": "\\( E = \\Delta m \\times 931.5 \\text{ MeV/u} = 0.0050 \\times 931.5 = 4.66 \\) MeV."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 2
                 },
                 {
                   "question_html": "<p>Using the binding energy per nucleon curve, explain why fission of uranium releases energy but fission of iron does not.</p>",
@@ -13737,7 +14080,8 @@
                     }
                   ],
                   "access_tier": "premium",
-                  "correct_answer": "Uranium (A ≈ 235) sits on the right side of the binding energy curve, where binding energy per nucleon is about 7.6 MeV/nucleon. When uranium undergoes fission, the products (A ≈ 90-140) have higher binding energy per nucleon (~8.5 MeV/nucleon). The increase in binding energy is released as kinetic energy. Iron (A ≈ 56) is at the peak of the curve (~8.8 MeV/nucleon). Its fission products would have lower binding energy per nucleon, meaning energy would need to be added, not released. Therefore iron cannot release energy by fission (or fusion)."
+                  "correct_answer": "Uranium (A ≈ 235) sits on the right side of the binding energy curve, where binding energy per nucleon is about 7.6 MeV/nucleon. When uranium undergoes fission, the products (A ≈ 90-140) have higher binding energy per nucleon (~8.5 MeV/nucleon). The increase in binding energy is released as kinetic energy. Iron (A ≈ 56) is at the peak of the curve (~8.8 MeV/nucleon). Its fission products would have lower binding energy per nucleon, meaning energy would need to be added, not released. Therefore iron cannot release energy by fission (or fusion).",
+                  "display_order": 3
                 }
               ]
             }
@@ -13806,7 +14150,8 @@
                       "text": "Alpha decay: \\( ^A_Z X \\to ^{A-4}_{Z-2} Y + ^4_2 \\text{He} \\). Mass number decreases by 4."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 0
                 },
                 {
                   "question_html": "<p>In beta-minus (β⁻) decay, what happens to the atomic number?</p>",
@@ -13846,7 +14191,8 @@
                       "text": "β⁻ decay: n → p + e⁻ + \\( \\bar{\\nu}_e \\). Atomic number increases by 1 (one more proton). Mass number unchanged."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 1
                 },
                 {
                   "question_html": "<p>Which type of radiation is most penetrating?</p>",
@@ -13869,7 +14215,8 @@
                       "text": "Penetration order: alpha (least) < beta < gamma (most). Gamma rays require thick lead or concrete shielding."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 2
                 },
                 {
                   "question_html": "<p>A sample of a radioactive isotope has a half-life of 10 days. After 30 days, what fraction of the original sample remains?</p>",
@@ -13895,7 +14242,8 @@
                       "text": "Remaining fraction: \\( (1/2)^3 = 1/8 \\)."
                     }
                   ],
-                  "access_tier": "free"
+                  "access_tier": "free",
+                  "display_order": 3
                 }
               ]
             },
@@ -13942,7 +14290,8 @@
                       "text": "\\( ^{226}_{88}\\text{Ra} \\to ^{222}_{86}\\text{Rn} + ^4_2\\text{He} \\). Daughter: Radon-222."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 0
                 },
                 {
                   "question_html": "<p>Carbon-14 undergoes β⁻ decay. What is the daughter nucleus?</p>",
@@ -13982,7 +14331,8 @@
                       "text": "\\( ^{14}_6\\text{C} \\to ^{14}_7\\text{N} + e^- + \\bar{\\nu}_e \\). Daughter: Nitrogen-14."
                     }
                   ],
-                  "access_tier": "premium"
+                  "access_tier": "free",
+                  "display_order": 1
                 }
               ]
             }

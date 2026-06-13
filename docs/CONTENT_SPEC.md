@@ -132,20 +132,22 @@ content JSON (diagram field) → flask seed → <figure> tags in DB
 
 ## Problem Set Structure
 
-Each concept gets exactly **1 problem_set** with **10 problems** in this exact order:
+Each concept gets exactly **1 problem_set** with **10 problems**, grouped by type:
 
-| Index | Type | Access   | Description         |
-|-------|------|----------|---------------------|
-| 0     | mcq  | free     | Easy-medium MCQ     |
-| 1     | mcq  | free     | Easy-medium MCQ     |
-| 2     | ftb  | free     | Fill-in-the-blank   |
-| 3     | ftb  | free     | Fill-in-the-blank   |
-| 4     | mcq  | premium  | Medium-hard MCQ     |
-| 5     | mcq  | premium  | Medium-hard MCQ     |
-| 6     | ftb  | premium  | Medium-hard FTB     |
-| 7     | ftb  | premium  | Medium-hard FTB     |
-| 8     | frq  | premium  | Free-response       |
-| 9     | frq  | premium  | Free-response       |
+| # | Type | Access   | Description         |
+|---|------|----------|---------------------|
+| 1 | mcq  | free     | Easy-medium MCQ     |
+| 2 | mcq  | free     | Easy-medium MCQ     |
+| 3 | mcq  | premium  | Medium-hard MCQ     |
+| 4 | mcq  | premium  | Medium-hard MCQ     |
+| 5 | ftb  | free     | Easy-medium FTB     |
+| 6 | ftb  | free     | Easy-medium FTB     |
+| 7 | ftb  | premium  | Medium-hard FTB     |
+| 8 | ftb  | premium  | Medium-hard FTB     |
+| 9 | frq  | premium  | Hard FRQ            |
+| 10| frq  | premium  | Hard FRQ            |
+
+Set `access_tier` explicitly on each problem.
 
 ### Problem Set wrapper
 
