@@ -507,6 +507,15 @@ All content HTML is automatically sanitized using the `nh3` library when saved. 
 
 Each concept can have one or more **Problem Sets** (quizzes). Each problem set contains individual **Problems**.
 
+### Stable IDs (Critical)
+
+Every ProblemSet and Problem in the content JSON **must** have a permanent `"id"` field (UUID v4). These IDs become the database primary keys and are used to match existing rows on reseed (upsert). This ensures student progress (AttemptLog records) survives any number of reseeds.
+
+- Generate IDs once during content creation using Python's `uuid.uuid4()`
+- Run `scripts/add_stable_ids.py` to backfill IDs on any file missing them
+- The validator (`content/validate_qhsjson.py`) checks for missing/duplicate IDs
+- Never reuse or change an existing ID — it will orphan student progress
+
 ### Problem Types
 
 | Type | Code | Student Interface | Grading |
@@ -1492,7 +1501,7 @@ In order:
 The seed script is safe to run multiple times:
 - Admin user: skipped if email already exists
 - Subjects/Topics: skipped if slug already exists
-- Content JSON: skipped if topic already has concepts
+- Content JSON: upserted by stable UUID — existing problems updated in place, new ones created, stale ones removed. Student progress (AttemptLog) is preserved across reseeds.
 - Testimonials: skipped if table is not empty
 - Blog posts: skipped if table is not empty
 - Demo students: skipped if email already exists
@@ -2274,15 +2283,16 @@ The **Fewer in file** warning appears when the seed file has fewer problems than
 
 Click the **Reseed** button on any course card. A confirmation dialog shows the file and DB problem counts. On confirmation:
 
-1. All existing problems for each concept in the file are **deleted**
-2. New problems from the file are **created** (nuclear replace)
-3. Topics and concepts are created or updated as needed
-4. Course metadata (`course_name`, `course_type`, `difficulty_level`, `course_info`) is updated from the JSON
-5. A success flash shows the counts of loaded topics, concepts, and problems
+1. Existing problems are **matched by their stable UUID** from the JSON and **updated in place** (upsert)
+2. New problems not yet in the DB are **created** with their JSON UUID as the primary key
+3. Problems in the DB that are no longer in the JSON are **removed** (stale cleanup)
+4. Topics and concepts are created or updated as needed
+5. Course metadata (`course_name`, `course_type`, `difficulty_level`, `course_info`) is updated from the JSON
+6. A success flash shows the counts of loaded topics, concepts, and problems
 
 A progress overlay displays elapsed time while seeding runs (individual file: ~30 seconds, full seed: 2–3 minutes).
 
-> **Important:** Reseeding is destructive — it replaces all problems for affected concepts. Always check the comparison table before reseeding.
+> **Safe to reseed at will:** Because problems are matched by stable UUIDs, reseeding preserves all student progress (AttemptLog records). Problem IDs never change between reseeds.
 
 ### Course Metadata in Content JSON
 
