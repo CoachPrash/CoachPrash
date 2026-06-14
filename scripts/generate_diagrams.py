@@ -22,6 +22,7 @@ from diagram_renderers import (
     series_visual,
     statistics,
     mechanics,
+    electromagnetism,
 )
 
 RENDERERS = {
@@ -34,6 +35,7 @@ RENDERERS = {
     'series_visual': series_visual,
     'statistics': statistics,
     'mechanics': mechanics,
+    'electromagnetism': electromagnetism,
 }
 
 

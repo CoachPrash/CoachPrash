@@ -11,6 +11,39 @@
 
             <div class="changelog-entry">
                 <div class="changelog-date">
+                    <span class="changelog-date-day">14</span>
+                    <span class="changelog-date-month">Jun 2026</span>
+                    <span class="changelog-phase-badge">Content</span>
+                </div>
+                <div class="changelog-body">
+                    <h2>AP Physics 2 EM Diagrams &mdash; Phase 1 Complete</h2>
+                    <p class="changelog-summary">25 SVG diagrams covering all 13 electrostatics, circuits, and magnetism concepts. New electromagnetism renderer with SchemDraw circuit support, uploaded to Railway bucket and wired into content.</p>
+
+                    <div class="changelog-section">
+                        <h3>What&rsquo;s New</h3>
+                        <ul>
+                            <li>25 concept-level diagrams across 12 concepts in Topics 1&ndash;3 (Electrostatics, Circuits, Magnetism)</li>
+                            <li>New <code>electromagnetism.py</code> renderer: 8 diagram types including field lines, equipotentials, capacitors, circuits, Kirchhoff loops, RC graphs, bar magnets, solenoids, and force-on-charge</li>
+                            <li>SchemDraw integration for circuit diagrams with IEEE symbols (resistors, capacitors, batteries, switches, bulbs, ammeters, voltmeters)</li>
+                            <li>New physics primitives: <code>draw_charge</code>, <code>draw_into_page</code>, <code>draw_out_of_page</code>, <code>draw_plate</code>, <code>draw_field_lines</code>, <code>draw_bar_magnet</code></li>
+                            <li>All SVGs uploaded to Railway bucket and <code>diagrams</code> arrays added to content JSON</li>
+                        </ul>
+                    </div>
+
+                    <div class="changelog-section">
+                        <h3>Technical Details</h3>
+                        <ul>
+                            <li>Manifest-driven pipeline: <code>scripts/manifests/physics2.json</code> defines all 25 images with per-image params</li>
+                            <li>Dynamic label offsets for force/velocity vectors &mdash; labels positioned perpendicular to arrow direction</li>
+                            <li>EncircleBox support for grouping circuit elements (e.g., battery + internal resistance)</li>
+                            <li>Added <code>schemdraw&gt;=0.23</code> to requirements.txt</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="changelog-entry">
+                <div class="changelog-date">
                     <span class="changelog-date-day">13</span>
                     <span class="changelog-date-month">Jun 2026</span>
                     <span class="changelog-phase-badge">Core</span>

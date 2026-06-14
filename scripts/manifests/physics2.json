@@ -1,0 +1,453 @@
+{
+  "course": "ap-physics-2-em",
+  "subject": "physics",
+  "images": [
+    {
+      "id": "phys2-001",
+      "bucket_key": "images/physics/ap-physics-2-em/coulombs-law-two-charges.svg",
+      "category": "electromagnetism",
+      "concept_slug": "electric-charge-force",
+      "params": {
+        "type": "field_line_diagram",
+        "title": "Coulomb's Law: Like Charges Repel",
+        "charges": [
+          {"x": -1.2, "y": 0, "q": 1, "label": "$+q_1$"},
+          {"x": 1.2, "y": 0, "q": 1, "label": "$+q_2$"}
+        ],
+        "x_range": [-3, 3],
+        "y_range": [-2.5, 2.5],
+        "density": 18
+      }
+    },
+    {
+      "id": "phys2-002",
+      "bucket_key": "images/physics/ap-physics-2-em/coulombs-law-opposite-charges.svg",
+      "category": "electromagnetism",
+      "concept_slug": "electric-charge-force",
+      "params": {
+        "type": "field_line_diagram",
+        "title": "Coulomb's Law: Opposite Charges Attract",
+        "charges": [
+          {"x": -1.2, "y": 0, "q": 1, "label": "$+q_1$"},
+          {"x": 1.2, "y": 0, "q": -1, "label": "$-q_2$"}
+        ],
+        "x_range": [-3, 3],
+        "y_range": [-2.5, 2.5],
+        "density": 18
+      }
+    },
+    {
+      "id": "phys2-003",
+      "bucket_key": "images/physics/ap-physics-2-em/electric-field-positive-charge.svg",
+      "category": "electromagnetism",
+      "concept_slug": "electric-fields",
+      "params": {
+        "type": "field_line_diagram",
+        "title": "Electric Field of a Positive Point Charge",
+        "charges": [
+          {"x": 0, "y": 0, "q": 1, "label": "$+Q$"}
+        ],
+        "x_range": [-3, 3],
+        "y_range": [-3, 3],
+        "density": 20
+      }
+    },
+    {
+      "id": "phys2-004",
+      "bucket_key": "images/physics/ap-physics-2-em/electric-field-dipole.svg",
+      "category": "electromagnetism",
+      "concept_slug": "electric-fields",
+      "params": {
+        "type": "field_line_diagram",
+        "title": "Electric Field of a Dipole",
+        "charges": [
+          {"x": -1.0, "y": 0, "q": 1, "label": "$+q$"},
+          {"x": 1.0, "y": 0, "q": -1, "label": "$-q$"}
+        ],
+        "x_range": [-3, 3],
+        "y_range": [-2.5, 2.5],
+        "density": 20
+      }
+    },
+    {
+      "id": "phys2-005",
+      "bucket_key": "images/physics/ap-physics-2-em/equipotential-single-charge.svg",
+      "category": "electromagnetism",
+      "concept_slug": "electric-potential",
+      "params": {
+        "type": "equipotential_diagram",
+        "title": "Equipotential Lines: Single Positive Charge",
+        "charges": [
+          {"x": 0, "y": 0, "q": 1, "label": "$+Q$"}
+        ],
+        "n_levels": 10,
+        "x_range": [-3, 3],
+        "y_range": [-3, 3]
+      }
+    },
+    {
+      "id": "phys2-006",
+      "bucket_key": "images/physics/ap-physics-2-em/equipotential-dipole.svg",
+      "category": "electromagnetism",
+      "concept_slug": "electric-potential",
+      "params": {
+        "type": "equipotential_diagram",
+        "title": "Equipotential Lines: Electric Dipole",
+        "charges": [
+          {"x": -1.0, "y": 0, "q": 1, "label": "$+q$"},
+          {"x": 1.0, "y": 0, "q": -1, "label": "$-q$"}
+        ],
+        "n_levels": 14,
+        "x_range": [-3, 3],
+        "y_range": [-3, 3]
+      }
+    },
+    {
+      "id": "phys2-007",
+      "bucket_key": "images/physics/ap-physics-2-em/superposition-three-charges.svg",
+      "category": "electromagnetism",
+      "concept_slug": "electric-fields",
+      "params": {
+        "type": "field_line_diagram",
+        "title": "Superposition: Three Point Charges",
+        "charges": [
+          {"x": -1.5, "y": 0, "q": 1, "label": "$+q$"},
+          {"x": 1.5, "y": 0, "q": 1, "label": "$+q$"},
+          {"x": 0, "y": 1.5, "q": -1, "label": "$-q$"}
+        ],
+        "x_range": [-3, 3],
+        "y_range": [-2.5, 3.5],
+        "density": 18
+      }
+    },
+    {
+      "id": "phys2-008",
+      "bucket_key": "images/physics/ap-physics-2-em/parallel-plate-capacitor.svg",
+      "category": "electromagnetism",
+      "concept_slug": "capacitors",
+      "params": {
+        "type": "capacitor_diagram",
+        "title": "Parallel Plate Capacitor",
+        "plate_separation": 1.2,
+        "plate_length": 2.5,
+        "show_field": true,
+        "show_charges": true,
+        "dielectric": false,
+        "labels": {
+          "left": "$+Q$",
+          "right": "$-Q$",
+          "top": "$E = V/d$"
+        }
+      }
+    },
+    {
+      "id": "phys2-009",
+      "bucket_key": "images/physics/ap-physics-2-em/capacitor-with-dielectric.svg",
+      "category": "electromagnetism",
+      "concept_slug": "capacitors",
+      "params": {
+        "type": "capacitor_diagram",
+        "title": "Capacitor with Dielectric",
+        "plate_separation": 1.2,
+        "plate_length": 2.5,
+        "show_field": true,
+        "show_charges": true,
+        "dielectric": true,
+        "dielectric_label": "κ",
+        "labels": {
+          "left": "$+Q$",
+          "right": "$-Q$",
+          "bottom": "$C = \\kappa\\varepsilon_0 A/d$"
+        }
+      }
+    },
+    {
+      "id": "phys2-010",
+      "bucket_key": "images/physics/ap-physics-2-em/simple-series-circuit.svg",
+      "category": "electromagnetism",
+      "concept_slug": "simple-circuits",
+      "params": {
+        "type": "circuit_diagram",
+        "title": "Simple Circuit: Battery, Switch, and Bulb",
+        "elements": [
+          {"type": "battery", "label": "ε", "value": "12 V", "direction": "up"},
+          {"type": "switch", "label": "S", "direction": "right"},
+          {"type": "wire", "direction": "right"},
+          {"type": "lamp", "label": "Bulb", "direction": "down"},
+          {"type": "wire", "direction": "left"},
+          {"type": "wire", "direction": "left"}
+        ]
+      }
+    },
+    {
+      "id": "phys2-011",
+      "bucket_key": "images/physics/ap-physics-2-em/battery-internal-resistance.svg",
+      "category": "electromagnetism",
+      "concept_slug": "simple-circuits",
+      "params": {
+        "type": "circuit_diagram",
+        "title": "Battery with Internal Resistance",
+        "elements": [
+          {"type": "wire", "direction": "up", "length": 3},
+          {"type": "battery", "label": "ε", "value": "24 V", "direction": "right", "enclose": "Battery"},
+          {"type": "resistor", "label": "r", "value": "1 Ω", "direction": "right", "enclose": "Battery"},
+          {"type": "wire", "direction": "down", "length": 3},
+          {"type": "resistor", "label": "R", "value": "11 Ω", "direction": "left", "length": 6}
+        ]
+      }
+    },
+    {
+      "id": "phys2-012",
+      "bucket_key": "images/physics/ap-physics-2-em/compound-series-parallel.svg",
+      "category": "electromagnetism",
+      "concept_slug": "compound-dc-circuits",
+      "params": {
+        "type": "circuit_diagram",
+        "title": "Compound Circuit: Series + Parallel",
+        "elements": [
+          {"type": "battery", "label": "ε", "value": "48 V", "direction": "up"},
+          {"type": "wire", "direction": "right"},
+          {"type": "resistor", "label": "R₁", "value": "8 Ω", "direction": "right"},
+          {"type": "push"},
+          {"type": "resistor", "label": "R₂", "value": "12 Ω", "direction": "down"},
+          {"type": "pop"},
+          {"type": "wire", "direction": "right"},
+          {"type": "resistor", "label": "R₃", "value": "24 Ω", "direction": "down"},
+          {"type": "wire", "direction": "left"},
+          {"type": "wire", "direction": "left"},
+          {"type": "wire", "direction": "left"}
+        ]
+      }
+    },
+    {
+      "id": "phys2-013",
+      "bucket_key": "images/physics/ap-physics-2-em/kirchhoff-loop-single.svg",
+      "category": "electromagnetism",
+      "concept_slug": "kirchhoffs-loop-rule",
+      "params": {
+        "type": "kirchhoff_diagram",
+        "title": "Kirchhoff's Loop Rule: Single Loop",
+        "elements": [
+          {"type": "battery", "label": "ε", "value": "12 V", "direction": "up"},
+          {"type": "wire", "direction": "right"},
+          {"type": "resistor", "label": "R₁", "value": "4 Ω", "direction": "right"},
+          {"type": "resistor", "label": "R₂", "value": "8 Ω", "direction": "down"},
+          {"type": "wire", "direction": "left"},
+          {"type": "wire", "direction": "left"}
+        ],
+        "loops": [
+          {"label": "$I$", "position": [3, 2], "color": "#F4A100"}
+        ]
+      }
+    },
+    {
+      "id": "phys2-014",
+      "bucket_key": "images/physics/ap-physics-2-em/kirchhoff-opposing-batteries.svg",
+      "category": "electromagnetism",
+      "concept_slug": "kirchhoffs-loop-rule",
+      "params": {
+        "type": "kirchhoff_diagram",
+        "title": "Opposing Batteries",
+        "elements": [
+          {"type": "battery", "label": "ε₁", "value": "9 V", "direction": "up"},
+          {"type": "wire", "direction": "right"},
+          {"type": "resistor", "label": "R", "value": "6 Ω", "direction": "right"},
+          {"type": "battery", "label": "ε₂", "value": "6 V", "direction": "down", "reverse": true},
+          {"type": "wire", "direction": "left"},
+          {"type": "wire", "direction": "left"}
+        ],
+        "loops": [
+          {"label": "$I$", "position": [3, 2], "color": "#F4A100"}
+        ]
+      }
+    },
+    {
+      "id": "phys2-015",
+      "bucket_key": "images/physics/ap-physics-2-em/kirchhoff-junction-split.svg",
+      "category": "electromagnetism",
+      "concept_slug": "kirchhoffs-junction-rule",
+      "params": {
+        "type": "circuit_diagram",
+        "title": "Junction Rule: Current Divider",
+        "elements": [
+          {"type": "battery", "label": "ε", "value": "24 V", "direction": "up"},
+          {"type": "wire", "direction": "right"},
+          {"type": "dot", "direction": "right"},
+          {"type": "push"},
+          {"type": "resistor", "label": "R₁", "value": "4 Ω", "direction": "down"},
+          {"type": "pop"},
+          {"type": "wire", "direction": "right"},
+          {"type": "resistor", "label": "R₂", "value": "12 Ω", "direction": "down"},
+          {"type": "wire", "direction": "left"},
+          {"type": "dot", "direction": "left"},
+          {"type": "wire", "direction": "left"}
+        ]
+      }
+    },
+    {
+      "id": "phys2-016",
+      "bucket_key": "images/physics/ap-physics-2-em/rc-charging-circuit.svg",
+      "category": "electromagnetism",
+      "concept_slug": "rc-circuits",
+      "params": {
+        "type": "circuit_diagram",
+        "title": "RC Charging Circuit",
+        "elements": [
+          {"type": "battery", "label": "ε", "value": "10 V", "direction": "up"},
+          {"type": "switch", "label": "S", "direction": "right"},
+          {"type": "resistor", "label": "R", "value": "2 kΩ", "direction": "right"},
+          {"type": "wire", "direction": "down", "length": 3},
+          {"type": "capacitor", "label": "C", "value": "100 μF", "direction": "left", "length": 6}
+        ]
+      }
+    },
+    {
+      "id": "phys2-017",
+      "bucket_key": "images/physics/ap-physics-2-em/rc-charging-graph.svg",
+      "category": "electromagnetism",
+      "concept_slug": "rc-circuits",
+      "params": {
+        "type": "rc_graph",
+        "title": "RC Charging: Voltage & Current vs Time",
+        "style": "charging",
+        "emf": 10,
+        "R": 2000,
+        "C": 0.0001,
+        "show_current": true
+      }
+    },
+    {
+      "id": "phys2-018",
+      "bucket_key": "images/physics/ap-physics-2-em/rc-discharging-graph.svg",
+      "category": "electromagnetism",
+      "concept_slug": "rc-circuits",
+      "params": {
+        "type": "rc_graph",
+        "title": "RC Discharging: Voltage & Current vs Time",
+        "style": "discharging",
+        "emf": 24,
+        "R": 2000,
+        "C": 0.001,
+        "show_current": true
+      }
+    },
+    {
+      "id": "phys2-019",
+      "bucket_key": "images/physics/ap-physics-2-em/magnetic-field-bar-magnet.svg",
+      "category": "electromagnetism",
+      "concept_slug": "magnetic-fields",
+      "params": {
+        "type": "magnetic_field",
+        "style": "bar_magnet",
+        "title": "Magnetic Field Lines: Bar Magnet"
+      }
+    },
+    {
+      "id": "phys2-020",
+      "bucket_key": "images/physics/ap-physics-2-em/magnetic-field-current-wire.svg",
+      "category": "electromagnetism",
+      "concept_slug": "magnetic-fields",
+      "params": {
+        "type": "magnetic_field",
+        "style": "wire",
+        "current_direction": "out",
+        "title": "B-Field Around a Current-Carrying Wire"
+      }
+    },
+    {
+      "id": "phys2-021",
+      "bucket_key": "images/physics/ap-physics-2-em/magnetic-field-solenoid.svg",
+      "category": "electromagnetism",
+      "concept_slug": "magnetism-current-carrying-wires",
+      "params": {
+        "type": "magnetic_field",
+        "style": "solenoid",
+        "n_turns": 8,
+        "length": 4.0,
+        "radius": 0.8,
+        "title": "B-Field Inside a Solenoid"
+      }
+    },
+    {
+      "id": "phys2-022",
+      "bucket_key": "images/physics/ap-physics-2-em/force-on-positive-charge.svg",
+      "category": "electromagnetism",
+      "concept_slug": "magnetism-moving-charges",
+      "params": {
+        "type": "force_on_charge",
+        "title": "Magnetic Force on Moving Positive Charge",
+        "charge_sign": "+",
+        "velocity_dir": 0,
+        "b_field_dir": "into_page",
+        "labels": {
+          "v": "$\\vec{v}$",
+          "B": "$\\vec{B}$ (into page)",
+          "F": "$\\vec{F}$"
+        }
+      }
+    },
+    {
+      "id": "phys2-023",
+      "bucket_key": "images/physics/ap-physics-2-em/circular-path-in-b-field.svg",
+      "category": "electromagnetism",
+      "concept_slug": "magnetism-moving-charges",
+      "params": {
+        "type": "force_on_charge",
+        "title": "Circular Path in Uniform B-Field",
+        "charge_sign": "+",
+        "velocity_dir": 90,
+        "b_field_dir": "into_page",
+        "show_circular": true,
+        "radius": 1.5,
+        "formula": "$r = mv/qB$",
+        "labels": {
+          "v": "$\\vec{v}$",
+          "F": "$\\vec{F}_c$"
+        }
+      }
+    },
+    {
+      "id": "phys2-024",
+      "bucket_key": "images/physics/ap-physics-2-em/uniform-field-parallel-plates.svg",
+      "category": "electromagnetism",
+      "concept_slug": "electric-fields",
+      "params": {
+        "type": "capacitor_diagram",
+        "title": "Uniform Electric Field Between Parallel Plates",
+        "plate_separation": 1.5,
+        "plate_length": 2.8,
+        "show_field": true,
+        "show_charges": true,
+        "dielectric": false,
+        "labels": {
+          "left": "$+$",
+          "right": "$-$",
+          "top": "$\\vec{E} = V/d$ (uniform)"
+        }
+      }
+    },
+    {
+      "id": "phys2-025",
+      "bucket_key": "images/physics/ap-physics-2-em/force-on-current-wire.svg",
+      "category": "electromagnetism",
+      "concept_slug": "magnetism-current-carrying-wires",
+      "params": {
+        "type": "force_on_charge",
+        "title": "Force on Current-Carrying Wire in B-Field",
+        "charge_sign": "+",
+        "velocity_dir": 0,
+        "b_field_dir": "into_page",
+        "labels": {
+          "v": "$I$ (current direction)",
+          "B": "$\\vec{B}$ (into page)",
+          "F": "$\\vec{F} = I\\vec{L} \\times \\vec{B}$"
+        },
+        "label_offsets": {
+          "v": [0, 0.6],
+          "F": [0.85, -0.2]
+        },
+        "formula": "$\\vec{F} = I\\vec{L} \\times \\vec{B}$"
+      }
+    }
+  ]
+}

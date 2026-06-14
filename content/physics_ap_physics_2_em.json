@@ -2210,6 +2210,18 @@
                 }
               ]
             }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/physics/ap-physics-2-em/coulombs-law-two-charges.svg",
+              "alt_text": "Diagram showing Coulomb's law between two positive charges with force vectors pointing away from each other",
+              "caption": "Two like charges repel with force proportional to 1/r²"
+            },
+            {
+              "bucket_key": "images/physics/ap-physics-2-em/coulombs-law-opposite-charges.svg",
+              "alt_text": "Diagram showing Coulomb's law between a positive and negative charge with force vectors pointing toward each other",
+              "caption": "Opposite charges attract with force proportional to 1/r²"
+            }
           ]
         },
         {
@@ -2805,6 +2817,28 @@
                   "display_order": 3
                 }
               ]
+            }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/physics/ap-physics-2-em/electric-field-positive-charge.svg",
+              "alt_text": "Electric field lines radiating outward from a single positive point charge",
+              "caption": "Field lines point radially outward from a positive charge"
+            },
+            {
+              "bucket_key": "images/physics/ap-physics-2-em/electric-field-dipole.svg",
+              "alt_text": "Electric field lines between a positive and negative charge forming a dipole pattern",
+              "caption": "Electric field pattern of a dipole showing field lines from positive to negative charge"
+            },
+            {
+              "bucket_key": "images/physics/ap-physics-2-em/superposition-three-charges.svg",
+              "alt_text": "Superposition of electric fields from three point charges showing vector addition of individual field contributions",
+              "caption": "The net electric field is the vector sum of fields from each charge"
+            },
+            {
+              "bucket_key": "images/physics/ap-physics-2-em/uniform-field-parallel-plates.svg",
+              "alt_text": "Uniform electric field between two parallel plates with evenly spaced field lines from positive to negative plate",
+              "caption": "The electric field between parallel plates is uniform: E = V/d"
             }
           ]
         },
@@ -3495,6 +3529,18 @@
                 }
               ]
             }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/physics/ap-physics-2-em/equipotential-single-charge.svg",
+              "alt_text": "Equipotential lines as concentric circles around a single positive point charge with field lines perpendicular",
+              "caption": "Equipotential surfaces are perpendicular to field lines around a point charge"
+            },
+            {
+              "bucket_key": "images/physics/ap-physics-2-em/equipotential-dipole.svg",
+              "alt_text": "Equipotential lines around an electric dipole showing the relationship between potential and field",
+              "caption": "Equipotential contours around a dipole with field lines crossing perpendicularly"
+            }
           ]
         },
         {
@@ -3820,6 +3866,18 @@
                   "display_order": 3
                 }
               ]
+            }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/physics/ap-physics-2-em/parallel-plate-capacitor.svg",
+              "alt_text": "Parallel plate capacitor with positive charges on left plate and negative charges on right plate with uniform electric field lines between them",
+              "caption": "A parallel plate capacitor stores charge and creates a uniform electric field"
+            },
+            {
+              "bucket_key": "images/physics/ap-physics-2-em/capacitor-with-dielectric.svg",
+              "alt_text": "Parallel plate capacitor with a dielectric material inserted between the plates showing reduced electric field",
+              "caption": "Inserting a dielectric increases capacitance by reducing the internal field"
             }
           ]
         },
@@ -4703,6 +4761,18 @@
                   "display_order": 1
                 }
               ]
+            }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/physics/ap-physics-2-em/simple-series-circuit.svg",
+              "alt_text": "Simple series circuit with a battery, switch, and light bulb connected by wires",
+              "caption": "A basic closed circuit with battery, switch, and bulb"
+            },
+            {
+              "bucket_key": "images/physics/ap-physics-2-em/battery-internal-resistance.svg",
+              "alt_text": "Circuit diagram showing a battery with internal resistance r enclosed in a dashed box connected to an external resistor R",
+              "caption": "A real battery modeled with EMF source and internal resistance"
             }
           ]
         },
@@ -5737,6 +5807,13 @@
                 }
               ]
             }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/physics/ap-physics-2-em/compound-series-parallel.svg",
+              "alt_text": "Compound circuit with resistors in both series and parallel configurations",
+              "caption": "A compound DC circuit combining series and parallel resistors"
+            }
           ]
         },
         {
@@ -6069,6 +6146,18 @@
                 }
               ]
             }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/physics/ap-physics-2-em/kirchhoff-loop-single.svg",
+              "alt_text": "Single-loop circuit illustrating Kirchhoff's loop rule with voltage rises and drops labeled around the loop",
+              "caption": "Kirchhoff's loop rule: the sum of voltage changes around any closed loop is zero"
+            },
+            {
+              "bucket_key": "images/physics/ap-physics-2-em/kirchhoff-opposing-batteries.svg",
+              "alt_text": "Circuit with two batteries facing in opposite directions illustrating opposing EMFs in Kirchhoff's loop rule",
+              "caption": "Opposing batteries in a loop — net EMF determines current direction"
+            }
           ]
         },
         {
@@ -6397,6 +6486,13 @@
                   "display_order": 3
                 }
               ]
+            }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/physics/ap-physics-2-em/kirchhoff-junction-split.svg",
+              "alt_text": "Circuit junction showing current splitting into two branches illustrating Kirchhoff's junction rule",
+              "caption": "Kirchhoff's junction rule: current in equals current out at any node"
             }
           ]
         },
@@ -6773,6 +6869,23 @@
                 }
               ]
             }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/physics/ap-physics-2-em/rc-charging-circuit.svg",
+              "alt_text": "RC circuit with a resistor and capacitor in series with a battery and switch",
+              "caption": "An RC charging circuit with resistor, capacitor, battery, and switch"
+            },
+            {
+              "bucket_key": "images/physics/ap-physics-2-em/rc-charging-graph.svg",
+              "alt_text": "Graph showing capacitor voltage rising exponentially toward maximum during RC charging with time constant tau marked",
+              "caption": "RC charging curve: voltage rises as V(1 - e^(-t/RC))"
+            },
+            {
+              "bucket_key": "images/physics/ap-physics-2-em/rc-discharging-graph.svg",
+              "alt_text": "Graph showing capacitor voltage decaying exponentially during RC discharging with time constant tau marked",
+              "caption": "RC discharging curve: voltage decays as Ve^(-t/RC)"
+            }
           ]
         }
       ]
@@ -7046,6 +7159,18 @@
                   "display_order": 1
                 }
               ]
+            }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/physics/ap-physics-2-em/magnetic-field-bar-magnet.svg",
+              "alt_text": "Magnetic field lines around a bar magnet showing field flowing from north to south pole externally",
+              "caption": "Magnetic field pattern of a bar magnet with north and south poles"
+            },
+            {
+              "bucket_key": "images/physics/ap-physics-2-em/magnetic-field-current-wire.svg",
+              "alt_text": "Magnetic field lines forming concentric circles around a current-carrying wire using the right-hand rule",
+              "caption": "A current-carrying wire produces circular magnetic field lines"
             }
           ]
         },
@@ -7388,6 +7513,18 @@
                 }
               ]
             }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/physics/ap-physics-2-em/force-on-positive-charge.svg",
+              "alt_text": "Positive charge moving through a magnetic field with velocity and force vectors shown perpendicular to each other",
+              "caption": "The magnetic force on a moving charge is perpendicular to both v and B"
+            },
+            {
+              "bucket_key": "images/physics/ap-physics-2-em/circular-path-in-b-field.svg",
+              "alt_text": "Positive charge following a circular path in a uniform magnetic field with centripetal force vector pointing inward",
+              "caption": "A charged particle follows a circular path in a uniform B-field with radius r = mv/qB"
+            }
           ]
         },
         {
@@ -7725,6 +7862,18 @@
                   "display_order": 3
                 }
               ]
+            }
+          ],
+          "diagrams": [
+            {
+              "bucket_key": "images/physics/ap-physics-2-em/magnetic-field-solenoid.svg",
+              "alt_text": "Uniform magnetic field lines inside a solenoid showing field direction and the formula B = mu-naught n I",
+              "caption": "A solenoid produces a nearly uniform magnetic field inside its coils"
+            },
+            {
+              "bucket_key": "images/physics/ap-physics-2-em/force-on-current-wire.svg",
+              "alt_text": "Current-carrying wire in a magnetic field with force vector shown perpendicular to both current and field directions",
+              "caption": "The force on a current-carrying wire in a B-field: F = ILB sin theta"
             }
           ]
         },

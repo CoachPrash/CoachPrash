@@ -2,7 +2,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.patches as patches
-from .style import FORCE_COLORS, PRIMARY, TEXT_COLOR, LABEL_SIZE, ANNOTATION_SIZE
+from .style import FORCE_COLORS, PRIMARY, SECONDARY, ACCENT, TEXT_COLOR, LABEL_SIZE, ANNOTATION_SIZE
 
 
 def draw_arrow(ax, start, end, label='', color=PRIMARY, lw=2.5, head_width=0.06,
@@ -172,3 +172,132 @@ def draw_dimension(ax, start, end, label='', offset=0.15, color='#94A3B8'):
         ax.text((sx + ex) / 2, (sy + ey) / 2, label,
                 ha='center', va='center', fontsize=ANNOTATION_SIZE - 1,
                 color=color, backgroundcolor='white', zorder=6)
+
+
+# ── E&M primitives ────────────────────────────────────────────────────
+
+def draw_charge(ax, pos, sign, label='', size=0.18, fontsize=None):
+    """Draw a point charge (+ or −) with optional label.
+
+    Parameters
+    ----------
+    pos : tuple (x, y)
+    sign : '+' or '-'
+    label : str – text placed beside the charge
+    """
+    x, y = pos
+    color = SECONDARY if sign == '+' else PRIMARY
+    circ = plt.Circle((x, y), size, facecolor=color + '22',
+                       edgecolor=color, linewidth=1.5, zorder=5)
+    ax.add_patch(circ)
+    ax.text(x, y, sign, ha='center', va='center', fontsize=fontsize or 14,
+            fontweight='bold', color=color, zorder=6)
+    if label:
+        ax.text(x, y - size - 0.12, label, ha='center', va='top',
+                fontsize=ANNOTATION_SIZE, color=TEXT_COLOR, zorder=6)
+
+
+def draw_into_page(ax, pos, size=0.12):
+    """Draw an ⊗ marker (vector into the page)."""
+    x, y = pos
+    circ = plt.Circle((x, y), size, facecolor='white', edgecolor=TEXT_COLOR,
+                       linewidth=1.2, zorder=5)
+    ax.add_patch(circ)
+    s = size * 0.7
+    ax.plot([x - s, x + s], [y - s, y + s], color=TEXT_COLOR, lw=1.2, zorder=6)
+    ax.plot([x - s, x + s], [y + s, y - s], color=TEXT_COLOR, lw=1.2, zorder=6)
+
+
+def draw_out_of_page(ax, pos, size=0.12):
+    """Draw an ⊙ marker (vector out of the page)."""
+    x, y = pos
+    circ = plt.Circle((x, y), size, facecolor='white', edgecolor=TEXT_COLOR,
+                       linewidth=1.2, zorder=5)
+    ax.add_patch(circ)
+    ax.plot(x, y, 'o', color=TEXT_COLOR, markersize=size * 18, zorder=6)
+
+
+def draw_plate(ax, center, length, orientation='vertical', label='',
+               charge_sign=None, color=TEXT_COLOR):
+    """Draw a charged plate (for capacitor diagrams).
+
+    Parameters
+    ----------
+    center : tuple (x, y)
+    length : float
+    orientation : 'vertical' or 'horizontal'
+    charge_sign : '+' or '-' to show distributed charges
+    """
+    x, y = center
+    if orientation == 'vertical':
+        ax.plot([x, x], [y - length / 2, y + length / 2],
+                color=color, lw=3, solid_capstyle='butt', zorder=3)
+        if charge_sign:
+            n = 5
+            for i in range(n):
+                yi = y - length / 2 + (i + 0.5) * length / n
+                ch_color = SECONDARY if charge_sign == '+' else PRIMARY
+                ax.text(x + (0.08 if charge_sign == '+' else -0.08), yi,
+                        charge_sign, ha='center', va='center', fontsize=7,
+                        color=ch_color, zorder=4)
+    else:
+        ax.plot([x - length / 2, x + length / 2], [y, y],
+                color=color, lw=3, solid_capstyle='butt', zorder=3)
+    if label:
+        ax.text(x, y - length / 2 - 0.15, label, ha='center', va='top',
+                fontsize=ANNOTATION_SIZE, color=TEXT_COLOR, zorder=4)
+
+
+def draw_field_lines(ax, charges, x_range, y_range, density=20):
+    """Draw electric field lines from a list of point charges using streamplot.
+
+    Parameters
+    ----------
+    charges : list of (x, y, q) tuples
+    x_range : (xmin, xmax)
+    y_range : (ymin, ymax)
+    density : streamplot density
+    """
+    nx, ny = 200, 200
+    xs = np.linspace(x_range[0], x_range[1], nx)
+    ys = np.linspace(y_range[0], y_range[1], ny)
+    X, Y = np.meshgrid(xs, ys)
+    Ex = np.zeros_like(X)
+    Ey = np.zeros_like(Y)
+
+    for cx, cy, q in charges:
+        dx = X - cx
+        dy = Y - cy
+        r2 = dx ** 2 + dy ** 2
+        r2 = np.maximum(r2, 0.04)  # avoid singularity
+        r = np.sqrt(r2)
+        Ex += q * dx / (r2 * r)
+        Ey += q * dy / (r2 * r)
+
+    # Normalize for consistent arrow lengths
+    mag = np.sqrt(Ex ** 2 + Ey ** 2)
+    mag = np.maximum(mag, 1e-10)
+
+    ax.streamplot(X, Y, Ex, Ey, color='#64748B', linewidth=0.8,
+                  density=density / 10, arrowsize=1.0, zorder=2)
+
+
+def draw_bar_magnet(ax, center, width=0.6, height=1.2):
+    """Draw a bar magnet with N and S poles."""
+    x, y = center
+    # North half (red)
+    north = patches.FancyBboxPatch(
+        (x - width / 2, y), width, height / 2,
+        boxstyle='round,pad=0.02', facecolor='#FEE2E2',
+        edgecolor=SECONDARY, linewidth=1.5, zorder=3)
+    ax.add_patch(north)
+    ax.text(x, y + height / 4, 'N', ha='center', va='center',
+            fontsize=12, fontweight='bold', color=SECONDARY, zorder=4)
+    # South half (blue)
+    south = patches.FancyBboxPatch(
+        (x - width / 2, y - height / 2), width, height / 2,
+        boxstyle='round,pad=0.02', facecolor='#DBEAFE',
+        edgecolor=PRIMARY, linewidth=1.5, zorder=3)
+    ax.add_patch(south)
+    ax.text(x, y - height / 4, 'S', ha='center', va='center',
+            fontsize=12, fontweight='bold', color=PRIMARY, zorder=4)

@@ -1,6 +1,6 @@
 # CoachPrash Admin Manual
 
-> **Version:** 28.0 (Stable Problem IDs — Reseed Without Losing Student Progress)
+> **Version:** 29.0 (AP Physics 2 EM Diagrams — Phase 1 Complete)
 > **Last Updated:** June 2026
 > **Platform:** Flask + PostgreSQL, deployed on Railway
 
