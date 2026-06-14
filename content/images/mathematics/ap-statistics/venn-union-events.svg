@@ -6,7 +6,7 @@
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-06-04T11:46:02.077775</dc:date>
+    <dc:date>2026-06-04T18:56:58.331322</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -36,7 +36,7 @@ L 330.012 57.557813
 L 19.548 57.557813 
 L 19.548 268.229812 
 z
-" clip-path="url(#p8cc29630f9)" style="fill: none; stroke: #94a3b8; stroke-width: 1.5; stroke-linejoin: miter"/>
+" clip-path="url(#p350a31b5af)" style="fill: none; stroke: #94a3b8; stroke-width: 1.5; stroke-linejoin: miter"/>
    </g>
    <g id="patch_3">
     <path d="M 141.516 223.877813 
@@ -49,7 +49,7 @@ C 91.917508 139.632304 86.076 153.734953 86.076 168.437813
 C 86.076 183.140672 91.917508 197.243321 102.314 207.639812 
 C 112.710492 218.036304 126.81314 223.877813 141.516 223.877813 
 z
-" clip-path="url(#p8cc29630f9)" style="fill: #1b365d; opacity: 0.2; stroke: #1b365d; stroke-width: 2; stroke-linejoin: miter"/>
+" clip-path="url(#p350a31b5af)" style="fill: #1b365d; opacity: 0.2; stroke: #1b365d; stroke-width: 2; stroke-linejoin: miter"/>
    </g>
    <g id="patch_4">
     <path d="M 208.044 223.877813 
@@ -62,7 +62,7 @@ C 158.445508 139.632304 152.604 153.734953 152.604 168.437813
 C 152.604 183.140672 158.445508 197.243321 168.842 207.639812 
 C 179.238492 218.036304 193.34114 223.877813 208.044 223.877813 
 z
-" clip-path="url(#p8cc29630f9)" style="fill: #c41e3a; opacity: 0.2; stroke: #c41e3a; stroke-width: 2; stroke-linejoin: miter"/>
+" clip-path="url(#p350a31b5af)" style="fill: #c41e3a; opacity: 0.2; stroke: #c41e3a; stroke-width: 2; stroke-linejoin: miter"/>
    </g>
    <g id="text_1">
     <!-- A -->
@@ -832,7 +832,7 @@ z
   </g>
  </g>
  <defs>
-  <clipPath id="p8cc29630f9">
+  <clipPath id="p350a31b5af">
    <rect x="8.46" y="29.837812" width="332.64" height="249.48"/>
   </clipPath>
  </defs>
