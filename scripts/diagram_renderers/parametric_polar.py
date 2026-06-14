@@ -109,3 +109,8 @@ def _render_polar(ax, params):
         ax.fill_between(theta_vals, r_vals, r2_vals, alpha=0.2, color=ACCENT, zorder=2)
 
     ax.set_facecolor(BG_COLOR)
+
+    # Show only every other radial tick label to prevent overlap
+    for i, label in enumerate(ax.get_yticklabels()):
+        if i % 2 == 1:
+            label.set_visible(False)
